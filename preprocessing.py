@@ -298,7 +298,7 @@ def generate_vocabulary():
 
     c = Counter(temp)
     for item in c:
-        if c[item] > 1:
+        if c[item] > 2:
             vocabulary.add(item)
     cPickle.dump(vocabulary, open("data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
