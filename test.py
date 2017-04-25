@@ -11,7 +11,7 @@ print(u'Loading training data...')
 X_L, X_R, X_E, X_T, Y, N = [], [], [], [], [], []
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
-vocabulary = cPickle.load(open("./data/vocabulary.pkl"))
+vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 
 training_file = codecs.open("./data/output.txt", "r", encoding="utf-8")
 for line in training_file:
@@ -85,14 +85,14 @@ concat([model_left.layers[-1].output, model_right.layers[-1].output, model_targe
 merged_model.add(concat)
 merged_model.add(Dense(25))
 merged_model.add(Dense(2, activation='linear'))
-merged_model.load_weights("./data/lstm.weights")
+merged_model.load_weights("../data/weights")
 merged_model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 # score = merged_model.evaluate([X_L, X_R, X_T, X_E], Y, batch_size=64, verbose=0)
 # print(u'Test accuracy:', score)
-conn = sqlite3.connect('./data/geonames.db')
+conn = sqlite3.connect('../data/geonames.db')
 c = conn.cursor()
 choice, prediction = [], []
 for p, y, n in zip(merged_model.predict([X_L, X_R, X_T, X_E]), Y, N):

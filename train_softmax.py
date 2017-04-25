@@ -2,8 +2,7 @@ import codecs
 import numpy as np
 import cPickle
 from keras.callbacks import ModelCheckpoint
-from keras.engine import Merge
-from keras.layers import Embedding, LSTM, Dense, Dropout
+from keras.layers import Embedding, LSTM, Dense, Dropout, Conv1D, GlobalMaxPooling1D, Activation, Concatenate
 from keras.models import Sequential
 from preprocessing import pad_list, construct_1D_grid
 
@@ -11,7 +10,7 @@ print(u'Loading training data...')
 X_L, X_R, X_E, X_T, Y, N = [], [], [], [], [], []
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
-vocabulary = cPickle.load(open("./data/vocabulary.pkl"))
+vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 
 training_file = codecs.open("./data/output.txt", "r", encoding="utf-8")
 for line in training_file:
@@ -48,7 +47,7 @@ X_T = np.asarray(X_T)
 Y = np.asarray(Y)
 
 vectors = {UNKNOWN: np.ones(50)}
-for line in codecs.open("data/glove.twitter.50d.txt", encoding="utf-8"):
+for line in codecs.open("../data/glove.twitter.50d.txt", encoding="utf-8"):
     t = line.split()
     vectors[t[0]] = [float(x) for x in t[1:]]
 
@@ -62,32 +61,44 @@ weights = np.array([weights])
 print(u'Building model...')
 model_left = Sequential()
 model_left.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_left.add(LSTM(output_dim=50))
+model_left.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1))
+model_left.add(GlobalMaxPooling1D())
+model_left.add(Dense(25))
 model_left.add(Dropout(0.2))
+model_left.add(Activation('relu'))
 
 model_right = Sequential()
 model_right.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_right.add(LSTM(output_dim=50, go_backwards=True))
+model_right.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1))
+model_right.add(GlobalMaxPooling1D())
+model_right.add(Dense(25))
 model_right.add(Dropout(0.2))
+model_right.add(Activation('relu'))
 
 model_target = Sequential()
-model_target.add(Dense(output_dim=100, activation='relu', input_dim=36*72))
+model_target.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1, input_shape=(36, 72)))
+model_target.add(GlobalMaxPooling1D())
+model_target.add(Dense(25))
 model_target.add(Dropout(0.2))
-model_target.add(Dense(output_dim=50, activation='relu'))
+model_target.add(Activation('relu'))
 
 model_entities = Sequential()
-model_entities.add(Dense(output_dim=100, activation='relu', input_dim=36*72))
+model_entities.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1, input_shape=(36, 72)))
+model_entities.add(GlobalMaxPooling1D())
+model_entities.add(Dense(25))
 model_entities.add(Dropout(0.2))
-model_entities.add(Dense(output_dim=50, activation='relu'))
+model_entities.add(Activation('relu'))
 
 merged_model = Sequential()
-merged_model.add(Merge([model_left, model_right, model_target, model_entities], mode='concat', concat_axis=1))
-merged_model.add(Dense(output_dim=25))
+concat = Concatenate(axis=1, input_shape=(4, 25))
+concat([model_left.layers[-1].output, model_right.layers[-1].output, model_target.layers[-1].output, model_entities.layers[-1].output])
+merged_model.add(concat)
+merged_model.add(Dense(25))
 merged_model.add(Dense(output_dim=36*72, activation='softmax'))
 merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 
-checkpoint = ModelCheckpoint(filepath="./data/lstm.weights", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 merged_model.fit([X_L, X_R, X_T, X_E], Y, batch_size=64, nb_epoch=50, callbacks=[checkpoint], verbose=1)

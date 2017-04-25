@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 import codecs
 import cPickle
-import re
 from collections import Counter
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import spacy
 import numpy
 import sqlite3
@@ -100,7 +99,7 @@ def merge_lists(grids):
 def populate_geosql():
     """Create and populate the sqlite database with GeoNames data"""
     geo_names = {}
-    f = codecs.open("data/allCountries.txt", "r", encoding="utf-8")
+    f = codecs.open("../data/allCountries.txt", "r", encoding="utf-8")
 
     for line in f:
         line = line.split("\t")
@@ -111,7 +110,7 @@ def populate_geosql():
                 else:
                     geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]))}
 
-    conn = sqlite3.connect('./data/geonames.db')
+    conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
     # c.execute("CREATE TABLE GEO (NAME VARCHAR(100) PRIMARY KEY NOT NULL, METADATA VARCHAR(5000) NOT NULL);")
     c.execute("DELETE FROM GEO")
@@ -209,7 +208,7 @@ def generate_training_data():
 
 def generate_evaluation_data():
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
-    conn = sqlite3.connect('./data/geonames.db')
+    conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
     corpus = "wiki"
     nlp = spacy.load('en')
@@ -244,7 +243,7 @@ def generate_evaluation_data():
                             for item in in_list:
                                 if item.ent_type_ in ["GPE", "FACILITY", "LOC", "FAC"]:
                                     if item.ent_iob_ == "B" and item.text == "the":
-                                        out_list.append(u"STOPWORD")
+                                        out_list.append(u"0.0")
                                     else:
                                         location += item.text + u" "
                                         out_list.append(u"0.0")
@@ -269,7 +268,8 @@ def generate_evaluation_data():
                         for i in range(len(locations)):
                             locations[i] = eval(get_coordinates(c, locations[i]))
                         ent_grid = get_coordinates(c, u" ".join(entity))
-                        #  IF NO DATA FOR TARGET, DO NOT SAVE??
+                        # if len(eval(ent_grid)) == 0:
+                        #     break
                         loc_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
                         o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity) + u"\n")
@@ -290,7 +290,7 @@ def generate_vocabulary():
     """Prepare the vocabulary for NN training."""
     vocabulary = {u"<unknown>", u"0.0"}
     temp = []
-    training_file = codecs.open("./data/train_wiki.txt", "r", encoding="utf-8")
+    training_file = codecs.open("../data/train_wiki.txt", "r", encoding="utf-8")
     for line in training_file:
         line = line.strip().split("\t")
         temp.extend(eval(line[2].lower()))
@@ -300,14 +300,15 @@ def generate_vocabulary():
     for item in c:
         if c[item] > 1:
             vocabulary.add(item)
-    cPickle.dump(vocabulary, open("./data/vocabulary.pkl", "w"))
+    cPickle.dump(vocabulary, open("data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
 # print(coord_to_grid(('86', '-179.98333')))
 # print(coord_to_grid((-90, 180)))
-generate_training_data()
+# generate_training_data()
+# generate_evaluation_data()
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()

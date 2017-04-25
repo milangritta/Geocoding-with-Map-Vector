@@ -10,7 +10,7 @@ print(u'Loading training data...')
 X_L, X_R, X_E, X_T, Y, N = [], [], [], [], [], []
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
-vocabulary = cPickle.load(open("./data/vocabulary.pkl"))
+vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 
 training_file = codecs.open("./data/output.txt", "r", encoding="utf-8")
 for line in training_file:
@@ -47,7 +47,7 @@ X_T = np.asarray(X_T)
 Y = np.asarray(Y)
 
 vectors = {UNKNOWN: np.ones(50)}
-for line in codecs.open("data/glove.twitter.50d.txt", encoding="utf-8"):
+for line in codecs.open("../data/glove.twitter.50d.txt", encoding="utf-8"):
     t = line.split()
     vectors[t[0]] = [float(x) for x in t[1:]]
 
@@ -100,5 +100,5 @@ merged_model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 
-checkpoint = ModelCheckpoint(filepath="data/lstm.weights", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 merged_model.fit([X_L, X_R, X_T, X_E], Y, batch_size=64, epochs=50, callbacks=[checkpoint], verbose=1)

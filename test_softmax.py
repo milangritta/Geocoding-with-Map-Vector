@@ -3,8 +3,7 @@ import numpy as np
 import cPickle
 import sqlite3
 from geopy.distance import great_circle
-from keras.engine import Merge
-from keras.layers import Embedding, LSTM, Dense, Dropout
+from keras.layers import Embedding, LSTM, Dense, Dropout, Concatenate, Activation, Conv1D, GlobalMaxPooling1D
 from keras.models import Sequential
 from preprocessing import pad_list, construct_1D_grid, get_coordinates, print_stats, index_to_coord
 
@@ -14,7 +13,7 @@ print(u'Loading training data...')
 X_L, X_R, X_E, X_T, N, C = [], [], [], [], [], []
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
-vocabulary = cPickle.load(open("./data/vocabulary.pkl"))
+vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 
 training_file = codecs.open("./data/eval_lgl.txt", "r", encoding="utf-8")
 for line in training_file:
@@ -53,34 +52,46 @@ X_T = np.asarray(X_T)
 print(u'Building model...')
 model_left = Sequential()
 model_left.add(Embedding(len(vocabulary), dimension, input_length=input_length))
-model_left.add(LSTM(output_dim=50))
+model_left.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1))
+model_left.add(GlobalMaxPooling1D())
+model_left.add(Dense(25))
 model_left.add(Dropout(0.2))
+model_left.add(Activation('relu'))
 
 model_right = Sequential()
 model_right.add(Embedding(len(vocabulary), dimension, input_length=input_length))
-model_right.add(LSTM(output_dim=50, go_backwards=True))
+model_right.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1))
+model_right.add(GlobalMaxPooling1D())
+model_right.add(Dense(25))
 model_right.add(Dropout(0.2))
+model_right.add(Activation('relu'))
 
 model_target = Sequential()
-model_target.add(Dense(output_dim=100, activation='relu', input_dim=36*72))
+model_target.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1, input_shape=(36, 72)))
+model_target.add(GlobalMaxPooling1D())
+model_target.add(Dense(25))
 model_target.add(Dropout(0.2))
-model_target.add(Dense(output_dim=50, activation='relu'))
+model_target.add(Activation('relu'))
 
 model_entities = Sequential()
-model_entities.add(Dense(output_dim=100, activation='relu', input_dim=36*72))
+model_entities.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1, input_shape=(36, 72)))
+model_entities.add(GlobalMaxPooling1D())
+model_entities.add(Dense(25))
 model_entities.add(Dropout(0.2))
-model_entities.add(Dense(output_dim=50, activation='relu'))
+model_entities.add(Activation('relu'))
 
 merged_model = Sequential()
-merged_model.add(Merge([model_left, model_right, model_target, model_entities], mode='concat', concat_axis=1))
+concat = Concatenate(axis=1, input_shape=(4, 25))
+concat([model_left.layers[-1].output, model_right.layers[-1].output, model_target.layers[-1].output, model_entities.layers[-1].output])
+merged_model.add(concat)
 merged_model.add(Dense(25))
 merged_model.add(Dense(36*72, activation='softmax'))
-merged_model.load_weights("./data/lstm.weights")
+merged_model.load_weights("../data/weights")
 merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
-conn = sqlite3.connect('./data/geonames.db')
+conn = sqlite3.connect('../data/geonames.db')
 choice, prediction = [], []
 for p, c, n in zip(merged_model.predict([X_L, X_R, X_T, X_E]), C, N):
     p = index_to_coord(np.argmax(p))
