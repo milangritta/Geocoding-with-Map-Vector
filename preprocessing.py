@@ -126,11 +126,11 @@ def populate_geosql():
 
 def generate_training_data():
     """Prepare Wikipedia training data."""
-    conn = sqlite3.connect('./data/geonames.db')
+    conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load('en')
-    f = codecs.open("data/geowiki.txt", "r", encoding="utf-8")
-    o = codecs.open("./data/train_wiki.txt", "w", encoding="utf-8")
+    f = codecs.open("../data/geowiki.txt", "r", encoding="utf-8")
+    o = codecs.open("../data/train_wiki.txt", "w", encoding="utf-8")
     lat, lon = u"", u""
     entity, string = u"", u""
     skipped = 0
@@ -156,8 +156,8 @@ def generate_training_data():
                                         if item.ent_iob_ == "B" and item.text == "the":
                                             out_list.append(u"0.0")
                                         else:
-                                            location += u"0.0"
-                                            out_list.append(item.ent_type_)
+                                            location += item.text + u" "
+                                            out_list.append(u"0.0")
                                     elif item.ent_type_ in ["PERSON", "DATE", "TIME", "PERCENT", "MONEY"
                                                             "QUANTITY", "CARDINAL", "ORDINAL"]:
                                         out_list.append(u"0.0")
@@ -246,8 +246,8 @@ def generate_evaluation_data():
                                     if item.ent_iob_ == "B" and item.text == "the":
                                         out_list.append(u"STOPWORD")
                                     else:
-                                        location += u"0.0"
-                                        out_list.append(item.ent_type_)
+                                        location += item.text + u" "
+                                        out_list.append(u"0.0")
                                 elif item.ent_type_ in ["PERSON", "DATE", "TIME", "PERCENT", "MONEY"
                                                         "QUANTITY", "CARDINAL", "ORDINAL"]:
                                     out_list.append(u"0.0")
@@ -307,7 +307,7 @@ def generate_vocabulary():
 
 # print(coord_to_grid(('86', '-179.98333')))
 # print(coord_to_grid((-90, 180)))
-# generate_training_data()
+generate_training_data()
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
