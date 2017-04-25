@@ -1,0 +1,588 @@
+
+
+
+
+
+
+
+Twin Lakes,,Twin Lakes,,43.5597,,-93.423,,139,,149,,0.0552253933359||Pelican Rapids,,Pelican Rapids,,46.5708,,-96.0831,,255,,269,,2.91120957879||
+
+Nebraska,,Nebraska,,41.5003,,-99.7507,,665,,673,,324761.269834||Republic of Iraq,,Iraq,,33,,44,,997,,1001,,1005267.45951||Islamic Republic of Afghanistan,,Afghanistan,,33,,65,,1006,,1017,,1622306.26408||
+Minnesota,,Minnesota,,46.2502,,-94.2506,,602,,611,,564662.335725||
+
+
+Albany,,Albany,,45.63,,-94.57,,30,,36,,2.86017681221||
+
+
+Denver,,Denver,,39.7392,,-104.985,,477,,483,,651.628961823||Indianapolis,,Indianapolis,,39.7684,,-86.158,,485,,497,,901.127552716||New Haven,,New Haven,,41.3082,,-72.9282,,516,,525,,177.132888269||Indianapolis,,Indianapolis,,39.7684,,-86.158,,815,,827,,901.127552716||Louisville,,Louisville,,38.2542,,-85.7594,,829,,839,,258.903977652||New Haven,,New Haven,,41.3082,,-72.9282,,841,,850,,177.132888269||Sioux Falls,,Sioux Falls,,43.55,,-96.7003,,855,,866,,447.444925362||
+
+
+
+
+Republic of the Sudan,,Sudan,,15,,30,,12,,17,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,76,,81,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,122,,127,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,138,,143,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,166,,171,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,176,,181,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,306,,311,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,316,,321,,2953643.72084||Republic of the Sudan,,Sudan,,15,,30,,341,,346,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,499,,504,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,725,,730,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,871,,876,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,926,,931,,2953643.72084||Darfur Wilayat,,Darfur,,13,,25,,1285,,1291,,849425.958553||Arab Republic of Egypt,,Egypt,,27,,30,,1472,,1477,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,1728,,1733,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,1741,,1746,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,1811,,1816,,2953643.72084||Republic of the Sudan,,Sudan,,15,,30,,1887,,1892,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,1924,,1929,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,2085,,2090,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,2095,,2100,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,2130,,2135,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,2292,,2297,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,2318,,2323,,2953643.72084||Republic of the Sudan,,Sudan,,15,,30,,2368,,2373,,2953643.72084||Republic of the Sudan,,Sudan,,15,,30,,2535,,2540,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,2873,,2878,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,2883,,2888,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,2913,,2918,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,2984,,2989,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,3200,,3205,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,3432,,3437,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,3454,,3459,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,3492,,3497,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,3541,,3546,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,3648,,3653,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,3679,,3684,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,3798,,3803,,2953643.72084||Khartoum,,Khartoum,,15.5881,,32.5342,,3996,,4004,,1710.16721607||Arab Republic of Egypt,,Egypt,,27,,30,,4183,,4188,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,4207,,4212,,2953643.72084||Republic of the Sudan,,Sudan,,15,,30,,4381,,4386,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,4422,,4427,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,4504,,4509,,2953643.72084||Arab Republic of Egypt,,Egypt,,27,,30,,4567,,4572,,1500560.22941||Republic of the Sudan,,Sudan,,15,,30,,4627,,4632,,2953643.72084||
+Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,1549,,1558,,107914.452491||Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,1846,,1855,,107914.452491||Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,2053,,2062,,107914.452491||Akuressa,,Akuressa,,6.09639,,80.4808,,3484,,3492,,4.02608457804||Colombo,,Colombo,,6.93194,,79.8478,,3556,,3563,,544.449068559||Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,3780,,3789,,107914.452491||Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,3952,,3961,,107914.452491||Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,4821,,4830,,107914.452491||Democratic Socialist Republic of Sri Lanka,,Sri Lanka,,7,,81,,4894,,4903,,107914.452491||
+Tunisian Republic,,Tunisia,,34,,9,,5482,,5489,,368050.541201||
+Arab Republic of Egypt,,Egypt,,27,,30,,108,,113,,1500560.22941||Republic of Iraq,,Iraq,,33,,44,,980,,984,,1005267.45951||State of Kuwait,,Kuwait,,29.5,,47.75,,999,,1005,,36466.7278884||Arab Republic of Egypt,,Egypt,,27,,30,,1007,,1012,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,1133,,1138,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,1202,,1207,,1500560.22941||State of Israel,,Israel,,31.5,,34.75,,2232,,2238,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,2293,,2299,,76388.4422554||West Bank,,West Bank,,31.6667,,35.25,,2340,,2349,,10195.7311125||Jerusalem,,Jerusalem,,31.7667,,35.2333,,2354,,2363,,786.07352291||Arab Republic of Egypt,,Egypt,,27,,30,,2869,,2874,,1500560.22941||Republic of Iraq,,Iraq,,33,,44,,2887,,2891,,1005267.45951||Islamic Republic of Iran,,Iran,,32,,53,,3013,,3017,,3507567.16567||Arab Republic of Egypt,,Egypt,,27,,30,,3219,,3224,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,3363,,3368,,1500560.22941||State of Israel,,Israel,,31.5,,34.75,,3676,,3682,,76388.4422554||Republic of Iraq,,Iraq,,33,,44,,3837,,3841,,1005267.45951||Arab Republic of Egypt,,Egypt,,27,,30,,4096,,4101,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,4215,,4220,,1500560.22941||Arab Republic of Egypt,,Egypt,,27,,30,,4311,,4316,,1500560.22941||Washington,,Washington,,38.8951,,-77.0364,,4516,,4526,,645.022610537||Cairo,,Cairo,,30.05,,31.25,,4531,,4536,,7479.1137346||
+Palestine,,Palestine,,31.9216,,35.2033,,3217,,3226,,22319.3687458||State of Israel,,Israel,,31.5,,34.75,,3396,,3402,,76388.4422554||Washington,,Washington,,38.8951,,-77.0364,,3570,,3580,,645.022610537||
+Chicago,,Chicago,,41.85,,-87.6501,,486,,493,,1951.79571954||
+Bensenville,,Bensenville,,41.955,,-87.9401,,1583,,1594,,20.1930710514||Canada,,Canada,,60,,-96,,1691,,1697,,45295206.9449||Canada,,Canada,,60,,-96,,1896,,1902,,45295206.9449||
+
+
+Milwaukee,,Milwaukee,,43.0389,,-87.9065,,73,,82,,678.829718377||Chicago,,Chicago,,41.85,,-87.6501,,131,,138,,1951.79571954||Chicago,,Chicago,,41.85,,-87.6501,,695,,702,,1951.79571954||Republic of Kenya,,Kenya,,1,,38,,1028,,1033,,958639.017017||
+
+Tarrant County,,Tarrant County,,32.7668,,-97.3003,,540,,554,,2819.33990273||Texas,,Texas,,31.2504,,-99.2506,,815,,820,,1733135.02713||Texas,,Texas,,31.2504,,-99.2506,,887,,892,,1733135.02713||
+Ohio,,Ohio,,40.2503,,-83.0002,,184,,188,,208817.453933||Arlington,,Arlington,,32.7357,,-97.1081,,638,,647,,361.97347854||Arlington,,Arlington,,32.7357,,-97.1081,,1180,,1189,,361.97347854||Fort Worth,,Fort Worth,,32.7254,,-97.3208,,1376,,1386,,734.824234182||Texas,,Texas,,31.2504,,-99.2506,,1829,,1834,,1733135.02713||
+
+
+
+Islamic Republic of Iran,,Iran,,32,,53,,713,,717,,3507567.16567||United States,,United States,,39.76,,-98.5,,864,,877,,78288224.3145||Islamic Republic of Iran,,Iran,,32,,53,,983,,987,,3507567.16567||Islamic Republic of Iran,,Iran,,32,,53,,1022,,1026,,3507567.16567||California,,California,,37.2502,,-119.751,,2121,,2131,,1214026.24542||
+Arlington,,Arlington,,32.7357,,-97.1081,,380,,389,,361.97347854||
+
+
+Arlington,,Arlington,,32.7357,,-97.1081,,1263,,1272,,361.97347854||Fort Worth,,Fort Worth,,32.7254,,-97.3208,,1340,,1350,,734.824234182||
+Arlington,,Arlington,,32.7357,,-97.1081,,257,,266,,361.97347854||
+
+
+
+
+
+
+Walton County,,Walton County,,33.7668,,-83.7332,,523,,536,,1962.92425486||Walton County,,Walton County,,33.7668,,-83.7332,,868,,881,,1962.92425486||Walton County,,Walton County,,33.7668,,-83.7332,,3280,,3293,,1962.92425486||
+
+
+
+Athens,,Athens,,32.2049,,-95.8555,,1151,,1157,,11.8288338864||
+
+
+
+
+
+
+Athens,,Athens,,35.4429,,-84.593,,309,,315,,13.5140718985||
+
+
+Athens,,Athens,,35.4429,,-84.593,,358,,364,,13.5140718985||
+
+
+Nashville,,Nashville,,36.1659,,-86.7844,,77,,86,,548.510003032||Nashville,,Nashville,,36.1659,,-86.7844,,417,,426,,548.510003032||Miami,,Miami,,25.7743,,-80.1937,,789,,794,,369.167985214||
+Madison County,,Madison County,,38.8334,,-89.9001,,678,,692,,2889.68180995||
+
+Fort Worth,,Fort Worth,,32.7254,,-97.3208,,1651,,1661,,734.824234182||
+
+Georgia,,Georgia,,32.7504,,-83.5002,,111,,118,,278911.623965||Georgia,,Georgia,,32.7504,,-83.5002,,1113,,1120,,278911.623965||Georgia,,Georgia,,32.7504,,-83.5002,,1996,,2003,,278911.623965||Oregon,,Oregon,,44.0001,,-120.501,,2487,,2493,,439099.285284||Washington,,Washington,,47.5001,,-120.501,,2498,,2508,,339482.756985||Georgia,,Georgia,,32.7504,,-83.5002,,3152,,3159,,278911.623965||
+South Carolina,,South Carolina,,34.0004,,-81.0001,,54,,68,,191109.917915||Nevada,,Nevada,,39.2502,,-116.751,,1082,,1088,,516746.237059||South Carolina,,South Carolina,,34.0004,,-81.0001,,1688,,1702,,191109.917915||South Carolina,,South Carolina,,34.0004,,-81.0001,,1971,,1985,,191109.917915||
+
+Columbia County,,Columbia County,,33.5501,,-82.2504,,56,,71,,1765.71492702||Richmond County,,Richmond County,,33.3668,,-82.0998,,161,,176,,2056.38596867||Richmond County,,Richmond County,,33.3668,,-82.0998,,953,,968,,2056.38596867||
+Harlem,,Harlem,,33.4146,,-82.3126,,514,,520,,33.1969835335||Harlem,,Harlem,,33.4146,,-82.3126,,1145,,1151,,33.1969835335||Alabama,,Alabama,,32.7504,,-86.7503,,1258,,1265,,215704.950154||
+Georgia,,Georgia,,32.7504,,-83.5002,,92,,99,,278911.623965||Georgia,,Georgia,,32.7504,,-83.5002,,1357,,1364,,278911.623965||Texas,,Texas,,31.2504,,-99.2506,,2322,,2327,,1733135.02713||
+Atlanta,,Atlanta,,33.749,,-84.388,,260,,267,,421.62212526||
+
+
+New Jersey,,New Jersey,,40.1671,,-74.4999,,1170,,1180,,53341.7512047||Connecticut,,Connecticut,,41.667,,-72.6665,,2127,,2138,,26399.1213029||United States,,America,,39.76,,-98.5,,2732,,2739,,78288224.3145||
+
+Mexico,,Mexico,,23,,-102,,397,,403,,7142542.23196||
+
+
+Berlin,,Berlin,,41.6215,,-72.7457,,448,,454,,5.35477735577||
+New Haven,,New Haven,,41.3082,,-72.9282,,847,,856,,177.132888269||
+
+
+
+
+
+Flumeri,,Flumeri,,41.0778,,15.1477,,440,,447,,1.85114800927||Italian Republic,,Italy,,42.8333,,12.8333,,460,,465,,1707966.42452||Kentford,,Kentford,,52.2667,,0.5,,648,,656,,6.53960699416||
+
+County of Cambridgeshire,,Cambridge,,52.3333,,0.0833333,,439,,448,,9213.51629907||County of Cambridgeshire,,Cambridge,,52.3333,,0.0833333,,1465,,1474,,9213.51629907||
+
+Cambridge,,Cambridge,,52.2,,0.116667,,1534,,1543,,174.898078417||
+
+
+Ohio,,Ohio,,40.2503,,-83.0002,,324,,328,,208817.453933||Ohio,,Ohio,,40.2503,,-83.0002,,487,,491,,208817.453933||Ohio,,Ohio,,40.2503,,-83.0002,,767,,771,,208817.453933||
+Cambridge,,Cambridge,,40.0312,,-81.5885,,1157,,1166,,10.4583237085||Cambridge,,Cambridge,,40.0312,,-81.5885,,2461,,2470,,10.4583237085||
+
+Ohio,,Ohio,,40.2503,,-83.0002,,461,,465,,208817.453933||Franklin County,,Franklin County,,39.9667,,-83.0166,,836,,851,,2170.63977585||Akron,,Akron,,41.0814,,-81.519,,990,,995,,219.233265427||Ohio,,Ohio,,40.2503,,-83.0002,,1471,,1475,,208817.453933||Ohio,,Ohio,,40.2503,,-83.0002,,1617,,1621,,208817.453933||Ohio,,Ohio,,40.2503,,-83.0002,,1907,,1911,,208817.453933||
+Ohio,,Ohio,,40.2503,,-83.0002,,105,,109,,208817.453933||Columbus,,Columbus,,39.9612,,-82.9988,,224,,232,,856.555719205||
+
+Warren County,,Warren County,,39.4334,,-84.1666,,480,,493,,1609.14650552||
+
+
+
+South Charleston,,South Charleston,,38.3684,,-81.6996,,621,,637,,14.0454826995||
+
+South Charleston,,South Charleston,,38.3684,,-81.6996,,240,,256,,14.0454826995||South Charleston,,South Charleston,,38.3684,,-81.6996,,362,,378,,14.0454826995||West Virginia,,West Virginia,,38.5004,,-80.5001,,1086,,1099,,209441.311997||Cabell County,,Cabell County,,38.4334,,-82.2499,,1478,,1491,,2082.02210224||South Charleston,,South Charleston,,38.3684,,-81.6996,,2067,,2083,,14.0454826995||
+Kanawha City,,Kanawha City,,38.3215,,-81.5821,,270,,282,,5.1032853187||
+Grant County,,Grant County,,39.1168,,-79.1998,,1908,,1920,,3213.24763198||
+West Virginia,,West Virginia,,38.5004,,-80.5001,,3393,,3406,,209441.311997||Mason County,,Mason County,,38.8001,,-82.0001,,3576,,3588,,3047.97437466||Mason County,,Mason County,,38.8001,,-82.0001,,3646,,3658,,3047.97437466||Mason County,,Mason County,,38.8001,,-82.0001,,3892,,3904,,3047.97437466||Mason County,,Mason County,,38.8001,,-82.0001,,4133,,4145,,3047.97437466||
+Charleston,,Charleston,,38.3498,,-81.6326,,145,,155,,259.731697926||
+
+
+Oregon,,Oregon,,44.0001,,-120.501,,770,,776,,439099.285284||West Virginia,,West Virginia,,38.5004,,-80.5001,,1438,,1451,,209441.311997||Canaan Valley,,Canaan Valley,,39.1348,,-79.4045,,1789,,1802,,5.15892514991||Mount Hood,,Mount Hood,,45.3735,,-121.696,,2889,,2899,,1||Oregon,,Oregon,,44.0001,,-120.501,,2925,,2931,,439099.285284||Michigan,,Michigan,,44.2503,,-85.5003,,2977,,2985,,678344.844308||Colorado,,Colorado,,39.0003,,-105.501,,3055,,3063,,348636.841088||
+
+
+
+Putnam County,,Putnam County,,38.5168,,-81.8832,,87,,100,,1876.35628584||
+
+Florence,,Florence,,34.1954,,-79.7626,,2774,,2782,,36.3025088052||Charleston County,,Charleston County,,32.7668,,-79.9665,,3297,,3314,,10699.489943||
+South Carolina,,South Carolina,,34.0004,,-81.0001,,72,,86,,191109.917915||
+
+Goose Creek,,Goose Creek,,32.981,,-80.0326,,32,,43,,34.6003976045||Berkeley County,,Berkeley County,,33.1835,,-79.9498,,207,,222,,7715.08849141||
+
+Charleston,,Charleston,,32.7766,,-79.9309,,108,,118,,119.065015237||Hampton Park,,Hampton Park,,32.8002,,-79.9562,,608,,620,,1||Charleston,,Charleston,,32.7766,,-79.9309,,624,,634,,119.065015237||
+
+
+
+Lexington,,Lexington,,33.9815,,-81.2362,,1059,,1068,,16.8973559087||
+
+West Columbia,,West Columbia,,33.9935,,-81.074,,169,,182,,14.4820305265||Lexington County,,Lexington County,,33.9001,,-81.2998,,184,,200,,4379.07432262||
+Lexington County,,Lexington County,,33.9001,,-81.2998,,93,,109,,4379.07432262||Lexington,,Lexington,,33.9815,,-81.2362,,301,,310,,16.8973559087||Lexington County,,Lexington County,,33.9001,,-81.2998,,360,,376,,4379.07432262||
+
+
+Greenville,,Greenville,,34.8526,,-82.394,,1803,,1813,,58.5541039189||
+West Columbia,,West Columbia,,33.9935,,-81.074,,657,,670,,14.4820305265||West Columbia,,West Columbia,,33.9935,,-81.074,,958,,971,,14.4820305265||Lexington County,,Lexington County,,33.9001,,-81.2998,,1931,,1947,,4379.07432262||
+
+
+
+
+
+
+Tennessee,,Tennessee,,35.7503,,-86.2503,,156,,165,,181687.03697||Williamson County,,Williamson County,,35.9001,,-86.9,,953,,970,,2637.56124505||
+Ohio,,Ohio,,40.2503,,-83.0002,,96,,100,,208817.453933||Columbus,,Columbus,,39.9612,,-82.9988,,2252,,2260,,856.555719205||Columbus,,Columbus,,39.9612,,-82.9988,,3440,,3448,,856.555719205||Arkansas,,Arkansas,,34.7504,,-92.5004,,3454,,3462,,215082.561889||Minnesota,,Minnesota,,46.2502,,-94.2506,,3853,,3862,,564662.335725||
+
+
+Ohio,,Ohio,,40.2503,,-83.0002,,53,,57,,208817.453933||Cleveland,,Cleveland,,41.4995,,-81.6954,,570,,579,,441.447786619||Columbus,,Columbus,,39.9612,,-82.9988,,581,,589,,856.555719205||Dayton,,Dayton,,39.7589,,-84.1916,,591,,597,,152.39643252||Cincinnati,,Cincinnati,,39.162,,-84.4569,,602,,612,,717.473375607||Columbus,,Columbus,,39.9612,,-82.9988,,3837,,3845,,856.555719205||
+West Virginia,,West Virginia,,38.5004,,-80.5001,,0,,13,,209441.311997||Wood County,,Wood County,,39.2001,,-81.5012,,73,,84,,2430.06523016||Meigs County,,Meigs County,,39.1001,,-82.0165,,221,,233,,2397.301907||Meigs County,,Meigs County,,39.1001,,-82.0165,,344,,356,,2397.301907||Athens,,Athens,,39.3292,,-82.1013,,680,,686,,24.5823269213||
+Columbus,,Columbus,,39.9612,,-82.9988,,210,,218,,856.555719205||Franklin County,,Franklin County,,39.9667,,-83.0166,,1426,,1441,,2170.63977585||
+
+
+
+North Druid Hills,,North Druid Hills,,33.8168,,-84.3133,,283,,300,,22.5168180344||
+
+
+Federal Republic of Nigeria,,Nigeria,,10,,8,,2572,,2579,,1428763.5297||
+
+DeKalb County,,DeKalb County,,41.9167,,-88.7504,,712,,725,,2318.7793722||Hopkins Park,,Hopkins Park,,41.9467,,-88.7373,,792,,804,,1||DeKalb,,DeKalb,,41.9295,,-88.7504,,808,,814,,48.4444127742||DeKalb County,,DeKalb County,,41.9167,,-88.7504,,927,,940,,2318.7793722||
+
+Malta,,Malta,,41.9298,,-88.8609,,2179,,2184,,4.12858805452||
+
+
+Hopkins Park,,Hopkins Park,,41.9467,,-88.7373,,263,,275,,1||DeKalb,,DeKalb,,41.9295,,-88.7504,,279,,285,,48.4444127742||
+
+
+Cuyahoga Falls,,Cuyahoga Falls,,41.1339,,-81.4846,,3434,,3448,,153.316835949||
+
+
+
+
+
+
+
+
+Gainesville,,Gainesville,,33.6259,,-97.1333,,217,,228,,15.6219449962||
+Republic of Iraq,,Iraq,,33,,44,,2635,,2639,,1005267.45951||
+Cooke County,,Cooke County,,33.6334,,-97.217,,1152,,1164,,3580.12708629||Cooke County,,Cooke County,,33.6334,,-97.217,,2003,,2015,,3580.12708629||
+Texas,,Texas,,31.2504,,-99.2506,,1513,,1518,,1733135.02713||
+Socialist Republic of Vietnam,,Vietnam,,16.1667,,107.833,,1083,,1090,,1355944.42013||Italian Republic,,Italy,,42.8333,,12.8333,,1406,,1411,,1707966.42452||Russian Federation,,Russia,,60,,100,,1429,,1435,,86214615.6539||People's Republic of China,,China,,35,,105,,1683,,1688,,32856753.2835||Canada,,Canada,,60,,-96,,1690,,1696,,45295206.9449||People's Republic of China,,China,,35,,105,,1798,,1803,,32856753.2835||Japan,,Japan,,36,,138,,1837,,1842,,8252759.53106||
+Cooke County,,Cooke County,,33.6334,,-97.217,,124,,136,,3580.12708629||
+
+
+
+
+
+
+
+
+Alachua County,,Alachua County,,29.7086,,-82.3332,,290,,304,,3951.52719679||
+
+
+
+
+Albany,,Albany,,31.5785,,-84.1557,,147,,153,,75.1967957944||Albany,,Albany,,31.5785,,-84.1557,,397,,403,,75.1967957944||
+Georgia,,Georgia,,32.7504,,-83.5002,,829,,836,,278911.623965||Florida,,Florida,,28.7505,,-82.5001,,870,,877,,625932.233097||Charlton County,,Charlton County,,30.8336,,-82.1332,,1142,,1157,,4708.24299215||
+Georgia,,Georgia,,32.7504,,-83.5002,,784,,791,,278911.623965||United States,,United States,,39.76,,-98.5,,1224,,1237,,78288224.3145||
+
+
+
+Georgia,,Georgia,,32.7504,,-83.5002,,1347,,1354,,278911.623965||Texas,,Texas,,31.2504,,-99.2506,,2312,,2317,,1733135.02713||
+Moscow,,Moscow,,55.7522,,37.6156,,390,,396,,15549.4381682||
+
+Georgia,,Georgia,,42,,43.5,,1632,,1639,,210475.208844||
+Russian Federation,,Russia,,60,,100,,272,,278,,86214615.6539||Paris,,Paris,,48.8534,,2.3488,,600,,605,,2720.43296267||Republic of France,,France,,46,,2,,770,,776,,1774300.88716||Georgia,,Georgia,,42,,43.5,,818,,825,,210475.208844||Russian Federation,,Russia,,60,,100,,1586,,1592,,86214615.6539||Russian Federation,,Russia,,60,,100,,1645,,1651,,86214615.6539||Russian Federation,,Russia,,60,,100,,1860,,1866,,86214615.6539||Russian Federation,,Russia,,60,,100,,2010,,2016,,86214615.6539||
+Georgia,,Georgia,,32.7504,,-83.5002,,800,,807,,278911.623965||
+Georgia,,Georgia,,42,,43.5,,37,,44,,210475.208844||United States,,United States,,39.76,,-98.5,,121,,134,,78288224.3145||
+
+
+
+Hartford,,Hartford,,41.7637,,-72.6851,,95,,103,,1||Hartford,,Hartford,,41.7637,,-72.6851,,1422,,1430,,1||
+
+
+
+
+Walker County,,Walker County,,30.7335,,-95.5669,,1952,,1965,,1||
+Ohio,,Ohio,,40.2503,,-83.0002,,1332,,1336,,1||
+
+Republic of Iraq,,Iraq,,33,,44,,132,,136,,1||Pittsburgh,,Pittsburgh,,40.4406,,-79.9959,,830,,840,,1||Republic of Iraq,,Iraq,,33,,44,,943,,947,,1||Republic of Iraq,,Iraq,,33,,44,,1162,,1166,,1||Republic of Iraq,,Iraq,,33,,44,,2173,,2177,,1||Islamic Republic of Afghanistan,,Afghanistan,,33,,65,,2179,,2190,,1||Republic of Iraq,,Iraq,,33,,44,,2421,,2425,,1||
+
+
+
+
+
+Robbinsdale,,Robbinsdale,,45.0322,,-93.3386,,697,,708,,1||
+United States,,America,,39.76,,-98.5,,5093,,5100,,1||Rochester,,Rochester,,44.0216,,-92.4699,,7305,,7314,,1||
+
+
+
+Johnson County,,Johnson County,,38.8667,,-94.8669,,26,,40,,1||Johnson County,,Johnson County,,38.8667,,-94.8669,,79,,93,,1||Johnson County,,Johnson County,,38.8667,,-94.8669,,211,,225,,1||
+
+
+Cass County,,Cass County,,38.65,,-94.3669,,24,,35,,1||Kansas City,,Kansas City,,39.1142,,-94.6275,,1390,,1401,,1||Kansas City,,Kansas City,,39.1142,,-94.6275,,1472,,1483,,1||Kansas City,,Kansas City,,39.1142,,-94.6275,,1761,,1772,,1||Roanoke Park,,Roanoke Park,,39.0633,,-94.5994,,1966,,1978,,1||Kansas City,,Kansas City,,39.0997,,-94.5786,,1982,,1993,,1||Kansas City,,Kansas City,,39.1142,,-94.6275,,2092,,2103,,1||Kansas City,,Kansas City,,39.1142,,-94.6275,,2325,,2336,,1||
+
+Kansas City,,Kansas City,,39.1142,,-94.6275,,98,,109,,1||
+
+Boulder City,,Boulder City,,35.9786,,-114.832,,11,,23,,1||
+North Las Vegas,,North Las Vegas,,36.1989,,-115.118,,19,,34,,1||North Las Vegas,,North Las Vegas,,36.1989,,-115.118,,149,,164,,1||
+Las Vegas,,Las Vegas,,36.175,,-115.137,,222,,231,,1||Nevada,,Nevada,,39.2502,,-116.751,,1358,,1364,,1||Las Vegas,,Las Vegas,,36.175,,-115.137,,1389,,1398,,1||
+Las Vegas,,Las Vegas,,36.175,,-115.137,,143,,152,,1||Las Vegas,,Las Vegas,,36.175,,-115.137,,327,,336,,1||Las Vegas,,Las Vegas,,36.175,,-115.137,,873,,882,,1||San Diego,,San Diego,,32.7153,,-117.157,,927,,936,,1||Las Vegas,,Las Vegas,,36.175,,-115.137,,1055,,1064,,1||Las Vegas,,Las Vegas,,36.175,,-115.137,,1104,,1113,,1||
+
+Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,110,,117,,1||
+Grantville,,Grantville,,40.3779,,-76.6464,,610,,620,,1||Virginia,,Virginia,,37.5481,,-77.4467,,1246,,1254,,1||
+Lebanon,,Lebanon,,40.3409,,-76.4113,,109,,116,,1||
+Lebanon,,Lebanon,,40.3409,,-76.4113,,477,,484,,1||Lebanon,,Lebanon,,40.3409,,-76.4113,,701,,708,,1||Lebanon,,Lebanon,,40.3409,,-76.4113,,919,,926,,1||
+
+
+
+
+
+Lebanon,,Lebanon,,40.0484,,-86.4692,,119,,126,,1||
+
+
+
+Beirut,,Beirut,,33.8719,,35.5097,,220,,226,,1||
+State of Israel,,Israel,,31.5,,34.75,,0,,6,,1||State of Israel,,Israel,,31.5,,34.75,,59,,65,,1||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,344,,351,,1||State of Israel,,Israel,,31.5,,34.75,,830,,836,,1||
+Beirut,,Beirut,,33.8719,,35.5097,,972,,978,,1||
+Federal Democratic Republic of Ethiopia,,Ethiopia,,8,,38,,349,,357,,1||Republic of the Sudan,,Sudan,,15,,30,,376,,381,,1||Syrian Arab Republic,,Syria,,35,,38,,386,,391,,1||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,486,,493,,1||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,1312,,1319,,1||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,2772,,2779,,1||
+Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,820,,827,,1||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,1455,,1462,,1||
+
+
+
+
+
+
+
+
+
+
+London,,London,,42.9834,,-81.233,,141,,147,,1||
+London,,London,,42.9834,,-81.233,,443,,449,,1||London,,London,,42.9834,,-81.233,,849,,855,,1||London,,London,,42.9834,,-81.233,,908,,914,,1||
+Toronto,,Toronto,,43.7001,,-79.4163,,479,,486,,1||
+
+
+
+
+
+Clay County,,Clay County,,37.1668,,-83.7505,,897,,908,,1||California,,California,,37.2502,,-119.751,,927,,937,,1||
+
+Laurel County,,Laurel County,,37.1334,,-84.1333,,1309,,1322,,1||
+Clark County,,Clark County,,37.9834,,-84.2666,,2868,,2880,,1||
+
+Kentucky,,Kentucky,,38.2004,,-84.8776,,484,,492,,1||
+
+
+
+Sylmar,,Sylmar,,34.3078,,-118.449,,414,,420,,1||
+
+New Delhi,,New Delhi,,28.6,,77.2,,539,,548,,1||Santa Ana,,Santa Ana,,33.7456,,-117.868,,2116,,2125,,1||Los Angeles,,Los Angeles,,34.0522,,-118.244,,2129,,2140,,1||
+
+Orange County,,Orange County,,33.7,,-117.768,,37,,50,,1||Los Angeles,,Los Angeles,,34.0522,,-118.244,,376,,387,,1||
+Chowchilla,,Chowchilla,,37.123,,-120.26,,419,,429,,1||Los Angeles,,Los Angeles,,34.0522,,-118.244,,844,,855,,1||
+United States,,United States,,39.76,,-98.5,,349,,362,,1||
+South Los Angeles,,South Los Angeles,,33.9275,,-118.278,,187,,204,,1||
+
+
+San Pedro,,San Pedro,,33.7359,,-118.292,,184,,193,,1||
+
+
+San Diego,,San Diego,,32.7153,,-117.157,,92,,101,,1||Albuquerque,,Albuquerque,,35.0845,,-106.651,,217,,228,,1||
+
+
+Riley County,,Riley County,,39.3333,,-96.7003,,31,,43,,1||Riley County,,Riley County,,39.3333,,-96.7003,,430,,442,,1||
+Saint George,,St. George,,39.1911,,-96.4203,,1080,,1090,,1||
+
+
+Kansas,,Kansas,,38.5003,,-98.5006,,78,,84,,1||Kansas,,Kansas,,38.5003,,-98.5006,,204,,210,,1||Marion County,,Marion County,,38.4,,-97.1503,,450,,463,,1||Riley County,,Riley County,,39.3333,,-96.7003,,814,,826,,1||
+
+
+Volusia County,,Volusia County,,29.0836,,-81.2081,,542,,556,,1||Volusia County,,Volusia County,,29.0836,,-81.2081,,849,,863,,1||Melbourne,,Melbourne,,28.0836,,-80.6081,,1739,,1748,,1||
+
+
+
+Republic of Chile,,Chile,,-30,,-71,,288,,293,,20489230.4377||
+Russian Federation,,Russia,,60,,100,,1815,,1821,,86214615.6539||New York,,New York,,43.0003,,-75.4999,,2412,,2420,,448335.886951||Los Angeles,,Los Angeles,,34.0522,,-118.244,,2435,,2446,,4020.63969818||Moscow,,Moscow,,55.7522,,37.6156,,2617,,2623,,15549.4381682||Baltimore,,Baltimore,,42.7353,,-76.1258,,3139,,3148,,5.4527034587||Moscow,,Moscow,,55.7522,,37.6156,,3152,,3158,,15549.4381682||New York,,New York,,43.0003,,-75.4999,,3914,,3922,,448335.886951||Moscow,,Moscow,,55.7522,,37.6156,,3927,,3933,,15549.4381682||Russian Federation,,Russia,,60,,100,,4735,,4741,,86214615.6539||Moscow,,Moscow,,55.7522,,37.6156,,4806,,4812,,15549.4381682||United States,,United States,,39.76,,-98.5,,4821,,4834,,78288224.3145||Moscow,,Moscow,,55.7522,,37.6156,,5041,,5047,,15549.4381682||Chicago,,Chicago,,41.85,,-87.6501,,5070,,5077,,1951.79571954||New York,,New York,,43.0003,,-75.4999,,5147,,5155,,448335.886951||Atlanta,,Atlanta,,33.749,,-84.388,,5160,,5167,,421.62212526||
+Georgia,,Georgia,,42,,43.5,,316,,323,,210475.208844||Republic of Azerbaijan,,Azerbaijan,,40.5,,47.5,,328,,338,,253787.132703||Chechenskaya Respublika,,Chechnya,,43.3,,45.7,,1978,,1986,,35051.5860531||
+Yekaterinburg,,Yekaterinburg,,56.8575,,60.6125,,105,,118,,2065.25605757||
+Russian Federation,,Russia,,60,,100,,3877,,3883,,86214615.6539||
+Georgia,,Georgia,,42,,43.5,,336,,343,,210475.208844||Russian Federation,,Russia,,60,,100,,367,,373,,86214615.6539||
+
+New London,,New London,,40.927,,-91.3996,,1468,,1478,,1.32349189167||
+
+
+Big Creek,,Big Creek,,40.8542,,-91.4793,,137,,146,,1||Washington County,,Washington County,,41.3334,,-91.7168,,672,,689,,2005.21798028||
+Iowa,,Iowa,,42.0003,,-93.5005,,33,,37,,251330.308065||Iowa,,Iowa,,42.0003,,-93.5005,,128,,132,,251330.308065||Iowa,,Iowa,,42.0003,,-93.5005,,184,,188,,251330.308065||Nebraska,,Nebraska,,41.5003,,-99.7507,,301,,309,,324761.269834||Iowa,,Iowa,,42.0003,,-93.5005,,314,,318,,251330.308065||
+
+
+
+
+Mount Pleasant,,Mount Pleasant,,33.1568,,-94.9683,,30,,44,,14.3432989941||
+
+Michigan,,Michigan,,44.2503,,-85.5003,,605,,613,,678344.844308||Canada,,Canada,,60,,-96,,1309,,1315,,45295206.9449||Greenville,,Greenville,,33.1385,,-96.1108,,1897,,1907,,25.1045508099||Texas,,Texas,,31.2504,,-99.2506,,2453,,2458,,1733135.02713||
+North Carolina,,North Carolina,,35.5007,,-80.0003,,155,,169,,312939.681168||Raleigh,,Raleigh,,35.7721,,-78.6386,,949,,956,,414.815075938||North Carolina,,North Carolina,,35.5007,,-80.0003,,960,,974,,312939.681168||Federal Republic of Germany,,Germany,,51.5,,10.5,,3578,,3585,,882992.437947||
+
+
+New Zealand,,New Zealand,,-42,,174,,192,,203,,5284207.22607||United States,,United States,,39.76,,-98.5,,391,,404,,78288224.3145||New Hampshire,,New Hampshire,,43.667,,-71.4998,,510,,523,,63963.0027169||Minnesota,,Minnesota,,46.2502,,-94.2506,,528,,537,,564662.335725||New Zealand,,New Zealand,,-42,,174,,575,,586,,5284207.22607||New Zealand,,New Zealand,,-42,,174,,733,,744,,5284207.22607||New Zealand,,New Zealand,,-42,,174,,844,,855,,5284207.22607||New Zealand,,New Zealand,,-42,,174,,1134,,1145,,5284207.22607||New Zealand,,New Zealand,,-42,,174,,1809,,1820,,5284207.22607||North Island,,North Island,,-39,,176,,2009,,2021,,528904.075311||South Island,,South Island,,-43,,171,,2052,,2064,,603046.880482||
+
+Federal Republic of Germany,,Germany,,51.5,,10.5,,1745,,1752,,882992.437947||
+
+
+Islamic Republic of Pakistan,,Pakistan,,30,,70,,77,,85,,2812414.23183||Islamabad,,Islamabad,,33.61,,73.0591,,882,,891,,603.48883676||Islamabad,,Islamabad,,33.61,,73.0591,,1179,,1188,,603.48883676||Lahore,,Lahore,,31.5497,,74.3436,,1297,,1303,,6197.06318344||Punjab,,Punjab,,31,,72,,1307,,1313,,473541.865019||Islamic Republic of Pakistan,,Pakistan,,30,,70,,1539,,1547,,2812414.23183||Islamic Republic of Pakistan,,Pakistan,,30,,70,,2332,,2340,,2812414.23183||
+Sacramento River,,Sacramento River,,38.0633,,-121.853,,1493,,1509,,1||California,,California,,37.2502,,-119.751,,2284,,2294,,1214026.24542||Santa Cruz,,Santa Cruz,,36.9741,,-122.031,,2775,,2785,,61.3906021015||Farallon Islands,,Farallon Islands,,37.7333,,-123.034,,3313,,3329,,1||California,,California,,37.2502,,-119.751,,4114,,4124,,1214026.24542||
+Alameda County,,Alameda County,,37.5999,,-121.884,,1111,,1125,,4856.10992797||
+Sacramento,,Sacramento,,38.5816,,-121.494,,695,,705,,497.295809151||
+Sacramento,,Sacramento,,38.5816,,-121.494,,4091,,4101,,497.295809151||
+Cedar County,,Cedar County,,42.6,,-97.267,,158,,170,,3027.36583149||Cedar County,,Cedar County,,42.6,,-97.267,,1028,,1040,,3027.36583149||
+
+Norfolk,,Norfolk,,42.0283,,-97.417,,1587,,1594,,26.9535227111||
+
+Norfolk,,Norfolk,,42.0283,,-97.417,,994,,1001,,26.9535227111||Battle Creek,,Battle Creek,,41.9995,,-97.5984,,1041,,1053,,1.34723237775||Battle Creek,,Battle Creek,,41.9995,,-97.5984,,1081,,1093,,1.34723237775||Wakefield,,Wakefield,,42.2692,,-96.865,,1758,,1767,,1.35240852124||
+
+
+
+
+
+
+
+Europe,,Europe,,48.691,,9.14062,,1014,,1020,,43558830.8626||
+
+
+Butler County,,Butler County,,39.4501,,-84.5666,,166,,179,,1796.95471222||
+Trenton,,Trenton,,39.4809,,-84.4577,,397,,404,,27.1401632619||
+
+Lima,,Lima,,40.7425,,-84.1052,,288,,292,,126.482802481||Middletown,,Middletown,,39.5151,,-84.3983,,330,,340,,141.452348034||Montgomery County,,Montgomery,,39.7503,,-84.2999,,1355,,1365,,1853.3808459||
+
+Middletown,,Middletown,,39.5151,,-84.3983,,132,,142,,141.452348034||Middletown,,Middletown,,39.5151,,-84.3983,,273,,283,,141.452348034||
+Ohio,,Ohio,,40.2503,,-83.0002,,309,,313,,208817.453933||Middletown,,Middletown,,39.5151,,-84.3983,,1005,,1015,,141.452348034||Ohio,,Ohio,,40.2503,,-83.0002,,1103,,1107,,208817.453933||Ohio,,Ohio,,40.2503,,-83.0002,,1558,,1562,,208817.453933||
+
+
+United States,,United States,,39.76,,-98.5,,64,,77,,78288224.3145||Russian Federation,,Russia,,60,,100,,82,,88,,86214615.6539||Georgia,,Georgia,,42,,43.5,,228,,235,,210475.208844||Russian Federation,,Russia,,60,,100,,504,,510,,86214615.6539||Moscow,,Moscow,,55.7522,,37.6156,,618,,624,,15549.4381682||Russian Federation,,Russia,,60,,100,,898,,904,,86214615.6539||Washington,,Washington,,38.8951,,-77.0364,,1001,,1011,,645.022610537||Moscow,,Moscow,,55.7522,,37.6156,,1016,,1022,,15549.4381682||Republic of Poland,,Poland,,52,,20,,1128,,1134,,723591.948916||Ceska republika,,Czech Republic,,49.75,,15,,1143,,1157,,210532.211537||Islamic Republic of Iran,,Iran,,32,,53,,1307,,1311,,3507567.16567||Islamic Republic of Iran,,Iran,,32,,53,,1409,,1413,,3507567.16567||United States,,United States,,39.76,,-98.5,,1459,,1472,,78288224.3145||Moscow,,Moscow,,55.7522,,37.6156,,1517,,1523,,15549.4381682||United States,,United States,,39.76,,-98.5,,1652,,1665,,78288224.3145||Canada,,Canada,,60,,-96,,2851,,2857,,45295206.9449||Canada,,Canada,,60,,-96,,3315,,3321,,45295206.9449||
+Toronto,,Toronto,,43.7001,,-79.4163,,1177,,1184,,3008.50950074||
+Calgary,,Calgary,,51.0501,,-114.085,,1825,,1832,,1355.27374059||Edmonton,,Edmonton,,53.5501,,-113.469,,2914,,2922,,1001.37971359||
+Toronto,,Toronto,,43.7001,,-79.4163,,1336,,1343,,3008.50950074||Toronto,,Toronto,,43.7001,,-79.4163,,2959,,2966,,3008.50950074||Tokyo,,Tokyo,,35.685,,139.751,,3040,,3045,,8599.51258206||People's Republic of China,,China,,35,,105,,3362,,3367,,32856753.2835||
+Ontario,,Ontario,,49.2501,,-84.4998,,1871,,1878,,3840875.06802||Ontario,,Ontario,,49.2501,,-84.4998,,5929,,5936,,3840875.06802||
+Woodstock,,Woodstock,,43.1334,,-80.7497,,2692,,2701,,38.4099983932||
+Toronto,,Toronto,,43.7001,,-79.4163,,480,,487,,3008.50950074||Ontario,,Ontario,,49.2501,,-84.4998,,2567,,2574,,3840875.06802||
+Athens,,Athens,,32.2049,,-95.8555,,111,,117,,11.8288338864||Henderson County,,Henderson County,,32.2002,,-95.8336,,279,,295,,4508.04478289||Gulf of Mexico,,Gulf of Mexico,,25,,-90,,355,,369,,1||Beaumont,,Beaumont,,30.086,,-94.1018,,375,,383,,113.379664912||Texas,,Texas,,31.2504,,-99.2506,,2007,,2012,,1733135.02713||Athens,,Athens,,32.2049,,-95.8555,,2726,,2732,,11.8288338864||
+
+
+Freestone County,,Freestone County,,31.7002,,-96.2669,,980,,996,,5319.56947513||Fairfield,,Fairfield,,31.7246,,-96.1652,,1476,,1485,,2.35414569183||
+
+
+
+
+Palestine,,Palestine,,31.7621,,-95.6308,,268,,277,,17.6579409579||
+Illinois,,Illinois,,40.0003,,-89.2504,,112,,120,,307837.580845||Indiana,,Indiana,,40.0003,,-86.2503,,738,,745,,163530.527555||
+Paris,,Paris,,39.6111,,-87.6961,,1692,,1697,,9.09132078837||
+
+
+Edgar County,,Edgar County,,39.6667,,-87.7506,,150,,162,,2194.14432552||Kansas,,Kansas,,38.5003,,-98.5006,,248,,254,,277931.85361||Kansas,,Kansas,,38.5003,,-98.5006,,357,,363,,277931.85361||
+
+Paris,,Paris,,39.6111,,-87.6961,,469,,474,,9.09132078837||
+Paris,,Paris,,39.6111,,-87.6961,,1683,,1688,,9.09132078837||Paris,,Paris,,39.6111,,-87.6961,,1978,,1983,,9.09132078837||
+Paris,,Paris,,39.6111,,-87.6961,,219,,224,,9.09132078837||Paris,,Paris,,39.6111,,-87.6961,,1149,,1154,,9.09132078837||Urbana,,Urbana,,40.1106,,-88.2073,,1599,,1605,,44.5042442606||
+Paris,,Paris,,36.302,,-88.3267,,34,,39,,9.93587961109||
+Tennessee,,Tennessee,,35.7503,,-86.2503,,905,,914,,181687.03697||
+Paris,,Paris,,36.302,,-88.3267,,65,,70,,9.93587961109||
+Paris,,Paris,,36.302,,-88.3267,,57,,62,,9.93587961109||
+Benton County,,Benton County,,36.0834,,-88.0834,,389,,402,,2101.14961887||Stewart County,,Stewart County,,36.4834,,-87.8334,,505,,519,,2074.11489232||Williamson County,,Williamson County,,35.9001,,-86.9,,726,,743,,2637.56124505||
+United States,,United States,,39.76,,-98.5,,1292,,1305,,78288224.3145||
+
+
+
+
+
+
+
+
+
+Allegheny County,,Allegheny County,,40.6253,,-80.1251,,1926,,1942,,3979.16366364||
+Atlanta,,Atlanta,,33.749,,-84.388,,591,,598,,421.62212526||
+
+
+Arab Republic of Egypt,,Egypt,,27,,30,,1191,,1196,,1500560.22941||Oakland,,Oakland,,40.442,,-79.9626,,1589,,1596,,5.26130243933||
+Cleveland,,Cleveland,,41.4995,,-81.6954,,3588,,3597,,441.447786619||
+
+
+
+
+
+
+
+
+Richmond,,Richmond,,37.5538,,-77.4603,,108,,116,,214.740648751||Richmond,,Richmond,,37.5538,,-77.4603,,958,,966,,214.740648751||Richmond,,Richmond,,37.5538,,-77.4603,,2135,,2143,,214.740648751||
+Connecticut,,Connecticut,,41.667,,-72.6665,,223,,234,,26399.1213029||Fairfield,,Fairfield,,41.1412,,-73.2637,,374,,383,,65.1390541281||
+
+
+California,,California,,37.2502,,-119.751,,1326,,1336,,1214026.24542||Richmond,,Richmond,,37.5538,,-77.4603,,2869,,2877,,214.740648751||
+
+Florida,,Florida,,28.7505,,-82.5001,,1021,,1028,,625932.233097||Alabama,,Alabama,,32.7504,,-86.7503,,1200,,1207,,215704.950154||Florida,,Florida,,28.7505,,-82.5001,,1285,,1292,,625932.233097||
+
+
+
+
+
+
+
+Palestine,,Palestine,,40.0495,,-84.7433,,106,,115,,0.0523305138463||
+Indianapolis,,Indianapolis,,39.7684,,-86.158,,15,,27,,901.127552716||Indianapolis,,Indianapolis,,39.7684,,-86.158,,274,,286,,901.127552716||Indianapolis,,Indianapolis,,39.7684,,-86.158,,410,,422,,901.127552716||Indianapolis,,Indianapolis,,39.7684,,-86.158,,532,,544,,901.127552716||
+
+
+
+
+Richmond,,Richmond,,39.8289,,-84.8902,,71,,79,,39.1057913384||
+
+
+
+New York,,New York,,43.0003,,-75.4999,,566,,574,,448335.886951||
+
+Madison County,,Madison County,,37.7334,,-84.2999,,1328,,1342,,2248.97931714||Richmond,,Richmond,,37.7479,,-84.2947,,1926,,1934,,32.9117933671||
+Washington,,Washington,,38.8951,,-77.0364,,1026,,1036,,645.022610537||
+California,,California,,37.2502,,-119.751,,2442,,2452,,1214026.24542||
+
+Madison County,,Madison County,,37.7334,,-84.2999,,759,,773,,2248.97931714||Kentucky,,Kentucky,,38.2004,,-84.8776,,1628,,1636,,249406.315882||
+
+
+
+
+
+Hounslow,,Hounslow,,51.4684,,-0.360918,,85,,93,,25.7145043926||
+
+
+Republic of Rwanda,,Rwanda,,-2,,30,,58,,64,,45085.9495597||Republic of Rwanda,,Rwanda,,-2,,30,,224,,230,,45085.9495597||
+
+Richmond,,Richmond,,51.46,,-0.300751,,220,,228,,9.63261500489||London,,London,,51.5084,,-0.125533,,314,,320,,10204.0962132||London,,London,,51.5084,,-0.125533,,537,,543,,10204.0962132||Richmond,,Richmond,,51.46,,-0.300751,,592,,600,,9.63261500489||London,,London,,51.5084,,-0.125533,,686,,692,,10204.0962132||Richmond,,Richmond,,51.46,,-0.300751,,856,,864,,9.63261500489||Richmond,,Richmond,,51.46,,-0.300751,,1216,,1224,,9.63261500489||Richmond,,Richmond,,51.46,,-0.300751,,1698,,1706,,9.63261500489||
+United Kingdom of Great Britain and Northern Ireland,,Britain,,54,,-4,,1631,,1638,,13840535.7201||
+
+
+
+
+
+
+Moscow,,Moscow,,55.7522,,37.6156,,412,,418,,15549.4381682||Russian Federation,,Russia,,60,,100,,566,,572,,86214615.6539||Russian Federation,,Russia,,60,,100,,694,,700,,86214615.6539||
+United States,,America,,39.76,,-98.5,,466,,473,,78288224.3145||Russian Federation,,Russia,,60,,100,,732,,738,,86214615.6539||United States,,America,,39.76,,-98.5,,763,,770,,78288224.3145||Republic of France,,France,,46,,2,,1383,,1389,,1774300.88716||San Diego,,San Diego,,32.7153,,-117.157,,1667,,1676,,1297.31192159||Russian Federation,,Russia,,60,,100,,1827,,1833,,86214615.6539||Russian Federation,,Russia,,60,,100,,1965,,1971,,86214615.6539||Russian Federation,,Russia,,60,,100,,2051,,2057,,86214615.6539||Russian Federation,,Russia,,60,,100,,2149,,2155,,86214615.6539||Russian Federation,,Russia,,60,,100,,2593,,2599,,86214615.6539||United States,,America,,39.76,,-98.5,,2681,,2688,,78288224.3145||Russian Federation,,Russia,,60,,100,,2832,,2838,,86214615.6539||
+Baghdad,,Baghdad,,33.3386,,44.3939,,126,,133,,7231.50494083||Republic of Iraq,,Iraq,,33,,44,,228,,232,,1005267.45951||
+Georgia,,Georgia,,42,,43.5,,35,,42,,210475.208844||Russian Federation,,Russia,,60,,100,,1262,,1268,,86214615.6539||
+
+Russian Federation,,Russia,,60,,100,,302,,308,,86214615.6539||United Kingdom of Great Britain and Northern Ireland,,Britain,,54,,-4,,1978,,1985,,13840535.7201||London,,London,,51.5084,,-0.125533,,2057,,2063,,10204.0962132||
+
+Santa Clara,,Santa Clara,,37.3541,,-121.955,,980,,991,,122.176090265||Santa Clara,,Santa Clara,,37.3541,,-121.955,,1828,,1839,,122.176090265||Rhode Island,,Rhode Island,,41.7504,,-71.4998,,2066,,2078,,9348.0645488||
+
+Oakland,,Oakland,,37.8044,,-122.271,,1245,,1252,,412.067788291||San Francisco,,San Francisco,,37.7749,,-122.419,,1943,,1956,,850.799163505||Oakland,,Oakland,,37.8044,,-122.271,,2348,,2355,,412.067788291||San Francisco,,San Francisco,,37.7749,,-122.419,,3851,,3864,,850.799163505||
+Los Altos,,Los Altos,,37.3852,,-122.114,,599,,608,,30.2300586586||
+
+Connecticut,,Connecticut,,41.667,,-72.6665,,58,,69,,26399.1213029||Connecticut,,Connecticut,,41.667,,-72.6665,,374,,385,,26399.1213029||Los Angeles,,Los Angeles,,34.0522,,-118.244,,1109,,1120,,4020.63969818||Los Angeles,,Los Angeles,,34.0522,,-118.244,,1412,,1423,,4020.63969818||Connecticut,,Connecticut,,41.667,,-72.6665,,2346,,2357,,26399.1213029||Los Angeles,,Los Angeles,,34.0522,,-118.244,,3801,,3812,,4020.63969818||Connecticut,,Connecticut,,41.667,,-72.6665,,5690,,5701,,26399.1213029||
+California,,California,,37.2502,,-119.751,,793,,803,,1214026.24542||San Jose,,San Jose,,37.3394,,-121.895,,1512,,1520,,993.452531471||San Jose,,San Jose,,37.3394,,-121.895,,1580,,1588,,993.452531471||San Jose,,San Jose,,37.3394,,-121.895,,1883,,1891,,993.452531471||Los Gatos,,Los Gatos,,37.2266,,-121.975,,2942,,2951,,72.2090698496||
+Boston,,Boston,,42.3584,,-71.0598,,564,,570,,946.403021327||West Stockbridge,,West Stockbridge,,42.3459,,-73.3662,,680,,696,,1.35502628406||Springfield,,Springfield,,42.1015,,-72.5898,,713,,724,,183.930320158||West Newton,,West Newton,,42.3501,,-71.2328,,938,,949,,5.41709396673||West Stockbridge,,West Stockbridge,,42.3459,,-73.3662,,3133,,3149,,1.35502628406||New York,,New York,,43.0003,,-75.4999,,3159,,3167,,448335.886951||Boston,,Boston,,42.3584,,-71.0598,,3562,,3568,,946.403021327||Boston,,Boston,,42.3584,,-71.0598,,3599,,3605,,946.403021327||New York,,New York,,43.0003,,-75.4999,,3874,,3882,,448335.886951||Boston,,Boston,,42.3584,,-71.0598,,4704,,4710,,946.403021327||
+West Springfield,,West Springfield,,42.107,,-72.6204,,285,,301,,31.0326231718||
+
+Boston,,Boston,,42.3584,,-71.0598,,586,,592,,946.403021327||Chicago,,Chicago,,41.85,,-87.6501,,616,,623,,1951.79571954||
+
+
+West Springfield,,West Springfield,,42.107,,-72.6204,,179,,195,,31.0326231718||Italian Republic,,Italy,,42.8333,,12.8333,,2979,,2984,,1707966.42452||
+
+Greene County,,Greene County,,37.2667,,-93.3502,,809,,822,,2382.94368948||Springfield,,Springfield,,37.2153,,-93.2982,,2479,,2490,,548.656414655||
+
+Springfield,,Springfield,,37.2153,,-93.2982,,178,,189,,548.656414655||Springfield,,Springfield,,37.2153,,-93.2982,,834,,845,,548.656414655||
+
+Springfield,,Springfield,,39.8017,,-89.6437,,347,,358,,125.128241357||
+Springfield,,Springfield,,37.2153,,-93.2982,,404,,415,,548.656414655||
+
+
+Middletown,,Middletown,,39.5151,,-84.3983,,2535,,2545,,141.452348034||
+Georgia,,Georgia,,32.7504,,-83.5002,,213,,220,,278911.623965||Greene County,,Greene County,,39.6834,,-83.8999,,436,,449,,1734.13621947||Arizona,,Arizona,,34.5003,,-111.501,,1156,,1163,,404982.16434||California,,California,,37.2502,,-119.751,,1168,,1178,,1214026.24542||Columbus,,Columbus,,39.9612,,-82.9988,,1358,,1366,,856.555719205||Columbus,,Columbus,,39.9612,,-82.9988,,1527,,1535,,856.555719205||Atlanta,,Atlanta,,33.749,,-84.388,,1850,,1857,,421.62212526||Atlanta,,Atlanta,,33.749,,-84.388,,2123,,2130,,421.62212526||Florida,,Florida,,28.7505,,-82.5001,,2135,,2142,,625932.233097||
+New Miami,,New Miami,,39.4348,,-84.5369,,205,,214,,1.29601527908||New Miami,,New Miami,,39.4348,,-84.5369,,610,,619,,1.29601527908||
+
+Ohio,,Ohio,,40.2503,,-83.0002,,983,,987,,208817.453933||Hawaii,,Hawaii,,20.7503,,-156.5,,1566,,1572,,2828447.50929||Florida,,Florida,,28.7505,,-82.5001,,1586,,1593,,625932.233097||
+Springfield,,Springfield,,39.9242,,-83.8088,,389,,400,,65.2637764232||Springfield,,Springfield,,39.9242,,-83.8088,,1337,,1348,,65.2637764232||
+
+
+Columbus,,Columbus,,32.461,,-84.9877,,577,,585,,187.492721744||Phenix City,,Phenix City,,32.471,,-85.0008,,801,,812,,294.819544988||Phenix City,,Phenix City,,32.471,,-85.0008,,1317,,1328,,294.819544988||Alabama,,Alabama,,32.7504,,-86.7503,,1371,,1378,,215704.950154||Georgia,,Georgia,,32.7504,,-83.5002,,1413,,1420,,278911.623965||Alabama,,Alabama,,32.7504,,-86.7503,,1422,,1429,,215704.950154||
+
+Columbus,,Columbus,,32.461,,-84.9877,,92,,100,,187.492721744||Harris County,,Harris County,,32.7335,,-84.8999,,1531,,1544,,1806.20966175||
+Texas,,Texas,,31.2504,,-99.2506,,185,,190,,1733135.02713||
+Rock Hill,,Rock Hill,,34.9249,,-81.0251,,31,,40,,67.1518762083||
+
+South Carolina,,South Carolina,,34.0004,,-81.0001,,110,,124,,191109.917915||
+Rock Hill,,Rock Hill,,34.9249,,-81.0251,,1196,,1205,,67.1518762083||York County,,York County,,34.9835,,-81.1831,,1221,,1232,,2675.94885514||Huntersville,,Huntersville,,35.4107,,-80.8428,,1976,,1988,,46.6661699543||
+
+
+
+
+
+
+Latakia,,Latakia,,35.5167,,35.7833,,956,,963,,348.318543538||Syrian Arab Republic,,Syria,,35,,38,,1241,,1246,,412525.791019||Europe,,Europe,,48.691,,9.14062,,1352,,1358,,43558830.8626||
+Gaza,,Gaza,,31.5,,34.4667,,39,,43,,400.54859022||Gaza,,Gaza,,31.5,,34.4667,,135,,139,,400.54859022||Gaza,,Gaza,,31.5,,34.4667,,287,,291,,400.54859022||Gaza,,Gaza,,31.5,,34.4667,,383,,387,,400.54859022||Gaza,,Gaza,,31.5,,34.4667,,484,,488,,400.54859022||State of Israel,,Israel,,31.5,,34.75,,559,,565,,76388.4422554||Gaza,,Gaza,,31.5,,34.4667,,665,,669,,400.54859022||State of Israel,,Israel,,31.5,,34.75,,800,,806,,76388.4422554||Arab Republic of Egypt,,Egypt,,27,,30,,811,,816,,1500560.22941||Gaza,,Gaza,,31.5,,34.4667,,842,,846,,400.54859022||
+Red Sea,,Red Sea,,19,,39.5,,45,,52,,1||Red Sea,,Red Sea,,19,,39.5,,209,,216,,1||
+
+Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,0,,7,,30892.714136||Syrian Arab Republic,,Syria,,35,,38,,31,,36,,412525.791019||Syrian Arab Republic,,Syria,,35,,38,,123,,128,,412525.791019||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,323,,330,,30892.714136||Syrian Arab Republic,,Syria,,35,,38,,335,,340,,412525.791019||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,616,,623,,30892.714136||
+State of Israel,,Israel,,31.5,,34.75,,178,,184,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,326,,332,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,433,,439,,76388.4422554||Gaza,,Gaza,,31.5,,34.4667,,680,,684,,400.54859022||West Bank,,West Bank,,31.6667,,35.25,,961,,970,,10195.7311125||West Bank,,West Bank,,31.6667,,35.25,,1320,,1329,,10195.7311125||West Bank,,West Bank,,31.6667,,35.25,,1695,,1704,,10195.7311125||State of Israel,,Israel,,31.5,,34.75,,1751,,1757,,76388.4422554||West Bank,,West Bank,,31.6667,,35.25,,1917,,1926,,10195.7311125||West Bank,,West Bank,,31.6667,,35.25,,2101,,2110,,10195.7311125||State of Israel,,Israel,,31.5,,34.75,,2354,,2360,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,2477,,2483,,76388.4422554||
+Arab Republic of Egypt,,Egypt,,27,,30,,66,,71,,1500560.22941||People's Republic of China,,China,,35,,105,,247,,252,,32856753.2835||
+Kingdom of Saudi Arabia,,Saudi Arabia,,25,,45,,332,,344,,5090876.73834||Kingdom of Saudi Arabia,,Saudi Arabia,,25,,45,,401,,413,,5090876.73834||
+Belgrade,,Belgrade,,45.453,,-95.0045,,148,,156,,0.0570068576368||Minnesota,,Minnesota,,46.2502,,-94.2506,,168,,177,,564662.335725||
+
+
+Rochester,,Rochester,,44.0216,,-92.4699,,87,,96,,122.533909741||Rochester,,Rochester,,44.0216,,-92.4699,,443,,452,,122.533909741||
+Rochester,,Rochester,,44.0216,,-92.4699,,116,,125,,122.533909741||
+Rochester,,Rochester,,44.0216,,-92.4699,,23,,32,,122.533909741||Rochester,,Rochester,,44.0216,,-92.4699,,731,,740,,122.533909741||Minnesota,,Minnesota,,46.2502,,-94.2506,,1214,,1223,,564662.335725||
+
+
+
+
+
+
+Paris,,Paris,,33.6609,,-95.5555,,335,,340,,24.0476971133||Paris,,Paris,,33.6609,,-95.5555,,399,,404,,24.0476971133||
+
+
+
+Richmond,,Richmond,,39.8289,,-84.8902,,110,,118,,39.1057913384||
+
+
+
+
+
+
+United Kingdom of Great Britain and Northern Ireland,,Britain,,54,,-4,,346,,353,,13840535.7201||Republic of France,,France,,46,,2,,368,,374,,1774300.88716||Republic of France,,France,,46,,2,,731,,737,,1774300.88716||Oswiecim,,Auschwitz,,50.0333,,19.2333,,800,,809,,53.0064867639||United Kingdom of Great Britain and Northern Ireland,,Britain,,54,,-4,,1796,,1803,,13840535.7201||United Kingdom of Great Britain and Northern Ireland,,Britain,,54,,-4,,2069,,2076,,13840535.7201||
+Jerusalem,,Jerusalem,,31.7667,,35.2333,,296,,305,,786.07352291||New York,,New York,,43.0003,,-75.4999,,313,,321,,448335.886951||Islamic Republic of Afghanistan,,Afghanistan,,33,,65,,1158,,1169,,1622306.26408||Islamic Republic of Pakistan,,Pakistan,,30,,70,,1174,,1182,,2812414.23183||Northern Ireland,,Northern Ireland,,54.5,,-6.5,,1516,,1532,,41746.3428282||
+Jerusalem,,Jerusalem,,31.7667,,35.2333,,32,,41,,786.07352291||Jerusalem,,Jerusalem,,31.7667,,35.2333,,118,,127,,786.07352291||Jerusalem,,Jerusalem,,31.7667,,35.2333,,256,,265,,786.07352291||State of Israel,,Israel,,31.5,,34.75,,406,,412,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,484,,490,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,817,,823,,76388.4422554||Jerusalem,,Jerusalem,,31.7667,,35.2333,,863,,872,,786.07352291||State of Israel,,Israel,,31.5,,34.75,,1048,,1054,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,1108,,1114,,76388.4422554||Jerusalem,,Jerusalem,,31.7667,,35.2333,,1163,,1172,,786.07352291||Jerusalem,,Jerusalem,,31.7667,,35.2333,,1686,,1695,,786.07352291||
+State of Israel,,Israel,,31.5,,34.75,,473,,479,,76388.4422554||Europe,,Europe,,48.691,,9.14062,,484,,490,,43558830.8626||State of Israel,,Israel,,31.5,,34.75,,1000,,1006,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,1111,,1117,,76388.4422554||Praha,,Prague,,50.0878,,14.4241,,1521,,1527,,1518.81111187||Ceska republika,,Czech Republic,,49.75,,15,,1632,,1646,,210532.211537||Jerusalem,,Jerusalem,,31.7667,,35.2333,,1765,,1774,,786.07352291||
+Syrian Arab Republic,,Syria,,35,,38,,7,,12,,412525.791019||State of Israel,,Israel,,31.5,,34.75,,42,,48,,76388.4422554||Syrian Arab Republic,,Syria,,35,,38,,155,,160,,412525.791019||State of Israel,,Israel,,31.5,,34.75,,241,,247,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,294,,300,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,353,,359,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,425,,431,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,659,,665,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,854,,860,,76388.4422554||State of Israel,,Israel,,31.5,,34.75,,917,,923,,76388.4422554||Syrian Arab Republic,,Syria,,35,,38,,938,,943,,412525.791019||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,1335,,1342,,30892.714136||Palestine,,Palestine,,31.9216,,35.2033,,1359,,1368,,22319.3687458||Republic of Lebanon,,Lebanon,,33.8333,,35.8333,,1461,,1468,,30892.714136||Gaza,,Gaza,,31.5,,34.4667,,1504,,1508,,400.54859022||Islamic Republic of Iran,,Iran,,32,,53,,1514,,1518,,3507567.16567||Syrian Arab Republic,,Syria,,35,,38,,1598,,1603,,412525.791019||State of Israel,,Israel,,31.5,,34.75,,1608,,1614,,76388.4422554||United States,,United States,,39.76,,-98.5,,1713,,1726,,78288224.3145||Syrian Arab Republic,,Syria,,35,,38,,1799,,1804,,412525.791019||
+Jerusalem,,Jerusalem,,31.7667,,35.2333,,361,,370,,786.07352291||Gaza,,Gaza,,31.5,,34.4667,,390,,394,,400.54859022||State of Israel,,Israel,,31.5,,34.75,,832,,838,,76388.4422554||Europe,,Europe,,48.691,,9.14062,,843,,849,,43558830.8626||Praha,,Prague,,50.0878,,14.4241,,1810,,1816,,1518.81111187||Ceska republika,,Czech Republic,,49.75,,15,,1904,,1918,,210532.211537||Jerusalem,,Jerusalem,,31.7667,,35.2333,,2037,,2046,,786.07352291||
+
+State of Israel,,Israel,,31.5,,34.75,,70,,76,,76388.4422554||West Bank,,West Bank,,31.6667,,35.25,,433,,442,,10195.7311125||Gaza,,Gaza,,31.5,,34.4667,,447,,451,,400.54859022||West Bank,,West Bank,,31.6667,,35.25,,1513,,1522,,10195.7311125||Gaza,,Gaza,,31.5,,34.4667,,1540,,1544,,400.54859022||
+England,,England,,52.1605,,-0.703125,,1884,,1891,,588256.516353||
+
+
+Eire,,Ireland,,53,,-8,,218,,225,,229091.257895||Federal Republic of Nigeria,,Nigeria,,10,,8,,697,,704,,1428763.5297||Federal Republic of Nigeria,,Nigeria,,10,,8,,2623,,2630,,1428763.5297||Federal Republic of Nigeria,,Nigeria,,10,,8,,2904,,2911,,1428763.5297||
+
+
+
+Washington County,,Washington,,41.55,,-96.267,,1178,,1188,,1||Nebraska,,Nebraska,,41.5003,,-99.7507,,1374,,1382,,1||Nebraska,,Nebraska,,41.5003,,-99.7507,,1458,,1466,,1||Madison County,,Madison County,,41.9167,,-97.6003,,2072,,2086,,1||Lancaster County,,Lancaster,,40.7833,,-96.6836,,2239,,2248,,1||
+
+Norfolk,,Norfolk,,42.0283,,-97.417,,2785,,2792,,1||
+Nebraska,,Nebraska,,41.5003,,-99.7507,,464,,472,,1||Cherry County,,Cherry County,,42.55,,-101.1,,2308,,2321,,1||
+Columbus,,Columbus,,39.9612,,-82.9988,,2346,,2354,,1||
+
+Columbus,,Columbus,,41.4297,,-97.3684,,145,,153,,1||
+
+
+
+Alaska,,Alaska,,64.0003,,-150,,2072,,2078,,1||Alaska,,Alaska,,64.0003,,-150,,2107,,2113,,1||
+
+
+Islamic Republic of Afghanistan,,Afghanistan,,33,,65,,934,,945,,1||Pennsylvania,,Pennsylvania,,40.2725,,-76.9057,,993,,1005,,1||Islamic Republic of Afghanistan,,Afghanistan,,33,,65,,1197,,1208,,1||Republic of Iraq,,Iraq,,33,,44,,1269,,1273,,1||Republic of Iraq,,Iraq,,33,,44,,1940,,1944,,1||Islamic Republic of Afghanistan,,Afghanistan,,33,,65,,1948,,1959,,1||

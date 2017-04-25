@@ -1,0 +1,5000 @@
+
+Santa Maria, Bulacan,,Santa Maria,,14.8208,,120.9636,,113,,124||Santa Maria, Bulacan,,Santa Maria,,14.8208,,120.9636,,548,,559||
+
+
+Santa Cruz, Chile,,Santa Cruz,,-34.6372,,-71.3631,,821,,831||
+
+
+
+Santa Cruz, Davao del Sur,,Santa Cruz,,6.837,,125.413,,157,,167||
+
+
+
+
+
+
+
+
+Lima, New York,,Lima,,42.8937,,-77.61,,146,,150||Lima, New York,,Lima,,42.8937,,-77.61,,226,,230||Lima, New York,,Lima,,42.8937,,-77.61,,271,,275||Lima, New York,,Lima,,42.8937,,-77.61,,872,,876||Lima, New York,,Lima,,42.8937,,-77.61,,896,,900||
+Santa Barbara, California,,Santa Barbara,,34.4258,,-119.7142,,299,,312||
+Santa Barbara, Iloilo,,Santa Barbara,,10.8231,,122.5344,,233,,246||
+
+
+
+
+
+
+
+San Antonio, Florida,,San Antonio,,28.3367,,-82.275,,660,,671||San Antonio, Florida,,San Antonio,,28.3367,,-82.275,,1644,,1655||San Antonio, Florida,,San Antonio,,28.3367,,-82.275,,1801,,1812||
+San Antonio, Zambales,,San Antonio,,14.9486,,120.0864,,0,,11||San Antonio, Zambales,,San Antonio,,14.9486,,120.0864,,239,,250||San Antonio, Zambales,,San Antonio,,14.9486,,120.0864,,788,,799||San Antonio, Zambales,,San Antonio,,14.9486,,120.0864,,801,,812||
+San Antonio, Quezon,,San Antonio,,13.9,,121.3,,0,,11||San Antonio, Quezon,,San Antonio,,13.9,,121.3,,150,,161||
+San Antonio, Nueva Ecija,,San Antonio,,15.3072,,120.8572,,0,,11||San Antonio, Nueva Ecija,,San Antonio,,15.3072,,120.8572,,492,,503||
+
+San Antonio, Oakland, California,,San Antonio,,37.8009,,-122.2408,,0,,11||San Antonio, Oakland, California,,San Antonio,,37.8009,,-122.2408,,333,,344||San Antonio, Oakland, California,,San Antonio,,37.8009,,-122.2408,,584,,595||San Antonio, Oakland, California,,San Antonio,,37.8009,,-122.2408,,806,,817||
+San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,123,,132||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,407,,416||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,473,,482||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,522,,531||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,584,,593||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,642,,651||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,832,,841||San Pedro, Laguna,,San Pedro,,14.3647,,121.0556,,945,,954||
+San Pedro, Los Angeles,,San Pedro,,33.7343,,-118.2876,,235,,244||San Pedro, Los Angeles,,San Pedro,,33.7343,,-118.2876,,569,,578||San Pedro, Los Angeles,,San Pedro,,33.7343,,-118.2876,,1464,,1473||
+San Pedro, Buenos Aires,,San Pedro,,-33.6791,,-59.6666,,778,,787||San Pedro, Buenos Aires,,San Pedro,,-33.6791,,-59.6666,,882,,891||
+Santa Rosa, California,,Santa Rosa,,38.4486,,-122.7047,,132,,142||Santa Rosa, California,,Santa Rosa,,38.4486,,-122.7047,,443,,453||Santa Rosa, California,,Santa Rosa,,38.4486,,-122.7047,,1067,,1077||
+Santa Rosa, Laguna,,Santa Rosa,,14.2963,,121.1055,,890,,900||
+Santa Rosa, New Mexico,,Santa Rosa,,34.9422,,-104.6839,,547,,557||
+
+
+
+
+Santa Rita, Guam,,Santa Rita,,13.4284,,144.6474,,1034,,1044||Santa Rita, Guam,,Santa Rita,,13.4284,,144.6474,,1103,,1113||
+Santa Rita, New Mexico,,Santa Rita,,32.8036,,-108.0608,,347,,357||
+Florida,,Florida,,28.0009,,-81.4993,,321,,328||Florida,,Florida,,28.0009,,-81.4993,,479,,486||
+Florida, Massachusetts,,Florida,,42.6667,,-73.0117,,411,,418||
+San Francisco, Córdoba,,San Francisco,,-31.428,,-62.0827,,0,,13||
+San Francisco, Cebu,,San Francisco,,10.646,,124.382,,0,,13||San Francisco, Cebu,,San Francisco,,10.646,,124.382,,224,,237||San Francisco, Cebu,,San Francisco,,10.646,,124.382,,889,,902||San Francisco, Cebu,,San Francisco,,10.646,,124.382,,993,,1006||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Santa Clara, California,,Santa Clara,,37.3544,,-121.9692,,633,,644||Santa Clara, California,,Santa Clara,,37.3544,,-121.9692,,646,,657||
+Santa Clara, Utah,,Santa Clara,,37.1369,,-113.6492,,302,,313||Santa Clara, Utah,,Santa Clara,,37.1369,,-113.6492,,1091,,1102||
+
+Santa Clara, San Vicente,,Santa Clara,,13.7021,,-88.728,,1055,,1066||Santa Clara, San Vicente,,Santa Clara,,13.7021,,-88.728,,1279,,1290||
+Santa Clara, Eugene, Oregon,,Santa Clara,,44.1,,-123.12,,242,,253||Santa Clara, Eugene, Oregon,,Santa Clara,,44.1,,-123.12,,445,,456||Santa Clara, Eugene, Oregon,,Santa Clara,,44.1,,-123.12,,705,,716||Santa Clara, Eugene, Oregon,,Santa Clara,,44.1,,-123.12,,731,,742||Santa Clara, Eugene, Oregon,,Santa Clara,,44.1,,-123.12,,1018,,1029||
+
+
+
+
+
+San Jose, Camarines Sur,,San Jose,,13.6992,,123.5183,,0,,8||San Jose, Camarines Sur,,San Jose,,13.6992,,123.5183,,405,,413||San Jose, Camarines Sur,,San Jose,,13.6992,,123.5183,,957,,965||
+San Jose, Nueva Ecija,,San Jose,,15.7908,,120.9925,,0,,8||
+San Jose, Occidental Mindoro,,San Jose,,12.4828,,121.002,,196,,204||
+San Jose, Batangas,,San Jose,,13.8833,,121.1053,,0,,8||San Jose, Batangas,,San Jose,,13.8833,,121.1053,,378,,386||
+San Jose, Romblon,,San Jose,,12.062,,121.9573,,0,,8||San Jose, Romblon,,San Jose,,12.062,,121.9573,,645,,653||San Jose, Romblon,,San Jose,,12.062,,121.9573,,1167,,1175||
+San Jose, Tarlac,,San Jose,,15.4,,120.3333,,0,,8||
+San Jose, Negros Oriental,,San Jose,,9.412,,123.238,,555,,563||
+San Jose, Northern Samar,,San Jose,,12.5311,,124.487,,0,,8||
+San Jose, Dinagat Islands,,San Jose,,10.0083,,125.5889,,0,,8||San Jose, Dinagat Islands,,San Jose,,10.0083,,125.5889,,148,,156||San Jose, Dinagat Islands,,San Jose,,10.0083,,125.5889,,251,,259||San Jose, Dinagat Islands,,San Jose,,10.0083,,125.5889,,471,,479||San Jose, Dinagat Islands,,San Jose,,10.0083,,125.5889,,950,,958||
+La Esperanza, Honduras,,La Esperanza,,14.3066,,-88.1787,,163,,175||
+
+
+
+San Carlos, San Diego,,San Carlos,,32.8085,,-117.033,,241,,251||San Carlos, San Diego,,San Carlos,,32.8085,,-117.033,,882,,892||
+
+
+
+
+Santa Ana, California,,Santa Ana,,33.7408,,-117.8814,,0,,9||Santa Ana, California,,Santa Ana,,33.7408,,-117.8814,,271,,280||Santa Ana, California,,Santa Ana,,33.7408,,-117.8814,,856,,865||
+Santa Ana, El Salvador,,Santa Ana,,13.9967,,-89.5523,,227,,236||Santa Ana, El Salvador,,Santa Ana,,13.9967,,-89.5523,,511,,520||Santa Ana, El Salvador,,Santa Ana,,13.9967,,-89.5523,,522,,531||Santa Ana, El Salvador,,Santa Ana,,13.9967,,-89.5523,,739,,748||
+
+
+Santa Ana, Sonora,,Santa Ana,,30.5406,,-111.1205,,498,,507||
+Santa Ana, Costa Rica,,Santa Ana,,9.9333,,-84.1833,,47,,56||
+
+
+
+
+Richmond, Virginia,,Richmond,,37.5489,,-77.4474,,0,,8||Richmond, Virginia,,Richmond,,37.5489,,-77.4474,,240,,248||Richmond, Virginia,,Richmond,,37.5489,,-77.4474,,543,,551||
+Richmond, California,,Richmond,,37.9358,,-122.3478,,0,,8||Richmond, California,,Richmond,,37.9358,,-122.3478,,208,,216||Richmond, California,,Richmond,,37.9358,,-122.3478,,534,,542||Richmond, California,,Richmond,,37.9358,,-122.3478,,742,,750||Richmond, California,,Richmond,,37.9358,,-122.3478,,878,,886||Richmond, California,,Richmond,,37.9358,,-122.3478,,942,,950||Richmond, California,,Richmond,,37.9358,,-122.3478,,1388,,1396||
+Richmond, British Columbia,,Richmond,,49.1702,,-123.1366,,1175,,1183||Richmond, British Columbia,,Richmond,,49.1702,,-123.1366,,1225,,1233||
+Richmond, London,,Richmond,,51.456,,-0.301,,568,,576||
+Richmond, Texas,,Richmond,,29.5808,,-95.7631,,0,,8||Richmond, Texas,,Richmond,,29.5808,,-95.7631,,639,,647||Richmond, Texas,,Richmond,,29.5808,,-95.7631,,966,,974||
+Richmond, Victoria,,Richmond,,-37.8182,,145.0018,,0,,8||Richmond, Victoria,,Richmond,,-37.8182,,145.0018,,732,,740||Richmond, Victoria,,Richmond,,-37.8182,,145.0018,,886,,894||Richmond, Victoria,,Richmond,,-37.8182,,145.0018,,1072,,1080||
+
+Richmond, Rhode Island,,Richmond,,41.4942,,-71.6689,,0,,8||Richmond, Rhode Island,,Richmond,,41.4942,,-71.6689,,341,,349||Richmond, Rhode Island,,Richmond,,41.4942,,-71.6689,,418,,426||Richmond, Rhode Island,,Richmond,,41.4942,,-71.6689,,483,,491||Richmond, Rhode Island,,Richmond,,41.4942,,-71.6689,,554,,562||Richmond, Rhode Island,,Richmond,,41.4942,,-71.6689,,1154,,1162||
+Richmond, North Yorkshire,,Richmond,,54.403,,-1.737,,622,,630||Richmond, North Yorkshire,,Richmond,,54.403,,-1.737,,830,,838||Richmond, North Yorkshire,,Richmond,,54.403,,-1.737,,840,,848||
+Richmond, Maine,,Richmond,,44.1172,,-69.8294,,364,,372||
+
+Richmond, Ontario,,Richmond,,45.1944,,-75.8389,,0,,8||Richmond, Ontario,,Richmond,,45.1944,,-75.8389,,264,,272||Richmond, Ontario,,Richmond,,45.1944,,-75.8389,,406,,414||
+Richmond, Vermont,,Richmond,,44.4056,,-72.9917,,0,,8||Richmond, Vermont,,Richmond,,44.4056,,-72.9917,,136,,144||Richmond, Vermont,,Richmond,,44.4056,,-72.9917,,469,,477||Richmond, Vermont,,Richmond,,44.4056,,-72.9917,,775,,783||Richmond, Vermont,,Richmond,,44.4056,,-72.9917,,1079,,1087||Richmond, Vermont,,Richmond,,44.4056,,-72.9917,,1206,,1214||
+
+Richmond, Illinois,,Richmond,,42.4719,,-88.3075,,0,,8||Richmond, Illinois,,Richmond,,42.4719,,-88.3075,,230,,238||Richmond, Illinois,,Richmond,,42.4719,,-88.3075,,662,,670||Richmond, Illinois,,Richmond,,42.4719,,-88.3075,,780,,788||Richmond, Illinois,,Richmond,,42.4719,,-88.3075,,909,,917||Richmond, Illinois,,Richmond,,42.4719,,-88.3075,,1110,,1118||
+Richmond, New York,,Richmond,,42.8,,-77.5333,,0,,8||Richmond, New York,,Richmond,,42.8,,-77.5333,,177,,185||Richmond, New York,,Richmond,,42.8,,-77.5333,,425,,433||Richmond, New York,,Richmond,,42.8,,-77.5333,,531,,539||
+
+Richmond, Calgary,,Richmond,,51.0314,,-114.1133,,0,,8||Richmond, Calgary,,Richmond,,51.0314,,-114.1133,,641,,649||
+
+
+Santa Fe, New Mexico,,Santa Fe,,35.6839,,-105.9478,,439,,447||
+
+
+Santa Fe, Mexico City,,Santa Fe,,19.3676,,-99.2593,,618,,626||Santa Fe, Mexico City,,Santa Fe,,19.3676,,-99.2593,,788,,796||
+Santa Fe, Veraguas,,Santa Fe,,8.5111,,-81.0778,,465,,473||
+
+San Lorenzo, Boaco,,San Lorenzo,,12.3778,,-85.6674,,289,,300||San Lorenzo, Boaco,,San Lorenzo,,12.3778,,-85.6674,,423,,434||San Lorenzo, Boaco,,San Lorenzo,,12.3778,,-85.6674,,615,,626||San Lorenzo, Boaco,,San Lorenzo,,12.3778,,-85.6674,,672,,683||
+Los Angeles,,Los Angeles,,34.0522,,-118.2436,,0,,11||Los Angeles,,Los Angeles,,34.0522,,-118.2436,,115,,126||Los Angeles,,Los Angeles,,34.0522,,-118.2436,,361,,372||Los Angeles,,Los Angeles,,34.0522,,-118.2436,,515,,526||Los Angeles,,Los Angeles,,34.0522,,-118.2436,,688,,699||Los Angeles,,Los Angeles,,34.0522,,-118.2436,,1032,,1043||Los Angeles,,Los Angeles,,34.0522,,-118.2436,,1174,,1185||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Juan, Puerto Rico,,San Juan,,18.4517,,-66.0689,,0,,8||San Juan, Puerto Rico,,San Juan,,18.4517,,-66.0689,,629,,637||San Juan, Puerto Rico,,San Juan,,18.4517,,-66.0689,,840,,848||San Juan, Puerto Rico,,San Juan,,18.4517,,-66.0689,,1029,,1037||
+
+San Juan, Metro Manila,,San Juan,,14.5994,,121.0369,,0,,8||San Juan, Metro Manila,,San Juan,,14.5994,,121.0369,,264,,272||
+San Juan, Batangas,,San Juan,,13.7567,,121.4044,,477,,485||
+San Juan, Texas,,San Juan,,26.1922,,98.1525,,331,,339||San Juan, Texas,,San Juan,,26.1922,,98.1525,,703,,711||San Juan, Texas,,San Juan,,26.1922,,98.1525,,1041,,1049||San Juan, Texas,,San Juan,,26.1922,,98.1525,,1369,,1377||
+
+San Juan, Ilocos Sur,,San Juan,,17.7291,,120.461,,913,,921||
+San Juan, Southern Leyte,,San Juan,,10.2669,,125.1756,,300,,308||
+San Juan, La Union,,San Juan,,16.6689,,120.3411,,640,,648||San Juan, La Union,,San Juan,,16.6689,,120.3411,,869,,877||
+San Vicente, Palawan,,San Vicente,,10.5349,,119.281,,1384,,1395||
+San Vicente, Antioquia,,San Vicente,,6.2819,,-75.3322,,93,,104||San Vicente, Antioquia,,San Vicente,,6.2819,,-75.3322,,357,,368||San Vicente, Antioquia,,San Vicente,,6.2819,,-75.3322,,445,,456||San Vicente, Antioquia,,San Vicente,,6.2819,,-75.3322,,975,,986||
+
+San Vicente, Northern Samar,,San Vicente,,12.35,,124.05,,1085,,1096||
+
+
+
+
+
+
+San Fernando, California,,San Fernando,,34.2873,,-118.4388,,0,,12||San Fernando, California,,San Fernando,,34.2873,,-118.4388,,304,,316||San Fernando, California,,San Fernando,,34.2873,,-118.4388,,599,,611||San Fernando, California,,San Fernando,,34.2873,,-118.4388,,964,,976||San Fernando, California,,San Fernando,,34.2873,,-118.4388,,1177,,1189||
+San Fernando, Pampanga,,San Fernando,,15.0594,,120.6567,,0,,12||San Fernando, Pampanga,,San Fernando,,15.0594,,120.6567,,62,,74||San Fernando, Pampanga,,San Fernando,,15.0594,,120.6567,,923,,935||San Fernando, Pampanga,,San Fernando,,15.0594,,120.6567,,993,,1005||
+San Fernando, La Union,,San Fernando,,16.6167,,120.3167,,0,,12||San Fernando, La Union,,San Fernando,,16.6167,,120.3167,,37,,49||San Fernando, La Union,,San Fernando,,16.6167,,120.3167,,564,,576||San Fernando, La Union,,San Fernando,,16.6167,,120.3167,,856,,868||San Fernando, La Union,,San Fernando,,16.6167,,120.3167,,991,,1003||
+San Fernando, Romblon,,San Fernando,,12.3025,,122.6008,,0,,12||San Fernando, Romblon,,San Fernando,,12.3025,,122.6008,,97,,109||
+
+San Fernando, Trinidad and Tobago,,San Fernando,,10.2769,,-61.4504,,669,,681||
+San Fernando, Camarines Sur,,San Fernando,,13.5664,,123.1497,,0,,12||San Fernando, Camarines Sur,,San Fernando,,13.5664,,123.1497,,152,,164||San Fernando, Camarines Sur,,San Fernando,,13.5664,,123.1497,,307,,319||San Fernando, Camarines Sur,,San Fernando,,13.5664,,123.1497,,636,,648||San Fernando, Camarines Sur,,San Fernando,,13.5664,,123.1497,,885,,897||San Fernando, Camarines Sur,,San Fernando,,13.5664,,123.1497,,1138,,1150||
+
+
+
+
+San Andres, Catanduanes,,San Andres,,13.6667,,124.1167,,251,,261||San Andres, Catanduanes,,San Andres,,13.6667,,124.1167,,587,,597||San Andres, Catanduanes,,San Andres,,13.6667,,124.1167,,793,,803||San Andres, Catanduanes,,San Andres,,13.6667,,124.1167,,1017,,1027||
+
+
+
+San Luis, Arizona,,San Luis,,32.4936,,-114.7736,,673,,681||San Luis, Arizona,,San Luis,,32.4936,,-114.7736,,996,,1004||
+
+San Luis, Pampanga,,San Luis,,15.04,,120.7922,,1100,,1108||
+San Rafael, California,,San Rafael,,37.9736,,-122.5311,,322,,332||
+San Rafael, Bulacan,,San Rafael,,14.948,,120.962,,537,,547||San Rafael, Bulacan,,San Rafael,,14.948,,120.962,,842,,852||San Rafael, Bulacan,,San Rafael,,14.948,,120.962,,981,,991||
+
+
+
+
+
+
+La Union,,La Union,,16.5,,120.417,,32,,40||
+
+
+
+
+
+
+
+
+
+
+Mali,,Mali,,12.6507,,-8.0008,,136,,140||Mali,,Mali,,12.6507,,-8.0008,,271,,275||Mali,,Mali,,12.6507,,-8.0008,,605,,609||Mali,,Mali,,12.6507,,-8.0008,,902,,906||Mali,,Mali,,12.6507,,-8.0008,,1033,,1037||Mali,,Mali,,12.6507,,-8.0008,,1389,,1393||Mali,,Mali,,12.6507,,-8.0008,,1828,,1832||
+San Felipe, Texas,,San Felipe,,29.7944,,-96.1047,,236,,246||San Felipe, Texas,,San Felipe,,29.7944,,-96.1047,,748,,758||
+
+
+
+
+
+Boston,,Boston,,42.3578,,-71.0594,,821,,827||
+Boston, Lincolnshire,,Boston,,52.9746,,-0.0214,,593,,599||Boston, Lincolnshire,,Boston,,52.9746,,-0.0214,,640,,646||Boston, Lincolnshire,,Boston,,52.9746,,-0.0214,,708,,714||Boston, Lincolnshire,,Boston,,52.9746,,-0.0214,,763,,769||
+Boston, New York,,Boston,,42.6289,,-78.7375,,562,,568||
+
+
+
+
+
+San Isidro, Nueva Ecija,,San Isidro,,15.3103,,120.9069,,64,,74||San Isidro, Nueva Ecija,,San Isidro,,15.3103,,120.9069,,462,,472||San Isidro, Nueva Ecija,,San Isidro,,15.3103,,120.9069,,952,,962||San Isidro, Nueva Ecija,,San Isidro,,15.3103,,120.9069,,1124,,1134||
+San Isidro, Davao Oriental,,San Isidro,,6.8783,,126.0606,,504,,514||
+San Isidro, Cabañas,,San Isidro,,13.8333,,-88.7167,,142,,152||San Isidro, Cabañas,,San Isidro,,13.8333,,-88.7167,,756,,766||San Isidro, Cabañas,,San Isidro,,13.8333,,-88.7167,,1192,,1202||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Nicolas, Pangasinan,,San Nicolas,,16.07,,120.7653,,1048,,1059||San Nicolas, Pangasinan,,San Nicolas,,16.07,,120.7653,,1261,,1272||
+San Nicolas, Ilocos Norte,,San Nicolas,,18.1725,,120.5958,,24,,35||San Nicolas, Ilocos Norte,,San Nicolas,,18.1725,,120.5958,,283,,294||San Nicolas, Ilocos Norte,,San Nicolas,,18.1725,,120.5958,,515,,526||San Nicolas, Ilocos Norte,,San Nicolas,,18.1725,,120.5958,,867,,878||San Nicolas, Ilocos Norte,,San Nicolas,,18.1725,,120.5958,,942,,953||
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Marcos, Carazo,,San Marcos,,11.9167,,-86.2,,1185,,1195||
+San Marcos, Jalisco,,San Marcos,,20.7833,,-104.1833,,1087,,1097||
+San Marcos, El Salvador,,San Marcos,,13.6563,,-89.1803,,467,,477||
+San Marcos, Costa Rica,,San Marcos,,9.6667,,-84.0333,,211,,221||
+San Ignacio, Belize,,San Ignacio,,17.153,,-89.0806,,666,,677||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Salvador,,San Salvador,,13.7083,,-89.2031,,0,,12||San Salvador,,San Salvador,,13.7083,,-89.2031,,95,,107||San Salvador,,San Salvador,,13.7083,,-89.2031,,599,,611||San Salvador,,San Salvador,,13.7083,,-89.2031,,732,,744||San Salvador,,San Salvador,,13.7083,,-89.2031,,787,,799||San Salvador,,San Salvador,,13.7083,,-89.2031,,1189,,1201||San Salvador,,San Salvador,,13.7083,,-89.2031,,1890,,1902||
+
+
+
+Toledo, Oregon,,Toledo,,44.6211,,123.9347,,817,,823||
+
+
+
+
+
+
+
+
+
+
+Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,0,,8||Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,250,,258||Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,356,,364||Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,677,,685||Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,883,,891||Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,973,,981||Trinidad, Colorado,,Trinidad,,37.1708,,-104.5064,,1131,,1139||
+Trinidad, Bolivia,,Trinidad,,-14.8335,,-64.9014,,34,,42||Trinidad, Bolivia,,Trinidad,,-14.8335,,-64.9014,,48,,56||Trinidad, Bolivia,,Trinidad,,-14.8335,,-64.9014,,75,,83||Trinidad, Bolivia,,Trinidad,,-14.8335,,-64.9014,,963,,971||Trinidad, Bolivia,,Trinidad,,-14.8335,,-64.9014,,1282,,1290||
+Trinidad, Cuba,,Trinidad,,21.803,,-79.9844,,0,,8||Trinidad, Cuba,,Trinidad,,21.803,,-79.9844,,214,,222||Trinidad, Cuba,,Trinidad,,21.803,,-79.9844,,412,,420||Trinidad, Cuba,,Trinidad,,21.803,,-79.9844,,907,,915||
+Trinidad,,Trinidad,,10.4606,,-61.2486,,0,,8||
+Trinidad, California,,Trinidad,,41.0592,,-124.1431,,0,,8||Trinidad, California,,Trinidad,,41.0592,,-124.1431,,376,,384||Trinidad, California,,Trinidad,,41.0592,,-124.1431,,507,,515||Trinidad, California,,Trinidad,,41.0592,,-124.1431,,658,,666||
+Trinidad, Washington, D.C.,,Trinidad,,38.9057,,-76.9844,,302,,310||Trinidad, Washington, D.C.,,Trinidad,,38.9057,,-76.9844,,556,,564||Trinidad, Washington, D.C.,,Trinidad,,38.9057,,-76.9844,,759,,767||
+
+
+San Mateo, California,,San Mateo,,37.5542,,-122.3131,,564,,573||
+San Mateo, Rizal,,San Mateo,,14.6982,,121.1239,,30,,39||San Mateo, Rizal,,San Mateo,,14.6982,,121.1239,,141,,150||San Mateo, Rizal,,San Mateo,,14.6982,,121.1239,,820,,829||San Mateo, Rizal,,San Mateo,,14.6982,,121.1239,,978,,987||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Roque, Northern Samar,,San Roque,,12.533,,124.867,,306,,315||
+
+
+
+Buenos Aires,,Buenos Aires,,-34.6081,,-58.3703,,0,,12||Buenos Aires,,Buenos Aires,,-34.6081,,-58.3703,,509,,521||Buenos Aires,,Buenos Aires,,-34.6081,,-58.3703,,677,,689||
+Buenos Aires, Trujillo,,Buenos Aires,,-8.1443,,-79.0553,,841,,853||
+
+
+San Joaquin, California,,San Joaquin,,36.6067,,-120.1892,,0,,11||San Joaquin, California,,San Joaquin,,36.6067,,-120.1892,,257,,268||San Joaquin, California,,San Joaquin,,36.6067,,-120.1892,,386,,397||San Joaquin, California,,San Joaquin,,36.6067,,-120.1892,,407,,418||San Joaquin, California,,San Joaquin,,36.6067,,-120.1892,,485,,496||San Joaquin, California,,San Joaquin,,36.6067,,-120.1892,,618,,629||
+San Joaquin, Iloilo,,San Joaquin,,10.5889,,122.1389,,0,,11||San Joaquin, Iloilo,,San Joaquin,,10.5889,,122.1389,,283,,294||San Joaquin, Iloilo,,San Joaquin,,10.5889,,122.1389,,529,,540||San Joaquin, Iloilo,,San Joaquin,,10.5889,,122.1389,,795,,806||San Joaquin, Iloilo,,San Joaquin,,10.5889,,122.1389,,829,,840||
+
+
+
+
+
+
+
+
+Kingston, Norfolk Island,,Kingston,,-29.05,,167.95,,199,,207||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La Gloria, Jim Wells County, Texas,,La Gloria,,27.2814,,-98.1333,,631,,640||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Colorado,,Colorado,,39,,-105.0833,,504,,512||Colorado,,Colorado,,39,,-105.0833,,921,,929||
+
+
+
+
+Salem, New Jersey,,Salem,,39.5682,,-75.4726,,557,,562||
+Salem, Missouri,,Salem,,37.6414,,91.5389,,847,,852||Salem, Missouri,,Salem,,37.6414,,91.5389,,895,,900||
+
+
+Salem, Iowa,,Salem,,40.8531,,91.6208,,704,,709||
+Salem, Utah,,Salem,,40.0506,,-111.6725,,1080,,1085||
+
+
+
+
+
+
+Salem, New York,,Salem,,43.15,,-73.3167,,984,,989||
+Paris,,Paris,,48.8566,,2.3518,,501,,506||Paris,,Paris,,48.8566,,2.3518,,813,,818||Paris,,Paris,,48.8566,,2.3518,,941,,946||Paris,,Paris,,48.8566,,2.3518,,1325,,1330||
+Paris, Illinois,,Paris,,39.6111,,-87.6961,,0,,5||Paris, Illinois,,Paris,,39.6111,,-87.6961,,170,,175||Paris, Illinois,,Paris,,39.6111,,-87.6961,,574,,579||Paris, Illinois,,Paris,,39.6111,,-87.6961,,1074,,1079||
+Paris, Tennessee,,Paris,,36.3011,,-88.3139,,0,,5||Paris, Tennessee,,Paris,,36.3011,,-88.3139,,281,,286||Paris, Tennessee,,Paris,,36.3011,,-88.3139,,288,,293||Paris, Tennessee,,Paris,,36.3011,,-88.3139,,362,,367||Paris, Tennessee,,Paris,,36.3011,,-88.3139,,815,,820||
+
+Paris, Kentucky,,Paris,,38.2064,,-84.2578,,0,,5||Paris, Kentucky,,Paris,,38.2064,,-84.2578,,476,,481||Paris, Kentucky,,Paris,,38.2064,,-84.2578,,819,,824||Paris, Kentucky,,Paris,,38.2064,,-84.2578,,1121,,1126||
+Paris, Arkansas,,Paris,,35.2916,,-93.7261,,0,,5||Paris, Arkansas,,Paris,,35.2916,,-93.7261,,239,,244||Paris, Arkansas,,Paris,,35.2916,,-93.7261,,658,,663||Paris, Arkansas,,Paris,,35.2916,,-93.7261,,809,,814||Paris, Arkansas,,Paris,,35.2916,,-93.7261,,860,,865||
+
+Paris, Missouri,,Paris,,39.48,,92.0011,,629,,634||Paris, Missouri,,Paris,,39.48,,92.0011,,757,,762||Paris, Missouri,,Paris,,39.48,,92.0011,,1072,,1077||
+
+
+
+
+
+
+
+
+Washington, Virginia,,Washington,,38.7128,,-78.1594,,0,,10||Washington, Virginia,,Washington,,38.7128,,-78.1594,,928,,938||
+Washington, Tyne and Wear,,Washington,,54.9111,,-1.5086,,0,,10||Washington, Tyne and Wear,,Washington,,54.9111,,-1.5086,,111,,121||Washington, Tyne and Wear,,Washington,,54.9111,,-1.5086,,268,,278||Washington, Tyne and Wear,,Washington,,54.9111,,-1.5086,,635,,645||
+Washington, Indiana,,Washington,,38.6581,,87.175,,0,,10||Washington, Indiana,,Washington,,38.6581,,87.175,,869,,879||Washington, Indiana,,Washington,,38.6581,,87.175,,971,,981||
+Washington, Iowa,,Washington,,41.2992,,-91.6931,,0,,10||Washington, Iowa,,Washington,,41.2992,,-91.6931,,410,,420||Washington, Iowa,,Washington,,41.2992,,-91.6931,,597,,607||
+Washington, Georgia,,Washington,,33.7353,,-82.7414,,282,,292||Washington, Georgia,,Washington,,33.7353,,-82.7414,,315,,325||Washington, Georgia,,Washington,,33.7353,,-82.7414,,543,,553||Washington, Georgia,,Washington,,33.7353,,-82.7414,,1190,,1200||
+San Gregorio, California,,San Gregorio,,37.3272,,-122.3867,,450,,462||San Gregorio, California,,San Gregorio,,37.3272,,-122.3867,,483,,495||San Gregorio, California,,San Gregorio,,37.3272,,-122.3867,,1317,,1329||
+San Benito, Texas,,San Benito,,26.1367,,-97.6358,,126,,136||San Benito, Texas,,San Benito,,26.1367,,-97.6358,,446,,456||San Benito, Texas,,San Benito,,26.1367,,-97.6358,,941,,951||
+
+
+
+Nara, Attock,,Nara,,33.6389,,72.0531,,1160,,1164||
+
+
+Canada,,Canada,,45.4116,,-75.6984,,697,,703||Canada,,Canada,,45.4116,,-75.6984,,808,,814||Canada,,Canada,,45.4116,,-75.6984,,1027,,1033||Canada,,Canada,,45.4116,,-75.6984,,1249,,1255||Canada,,Canada,,45.4116,,-75.6984,,1339,,1345||Canada,,Canada,,45.4116,,-75.6984,,1586,,1592||Canada,,Canada,,45.4116,,-75.6984,,1603,,1609||
+Canada, Kansas,,Canada,,38.3542,,-97.1128,,565,,571||Canada, Kansas,,Canada,,38.3542,,-97.1128,,696,,702||Canada, Kansas,,Canada,,38.3542,,-97.1128,,1559,,1565||
+
+
+
+
+
+
+
+
+Waterloo, Merseyside,,Waterloo,,53.478,,-3.031,,825,,833||
+
+
+
+
+
+
+
+
+
+
+
+La Florida, Chile,,La Florida,,-33.5333,,-70.5867,,0,,10||La Florida, Chile,,La Florida,,-33.5333,,-70.5867,,472,,482||La Florida, Chile,,La Florida,,-33.5333,,-70.5867,,772,,782||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Jorge, Samar,,San Jorge,,11.9808,,124.8239,,301,,310||San Jorge, Samar,,San Jorge,,11.9808,,124.8239,,529,,538||San Jorge, Samar,,San Jorge,,11.9808,,124.8239,,715,,724||
+
+
+
+
+
+Nazareth, Pennsylvania,,Nazareth,,40.74,,-75.3111,,422,,430||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alexandria, Louisiana,,Alexandria,,31.2928,,-92.4592,,216,,226||Alexandria, Louisiana,,Alexandria,,31.2928,,-92.4592,,1261,,1271||
+
+
+Alexandria, Kentucky,,Alexandria,,38.9589,,-84.3892,,794,,804||Alexandria, Kentucky,,Alexandria,,38.9589,,-84.3892,,876,,886||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La Trinidad, Benguet,,La Trinidad,,16.455,,120.5875,,0,,11||La Trinidad, Benguet,,La Trinidad,,16.455,,120.5875,,449,,460||
+
+
+
+
+
+
+
+
+
+
+
+Pomona, Queensland,,Pomona,,26.3625,,152.8564,,669,,675||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+California,,California,,37,,-120,,752,,762||
+
+
+
+
+
+
+
+
+
+
+Arcadia, Louisiana,,Arcadia,,32.5492,,-92.9203,,1046,,1053||
+
+
+
+
+Arcadia, Rhode Island,,Arcadia,,41.5556,,-71.6967,,1031,,1038||
+
+
+
+San Diego,,San Diego,,32.715,,-117.1625,,0,,9||San Diego,,San Diego,,32.715,,-117.1625,,314,,323||San Diego,,San Diego,,32.715,,-117.1625,,406,,415||San Diego,,San Diego,,32.715,,-117.1625,,694,,703||San Diego,,San Diego,,32.715,,-117.1625,,1096,,1105||
+San Diego, Carabobo,,San Diego,,10.254,,-68.0109,,679,,688||San Diego, Carabobo,,San Diego,,10.254,,-68.0109,,705,,714||San Diego, Carabobo,,San Diego,,10.254,,-68.0109,,781,,790||
+
+
+
+
+
+Belmont, California,,Belmont,,37.5181,,-122.2917,,699,,706||Belmont, California,,Belmont,,37.5181,,-122.2917,,895,,902||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arlington, Texas,,Arlington,,32.705,,-97.1228,,865,,874||
+
+
+
+Arlington, Vermont,,Arlington,,43.0666,,-73.2263,,123,,132||Arlington, Vermont,,Arlington,,43.0666,,-73.2263,,253,,262||Arlington, Vermont,,Arlington,,43.0666,,-73.2263,,341,,350||
+
+
+Arlington, Illinois,,Arlington,,41.4722,,89.2469,,715,,724||
+Arlington, Devon,,Arlington,,51.1483,,-3.9819,,139,,148||Arlington, Devon,,Arlington,,51.1483,,-3.9819,,481,,490||Arlington, Devon,,Arlington,,51.1483,,-3.9819,,542,,551||Arlington, Devon,,Arlington,,51.1483,,-3.9819,,789,,798||
+Arlington, East Sussex,,Arlington,,50.84,,0.19,,898,,907||
+
+
+
+
+
+
+
+
+
+
+
+Lancaster, New York,,Lancaster,,42.9061,,-78.6339,,190,,199||Lancaster, New York,,Lancaster,,42.9061,,-78.6339,,456,,465||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stratford, New Jersey,,Stratford,,39.829,,-75.0155,,371,,380||
+
+
+Stratford, Wisconsin,,Stratford,,44.8011,,-90.0792,,770,,779||Stratford, Wisconsin,,Stratford,,44.8011,,-90.0792,,840,,849||
+
+
+Las Lajas, Neuquén,,Las Lajas,,-38.5167,,-70.3667,,477,,486||Las Lajas, Neuquén,,Las Lajas,,-38.5167,,-70.3667,,528,,537||Las Lajas, Neuquén,,Las Lajas,,-38.5167,,-70.3667,,702,,711||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sacramento, California,,Sacramento,,38.5754,,-121.4863,,0,,10||Sacramento, California,,Sacramento,,38.5754,,-121.4863,,378,,388||Sacramento, California,,Sacramento,,38.5754,,-121.4863,,430,,440||Sacramento, California,,Sacramento,,38.5754,,-121.4863,,864,,874||Sacramento, California,,Sacramento,,38.5754,,-121.4863,,999,,1009||Sacramento, California,,Sacramento,,38.5754,,-121.4863,,1140,,1150||
+
+Sacramento, Kentucky,,Sacramento,,37.4164,,87.2678,,365,,375||Sacramento, Kentucky,,Sacramento,,37.4164,,87.2678,,583,,593||
+
+
+
+
+
+
+
+
+
+
+
+
+
+Windsor, Nova Scotia,,Windsor,,44.9903,,-64.1311,,924,,931||
+
+Windsor, California,,Windsor,,38.5461,,-122.8053,,796,,803||
+Windsor, Connecticut,,Windsor,,41.8519,,-72.6422,,273,,280||
+Windsor, Vermont,,Windsor,,43.4754,,-72.421,,311,,318||Windsor, Vermont,,Windsor,,43.4754,,-72.421,,449,,456||
+Windsor, Queensland,,Windsor,,-27.4363,,153.0288,,675,,682||
+
+Windsor, New South Wales,,Windsor,,-33.6167,,150.8167,,660,,667||
+
+Windsor, Missouri,,Windsor,,38.5319,,93.5231,,929,,936||Windsor, Missouri,,Windsor,,38.5319,,93.5231,,1010,,1017||
+
+Windsor, Victoria,,Windsor,,-37.8548,,144.9927,,375,,382||Windsor, Victoria,,Windsor,,-37.8548,,144.9927,,614,,621||
+Windsor, New York,,Windsor,,42.0758,,-75.6403,,212,,219||Windsor, New York,,Windsor,,42.0758,,-75.6403,,267,,274||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Manuel, Pangasinan,,San Manuel,,16.0656,,120.6667,,371,,381||San Manuel, Pangasinan,,San Manuel,,16.0656,,120.6667,,745,,755||San Manuel, Pangasinan,,San Manuel,,16.0656,,120.6667,,1106,,1116||San Manuel, Pangasinan,,San Manuel,,16.0656,,120.6667,,1157,,1167||San Manuel, Pangasinan,,San Manuel,,16.0656,,120.6667,,1202,,1212||
+
+San Manuel, Arizona,,San Manuel,,32.605,,110.6333,,796,,806||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Henan,,Henan,,33.9,,113.5,,1015,,1020||
+Cambridge,,Cambridge,,52.2081,,0.1225,,0,,9||Cambridge,,Cambridge,,52.2081,,0.1225,,369,,378||Cambridge,,Cambridge,,52.2081,,0.1225,,524,,533||Cambridge,,Cambridge,,52.2081,,0.1225,,961,,970||Cambridge,,Cambridge,,52.2081,,0.1225,,1229,,1238||
+Cambridge, Massachusetts,,Cambridge,,42.3736,,-71.1106,,0,,9||Cambridge, Massachusetts,,Cambridge,,42.3736,,-71.1106,,330,,339||Cambridge, Massachusetts,,Cambridge,,42.3736,,-71.1106,,465,,474||Cambridge, Massachusetts,,Cambridge,,42.3736,,-71.1106,,794,,803||Cambridge, Massachusetts,,Cambridge,,42.3736,,-71.1106,,955,,964||Cambridge, Massachusetts,,Cambridge,,42.3736,,-71.1106,,2558,,2567||
+Cambridge, Ontario,,Cambridge,,43.3583,,-80.3139,,0,,9||Cambridge, Ontario,,Cambridge,,43.3583,,-80.3139,,319,,328||Cambridge, Ontario,,Cambridge,,43.3583,,-80.3139,,489,,498||Cambridge, Ontario,,Cambridge,,43.3583,,-80.3139,,500,,509||
+Cambridge, Minnesota,,Cambridge,,45.5644,,-93.2283,,0,,9||Cambridge, Minnesota,,Cambridge,,45.5644,,-93.2283,,268,,277||Cambridge, Minnesota,,Cambridge,,45.5644,,-93.2283,,994,,1003||
+Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,0,,9||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,408,,417||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,1141,,1150||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,1291,,1300||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,1333,,1342||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,1357,,1366||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,1571,,1580||Cambridge, Ohio,,Cambridge,,40.0251,,-81.5868,,1665,,1674||
+Cambridge, Maryland,,Cambridge,,38.5664,,-76.0769,,0,,9||Cambridge, Maryland,,Cambridge,,38.5664,,-76.0769,,195,,204||Cambridge, Maryland,,Cambridge,,38.5664,,-76.0769,,348,,357||Cambridge, Maryland,,Cambridge,,38.5664,,-76.0769,,1065,,1074||
+Cambridge, Idaho,,Cambridge,,44.5717,,-116.6781,,555,,564||
+Cambridge, Illinois,,Cambridge,,41.3033,,-90.1933,,0,,9||Cambridge, Illinois,,Cambridge,,41.3033,,-90.1933,,202,,211||
+Cambridge, Vermont,,Cambridge,,44.6411,,-72.8353,,0,,9||Cambridge, Vermont,,Cambridge,,44.6411,,-72.8353,,114,,123||Cambridge, Vermont,,Cambridge,,44.6411,,-72.8353,,168,,177||Cambridge, Vermont,,Cambridge,,44.6411,,-72.8353,,208,,217||Cambridge, Vermont,,Cambridge,,44.6411,,-72.8353,,666,,675||Cambridge, Vermont,,Cambridge,,44.6411,,-72.8353,,967,,976||
+Cambridge, New Zealand,,Cambridge,,-37.8916,,175.4675,,199,,208||
+Cambridge, Kansas,,Cambridge,,37.3172,,-96.6672,,0,,9||
+Cambridge, Wisconsin,,Cambridge,,43.0036,,-89.0164,,0,,9||Cambridge, Wisconsin,,Cambridge,,43.0036,,-89.0164,,237,,246||Cambridge, Wisconsin,,Cambridge,,43.0036,,-89.0164,,645,,654||Cambridge, Wisconsin,,Cambridge,,43.0036,,-89.0164,,1079,,1088||
+Cambridge, New York,,Cambridge,,42.9972,,-73.4517,,765,,774||
+Cambridge, Gloucestershire,,Cambridge,,51.732,,-2.365,,0,,9||Cambridge, Gloucestershire,,Cambridge,,51.732,,-2.365,,708,,717||
+Manchester, New Hampshire,,Manchester,,42.9908,,-71.4636,,426,,436||Manchester, New Hampshire,,Manchester,,42.9908,,-71.4636,,633,,643||Manchester, New Hampshire,,Manchester,,42.9908,,-71.4636,,842,,852||
+Manchester, Tennessee,,Manchester,,35.4733,,-86.0856,,1260,,1270||
+Manchester, Connecticut,,Manchester,,41.7753,,-72.5242,,171,,181||Manchester, Connecticut,,Manchester,,41.7753,,-72.5242,,686,,696||Manchester, Connecticut,,Manchester,,41.7753,,-72.5242,,794,,804||
+
+
+Manchester, Maryland,,Manchester,,39.6617,,-76.8881,,999,,1009||Manchester, Maryland,,Manchester,,39.6617,,-76.8881,,1154,,1164||
+Manchester, Michigan,,Manchester,,42.1492,,84.0339,,618,,628||Manchester, Michigan,,Manchester,,42.1492,,84.0339,,1227,,1237||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+China,,China,,32.8,,103.083,,0,,5||China,,China,,32.8,,103.083,,616,,621||China,,China,,32.8,,103.083,,768,,773||China,,China,,32.8,,103.083,,1003,,1008||China,,China,,32.8,,103.083,,1184,,1189||
+China, Maine,,China,,44.4297,,-69.5375,,696,,701||China, Maine,,China,,44.4297,,-69.5375,,938,,943||
+China, Kagoshima,,China,,27.3336,,128.5736,,0,,5||China, Kagoshima,,China,,27.3336,,128.5736,,265,,270||
+China, Texas,,China,,30.0542,,-94.3319,,0,,5||China, Texas,,China,,30.0542,,-94.3319,,549,,554||China, Texas,,China,,30.0542,,-94.3319,,723,,728||China, Texas,,China,,30.0542,,-94.3319,,801,,806||China, Texas,,China,,30.0542,,-94.3319,,1029,,1034||
+China, Indiana,,China,,38.8258,,-85.3383,,0,,5||China, Indiana,,China,,38.8258,,-85.3383,,625,,630||China, Indiana,,China,,38.8258,,-85.3383,,894,,899||China, Indiana,,China,,38.8258,,-85.3383,,1108,,1113||
+
+
+
+Buenavista, Marinduque,,Buenavista,,13.2539,,121.9436,,708,,718||
+
+
+Dublin,,Dublin,,53.3434,,-6.2676,,636,,642||Dublin,,Dublin,,53.3434,,-6.2676,,710,,716||
+Dublin, California,,Dublin,,37.7022,,-121.9358,,547,,553||Dublin, California,,Dublin,,37.7022,,-121.9358,,789,,795||
+Dublin, Ohio,,Dublin,,40.1093,,-83.1402,,393,,399||Dublin, Ohio,,Dublin,,40.1093,,-83.1402,,648,,654||Dublin, Ohio,,Dublin,,40.1093,,-83.1402,,1051,,1057||
+Dublin, Georgia,,Dublin,,32.5375,,-82.9183,,235,,241||Dublin, Georgia,,Dublin,,32.5375,,-82.9183,,586,,592||Dublin, Georgia,,Dublin,,32.5375,,-82.9183,,773,,779||
+
+Dublin, New Hampshire,,Dublin,,42.9056,,-72.0611,,969,,975||
+Dublin, Texas,,Dublin,,32.0867,,-98.3425,,490,,496||Dublin, Texas,,Dublin,,32.0867,,-98.3425,,915,,921||Dublin, Texas,,Dublin,,32.0867,,-98.3425,,1085,,1091||
+Dublin, Pennsylvania,,Dublin,,40.3733,,-75.2025,,1027,,1033||Dublin, Pennsylvania,,Dublin,,40.3733,,-75.2025,,1097,,1103||
+Dublin, Maryland,,Dublin,,39.6508,,-76.2667,,231,,237||Dublin, Maryland,,Dublin,,39.6508,,-76.2667,,365,,371||Dublin, Maryland,,Dublin,,39.6508,,-76.2667,,880,,886||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Gabriel, California,,San Gabriel,,34.0942,,-118.0984,,538,,549||San Gabriel, California,,San Gabriel,,34.0942,,-118.0984,,660,,671||
+San Gabriel, La Union,,San Gabriel,,16.6756,,120.4031,,978,,989||
+San Gabriel, Texas,,San Gabriel,,30.6944,,-97.1961,,539,,550||San Gabriel, Texas,,San Gabriel,,30.6944,,-97.1961,,1238,,1249||San Gabriel, Texas,,San Gabriel,,30.6944,,-97.1961,,1450,,1461||San Gabriel, Texas,,San Gabriel,,30.6944,,-97.1961,,1833,,1844||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Albany, Western Australia,,Albany,,-35.0222,,117.8806,,610,,616||Albany, Western Australia,,Albany,,-35.0222,,117.8806,,1023,,1029||Albany, Western Australia,,Albany,,-35.0222,,117.8806,,1123,,1129||
+Albany, Oregon,,Albany,,44.6302,,-123.096,,421,,427||Albany, Oregon,,Albany,,44.6302,,-123.096,,523,,529||Albany, Oregon,,Albany,,44.6302,,-123.096,,1119,,1125||
+Albany, Georgia,,Albany,,31.5822,,-84.1656,,289,,295||Albany, Georgia,,Albany,,31.5822,,-84.1656,,805,,811||
+
+Albany, Texas,,Albany,,32.7269,,-99.2944,,401,,407||Albany, Texas,,Albany,,32.7269,,-99.2944,,543,,549||Albany, Texas,,Albany,,32.7269,,-99.2944,,571,,577||Albany, Texas,,Albany,,32.7269,,-99.2944,,751,,757||Albany, Texas,,Albany,,32.7269,,-99.2944,,1219,,1225||
+Albany, Minnesota,,Albany,,45.6319,,-94.57,,385,,391||Albany, Minnesota,,Albany,,45.6319,,-94.57,,601,,607||
+
+Albany, Kentucky,,Albany,,36.6933,,-85.1353,,273,,279||Albany, Kentucky,,Albany,,36.6933,,-85.1353,,755,,761||
+Albany, New Zealand,,Albany,,-36.7167,,174.7,,603,,609||
+Albany, Louisiana,,Albany,,30.5031,,90.5839,,430,,436||Albany, Louisiana,,Albany,,30.5031,,90.5839,,516,,522||Albany, Louisiana,,Albany,,30.5031,,90.5839,,735,,741||
+
+Albany, New Hampshire,,Albany,,43.96,,-71.1936,,886,,892||Albany, New Hampshire,,Albany,,43.96,,-71.1936,,1258,,1264||Albany, New Hampshire,,Albany,,43.96,,-71.1936,,1363,,1369||
+
+
+
+San Esteban, Camarines Sur,,San Esteban,,13.4014,,123.3764,,1067,,1078||
+Springfield, Illinois,,Springfield,,39.6983,,-89.6197,,679,,690||
+Springfield, Ohio,,Springfield,,39.9267,,-83.8039,,727,,738||Springfield, Ohio,,Springfield,,39.9267,,-83.8039,,849,,860||Springfield, Ohio,,Springfield,,39.9267,,-83.8039,,1003,,1014||Springfield, Ohio,,Springfield,,39.9267,,-83.8039,,1061,,1072||Springfield, Ohio,,Springfield,,39.9267,,-83.8039,,1170,,1181||Springfield, Ohio,,Springfield,,39.9267,,-83.8039,,1259,,1270||
+Springfield, Oregon,,Springfield,,44.0531,,-122.9911,,230,,241||Springfield, Oregon,,Springfield,,44.0531,,-122.9911,,416,,427||
+
+
+Springfield, Vermont,,Springfield,,43.2986,,-72.4878,,470,,481||
+
+Springfield, Nebraska,,Springfield,,41.0822,,-96.1325,,962,,973||
+Springfield, Minnesota,,Springfield,,44.2394,,-94.9786,,783,,794||Springfield, Minnesota,,Springfield,,44.2394,,-94.9786,,924,,935||
+
+
+Springfield, Louisiana,,Springfield,,30.4292,,90.5481,,474,,485||Springfield, Louisiana,,Springfield,,30.4292,,90.5481,,605,,616||Springfield, Louisiana,,Springfield,,30.4292,,90.5481,,1040,,1051||Springfield, Louisiana,,Springfield,,30.4292,,90.5481,,1077,,1088||
+Springfield, West Virginia,,Springfield,,39.4506,,-78.6936,,139,,150||Springfield, West Virginia,,Springfield,,39.4506,,-78.6936,,176,,187||Springfield, West Virginia,,Springfield,,39.4506,,-78.6936,,452,,463||Springfield, West Virginia,,Springfield,,39.4506,,-78.6936,,633,,644||Springfield, West Virginia,,Springfield,,39.4506,,-78.6936,,872,,883||
+Springfield, Michigan,,Springfield,,42.3236,,-85.2308,,54,,65||
+
+Springfield, New York,,Springfield,,42.8361,,-74.8536,,112,,123||Springfield, New York,,Springfield,,42.8361,,-74.8536,,476,,487||
+Springfield, New Zealand,,Springfield,,-43.3372,,171.9269,,0,,11||Springfield, New Zealand,,Springfield,,-43.3372,,171.9269,,304,,315||Springfield, New Zealand,,Springfield,,-43.3372,,171.9269,,370,,381||
+
+Springfield, Fife,,Springfield,,56.283,,-3.067,,991,,1002||Springfield, Fife,,Springfield,,56.283,,-3.067,,1015,,1026||
+Springfield, Birmingham,,Springfield,,52.4314,,-1.8595,,921,,932||
+Springfield, Nova Scotia,,Springfield,,44.633,,-64.85,,118,,129||Springfield, Nova Scotia,,Springfield,,44.633,,-64.85,,215,,226||Springfield, Nova Scotia,,Springfield,,44.633,,-64.85,,1748,,1759||
+Springfield, Wolverhampton,,Springfield,,52.593,,-2.121,,480,,491||Springfield, Wolverhampton,,Springfield,,52.593,,-2.121,,765,,776||
+
+
+Columbus, Ohio,,Columbus,,39.9621,,-82.9986,,217,,225||Columbus, Ohio,,Columbus,,39.9621,,-82.9986,,491,,499||
+Columbus, Indiana,,Columbus,,39.2139,,-85.9111,,1011,,1019||
+Columbus, Mississippi,,Columbus,,33.5017,,-88.415,,834,,842||
+
+
+
+Columbus, Kentucky,,Columbus,,36.7602,,-89.1028,,521,,529||Columbus, Kentucky,,Columbus,,36.7602,,-89.1028,,1099,,1107||
+
+Columbus, Minnesota,,Columbus,,45.27,,-93.0606,,540,,548||Columbus, Minnesota,,Columbus,,45.27,,-93.0606,,921,,929||
+
+Columbus, Montana,,Columbus,,45.6383,,-109.2522,,404,,412||Columbus, Montana,,Columbus,,45.6383,,-109.2522,,1039,,1047||
+
+Columbus, New York,,Columbus,,42.6958,,-75.3606,,198,,206||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La Ceiba,,La Ceiba,,15.7667,,-86.8333,,1260,,1268||
+
+
+Somerset, New Jersey,,Somerset,,40.5085,,-74.5002,,603,,611||
+
+
+
+Somerset, Ohio,,Somerset,,39.8069,,-82.3014,,509,,517||Somerset, Ohio,,Somerset,,39.8069,,-82.3014,,658,,666||
+Somerset, Maryland,,Somerset,,38.9672,,-77.0947,,1021,,1029||
+
+
+
+
+
+
+
+
+
+Woodstock, Connecticut,,Woodstock,,41.9653,,-72.0222,,976,,985||
+Woodstock, Oxfordshire,,Woodstock,,51.8519,,-1.3536,,215,,224||Woodstock, Oxfordshire,,Woodstock,,51.8519,,-1.3536,,922,,931||
+Woodstock, Virginia,,Woodstock,,38.8769,,-78.5114,,217,,226||Woodstock, Virginia,,Woodstock,,38.8769,,-78.5114,,864,,873||
+
+Woodstock, New York,,Woodstock,,42.0557,,-74.1652,,633,,642||
+Woodstock, Maryland,,Woodstock,,39.3286,,-76.8719,,116,,125||
+
+
+Woodstock, Queensland,,Woodstock,,-19.595,,146.8367,,809,,818||
+Woodstock, New South Wales,,Woodstock,,33.75,,148.85,,1035,,1044||Woodstock, New South Wales,,Woodstock,,33.75,,148.85,,1309,,1318||Woodstock, New South Wales,,Woodstock,,33.75,,148.85,,1511,,1520||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Jacinto, California,,San Jacinto,,33.7872,,-116.9667,,0,,11||
+
+
+
+Portland, Maine,,Portland,,43.66,,-70.256,,0,,8||Portland, Maine,,Portland,,43.66,,-70.256,,387,,395||Portland, Maine,,Portland,,43.66,,-70.256,,832,,840||Portland, Maine,,Portland,,43.66,,-70.256,,1139,,1147||
+
+Portland, Connecticut,,Portland,,41.5992,,-72.5906,,0,,8||Portland, Connecticut,,Portland,,41.5992,,-72.5906,,259,,267||Portland, Connecticut,,Portland,,41.5992,,-72.5906,,811,,819||Portland, Connecticut,,Portland,,41.5992,,-72.5906,,1057,,1065||
+Portland, Indiana,,Portland,,40.4339,,-84.98,,318,,326||Portland, Indiana,,Portland,,40.4339,,-84.98,,852,,860||Portland, Indiana,,Portland,,40.4339,,-84.98,,892,,900||Portland, Indiana,,Portland,,40.4339,,-84.98,,1026,,1034||
+
+Portland, Tennessee,,Portland,,36.5822,,86.5156,,0,,8||Portland, Tennessee,,Portland,,36.5822,,86.5156,,66,,74||Portland, Tennessee,,Portland,,36.5822,,86.5156,,253,,261||Portland, Tennessee,,Portland,,36.5822,,86.5156,,916,,924||Portland, Tennessee,,Portland,,36.5822,,86.5156,,986,,994||
+
+Portland, Pennsylvania,,Portland,,40.9206,,-75.0978,,514,,522||
+Portland, New York,,Portland,,42.3828,,-79.4619,,0,,8||Portland, New York,,Portland,,42.3828,,-79.4619,,219,,227||Portland, New York,,Portland,,42.3828,,-79.4619,,405,,413||Portland, New York,,Portland,,42.3828,,-79.4619,,720,,728||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Juan Bautista, California,,San Juan Bautista,,36.8442,,-121.5372,,0,,17||San Juan Bautista, California,,San Juan Bautista,,36.8442,,-121.5372,,486,,503||San Juan Bautista, California,,San Juan Bautista,,36.8442,,-121.5372,,672,,689||San Juan Bautista, California,,San Juan Bautista,,36.8442,,-121.5372,,817,,834||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Brighton, Ontario,,Brighton,,44.0333,,-77.7333,,761,,769||
+
+
+
+
+
+
+Brighton, Franklin County, New York,,Brighton,,44.4483,,-74.2367,,406,,414||
+
+
+
+
+
+
+
+
+El Paso, Illinois,,El Paso,,40.7392,,-89.0164,,157,,164||
+
+
+
+
+
+
+
+El Salvador,,El Salvador,,13.6833,,-89.1833,,0,,11||El Salvador,,El Salvador,,13.6833,,-89.1833,,243,,254||El Salvador,,El Salvador,,13.6833,,-89.1833,,311,,322||El Salvador,,El Salvador,,13.6833,,-89.1833,,520,,531||
+El Salvador, Misamis Oriental,,El Salvador,,8.5667,,124.5167,,0,,11||El Salvador, Misamis Oriental,,El Salvador,,8.5667,,124.5167,,68,,79||El Salvador, Misamis Oriental,,El Salvador,,8.5667,,124.5167,,440,,451||El Salvador, Misamis Oriental,,El Salvador,,8.5667,,124.5167,,716,,727||El Salvador, Misamis Oriental,,El Salvador,,8.5667,,124.5167,,929,,940||El Salvador, Misamis Oriental,,El Salvador,,8.5667,,124.5167,,973,,984||
+El Salvador, Chile,,El Salvador,,-26.25,,-69.6167,,0,,11||El Salvador, Chile,,El Salvador,,-26.25,,-69.6167,,297,,308||El Salvador, Chile,,El Salvador,,-26.25,,-69.6167,,354,,365||
+
+
+
+
+
+Colombia,,Colombia,,3.8167,,-73.9167,,0,,8||Colombia,,Colombia,,3.8167,,-73.9167,,532,,540||Colombia,,Colombia,,3.8167,,-73.9167,,933,,941||
+
+
+
+Costa Rica, Sinaloa,,Costa Rica,,24.0856,,-107.0522,,1541,,1551||
+
+El Dorado, Kansas,,El Dorado,,37.8211,,-96.8583,,458,,467||
+
+
+
+Nevada,,Nevada,,39,,-117,,0,,6||Nevada,,Nevada,,39,,-117,,136,,142||Nevada,,Nevada,,39,,-117,,480,,486||Nevada,,Nevada,,39,,-117,,972,,978||
+
+Nevada, Missouri,,Nevada,,37.8408,,94.3556,,199,,205||Nevada, Missouri,,Nevada,,37.8408,,94.3556,,505,,511||Nevada, Missouri,,Nevada,,37.8408,,94.3556,,700,,706||Nevada, Missouri,,Nevada,,37.8408,,94.3556,,1029,,1035||
+
+
+
+
+
+
+
+
+
+Milan, Ohio,,Milan,,41.2933,,-82.6014,,0,,5||Milan, Ohio,,Milan,,41.2933,,-82.6014,,239,,244||Milan, Ohio,,Milan,,41.2933,,-82.6014,,385,,390||Milan, Ohio,,Milan,,41.2933,,-82.6014,,670,,675||Milan, Ohio,,Milan,,41.2933,,-82.6014,,1102,,1107||
+Milan, Tennessee,,Milan,,35.9158,,88.7578,,0,,5||Milan, Tennessee,,Milan,,35.9158,,88.7578,,832,,837||
+
+
+
+Milan, New York,,Milan,,41.9778,,-73.7806,,195,,200||Milan, New York,,Milan,,41.9778,,-73.7806,,744,,749||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jamestown, North Carolina,,Jamestown,,35.9983,,-79.9358,,843,,852||
+
+
+
+
+
+
+
+
+
+
+
+
+
+La Carolina,,La Carolina,,38.2667,,-3.6167,,0,,11||La Carolina,,La Carolina,,38.2667,,-3.6167,,157,,168||
+
+Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,158,,166||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,471,,479||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,529,,537||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,1128,,1136||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,1207,,1215||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,1564,,1572||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,1597,,1605||Hartford, Connecticut,,Hartford,,41.7634,,-72.6851,,1696,,1704||
+Hartford, Vermont,,Hartford,,43.6647,,-72.3861,,919,,927||
+Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,292,,300||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,370,,378||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,769,,777||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,833,,841||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,1439,,1447||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,2003,,2011||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,2013,,2021||Hartford, Wisconsin,,Hartford,,43.3183,,-88.3789,,2165,,2173||
+
+Hartford, New York,,Hartford,,43.3591,,-73.4191,,409,,417||Hartford, New York,,Hartford,,43.3591,,-73.4191,,431,,439||
+Hartford, Arkansas,,Hartford,,35.0233,,-94.3783,,564,,572||Hartford, Arkansas,,Hartford,,35.0233,,-94.3783,,732,,740||Hartford, Arkansas,,Hartford,,35.0233,,-94.3783,,742,,750||Hartford, Arkansas,,Hartford,,35.0233,,-94.3783,,818,,826||
+Hartford, Illinois,,Hartford,,38.8244,,-90.0925,,837,,845||
+Hartford, Cheshire,,Hartford,,53.245,,-2.549,,538,,546||
+
+Hartford, Providence, Rhode Island,,Hartford,,41.82,,-71.46,,1158,,1166||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pasadena, California,,Pasadena,,34.1634,,-118.1269,,953,,961||Pasadena, California,,Pasadena,,34.1634,,-118.1269,,1280,,1288||
+Pasadena, Texas,,Pasadena,,29.6761,,-95.1739,,1835,,1843||
+Pasadena, Newfoundland and Labrador,,Pasadena,,49.0119,,-57.5685,,375,,383||
+
+
+Pella, Iowa,,Pella,,41.4067,,-92.9169,,755,,760||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Washington County, Kansas,,Washington County,,39.6994,,-96.8611,,0,,17||Washington County, Kansas,,Washington County,,39.6994,,-96.8611,,288,,305||Washington County, Kansas,,Washington County,,39.6994,,-96.8611,,404,,421||Washington County, Kansas,,Washington County,,39.6994,,-96.8611,,641,,658||Washington County, Kansas,,Washington County,,39.6994,,-96.8611,,931,,948||
+Washington County, Pennsylvania,,Washington County,,40.19,,-80.25,,386,,403||Washington County, Pennsylvania,,Washington County,,40.19,,-80.25,,640,,657||Washington County, Pennsylvania,,Washington County,,40.19,,-80.25,,1080,,1097||
+Washington County, Oregon,,Washington County,,45.56,,-123.09,,337,,354||
+Washington County, Utah,,Washington County,,37.28,,-113.52,,865,,882||Washington County, Utah,,Washington County,,37.28,,-113.52,,942,,959||
+Washington County, Missouri,,Washington County,,37.97,,-90.88,,883,,900||Washington County, Missouri,,Washington County,,37.97,,-90.88,,1043,,1060||
+Washington County, Arkansas,,Washington County,,36.0025,,-94.2272,,625,,642||Washington County, Arkansas,,Washington County,,36.0025,,-94.2272,,882,,899||Washington County, Arkansas,,Washington County,,36.0025,,-94.2272,,1046,,1063||
+Washington County, Maryland,,Washington County,,39.6,,-77.81,,1031,,1048||
+
+Washington County, Tennessee,,Washington County,,36.29,,-82.5,,1238,,1255||
+Washington County, Rhode Island,,Washington County,,41.39,,-71.62,,0,,17||Washington County, Rhode Island,,Washington County,,41.39,,-71.62,,189,,206||Washington County, Rhode Island,,Washington County,,41.39,,-71.62,,350,,367||Washington County, Rhode Island,,Washington County,,41.39,,-71.62,,542,,559||Washington County, Rhode Island,,Washington County,,41.39,,-71.62,,640,,657||
+
+Washington County, New York,,Washington County,,43.3124,,-73.4394,,498,,515||
+
+Washington County, Maine,,Washington County,,44.97,,-67.61,,435,,452||
+Washington County, Iowa,,Washington County,,41.3347,,-91.7197,,146,,163||Washington County, Iowa,,Washington County,,41.3347,,-91.7197,,223,,240||Washington County, Iowa,,Washington County,,41.3347,,-91.7197,,409,,426||Washington County, Iowa,,Washington County,,41.3347,,-91.7197,,489,,506||Washington County, Iowa,,Washington County,,41.3347,,-91.7197,,1066,,1083||
+
+Washington County, Georgia,,Washington County,,32.97,,-82.79,,519,,536||
+Washington County, Alabama,,Washington County,,31.4092,,-88.2114,,301,,318||Washington County, Alabama,,Washington County,,31.4092,,-88.2114,,545,,562||Washington County, Alabama,,Washington County,,31.4092,,-88.2114,,843,,860||Washington County, Alabama,,Washington County,,31.4092,,-88.2114,,1007,,1024||
+Washington County, Florida,,Washington County,,30.61,,-85.67,,687,,704||
+Washington County, Mississippi,,Washington County,,33.29,,-90.95,,311,,328||
+Washington County, Virginia,,Washington County,,36.72,,-81.96,,1293,,1310||
+Washington County, Vermont,,Washington County,,44.27,,-72.62,,588,,605||Washington County, Vermont,,Washington County,,44.27,,-72.62,,630,,647||
+Washington County, Oklahoma,,Washington County,,36.7033,,-95.91,,767,,784||
+Washington County, Kentucky,,Washington County,,37.75,,-85.1833,,383,,400||Washington County, Kentucky,,Washington County,,37.75,,-85.1833,,800,,817||Washington County, Kentucky,,Washington County,,37.75,,-85.1833,,819,,836||
+Washington County, Nebraska,,Washington County,,41.53,,-96.22,,279,,296||Washington County, Nebraska,,Washington County,,41.53,,-96.22,,462,,479||Washington County, Nebraska,,Washington County,,41.53,,-96.22,,975,,992||
+
+
+
+
+
+
+
+
+
+
+Batang, Sichuan,,Batang,,30.0031,,99.1131,,841,,847||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lake County, Oregon,,Lake County,,42.79,,-120.39,,0,,11||Lake County, Oregon,,Lake County,,42.79,,-120.39,,289,,300||Lake County, Oregon,,Lake County,,42.79,,-120.39,,901,,912||
+Lake County, California,,Lake County,,39.09,,-122.76,,0,,11||Lake County, California,,Lake County,,39.09,,-122.76,,390,,401||Lake County, California,,Lake County,,39.09,,-122.76,,509,,520||Lake County, California,,Lake County,,39.09,,-122.76,,652,,663||Lake County, California,,Lake County,,39.09,,-122.76,,1252,,1263||
+Lake County, Indiana,,Lake County,,41.48,,-87.38,,0,,11||Lake County, Indiana,,Lake County,,41.48,,-87.38,,434,,445||Lake County, Indiana,,Lake County,,41.48,,-87.38,,512,,523||
+Lake County, Illinois,,Lake County,,42.43,,-87.78,,0,,11||Lake County, Illinois,,Lake County,,42.43,,-87.78,,286,,297||Lake County, Illinois,,Lake County,,42.43,,-87.78,,346,,357||Lake County, Illinois,,Lake County,,42.43,,-87.78,,539,,550||Lake County, Illinois,,Lake County,,42.43,,-87.78,,784,,795||Lake County, Illinois,,Lake County,,42.43,,-87.78,,1334,,1345||
+Lake County, Ohio,,Lake County,,41.82,,-81.24,,0,,11||Lake County, Ohio,,Lake County,,41.82,,-81.24,,310,,321||Lake County, Ohio,,Lake County,,41.82,,-81.24,,448,,459||Lake County, Ohio,,Lake County,,41.82,,-81.24,,800,,811||
+Lake County, Colorado,,Lake County,,39.19,,-106.36,,0,,11||Lake County, Colorado,,Lake County,,39.19,,-106.36,,290,,301||Lake County, Colorado,,Lake County,,39.19,,-106.36,,344,,355||Lake County, Colorado,,Lake County,,39.19,,-106.36,,472,,483||Lake County, Colorado,,Lake County,,39.19,,-106.36,,698,,709||Lake County, Colorado,,Lake County,,39.19,,-106.36,,1009,,1020||
+Lake County, Florida,,Lake County,,28.77,,-81.72,,0,,11||Lake County, Florida,,Lake County,,28.77,,-81.72,,175,,186||Lake County, Florida,,Lake County,,28.77,,-81.72,,267,,278||Lake County, Florida,,Lake County,,28.77,,-81.72,,478,,489||Lake County, Florida,,Lake County,,28.77,,-81.72,,933,,944||
+Lake County, Minnesota,,Lake County,,47.53,,-91.39,,0,,11||Lake County, Minnesota,,Lake County,,47.53,,-91.39,,146,,157||Lake County, Minnesota,,Lake County,,47.53,,-91.39,,332,,343||Lake County, Minnesota,,Lake County,,47.53,,-91.39,,968,,979||
+Lake County, Michigan,,Lake County,,43.99,,-85.81,,0,,11||
+Lake County, Tennessee,,Lake County,,36.34,,-89.49,,0,,11||Lake County, Tennessee,,Lake County,,36.34,,-89.49,,420,,431||Lake County, Tennessee,,Lake County,,36.34,,-89.49,,836,,847||Lake County, Tennessee,,Lake County,,36.34,,-89.49,,1005,,1016||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cleveland,,Cleveland,,41.4822,,-81.6697,,0,,9||Cleveland,,Cleveland,,41.4822,,-81.6697,,623,,632||Cleveland,,Cleveland,,41.4822,,-81.6697,,791,,800||
+
+Cleveland, Tennessee,,Cleveland,,35.1594,,-84.8767,,806,,815||
+Cleveland, Oklahoma,,Cleveland,,36.3064,,-96.4647,,0,,9||Cleveland, Oklahoma,,Cleveland,,36.3064,,-96.4647,,310,,319||Cleveland, Oklahoma,,Cleveland,,36.3064,,-96.4647,,505,,514||
+
+Cleveland, Mississippi,,Cleveland,,33.7419,,-90.7267,,0,,9||Cleveland, Mississippi,,Cleveland,,33.7419,,-90.7267,,101,,110||Cleveland, Mississippi,,Cleveland,,33.7419,,-90.7267,,219,,228||
+Cleveland, Texas,,Cleveland,,30.345,,-95.0836,,0,,9||
+Cleveland, Utah,,Cleveland,,39.3481,,-110.8553,,0,,9||Cleveland, Utah,,Cleveland,,39.3481,,-110.8553,,207,,216||Cleveland, Utah,,Cleveland,,39.3481,,-110.8553,,455,,464||Cleveland, Utah,,Cleveland,,39.3481,,-110.8553,,689,,698||Cleveland, Utah,,Cleveland,,39.3481,,-110.8553,,754,,763||
+
+Cleveland, Arkansas,,Cleveland,,35.4214,,-92.7097,,0,,9||Cleveland, Arkansas,,Cleveland,,35.4214,,-92.7097,,84,,93||Cleveland, Arkansas,,Cleveland,,35.4214,,-92.7097,,214,,223||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Augusta, Kansas,,Augusta,,37.6925,,-96.98,,961,,968||
+
+Augusta, Wisconsin,,Augusta,,44.6803,,-91.12,,515,,522||
+
+Augusta, Illinois,,Augusta,,40.2308,,90.9506,,563,,570||Augusta, Illinois,,Augusta,,40.2308,,90.9506,,746,,753||Augusta, Illinois,,Augusta,,40.2308,,90.9506,,817,,824||
+Augusta, Ontario,,Augusta,,44.75,,-75.6,,114,,121||Augusta, Ontario,,Augusta,,44.75,,-75.6,,849,,856||
+
+
+
+Fairfield, California,,Fairfield,,38.2578,,-122.0543,,1114,,1123||
+
+Fairfield, Connecticut,,Fairfield,,41.1758,,-73.2719,,1069,,1078||
+Fairfield, Idaho,,Fairfield,,43.3461,,-114.7911,,827,,836||Fairfield, Idaho,,Fairfield,,43.3461,,-114.7911,,980,,989||Fairfield, Idaho,,Fairfield,,43.3461,,-114.7911,,1086,,1095||
+Fairfield, Illinois,,Fairfield,,38.3803,,-88.3658,,1355,,1364||
+
+Fairfield, Maine,,Fairfield,,44.6222,,-69.6328,,143,,152||Fairfield, Maine,,Fairfield,,44.6222,,-69.6328,,1180,,1189||
+Fairfield, Victoria,,Fairfield,,-37.8011,,144.9956,,395,,404||Fairfield, Victoria,,Fairfield,,-37.8011,,144.9956,,834,,843||
+Fairfield, New South Wales,,Fairfield,,-33.8703,,150.9562,,325,,334||Fairfield, New South Wales,,Fairfield,,-33.8703,,150.9562,,658,,667||Fairfield, New South Wales,,Fairfield,,-33.8703,,150.9562,,813,,822||
+Fairfield, Montana,,Fairfield,,47.615,,111.9808,,1155,,1164||Fairfield, Montana,,Fairfield,,47.615,,111.9808,,1535,,1544||Fairfield, Montana,,Fairfield,,47.615,,111.9808,,1605,,1614||
+
+
+Fairfield, New York,,Fairfield,,43.1247,,-74.9344,,170,,179||Fairfield, New York,,Fairfield,,43.1247,,-74.9344,,252,,261||Fairfield, New York,,Fairfield,,43.1247,,-74.9344,,646,,655||
+Fairfield, Liverpool,,Fairfield,,53.404,,-2.935,,808,,817||Fairfield, Liverpool,,Fairfield,,53.404,,-2.935,,1242,,1251||Fairfield, Liverpool,,Fairfield,,53.404,,-2.935,,1447,,1456||
+Fairfield, Queensland,,Fairfield,,-27.5065,,153.0247,,212,,221||Fairfield, Queensland,,Fairfield,,-27.5065,,153.0247,,312,,321||Fairfield, Queensland,,Fairfield,,-27.5065,,153.0247,,417,,426||Fairfield, Queensland,,Fairfield,,-27.5065,,153.0247,,762,,771||Fairfield, Queensland,,Fairfield,,-27.5065,,153.0247,,941,,950||
+Fairfield, Missouri,,Fairfield,,39.4739,,-93.6964,,408,,417||Fairfield, Missouri,,Fairfield,,39.4739,,-93.6964,,557,,566||Fairfield, Missouri,,Fairfield,,39.4739,,-93.6964,,767,,776||Fairfield, Missouri,,Fairfield,,39.4739,,-93.6964,,868,,877||
+
+
+
+
+
+
+
+Plymouth, Michigan,,Plymouth,,42.3714,,-83.4706,,405,,413||Plymouth, Michigan,,Plymouth,,42.3714,,-83.4706,,1116,,1124||
+
+
+Plymouth, California,,Plymouth,,38.4793,,-120.8477,,480,,488||
+Plymouth, Wisconsin,,Plymouth,,43.7486,,-87.9769,,275,,283||
+Plymouth, Ohio,,Plymouth,,40.9961,,-82.6667,,156,,164||
+
+
+Plymouth, North Carolina,,Plymouth,,35.8597,,-76.7478,,384,,392||
+
+
+
+
+
+
+Rochester, Minnesota,,Rochester,,44.0234,,-92.463,,921,,930||Rochester, Minnesota,,Rochester,,44.0234,,-92.463,,1467,,1476||
+
+
+Rochester, Indiana,,Rochester,,41.0619,,-86.2067,,668,,677||Rochester, Indiana,,Rochester,,41.0619,,-86.2067,,873,,882||
+Rochester, Michigan,,Rochester,,42.6806,,-83.1339,,530,,539||Rochester, Michigan,,Rochester,,42.6806,,-83.1339,,1185,,1194||
+Rochester, Massachusetts,,Rochester,,41.7317,,-70.8206,,463,,472||Rochester, Massachusetts,,Rochester,,41.7317,,-70.8206,,802,,811||
+Rochester, Illinois,,Rochester,,39.7506,,89.5414,,1239,,1248||
+Rochester, Pennsylvania,,Rochester,,40.7031,,-80.2833,,601,,610||Rochester, Pennsylvania,,Rochester,,40.7031,,-80.2833,,641,,650||
+Rochester, Washington,,Rochester,,46.8236,,-123.0833,,597,,606||Rochester, Washington,,Rochester,,46.8236,,-123.0833,,854,,863||Rochester, Washington,,Rochester,,46.8236,,-123.0833,,905,,914||Rochester, Washington,,Rochester,,46.8236,,-123.0833,,1072,,1081||
+Rochester, Kentucky,,Rochester,,37.2106,,86.8922,,777,,786||
+Rochester, Vermont,,Rochester,,43.8761,,-72.8122,,945,,954||
+Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,159,,168||Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,235,,244||Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,282,,291||Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,330,,339||Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,383,,392||Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,807,,816||Rochester, Wisconsin,,Rochester,,42.7406,,88.2239,,1019,,1028||
+
+Rochester, Ulster County, New York,,Rochester,,41.8036,,-74.2633,,120,,129||Rochester, Ulster County, New York,,Rochester,,41.8036,,-74.2633,,383,,392||Rochester, Ulster County, New York,,Rochester,,41.8036,,-74.2633,,562,,571||Rochester, Ulster County, New York,,Rochester,,41.8036,,-74.2633,,599,,608||
+Rochester, Nevada,,Rochester,,40.2889,,-118.1703,,970,,979||Rochester, Nevada,,Rochester,,40.2889,,-118.1703,,1072,,1081||
+Burlington, Vermont,,Burlington,,44.492,,-73.2394,,515,,525||Burlington, Vermont,,Burlington,,44.492,,-73.2394,,711,,721||
+Burlington, Iowa,,Burlington,,40.8081,,-91.1158,,809,,819||
+Burlington, Ontario,,Burlington,,43.3245,,-79.8014,,246,,256||Burlington, Ontario,,Burlington,,43.3245,,-79.8014,,344,,354||Burlington, Ontario,,Burlington,,43.3245,,-79.8014,,1533,,1543||
+Burlington, Massachusetts,,Burlington,,42.5047,,-71.1961,,698,,708||Burlington, Massachusetts,,Burlington,,42.5047,,-71.1961,,1089,,1099||
+
+
+Burlington, Wisconsin,,Burlington,,42.6778,,-88.2781,,354,,364||Burlington, Wisconsin,,Burlington,,42.6778,,-88.2781,,452,,462||Burlington, Wisconsin,,Burlington,,42.6778,,-88.2781,,569,,579||Burlington, Wisconsin,,Burlington,,42.6778,,-88.2781,,778,,788||Burlington, Wisconsin,,Burlington,,42.6778,,-88.2781,,840,,850||
+Burlington, Kansas,,Burlington,,38.1944,,-95.7456,,896,,906||
+
+
+Burlington, Connecticut,,Burlington,,41.7586,,-72.9578,,144,,154||Burlington, Connecticut,,Burlington,,41.7586,,-72.9578,,305,,315||Burlington, Connecticut,,Burlington,,41.7586,,-72.9578,,567,,577||
+Burlington, Kentucky,,Burlington,,39.0239,,-84.7172,,562,,572||Burlington, Kentucky,,Burlington,,39.0239,,-84.7172,,620,,630||Burlington, Kentucky,,Burlington,,39.0239,,-84.7172,,983,,993||
+Burlington, North Dakota,,Burlington,,48.2775,,-101.4278,,1095,,1105||Burlington, North Dakota,,Burlington,,48.2775,,-101.4278,,1256,,1266||
+Burlington, Ohio,,Burlington,,38.4092,,82.5269,,962,,972||
+
+Burlington, Newfoundland and Labrador,,Burlington,,49.75,,-56.0149,,1308,,1318||Burlington, Newfoundland and Labrador,,Burlington,,49.75,,-56.0149,,1495,,1505||
+Burlington, West Virginia,,Burlington,,39.3375,,-78.9181,,315,,325||Burlington, West Virginia,,Burlington,,39.3375,,-78.9181,,336,,346||Burlington, West Virginia,,Burlington,,39.3375,,-78.9181,,575,,585||Burlington, West Virginia,,Burlington,,39.3375,,-78.9181,,747,,757||Burlington, West Virginia,,Burlington,,39.3375,,-78.9181,,1210,,1220||Burlington, West Virginia,,Burlington,,39.3375,,-78.9181,,1495,,1505||
+Burlington, New York,,Burlington,,42.7283,,-75.1414,,121,,131||
+Santa Monica, California,,Santa Monica,,34.0219,,-118.4814,,545,,557||
+Claremont, New Hampshire,,Claremont,,43.3722,,-72.3375,,450,,459||
+
+
+
+
+
+
+Claremont, Ontario,,Claremont,,43.9722,,-79.1303,,921,,930||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Miami,,Miami,,25.7878,,-80.2242,,0,,5||Miami,,Miami,,25.7878,,-80.2242,,306,,311||Miami,,Miami,,25.7878,,-80.2242,,458,,463||Miami,,Miami,,25.7878,,-80.2242,,598,,603||Miami,,Miami,,25.7878,,-80.2242,,733,,738||Miami,,Miami,,25.7878,,-80.2242,,831,,836||Miami,,Miami,,25.7878,,-80.2242,,1245,,1250||Miami,,Miami,,25.7878,,-80.2242,,1369,,1374||
+Miami, Oklahoma,,Miami,,36.8836,,-94.8761,,0,,5||Miami, Oklahoma,,Miami,,36.8836,,-94.8761,,246,,251||Miami, Oklahoma,,Miami,,36.8836,,-94.8761,,393,,398||Miami, Oklahoma,,Miami,,36.8836,,-94.8761,,450,,455||Miami, Oklahoma,,Miami,,36.8836,,-94.8761,,1377,,1382||
+Miami, Queensland,,Miami,,-28.0672,,153.4369,,0,,5||Miami, Queensland,,Miami,,-28.0672,,153.4369,,62,,67||Miami, Queensland,,Miami,,-28.0672,,153.4369,,335,,340||Miami, Queensland,,Miami,,-28.0672,,153.4369,,1040,,1045||
+Miami, Arizona,,Miami,,33.3961,,-110.8719,,0,,5||Miami, Arizona,,Miami,,33.3961,,-110.8719,,88,,93||Miami, Arizona,,Miami,,33.3961,,-110.8719,,348,,353||Miami, Arizona,,Miami,,33.3961,,-110.8719,,526,,531||Miami, Arizona,,Miami,,33.3961,,-110.8719,,605,,610||
+Miami, Manitoba,,Miami,,49.3711,,-98.2447,,0,,5||Miami, Manitoba,,Miami,,49.3711,,-98.2447,,229,,234||Miami, Manitoba,,Miami,,49.3711,,-98.2447,,986,,991||Miami, Manitoba,,Miami,,49.3711,,-98.2447,,1189,,1194||
+
+
+
+
+
+
+
+Newton, Iowa,,Newton,,41.6986,,-93.0469,,136,,142||
+Newton, Kansas,,Newton,,38.0442,,-97.3475,,689,,695||
+
+
+
+
+
+Newton, Alabama,,Newton,,31.35,,-85.6,,637,,643||Newton, Alabama,,Newton,,31.35,,-85.6,,759,,765||
+
+
+
+
+
+
+
+
+Newport, Wales,,Newport,,51.5877,,-2.9983,,0,,7||Newport, Wales,,Newport,,51.5877,,-2.9983,,477,,484||Newport, Wales,,Newport,,51.5877,,-2.9983,,1185,,1192||
+Newport, Washington,,Newport,,48.1806,,-117.0475,,832,,839||
+Newport, Oregon,,Newport,,44.6378,,-124.0547,,0,,7||Newport, Oregon,,Newport,,44.6378,,-124.0547,,333,,340||Newport, Oregon,,Newport,,44.6378,,-124.0547,,513,,520||
+
+Newport, Arkansas,,Newport,,35.6119,,-91.2622,,923,,930||
+Newport, Tennessee,,Newport,,35.9633,,-83.1965,,0,,7||Newport, Tennessee,,Newport,,35.9633,,-83.1965,,299,,306||
+Newport, Pembrokeshire,,Newport,,52.0198,,-4.8361,,409,,416||
+Newport, Shropshire,,Newport,,52.7691,,-2.3787,,0,,7||Newport, Shropshire,,Newport,,52.7691,,-2.3787,,494,,501||Newport, Shropshire,,Newport,,52.7691,,-2.3787,,1095,,1102||
+Newport, Delaware,,Newport,,39.7133,,-75.6081,,637,,644||
+Newport, New Hampshire,,Newport,,43.3653,,-72.1733,,375,,382||
+Newport, Pennsylvania,,Newport,,40.4783,,-77.1339,,482,,489||Newport, Pennsylvania,,Newport,,40.4783,,-77.1339,,609,,616||Newport, Pennsylvania,,Newport,,40.4783,,-77.1339,,647,,654||Newport, Pennsylvania,,Newport,,40.4783,,-77.1339,,682,,689||Newport, Pennsylvania,,Newport,,40.4783,,-77.1339,,840,,847||Newport, Pennsylvania,,Newport,,40.4783,,-77.1339,,1207,,1214||
+
+Newport, Victoria,,Newport,,-37.8443,,144.8848,,0,,7||Newport, Victoria,,Newport,,-37.8443,,144.8848,,165,,172||Newport, Victoria,,Newport,,-37.8443,,144.8848,,201,,208||Newport, Victoria,,Newport,,-37.8443,,144.8848,,442,,449||Newport, Victoria,,Newport,,-37.8443,,144.8848,,907,,914||Newport, Victoria,,Newport,,-37.8443,,144.8848,,1038,,1045||
+Newport, Essex,,Newport,,51.9824,,0.2136,,0,,7||Newport, Essex,,Newport,,51.9824,,0.2136,,634,,641||
+Newport, Maine,,Newport,,44.8353,,-69.2744,,0,,7||Newport, Maine,,Newport,,44.8353,,-69.2744,,106,,113||Newport, Maine,,Newport,,44.8353,,-69.2744,,243,,250||Newport, Maine,,Newport,,44.8353,,-69.2744,,464,,471||Newport, Maine,,Newport,,44.8353,,-69.2744,,631,,638||
+Newport, County Mayo,,Newport,,53.886,,-9.5466,,428,,435||Newport, County Mayo,,Newport,,53.886,,-9.5466,,698,,705||
+Newport, New South Wales,,Newport,,-33.6564,,151.3137,,0,,7||Newport, New South Wales,,Newport,,-33.6564,,151.3137,,273,,280||Newport, New South Wales,,Newport,,-33.6564,,151.3137,,519,,526||Newport, New South Wales,,Newport,,-33.6564,,151.3137,,836,,843||Newport, New South Wales,,Newport,,-33.6564,,151.3137,,1015,,1022||
+Newport, New York,,Newport,,43.1858,,-75.0144,,852,,859||
+Newport, Queensland,,Newport,,-27.2105,,153.0904,,636,,643||
+Newport, Wakulla County, Florida,,Newport,,30.2,,-84.1833,,0,,7||Newport, Wakulla County, Florida,,Newport,,30.2,,-84.1833,,172,,179||
+
+
+
+
+
+
+
+
+
+Las Vegas, New Mexico,,Las Vegas,,35.5969,,-105.2225,,0,,9||Las Vegas, New Mexico,,Las Vegas,,35.5969,,-105.2225,,170,,179||Las Vegas, New Mexico,,Las Vegas,,35.5969,,-105.2225,,669,,678||
+Puerto Rico,,Puerto Rico,,18.2189,,-66.5733,,0,,11||Puerto Rico,,Puerto Rico,,18.2189,,-66.5733,,341,,352||Puerto Rico,,Puerto Rico,,18.2189,,-66.5733,,404,,415||Puerto Rico,,Puerto Rico,,18.2189,,-66.5733,,687,,698||
+Cuba,,Cuba,,21.9833,,-79.0333,,0,,4||Cuba,,Cuba,,21.9833,,-79.0333,,282,,286||Cuba,,Cuba,,21.9833,,-79.0333,,432,,436||Cuba,,Cuba,,21.9833,,-79.0333,,1061,,1065||
+Cuba, Missouri,,Cuba,,38.0631,,91.4031,,229,,233||Cuba, Missouri,,Cuba,,38.0631,,91.4031,,269,,273||Cuba, Missouri,,Cuba,,38.0631,,91.4031,,988,,992||
+Cuba, New York,,Cuba,,42.2178,,-78.2753,,136,,140||Cuba, New York,,Cuba,,42.2178,,-78.2753,,161,,165||Cuba, New York,,Cuba,,42.2178,,-78.2753,,915,,919||
+
+El Alto,,El Alto,,-16.5167,,-68.1667,,431,,438||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Clark County, Arkansas,,Clark County,,34.0889,,-93.1639,,212,,224||Clark County, Arkansas,,Clark County,,34.0889,,-93.1639,,226,,238||Clark County, Arkansas,,Clark County,,34.0889,,-93.1639,,558,,570||Clark County, Arkansas,,Clark County,,34.0889,,-93.1639,,1253,,1265||
+
+
+Clark County, Indiana,,Clark County,,38.48,,-85.72,,950,,962||
+Clark County, Missouri,,Clark County,,40.41,,-91.74,,987,,999||
+Clark County, Illinois,,Clark County,,39.33,,-87.79,,376,,388||Clark County, Illinois,,Clark County,,39.33,,-87.79,,515,,527||Clark County, Illinois,,Clark County,,39.33,,-87.79,,650,,662||Clark County, Illinois,,Clark County,,39.33,,-87.79,,730,,742||Clark County, Illinois,,Clark County,,39.33,,-87.79,,931,,943||
+Clark County, Kansas,,Clark County,,37.1867,,-99.7692,,389,,401||
+Clark County, Kentucky,,Clark County,,37.97,,-84.15,,524,,536||
+Columbia County, Georgia,,Columbia County,,33.55,,-82.26,,158,,173||Columbia County, Georgia,,Columbia County,,33.55,,-82.26,,208,,223||Columbia County, Georgia,,Columbia County,,33.55,,-82.26,,420,,435||
+Columbia County, Pennsylvania,,Columbia County,,41.05,,-76.4,,623,,638||
+Columbia County, Oregon,,Columbia County,,45.95,,-123.08,,229,,244||
+Columbia County, Florida,,Columbia County,,30.23,,-82.63,,712,,727||
+Columbia County, New York,,Columbia County,,42.25,,-73.63,,828,,843||Columbia County, New York,,Columbia County,,42.25,,-73.63,,1017,,1032||
+Columbia County, Arkansas,,Columbia County,,33.2411,,-93.2183,,298,,313||Columbia County, Arkansas,,Columbia County,,33.2411,,-93.2183,,511,,526||Columbia County, Arkansas,,Columbia County,,33.2411,,-93.2183,,720,,735||Columbia County, Arkansas,,Columbia County,,33.2411,,-93.2183,,758,,773||
+
+
+
+
+
+Aguada, Puerto Rico,,Aguada,,18.3794,,-67.1883,,662,,668||
+
+Texas,,Texas,,31.6667,,-99.45,,574,,579||Texas,,Texas,,31.6667,,-99.45,,968,,973||Texas,,Texas,,31.6667,,-99.45,,1192,,1197||
+
+
+
+
+
+
+
+
+
+
+
+
+
+Marlborough, Massachusetts,,Marlborough,,42.3458,,-71.5528,,144,,155||Marlborough, Massachusetts,,Marlborough,,42.3458,,-71.5528,,343,,354||Marlborough, Massachusetts,,Marlborough,,42.3458,,-71.5528,,575,,586||
+
+Marlborough, Connecticut,,Marlborough,,41.6353,,-72.4872,,658,,669||Marlborough, Connecticut,,Marlborough,,41.6353,,-72.4872,,909,,920||Marlborough, Connecticut,,Marlborough,,41.6353,,-72.4872,,1323,,1334||Marlborough, Connecticut,,Marlborough,,41.6353,,-72.4872,,1555,,1566||
+
+
+Marlborough, Calgary,,Marlborough,,51.0594,,-113.9681,,0,,11||
+Marlborough, Queensland,,Marlborough,,22.8167,,149.8833,,0,,11||Marlborough, Queensland,,Marlborough,,22.8167,,149.8833,,317,,328||Marlborough, Queensland,,Marlborough,,22.8167,,149.8833,,968,,979||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Los Altos, California,,Los Altos,,37.3681,,-122.0975,,650,,659||
+
+
+
+Lafayette, California,,Lafayette,,37.8911,,-122.1117,,379,,388||Lafayette, California,,Lafayette,,37.8911,,-122.1117,,542,,551||Lafayette, California,,Lafayette,,37.8911,,-122.1117,,1109,,1118||
+Lafayette, Colorado,,Lafayette,,39.995,,-105.1006,,568,,577||
+
+Lafayette, Chippewa County, Wisconsin,,Lafayette,,44.925,,-91.2992,,933,,942||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Geneva, Ohio,,Geneva,,41.805,,-80.9481,,1134,,1140||
+Geneva, Illinois,,Geneva,,41.8858,,-88.3117,,809,,815||
+Geneva, New York,,Geneva,,42.8644,,-76.9826,,571,,577||
+Geneva, Florida,,Geneva,,28.7372,,-81.1178,,1137,,1143||
+Geneva, Wisconsin,,Geneva,,42.6119,,-88.4883,,771,,777||Geneva, Wisconsin,,Geneva,,42.6119,,-88.4883,,1159,,1165||
+Geneva, Kansas,,Geneva,,38.0169,,-95.4942,,303,,309||
+
+
+
+Franklin County, Massachusetts,,Franklin County,,42.58,,-72.59,,742,,757||
+
+
+Franklin County, Pennsylvania,,Franklin County,,39.93,,-77.72,,475,,490||
+Franklin County, Ohio,,Franklin County,,40.0152,,-82.9932,,1047,,1062||
+
+
+Franklin County, Kentucky,,Franklin County,,38.24,,-84.88,,510,,525||Franklin County, Kentucky,,Franklin County,,38.24,,-84.88,,527,,542||
+
+Franklin County, Texas,,Franklin County,,33.18,,-95.22,,498,,513||Franklin County, Texas,,Franklin County,,33.18,,-95.22,,515,,530||Franklin County, Texas,,Franklin County,,33.18,,-95.22,,733,,748||
+Franklin County, Georgia,,Franklin County,,34.37,,-83.23,,318,,333||Franklin County, Georgia,,Franklin County,,34.37,,-83.23,,824,,839||
+
+Franklin County, Florida,,Franklin County,,29.8,,-84.82,,519,,534||
+
+
+
+
+Franklin County, Arkansas,,Franklin County,,35.5208,,-93.8758,,319,,334||Franklin County, Arkansas,,Franklin County,,35.5208,,-93.8758,,473,,488||Franklin County, Arkansas,,Franklin County,,35.5208,,-93.8758,,1616,,1631||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amherst, New York,,Amherst,,43.0117,,-78.7569,,268,,275||
+
+Amherst, Texas,,Amherst,,34.0103,,-102.4156,,1081,,1088||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farmington, Utah,,Farmington,,40.9867,,-111.8992,,288,,298||
+
+
+
+
+
+
+
+
+
+Gambir, Jakarta,,Gambir,,-6.1761,,106.8217,,396,,402||
+
+
+
+
+
+
+
+
+
+Moscow, Idaho,,Moscow,,46.7317,,-116.9972,,0,,6||Moscow, Idaho,,Moscow,,46.7317,,-116.9972,,629,,635||Moscow, Idaho,,Moscow,,46.7317,,-116.9972,,720,,726||Moscow, Idaho,,Moscow,,46.7317,,-116.9972,,1118,,1124||
+Moscow, Kansas,,Moscow,,37.3251,,-101.2068,,0,,6||Moscow, Kansas,,Moscow,,37.3251,,-101.2068,,139,,145||Moscow, Kansas,,Moscow,,37.3251,,-101.2068,,866,,872||Moscow, Kansas,,Moscow,,37.3251,,-101.2068,,899,,905||Moscow, Kansas,,Moscow,,37.3251,,-101.2068,,1055,,1061||
+
+
+
+
+
+
+
+Salisbury, South Australia,,Salisbury,,-34.7667,,138.6333,,451,,460||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bridgewater, New Hampshire,,Bridgewater,,43.6378,,-71.7361,,225,,236||
+
+
+
+
+
+Portsmouth, Dominica,,Portsmouth,,15.5766,,-61.4523,,606,,616||Portsmouth, Dominica,,Portsmouth,,15.5766,,-61.4523,,1104,,1114||
+Portsmouth, Ohio,,Portsmouth,,38.7431,,-82.9656,,357,,367||
+
+Portsmouth, North Carolina,,Portsmouth,,35.0697,,-76.0639,,1105,,1115||
+
+
+
+
+Beverly Hills, California,,Beverly Hills,,34.0731,,-118.3994,,190,,203||Beverly Hills, California,,Beverly Hills,,34.0731,,-118.3994,,648,,661||
+Beverly Hills, Michigan,,Beverly Hills,,42.5219,,-83.2422,,342,,355||Beverly Hills, Michigan,,Beverly Hills,,42.5219,,-83.2422,,365,,378||Beverly Hills, Michigan,,Beverly Hills,,42.5219,,-83.2422,,670,,683||Beverly Hills, Michigan,,Beverly Hills,,42.5219,,-83.2422,,730,,743||Beverly Hills, Michigan,,Beverly Hills,,42.5219,,-83.2422,,979,,992||
+Beverly Hills, New South Wales,,Beverly Hills,,-33.9513,,151.0794,,1043,,1056||Beverly Hills, New South Wales,,Beverly Hills,,-33.9513,,151.0794,,1073,,1086||
+
+
+
+
+
+
+
+Lodi, Indiana,,Lodi,,39.95,,-87.4058,,905,,909||
+
+
+
+
+
+
+
+
+Medellin, Cebu,,Medellin,,11.1333,,123.9667,,637,,645||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union County, Pennsylvania,,Union County,,40.96,,-77.06,,518,,530||
+
+
+
+
+Union County, Tennessee,,Union County,,36.28,,-83.84,,1174,,1186||
+Union County, Indiana,,Union County,,39.62,,-84.92,,1120,,1132||
+
+Union County, Florida,,Union County,,30.05,,-82.3667,,709,,721||Union County, Florida,,Union County,,30.05,,-82.3667,,1025,,1037||
+Union County, North Carolina,,Union County,,34.99,,-80.53,,666,,678||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lexington, North Carolina,,Lexington,,35.8167,,-80.2586,,890,,899||Lexington, North Carolina,,Lexington,,35.8167,,-80.2586,,1003,,1012||
+Lexington, Nebraska,,Lexington,,40.7794,,-99.7439,,1025,,1034||
+Lexington, Missouri,,Lexington,,39.1831,,-93.875,,1053,,1062||Lexington, Missouri,,Lexington,,39.1831,,-93.875,,1096,,1105||
+
+Lexington, Illinois,,Lexington,,40.6425,,-88.7853,,1042,,1051||Lexington, Illinois,,Lexington,,40.6425,,-88.7853,,1164,,1173||Lexington, Illinois,,Lexington,,40.6425,,-88.7853,,1455,,1464||
+Lexington, Mississippi,,Lexington,,33.1144,,-90.0511,,1353,,1362||
+
+Lexington, Tennessee,,Lexington,,35.6572,,88.3922,,563,,572||Lexington, Tennessee,,Lexington,,35.6572,,88.3922,,838,,847||Lexington, Tennessee,,Lexington,,35.6572,,88.3922,,1148,,1157||
+Lexington, Oklahoma,,Lexington,,35.0153,,-97.3361,,332,,341||Lexington, Oklahoma,,Lexington,,35.0153,,-97.3361,,394,,403||
+
+
+Lexington, New York,,Lexington,,42.215,,-74.3847,,862,,871||
+
+Lexington, California,,Lexington,,37.1964,,-121.9883,,438,,447||
+Lexington, Maine,,Lexington,,44.9986,,-70.0536,,73,,82||Lexington, Maine,,Lexington,,44.9986,,-70.0536,,904,,913||Lexington, Maine,,Lexington,,44.9986,,-70.0536,,1000,,1009||
+
+
+
+
+Jefferson County, Kansas,,Jefferson County,,39.3514,,-95.475,,0,,16||Jefferson County, Kansas,,Jefferson County,,39.3514,,-95.475,,211,,227||Jefferson County, Kansas,,Jefferson County,,39.3514,,-95.475,,289,,305||Jefferson County, Kansas,,Jefferson County,,39.3514,,-95.475,,633,,649||
+Jefferson County, Missouri,,Jefferson County,,38.26,,-90.54,,0,,16||Jefferson County, Missouri,,Jefferson County,,38.26,,-90.54,,890,,906||
+
+
+Jefferson County, Oregon,,Jefferson County,,44.63,,-121.17,,0,,16||Jefferson County, Oregon,,Jefferson County,,44.63,,-121.17,,186,,202||
+Jefferson County, Oklahoma,,Jefferson County,,34.1,,-97.84,,1112,,1128||
+Jefferson County, Ohio,,Jefferson County,,40.38,,-80.76,,0,,16||Jefferson County, Ohio,,Jefferson County,,40.38,,-80.76,,1348,,1364||
+Jefferson County, Kentucky,,Jefferson County,,38.19,,-85.66,,0,,16||Jefferson County, Kentucky,,Jefferson County,,38.19,,-85.66,,653,,669||Jefferson County, Kentucky,,Jefferson County,,38.19,,-85.66,,741,,757||Jefferson County, Kentucky,,Jefferson County,,38.19,,-85.66,,845,,861||
+Jefferson County, Indiana,,Jefferson County,,38.79,,-85.44,,0,,16||Jefferson County, Indiana,,Jefferson County,,38.79,,-85.44,,134,,150||Jefferson County, Indiana,,Jefferson County,,38.79,,-85.44,,312,,328||
+Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,0,,16||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,269,,285||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,417,,433||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,539,,555||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,820,,836||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,901,,917||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,980,,996||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,1061,,1077||Jefferson County, Colorado,,Jefferson County,,39.59,,-105.25,,1189,,1205||
+Jefferson County, Texas,,Jefferson County,,29.86,,-94.14,,0,,16||Jefferson County, Texas,,Jefferson County,,29.86,,-94.14,,135,,151||
+Jefferson County, Georgia,,Jefferson County,,33.05,,-82.42,,1062,,1078||
+Jefferson County, Illinois,,Jefferson County,,38.3,,-88.92,,0,,16||Jefferson County, Illinois,,Jefferson County,,38.3,,-88.92,,183,,199||Jefferson County, Illinois,,Jefferson County,,38.3,,-88.92,,547,,563||
+
+Jefferson County, Florida,,Jefferson County,,30.42,,-83.9,,0,,16||Jefferson County, Florida,,Jefferson County,,30.42,,-83.9,,148,,164||Jefferson County, Florida,,Jefferson County,,30.42,,-83.9,,227,,243||
+Jefferson County, New York,,Jefferson County,,43.9954,,-76.0535,,0,,16||Jefferson County, New York,,Jefferson County,,43.9954,,-76.0535,,321,,337||Jefferson County, New York,,Jefferson County,,43.9954,,-76.0535,,543,,559||
+Jefferson County, West Virginia,,Jefferson County,,39.31,,-77.86,,0,,16||Jefferson County, West Virginia,,Jefferson County,,39.31,,-77.86,,193,,209||Jefferson County, West Virginia,,Jefferson County,,39.31,,-77.86,,301,,317||Jefferson County, West Virginia,,Jefferson County,,39.31,,-77.86,,746,,762||Jefferson County, West Virginia,,Jefferson County,,39.31,,-77.86,,888,,904||Jefferson County, West Virginia,,Jefferson County,,39.31,,-77.86,,924,,940||
+Jefferson County, Washington,,Jefferson County,,47.84,,-123.58,,0,,16||Jefferson County, Washington,,Jefferson County,,47.84,,-123.58,,223,,239||Jefferson County, Washington,,Jefferson County,,47.84,,-123.58,,629,,645||
+Jefferson County, Tennessee,,Jefferson County,,36.05,,-83.45,,0,,16||Jefferson County, Tennessee,,Jefferson County,,36.05,,-83.45,,149,,165||Jefferson County, Tennessee,,Jefferson County,,36.05,,-83.45,,305,,321||Jefferson County, Tennessee,,Jefferson County,,36.05,,-83.45,,576,,592||Jefferson County, Tennessee,,Jefferson County,,36.05,,-83.45,,742,,758||Jefferson County, Tennessee,,Jefferson County,,36.05,,-83.45,,1070,,1086||
+Jefferson County, Mississippi,,Jefferson County,,31.73,,-91.03,,0,,16||Jefferson County, Mississippi,,Jefferson County,,31.73,,-91.03,,670,,686||Jefferson County, Mississippi,,Jefferson County,,31.73,,-91.03,,1550,,1566||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hollywood,,Hollywood,,34.1,,-118.3333,,0,,9||
+Hollywood, Florida,,Hollywood,,26.0214,,-80.175,,95,,104||Hollywood, Florida,,Hollywood,,26.0214,,-80.175,,154,,163||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arizona,,Arizona,,34.2867,,-111.6569,,0,,7||Arizona,,Arizona,,34.2867,,-111.6569,,329,,336||Arizona,,Arizona,,34.2867,,-111.6569,,641,,648||
+
+Florence, South Carolina,,Florence,,34.1839,,-79.7742,,0,,8||Florence, South Carolina,,Florence,,34.1839,,-79.7742,,173,,181||
+Florence, Arizona,,Florence,,33.0314,,-111.3867,,125,,133||Florence, Arizona,,Florence,,33.0314,,-111.3867,,360,,368||Florence, Arizona,,Florence,,33.0314,,-111.3867,,435,,443||Florence, Arizona,,Florence,,33.0314,,-111.3867,,827,,835||Florence, Arizona,,Florence,,33.0314,,-111.3867,,1255,,1263||
+Florence, Kansas,,Florence,,38.2428,,-96.9294,,0,,8||
+Florence, Colorado,,Florence,,38.3903,,-105.1167,,149,,157||Florence, Colorado,,Florence,,38.3903,,-105.1167,,358,,366||Florence, Colorado,,Florence,,38.3903,,-105.1167,,894,,902||Florence, Colorado,,Florence,,38.3903,,-105.1167,,918,,926||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Simon, Pampanga,,San Simon,,14.9931,,120.7767,,213,,222||San Simon, Pampanga,,San Simon,,14.9931,,120.7767,,625,,634||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lincoln County, Oregon,,Lincoln County,,44.6333,,-123.9167,,881,,895||Lincoln County, Oregon,,Lincoln County,,44.6333,,-123.9167,,1026,,1040||
+Lincoln County, Oklahoma,,Lincoln County,,35.7,,-96.88,,280,,294||Lincoln County, Oklahoma,,Lincoln County,,35.7,,-96.88,,645,,659||Lincoln County, Oklahoma,,Lincoln County,,35.7,,-96.88,,712,,726||Lincoln County, Oklahoma,,Lincoln County,,35.7,,-96.88,,1025,,1039||
+Lincoln County, Nevada,,Lincoln County,,37.64,,-114.88,,767,,781||Lincoln County, Nevada,,Lincoln County,,37.64,,-114.88,,854,,868||Lincoln County, Nevada,,Lincoln County,,37.64,,-114.88,,1483,,1497||Lincoln County, Nevada,,Lincoln County,,37.64,,-114.88,,1575,,1589||
+
+
+Lincoln County, Arkansas,,Lincoln County,,33.9597,,-91.7186,,600,,614||Lincoln County, Arkansas,,Lincoln County,,33.9597,,-91.7186,,1263,,1277||
+Lincoln County, Montana,,Lincoln County,,48.54,,-115.41,,780,,794||
+Lincoln County, New Mexico,,Lincoln County,,33.74,,-105.46,,921,,935||Lincoln County, New Mexico,,Lincoln County,,33.74,,-105.46,,1804,,1818||
+Lincoln County, West Virginia,,Lincoln County,,38.18,,-82.07,,1096,,1110||
+Lincoln County, Tennessee,,Lincoln County,,35.14,,-86.59,,745,,759||Lincoln County, Tennessee,,Lincoln County,,35.14,,-86.59,,818,,832||Lincoln County, Tennessee,,Lincoln County,,35.14,,-86.59,,1019,,1033||
+Lincoln County, Kentucky,,Lincoln County,,37.46,,-84.66,,280,,294||Lincoln County, Kentucky,,Lincoln County,,37.46,,-84.66,,704,,718||Lincoln County, Kentucky,,Lincoln County,,37.46,,-84.66,,937,,951||
+
+Lincoln County, Georgia,,Lincoln County,,33.8,,-82.45,,967,,981||Lincoln County, Georgia,,Lincoln County,,33.8,,-82.45,,1108,,1122||
+Lincoln County, Mississippi,,Lincoln County,,31.54,,-90.45,,649,,663||
+
+
+
+
+
+
+
+
+Grant County, Oklahoma,,Grant County,,36.8,,-97.79,,968,,980||
+
+
+
+
+Agra,,Agra,,27.18,,78.02,,1458,,1462||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pamplona, Cagayan,,Pamplona,,18.4664,,121.3411,,619,,627||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Peru,,Peru,,-12.0433,,-77.0283,,1098,,1102||Peru,,Peru,,-12.0433,,-77.0283,,1229,,1233||
+Peru, Indiana,,Peru,,40.7578,,-86.0678,,288,,292||Peru, Indiana,,Peru,,40.7578,,-86.0678,,339,,343||Peru, Indiana,,Peru,,40.7578,,-86.0678,,961,,965||Peru, Indiana,,Peru,,40.7578,,-86.0678,,1147,,1151||
+Peru, Illinois,,Peru,,41.3344,,89.1272,,536,,540||Peru, Illinois,,Peru,,41.3344,,89.1272,,828,,832||
+Peru, New York,,Peru,,44.5858,,-73.5203,,402,,406||Peru, New York,,Peru,,44.5858,,-73.5203,,416,,420||Peru, New York,,Peru,,44.5858,,-73.5203,,535,,539||Peru, New York,,Peru,,44.5858,,-73.5203,,755,,759||
+Peru, Nebraska,,Peru,,40.4801,,-95.7313,,134,,138||Peru, Nebraska,,Peru,,40.4801,,-95.7313,,595,,599||Peru, Nebraska,,Peru,,40.4801,,-95.7313,,902,,906||Peru, Nebraska,,Peru,,40.4801,,-95.7313,,985,,989||
+
+Peru, Massachusetts,,Peru,,42.4381,,-73.0464,,468,,472||
+Peru, Maine,,Peru,,44.4947,,-70.4372,,927,,931||
+
+
+
+
+
+
+Durham, North Carolina,,Durham,,35.9875,,-78.9072,,479,,485||Durham, North Carolina,,Durham,,35.9875,,-78.9072,,919,,925||Durham, North Carolina,,Durham,,35.9875,,-78.9072,,1047,,1053||
+Durham, Connecticut,,Durham,,41.4603,,-72.6819,,861,,867||Durham, Connecticut,,Durham,,41.4603,,-72.6819,,1048,,1054||
+Durham, Ontario,,Durham,,44.1833,,-80.8167,,324,,330||Durham, Ontario,,Durham,,44.1833,,-80.8167,,397,,403||Durham, Ontario,,Durham,,44.1833,,-80.8167,,921,,927||
+Durham, New Hampshire,,Durham,,43.1339,,-70.9264,,568,,574||
+
+
+Durham, Kansas,,Durham,,38.4844,,-97.2272,,138,,144||Durham, Kansas,,Durham,,38.4844,,-97.2272,,153,,159||Durham, Kansas,,Durham,,38.4844,,-97.2272,,625,,631||Durham, Kansas,,Durham,,38.4844,,-97.2272,,788,,794||Durham, Kansas,,Durham,,38.4844,,-97.2272,,1057,,1063||
+Durham, New York,,Durham,,42.3833,,-74.15,,163,,169||Durham, New York,,Durham,,42.3833,,-74.15,,708,,714||Durham, New York,,Durham,,42.3833,,-74.15,,1201,,1207||
+
+
+
+
+Greenville, Illinois,,Greenville,,38.8894,,-89.4036,,631,,641||Greenville, Illinois,,Greenville,,38.8894,,-89.4036,,1289,,1299||
+
+Greenville, Alabama,,Greenville,,31.8311,,-86.6275,,295,,305||Greenville, Alabama,,Greenville,,31.8311,,-86.6275,,502,,512||
+
+Greenville, Texas,,Greenville,,33.1261,,-96.1097,,396,,406||
+Greenville, Kentucky,,Greenville,,37.2072,,-87.1764,,886,,896||
+
+Greenville, Michigan,,Greenville,,43.1794,,85.2522,,1035,,1045||
+
+Greenville, Pennsylvania,,Greenville,,41.405,,-80.3867,,850,,860||Greenville, Pennsylvania,,Greenville,,41.405,,-80.3867,,964,,974||
+
+
+
+Greenville, Indiana,,Greenville,,38.3725,,85.9886,,159,,169||Greenville, Indiana,,Greenville,,38.3725,,85.9886,,416,,426||Greenville, Indiana,,Greenville,,38.3725,,85.9886,,1221,,1231||
+
+
+Greenville, Virginia,,Greenville,,38.0044,,-79.1581,,447,,457||Greenville, Virginia,,Greenville,,38.0044,,-79.1581,,478,,488||
+Greenville, Wisconsin,,Greenville,,44.3003,,-88.5364,,277,,287||
+Greenville, Liberia,,Greenville,,5.0167,,-9.0333,,319,,329||Greenville, Liberia,,Greenville,,5.0167,,-9.0333,,931,,941||
+Greenville, Missouri,,Greenville,,37.1272,,-90.4483,,1019,,1029||
+
+
+Greenville, Orange County, New York,,Greenville,,41.3667,,-74.5833,,1007,,1017||
+
+Lewiston, Idaho,,Lewiston,,46.4003,,-117.0011,,1036,,1044||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bloomington, California,,Bloomington,,34.0703,,-117.3958,,845,,856||Bloomington, California,,Bloomington,,34.0703,,-117.3958,,1293,,1304||
+Bloomington, Maryland,,Bloomington,,39.48,,-79.0711,,442,,453||
+
+
+
+Orange County, Virginia,,Orange County,,38.25,,-78.0167,,1326,,1339||
+Orange County, California,,Orange County,,33.67,,-117.78,,0,,13||Orange County, California,,Orange County,,33.67,,-117.78,,523,,536||Orange County, California,,Orange County,,33.67,,-117.78,,647,,660||Orange County, California,,Orange County,,33.67,,-117.78,,1108,,1121||
+Orange County, Indiana,,Orange County,,38.54,,-86.5,,0,,13||
+Orange County, North Carolina,,Orange County,,36.06,,-79.12,,0,,13||Orange County, North Carolina,,Orange County,,36.06,,-79.12,,155,,168||Orange County, North Carolina,,Orange County,,36.06,,-79.12,,826,,839||
+Orange County, Texas,,Orange County,,30.13,,-93.89,,0,,13||Orange County, Texas,,Orange County,,30.13,,-93.89,,131,,144||Orange County, Texas,,Orange County,,30.13,,-93.89,,345,,358||Orange County, Texas,,Orange County,,30.13,,-93.89,,617,,630||Orange County, Texas,,Orange County,,30.13,,-93.89,,1091,,1104||
+Orange County, Florida,,Orange County,,28.51,,-81.32,,0,,13||Orange County, Florida,,Orange County,,28.51,,-81.32,,215,,228||Orange County, Florida,,Orange County,,28.51,,-81.32,,331,,344||Orange County, Florida,,Orange County,,28.51,,-81.32,,476,,489||Orange County, Florida,,Orange County,,28.51,,-81.32,,996,,1009||Orange County, Florida,,Orange County,,28.51,,-81.32,,1129,,1142||
+Orange County, New York,,Orange County,,41.4,,-74.31,,0,,13||Orange County, New York,,Orange County,,41.4,,-74.31,,234,,247||Orange County, New York,,Orange County,,41.4,,-74.31,,436,,449||Orange County, New York,,Orange County,,41.4,,-74.31,,635,,648||Orange County, New York,,Orange County,,41.4,,-74.31,,766,,779||Orange County, New York,,Orange County,,41.4,,-74.31,,1155,,1168||Orange County, New York,,Orange County,,41.4,,-74.31,,1273,,1286||
+
+
+
+
+
+
+Jackson County, Michigan,,Jackson County,,42.25,,-84.42,,343,,357||Jackson County, Michigan,,Jackson County,,42.25,,-84.42,,516,,530||Jackson County, Michigan,,Jackson County,,42.25,,-84.42,,760,,774||
+Jackson County, Missouri,,Jackson County,,39.01,,-94.34,,1080,,1094||
+Jackson County, Oregon,,Jackson County,,42.42,,-122.74,,369,,383||Jackson County, Oregon,,Jackson County,,42.42,,-122.74,,550,,564||Jackson County, Oregon,,Jackson County,,42.42,,-122.74,,719,,733||
+Jackson County, Oklahoma,,Jackson County,,34.59,,-99.41,,1139,,1153||
+
+Jackson County, Iowa,,Jackson County,,42.1703,,-90.575,,281,,295||
+Jackson County, Georgia,,Jackson County,,34.13,,-83.56,,424,,438||Jackson County, Georgia,,Jackson County,,34.13,,-83.56,,827,,841||
+Jackson County, Illinois,,Jackson County,,37.79,,-89.38,,512,,526||
+
+
+Jackson County, Arkansas,,Jackson County,,35.5939,,-91.1936,,786,,800||Jackson County, Arkansas,,Jackson County,,35.5939,,-91.1936,,1077,,1091||
+Jackson County, Florida,,Jackson County,,30.8,,-85.21,,829,,843||
+Jackson County, Minnesota,,Jackson County,,43.68,,-95.16,,254,,268||
+Jackson County, Tennessee,,Jackson County,,36.36,,-85.67,,748,,762||Jackson County, Tennessee,,Jackson County,,36.36,,-85.67,,893,,907||
+Jackson County, Colorado,,Jackson County,,40.66,,-106.34,,288,,302||
+Jackson County, Kentucky,,Jackson County,,37.42,,-84.01,,870,,884||
+Jackson County, Mississippi,,Jackson County,,30.46,,-88.62,,0,,14||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Baltimore,,Baltimore,,39.2864,,-76.615,,0,,9||Baltimore,,Baltimore,,39.2864,,-76.615,,204,,213||Baltimore,,Baltimore,,39.2864,,-76.615,,626,,635||Baltimore,,Baltimore,,39.2864,,-76.615,,907,,916||
+Baltimore, County Cork,,Baltimore,,51.483,,-9.3735,,0,,9||Baltimore, County Cork,,Baltimore,,51.483,,-9.3735,,360,,369||Baltimore, County Cork,,Baltimore,,51.483,,-9.3735,,482,,491||Baltimore, County Cork,,Baltimore,,51.483,,-9.3735,,763,,772||Baltimore, County Cork,,Baltimore,,51.483,,-9.3735,,958,,967||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detroit,,Detroit,,42.3314,,-83.0458,,0,,7||Detroit,,Detroit,,42.3314,,-83.0458,,245,,252||Detroit,,Detroit,,42.3314,,-83.0458,,741,,748||Detroit,,Detroit,,42.3314,,-83.0458,,1255,,1262||
+Detroit, Oregon,,Detroit,,44.7356,,-122.1514,,0,,7||Detroit, Oregon,,Detroit,,44.7356,,-122.1514,,301,,308||Detroit, Oregon,,Detroit,,44.7356,,-122.1514,,822,,829||
+Detroit, Kansas,,Detroit,,38.935,,-97.1208,,0,,7||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,283,,290||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,480,,487||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,556,,563||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,634,,641||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,687,,694||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,846,,853||Detroit, Kansas,,Detroit,,38.935,,-97.1208,,1058,,1065||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kabul,,Kabul,,34.5328,,69.1658,,0,,5||Kabul,,Kabul,,34.5328,,69.1658,,1072,,1077||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nome, Texas,,Nome,,30.0358,,-94.4128,,731,,735||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tempe, New South Wales,,Tempe,,-33.9252,,151.1584,,424,,429||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Argentina,,Argentina,,-34.5997,,-58.3819,,0,,9||Argentina,,Argentina,,-34.5997,,-58.3819,,483,,492||Argentina,,Argentina,,-34.5997,,-58.3819,,612,,621||
+Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,318,,325||Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,433,,440||Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,799,,806||Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,1238,,1245||Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,1344,,1351||Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,1433,,1440||Ontario, Oregon,,Ontario,,44.0268,,-116.9687,,1465,,1472||
+
+
+
+
+
+
+
+Philadelphia, Tennessee,,Philadelphia,,35.6781,,84.4014,,935,,947||Philadelphia, Tennessee,,Philadelphia,,35.6781,,84.4014,,1024,,1036||Philadelphia, Tennessee,,Philadelphia,,35.6781,,84.4014,,1145,,1157||
+
+
+San Remo, Victoria,,San Remo,,38.5167,,145.3667,,496,,504||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Norwich,,Norwich,,52.6281,,1.2992,,410,,417||Norwich,,Norwich,,52.6281,,1.2992,,938,,945||
+
+
+Norwich, Ontario,,Norwich,,42.9833,,-80.6,,987,,994||
+Norwich, New York,,Norwich,,42.5319,,-75.5217,,102,,109||Norwich, New York,,Norwich,,42.5319,,-75.5217,,406,,413||Norwich, New York,,Norwich,,42.5319,,-75.5217,,508,,515||Norwich, New York,,Norwich,,42.5319,,-75.5217,,883,,890||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tampa, Kansas,,Tampa,,38.5486,,-97.155,,564,,569||Tampa, Kansas,,Tampa,,38.5486,,-97.155,,832,,837||Tampa, Kansas,,Tampa,,38.5486,,-97.155,,930,,935||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Columbia, Maine,,Columbia,,44.6542,,-67.8231,,446,,454||
+
+
+
+
+
+Panama,,Panama,,9,,-79.5,,0,,6||Panama,,Panama,,9,,-79.5,,466,,472||Panama,,Panama,,9,,-79.5,,572,,578||Panama,,Panama,,9,,-79.5,,744,,750||Panama,,Panama,,9,,-79.5,,871,,877||
+Panama, Oklahoma,,Panama,,35.1706,,-94.67,,805,,811||
+Panama, New York,,Panama,,42.0833,,-79.4833,,472,,478||Panama, New York,,Panama,,42.0833,,-79.4833,,1316,,1322||Panama, New York,,Panama,,42.0833,,-79.4833,,1332,,1338||
+
+
+
+
+
+
+
+
+
+
+Ireland,,Ireland,,53.4622,,-7.7625,,0,,7||Ireland,,Ireland,,53.4622,,-7.7625,,222,,229||Ireland,,Ireland,,53.4622,,-7.7625,,359,,366||Ireland,,Ireland,,53.4622,,-7.7625,,428,,435||Ireland,,Ireland,,53.4622,,-7.7625,,595,,602||Ireland,,Ireland,,53.4622,,-7.7625,,1170,,1177||Ireland,,Ireland,,53.4622,,-7.7625,,1291,,1298||
+
+
+
+
+
+
+Phoenix, Durban,,Phoenix,,29.701,,31.004,,243,,250||Phoenix, Durban,,Phoenix,,29.701,,31.004,,286,,293||
+
+
+
+
+
+
+Atlanta, Illinois,,Atlanta,,40.2625,,89.2331,,221,,228||Atlanta, Illinois,,Atlanta,,40.2625,,89.2331,,428,,435||
+Atlanta, Texas,,Atlanta,,33.1183,,-94.1667,,775,,782||Atlanta, Texas,,Atlanta,,33.1183,,-94.1667,,1063,,1070||
+Atlanta, Michigan,,Atlanta,,45.0006,,-84.1508,,459,,466||Atlanta, Michigan,,Atlanta,,45.0006,,-84.1508,,584,,591||Atlanta, Michigan,,Atlanta,,45.0006,,-84.1508,,726,,733||Atlanta, Michigan,,Atlanta,,45.0006,,-84.1508,,798,,805||
+
+
+
+Atlanta, Idaho,,Atlanta,,43.8017,,-115.1267,,343,,350||Atlanta, Idaho,,Atlanta,,43.8017,,-115.1267,,639,,646||Atlanta, Idaho,,Atlanta,,43.8017,,-115.1267,,985,,992||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Polk County, Florida,,Polk County,,27.96,,-81.7,,564,,575||Polk County, Florida,,Polk County,,27.96,,-81.7,,1789,,1800||
+Polk County, Oregon,,Polk County,,44.91,,-123.42,,0,,11||Polk County, Oregon,,Polk County,,44.91,,-123.42,,817,,828||
+
+Polk County, Iowa,,Polk County,,41.685,,-93.5703,,0,,11||Polk County, Iowa,,Polk County,,41.685,,-93.5703,,225,,236||Polk County, Iowa,,Polk County,,41.685,,-93.5703,,315,,326||Polk County, Iowa,,Polk County,,41.685,,-93.5703,,890,,901||
+Polk County, Texas,,Polk County,,30.8,,-94.83,,0,,11||Polk County, Texas,,Polk County,,30.8,,-94.83,,1186,,1197||
+Polk County, Minnesota,,Polk County,,47.77,,-96.4,,0,,11||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,243,,254||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,364,,375||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,565,,576||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,606,,617||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,647,,658||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,672,,683||Polk County, Minnesota,,Polk County,,47.77,,-96.4,,813,,824||
+Polk County, Tennessee,,Polk County,,35.13,,-84.52,,0,,11||Polk County, Tennessee,,Polk County,,35.13,,-84.52,,331,,342||Polk County, Tennessee,,Polk County,,35.13,,-84.52,,898,,909||Polk County, Tennessee,,Polk County,,35.13,,-84.52,,1028,,1039||Polk County, Tennessee,,Polk County,,35.13,,-84.52,,1187,,1198||Polk County, Tennessee,,Polk County,,35.13,,-84.52,,1364,,1375||
+Polk County, Georgia,,Polk County,,34,,-85.18,,0,,11||Polk County, Georgia,,Polk County,,34,,-85.18,,304,,315||Polk County, Georgia,,Polk County,,34,,-85.18,,682,,693||Polk County, Georgia,,Polk County,,34,,-85.18,,843,,854||
+Polk County, Arkansas,,Polk County,,34.5019,,-94.2408,,0,,11||Polk County, Arkansas,,Polk County,,34.5019,,-94.2408,,138,,149||
+Polk County, North Carolina,,Polk County,,35.28,,-82.17,,0,,11||Polk County, North Carolina,,Polk County,,35.28,,-82.17,,1292,,1303||
+
+
+
+
+Adams County, Pennsylvania,,Adams County,,39.87,,-77.22,,851,,863||Adams County, Pennsylvania,,Adams County,,39.87,,-77.22,,1052,,1064||
+Adams County, Illinois,,Adams County,,39.99,,-91.19,,357,,369||
+Adams County, Indiana,,Adams County,,40.75,,-84.94,,860,,872||Adams County, Indiana,,Adams County,,40.75,,-84.94,,1371,,1383||
+Adams County, Wisconsin,,Adams County,,43.97,,-89.77,,493,,505||Adams County, Wisconsin,,Adams County,,43.97,,-89.77,,928,,940||Adams County, Wisconsin,,Adams County,,43.97,,-89.77,,973,,985||Adams County, Wisconsin,,Adams County,,43.97,,-89.77,,1029,,1041||Adams County, Wisconsin,,Adams County,,43.97,,-89.77,,1105,,1117||Adams County, Wisconsin,,Adams County,,43.97,,-89.77,,1216,,1228||
+Adams County, Ohio,,Adams County,,38.84,,-83.48,,822,,834||
+Adams County, Colorado,,Adams County,,39.87,,-104.35,,490,,502||
+Adams County, Washington,,Adams County,,46.99,,-118.56,,1109,,1121||
+
+
+
+
+
+
+Charleston, West Virginia,,Charleston,,38.3472,,-81.6333,,343,,353||
+
+Charleston, Illinois,,Charleston,,39.4886,,-88.1789,,359,,369||Charleston, Illinois,,Charleston,,39.4886,,-88.1789,,557,,567||Charleston, Illinois,,Charleston,,39.4886,,-88.1789,,1453,,1463||
+
+
+Charleston, Maine,,Charleston,,45.0608,,-69.0353,,800,,810||
+Charleston, Vermont,,Charleston,,44.8417,,-72.0131,,1006,,1016||
+
+Charleston, New Zealand,,Charleston,,-41.9069,,171.4381,,339,,349||
+Charleston, Iowa,,Charleston,,40.5908,,-91.5314,,638,,648||Charleston, Iowa,,Charleston,,40.5908,,-91.5314,,1114,,1124||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,207,,215||Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,368,,376||Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,485,,493||Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,656,,664||Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,1001,,1009||Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,1070,,1078||Stamford, Connecticut,,Stamford,,41.0967,,-73.5522,,1287,,1295||
+Stamford, Texas,,Stamford,,32.9492,,-99.79,,316,,324||Stamford, Texas,,Stamford,,32.9492,,-99.79,,1038,,1046||
+
+
+
+
+
+Hamilton County, Ohio,,Hamilton County,,39.2353,,-84.5641,,402,,417||Hamilton County, Ohio,,Hamilton County,,39.2353,,-84.5641,,713,,728||
+
+Hamilton County, Indiana,,Hamilton County,,40.07,,-86.05,,1140,,1155||
+
+Hamilton County, Texas,,Hamilton County,,31.7,,-98.11,,1086,,1101||
+
+
+
+Madison County, Ohio,,Madison County,,39.9,,-83.4,,0,,14||Madison County, Ohio,,Madison County,,39.9,,-83.4,,247,,261||Madison County, Ohio,,Madison County,,39.9,,-83.4,,330,,344||Madison County, Ohio,,Madison County,,39.9,,-83.4,,675,,689||Madison County, Ohio,,Madison County,,39.9,,-83.4,,751,,765||
+Madison County, Iowa,,Madison County,,41.33,,-94.01,,0,,14||Madison County, Iowa,,Madison County,,41.33,,-94.01,,142,,156||Madison County, Iowa,,Madison County,,41.33,,-94.01,,238,,252||Madison County, Iowa,,Madison County,,41.33,,-94.01,,454,,468||Madison County, Iowa,,Madison County,,41.33,,-94.01,,741,,755||Madison County, Iowa,,Madison County,,41.33,,-94.01,,1327,,1341||
+Madison County, Missouri,,Madison County,,37.48,,-90.34,,0,,14||Madison County, Missouri,,Madison County,,37.48,,-90.34,,343,,357||Madison County, Missouri,,Madison County,,37.48,,-90.34,,517,,531||Madison County, Missouri,,Madison County,,37.48,,-90.34,,674,,688||Madison County, Missouri,,Madison County,,37.48,,-90.34,,889,,903||Madison County, Missouri,,Madison County,,37.48,,-90.34,,1110,,1124||
+Madison County, Georgia,,Madison County,,34.13,,-83.21,,0,,14||Madison County, Georgia,,Madison County,,34.13,,-83.21,,192,,206||Madison County, Georgia,,Madison County,,34.13,,-83.21,,461,,475||
+Madison County, Illinois,,Madison County,,38.83,,-89.91,,0,,14||Madison County, Illinois,,Madison County,,38.83,,-89.91,,199,,213||Madison County, Illinois,,Madison County,,38.83,,-89.91,,616,,630||Madison County, Illinois,,Madison County,,38.83,,-89.91,,799,,813||Madison County, Illinois,,Madison County,,38.83,,-89.91,,985,,999||
+Madison County, Alabama,,Madison County,,34.7658,,-86.5578,,0,,14||Madison County, Alabama,,Madison County,,34.7658,,-86.5578,,281,,295||Madison County, Alabama,,Madison County,,34.7658,,-86.5578,,339,,353||Madison County, Alabama,,Madison County,,34.7658,,-86.5578,,419,,433||Madison County, Alabama,,Madison County,,34.7658,,-86.5578,,694,,708||
+Madison County, Indiana,,Madison County,,40.1667,,-85.7167,,0,,14||Madison County, Indiana,,Madison County,,40.1667,,-85.7167,,134,,148||Madison County, Indiana,,Madison County,,40.1667,,-85.7167,,232,,246||
+Madison County, Arkansas,,Madison County,,36.0272,,-93.6958,,0,,14||Madison County, Arkansas,,Madison County,,36.0272,,-93.6958,,260,,274||Madison County, Arkansas,,Madison County,,36.0272,,-93.6958,,966,,980||
+Madison County, Florida,,Madison County,,30.45,,-83.47,,0,,14||Madison County, Florida,,Madison County,,30.45,,-83.47,,278,,292||Madison County, Florida,,Madison County,,30.45,,-83.47,,460,,474||Madison County, Florida,,Madison County,,30.45,,-83.47,,590,,604||Madison County, Florida,,Madison County,,30.45,,-83.47,,1039,,1053||
+Madison County, New York,,Madison County,,42.91,,-75.6636,,0,,14||Madison County, New York,,Madison County,,42.91,,-75.6636,,268,,282||Madison County, New York,,Madison County,,42.91,,-75.6636,,807,,821||
+Madison County, Virginia,,Madison County,,38.41,,-78.28,,0,,14||Madison County, Virginia,,Madison County,,38.41,,-78.28,,146,,160||
+Madison County, Idaho,,Madison County,,43.79,,-111.66,,0,,14||Madison County, Idaho,,Madison County,,43.79,,-111.66,,158,,172||Madison County, Idaho,,Madison County,,43.79,,-111.66,,685,,699||Madison County, Idaho,,Madison County,,43.79,,-111.66,,1031,,1045||
+Madison County, Kentucky,,Madison County,,37.7167,,-84.2833,,0,,14||Madison County, Kentucky,,Madison County,,37.7167,,-84.2833,,263,,277||Madison County, Kentucky,,Madison County,,37.7167,,-84.2833,,779,,793||Madison County, Kentucky,,Madison County,,37.7167,,-84.2833,,1164,,1178||Madison County, Kentucky,,Madison County,,37.7167,,-84.2833,,1385,,1399||
+Madison County, Mississippi,,Madison County,,32.63,,-90.03,,0,,14||Madison County, Mississippi,,Madison County,,32.63,,-90.03,,200,,214||Madison County, Mississippi,,Madison County,,32.63,,-90.03,,708,,722||
+Madison County, North Carolina,,Madison County,,35.86,,-82.71,,0,,14||Madison County, North Carolina,,Madison County,,35.86,,-82.71,,314,,328||Madison County, North Carolina,,Madison County,,35.86,,-82.71,,581,,595||Madison County, North Carolina,,Madison County,,35.86,,-82.71,,815,,829||
+
+
+
+
+
+Berlin, Connecticut,,Berlin,,41.6139,,-72.7725,,797,,803||
+Berlin, Maryland,,Berlin,,38.3311,,-75.2139,,294,,300||Berlin, Maryland,,Berlin,,38.3311,,-75.2139,,1107,,1113||Berlin, Maryland,,Berlin,,38.3311,,-75.2139,,1215,,1221||
+Berlin, New Jersey,,Berlin,,39.7921,,-74.937,,471,,477||Berlin, New Jersey,,Berlin,,39.7921,,-74.937,,1429,,1435||
+Berlin, Wisconsin,,Berlin,,43.9697,,-88.9486,,440,,446||
+
+
+
+
+
+
+
+
+
+
+
+Hillsboro, West Virginia,,Hillsboro,,38.1381,,80.2125,,1000,,1009||
+
+
+Mount Carmel, Illinois,,Mount Carmel,,38.4147,,-87.7686,,510,,522||
+
+
+Mount Carmel, Mississippi,,Mount Carmel,,31.6453,,-89.7953,,326,,338||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wayne County, Pennsylvania,,Wayne County,,41.65,,-75.31,,549,,561||Wayne County, Pennsylvania,,Wayne County,,41.65,,-75.31,,874,,886||
+Wayne County, Missouri,,Wayne County,,37.11,,-90.46,,771,,783||Wayne County, Missouri,,Wayne County,,37.11,,-90.46,,903,,915||Wayne County, Missouri,,Wayne County,,37.11,,-90.46,,1079,,1091||
+Wayne County, Michigan,,Wayne County,,42.28,,-83.26,,1068,,1080||
+Wayne County, Ohio,,Wayne County,,40.83,,-81.89,,246,,258||
+Wayne County, Utah,,Wayne County,,38.36,,-110.9,,952,,964||
+
+
+
+Wayne County, Georgia,,Wayne County,,31.55,,-81.91,,1275,,1287||Wayne County, Georgia,,Wayne County,,31.55,,-81.91,,1451,,1463||Wayne County, Georgia,,Wayne County,,31.55,,-81.91,,1915,,1927||
+Wayne County, Tennessee,,Wayne County,,35.24,,-87.79,,748,,760||Wayne County, Tennessee,,Wayne County,,35.24,,-87.79,,889,,901||
+Wayne County, Kentucky,,Wayne County,,36.81,,-84.83,,644,,656||Wayne County, Kentucky,,Wayne County,,36.81,,-84.83,,1089,,1101||
+Wayne County, Nebraska,,Wayne County,,42.21,,-97.12,,643,,655||Wayne County, Nebraska,,Wayne County,,42.21,,-97.12,,844,,856||
+Wayne County, West Virginia,,Wayne County,,38.15,,-82.43,,453,,465||
+
+
+
+
+
+
+
+
+
+
+
+Worcester,,Worcester,,52.1925,,-2.2208,,112,,121||
+
+
+Worcester, New York,,Worcester,,42.6,,-74.7167,,466,,475||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chatsworth, Ontario,,Chatsworth,,44.3833,,-80.8667,,349,,359||Chatsworth, Ontario,,Chatsworth,,44.3833,,-80.8667,,938,,948||Chatsworth, Ontario,,Chatsworth,,44.3833,,-80.8667,,1034,,1044||
+
+Chatsworth, Illinois,,Chatsworth,,40.7542,,88.2928,,1021,,1031||
+
+
+
+
+
+
+Trenton, New Jersey,,Trenton,,40.2237,,-74.764,,1819,,1826||
+
+
+
+
+
+
+
+
+
+
+
+
+Spring Valley, Illinois,,Spring Valley,,41.3269,,89.2006,,316,,329||Spring Valley, Illinois,,Spring Valley,,41.3269,,89.2006,,496,,509||
+
+
+Spring Valley, San Diego County, California,,Spring Valley,,32.7344,,-116.9814,,0,,13||
+Spring Valley, Washington, D.C.,,Spring Valley,,38.9402,,-77.0968,,300,,313||Spring Valley, Washington, D.C.,,Spring Valley,,38.9402,,-77.0968,,951,,964||Spring Valley, Washington, D.C.,,Spring Valley,,38.9402,,-77.0968,,1368,,1381||
+Spring Valley, Alabama,,Spring Valley,,34.6567,,-87.6167,,0,,13||Spring Valley, Alabama,,Spring Valley,,34.6567,,-87.6167,,88,,101||Spring Valley, Alabama,,Spring Valley,,34.6567,,-87.6167,,254,,267||Spring Valley, Alabama,,Spring Valley,,34.6567,,-87.6167,,583,,596||Spring Valley, Alabama,,Spring Valley,,34.6567,,-87.6167,,928,,941||
+
+
+
+
+Monterey, Virginia,,Monterey,,38.4119,,-79.5806,,1122,,1130||
+Monterey, Massachusetts,,Monterey,,42.1792,,-73.2125,,230,,238||
+
+Monterey, New South Wales,,Monterey,,-33.9725,,151.1481,,664,,672||Monterey, New South Wales,,Monterey,,-33.9725,,151.1481,,836,,844||
+
+
+
+Jordan, Minnesota,,Jordan,,44.6683,,-93.6325,,579,,585||
+
+Jordan, Ontario,,Jordan,,43.1333,,-79.35,,855,,861||
+
+La Crosse, Wisconsin,,La Crosse,,43.8133,,-91.2331,,131,,140||
+
+
+
+
+
+
+
+
+
+Selma, Texas,,Selma,,29.5872,,-98.3158,,271,,276||
+Selma, North Carolina,,Selma,,35.5369,,-78.2847,,383,,388||
+
+
+
+
+
+
+
+
+
+
+
+
+
+Camden, Minneapolis,,Camden,,45.0363,,-93.298,,475,,481||Camden, Minneapolis,,Camden,,45.0363,,-93.298,,837,,843||Camden, Minneapolis,,Camden,,45.0363,,-93.298,,1109,,1115||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+San Geronimo, California,,San Geronimo,,38.0133,,-122.6639,,830,,842||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fremont, Nebraska,,Fremont,,41.4397,,-96.49,,393,,400||
+
+
+Fremont, Indiana,,Fremont,,41.7311,,-84.9325,,417,,424||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Charlestown, Saint Kitts and Nevis,,Charlestown,,17.1431,,-62.6269,,942,,953||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oakland, Maryland,,Oakland,,39.4106,,-79.4044,,294,,301||
+
+
+
+
+Oakland, Massachusetts,,Oakland,,41.9111,,-71.1383,,412,,419||Oakland, Massachusetts,,Oakland,,41.9111,,-71.1383,,517,,524||Oakland, Massachusetts,,Oakland,,41.9111,,-71.1383,,600,,607||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Milford, Michigan,,Milford,,42.5886,,83.5983,,178,,185||
+
+
+
+
+
+
+
+
+
+Rockville, Maryland,,Rockville,,39.0836,,-77.1483,,375,,384||Rockville, Maryland,,Rockville,,39.0836,,-77.1483,,526,,535||
+Rockville, Indiana,,Rockville,,39.7653,,-87.2289,,993,,1002||
+Rockville, Iowa,,Rockville,,42.4186,,-91.1422,,657,,666||Rockville, Iowa,,Rockville,,42.4186,,-91.1422,,994,,1003||
+Rockville, Virginia,,Rockville,,37.7261,,-77.6783,,593,,602||Rockville, Virginia,,Rockville,,37.7261,,-77.6783,,689,,698||
+
+
+
+
+
+
+
+
+Bethlehem,,Bethlehem,,31.7031,,35.196,,0,,9||Bethlehem,,Bethlehem,,31.7031,,35.196,,805,,814||Bethlehem,,Bethlehem,,31.7031,,35.196,,843,,852||
+Bethlehem, Pennsylvania,,Bethlehem,,40.6261,,-75.3756,,0,,9||Bethlehem, Pennsylvania,,Bethlehem,,40.6261,,-75.3756,,409,,418||Bethlehem, Pennsylvania,,Bethlehem,,40.6261,,-75.3756,,830,,839||Bethlehem, Pennsylvania,,Bethlehem,,40.6261,,-75.3756,,1135,,1144||Bethlehem, Pennsylvania,,Bethlehem,,40.6261,,-75.3756,,1388,,1397||
+Bethlehem, New York,,Bethlehem,,42.6,,-73.8333,,0,,9||Bethlehem, New York,,Bethlehem,,42.6,,-73.8333,,128,,137||Bethlehem, New York,,Bethlehem,,42.6,,-73.8333,,323,,332||Bethlehem, New York,,Bethlehem,,42.6,,-73.8333,,465,,474||Bethlehem, New York,,Bethlehem,,42.6,,-73.8333,,938,,947||
+Bethlehem, Connecticut,,Bethlehem,,41.6392,,-73.2086,,0,,9||Bethlehem, Connecticut,,Bethlehem,,41.6392,,-73.2086,,491,,500||
+Bethlehem, Free State,,Bethlehem,,28.2333,,28.3,,0,,9||Bethlehem, Free State,,Bethlehem,,28.2333,,28.3,,276,,285||Bethlehem, Free State,,Bethlehem,,28.2333,,28.3,,527,,536||Bethlehem, Free State,,Bethlehem,,28.2333,,28.3,,840,,849||Bethlehem, Free State,,Bethlehem,,28.2333,,28.3,,1056,,1065||
+Bethlehem, New Hampshire,,Bethlehem,,44.2803,,-71.6881,,0,,9||Bethlehem, New Hampshire,,Bethlehem,,44.2803,,-71.6881,,1019,,1028||
+Bethlehem, Indiana,,Bethlehem,,38.5392,,-85.4206,,0,,9||Bethlehem, Indiana,,Bethlehem,,38.5392,,-85.4206,,403,,412||Bethlehem, Indiana,,Bethlehem,,38.5392,,-85.4206,,462,,471||Bethlehem, Indiana,,Bethlehem,,38.5392,,-85.4206,,603,,612||Bethlehem, Indiana,,Bethlehem,,38.5392,,-85.4206,,1036,,1045||Bethlehem, Indiana,,Bethlehem,,38.5392,,-85.4206,,1216,,1225||
+
+
+Tunis,,Tunis,,36.7974,,10.1659,,918,,923||
+
+
+
+
+Berkeley, Missouri,,Berkeley,,38.7422,,-90.3333,,311,,319||Berkeley, Missouri,,Berkeley,,38.7422,,-90.3333,,406,,414||
+Berkeley, Gloucestershire,,Berkeley,,51.691,,-2.459,,749,,757||Berkeley, Gloucestershire,,Berkeley,,51.691,,-2.459,,1065,,1073||Berkeley, Gloucestershire,,Berkeley,,51.691,,-2.459,,1177,,1185||
+
+
+Vermont,,Vermont,,44.0833,,-72.6167,,0,,7||Vermont,,Vermont,,44.0833,,-72.6167,,665,,672||Vermont,,Vermont,,44.0833,,-72.6167,,877,,884||Vermont,,Vermont,,44.0833,,-72.6167,,1556,,1563||Vermont,,Vermont,,44.0833,,-72.6167,,1687,,1694||Vermont,,Vermont,,44.0833,,-72.6167,,1790,,1797||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bogota, New Jersey,,Bogota,,40.8743,,-74.0297,,302,,308||Bogota, New Jersey,,Bogota,,40.8743,,-74.0297,,602,,608||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Greenwich, Connecticut,,Greenwich,,41.0389,,-73.6136,,373,,382||Greenwich, Connecticut,,Greenwich,,41.0389,,-73.6136,,740,,749||Greenwich, Connecticut,,Greenwich,,41.0389,,-73.6136,,806,,815||Greenwich, Connecticut,,Greenwich,,41.0389,,-73.6136,,1199,,1208||
+
+
+Greenwich, New South Wales,,Greenwich,,-33.833,,151.1836,,0,,9||Greenwich, New South Wales,,Greenwich,,-33.833,,151.1836,,102,,111||Greenwich, New South Wales,,Greenwich,,-33.833,,151.1836,,550,,559||
+Greenwich, Virginia,,Greenwich,,38.7492,,-77.6481,,0,,9||Greenwich, Virginia,,Greenwich,,38.7492,,-77.6481,,98,,107||Greenwich, Virginia,,Greenwich,,38.7492,,-77.6481,,205,,214||Greenwich, Virginia,,Greenwich,,38.7492,,-77.6481,,293,,302||
+Greenwich, Nova Scotia,,Greenwich,,45.0839,,-64.3999,,0,,9||Greenwich, Nova Scotia,,Greenwich,,45.0839,,-64.3999,,492,,501||Greenwich, Nova Scotia,,Greenwich,,45.0839,,-64.3999,,734,,743||Greenwich, Nova Scotia,,Greenwich,,45.0839,,-64.3999,,965,,974||Greenwich, Nova Scotia,,Greenwich,,45.0839,,-64.3999,,1022,,1031||Greenwich, Nova Scotia,,Greenwich,,45.0839,,-64.3999,,1242,,1251||
+
+
+
+
+
+Guinea,,Guinea,,9.5092,,-13.7122,,360,,366||Guinea,,Guinea,,9.5092,,-13.7122,,457,,463||
+
+
+
+
+
+
+
+
+
+
+
+
+Minden, Nevada,,Minden,,38.9561,,-119.7692,,784,,790||
+
+Minden, New York,,Minden,,42.9308,,-74.6739,,971,,977||
+
+
+
+
+
+
+
+
+
+
+
+
+Nogales, Sonora,,Nogales,,31.3186,,-110.9458,,401,,408||
+
+
+
+
+
+
+
+Glendale, Wisconsin,,Glendale,,43.13,,-87.9278,,1112,,1120||
+Glendale, Utah,,Glendale,,37.3319,,-112.6014,,501,,509||
+Glendale, Kentucky,,Glendale,,37.6017,,-85.9056,,607,,615||Glendale, Kentucky,,Glendale,,37.6017,,-85.9056,,752,,760||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jerusalem,,Jerusalem,,31.7833,,35.2167,,0,,9||Jerusalem,,Jerusalem,,31.7833,,35.2167,,297,,306||Jerusalem,,Jerusalem,,31.7833,,35.2167,,543,,552||Jerusalem,,Jerusalem,,31.7833,,35.2167,,793,,802||Jerusalem,,Jerusalem,,31.7833,,35.2167,,984,,993||Jerusalem,,Jerusalem,,31.7833,,35.2167,,1110,,1119||Jerusalem,,Jerusalem,,31.7833,,35.2167,,1217,,1226||Jerusalem,,Jerusalem,,31.7833,,35.2167,,1552,,1561||
+Jerusalem, New York,,Jerusalem,,42.6108,,-77.3061,,0,,9||Jerusalem, New York,,Jerusalem,,42.6108,,-77.3061,,180,,189||Jerusalem, New York,,Jerusalem,,42.6108,,-77.3061,,265,,274||Jerusalem, New York,,Jerusalem,,42.6108,,-77.3061,,672,,681||Jerusalem, New York,,Jerusalem,,42.6108,,-77.3061,,777,,786||
+Jerusalem, New Zealand,,Jerusalem,,-39.55,,175.0667,,0,,9||Jerusalem, New Zealand,,Jerusalem,,-39.55,,175.0667,,461,,470||Jerusalem, New Zealand,,Jerusalem,,-39.55,,175.0667,,763,,772||
+
+
+
+
+
+
+Wilmington, North Carolina,,Wilmington,,34.2233,,-77.9122,,658,,668||
+Wilmington, Ohio,,Wilmington,,39.4459,,-83.8291,,327,,337||Wilmington, Ohio,,Wilmington,,39.4459,,-83.8291,,1060,,1070||
+Wilmington, Massachusetts,,Wilmington,,42.55,,-71.1667,,435,,445||Wilmington, Massachusetts,,Wilmington,,42.55,,-71.1667,,506,,516||Wilmington, Massachusetts,,Wilmington,,42.55,,-71.1667,,578,,588||Wilmington, Massachusetts,,Wilmington,,42.55,,-71.1667,,613,,623||Wilmington, Massachusetts,,Wilmington,,42.55,,-71.1667,,743,,753||Wilmington, Massachusetts,,Wilmington,,42.55,,-71.1667,,1126,,1136||
+
+
+
+
+
+Wilmington, South Australia,,Wilmington,,-32.6499,,138.0981,,772,,782||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Falmouth, Cornwall,,Falmouth,,50.1519,,-5.0653,,701,,709||
+Falmouth, Massachusetts,,Falmouth,,41.5514,,-70.6153,,726,,734||
+
+
+
+
+
+
+
+
+
+
+Medford, New York,,Medford,,40.8178,,-72.9861,,399,,406||
+
+
+
+
+Naples, Florida,,Naples,,26.15,,-81.8,,1123,,1129||Naples, Florida,,Naples,,26.15,,-81.8,,1180,,1186||
+
+
+
+
+
+
+
+
+
+
+London,,London,,51.5094,,-0.1183,,0,,6||London,,London,,51.5094,,-0.1183,,155,,161||London,,London,,51.5094,,-0.1183,,263,,269||London,,London,,51.5094,,-0.1183,,503,,509||London,,London,,51.5094,,-0.1183,,871,,877||London,,London,,51.5094,,-0.1183,,995,,1001||London,,London,,51.5094,,-0.1183,,1384,,1390||London,,London,,51.5094,,-0.1183,,1573,,1579||London,,London,,51.5094,,-0.1183,,1722,,1728||London,,London,,51.5094,,-0.1183,,1912,,1918||London,,London,,51.5094,,-0.1183,,2057,,2063||
+London, Ontario,,London,,42.9837,,-81.2497,,0,,6||London, Ontario,,London,,42.9837,,-81.2497,,174,,180||London, Ontario,,London,,42.9837,,-81.2497,,434,,440||London, Ontario,,London,,42.9837,,-81.2497,,691,,697||London, Ontario,,London,,42.9837,,-81.2497,,867,,873||London, Ontario,,London,,42.9837,,-81.2497,,1304,,1310||
+London, Ohio,,London,,39.8875,,-83.445,,0,,6||London, Ohio,,London,,39.8875,,-83.445,,154,,160||London, Ohio,,London,,39.8875,,-83.445,,500,,506||London, Ohio,,London,,39.8875,,-83.445,,620,,626||London, Ohio,,London,,39.8875,,-83.445,,802,,808||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Huntington, Vermont,,Huntington,,44.3039,,-72.98,,749,,759||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nawa, Rajasthan,,Nawa,,27.02,,75,,617,,621||
+
+
+
+
+
+
+
+Rio Verde, Arizona,,Rio Verde,,33.7222,,-111.6767,,193,,202||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pleasanton, California,,Pleasanton,,37.6725,,-121.8825,,546,,556||Pleasanton, California,,Pleasanton,,37.6725,,-121.8825,,677,,687||
+
+
+Pleasanton, Nebraska,,Pleasanton,,40.9686,,99.0881,,1525,,1535||Pleasanton, Nebraska,,Pleasanton,,40.9686,,99.0881,,1756,,1766||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Howard County, Indiana,,Howard County,,40.48,,-86.12,,604,,617||
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bay City, Michigan,,Bay City,,43.5951,,-83.8886,,1017,,1025||
+
+La Porte, Indiana,,La Porte,,41.6089,,86.7175,,515,,523||
+La Porte, Texas,,La Porte,,29.6647,,-95.0408,,507,,515||
+La Porte, California,,La Porte,,39.6819,,-120.9847,,424,,432||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Montgomery County, Pennsylvania,,Montgomery County,,40.21,,-75.37,,0,,17||Montgomery County, Pennsylvania,,Montgomery County,,40.21,,-75.37,,295,,312||Montgomery County, Pennsylvania,,Montgomery County,,40.21,,-75.37,,433,,450||
+Montgomery County, Ohio,,Montgomery County,,39.762,,-84.3542,,0,,17||Montgomery County, Ohio,,Montgomery County,,39.762,,-84.3542,,875,,892||Montgomery County, Ohio,,Montgomery County,,39.762,,-84.3542,,1032,,1049||
+Montgomery County, Maryland,,Montgomery County,,39.14,,-77.2,,0,,17||Montgomery County, Maryland,,Montgomery County,,39.14,,-77.2,,343,,360||Montgomery County, Maryland,,Montgomery County,,39.14,,-77.2,,1004,,1021||
+Montgomery County, Indiana,,Montgomery County,,40.04,,-86.89,,0,,17||Montgomery County, Indiana,,Montgomery County,,40.04,,-86.89,,273,,290||Montgomery County, Indiana,,Montgomery County,,40.04,,-86.89,,650,,667||
+Montgomery County, Missouri,,Montgomery County,,38.94,,-91.47,,1021,,1038||Montgomery County, Missouri,,Montgomery County,,38.94,,-91.47,,1109,,1126||
+Montgomery County, Texas,,Montgomery County,,30.3,,-95.5,,0,,17||Montgomery County, Texas,,Montgomery County,,30.3,,-95.5,,441,,458||Montgomery County, Texas,,Montgomery County,,30.3,,-95.5,,542,,559||
+Montgomery County, Illinois,,Montgomery County,,39.23,,-89.48,,0,,17||Montgomery County, Illinois,,Montgomery County,,39.23,,-89.48,,160,,177||Montgomery County, Illinois,,Montgomery County,,39.23,,-89.48,,607,,624||Montgomery County, Illinois,,Montgomery County,,39.23,,-89.48,,1013,,1030||
+Montgomery County, Alabama,,Montgomery County,,32.2192,,-86.2094,,0,,17||Montgomery County, Alabama,,Montgomery County,,32.2192,,-86.2094,,137,,154||Montgomery County, Alabama,,Montgomery County,,32.2192,,-86.2094,,220,,237||Montgomery County, Alabama,,Montgomery County,,32.2192,,-86.2094,,1103,,1120||
+Montgomery County, Arkansas,,Montgomery County,,34.5356,,-93.6644,,0,,17||Montgomery County, Arkansas,,Montgomery County,,34.5356,,-93.6644,,148,,165||
+Montgomery County, New York,,Montgomery County,,42.9009,,-74.4354,,0,,17||Montgomery County, New York,,Montgomery County,,42.9009,,-74.4354,,599,,616||Montgomery County, New York,,Montgomery County,,42.9009,,-74.4354,,966,,983||
+Montgomery County, Kansas,,Montgomery County,,37.0619,,-95.9031,,0,,17||Montgomery County, Kansas,,Montgomery County,,37.0619,,-95.9031,,283,,300||Montgomery County, Kansas,,Montgomery County,,37.0619,,-95.9031,,302,,319||Montgomery County, Kansas,,Montgomery County,,37.0619,,-95.9031,,1086,,1103||
+Montgomery County, Tennessee,,Montgomery County,,36.5,,-87.38,,0,,17||Montgomery County, Tennessee,,Montgomery County,,36.5,,-87.38,,185,,202||
+Montgomery County, Kentucky,,Montgomery County,,38.03,,-83.91,,0,,17||Montgomery County, Kentucky,,Montgomery County,,38.03,,-83.91,,386,,403||
+Montgomery County, Georgia,,Montgomery County,,32.17,,-82.53,,0,,17||Montgomery County, Georgia,,Montgomery County,,32.17,,-82.53,,142,,159||Montgomery County, Georgia,,Montgomery County,,32.17,,-82.53,,218,,235||Montgomery County, Georgia,,Montgomery County,,32.17,,-82.53,,792,,809||Montgomery County, Georgia,,Montgomery County,,32.17,,-82.53,,1055,,1072||
+Montgomery County, Mississippi,,Montgomery County,,33.5,,-89.61,,0,,17||
+Montgomery County, North Carolina,,Montgomery County,,35.33,,-79.9,,0,,17||Montgomery County, North Carolina,,Montgomery County,,35.33,,-79.9,,156,,173||Montgomery County, North Carolina,,Montgomery County,,35.33,,-79.9,,782,,799||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johnstown, Ohio,,Johnstown,,40.1489,,82.6867,,879,,888||
+
+Johnstown, Wrexham,,Johnstown,,53.0097,,-3.0389,,880,,889||
+
+
+
+
+
+
+
+
+
+
+Colombo,,Colombo,,6.8781,,79.8969,,0,,7||Colombo,,Colombo,,6.8781,,79.8969,,161,,168||Colombo,,Colombo,,6.8781,,79.8969,,585,,592||Colombo,,Colombo,,6.8781,,79.8969,,709,,716||Colombo,,Colombo,,6.8781,,79.8969,,955,,962||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Knox County, Tennessee,,Knox County,,35.99,,-83.94,,861,,872||Knox County, Tennessee,,Knox County,,35.99,,-83.94,,1083,,1094||
+
+Knox County, Indiana,,Knox County,,38.69,,-87.42,,783,,794||
+Knox County, Illinois,,Knox County,,40.93,,-90.21,,933,,944||
+
+
+Knox County, Maine,,Knox County,,44.03,,-69.03,,926,,937||Knox County, Maine,,Knox County,,44.03,,-69.03,,1024,,1035||
+Knox County, Texas,,Knox County,,33.61,,-99.74,,345,,356||Knox County, Texas,,Knox County,,33.61,,-99.74,,575,,586||Knox County, Texas,,Knox County,,33.61,,-99.74,,867,,878||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+York County, Virginia,,York County,,37.2167,,-76.4,,786,,797||
+
+York County, Maine,,York County,,43.41,,-70.67,,657,,668||
+
+
+
+
+
+
+
+
+
+
+Providence, Utah,,Providence,,41.705,,-111.8142,,0,,10||
+
+
+
+Cook County, Illinois,,Cook County,,41.8,,-87.7167,,726,,737||Cook County, Illinois,,Cook County,,41.8,,-87.7167,,1299,,1310||
+
+
+
+
+
+Greene County, Pennsylvania,,Greene County,,39.86,,-80.22,,496,,509||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Norwood, Ohio,,Norwood,,39.16,,-84.455,,544,,551||
+
+
+
+
+
+
+Samar,,Samar,,12.05,,125.1167,,228,,233||
+
+
+
+
+
+
+
+
+Cairo, Georgia,,Cairo,,30.8833,,-84.2167,,531,,536||Cairo, Georgia,,Cairo,,30.8833,,-84.2167,,1259,,1264||
+Cairo, Ohio,,Cairo,,40.8311,,84.0844,,357,,362||Cairo, Ohio,,Cairo,,40.8311,,84.0844,,634,,639||Cairo, Ohio,,Cairo,,40.8311,,84.0844,,670,,675||Cairo, Ohio,,Cairo,,40.8311,,84.0844,,692,,697||
+
+Cairo, New York,,Cairo,,42.3022,,-73.9956,,805,,810||Cairo, New York,,Cairo,,42.3022,,-73.9956,,881,,886||Cairo, New York,,Cairo,,42.3022,,-73.9956,,959,,964||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bellevue, Idaho,,Bellevue,,43.465,,-114.2567,,874,,882||Bellevue, Idaho,,Bellevue,,43.465,,-114.2567,,954,,962||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johnson City, Tennessee,,Johnson City,,36.3353,,-82.3728,,1162,,1174||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Changi,,Changi,,1.3911,,103.9864,,372,,378||
+Monroe County, Michigan,,Monroe County,,41.92,,-83.5,,0,,13||Monroe County, Michigan,,Monroe County,,41.92,,-83.5,,310,,323||
+Monroe County, Florida,,Monroe County,,25.12,,-81.15,,0,,13||Monroe County, Florida,,Monroe County,,25.12,,-81.15,,138,,151||Monroe County, Florida,,Monroe County,,25.12,,-81.15,,194,,207||Monroe County, Florida,,Monroe County,,25.12,,-81.15,,456,,469||Monroe County, Florida,,Monroe County,,25.12,,-81.15,,872,,885||
+Monroe County, Tennessee,,Monroe County,,35.45,,-84.25,,0,,13||Monroe County, Tennessee,,Monroe County,,35.45,,-84.25,,295,,308||Monroe County, Tennessee,,Monroe County,,35.45,,-84.25,,1001,,1014||
+Monroe County, Pennsylvania,,Monroe County,,41.06,,-75.34,,0,,13||Monroe County, Pennsylvania,,Monroe County,,41.06,,-75.34,,371,,384||Monroe County, Pennsylvania,,Monroe County,,41.06,,-75.34,,561,,574||
+Monroe County, Ohio,,Monroe County,,39.73,,-81.08,,0,,13||Monroe County, Ohio,,Monroe County,,39.73,,-81.08,,254,,267||Monroe County, Ohio,,Monroe County,,39.73,,-81.08,,689,,702||Monroe County, Ohio,,Monroe County,,39.73,,-81.08,,908,,921||
+Monroe County, Indiana,,Monroe County,,39.16,,-86.52,,0,,13||Monroe County, Indiana,,Monroe County,,39.16,,-86.52,,239,,252||Monroe County, Indiana,,Monroe County,,39.16,,-86.52,,321,,334||Monroe County, Indiana,,Monroe County,,39.16,,-86.52,,509,,522||
+Monroe County, Illinois,,Monroe County,,38.2833,,-90.1833,,0,,13||Monroe County, Illinois,,Monroe County,,38.2833,,-90.1833,,172,,185||Monroe County, Illinois,,Monroe County,,38.2833,,-90.1833,,1065,,1078||
+Monroe County, New York,,Monroe County,,43.3,,-77.69,,0,,13||Monroe County, New York,,Monroe County,,43.3,,-77.69,,191,,204||Monroe County, New York,,Monroe County,,43.3,,-77.69,,507,,520||
+Monroe County, West Virginia,,Monroe County,,37.56,,-80.54,,0,,13||Monroe County, West Virginia,,Monroe County,,37.56,,-80.54,,146,,159||Monroe County, West Virginia,,Monroe County,,37.56,,-80.54,,597,,610||Monroe County, West Virginia,,Monroe County,,37.56,,-80.54,,691,,704||Monroe County, West Virginia,,Monroe County,,37.56,,-80.54,,899,,912||
+Monroe County, Kentucky,,Monroe County,,36.71,,-85.72,,0,,13||Monroe County, Kentucky,,Monroe County,,36.71,,-85.72,,1140,,1153||
+Monroe County, Alabama,,Monroe County,,31.5708,,-87.3697,,0,,13||Monroe County, Alabama,,Monroe County,,31.5708,,-87.3697,,594,,607||
+Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,0,,13||Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,235,,248||Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,563,,576||Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,591,,604||Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,771,,784||Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,881,,894||Monroe County, Arkansas,,Monroe County,,34.7133,,-91.2222,,1163,,1176||
+
+
+
+
+
+
+
+
+
+
+
+Birmingham,,Birmingham,,52.4831,,-1.8936,,1280,,1290||Birmingham,,Birmingham,,52.4831,,-1.8936,,1642,,1652||
+
+Birmingham, Huntingdon County, Pennsylvania,,Birmingham,,40.6472,,-78.1953,,760,,770||Birmingham, Huntingdon County, Pennsylvania,,Birmingham,,40.6472,,-78.1953,,952,,962||Birmingham, Huntingdon County, Pennsylvania,,Birmingham,,40.6472,,-78.1953,,1132,,1142||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Floyd County, Indiana,,Floyd County,,38.32,,-85.9,,0,,12||Floyd County, Indiana,,Floyd County,,38.32,,-85.9,,133,,145||Floyd County, Indiana,,Floyd County,,38.32,,-85.9,,294,,306||Floyd County, Indiana,,Floyd County,,38.32,,-85.9,,388,,400||Floyd County, Indiana,,Floyd County,,38.32,,-85.9,,648,,660||
+Floyd County, Georgia,,Floyd County,,34.2667,,-85.2167,,0,,12||Floyd County, Georgia,,Floyd County,,34.2667,,-85.2167,,165,,177||Floyd County, Georgia,,Floyd County,,34.2667,,-85.2167,,445,,457||Floyd County, Georgia,,Floyd County,,34.2667,,-85.2167,,689,,701||
+Floyd County, Virginia,,Floyd County,,36.94,,-80.36,,0,,12||Floyd County, Virginia,,Floyd County,,36.94,,-80.36,,142,,154||Floyd County, Virginia,,Floyd County,,36.94,,-80.36,,425,,437||
+Floyd County, Kentucky,,Floyd County,,37.56,,-82.75,,0,,12||Floyd County, Kentucky,,Floyd County,,37.56,,-82.75,,300,,312||
+Floyd County, Texas,,Floyd County,,34.0667,,-101.3,,0,,12||Floyd County, Texas,,Floyd County,,34.0667,,-101.3,,362,,374||Floyd County, Texas,,Floyd County,,34.0667,,-101.3,,495,,507||Floyd County, Texas,,Floyd County,,34.0667,,-101.3,,547,,559||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Palo Verde, California,,Palo Verde,,33.4294,,-114.73,,451,,461||Palo Verde, California,,Palo Verde,,33.4294,,-114.73,,693,,703||Palo Verde, California,,Palo Verde,,33.4294,,-114.73,,753,,763||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Truro, Massachusetts,,Truro,,41.9933,,-70.0503,,104,,109||Truro, Massachusetts,,Truro,,41.9933,,-70.0503,,343,,348||Truro, Massachusetts,,Truro,,41.9933,,-70.0503,,643,,648||
+
+Truro, Nova Scotia,,Truro,,45.3649,,-63.2798,,246,,251||Truro, Nova Scotia,,Truro,,45.3649,,-63.2798,,476,,481||Truro, Nova Scotia,,Truro,,45.3649,,-63.2798,,1237,,1242||Truro, Nova Scotia,,Truro,,45.3649,,-63.2798,,1824,,1829||
+
+
+
+
+
+
+
+
+
+
+Stevens County, Washington,,Stevens County,,48.4,,-117.85,,425,,439||Stevens County, Washington,,Stevens County,,48.4,,-117.85,,1151,,1165||
+
+
+
+
+
+
+
+
+
+
+
+
+
+Warren County, Pennsylvania,,Warren County,,41.81,,-79.27,,1305,,1318||
+
+
+
+
+
+
+
+
+Warren County, North Carolina,,Warren County,,36.4,,-78.1,,1015,,1028||Warren County, North Carolina,,Warren County,,36.4,,-78.1,,1158,,1171||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Honduras,,Honduras,,15,,-86.5,,533,,541||Honduras,,Honduras,,15,,-86.5,,836,,844||Honduras,,Honduras,,15,,-86.5,,1052,,1060||
+
+
+
+
+
+
+
+
+Delano, California,,Delano,,35.7697,,-119.2464,,632,,638||
+
+
+Bangor, Maine,,Bangor,,44.8108,,-68.7831,,440,,446||
+
+
+
+Bangor, Michigan,,Bangor,,42.3133,,86.1131,,391,,397||Bangor, Michigan,,Bangor,,42.3133,,86.1131,,555,,561||Bangor, Michigan,,Bangor,,42.3133,,86.1131,,652,,658||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Croydon, South Australia,,Croydon,,-34.898,,138.564,,926,,933||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,459,,472||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,673,,686||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,732,,745||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,812,,825||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,963,,976||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,1187,,1200||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,1335,,1348||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,1455,,1468||Potter County, Pennsylvania,,Potter County,,41.74,,-77.9,,1736,,1749||
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cumberland, British Columbia,,Cumberland,,49.6189,,-125.0314,,1236,,1246||
+Cumberland, New Jersey,,Cumberland,,39.3697,,-74.9408,,1397,,1407||
+
+
+
+
+
+
+
+
+
+
+Nashville, Indiana,,Nashville,,39.2031,,-86.2383,,344,,353||
+Nashville, Arkansas,,Nashville,,33.9419,,-93.8481,,154,,163||Nashville, Arkansas,,Nashville,,33.9419,,-93.8481,,556,,565||Nashville, Arkansas,,Nashville,,33.9419,,-93.8481,,1228,,1237||Nashville, Arkansas,,Nashville,,33.9419,,-93.8481,,1554,,1563||Nashville, Arkansas,,Nashville,,33.9419,,-93.8481,,1689,,1698||
+Nashville, Georgia,,Nashville,,31.2069,,-83.2467,,497,,506||
+Nashville, Illinois,,Nashville,,38.3481,,-89.3817,,597,,606||
+
+
+Nashville, Mississippi,,Nashville,,33.3264,,-88.3236,,170,,179||Nashville, Mississippi,,Nashville,,33.3264,,-88.3236,,904,,913||Nashville, Mississippi,,Nashville,,33.3264,,-88.3236,,1145,,1154||
+
+Jones County, Mississippi,,Jones County,,31.62,,-89.17,,1360,,1372||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pierce County, Washington,,Pierce County,,47.0637,,-122.1295,,767,,780||Pierce County, Washington,,Pierce County,,47.0637,,-122.1295,,1303,,1316||
+Pierce County, Georgia,,Pierce County,,31.36,,-82.22,,583,,596||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scranton, Pennsylvania,,Scranton,,41.4106,,-75.6675,,0,,8||Scranton, Pennsylvania,,Scranton,,41.4106,,-75.6675,,479,,487||Scranton, Pennsylvania,,Scranton,,41.4106,,-75.6675,,709,,717||Scranton, Pennsylvania,,Scranton,,41.4106,,-75.6675,,1164,,1172||
+
+
+
+
+
+
+
+
+
+
+Memphis, Texas,,Memphis,,34.7267,,-100.5417,,1064,,1071||
+
+
+
+
+
+
+
+Spring Hill, Florida,,Spring Hill,,28.4789,,-82.5478,,0,,11||Spring Hill, Florida,,Spring Hill,,28.4789,,-82.5478,,170,,181||Spring Hill, Florida,,Spring Hill,,28.4789,,-82.5478,,274,,285||
+Spring Hill, Kansas,,Spring Hill,,38.7453,,-94.8292,,0,,11||Spring Hill, Kansas,,Spring Hill,,38.7453,,-94.8292,,1678,,1689||
+
+
+
+
+
+Mount Pleasant, Michigan,,Mount Pleasant,,43.5978,,-84.7675,,529,,543||
+
+
+
+
+
+
+
+
+
+
+
+
+
+White River, Ontario,,White River,,48.5942,,-85.2748,,839,,850||White River, Ontario,,White River,,48.5942,,-85.2748,,858,,869||White River, Ontario,,White River,,48.5942,,-85.2748,,1291,,1302||
+White River, Honiara,,White River,,-9.4333,,159.9167,,0,,11||White River, Honiara,,White River,,-9.4333,,159.9167,,150,,161||White River, Honiara,,White River,,-9.4333,,159.9167,,257,,268||White River, Honiara,,White River,,-9.4333,,159.9167,,346,,357||White River, Honiara,,White River,,-9.4333,,159.9167,,548,,559||White River, Honiara,,White River,,-9.4333,,159.9167,,812,,823||
+
+
+
+
+Angola,,Angola,,-12.35,,17.35,,617,,623||Angola,,Angola,,-12.35,,17.35,,928,,934||Angola,,Angola,,-12.35,,17.35,,1171,,1177||
+Angola, Indiana,,Angola,,41.6369,,-85.0008,,362,,368||Angola, Indiana,,Angola,,41.6369,,-85.0008,,491,,497||Angola, Indiana,,Angola,,41.6369,,-85.0008,,593,,599||Angola, Indiana,,Angola,,41.6369,,-85.0008,,808,,814||
+Clarke County, Georgia,,Clarke County,,33.9556,,-83.3831,,1077,,1090||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Garden City, Kansas,,Garden City,,37.9753,,-100.8642,,379,,390||
+
+Garden City, New York,,Garden City,,40.7269,,-73.6497,,687,,698||
+Garden City, Michigan,,Garden City,,42.3244,,-83.3383,,1066,,1077||
+Garden City, Colorado,,Garden City,,40.3947,,104.6886,,458,,469||
+Garden City, South Carolina,,Garden City,,33.5878,,-79.0053,,863,,874||Garden City, South Carolina,,Garden City,,33.5878,,-79.0053,,1039,,1050||
+Garden City, Texas,,Garden City,,31.8639,,-101.4811,,1331,,1342||
+Garden City, Cairo,,Garden City,,30.0353,,31.2311,,380,,391||Garden City, Cairo,,Garden City,,30.0353,,31.2311,,712,,723||Garden City, Cairo,,Garden City,,30.0353,,31.2311,,848,,859||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chatham, Massachusetts,,Chatham,,41.6819,,-69.9603,,466,,473||
+
+
+
+
+
+
+
+
+
+
+Hanover, Kansas,,Hanover,,39.8908,,-96.8753,,1025,,1032||
+Hanover, Minnesota,,Hanover,,45.1633,,-93.6608,,539,,546||Hanover, Minnesota,,Hanover,,45.1633,,-93.6608,,609,,616||
+
+
+
+
+Gloucester,,Gloucester,,51.8668,,-2.2439,,370,,380||
+
+
+
+
+
+Bergen, New York,,Bergen,,43.0833,,-77.95,,184,,190||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Montevideo,,Montevideo,,-34.8836,,-56.1819,,322,,332||
+
+
+
+
+
+
+
+
+
+Rock Island, Illinois,,Rock Island,,41.4892,,-90.5731,,0,,11||Rock Island, Illinois,,Rock Island,,41.4892,,-90.5731,,106,,117||Rock Island, Illinois,,Rock Island,,41.4892,,-90.5731,,677,,688||
+Rock Island, Washington,,Rock Island,,47.3744,,-120.1433,,0,,11||Rock Island, Washington,,Rock Island,,47.3744,,-120.1433,,185,,196||Rock Island, Washington,,Rock Island,,47.3744,,-120.1433,,258,,269||Rock Island, Washington,,Rock Island,,47.3744,,-120.1433,,636,,647||Rock Island, Washington,,Rock Island,,47.3744,,-120.1433,,1011,,1022||
+
+Rock Island, Tennessee,,Rock Island,,35.7922,,-85.6133,,0,,11||Rock Island, Tennessee,,Rock Island,,35.7922,,-85.6133,,224,,235||Rock Island, Tennessee,,Rock Island,,35.7922,,-85.6133,,362,,373||Rock Island, Tennessee,,Rock Island,,35.7922,,-85.6133,,955,,966||Rock Island, Tennessee,,Rock Island,,35.7922,,-85.6133,,1052,,1063||
+Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,0,,11||Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,179,,190||Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,621,,632||Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,726,,737||Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,930,,941||Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,1058,,1069||Rock Island, Colorado County, Texas,,Rock Island,,29.5311,,-96.5753,,1193,,1204||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Des Moines, Iowa,,Des Moines,,41.5908,,-93.6208,,0,,10||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Murray County, Georgia,,Murray County,,34.78,,-84.75,,911,,924||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Manhattan,,Manhattan,,40.7283,,-73.9942,,0,,9||Manhattan,,Manhattan,,40.7283,,-73.9942,,768,,777||Manhattan,,Manhattan,,40.7283,,-73.9942,,1094,,1103||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Butler County, Pennsylvania,,Butler County,,40.91,,-79.91,,855,,868||
+Butler County, Ohio,,Butler County,,39.44,,-84.58,,1347,,1360||
+
+Butler County, Kentucky,,Butler County,,37.21,,-86.68,,392,,405||
+
+
+
+Bradford,,Bradford,,53.7887,,-1.7487,,0,,8||Bradford,,Bradford,,53.7887,,-1.7487,,67,,75||
+Bradford, Vermont,,Bradford,,43.9947,,-72.1328,,692,,700||
+Bradford, Massachusetts,,Bradford,,42.7694,,-71.0758,,505,,513||
+
+
+
+
+Bradford, Devon,,Bradford,,50.8425,,-4.2447,,499,,507||
+
+
+Douglas County, Kansas,,Douglas County,,38.905,,-95.4053,,961,,975||
+
+Douglas County, Georgia,,Douglas County,,33.7,,-84.77,,735,,749||
+Douglas County, Oregon,,Douglas County,,43.29,,-123.18,,1153,,1167||Douglas County, Oregon,,Douglas County,,43.29,,-123.18,,1239,,1253||
+
+
+Douglas County, Wisconsin,,Douglas County,,46.45,,-91.91,,882,,896||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Walpole, Massachusetts,,Walpole,,42.1417,,-71.25,,132,,139||
+
+
+
+La Caleta, Santo Domingo, Dominican Republic,,La Caleta,,18.4639,,-69.6806,,30,,39||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Camden County, Georgia,,Camden County,,30.92,,-81.64,,0,,13||Camden County, Georgia,,Camden County,,30.92,,-81.64,,285,,298||Camden County, Georgia,,Camden County,,30.92,,-81.64,,499,,512||
+
+Camden County, New Jersey,,Camden County,,39.8024,,-74.9613,,0,,13||Camden County, New Jersey,,Camden County,,39.8024,,-74.9613,,348,,361||Camden County, New Jersey,,Camden County,,39.8024,,-74.9613,,1011,,1024||
+Camden County, North Carolina,,Camden County,,36.34,,-76.16,,0,,13||Camden County, North Carolina,,Camden County,,36.34,,-76.16,,213,,226||Camden County, North Carolina,,Camden County,,36.34,,-76.16,,971,,984||
+
+
+
+
+
+
+
+Sumba, Faroe Islands,,Sumba,,61.4144,,-6.7039,,549,,554||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bolivia,,Bolivia,,-16.712,,-64.666,,1057,,1064||
+Bolivia, North Carolina,,Bolivia,,34.0692,,-78.1478,,798,,805||
+
+
+
+
+
+
+
+
+Louisville, Mississippi,,Louisville,,33.1231,,-89.0561,,802,,812||Louisville, Mississippi,,Louisville,,33.1231,,-89.0561,,923,,933||Louisville, Mississippi,,Louisville,,33.1231,,-89.0561,,1139,,1149||
+Louisville, Georgia,,Louisville,,33.0042,,-82.4047,,1295,,1305||
+Louisville, Colorado,,Louisville,,39.9758,,-105.1439,,607,,617||Louisville, Colorado,,Louisville,,39.9758,,-105.1439,,1050,,1060||Louisville, Colorado,,Louisville,,39.9758,,-105.1439,,1175,,1185||Louisville, Colorado,,Louisville,,39.9758,,-105.1439,,1342,,1352||
+Louisville, Ohio,,Louisville,,40.8372,,-81.2592,,0,,10||Louisville, Ohio,,Louisville,,40.8372,,-81.2592,,224,,234||Louisville, Ohio,,Louisville,,40.8372,,-81.2592,,728,,738||Louisville, Ohio,,Louisville,,40.8372,,-81.2592,,1005,,1015||Louisville, Ohio,,Louisville,,40.8372,,-81.2592,,1199,,1209||Louisville, Ohio,,Louisville,,40.8372,,-81.2592,,1219,,1229||
+Louisville, Kansas,,Louisville,,39.25,,-96.3167,,645,,655||Louisville, Kansas,,Louisville,,39.25,,-96.3167,,863,,873||Louisville, Kansas,,Louisville,,39.25,,-96.3167,,1246,,1256||Louisville, Kansas,,Louisville,,39.25,,-96.3167,,1698,,1708||
+Louisville, New York,,Louisville,,44.9017,,-75.0031,,216,,226||Louisville, New York,,Louisville,,44.9017,,-75.0031,,421,,431||Louisville, New York,,Louisville,,44.9017,,-75.0031,,579,,589||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Martin County, Florida,,Martin County,,27.08,,-80.4,,928,,941||
+
+
+
+
+
+
+
+Venice, Los Angeles,,Venice,,33.9908,,-118.4592,,508,,514||Venice, Los Angeles,,Venice,,33.9908,,-118.4592,,665,,671||
+Venice, Louisiana,,Venice,,29.2769,,-89.3547,,546,,552||Venice, Louisiana,,Venice,,29.2769,,-89.3547,,624,,630||Venice, Louisiana,,Venice,,29.2769,,-89.3547,,742,,748||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Putnam County, Ohio,,Putnam County,,41.02,,-84.13,,0,,13||
+Putnam County, Tennessee,,Putnam County,,36.14,,-85.5,,0,,13||Putnam County, Tennessee,,Putnam County,,36.14,,-85.5,,147,,160||Putnam County, Tennessee,,Putnam County,,36.14,,-85.5,,222,,235||
+Putnam County, New York,,Putnam County,,41.4279,,-73.7439,,0,,13||Putnam County, New York,,Putnam County,,41.4279,,-73.7439,,142,,155||Putnam County, New York,,Putnam County,,41.4279,,-73.7439,,309,,322||Putnam County, New York,,Putnam County,,41.4279,,-73.7439,,583,,596||Putnam County, New York,,Putnam County,,41.4279,,-73.7439,,598,,611||
+Putnam County, Missouri,,Putnam County,,40.48,,-93.02,,0,,13||Putnam County, Missouri,,Putnam County,,40.48,,-93.02,,298,,311||
+Putnam County, Georgia,,Putnam County,,33.32,,-83.37,,0,,13||Putnam County, Georgia,,Putnam County,,33.32,,-83.37,,317,,330||Putnam County, Georgia,,Putnam County,,33.32,,-83.37,,932,,945||Putnam County, Georgia,,Putnam County,,33.32,,-83.37,,1196,,1209||
+Putnam County, Florida,,Putnam County,,29.61,,-81.74,,0,,13||Putnam County, Florida,,Putnam County,,29.61,,-81.74,,137,,150||Putnam County, Florida,,Putnam County,,29.61,,-81.74,,399,,412||Putnam County, Florida,,Putnam County,,29.61,,-81.74,,960,,973||
+
+
+
+
+
+
+
+Norfolk, Virginia,,Norfolk,,36.8489,,-76.1792,,0,,7||Norfolk, Virginia,,Norfolk,,36.8489,,-76.1792,,312,,319||Norfolk, Virginia,,Norfolk,,36.8489,,-76.1792,,898,,905||Norfolk, Virginia,,Norfolk,,36.8489,,-76.1792,,1144,,1151||Norfolk, Virginia,,Norfolk,,36.8489,,-76.1792,,1478,,1485||
+Norfolk,,Norfolk,,52.6281,,1.2994,,347,,354||
+
+Norfolk, Massachusetts,,Norfolk,,42.1194,,-71.3256,,214,,221||Norfolk, Massachusetts,,Norfolk,,42.1194,,-71.3256,,661,,668||Norfolk, Massachusetts,,Norfolk,,42.1194,,-71.3256,,1112,,1119||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Halifax, Pennsylvania,,Halifax,,40.4675,,-76.9311,,958,,965||Halifax, Pennsylvania,,Halifax,,40.4675,,-76.9311,,1008,,1015||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ferndale, Western Australia,,Ferndale,,32.031,,115.924,,1024,,1032||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Benton County, Washington,,Benton County,,46.25,,-119.5,,1297,,1310||
+Benton County, Indiana,,Benton County,,40.6078,,-87.3112,,680,,693||
+Benton County, Missouri,,Benton County,,38.2994,,-93.2886,,634,,647||
+Benton County, Arkansas,,Benton County,,36.3522,,-94.2342,,325,,338||
+Benton County, Oregon,,Benton County,,44.4903,,-123.4325,,1237,,1250||Benton County, Oregon,,Benton County,,44.4903,,-123.4325,,1347,,1360||
+
+Benton County, Mississippi,,Benton County,,34.8194,,-89.1886,,826,,839||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Calhoun County, Florida,,Calhoun County,,30.41,,-85.2,,1088,,1102||
+
+Calhoun County, Texas,,Calhoun County,,28.44,,-96.61,,581,,595||
+
+Calhoun County, Arkansas,,Calhoun County,,33.5708,,-92.5236,,428,,442||Calhoun County, Arkansas,,Calhoun County,,33.5708,,-92.5236,,1101,,1115||
+
+
+
+
+
+
+
+Beaver County, Pennsylvania,,Beaver County,,40.69,,-80.35,,0,,13||Beaver County, Pennsylvania,,Beaver County,,40.69,,-80.35,,278,,291||Beaver County, Pennsylvania,,Beaver County,,40.69,,-80.35,,388,,401||Beaver County, Pennsylvania,,Beaver County,,40.69,,-80.35,,637,,650||
+Beaver County, Oklahoma,,Beaver County,,36.75,,-100.48,,861,,874||
+Beaver County, Alberta,,Beaver County,,53.25,,-112.2333,,0,,13||Beaver County, Alberta,,Beaver County,,53.25,,-112.2333,,184,,197||Beaver County, Alberta,,Beaver County,,53.25,,-112.2333,,352,,365||Beaver County, Alberta,,Beaver County,,53.25,,-112.2333,,683,,696||
+
+
+
+
+
+
+Carter County, Missouri,,Carter County,,36.94,,-90.97,,1469,,1482||
+
+
+
+
+
+
+
+
+
+Edinburgh, Indiana,,Edinburgh,,39.3525,,85.9672,,24,,33||Edinburgh, Indiana,,Edinburgh,,39.3525,,85.9672,,52,,61||Edinburgh, Indiana,,Edinburgh,,39.3525,,85.9672,,539,,548||Edinburgh, Indiana,,Edinburgh,,39.3525,,85.9672,,1149,,1158||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La Puente, California,,La Puente,,34.0324,,-117.9552,,248,,257||
+
+Oneida County, Wisconsin,,Oneida County,,45.7,,-89.52,,513,,526||
+
+
+
+
+Guam,,Guam,,13.4522,,144.7703,,187,,191||Guam,,Guam,,13.4522,,144.7703,,377,,381||Guam,,Guam,,13.4522,,144.7703,,426,,430||Guam,,Guam,,13.4522,,144.7703,,865,,869||Guam,,Guam,,13.4522,,144.7703,,1295,,1299||Guam,,Guam,,13.4522,,144.7703,,1357,,1361||Guam,,Guam,,13.4522,,144.7703,,1405,,1409||
+
+
+
+
+
+Hempstead, Texas,,Hempstead,,30.0914,,-96.0814,,704,,713||Hempstead, Texas,,Hempstead,,30.0914,,-96.0814,,919,,928||
+Hempstead, New York,,Hempstead,,40.7047,,-73.6172,,772,,781||
+Hempstead, Kent,,Hempstead,,51.3788,,0.5491,,255,,264||
+
+
+
+
+
+
+
+Mason County, Texas,,Mason County,,30.72,,-99.22,,362,,374||
+Mason County, West Virginia,,Mason County,,38.77,,-82.02,,0,,12||Mason County, West Virginia,,Mason County,,38.77,,-82.02,,336,,348||
+Mason County, Illinois,,Mason County,,40.24,,-89.91,,0,,12||Mason County, Illinois,,Mason County,,40.24,,-89.91,,304,,316||Mason County, Illinois,,Mason County,,40.24,,-89.91,,576,,588||Mason County, Illinois,,Mason County,,40.24,,-89.91,,755,,767||
+
+
+
+
+
+
+
+
+
+
+
+
