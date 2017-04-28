@@ -2,9 +2,9 @@ import codecs
 import numpy as np
 import cPickle
 from keras.callbacks import ModelCheckpoint
-from keras.layers import Embedding, LSTM, Dense, Dropout, Conv1D, GlobalMaxPooling1D, Activation, Concatenate
+from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D, Activation, Concatenate
 from keras.models import Sequential
-from preprocessing import pad_list, construct_1D_grid
+from preprocessing import pad_list, construct_1D_grid, construct_2D_grid
 
 print(u'Loading training data...')
 X_L, X_R, X_E, X_T, Y, N = [], [], [], [], [], []
@@ -12,14 +12,14 @@ UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
 vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 
-training_file = codecs.open("./data/output.txt", "r", encoding="utf-8")
+training_file = codecs.open("./data/eval_lgl.txt", "r", encoding="utf-8")
 for line in training_file:
     line = line.strip().split("\t")
     Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], False))
     X_L.append(pad_list(input_length, eval(line[2].lower()), True))
     X_R.append(pad_list(input_length, eval(line[3].lower()), False))
-    X_E.append(construct_1D_grid(eval(line[4]), True))
-    X_T.append(construct_1D_grid(eval(line[5]), False))
+    X_E.append(construct_2D_grid(eval(line[4]), False))
+    X_T.append(construct_2D_grid(eval(line[5]), True))
     N.append(line[6])
 
 print(u"Vocabulary Size:", len(vocabulary))
@@ -48,6 +48,8 @@ Y = np.asarray(Y)
 
 vectors = {UNKNOWN: np.ones(50)}
 for line in codecs.open("../data/glove.twitter.50d.txt", encoding="utf-8"):
+    if line.strip() == "":
+        continue
     t = line.split()
     vectors[t[0]] = [float(x) for x in t[1:]]
 
@@ -78,7 +80,7 @@ model_right.add(Activation('relu'))
 model_target = Sequential()
 model_target.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1, input_shape=(36, 72)))
 model_target.add(GlobalMaxPooling1D())
-model_target.add(Dense(25))
+model_target.add(Dense(250))
 model_target.add(Dropout(0.2))
 model_target.add(Activation('relu'))
 
@@ -101,4 +103,17 @@ print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-merged_model.fit([X_L, X_R, X_T, X_E], Y, batch_size=64, nb_epoch=50, callbacks=[checkpoint], verbose=1)
+merged_model.fit([X_L, X_R, X_T, X_E], Y, batch_size=64, epochs=50, callbacks=[checkpoint], verbose=1)
+# first_input = Input(shape=(2, ))
+# first_dense = Dense(1, )(first_input)
+#
+# second_input = Input(shape=(2, ))
+# second_dense = Dense(1, )(second_input)
+#
+# merge_one = concatenate([first_dense, second_dense])
+#
+# third_input = Input(shape=(1, ))
+# merge_two = concatenate([merge_one, third_input])
+#
+# model = Model(inputs=[first_input, second_input, third_input], outputs=merge_two)
+# result.compile(optimizer=ada_grad, loss='binary_crossentropy', metrics=['accuracy']

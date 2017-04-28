@@ -7,13 +7,19 @@ import spacy
 import numpy
 import sqlite3
 
+GRID_SIZE = 2
+
 
 def print_stats(accuracy):
     """"""
+    print("==============================================================================================")
     accuracy = numpy.log(numpy.array(accuracy) + 1)
+    print(u"Median error:", numpy.log(numpy.median(sorted(accuracy))))
+    print(u"Mean error:", numpy.log(numpy.mean(accuracy)))
     k = numpy.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
-    print u"Accuracy to " + str(k) + u" km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
+    print u"Accuracy to 161 km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
     print u"AUC = ", numpy.trapz(accuracy) / (numpy.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
+    print("==============================================================================================")
 
 
 def pad_list(size, a_list, from_left):
@@ -28,7 +34,6 @@ def pad_list(size, a_list, from_left):
 
 def coord_to_index(coordinates, get_xy):
     """"""
-    grid_size = 5
     latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99
     longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99
     if longitude < 0:
@@ -37,23 +42,23 @@ def coord_to_index(coordinates, get_xy):
         latitude = -latitude
     if not get_xy:
         return latitude, longitude
-    x = (360 / grid_size) * (int(latitude) / grid_size)
-    y = int(longitude) / grid_size
-    return x + y if 0 <= x + y <= 2592 else Exception(u"Shock horror!!")
+    x = (360 / GRID_SIZE) * (int(latitude) / GRID_SIZE)
+    y = int(longitude) / GRID_SIZE
+    return x + y if 0 <= x + y <= (360 / GRID_SIZE) * (180 / GRID_SIZE) else Exception(u"Shock horror!!")
 
 
 def index_to_coord(index):
     """"""
-    x = int(index / 72)
-    y = index % 72
-    if x > 18:
-        x = -(x - 18) * 5
+    x = int(index / (360 / GRID_SIZE))
+    y = index % (360 / GRID_SIZE)
+    if x > (90 / GRID_SIZE):
+        x = -(x - (90 / GRID_SIZE)) * GRID_SIZE
     else:
-        x = (18 - x) * 5
-    if y < 36:
-        y = -(36 - y) * 5
+        x = ((90 / GRID_SIZE) - x) * GRID_SIZE
+    if y < (180 / GRID_SIZE):
+        y = -((180 / GRID_SIZE) - y) * GRID_SIZE
     else:
-        y = (y - 36) * 5
+        y = (y - (180 / GRID_SIZE)) * GRID_SIZE
     return x, y
 
 
@@ -65,7 +70,7 @@ def get_coordinates(con, loc_name):
 
 def construct_1D_grid(a_list, use_pop):
     """"""
-    g = numpy.zeros(2592)
+    g = numpy.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
         if use_pop:
             g[coord_to_index((s[0], s[1]), True)] += numpy.log(numpy.e + s[2])
@@ -76,11 +81,11 @@ def construct_1D_grid(a_list, use_pop):
 
 def construct_2D_grid(a_list, use_pop):
     """"""
-    g = numpy.zeros((36, 72))
+    g = numpy.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
     for s in a_list:
         x, y = coord_to_index((s[0], s[1]), False)
-        x = int(x / 5)
-        y = int(y / 5)
+        x = int(x / GRID_SIZE)
+        y = int(y / GRID_SIZE)
         if use_pop:
             g[x][y] += numpy.log(numpy.e + s[2])
         else:
@@ -281,7 +286,7 @@ def generate_evaluation_data():
 # def visualise_2D_grid():
 #     """"""
 #     x = construct_2D_grid(eval(line[5])) * 255
-#     plt.imshow(numpy.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=numpy.log(255))
+#     plt.imshow(numpy.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=numpy.log(255+ 1))
 #     plt.title(line[6])
 #     plt.show()
 
@@ -305,8 +310,8 @@ def generate_vocabulary():
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
-# print(coord_to_grid(('86', '-179.98333')))
-# print(coord_to_grid((-90, 180)))
+# print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
+# print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data()
 # generate_evaluation_data()
 # index = coord_to_index((-6.43, -172.32), True)

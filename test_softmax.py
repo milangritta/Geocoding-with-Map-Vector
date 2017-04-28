@@ -3,10 +3,9 @@ import numpy as np
 import cPickle
 import sqlite3
 from geopy.distance import great_circle
-from keras.layers import Embedding, LSTM, Dense, Dropout, Concatenate, Activation, Conv1D, GlobalMaxPooling1D
+from keras.layers import Embedding, Dense, Dropout, Concatenate, Activation, Conv1D, GlobalMaxPooling1D
 from keras.models import Sequential
-from preprocessing import pad_list, construct_1D_grid, get_coordinates, print_stats, index_to_coord
-
+from preprocessing import pad_list, construct_2D_grid, get_coordinates, print_stats, index_to_coord
 # import matplotlib.pyplot as plt
 
 print(u'Loading training data...')
@@ -21,8 +20,8 @@ for line in training_file:
     C.append((float(line[0]), float(line[1])))
     X_L.append(pad_list(input_length, eval(line[2].lower()), True))
     X_R.append(pad_list(input_length, eval(line[3].lower()), False))
-    X_E.append(construct_1D_grid(eval(line[4]), True))
-    X_T.append(construct_1D_grid(eval(line[5]), False))
+    X_E.append(construct_2D_grid(eval(line[4]), False))
+    X_T.append(construct_2D_grid(eval(line[5]), True))
     N.append(line[6])
 
 print(u"Vocabulary Size:", len(vocabulary))
@@ -69,7 +68,7 @@ model_right.add(Activation('relu'))
 model_target = Sequential()
 model_target.add(Conv1D(250, 2, padding='valid', activation='relu', strides=1, input_shape=(36, 72)))
 model_target.add(GlobalMaxPooling1D())
-model_target.add(Dense(25))
+model_target.add(Dense(250))
 model_target.add(Dropout(0.2))
 model_target.add(Activation('relu'))
 
