@@ -4,8 +4,8 @@ import sqlite3
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_names_from_file, \
-    generate_arrays_from_file
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_names_from_file
+from preprocessing import generate_arrays_from_file
 from preprocessing import generate_labels_from_file
 # import matplotlib.pyplot as plt
 
@@ -13,7 +13,7 @@ print(u'Loading test data...')
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
 
-vocabulary = cPickle.load(open("./data/vocabulary.pkl"))
+vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
 #  --------------------------------------------------------------------------------------------------------------------
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
@@ -23,7 +23,7 @@ model = load_model(u"../data/weights")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 conn = sqlite3.connect(u'../data/geonames.db')
-file_name = u"data/eval_wiki.txt"
+file_name = u"data/eval_lgl.txt"
 choice = []
 for p, y, n in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
                    val_samples=int(check_output(["wc", file_name]).split()[0])),

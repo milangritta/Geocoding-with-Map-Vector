@@ -62,8 +62,8 @@ merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-early_stop = EarlyStopping(monitor='acc', patience=5)
-file_name = u"data/eval_wiki.txt"
+early_stop = EarlyStopping(monitor='acc', patience=10)
+file_name = u"data/eval_lgl.txt"
 merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                            samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),
-                           nb_epoch=100, callbacks=[checkpoint, early_stop])
+                           nb_epoch=100, callbacks=[checkpoint, early_stop], nb_worker=3)

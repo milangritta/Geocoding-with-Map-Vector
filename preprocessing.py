@@ -14,8 +14,8 @@ def print_stats(accuracy):
     """"""
     print("==============================================================================================")
     accuracy = np.log(np.array(accuracy) + 1)
-    print(u"Median error:", np.log(np.median(sorted(accuracy))))
-    print(u"Mean error:", np.log(np.mean(accuracy)))
+    print(u"Median error:", np.median(sorted(accuracy)))
+    print(u"Mean error:", np.mean(accuracy))
     k = np.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
     print u"Accuracy to 161 km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
     print u"AUC = ", np.trapz(accuracy) / (np.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
@@ -309,7 +309,7 @@ def generate_vocabulary():
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
+def generate_arrays_from_file(path, word_to_index, batch_size=128, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -361,15 +361,17 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
 
 def generate_names_from_file(path):
     """"""
-    for line in codecs.open(path, "r", encoding="utf-8"):
-        yield line.strip().split("\t")[6]
+    while True:
+        for line in codecs.open(path, "r", encoding="utf-8"):
+            yield line.strip().split("\t")[6]
 
 
 def generate_labels_from_file(path):
     """"""
-    for line in codecs.open(path, "r", encoding="utf-8"):
-        line = line.strip().split("\t")
-        yield (float(line[0]), float(line[1]))
+    while True:
+        for line in codecs.open(path, "r", encoding="utf-8"):
+            line = line.strip().split("\t")
+            yield (float(line[0]), float(line[1]))
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
