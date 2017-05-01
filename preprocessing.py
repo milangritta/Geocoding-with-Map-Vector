@@ -273,8 +273,8 @@ def generate_evaluation_data():
                         for i in range(len(locations)):
                             locations[i] = eval(get_coordinates(c, locations[i]))
                         ent_grid = get_coordinates(c, u" ".join(entity))
-                        # if len(eval(ent_grid)) == 0:
-                        #     break
+                        if len(eval(ent_grid)) == 0:
+                            raise Exception(u"BOOOOOOOOOOOOM")  # Why is this happening?!
                         loc_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
                         o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity) + u"\n")
@@ -303,13 +303,13 @@ def generate_vocabulary():
 
     c = Counter(temp)
     for item in c:
-        if c[item] > 2:
+        if c[item] > 4:
             vocabulary.add(item)
     cPickle.dump(vocabulary, open("data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, word_to_index, batch_size=64):
+def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -335,14 +335,13 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64):
                             x_r[i] = word_to_index[w]
                         else:
                             x_r[i] = word_to_index[u"<unknown>"]
-                X_L = np.asarray(X_L)
-                X_R = np.asarray(X_R)
-                X_E = np.asarray(X_E)
-                X_T = np.asarray(X_T)
-                Y = np.asarray(Y)
-                yield ([X_L, X_R, X_T, X_E], Y)
+                if train:
+                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)], np.asarray(Y))
+                else:
+                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)])
                 X_L, X_R, X_E, X_T, Y = [], [], [], [], []
-        if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
+        if len(Y) > 0:
+            # This block is only ever entered at the end to yield the final few samples. (< batch_size)
             for x_l, x_r in zip(X_L, X_R):
                 for i, w in enumerate(x_l):
                     if w in word_to_index:
@@ -354,18 +353,23 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64):
                         x_r[i] = word_to_index[w]
                     else:
                         x_r[i] = word_to_index[u"<unknown>"]
-            X_L = np.asarray(X_L)
-            X_R = np.asarray(X_R)
-            X_E = np.asarray(X_E)
-            X_T = np.asarray(X_T)
-            Y = np.asarray(Y)
-            yield ([X_L, X_R, X_T, X_E], Y)
+            if train:
+                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)], np.asarray(Y))
+            else:
+                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)])
 
 
 def generate_names_from_file(path):
     """"""
     for line in codecs.open(path, "r", encoding="utf-8"):
         yield line.strip().split("\t")[6]
+
+
+def generate_labels_from_file(path):
+    """"""
+    for line in codecs.open(path, "r", encoding="utf-8"):
+        line = line.strip().split("\t")
+        yield (float(line[0]), float(line[1]))
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 

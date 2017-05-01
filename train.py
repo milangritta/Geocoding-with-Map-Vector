@@ -11,6 +11,7 @@ from subprocess import check_output
 print(u'Loading training data...')
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
+
 vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
 #  --------------------------------------------------------------------------------------------------------------------
@@ -18,16 +19,16 @@ print(u'Preparing vectors...')
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 
 vectors = {UNKNOWN: np.ones(dimension)}
-# for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", encoding="utf-8"):
-#     if line.strip() == "":
-#         continue
-#     t = line.split()
-#     vectors[t[0]] = [float(x) for x in t[1:]]
+for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", encoding="utf-8"):
+    if line.strip() == "":
+        continue
+    t = line.split()
+    vectors[t[0]] = [float(x) for x in t[1:]]
 
 weights = np.zeros((len(vocabulary), dimension))
-# for w in vocabulary:
-#     if w in vectors:
-#         weights[word_to_index[w]] = vectors[w]
+for w in vocabulary:
+    if w in vectors:
+        weights[word_to_index[w]] = vectors[w]
 weights = np.array([weights])
 print(u'Done preparing vectors...')
 #  --------------------------------------------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-early_stop = EarlyStopping(monitor='acc', patience=2)
+early_stop = EarlyStopping(monitor='acc', patience=5)
 file_name = u"data/eval_wiki.txt"
 merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                            samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),
