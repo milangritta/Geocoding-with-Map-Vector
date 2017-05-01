@@ -4,7 +4,7 @@ import cPickle
 from collections import Counter
 # import matplotlib.pyplot as plt
 import spacy
-import numpy
+import numpy as np
 import sqlite3
 
 GRID_SIZE = 2
@@ -13,12 +13,12 @@ GRID_SIZE = 2
 def print_stats(accuracy):
     """"""
     print("==============================================================================================")
-    accuracy = numpy.log(numpy.array(accuracy) + 1)
-    print(u"Median error:", numpy.log(numpy.median(sorted(accuracy))))
-    print(u"Mean error:", numpy.log(numpy.mean(accuracy)))
-    k = numpy.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
+    accuracy = np.log(np.array(accuracy) + 1)
+    print(u"Median error:", np.log(np.median(sorted(accuracy))))
+    print(u"Mean error:", np.log(np.mean(accuracy)))
+    k = np.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
     print u"Accuracy to 161 km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
-    print u"AUC = ", numpy.trapz(accuracy) / (numpy.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
+    print u"AUC = ", np.trapz(accuracy) / (np.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
     print("==============================================================================================")
 
 
@@ -70,10 +70,10 @@ def get_coordinates(con, loc_name):
 
 def construct_1D_grid(a_list, use_pop):
     """"""
-    g = numpy.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
+    g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
         if use_pop:
-            g[coord_to_index((s[0], s[1]), True)] += numpy.log(numpy.e + s[2])
+            g[coord_to_index((s[0], s[1]), True)] += np.log(np.e + s[2])
         else:
             g[coord_to_index((s[0], s[1]), True)] += 1
     return g / max(g) if max(g) > 0.0 else g
@@ -81,16 +81,16 @@ def construct_1D_grid(a_list, use_pop):
 
 def construct_2D_grid(a_list, use_pop):
     """"""
-    g = numpy.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
+    g = np.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
     for s in a_list:
         x, y = coord_to_index((s[0], s[1]), False)
         x = int(x / GRID_SIZE)
         y = int(y / GRID_SIZE)
         if use_pop:
-            g[x][y] += numpy.log(numpy.e + s[2])
+            g[x][y] += np.log(np.e + s[2])
         else:
             g[x][y] += 1
-    return g / numpy.amax(g) if numpy.amax(g) > 0.0 else g
+    return g / np.amax(g) if np.amax(g) > 0.0 else g
 
 
 def merge_lists(grids):
@@ -286,7 +286,7 @@ def generate_evaluation_data():
 # def visualise_2D_grid():
 #     """"""
 #     x = construct_2D_grid(eval(line[5])) * 255
-#     plt.imshow(numpy.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=numpy.log(255+ 1))
+#     plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255+ 1))
 #     plt.title(line[6])
 #     plt.show()
 
@@ -308,6 +308,65 @@ def generate_vocabulary():
     cPickle.dump(vocabulary, open("data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
 
+
+def generate_arrays_from_file(path, word_to_index, batch_size=64):
+    """"""
+    while True:
+        training_file = codecs.open(path, "r", encoding="utf-8")
+        counter = 0
+        X_L, X_R, X_E, X_T, Y = [], [], [], [], []
+        for line in training_file:
+            counter += 1
+            line = line.strip().split("\t")
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+            X_L.append(pad_list(50, eval(line[2].lower()), from_left=True))
+            X_R.append(pad_list(50, eval(line[3].lower()), from_left=False))
+            X_E.append(construct_1D_grid(eval(line[4]), use_pop=False))
+            X_T.append(construct_1D_grid(eval(line[5]), use_pop=True))
+            if counter % batch_size == 0:
+                for x_l, x_r in zip(X_L, X_R):
+                    for i, w in enumerate(x_l):
+                        if w in word_to_index:
+                            x_l[i] = word_to_index[w]
+                        else:
+                            x_l[i] = word_to_index[u"<unknown>"]
+                    for i, w in enumerate(x_r):
+                        if w in word_to_index:
+                            x_r[i] = word_to_index[w]
+                        else:
+                            x_r[i] = word_to_index[u"<unknown>"]
+                X_L = np.asarray(X_L)
+                X_R = np.asarray(X_R)
+                X_E = np.asarray(X_E)
+                X_T = np.asarray(X_T)
+                Y = np.asarray(Y)
+                yield ([X_L, X_R, X_T, X_E], Y)
+                X_L, X_R, X_E, X_T, Y = [], [], [], [], []
+        if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
+            for x_l, x_r in zip(X_L, X_R):
+                for i, w in enumerate(x_l):
+                    if w in word_to_index:
+                        x_l[i] = word_to_index[w]
+                    else:
+                        x_l[i] = word_to_index[u"<unknown>"]
+                for i, w in enumerate(x_r):
+                    if w in word_to_index:
+                        x_r[i] = word_to_index[w]
+                    else:
+                        x_r[i] = word_to_index[u"<unknown>"]
+            X_L = np.asarray(X_L)
+            X_R = np.asarray(X_R)
+            X_E = np.asarray(X_E)
+            X_T = np.asarray(X_T)
+            Y = np.asarray(Y)
+            yield ([X_L, X_R, X_T, X_E], Y)
+
+
+def generate_names_from_file(path):
+    """"""
+    for line in codecs.open(path, "r", encoding="utf-8"):
+        yield line.strip().split("\t")[6]
+
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
@@ -317,3 +376,5 @@ def generate_vocabulary():
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
+# for word in generate_names_from_file("data/eval_lgl.txt"):
+#     print word.strip()

@@ -3,9 +3,7 @@ import numpy as np
 import cPickle
 import sqlite3
 from geopy.distance import great_circle
-from keras.engine import Merge
-from keras.layers import Embedding, LSTM, Dense, Dropout
-from keras.models import Sequential
+from keras.models import load_model
 from preprocessing import pad_list, construct_1D_grid, get_coordinates, print_stats, index_to_coord, GRID_SIZE
 import matplotlib.pyplot as plt
 
@@ -49,41 +47,14 @@ X_E = np.asarray(X_E)
 X_T = np.asarray(X_T)
 
 #  --------------------------------------------------------------------------------------------------------------------
-print(u'Building model...')
-model_left = Sequential()
-model_left.add(Embedding(len(vocabulary), dimension, input_length=input_length))
-model_left.add(LSTM(25))
-model_left.add(Dropout(0.2))
-
-model_right = Sequential()
-model_right.add(Embedding(len(vocabulary), dimension, input_length=input_length))
-model_right.add(LSTM(25, go_backwards=True))
-model_right.add(Dropout(0.2))
-
-model_target = Sequential()
-model_target.add(Dense(500, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
-model_target.add(Dropout(0.2))
-model_target.add(Dense(250, activation='relu'))
-
-model_entities = Sequential()
-model_entities.add(Dense(50, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
-model_entities.add(Dropout(0.2))
-model_entities.add(Dense(25, activation='relu'))
-
-merged_model = Sequential()
-merged_model.add(Merge([model_left, model_right, model_target, model_entities], mode='concat', concat_axis=1))
-merged_model.add(Dense(25))
-merged_model.add(Dense((180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax'))
-merged_model.load_weights("../data/weights")
-merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-print(u'Finished building model...')
+print(u'Loading model...')
+model = load_model(u"../data/weights")
+print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
-conn = sqlite3.connect('../data/geonames.db')
+conn = sqlite3.connect(u'../data/geonames.db')
 choice = []
-for p, c, n, e in zip(merged_model.predict([X_L, X_R, X_T, X_E]), C, N, X_E):
-    # p = np.multiply(p, e)
-    # p = index_to_coord(np.argmax(p))
+for p, c, n, e in zip(model.predict([X_L, X_R, X_T, X_E]), C, N, X_E):
+    p = index_to_coord(np.argmax(p))
     candidates = eval(get_coordinates(conn.cursor(), n))
     if len(candidates) == 0:
         print(u"Don't have an entry for", n, u"in GeoNames")
