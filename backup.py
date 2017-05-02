@@ -82,12 +82,16 @@ model_entities.add(Dropout(0.2))
 model_entities.add(Dense(25, activation='relu'))
 
 merged_model = Sequential()
-merged_model.add(Merge([model_left, model_right, model_target, model_entities], mode='concat', concat_axis=1))
-merged_model.add(Dense(25))
-merged_model.add(Dense((180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax'))
-merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+merged_model.add(Merge([model_left, model_right, model_entities], mode='concat', concat_axis=1))
+merged_model.add(Dropout(0.2))
+merged_model.add(Dense(100))
+
+model = Sequential()
+model.add(Merge([merged_model, model_target], mode='concat', concat_axis=1))
+model.add(Dense((180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax'))
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-merged_model.fit([X_L, X_R, X_T, X_E], Y, batch_size=128, nb_epoch=100, callbacks=[checkpoint], verbose=1)
+model.fit([X_L, X_R, X_E, X_T], Y, batch_size=128, nb_epoch=100, callbacks=[checkpoint], verbose=1)

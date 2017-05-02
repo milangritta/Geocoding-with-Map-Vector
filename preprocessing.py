@@ -336,9 +336,9 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
                         else:
                             x_r[i] = word_to_index[u"<unknown>"]
                 if train:
-                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)], np.asarray(Y))
+                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
                 else:
-                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)])
+                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
                 X_L, X_R, X_E, X_T, Y = [], [], [], [], []
         if len(Y) > 0:
             # This block is only ever entered at the end to yield the final few samples. (< batch_size)
@@ -354,9 +354,9 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
                     else:
                         x_r[i] = word_to_index[u"<unknown>"]
             if train:
-                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)], np.asarray(Y))
+                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
             else:
-                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_T), np.asarray(X_E)])
+                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
 
 
 def generate_names_from_file(path):

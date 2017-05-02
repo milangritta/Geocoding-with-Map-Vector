@@ -24,7 +24,7 @@ model = load_model(u"../data/weights")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 conn = sqlite3.connect(u'../data/geonames.db')
-file_name = u"data/eval_lgl.txt"
+file_name = u"data/eval_wiki.txt"
 choice = []
 for p, y, n in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
                    val_samples=int(check_output(["wc", file_name]).split()[0])),
