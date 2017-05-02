@@ -73,7 +73,7 @@ def construct_1D_grid(a_list, use_pop):
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
         if use_pop:
-            g[coord_to_index((s[0], s[1]), True)] += np.log(np.e + s[2])
+            g[coord_to_index((s[0], s[1]), True)] += s[2]
         else:
             g[coord_to_index((s[0], s[1]), True)] += 1
     return g / max(g) if max(g) > 0.0 else g
@@ -87,7 +87,7 @@ def construct_2D_grid(a_list, use_pop):
         x = int(x / GRID_SIZE)
         y = int(y / GRID_SIZE)
         if use_pop:
-            g[x][y] += np.log(np.e + s[2])
+            g[x][y] += s[2]
         else:
             g[x][y] += 1
     return g / np.amax(g) if np.amax(g) > 0.0 else g
@@ -309,7 +309,7 @@ def generate_vocabulary():
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, word_to_index, batch_size=128, train=True):
+def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")

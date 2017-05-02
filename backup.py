@@ -1,22 +1,50 @@
 import codecs
 import numpy as np
 import cPickle
-from keras.callbacks import ModelCheckpoint, EarlyStopping
+from keras.callbacks import ModelCheckpoint
 from keras.engine import Merge
 from keras.layers import Embedding, LSTM, Dense, Dropout
 from keras.models import Sequential
-from preprocessing import GRID_SIZE, generate_arrays_from_file
-from subprocess import check_output
+from preprocessing import pad_list, construct_1D_grid, GRID_SIZE
 
 print(u'Loading training data...')
+X_L, X_R, X_E, X_T, Y, N = [], [], [], [], [], []
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
-
 vocabulary = cPickle.load(open("data/vocabulary.pkl"))
+
+training_file = codecs.open("data/eval_lgl.txt", "r", encoding="utf-8")
+for line in training_file:
+    line = line.strip().split("\t")
+    Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+    X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True))
+    X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False))
+    X_E.append(construct_1D_grid(eval(line[4]), use_pop=False))
+    X_T.append(construct_1D_grid(eval(line[5]), use_pop=True))
+    N.append(line[6])
+
 print(u"Vocabulary Size:", len(vocabulary))
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Preparing vectors...')
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
+
+for x_l, x_r in zip(X_L, X_R):
+    for i, w in enumerate(x_l):
+        if w in word_to_index:
+            x_l[i] = word_to_index[w]
+        else:
+            x_l[i] = word_to_index[UNKNOWN]
+    for i, w in enumerate(x_r):
+        if w in word_to_index:
+            x_r[i] = word_to_index[w]
+        else:
+            x_r[i] = word_to_index[UNKNOWN]
+
+X_L = np.asarray(X_L)
+X_R = np.asarray(X_R)
+X_E = np.asarray(X_E)
+X_T = np.asarray(X_T)
+Y = np.asarray(Y)
 
 vectors = {UNKNOWN: np.ones(dimension)}
 for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", encoding="utf-8"):
@@ -30,7 +58,7 @@ for w in vocabulary:
     if w in vectors:
         weights[word_to_index[w]] = vectors[w]
 weights = np.array([weights])
-print(u'Done preparing vectors...')
+
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
 model_left = Sequential()
@@ -57,14 +85,9 @@ merged_model = Sequential()
 merged_model.add(Merge([model_left, model_right, model_target, model_entities], mode='concat', concat_axis=1))
 merged_model.add(Dense(25))
 merged_model.add(Dense((180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax'))
-merged_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+merged_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-early_stop = EarlyStopping(monitor='acc', patience=10)
-file_name = u"data/eval_lgl.txt"
-print(u"Processing file:", file_name)
-merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
-                           samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),
-                           nb_epoch=100, callbacks=[checkpoint, early_stop])
+merged_model.fit([X_L, X_R, X_T, X_E], Y, batch_size=128, nb_epoch=100, callbacks=[checkpoint], verbose=1)

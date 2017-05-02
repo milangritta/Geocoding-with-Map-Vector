@@ -1,6 +1,7 @@
 import numpy as np
 import cPickle
 import sqlite3
+import pprint
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
@@ -38,11 +39,13 @@ for p, y, n in zip(model.predict_generator(generate_arrays_from_file(file_name, 
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
-    print(n, p, y, choice[-1])
-    print(candidates, sorted(temp)[0])
-    print("-----------------------------------------------------------------------------------------------------------")
+    # print(n, p, y, choice[-1])
+    # print(candidates, sorted(temp)[0])
+    # print("-----------------------------------------------------------------------------------------------------------")
 
+print(u"Processed file", file_name)
 print_stats(choice)
+pprint.pprint(model.get_config())
 # plt.plot(range(len(choice)), sorted(choice))
 # plt.xlabel(u"Examples")
 # plt.ylabel(u'Error')
