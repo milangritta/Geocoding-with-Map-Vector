@@ -2,10 +2,11 @@
 import codecs
 import cPickle
 from collections import Counter
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import spacy
 import numpy as np
 import sqlite3
+from matplotlib import pyplot, colors
 
 GRID_SIZE = 2
 
@@ -189,7 +190,8 @@ def generate_training_data():
                             loc_grid = merge_lists(locations)
                             locations = []
                             o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                            o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity) + u"\n")
+                            o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity)
+                            + u"\t" + u" ".join([s.text for s in left]) + u" ".join([s.text for s in right]) + u"\n")
                             limit += 1
                             if limit > 4:
                                 break
@@ -215,7 +217,7 @@ def generate_evaluation_data():
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
     conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
-    corpus = "wiki"
+    corpus = "lgl"
     nlp = spacy.load('en')
     directory = "/Users/milangritta/PycharmProjects/Research/" + corpus + "/"
     o = codecs.open("./data/eval_" + corpus + ".txt", "w", encoding="utf-8")
@@ -274,21 +276,25 @@ def generate_evaluation_data():
                             locations[i] = eval(get_coordinates(c, locations[i]))
                         ent_grid = get_coordinates(c, u" ".join(entity))
                         if len(eval(ent_grid)) == 0:
-                            raise Exception(u"BOOOOOOOOOOOOM")  # Why is this happening?!
+                            raise Exception(u"BOOOOOOOOOOOOM!!!!")  # Why is this happening?!
                         loc_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                        o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity) + u"\n")
+                        o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity)
+                        + u"\t" + u" ".join([s.text for s in left]) + u" ".join([s.text for s in right]) + u"\n")
             if not captured:
                 print line
     o.close()
 
 
-# def visualise_2D_grid():
-#     """"""
-#     x = construct_2D_grid(eval(line[5])) * 255
-#     plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255+ 1))
-#     plt.title(line[6])
-#     plt.show()
+def visualise_2D_grid(x, label):
+    """"""
+    x = x * 255
+    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['black', 'white', 'red'], 256)
+    img2 = pyplot.imshow(np.log(x + 1), interpolation='nearest', cmap=cmap2)
+    pyplot.colorbar(img2, cmap=cmap2)
+    # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
+    plt.title(label)
+    plt.show()
 
 
 def generate_vocabulary():
@@ -373,6 +379,16 @@ def generate_labels_from_file(path):
             line = line.strip().split("\t")
             yield (float(line[0]), float(line[1]))
 
+
+def get_non_zero_entries(a_list):
+    """"""
+    count = 0
+    for col in a_list:
+        for row in col:
+            if row > 0.0:
+                count += 1
+    return count
+
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
@@ -384,3 +400,20 @@ def generate_labels_from_file(path):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Washington"))
+# from geopy.geocoders import geonames
+# g = geonames.GeoNames(username='milangritta')
+# g = g.geocode(u"Washington", exactly_one=False)
+# print g
+for line in codecs.open("data/eval_lgl.txt", "r", encoding="utf-8"):
+    line = line.strip().split("\t")
+    print line[0], line[1]
+    # x = construct_2D_grid(eval(line[4]), use_pop=True)
+    # visualise_2D_grid(x, line[6] + u" entities.")
+    x = construct_2D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False)
+    print(get_non_zero_entries(x))
+    visualise_2D_grid(x, line[6] + u" label.")
+    x = construct_2D_grid(eval(line[5]), use_pop=False)
+    print(get_non_zero_entries(x))
+    visualise_2D_grid(x, line[6] + u" target.")
+
