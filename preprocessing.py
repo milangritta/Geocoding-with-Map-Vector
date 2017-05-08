@@ -76,6 +76,7 @@ def get_coordinates(con, loc_name, pop_only):
         else:
             return result
     else:
+        print u"WARNING: No entry for", loc_name
         return []
 
 

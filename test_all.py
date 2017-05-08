@@ -9,7 +9,6 @@ from preprocessing import get_coordinates, print_stats, index_to_coord, generate
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
-print(u'Loading test data...')
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
 
@@ -30,6 +29,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
                    generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
+    # candidates = [sorted(get_coordinates(conn.cursor(), name, pop_only=True), key=lambda (a, b, c): c, reverse=True)[0]]
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
@@ -39,8 +39,8 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
     print(context)
-    print(name, p, y, choice[-1])
-    print(candidates, sorted(temp)[0])
+    print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
+    print(candidates)
     print("-----------------------------------------------------------------------------------------------------------")
 
 print(u"Processed file", file_name)

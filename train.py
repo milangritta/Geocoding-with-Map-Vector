@@ -8,7 +8,6 @@ from keras.models import Sequential
 from preprocessing import GRID_SIZE, generate_arrays_from_file
 from subprocess import check_output
 
-print(u'Loading training data...')
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
 
@@ -61,7 +60,7 @@ print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=10)
-file_name = u"data/eval_lgl.txt"
+file_name = u"data/eval_wiki.txt"
 print(u"Processing file:", file_name)
 merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                            samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),

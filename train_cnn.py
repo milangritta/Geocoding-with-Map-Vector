@@ -8,7 +8,6 @@ from keras.models import Sequential
 from preprocessing import generate_arrays_from_file, GRID_SIZE
 from subprocess import check_output
 
-print(u'Loading training data...')
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 50
 
