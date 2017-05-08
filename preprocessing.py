@@ -63,10 +63,20 @@ def index_to_coord(index):
     return x, y
 
 
-def get_coordinates(con, loc_name):
+def get_coordinates(con, loc_name, pop_only):
     """"""
     result = con.execute(u"SELECT * FROM GEO WHERE NAME = ?", (loc_name, )).fetchone()
-    return result[1] if result else '[]'
+    if result:
+        result = eval(result[1])
+        if pop_only:
+            if max(result, key=lambda(a, b, c): c)[2] == 0:
+                return result
+            else:
+                return [r for r in result if r[2] > 0]
+        else:
+            return result
+    else:
+        return []
 
 
 def construct_1D_grid(a_list, use_pop):
@@ -74,7 +84,7 @@ def construct_1D_grid(a_list, use_pop):
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
         if use_pop:
-            g[coord_to_index((s[0], s[1]), True)] += s[2]
+            g[coord_to_index((s[0], s[1]), True)] += 1 + s[2]
         else:
             g[coord_to_index((s[0], s[1]), True)] += 1
     return g / max(g) if max(g) > 0.0 else g
@@ -88,7 +98,7 @@ def construct_2D_grid(a_list, use_pop):
         x = int(x / GRID_SIZE)
         y = int(y / GRID_SIZE)
         if use_pop:
-            g[x][y] += s[2]
+            g[x][y] += 1 + s[2]
         else:
             g[x][y] += 1
     return g / np.amax(g) if np.amax(g) > 0.0 else g
@@ -182,16 +192,16 @@ def generate_training_data():
                                         locations.append(location.strip())
                                         location = u""
                             for i in range(len(locations)):
-                                locations[i] = eval(get_coordinates(c, locations[i]))
-                            ent_grid = get_coordinates(c, u" ".join(entity))
-                            if len(eval(ent_grid)) == 0:
+                                locations[i] = get_coordinates(c, locations[i], pop_only=True)
+                            target_grid = get_coordinates(c, u" ".join(entity), pop_only=True)
+                            if len(target_grid) == 0:
                                 skipped += 1
                                 break
-                            loc_grid = merge_lists(locations)
+                            entities_grid = merge_lists(locations)
                             locations = []
                             o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                            o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity)
-                            + u"\t" + u" ".join([s.text for s in left]) + u" ".join([s.text for s in right]) + u"\n")
+                            o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(entity) + u"\t" +
+                            u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
                             limit += 1
                             if limit > 4:
                                 break
@@ -217,7 +227,7 @@ def generate_evaluation_data():
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
     conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
-    corpus = "lgl"
+    corpus = "wiki"
     nlp = spacy.load('en')
     directory = "/Users/milangritta/PycharmProjects/Research/" + corpus + "/"
     o = codecs.open("./data/eval_" + corpus + ".txt", "w", encoding="utf-8")
@@ -231,19 +241,19 @@ def generate_evaluation_data():
             captured = False
             doc = nlp(codecs.open(directory + str(line_no), "r", encoding="utf-8").read())
             toponym = toponym.split(",,")
-            entity = toponym[1].split()
-            ent_length = len(entity)
+            target = toponym[1].split()
+            ent_length = len(target)
             lat, lon = toponym[2], toponym[3]
             start, end = int(toponym[4]), int(toponym[5])
             for d in doc:
-                if d.text == entity[0]:
-                    if u" ".join(entity) == u" ".join([t.text for t in doc[d.i:d.i + len(entity)]]):
+                if d.text == target[0]:
+                    if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
                         locations = []
                         if d.idx != start and d.idx + ent_length != end:
                             continue
                         captured = True
                         left = doc[max(0, d.i - 50):d.i]
-                        right = doc[d.i + len(entity): d.i + len(entity) + 50]
+                        right = doc[d.i + len(target): d.i + len(target) + 50]
                         l, r = [], []
                         location = u""
                         for (out_list, in_list) in [(l, left), (r, right)]:
@@ -273,14 +283,14 @@ def generate_evaluation_data():
                                     locations.append(location.strip())
                                     location = u""
                         for i in range(len(locations)):
-                            locations[i] = eval(get_coordinates(c, locations[i]))
-                        ent_grid = get_coordinates(c, u" ".join(entity))
-                        if len(eval(ent_grid)) == 0:
-                            raise Exception(u"BOOOOOOOOOOOOM!!!!")  # Why is this happening?!
-                        loc_grid = merge_lists(locations)
+                            locations[i] = get_coordinates(c, locations[i], pop_only=True)
+                        target_grid = get_coordinates(c, u" ".join(target), pop_only=True)
+                        if len(target_grid) == 0:
+                            continue
+                        entities_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                        o.write(ent_grid + u"\t" + str(loc_grid) + u"\t" + u" ".join(entity)
-                        + u"\t" + u" ".join([s.text for s in left]) + u" ".join([s.text for s in right]) + u"\n")
+                        o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
+                        u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
             if not captured:
                 print line
     o.close()
@@ -327,8 +337,8 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
             Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
             X_L.append(pad_list(50, eval(line[2].lower()), from_left=True))
             X_R.append(pad_list(50, eval(line[3].lower()), from_left=False))
-            X_E.append(construct_1D_grid(eval(line[4]), use_pop=False))
-            X_T.append(construct_1D_grid(eval(line[5]), use_pop=True))
+            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
+            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -365,19 +375,12 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
                 yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
 
 
-def generate_names_from_file(path):
-    """"""
-    while True:
-        for line in codecs.open(path, "r", encoding="utf-8"):
-            yield line.strip().split("\t")[6]
-
-
-def generate_labels_from_file(path):
-    """"""
+def generate_strings_from_file(path):
+    """Returns Y, NAME and CONTEXT"""
     while True:
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
-            yield (float(line[0]), float(line[1]))
+            yield ((float(line[0]), float(line[1])), line[6], line[7])
 
 
 def get_non_zero_entries(a_list):
@@ -403,17 +406,21 @@ def get_non_zero_entries(a_list):
 # print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Washington"))
 # from geopy.geocoders import geonames
 # g = geonames.GeoNames(username='milangritta')
-# g = g.geocode(u"Washington", exactly_one=False)
-# print g
-for line in codecs.open("data/eval_lgl.txt", "r", encoding="utf-8"):
-    line = line.strip().split("\t")
-    print line[0], line[1]
-    # x = construct_2D_grid(eval(line[4]), use_pop=True)
-    # visualise_2D_grid(x, line[6] + u" entities.")
-    x = construct_2D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False)
-    print(get_non_zero_entries(x))
-    visualise_2D_grid(x, line[6] + u" label.")
-    x = construct_2D_grid(eval(line[5]), use_pop=False)
-    print(get_non_zero_entries(x))
-    visualise_2D_grid(x, line[6] + u" target.")
+# g = g.geocode(u"Las Vegas", exactly_one=False)
+# conn = sqlite3.connect('../data/geonames.db')
+# print(len(eval(get_coordinates(conn.cursor(), u"Las Vegas"))))
+# print len(g)
+# populate_geosql()
+# for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
+#     line = line.strip().split("\t")
+#     print line[0], line[1]
+#     x = construct_2D_grid(eval(line[4]), use_pop=True)
+#     print(get_non_zero_entries(x))
+#     visualise_2D_grid(x, line[6] + u" target.")
+#     x = construct_2D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False)
+#     print(get_non_zero_entries(x))
+#     visualise_2D_grid(x, line[6] + u" label.")
+#     x = construct_2D_grid(eval(line[5]), use_pop=False)
+#     print(get_non_zero_entries(x))
+#     visualise_2D_grid(x, line[6] + u" entities.")
 
