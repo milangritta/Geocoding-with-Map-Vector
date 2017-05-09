@@ -29,18 +29,21 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
                    generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
-    # candidates = [sorted(get_coordinates(conn.cursor(), name, pop_only=True), key=lambda (a, b, c): c, reverse=True)[0]]
+    # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c): c, reverse=True)[0]]
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
-    temp = []
+    temp, distance = [], []
     for candidate in candidates:
+        distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
     print(context)
     print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
     print(candidates)
+    if sorted(distance)[0] > 161:
+        raise Exception(u"OMW! What's happening?!", name)
     print("-----------------------------------------------------------------------------------------------------------")
 
 print(u"Processed file", file_name)

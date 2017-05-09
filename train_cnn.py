@@ -62,6 +62,7 @@ merged_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metri
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
+# checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{val_loss:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=10)
 file_name = u"data/eval_wiki.txt"
 merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index),

@@ -65,7 +65,7 @@ def index_to_coord(index):
 
 def get_coordinates(con, loc_name, pop_only):
     """"""
-    result = con.execute(u"SELECT * FROM GEO WHERE NAME = ?", (loc_name, )).fetchone()
+    result = con.execute(u"SELECT * FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
     if result:
         result = eval(result[1])
         if pop_only:
@@ -76,7 +76,7 @@ def get_coordinates(con, loc_name, pop_only):
         else:
             return result
     else:
-        print u"WARNING: No entry for", loc_name
+        # print u"No entry for", loc_name
         return []
 
 
@@ -121,6 +121,7 @@ def populate_geosql():
     for line in f:
         line = line.split("\t")
         for name in [line[1], line[2]] + line[3].split(","):
+            name = name.lower()
             if len(name) != 0:
                 if name in geo_names:
                     geo_names[name].add((float(line[4]), float(line[5]), int(line[14])))
@@ -148,7 +149,7 @@ def generate_training_data():
     f = codecs.open("../data/geowiki.txt", "r", encoding="utf-8")
     o = codecs.open("../data/train_wiki.txt", "w", encoding="utf-8")
     lat, lon = u"", u""
-    entity, string = u"", u""
+    target, string = u"", u""
     skipped = 0
 
     for line in f:
@@ -156,14 +157,14 @@ def generate_training_data():
             continue
         limit = 0
         if line.startswith(u"NEW ARTICLE::"):
-            if len(string.strip()) > 0 and len(entity) != 0:
+            if len(string.strip()) > 0 and len(target) != 0:
                 locations = []
                 doc = nlp(string)
                 for d in doc:
-                    if d.text == entity[0]:
-                        if u" ".join(entity) == u" ".join([t.text for t in doc[d.i:d.i + len(entity)]]):
+                    if d.text == target[0]:
+                        if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
                             left = doc[max(0, d.i - 50):d.i]
-                            right = doc[d.i + len(entity): d.i + len(entity) + 50]
+                            right = doc[d.i + len(target): d.i + len(target) + 50]
                             l, r = [], []
                             location = u""
                             for (out_list, in_list) in [(l, left), (r, right)]:
@@ -189,19 +190,20 @@ def generate_training_data():
                                         out_list.append(u"0.0")
                                     else:
                                         out_list.append(item.text)
-                                    if location != u"" and item.ent_type == 0:
-                                        locations.append(location.strip())
+                                    if location.strip() != u"" and item.ent_type == 0:
+                                        if location.strip() != u" ".join(target):
+                                            locations.append(location.strip())
                                         location = u""
                             for i in range(len(locations)):
                                 locations[i] = get_coordinates(c, locations[i], pop_only=True)
-                            target_grid = get_coordinates(c, u" ".join(entity), pop_only=True)
+                            target_grid = get_coordinates(c, u" ".join(target), pop_only=True)
                             if len(target_grid) == 0:
                                 skipped += 1
                                 break
                             entities_grid = merge_lists(locations)
                             locations = []
                             o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                            o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(entity) + u"\t" +
+                            o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                             u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
                             limit += 1
                             if limit > 4:
@@ -210,15 +212,15 @@ def generate_training_data():
             if u"(" in line[1]:
                 line[1] = line[1].split(u"(")[0].strip()
             if line[1].strip().startswith(u"Geography of "):
-                entity = line[1].replace(u"Geography of ", u"").split()
+                target = line[1].replace(u"Geography of ", u"").split()
             elif u"," in line[1]:
-                entity = line[1].split(u",")[0].strip().split()
+                target = line[1].split(u",")[0].strip().split()
             else:
-                entity = line[1].split()
+                target = line[1].split()
             lat = line[2]
             lon = line[3]
             string = ""
-            print(u"Processed", limit, u"Skipped:", skipped, u"Name:", u" ".join(entity))
+            print(u"Processed", limit, u"Skipped:", skipped, u"Name:", u" ".join(target))
         else:
             string += line
     o.close()
@@ -280,8 +282,9 @@ def generate_evaluation_data():
                                     out_list.append(u"0.0")
                                 else:
                                     out_list.append(item.text)
-                                if location != u"" and item.ent_type == 0:
-                                    locations.append(location.strip())
+                                if location.strip() != u"" and item.ent_type == 0:
+                                    if location.strip() != u" ".join(target):
+                                        locations.append(location.strip())
                                     location = u""
                         for i in range(len(locations)):
                             locations[i] = get_coordinates(c, locations[i], pop_only=True)
@@ -404,7 +407,7 @@ def get_non_zero_entries(a_list):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Washington"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"US", pop_only=True))
 # from geopy.geocoders import geonames
 # g = geonames.GeoNames(username='milangritta')
 # g = g.geocode(u"Las Vegas", exactly_one=False)
@@ -424,4 +427,7 @@ def get_non_zero_entries(a_list):
 #     x = construct_2D_grid(eval(line[5]), use_pop=False)
 #     print(get_non_zero_entries(x))
 #     visualise_2D_grid(x, line[6] + u" entities.")
-
+# from wikipedia import wikipedia
+# search = wikipedia.search(u"N.C.", results=30)
+# for s in search:
+#     print s
