@@ -163,8 +163,8 @@ def generate_training_data():
                 for d in doc:
                     if d.text == target[0]:
                         if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                            left = doc[max(0, d.i - 50):d.i]
-                            right = doc[d.i + len(target): d.i + len(target) + 50]
+                            left = doc[max(0, d.i - 100):d.i]
+                            right = doc[d.i + len(target): d.i + len(target) + 100]
                             l, r = [], []
                             location = u""
                             for (out_list, in_list) in [(l, left), (r, right)]:
@@ -226,17 +226,17 @@ def generate_training_data():
     o.close()
 
 
-def generate_evaluation_data():
+def generate_evaluation_data(corpus, gold=False):
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
     conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
-    corpus = "wiki"
+    gold = "_gold" if gold else ""
     nlp = spacy.load('en')
-    directory = "/Users/milangritta/PycharmProjects/Research/" + corpus + "/"
-    o = codecs.open("./data/eval_" + corpus + ".txt", "w", encoding="utf-8")
+    directory = "../data/" + corpus + "/"
+    o = codecs.open("./data/eval_" + corpus + gold + ".txt", "w", encoding="utf-8")
     line_no = 0 if corpus == "lgl" else -1
 
-    for line in codecs.open("./data/" + corpus + ".txt", "r", encoding="utf-8"):
+    for line in codecs.open("./data/" + corpus + gold + ".txt", "r", encoding="utf-8"):
         line_no += 1
         if len(line.strip()) == 0:
             continue
@@ -245,18 +245,18 @@ def generate_evaluation_data():
             doc = nlp(codecs.open(directory + str(line_no), "r", encoding="utf-8").read())
             toponym = toponym.split(",,")
             target = toponym[1].split()
-            ent_length = len(target)
+            ent_length = len(u" ".join(target))
             lat, lon = toponym[2], toponym[3]
             start, end = int(toponym[4]), int(toponym[5])
             for d in doc:
                 if d.text == target[0]:
                     if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
                         locations = []
-                        if d.idx != start and d.idx + ent_length != end:
+                        if abs(d.idx - start) > 2 or abs(d.idx + ent_length - end) > 2:
                             continue
                         captured = True
-                        left = doc[max(0, d.i - 50):d.i]
-                        right = doc[d.i + len(target): d.i + len(target) + 50]
+                        left = doc[max(0, d.i - 100):d.i]
+                        right = doc[d.i + len(target): d.i + len(target) + 100]
                         l, r = [], []
                         location = u""
                         for (out_list, in_list) in [(l, left), (r, right)]:
@@ -288,15 +288,18 @@ def generate_evaluation_data():
                                     location = u""
                         for i in range(len(locations)):
                             locations[i] = get_coordinates(c, locations[i], pop_only=True)
-                        target_grid = get_coordinates(c, u" ".join(target), pop_only=True)
+                        db_entry = toponym[0] if corpus == "lgl" else toponym[1]
+                        target_grid = get_coordinates(c, db_entry, pop_only=True)
                         if len(target_grid) == 0:
+                            print target
+                            # raise Exception(u"No entry in the database!")
                             continue
                         entities_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
                         o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                         u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
-            if not captured:
-                print line
+            if not captured and (d.idx + ent_length) <= len(str(doc)):
+                print line, d.idx, (d.idx + ent_length)
     o.close()
 
 
@@ -339,8 +342,8 @@ def generate_arrays_from_file(path, word_to_index, batch_size=64, train=True):
             counter += 1
             line = line.strip().split("\t")
             Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
-            X_L.append(pad_list(50, eval(line[2].lower()), from_left=True))
-            X_R.append(pad_list(50, eval(line[3].lower()), from_left=False))
+            X_L.append(pad_list(100, eval(line[2].lower()), from_left=True))
+            X_R.append(pad_list(100, eval(line[3].lower()), from_left=False))
             X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
             X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
             if counter % batch_size == 0:
@@ -401,7 +404,7 @@ def get_non_zero_entries(a_list):
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data()
-# generate_evaluation_data()
+generate_evaluation_data(corpus="lgl", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
