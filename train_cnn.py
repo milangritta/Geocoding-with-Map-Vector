@@ -10,6 +10,8 @@ from subprocess import check_output
 
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
 dimension, input_length = 50, 100
+print(u"Dimension:", dimension)
+print(u"Input length:", input_length)
 
 vocabulary = cPickle.load(open("data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
@@ -65,7 +67,7 @@ checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 # checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{val_loss:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=10)
 file_name = u"data/eval_wiki.txt"
-merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
+merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length),
                            samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),
                            nb_epoch=100, callbacks=[checkpoint, early_stop])
 

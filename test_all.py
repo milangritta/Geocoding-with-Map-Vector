@@ -1,7 +1,7 @@
 import numpy as np
 import cPickle
 import sqlite3
-import pprint
+# import pprint
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
@@ -10,7 +10,8 @@ from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
-dimension, input_length = 50, 50
+input_length = 100
+print(u"Input length:", input_length)
 
 vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
@@ -24,12 +25,13 @@ print(u'Finished loading model...')
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_lgl.txt"
 choice = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
-                   val_samples=int(check_output(["wc", file_name]).split()[0])),
-                   generate_strings_from_file(file_name)):
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False),
+                   val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
     # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c): c, reverse=True)[0]]
+    if len(candidates) == 0:
+        candidates = get_coordinates(conn.cursor(), name, pop_only=False)
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
@@ -42,7 +44,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     print(context)
     print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
     print(candidates)
-    if sorted(distance)[0] > 161:
+    if sorted(distance)[0] > 101:
         raise Exception(u"OMW! What's happening?!", name)
     print("-----------------------------------------------------------------------------------------------------------")
 
