@@ -243,7 +243,7 @@ def generate_evaluation_data(corpus, gold=False):
             captured = False
             doc = nlp(codecs.open(directory + str(line_no), "r", encoding="utf-8").read())
             toponym = toponym.split(",,")
-            # if toponym[1] == u"ST. JOHN'S":
+            # if toponym[1] == u"Phila.":
             #     print("YEP")
             target = toponym[1].split()
             ent_length = len(u" ".join(target))
@@ -297,8 +297,8 @@ def generate_evaluation_data(corpus, gold=False):
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
                         o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                         u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
-            if not captured and (d.idx + ent_length) <= len(str(doc)):
-                print line, d.idx, (d.idx + ent_length)
+            if not captured:
+                print line
     o.close()
 
 
@@ -403,7 +403,7 @@ def get_non_zero_entries(a_list):
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data()
-# generate_evaluation_data(corpus="lgl", gold=True)
+generate_evaluation_data(corpus="lgl", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
@@ -433,19 +433,19 @@ def get_non_zero_entries(a_list):
 # search = wikipedia.search(u"N.C.", results=30)
 # for s in search:
 #     print s
-inp = codecs.open("./data/eval_lgl_gold.txt", "r", encoding="utf-8")
-inp2 = codecs.open("./data/lgl_gold.txt", "r", encoding="utf-8")
-line_no = 0
-for line in inp2:
-    line_no += 1
-    if len(line.strip()) == 0:
-        continue
-    for toponym in line.split("||")[:-1]:
-        toponym = toponym.split(",,")
-        target = toponym[1].split()
-        ent_length = len(u" ".join(target))
-        lat, lon = toponym[2], toponym[3]
-        l = inp.next()
-        l = l.split("\t")
-        if l[0] != lat or l[1] != lon:
-            print("OOOOOOOps!!!")
+# inp = codecs.open("./data/eval_lgl_gold.txt", "r", encoding="utf-8")
+# inp2 = codecs.open("./data/lgl_gold.txt", "r", encoding="utf-8")
+# line_no = 0
+# for line in inp2:
+#     line_no += 1
+#     if len(line.strip()) == 0:
+#         continue
+#     for toponym in line.split("||")[:-1]:
+#         toponym = toponym.split(",,")
+#         target = toponym[1].split()
+#         ent_length = len(u" ".join(target))
+#         lat, lon = toponym[2], toponym[3]
+#         l = inp.next()
+#         l = l.split("\t")
+#         if l[0] != lat or l[1] != lon:
+#             print("OOOOOOOps!!!")
