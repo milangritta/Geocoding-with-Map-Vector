@@ -243,6 +243,8 @@ def generate_evaluation_data(corpus, gold=False):
             captured = False
             doc = nlp(codecs.open(directory + str(line_no), "r", encoding="utf-8").read())
             toponym = toponym.split(",,")
+            # if toponym[1] == u"ST. JOHN'S":
+            #     print("YEP")
             target = toponym[1].split()
             ent_length = len(u" ".join(target))
             lat, lon = toponym[2], toponym[3]
@@ -407,7 +409,7 @@ def get_non_zero_entries(a_list):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Darfur", pop_only=False))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"South Ossetia", pop_only=False))
 # from geopy.geocoders import geonames
 # g = geonames.GeoNames(username='milangritta')
 # g = g.geocode(u"Las Vegas", exactly_one=False)
@@ -431,19 +433,19 @@ def get_non_zero_entries(a_list):
 # search = wikipedia.search(u"N.C.", results=30)
 # for s in search:
 #     print s
-# inp = codecs.open("./data/eval_lgl_gold.txt", "r", encoding="utf-8")
-# inp2 = codecs.open("./data/lgl_gold.txt", "r", encoding="utf-8")
-# line_no = 0
-# for line in inp2:
-#     line_no += 1
-#     if len(line.strip()) == 0:
-#         continue
-#     for toponym in line.split("||")[:-1]:
-#         toponym = toponym.split(",,")
-#         target = toponym[1].split()
-#         ent_length = len(u" ".join(target))
-#         lat, lon = toponym[2], toponym[3]
-#         l = inp.next()
-#         l = l.split("\t")
-#         if l[0] != lat or l[1] != lon:
-#             print("OOOOOOOps!!!")
+inp = codecs.open("./data/eval_lgl_gold.txt", "r", encoding="utf-8")
+inp2 = codecs.open("./data/lgl_gold.txt", "r", encoding="utf-8")
+line_no = 0
+for line in inp2:
+    line_no += 1
+    if len(line.strip()) == 0:
+        continue
+    for toponym in line.split("||")[:-1]:
+        toponym = toponym.split(",,")
+        target = toponym[1].split()
+        ent_length = len(u" ".join(target))
+        lat, lon = toponym[2], toponym[3]
+        l = inp.next()
+        l = l.split("\t")
+        if l[0] != lat or l[1] != lon:
+            print("OOOOOOOps!!!")

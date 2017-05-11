@@ -9,7 +9,7 @@ from preprocessing import GRID_SIZE, generate_arrays_from_file
 from subprocess import check_output
 
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
-dimension, input_length = 50, 100
+dimension, input_length = 100, 100
 print(u"Dimension:", dimension)
 print(u"Input length:", input_length)
 
