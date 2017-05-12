@@ -31,8 +31,6 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
     # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c): c, reverse=True)[0]]
     if len(candidates) == 0:
-        candidates = get_coordinates(conn.cursor(), name, pop_only=False)
-    if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
     temp, distance = [], []
@@ -46,7 +44,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     # print(candidates)
     # if sorted(distance)[0] > 101:
     #     raise Exception(u"OMW! What's happening?!", name)
-    print("-----------------------------------------------------------------------------------------------------------")
+    # print("-----------------------------------------------------------------------------------------------------------")
 
 print(u"Processed file", file_name)
 print_stats(choice)

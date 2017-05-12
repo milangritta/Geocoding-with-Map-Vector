@@ -68,6 +68,8 @@ def get_coordinates(con, loc_name, pop_only):
     result = con.execute(u"SELECT * FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
     if result:
         result = eval(result[1])
+        if len(result) < 4:
+            return result
         if pop_only:
             if max(result, key=lambda(a, b, c): c)[2] == 0:
                 return result
@@ -415,7 +417,7 @@ def get_non_zero_entries(a_list):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"SaintPierre", pop_only=False))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Darfur", pop_only=True))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
