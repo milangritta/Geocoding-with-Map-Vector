@@ -41,11 +41,11 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
-    print(context)
-    print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
-    print(candidates)
-    if sorted(distance)[0] > 101:
-        raise Exception(u"OMW! What's happening?!", name)
+    # print(context)
+    # print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
+    # print(candidates)
+    # if sorted(distance)[0] > 101:
+    #     raise Exception(u"OMW! What's happening?!", name)
     print("-----------------------------------------------------------------------------------------------------------")
 
 print(u"Processed file", file_name)

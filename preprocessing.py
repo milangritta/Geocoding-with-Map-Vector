@@ -292,13 +292,13 @@ def generate_evaluation_data(corpus, gold=False):
                         db_entry = toponym[0] if corpus == "lgl" else toponym[1]
                         target_grid = get_coordinates(c, db_entry, pop_only=True)
                         if len(target_grid) == 0:
-                            raise Exception(u"No entry in the database!")
+                            raise Exception(u"No entry in the database!", target)
                         entities_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
                         o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                         u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
             if not captured:
-                print line
+                print line_no, line
     o.close()
 
 
@@ -331,7 +331,7 @@ def generate_vocabulary():
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, word_to_index, input_length, batch_size=64, train=True):
+def generate_arrays_from_file(path, word_to_index, input_length, batch_size=64, train=True, oneDim=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -343,8 +343,14 @@ def generate_arrays_from_file(path, word_to_index, input_length, batch_size=64, 
             Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True))
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False))
-            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
-            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
+            if oneDim:
+                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
+            else:
+                X_T.append(np.array([construct_2D_grid(eval(line[4]), use_pop=True)]))
+            if oneDim:
+                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
+            else:
+                X_E.append(np.array([construct_2D_grid(eval(line[5]), use_pop=False)]))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -403,20 +409,29 @@ def get_non_zero_entries(a_list):
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data()
-generate_evaluation_data(corpus="lgl", gold=True)
+# generate_evaluation_data(corpus="wiki", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"South Ossetia", pop_only=False))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"SaintPierre", pop_only=False))
+
+# conn = sqlite3.connect('../data/geonames.db')
+# c = conn.cursor()
+# c.execute("INSERT INTO GEO VALUES (?, ?)", (u"saintesprit",
+# str(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Saint-Esprit", pop_only=False))))
+# conn.commit()
+
 # from geopy.geocoders import geonames
 # g = geonames.GeoNames(username='milangritta')
 # g = g.geocode(u"Las Vegas", exactly_one=False)
+
 # conn = sqlite3.connect('../data/geonames.db')
 # print(len(eval(get_coordinates(conn.cursor(), u"Las Vegas"))))
 # print len(g)
 # populate_geosql()
+
 # for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
 #     print line[0], line[1]
@@ -429,23 +444,9 @@ generate_evaluation_data(corpus="lgl", gold=True)
 #     x = construct_2D_grid(eval(line[5]), use_pop=False)
 #     print(get_non_zero_entries(x))
 #     visualise_2D_grid(x, line[6] + u" entities.")
+
 # from wikipedia import wikipedia
 # search = wikipedia.search(u"N.C.", results=30)
 # for s in search:
 #     print s
-# inp = codecs.open("./data/eval_lgl_gold.txt", "r", encoding="utf-8")
-# inp2 = codecs.open("./data/lgl_gold.txt", "r", encoding="utf-8")
-# line_no = 0
-# for line in inp2:
-#     line_no += 1
-#     if len(line.strip()) == 0:
-#         continue
-#     for toponym in line.split("||")[:-1]:
-#         toponym = toponym.split(",,")
-#         target = toponym[1].split()
-#         ent_length = len(u" ".join(target))
-#         lat, lon = toponym[2], toponym[3]
-#         l = inp.next()
-#         l = l.split("\t")
-#         if l[0] != lat or l[1] != lon:
-#             print("OOOOOOOps!!!")
+
