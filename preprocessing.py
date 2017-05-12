@@ -295,7 +295,7 @@ def generate_evaluation_data(corpus, gold=False):
                             raise Exception(u"No entry in the database!", target)
                         entities_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                        o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
+                        o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + db_entry + u"\t" +
                         u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
             if not captured:
                 print line_no, line
@@ -409,7 +409,7 @@ def get_non_zero_entries(a_list):
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data()
-# generate_evaluation_data(corpus="wiki", gold=True)
+# generate_evaluation_data(corpus="lgl", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
