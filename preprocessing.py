@@ -245,8 +245,6 @@ def generate_evaluation_data(corpus, gold=False):
             captured = False
             doc = nlp(codecs.open(directory + str(line_no), "r", encoding="utf-8").read())
             toponym = toponym.split(",,")
-            # if toponym[1] == u"Phila.":
-            #     print("YEP")
             target = toponym[1].split()
             ent_length = len(u" ".join(target))
             lat, lon = toponym[2], toponym[3]
@@ -452,3 +450,29 @@ def get_non_zero_entries(a_list):
 # for s in search:
 #     print s
 
+# c = []
+# for line in codecs.open("/Users/milangritta/PycharmProjects/Research/data/lgl_edin.txt", "r", encoding="utf-8"):
+#     if len(line.strip()) == 0:
+#         continue
+#     for toponym in line.split("||")[:-1]:
+#         toponym = toponym.split(",,")
+#         c.append(str((toponym[2], toponym[3])))
+#
+# c = Counter(c)
+# counts = []
+# for key in c.most_common():
+#     counts.append(key[1])
+# print(len(c)/4462.0)
+#
+# y_pos = np.arange(len(counts))
+# plt.bar(y_pos, counts, align='center', alpha=0.5)
+# plt.ylabel('Counts')
+# plt.title('Toponym Counts')
+# plt.show()
+
+# counter = 0
+# out = codecs.open("data/test.txt", "w", encoding="utf-8")
+# for line in codecs.open("data/wiki.txt", "r", encoding="utf-8"):
+#     if counter % 3 == 0:
+#         out.write(line)
+#     counter += 1

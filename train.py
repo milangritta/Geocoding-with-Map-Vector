@@ -19,7 +19,7 @@ print(u"Vocabulary Size:", len(vocabulary))
 print(u'Preparing vectors...')
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 
-vectors = {UNKNOWN: np.ones(dimension)}
+vectors = {UNKNOWN: np.ones(dimension), PADDING: np.ones(dimension)}
 for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", encoding="utf-8"):
     if line.strip() == "":
         continue

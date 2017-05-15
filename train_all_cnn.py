@@ -9,7 +9,7 @@ from preprocessing import generate_arrays_from_file, GRID_SIZE
 from subprocess import check_output
 
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
-dimension, input_length = 50, 100
+dimension, input_length = 100, 100
 print(u"Dimension:", dimension)
 print(u"Input length:", input_length)
 
@@ -19,7 +19,7 @@ print(u"Vocabulary Size:", len(vocabulary))
 print(u'Preparing vectors...')
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 
-vectors = {UNKNOWN: np.ones(dimension)}
+vectors = {UNKNOWN: np.ones(dimension), PADDING: np.ones(dimension)}
 for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", encoding="utf-8"):
     if line.strip() == "":
         continue
