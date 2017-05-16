@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import codecs
 import numpy as np
 import cPickle
@@ -60,8 +61,8 @@ merged_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metri
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
-checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-# checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+# checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=10)
 file_name = u"data/eval_wiki.txt"
 print(u"Processing file:", file_name)

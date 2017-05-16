@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import codecs
 import numpy as np
 import cPickle
@@ -49,12 +50,12 @@ model_right.add(Dense(100))
 model_right.add(Dropout(0.2))
 
 model_entities = Sequential()
-model_entities.add(Conv2D(100, 3, 3, activation='relu', dim_ordering='th', input_shape=(1, (180 / GRID_SIZE), (360 / GRID_SIZE))))
+model_entities.add(Conv2D(100, 5, 5, activation='relu', subsample=(4, 4), dim_ordering='th', input_shape=(1, (180 / GRID_SIZE), (360 / GRID_SIZE))))
 model_entities.add(GlobalMaxPooling2D(dim_ordering='th'))
 model_entities.add(Dropout(0.2))
 
 model_target = Sequential()
-model_target.add(Conv2D(50, 3, 3, activation='relu', dim_ordering='th', input_shape=(1, (180 / GRID_SIZE), (360 / GRID_SIZE))))
+model_target.add(Conv2D(250, 3, 3, activation='relu', subsample=(2, 2), dim_ordering='th', input_shape=(1, (180 / GRID_SIZE), (360 / GRID_SIZE))))
 model_target.add(GlobalMaxPooling2D(dim_ordering='th'))
 model_target.add(Dropout(0.2))
 
@@ -65,9 +66,9 @@ merged_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metri
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
-checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-# checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
-early_stop = EarlyStopping(monitor='acc', patience=10)
+# checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+early_stop = EarlyStopping(monitor='acc', patience=3)
 file_name = u"data/eval_wiki.txt"
 merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length, oneDim=False),
                            samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),

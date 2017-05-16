@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import cPickle
 import sqlite3
@@ -9,7 +10,6 @@ from preprocessing import get_coordinates, print_stats, index_to_coord, generate
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
-UNKNOWN, PADDING = u"<unknown>", u"0.0"
 input_length = 100
 print(u"Input length:", input_length)
 
@@ -22,6 +22,7 @@ print(u'Loading model...')
 model = load_model(u"../data/weights")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
+print(u'Crunching numbers, sit tight...')
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_lgl.txt"
 choice = []
@@ -35,7 +36,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         continue
     temp, distance = [], []
     for candidate in candidates:
-        distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
+        # distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
@@ -46,8 +47,8 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     #     raise Exception(u"OMW! What's happening?!", name)
     # print("-----------------------------------------------------------------------------------------------------------")
 
-print(u"Processed file", file_name)
 print_stats(choice)
+print(u"Processed file", file_name)
 # pprint.pprint(model.get_config())
 # plt.plot(range(len(choice)), sorted(choice))
 # plt.xlabel(u"Examples")

@@ -68,8 +68,6 @@ def get_coordinates(con, loc_name, pop_only):
     result = con.execute(u"SELECT * FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
     if result:
         result = eval(result[1])
-        if len(result) < 4:
-            return result
         if pop_only:
             if max(result, key=lambda(a, b, c): c)[2] == 0:
                 return result
@@ -207,7 +205,7 @@ def generate_training_data():
                             o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                             u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
                             limit += 1
-                            if limit > 4:
+                            if limit > 9:
                                 break
             line = line.strip().split("\t")
             if u"(" in line[1]:
@@ -415,12 +413,12 @@ def get_non_zero_entries(a_list):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Darfur", pop_only=True))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Darfur", pop_only=False))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
-# c.execute("INSERT INTO GEO VALUES (?, ?)", (u"saintesprit",
-# str(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Saint-Esprit", pop_only=False))))
+# c.execute("INSERT INTO GEO VALUES (?, ?)", (u"darfur", u"[(13.5, 23.5, 0), (13.0, 25.0, 10000), (44.05135, -94.83804, 106)]"))
+# c.execute("DELETE FROM GEO WHERE name = 'darfur'")
 # conn.commit()
 
 # from geopy.geocoders import geonames
