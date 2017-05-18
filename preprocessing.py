@@ -417,7 +417,7 @@ def get_non_zero_entries(a_list):
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data()
-# generate_evaluation_data(corpus="lgl", gold=False)
+# generate_evaluation_data(corpus="wiki", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary(use LGL and WIKTOR as well to cover all datasets?)
