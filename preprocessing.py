@@ -332,13 +332,13 @@ def generate_vocabulary():
 
     c = Counter(temp)
     for item in c:
-        if c[item] > 4:
+        if c[item] > 6:
             vocabulary.add(item)
     cPickle.dump(vocabulary, open("data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True, regression=False, oneDim=True):
+def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True, regression=False):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -351,16 +351,10 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                 Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
             else:
                 Y.append([float(line[0]), float(line[1])])  # for regression, create a simple tuple (lat, lon)
-            X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True))
-            X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False))
-            if oneDim:
-                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
-            else:
-                X_T.append(np.array([construct_2D_grid(eval(line[4]), use_pop=True)]))
-            if oneDim:
-                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
-            else:
-                X_E.append(np.array([construct_2D_grid(eval(line[5]), use_pop=False)]))
+            X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
+            X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
+            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
+            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -404,15 +398,6 @@ def generate_strings_from_file(path):
             yield ((float(line[0]), float(line[1])), line[6], line[7])
 
 
-def get_non_zero_entries(a_list):
-    """"""
-    count = 0
-    for col in a_list:
-        for row in col:
-            if row > 0.0:
-                count += 1
-    return count
-
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
@@ -421,7 +406,7 @@ def get_non_zero_entries(a_list):
 # generate_evaluation_data(corpus="wiki", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
-# generate_vocabulary(use LGL and WIKTOR as well to cover all datasets?)
+# generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
 # print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Darfur", pop_only=False))
