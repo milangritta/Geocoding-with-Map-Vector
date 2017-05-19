@@ -53,13 +53,13 @@ def index_to_coord(index):
     x = int(index / (360 / GRID_SIZE))
     y = index % (360 / GRID_SIZE)
     if x > (90 / GRID_SIZE):
-        x = -(x - (90 / GRID_SIZE)) * GRID_SIZE
+        x = -(x - (90 / GRID_SIZE)) * GRID_SIZE  # - GRID_SIZE / 2.0
     else:
-        x = ((90 / GRID_SIZE) - x) * GRID_SIZE
+        x = ((90 / GRID_SIZE) - x) * GRID_SIZE  # + GRID_SIZE / 2.0
     if y < (180 / GRID_SIZE):
-        y = -((180 / GRID_SIZE) - y) * GRID_SIZE
+        y = -((180 / GRID_SIZE) - y) * GRID_SIZE  # - GRID_SIZE / 2.0
     else:
-        y = (y - (180 / GRID_SIZE)) * GRID_SIZE
+        y = (y - (180 / GRID_SIZE)) * GRID_SIZE  # + GRID_SIZE / 2.0
     return x, y
 
 
@@ -209,7 +209,7 @@ def generate_training_data(context=100):
                             o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                             u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
                             limit += 1
-                            if limit > 14:
+                            if limit > 19:
                                 break
             line = line.strip().split("\t")
             if u"(" in line[1]:
@@ -416,7 +416,7 @@ def get_non_zero_entries(a_list):
 
 # print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
-# generate_training_data()
+# generate_training_data(context=150)
 # generate_evaluation_data(corpus="wiki", gold=True)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))

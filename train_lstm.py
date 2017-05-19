@@ -26,6 +26,14 @@ for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", enc
         continue
     t = line.split()
     vectors[t[0]] = [float(x) for x in t[1:]]
+print(u'Loaded Twitter vectors...', len(vectors))
+
+for line in codecs.open("../data/glove." + str(dimension) + "d.txt", encoding="utf-8"):
+    if line.strip() == "":
+        continue
+    t = line.split()
+    vectors[t[0]] = [float(x) for x in t[1:]]
+print(u'Loaded GloVe vectors...', len(vectors))
 
 weights = np.zeros((len(vocabulary), dimension))
 for w in vocabulary:
