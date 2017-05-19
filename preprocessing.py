@@ -323,11 +323,12 @@ def generate_vocabulary():
     """Prepare the vocabulary for NN training."""
     vocabulary = {u"<unknown>", u"0.0"}
     temp = []
-    training_file = codecs.open("../data/train_wiki.txt", "r", encoding="utf-8")
-    for line in training_file:
-        line = line.strip().split("\t")
-        temp.extend(eval(line[2].lower()))
-        temp.extend(eval(line[3].lower()))
+    for f in ["../data/train_wiki.txt", "data/eval_wiki_gold.txt", "data/eval_lgl_gold.txt"]:
+        training_file = codecs.open(f, "r", encoding="utf-8")
+        for line in training_file:
+            line = line.strip().split("\t")
+            temp.extend(eval(line[2].lower()))
+            temp.extend(eval(line[3].lower()))
 
     c = Counter(temp)
     for item in c:
