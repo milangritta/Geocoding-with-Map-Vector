@@ -86,12 +86,14 @@ def construct_1D_grid(a_list, use_pop, is_y):
         if use_pop:
             g[index] += 1 + s[2]
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            apply_smoothing(g, index, 1 + s[2], smoothing)
+            if not is_y:
+                apply_smoothing(g, index, 1 + s[2], smoothing)
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
         else:
             g[index] += 1
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            apply_smoothing(g, index, 1, smoothing)
+            if not is_y:
+                apply_smoothing(g, index, 1, smoothing)
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
     if is_y:
         return g / sum(g)  # FOR Y LABELS
@@ -156,7 +158,7 @@ def populate_geosql():
     conn.close()
 
 
-def generate_training_data(context=100):
+def generate_training_data(context):
     """Prepare Wikipedia training data."""
     conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
@@ -245,17 +247,16 @@ def generate_training_data(context=100):
     o.close()
 
 
-def generate_evaluation_data(corpus, gold=False, context=100):
+def generate_evaluation_data(corpus, file_name, context):
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
     conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
-    gold = "_gold" if gold else ""
     nlp = spacy.load('en')
     directory = "../data/" + corpus + "/"
-    o = codecs.open("./data/eval_" + corpus + gold + ".txt", "w", encoding="utf-8")
+    o = codecs.open("./data/eval_" + corpus + file_name + ".txt", "w", encoding="utf-8")
     line_no = 0 if corpus == "lgl" else -1
 
-    for line in codecs.open("./data/" + corpus + gold + ".txt", "r", encoding="utf-8"):
+    for line in codecs.open("./data/" + corpus + file_name + ".txt", "r", encoding="utf-8"):
         line_no += 1
         if len(line.strip()) == 0:
             continue
@@ -314,13 +315,13 @@ def generate_evaluation_data(corpus, gold=False, context=100):
                         db_entry = toponym[0] if corpus == "lgl" else toponym[1]
                         target_grid = get_coordinates(c, db_entry, pop_only=True)
                         if len(target_grid) == 0:
-                            raise Exception(u"No entry in the database!", target)
+                            raise Exception(u"No entry in the database!", db_entry)
                         entities_grid = merge_lists(locations)
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
                         o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + db_entry + u"\t" +
                         u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
             if not captured:
-                print line_no, line
+                print line_no, line, target, start, end
     o.close()
 
 
@@ -420,7 +421,7 @@ def generate_strings_from_file(path):
 # visualise_2D_grid(l, "exp")
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data(context=150)
-# generate_evaluation_data(corpus="wiki", gold=True)
+# generate_evaluation_data(corpus="wiki", file_name="_clavin", context=150)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()

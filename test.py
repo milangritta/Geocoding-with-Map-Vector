@@ -14,8 +14,8 @@ from preprocessing import generate_arrays_from_file
 if len(sys.argv) > 1:
     dataset = sys.argv[1]
 else:
-    dataset = u"lgl"
-input_length = 100
+    dataset = u"wiki"
+input_length = 150
 print(u"Input length:", input_length)
 print(u"Testing:", dataset)
 vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
