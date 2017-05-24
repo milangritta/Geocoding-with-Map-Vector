@@ -33,7 +33,7 @@ def pad_list(size, a_list, from_left):
     return a_list
 
 
-def coord_to_index(coordinates, get_xy):
+def coord_to_index(coordinates):
     """"""
     latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99
     longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99
@@ -41,8 +41,6 @@ def coord_to_index(coordinates, get_xy):
         longitude = -longitude
     if latitude < 0:
         latitude = -latitude
-    if not get_xy:
-        return latitude, longitude
     x = (360 / GRID_SIZE) * (int(latitude) / GRID_SIZE)
     y = int(longitude) / GRID_SIZE
     return x + y if 0 <= x + y <= (360 / GRID_SIZE) * (180 / GRID_SIZE) else Exception(u"Shock horror!!")
@@ -79,29 +77,47 @@ def get_coordinates(con, loc_name, pop_only):
         return []
 
 
-def construct_1D_grid(a_list, use_pop):
+def construct_1D_grid(a_list, use_pop, is_y):
     """"""
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
+    smoothing = 0.01 if is_y else 0.03
     for s in a_list:
+        index = coord_to_index((s[0], s[1]))
         if use_pop:
-            g[coord_to_index((s[0], s[1]), True)] += 1 + s[2]
+            g[index] += 1 + s[2]
+            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
+            apply_smoothing(g, index, 1 + s[2], smoothing)
+            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
         else:
-            g[coord_to_index((s[0], s[1]), True)] += 1
-    return g / max(g) if max(g) > 0.0 else g
+            g[index] += 1
+            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
+            apply_smoothing(g, index, 1, smoothing)
+            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
+    if is_y:
+        return g / sum(g)  # FOR Y LABELS
+    else:
+        return g / max(g) if max(g) > 0.0 else g  # FOR REST OF THE GRID
 
 
-def construct_2D_grid(a_list, use_pop):
+def apply_smoothing(g, index, value, smoothing):
     """"""
-    g = np.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
-    for s in a_list:
-        x, y = coord_to_index((s[0], s[1]), False)
-        x = int(x / GRID_SIZE)
-        y = int(y / GRID_SIZE)
-        if use_pop:
-            g[x][y] += 1 + s[2]
-        else:
-            g[x][y] += 1
-    return g / np.amax(g) if np.amax(g) > 0.0 else g
+    grid_width = 360 / GRID_SIZE
+    if index % grid_width > 0:  # LEFT
+        g[index - 1] += value * smoothing
+    if index % grid_width != grid_width - 1:  # RIGHT
+        g[index + 1] += value * smoothing
+    if index >= grid_width:  # UP
+        g[index - grid_width] += value * smoothing
+    if index < len(g) - grid_width:  # DOWN
+        g[index + grid_width] += value * smoothing
+    if index >= grid_width and index % grid_width > 0:  # NORTH WEST
+        g[index - 1 - grid_width] += value * smoothing
+    if index >= grid_width and index % grid_width != grid_width - 1:  # NORTH EAST
+        g[index + 1 - grid_width] += value * smoothing
+    if index < len(g) - grid_width and index % grid_width > 0:  # SOUTH WEST
+        g[index - 1 + grid_width] += value * smoothing
+    if index < len(g) - grid_width and index % grid_width != grid_width - 1:  # SOUTH EAST
+        g[index + 1 + grid_width] += value * smoothing
 
 
 def merge_lists(grids):
@@ -308,14 +324,14 @@ def generate_evaluation_data(corpus, gold=False, context=100):
     o.close()
 
 
-def visualise_2D_grid(x, label):
+def visualise_2D_grid(x, title):
     """"""
     x = x * 255
     cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['black', 'white', 'red'], 256)
     img2 = pyplot.imshow(np.log(x + 1), interpolation='nearest', cmap=cmap2)
     pyplot.colorbar(img2, cmap=cmap2)
     # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
-    plt.title(label)
+    plt.title(title)
     plt.show()
 
 
@@ -332,13 +348,13 @@ def generate_vocabulary():
 
     c = Counter(temp)
     for item in c:
-        if c[item] > 6:
+        if c[item] > 4:
             vocabulary.add(item)
-    cPickle.dump(vocabulary, open("data/vocabulary.pkl", "w"))
+    cPickle.dump(vocabulary, open(u"data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True, regression=False):
+def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -347,14 +363,11 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            if not regression:
-                Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
-            else:
-                Y.append([float(line[0]), float(line[1])])  # for regression, create a simple tuple (lat, lon)
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True))
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
-            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
-            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
+            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=False))
+            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -400,7 +413,11 @@ def generate_strings_from_file(path):
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
-# print(list(construct_1D_grid([(86, -179.98333, 10), (86, -174.98333, 0)], use_pop=True)))
+# l = list(construct_1D_grid([(-81.8, -109.98333, 1000), (-80, -104.98333, 80), (-82.5, -102, 50)], use_pop=True, is_y=False))
+# l = list(construct_1D_grid([(-61.8, -109.98333, 1000)], use_pop=True, is_y=True))
+# print(l)
+# l = np.reshape(l, (180 / GRID_SIZE, 360 / GRID_SIZE))
+# visualise_2D_grid(l, "exp")
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data(context=150)
 # generate_evaluation_data(corpus="wiki", gold=True)

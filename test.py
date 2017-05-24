@@ -3,6 +3,7 @@ import numpy as np
 import cPickle
 import sqlite3
 # import pprint
+import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
@@ -10,9 +11,13 @@ from preprocessing import get_coordinates, print_stats, index_to_coord, generate
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
+if len(sys.argv) > 1:
+    dataset = sys.argv[1]
+else:
+    dataset = u"lgl"
 input_length = 100
 print(u"Input length:", input_length)
-
+print(u"Testing:", dataset)
 vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
 #  --------------------------------------------------------------------------------------------------------------------
@@ -24,7 +29,7 @@ print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
 conn = sqlite3.connect(u'../data/geonames.db')
-file_name = u"data/eval_lgl.txt"
+file_name = u"data/eval_" + dataset + u".txt"
 choice = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False),
                    val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
