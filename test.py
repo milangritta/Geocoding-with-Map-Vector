@@ -7,14 +7,14 @@ import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file
-from preprocessing import generate_arrays_from_file
-import matplotlib.pyplot as plt
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, GRID_SIZE
+from preprocessing import generate_arrays_from_file, visualise_2D_grid, coord_to_index
+# import matplotlib.pyplot as plt
 
 if len(sys.argv) > 1:
     dataset = sys.argv[1]
 else:
-    dataset = u"wiki"
+    dataset = u"lgl"
 input_length = 150
 print(u"Input length:", input_length)
 print(u"Testing:", dataset)
@@ -33,9 +33,24 @@ file_name = u"data/eval_" + dataset + u".txt"
 choice = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False),
                    val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
+    # ------------ DIAGNOSTICS ----------------
+    sort = p.argsort()[-10:]
+    print(coord_to_index(y), name)
+    for s in sort:
+        print(s, p[s])
+    # new_p = np.copy(p)
+    # new_p[coord_to_index(y)] += 1
+    # new_p = np.reshape(new_p, (180 / GRID_SIZE, 360 / GRID_SIZE))
+    # com = center_of_mass(np.reshape(p, (180 / GRID_SIZE, 360 / GRID_SIZE)))
+    # new_p[int(com[0]), int(com[1])] += 1
+    # visualise_2D_grid(new_p, name)
+    print()
+    # --------- END OF DIAGNOSTICS -------------
+
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
     # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c): c, reverse=True)[0]]
+    #  THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue

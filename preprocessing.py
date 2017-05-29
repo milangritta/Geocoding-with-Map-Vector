@@ -253,10 +253,10 @@ def generate_evaluation_data(corpus, file_name, context):
     c = conn.cursor()
     nlp = spacy.load('en')
     directory = "../data/" + corpus + "/"
-    o = codecs.open("./data/eval_" + corpus + file_name + ".txt", "w", encoding="utf-8")
+    o = codecs.open("data/eval_" + corpus + file_name + ".txt", "w", encoding="utf-8")
     line_no = 0 if corpus == "lgl" else -1
 
-    for line in codecs.open("./data/" + corpus + file_name + ".txt", "r", encoding="utf-8"):
+    for line in codecs.open("data/" + corpus + file_name + ".txt", "r", encoding="utf-8"):
         line_no += 1
         if len(line.strip()) == 0:
             continue
@@ -328,7 +328,7 @@ def generate_evaluation_data(corpus, file_name, context):
 def visualise_2D_grid(x, title):
     """"""
     x = x * 255
-    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['black', 'white', 'red'], 256)
+    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'black', 'red'], 256)
     img2 = pyplot.imshow(np.log(x + 1), interpolation='nearest', cmap=cmap2)
     pyplot.colorbar(img2, cmap=cmap2)
     # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
@@ -428,7 +428,7 @@ def compute_embedding_distances(W, dim):
 
 
 def compute_pixel_similarity():
-    distances_p = compute_embedding_distances(cPickle.load(open("./data/W.pkl")), 801)
+    distances_p = compute_embedding_distances(cPickle.load(open("data/W.pkl")), 801)
 
     store = []
     for r in range(180 / GRID_SIZE):
@@ -444,13 +444,7 @@ def compute_pixel_similarity():
         for cp, cg in zip(p, g):
             correlations.append(np.corrcoef(cp, cg))
 
-    # correlations = [x[0][1] for x in cPickle.load(open("data/correlations.pkl"))]
-    correlations = [x[0][1] for x in correlations]
-    minimum = min(correlations)
-    ran = max(correlations) - minimum
-    correlations = [x + ran for x in correlations]
-    correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
-    visualise_2D_grid(correlations, "Correlations")
+    cPickle.dump(correlations, open("data/correlations.pkl", "w"))
 
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
@@ -530,3 +524,11 @@ def compute_pixel_similarity():
 #         out.write(line)
 #     counter += 1
 
+# correlations = [x[0][1] for x in cPickle.load(open("data/correlations.pkl"))]
+# correlations = [x[0][1] for x in correlations]
+# minimum = min(correlations)
+# ran = max(correlations) - minimum
+# correlations = [x + ran for x in correlations]
+# correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
+# correlations = np.rot90((np.rot90(correlations)))
+# visualise_2D_grid(correlations, "Geographical Pixel Embedding Quality")
