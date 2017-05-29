@@ -88,14 +88,12 @@ def construct_1D_grid(a_list, use_pop, is_y):
         if use_pop:
             g[index] += 1 + s[2]
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            if not is_y:
-                apply_smoothing(g, index, 1 + s[2], smoothing)
+            apply_smoothing(g, index, 1 + s[2], smoothing)
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
         else:
             g[index] += 1
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            if not is_y:
-                apply_smoothing(g, index, 1, smoothing)
+            apply_smoothing(g, index, 1, smoothing)
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
     if is_y:
         return g / sum(g)  # FOR Y LABELS
