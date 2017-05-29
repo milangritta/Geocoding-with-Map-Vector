@@ -9,7 +9,7 @@ from keras.models import load_model
 from subprocess import check_output
 from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file
 from preprocessing import generate_arrays_from_file
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 if len(sys.argv) > 1:
     dataset = sys.argv[1]
@@ -55,7 +55,14 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
 print_stats(choice)
 print(u"Processed file", file_name)
 # pprint.pprint(model.get_config())
-# plt.plot(range(len(choice)), sorted(choice))
-# plt.xlabel(u"Examples")
-# plt.ylabel(u'Error')
+# plt.plot(range(len(choice)), np.log(1 + np.asarray(sorted(choice))))
+# plt.xlabel(u"Predictions")
+# plt.ylabel(u'Error Size')
+# plt.title(u"Some Chart")
+# plt.savefig(u'test.png', transparent=True)
 # plt.show()
+
+# W = model.layers[-1].get_weights()
+# W = np.concatenate((W[0], np.array([W[1]])), axis=0)
+# W = np.rot90(W)
+# cPickle.dump(W, open("./data/W.pkl", "w"))

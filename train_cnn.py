@@ -74,7 +74,7 @@ print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 # checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
-early_stop = EarlyStopping(monitor='acc', patience=3)
+early_stop = EarlyStopping(monitor='acc', patience=5)
 file_name = u"data/eval_wiki.txt"
 merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length),
                            samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),

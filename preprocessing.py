@@ -7,6 +7,7 @@ import spacy
 import numpy as np
 import sqlite3
 from matplotlib import pyplot, colors
+from scipy.spatial.distance import euclidean
 
 GRID_SIZE = 2
 
@@ -20,6 +21,7 @@ def print_stats(accuracy):
     k = np.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
     print u"Accuracy to 161 km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
     print u"AUC = ", np.trapz(accuracy) / (np.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
+    # print u"AUC NO_LOG = ", np.trapz(np.exp(accuracy)) / (20039 * (len(accuracy) - 1))  # Trapezoidal rule.
     print("==============================================================================================")
 
 
@@ -412,6 +414,47 @@ def generate_strings_from_file(path):
             yield ((float(line[0]), float(line[1])), line[6], line[7])
 
 
+def compute_embedding_distances(W, dim):
+    store = []
+    W = np.reshape(W, (180 / GRID_SIZE, 360 / GRID_SIZE, dim))
+    for row in W:
+        store_col = []
+        for column in row:
+            col_vector = []
+            for r in W:
+                for c in r:
+                    col_vector.append(euclidean(column, c))
+            store_col.append(col_vector)
+        store.append(store_col)
+    return store
+
+
+def compute_pixel_similarity():
+    distances_p = compute_embedding_distances(cPickle.load(open("./data/W.pkl")), 801)
+
+    store = []
+    for r in range(180 / GRID_SIZE):
+        store_c = []
+        for c in range(360 / GRID_SIZE):
+            store_c.append((r, c))
+        store.append(store_c)
+
+    distances_g = compute_embedding_distances(np.array(store), 2)
+
+    correlations = []
+    for p, g in zip(distances_p, distances_g):
+        for cp, cg in zip(p, g):
+            correlations.append(np.corrcoef(cp, cg))
+
+    # correlations = [x[0][1] for x in cPickle.load(open("data/correlations.pkl"))]
+    correlations = [x[0][1] for x in correlations]
+    minimum = min(correlations)
+    ran = max(correlations) - minimum
+    correlations = [x + ran for x in correlations]
+    correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
+    visualise_2D_grid(correlations, "Correlations")
+
+
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 
 # l = list(construct_1D_grid([(-81.8, -109.98333, 1000), (-80, -104.98333, 80), (-82.5, -102, 50)], use_pop=True, is_y=False))
@@ -488,3 +531,4 @@ def generate_strings_from_file(path):
 #     if counter % 3 == 0:
 #         out.write(line)
 #     counter += 1
+
