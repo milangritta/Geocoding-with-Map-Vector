@@ -37,7 +37,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     sort = p.argsort()[-10:]
     print(coord_to_index(y), name)
     for s in sort:
-        print(s, p[s])
+        print(s, int(s / (360 / GRID_SIZE)), s % (360 / GRID_SIZE), p[s])
     # new_p = np.copy(p)
     # new_p[coord_to_index(y)] += 1
     # new_p = np.reshape(new_p, (180 / GRID_SIZE, 360 / GRID_SIZE))

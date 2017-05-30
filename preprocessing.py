@@ -79,10 +79,9 @@ def get_coordinates(con, loc_name, pop_only):
         return []
 
 
-def construct_1D_grid(a_list, use_pop, is_y):
+def construct_1D_grid(a_list, use_pop, is_y, smoothing):
     """"""
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
-    smoothing = 0.01 if is_y else 0.03
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
         if use_pop:
@@ -364,11 +363,11 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True))
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
-            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=False))
-            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False))
+            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
+            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
