@@ -10,7 +10,7 @@ from preprocessing import generate_arrays_from_file, GRID_SIZE
 from subprocess import check_output
 
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
-dimension, input_length = 100, 150
+dimension, input_length = 100, 200
 print(u"Dimension:", dimension)
 print(u"Input length:", input_length)
 
@@ -43,30 +43,45 @@ weights = np.array([weights])
 print(u'Done preparing vectors...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
-model_left = Sequential()
-model_left.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_left.add(Conv1D(500, 2, activation='relu', subsample_length=1))
-model_left.add(GlobalMaxPooling1D())
-model_left.add(Dense(100))
-model_left.add(Dropout(0.2))
+model_left_pair = Sequential()
+model_left_pair.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
+model_left_pair.add(Conv1D(500, 2, activation='relu', subsample_length=1))
+model_left_pair.add(GlobalMaxPooling1D())
+model_left_pair.add(Dense(100))
+model_left_pair.add(Dropout(0.5))
 
-model_right = Sequential()
-model_right.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_right.add(Conv1D(500, 2, activation='relu', subsample_length=1))
-model_right.add(GlobalMaxPooling1D())
-model_right.add(Dense(100))
-model_right.add(Dropout(0.2))
+model_left_single = Sequential()
+model_left_single.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
+model_left_single.add(Conv1D(500, 1, activation='relu', subsample_length=1))
+model_left_single.add(GlobalMaxPooling1D())
+model_left_single.add(Dense(100))
+model_left_single.add(Dropout(0.5))
+
+model_right_pair = Sequential()
+model_right_pair.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
+model_right_pair.add(Conv1D(500, 2, activation='relu', subsample_length=1))
+model_right_pair.add(GlobalMaxPooling1D())
+model_right_pair.add(Dense(100))
+model_right_pair.add(Dropout(0.5))
+
+model_right_single = Sequential()
+model_right_single.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
+model_right_single.add(Conv1D(500, 1, activation='relu', subsample_length=1))
+model_right_single.add(GlobalMaxPooling1D())
+model_right_single.add(Dense(100))
+model_right_single.add(Dropout(0.5))
 
 model_entities = Sequential()
-model_entities.add(Dense(100, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
-model_entities.add(Dropout(0.2))
+model_entities.add(Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
+model_entities.add(Dropout(0.5))
 
 model_target = Sequential()
-model_target.add(Dense(500, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
-model_target.add(Dropout(0.2))
+model_target.add(Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
+model_target.add(Dropout(0.5))
 
 merged_model = Sequential()
-merged_model.add(Merge([model_left, model_right, model_entities, model_target], mode='concat', concat_axis=1))
+merged_model.add(Merge([model_left_pair, model_left_single, model_right_pair,
+                        model_right_single, model_entities, model_target], mode='concat', concat_axis=1))
 merged_model.add(Dense(output_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax'))
 merged_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 

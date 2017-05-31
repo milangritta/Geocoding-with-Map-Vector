@@ -12,12 +12,13 @@ from preprocessing import generate_arrays_from_file, visualise_2D_grid, coord_to
 # import matplotlib.pyplot as plt
 
 if len(sys.argv) > 1:
-    dataset = sys.argv[1]
+    data = sys.argv[1]
 else:
-    dataset = u"lgl"
-input_length = 150
+    data = u"wiki"
+
+input_length = 200
 print(u"Input length:", input_length)
-print(u"Testing:", dataset)
+print(u"Testing:", data)
 vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
 #  --------------------------------------------------------------------------------------------------------------------
@@ -29,10 +30,11 @@ print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
 conn = sqlite3.connect(u'../data/geonames.db')
-file_name = u"data/eval_" + dataset + u".txt"
+file_name = u"data/eval_" + data + u".txt"
 choice = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False),
                    val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
+
     # ------------ DIAGNOSTICS ----------------
     sort = p.argsort()[-10:]
     print(coord_to_index(y), name)
@@ -44,28 +46,30 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     # com = center_of_mass(np.reshape(p, (180 / GRID_SIZE, 360 / GRID_SIZE)))
     # new_p[int(com[0]), int(com[1])] += 1
     # visualise_2D_grid(new_p, name)
-    print()
+    # print()
     # --------- END OF DIAGNOSTICS -------------
 
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
     # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c): c, reverse=True)[0]]
-    #  THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
+    # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
     temp, distance = [], []
     for candidate in candidates:
-        # distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
+        distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
     # print(context)
     # print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
     # print(candidates)
-    # if sorted(distance)[0] > 101:
-    #     raise Exception(u"OMW! What's happening?!", name)
-    # print("-----------------------------------------------------------------------------------------------------------")
+    if sorted(distance)[0] > 161:
+        print(u"OMW! No (GOLD < 161km) GeoNames entry for", name, y, p)
+        print(sorted(distance))
+        print(choice[-1], candidates)
+    print("-----------------------------------------------------------------------------------------------------------")
 
 print_stats(choice)
 print(u"Processed file", file_name)

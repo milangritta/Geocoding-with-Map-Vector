@@ -65,14 +65,15 @@ def index_to_coord(index):
 
 def get_coordinates(con, loc_name, pop_only):
     """"""
-    result = con.execute(u"SELECT * FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
+    result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
     if result:
         result = eval(result[1])
         if pop_only:
-            if max(result, key=lambda(a, b, c): c)[2] == 0:
-                return result
-            else:
-                return [r for r in result if r[2] > 0]
+            return [r for r in result if r[3] in [u'A', u'P']]
+            # if max(result, key=lambda(a, b, c): c)[2] == 0:
+            #     return result
+            # else:
+            #     return [r for r in result if r[2] > 0]
         else:
             return result
     else:
@@ -140,9 +141,9 @@ def populate_geosql():
             name = name.lower()
             if len(name) != 0:
                 if name in geo_names:
-                    geo_names[name].add((float(line[4]), float(line[5]), int(line[14])))
+                    geo_names[name].add((float(line[4]), float(line[5]), int(line[14]), line[6]))
                 else:
-                    geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]))}
+                    geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]), line[6])}
 
     conn = sqlite3.connect('../data/geonames.db')
     c = conn.cursor()
@@ -226,7 +227,7 @@ def generate_training_data(context):
                             o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
                             u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
                             limit += 1
-                            if limit > 19:
+                            if limit > 24:
                                 break
             line = line.strip().split("\t")
             if u"(" in line[1]:
@@ -381,9 +382,9 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                         else:
                             x_r[i] = w2i[u"<unknown>"]
                 if train:
-                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
+                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
                 else:
-                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
+                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
                 X_L, X_R, X_E, X_T, Y = [], [], [], [], []
         if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
             for x_l, x_r in zip(X_L, X_R):
@@ -398,9 +399,9 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                     else:
                         x_r[i] = w2i[u"<unknown>"]
             if train:
-                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
+                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
             else:
-                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
+                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
 
 
 def generate_strings_from_file(path):
@@ -455,7 +456,7 @@ def compute_pixel_similarity():
 # visualise_2D_grid(l, "exp")
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 # generate_training_data(context=150)
-# generate_evaluation_data(corpus="wiki", file_name="_clavin", context=150)
+# generate_evaluation_data(corpus="wiki", file_name="_yahoo", context=200)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
