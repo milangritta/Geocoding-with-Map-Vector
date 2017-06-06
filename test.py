@@ -36,10 +36,10 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
                    val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
 
     # ------------ DIAGNOSTICS ----------------
-    sort = p.argsort()[-10:]
-    print(coord_to_index(y), name)
-    for s in sort:
-        print(s, int(s / (360 / GRID_SIZE)), s % (360 / GRID_SIZE), p[s])
+    # sort = p.argsort()[-10:]
+    # print(coord_to_index(y), name)
+    # for s in sort:
+    #     print(s, int(s / (360 / GRID_SIZE)), s % (360 / GRID_SIZE), p[s])
     # new_p = np.copy(p)
     # new_p[coord_to_index(y)] += 1
     # new_p = np.reshape(new_p, (180 / GRID_SIZE, 360 / GRID_SIZE))
@@ -51,28 +51,30 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
 
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
+
     # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c): c, reverse=True)[0]]
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
+
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
     temp, distance = [], []
     for candidate in candidates:
-        distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
+        distance.append((great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
-    # print(context)
-    # print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
-    # print(candidates)
-    if sorted(distance)[0] > 161:
-        print(u"OMW! No (GOLD < 161km) GeoNames entry for", name, y, p)
-        print(sorted(distance))
-        print(choice[-1], candidates)
+
+    print(name, u"Predicted:", p, u"Gold:", y, u"Distance:", choice[-1])
+    if sorted(distance)[0][0] > 161:
+        print(u"OMW! No (GOLD < 161km) GeoNames entry for", name, u"Gold:", y, u"Predicted:", p)
+        print(u"Best GeoNames Candidate:", sorted(distance, key=lambda (a, b): a)[0], u"My Distance:", choice[-1])
     print("-----------------------------------------------------------------------------------------------------------")
 
 print_stats(choice)
 print(u"Processed file", file_name)
+
+# ---------------- DIAGNOSTICS --------------------
 # pprint.pprint(model.get_config())
 # plt.plot(range(len(choice)), np.log(1 + np.asarray(sorted(choice))))
 # plt.xlabel(u"Predictions")
@@ -85,3 +87,4 @@ print(u"Processed file", file_name)
 # W = np.concatenate((W[0], np.array([W[1]])), axis=0)
 # W = np.rot90(W)
 # cPickle.dump(W, open("./data/W.pkl", "w"))
+# ------------- END OF DIAGNOSTICS -----------------

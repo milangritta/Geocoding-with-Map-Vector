@@ -67,13 +67,13 @@ def get_coordinates(con, loc_name, pop_only):
     """"""
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
     if result:
-        result = eval(result[1])
+        result = eval(result[0])
         if pop_only:
-            return [r for r in result if r[3] in [u'A', u'P']]
-            # if max(result, key=lambda(a, b, c): c)[2] == 0:
-            #     return result
-            # else:
-            #     return [r for r in result if r[2] > 0]
+            if max(result, key=lambda(a, b, c, d): c)[2] == 0:
+                return result
+            else:
+                return [r for r in result if r[2] > 0]
+                # return [r for r in result if r[3] in [u'A', u'P']]
         else:
             return result
     else:
@@ -88,12 +88,12 @@ def construct_1D_grid(a_list, use_pop, is_y, smoothing):
         if use_pop:
             g[index] += 1 + s[2]
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            apply_smoothing(g, index, 1 + s[2], smoothing)
+            # apply_smoothing(g, index, 1 + s[2], smoothing)
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
         else:
             g[index] += 1
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            apply_smoothing(g, index, 1, smoothing)
+            # apply_smoothing(g, index, 1, smoothing)
             # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
     if is_y:
         return g / sum(g)  # FOR Y LABELS
@@ -122,6 +122,20 @@ def apply_smoothing(g, index, value, smoothing):
         g[index + 1 + grid_width] += value * smoothing
 
 
+def construct_2D_grid(a_list, use_pop):
+    """"""
+    g = np.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
+    for s in a_list:
+        index = coord_to_index((s[0], s[1]))
+        x = int(int(index / (360 / GRID_SIZE)) / GRID_SIZE)
+        y = int(int(index % (360 / GRID_SIZE)) / GRID_SIZE)
+        if use_pop:
+            g[x][y] += 1 + s[2]
+        else:
+            g[x][y] += 1
+    return g / np.amax(g) if np.amax(g) > 0.0 else g
+
+
 def merge_lists(grids):
     """"""
     out = []
@@ -133,7 +147,7 @@ def merge_lists(grids):
 def populate_geosql():
     """Create and populate the sqlite database with GeoNames data"""
     geo_names = {}
-    f = codecs.open("../data/allCountries.txt", "r", encoding="utf-8")
+    f = codecs.open(u"../data/allCountries.txt", "r", encoding="utf-8")
 
     for line in f:
         line = line.split("\t")
@@ -145,26 +159,26 @@ def populate_geosql():
                 else:
                     geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]), line[6])}
 
-    conn = sqlite3.connect('../data/geonames.db')
+    conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     # c.execute("CREATE TABLE GEO (NAME VARCHAR(100) PRIMARY KEY NOT NULL, METADATA VARCHAR(5000) NOT NULL);")
-    c.execute("DELETE FROM GEO")
+    c.execute(u"DELETE FROM GEO")
     conn.commit()
 
     for gn in geo_names:
-        c.execute("INSERT INTO GEO VALUES (?, ?)", (gn, str(list(geo_names[gn]))))
-    print("Entries saved:", len(geo_names))
+        c.execute(u"INSERT INTO GEO VALUES (?, ?)", (gn, str(list(geo_names[gn]))))
+    print(u"Entries saved:", len(geo_names))
     conn.commit()
     conn.close()
 
 
 def generate_training_data(context):
     """Prepare Wikipedia training data."""
-    conn = sqlite3.connect('../data/geonames.db')
+    conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load('en')
-    f = codecs.open("../data/geowiki.txt", "r", encoding="utf-8")
-    o = codecs.open("../data/train_wiki.txt", "w", encoding="utf-8")
+    f = codecs.open(u"../data/geowiki.txt", "r", encoding="utf-8")
+    o = codecs.open(u"../data/train_wiki.txt", "w", encoding="utf-8")
     lat, lon = u"", u""
     target, string = u"", u""
     skipped = 0
@@ -249,11 +263,11 @@ def generate_training_data(context):
 
 def generate_evaluation_data(corpus, file_name, context):
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
-    conn = sqlite3.connect('../data/geonames.db')
+    conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load('en')
-    directory = "../data/" + corpus + "/"
-    o = codecs.open("data/eval_" + corpus + file_name + ".txt", "w", encoding="utf-8")
+    directory = u"../data/" + corpus + "/"
+    o = codecs.open(u"data/eval_" + corpus + file_name + ".txt", "w", encoding="utf-8")
     line_no = 0 if corpus == "lgl" else -1
 
     for line in codecs.open("data/" + corpus + file_name + ".txt", "r", encoding="utf-8"):
@@ -340,7 +354,7 @@ def generate_vocabulary():
     """Prepare the vocabulary for NN training."""
     vocabulary = {u"<unknown>", u"0.0"}
     temp = []
-    for f in ["../data/train_wiki.txt", "data/eval_wiki_gold.txt", "data/eval_lgl_gold.txt"]:
+    for f in [u"../data/train_wiki.txt", u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
@@ -349,13 +363,13 @@ def generate_vocabulary():
 
     c = Counter(temp)
     for item in c:
-        if c[item] > 4:
+        if c[item] > 5:
             vocabulary.add(item)
     cPickle.dump(vocabulary, open(u"data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True):
+def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True, oneDim=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -364,11 +378,18 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
+            if oneDim:
+                Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
+            else:
+                Y.append([(float(line[0]), float(line[1]))])
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
-            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
-            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
+            if oneDim:
+                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
+                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
+            else:
+                X_T.append(construct_2D_grid(eval(line[4]), use_pop=True))
+                X_E.append(construct_2D_grid(eval(line[5]), use_pop=False))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -444,7 +465,7 @@ def compute_pixel_similarity():
         for cp, cg in zip(p, g):
             correlations.append(np.corrcoef(cp, cg))
 
-    cPickle.dump(correlations, open("data/correlations.pkl", "w"))
+    cPickle.dump(correlations, open(u"data/correlations.pkl", "w"))
 
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
@@ -462,7 +483,7 @@ def compute_pixel_similarity():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Darfur", pop_only=False))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Bethlehem", pop_only=True))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
