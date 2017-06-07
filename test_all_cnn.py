@@ -7,14 +7,14 @@ import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, GRID_SIZE
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
 if len(sys.argv) > 1:
     data = sys.argv[1]
 else:
-    data = u"wiki"
+    data = u"lgl_gold"
 
 input_length = 200
 print(u"Input length:", input_length)
@@ -25,15 +25,16 @@ print(u"Vocabulary Size:", len(vocabulary))
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
-model = load_model(u"../data/weights")
+model = load_model(u"../data/weights_all_cnn")  # change WEIGHTS and ONE_DIM flag
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 choice = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False),
-                   val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
+result = model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False,
+                                oneDim=False), val_samples=int(check_output(["wc", file_name]).split()[0]))
+for lat, lon, (y, name, context) in zip(result[0], result[1], generate_strings_from_file(file_name)):
 
     # ------------ DIAGNOSTICS ----------------
     # sort = p.argsort()[-10:]
@@ -49,8 +50,10 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     # print()
     # --------- END OF DIAGNOSTICS -------------
 
-    confidence = max(p)
-    p = index_to_coord(np.argmax(p))
+    conf_lat = max(lat)
+    conf_lon = max(lon)
+
+    p = index_to_coord((np.argmax(lat) * (360 / GRID_SIZE)) + np.argmax(lon))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
 
     population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
@@ -68,7 +71,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
 
     if sorted(distance)[0][0] > 161:
         print(u"OMW! No GeoNames entry!", name, u"Gold:", y, u"Predicted:", p)
-        print(u"Population:", population, u"Confidence", confidence)
+        print(u"Population:", population, u"Confidence (lat, lon)", conf_lat, conf_lon)
         print(u"Best GeoNames Candidate:", sorted(distance, key=lambda (a, b): a)[0], u"My Distance:", choice[-1])
     print("-----------------------------------------------------------------------------------------------------------")
 

@@ -374,22 +374,28 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        X_L, X_R, X_E, X_T, Y = [], [], [], [], []
+        X_L, X_R, X_E, X_T, Y, Y2 = [], [], [], [], [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
             if oneDim:
                 Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
             else:
-                Y.append([(float(line[0]), float(line[1]))])
+                index = coord_to_index((float(line[0]), float(line[1])))
+                labels = np.zeros(180 / GRID_SIZE, )
+                labels[index / (360 / GRID_SIZE)] = 1.
+                Y.append(labels)
+                labels = np.zeros(360 / GRID_SIZE, )
+                labels[index % (360 / GRID_SIZE)] = 1.
+                Y2.append(labels)
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
             if oneDim:
                 X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
                 X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
             else:
-                X_T.append(construct_2D_grid(eval(line[4]), use_pop=True))
-                X_E.append(construct_2D_grid(eval(line[5]), use_pop=False))
+                X_T.append([construct_2D_grid(eval(line[4]), use_pop=True)])
+                X_E.append([construct_2D_grid(eval(line[5]), use_pop=False)])
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -403,9 +409,68 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                         else:
                             x_r[i] = w2i[u"<unknown>"]
                 if train:
-                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
+                    if oneDim:
+                        yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
+                                np.asarray(X_T)], np.asarray(Y))
+                    else:
+                        yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
+                                np.asarray(X_T)], [np.asarray(Y), np.asarray(Y2)])
                 else:
                     yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
+                X_L, X_R, X_E, X_T, Y, Y2 = [], [], [], [], [], []
+        if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
+            for x_l, x_r in zip(X_L, X_R):
+                for i, w in enumerate(x_l):
+                    if w in w2i:
+                        x_l[i] = w2i[w]
+                    else:
+                        x_l[i] = w2i[u"<unknown>"]
+                for i, w in enumerate(x_r):
+                    if w in w2i:
+                        x_r[i] = w2i[w]
+                    else:
+                        x_r[i] = w2i[u"<unknown>"]
+            if train:
+                if oneDim:
+                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
+                            np.asarray(X_T)], np.asarray(Y))
+                else:
+                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
+                            np.asarray(X_T)], [np.asarray(Y), np.asarray(Y2)])
+            else:
+                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
+
+
+def generate_arrays_from_file_old(path, w2i, input_length, batch_size=64, train=True):
+    """For backward compatibility in case I want to run/test older models"""
+    while True:
+        training_file = codecs.open(path, "r", encoding="utf-8")
+        counter = 0
+        X_L, X_R, X_E, X_T, Y = [], [], [], [], []
+        for line in training_file:
+            counter += 1
+            line = line.strip().split("\t")
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
+            X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
+            X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
+            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
+            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
+            if counter % batch_size == 0:
+                for x_l, x_r in zip(X_L, X_R):
+                    for i, w in enumerate(x_l):
+                        if w in w2i:
+                            x_l[i] = w2i[w]
+                        else:
+                            x_l[i] = w2i[u"<unknown>"]
+                    for i, w in enumerate(x_r):
+                        if w in w2i:
+                            x_r[i] = w2i[w]
+                        else:
+                            x_r[i] = w2i[u"<unknown>"]
+                if train:
+                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
+                else:
+                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
                 X_L, X_R, X_E, X_T, Y = [], [], [], [], []
         if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
             for x_l, x_r in zip(X_L, X_R):
@@ -420,9 +485,9 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                     else:
                         x_r[i] = w2i[u"<unknown>"]
             if train:
-                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
+                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
             else:
-                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
+                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
 
 
 def generate_strings_from_file(path):
