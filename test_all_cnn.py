@@ -25,7 +25,7 @@ print(u"Vocabulary Size:", len(vocabulary))
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
-model = load_model(u"../data/weights_all_cnn")  # change WEIGHTS and ONE_DIM flag
+model = load_model(u"../data/weights_all_cnn")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
@@ -56,12 +56,13 @@ for lat, lon, (y, name, context) in zip(result[0], result[1], generate_strings_f
     p = index_to_coord((np.argmax(lat) * (360 / GRID_SIZE)) + np.argmax(lon))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
 
-    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
-    # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
-
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
+
+    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
+
     temp, distance = [], []
     for candidate in candidates:
         distance.append((great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))

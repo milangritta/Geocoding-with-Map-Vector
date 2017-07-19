@@ -37,8 +37,8 @@ def pad_list(size, a_list, from_left):
 
 def coord_to_index(coordinates):
     """"""
-    latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99
-    longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99
+    latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99   # The few edge cases must
+    longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99  # get handled differently!
     if longitude < 0:
         longitude = -longitude
     if latitude < 0:
@@ -65,14 +65,15 @@ def index_to_coord(index):
 
 def get_coordinates(con, loc_name, pop_only):
     """"""
-    result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(), )).fetchone()
+    result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
         result = eval(result[0])
         if pop_only:
-            if max(result, key=lambda(a, b, c, d): c)[2] == 0:
+            if max(result, key=lambda (a, b, c, d): c)[2] == 0:
                 return result
             else:
                 return [r for r in result if r[2] > 0]
+                # return sorted(result, key=lambda x:x[2], reverse=True)[:10]
                 # return [r for r in result if r[3] in [u'A', u'P']]
         else:
             return result
@@ -442,7 +443,7 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
 
 
 def generate_arrays_from_file_old(path, w2i, input_length, batch_size=64, train=True):
-    """For backward compatibility in case I want to run/test older models"""
+    """For backward compatibility in case I want to run/test older (smaller) models"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
@@ -531,6 +532,16 @@ def compute_pixel_similarity():
             correlations.append(np.corrcoef(cp, cg))
 
     cPickle.dump(correlations, open(u"data/correlations.pkl", "w"))
+
+
+def filter():
+    wiktor = set()
+    for line in codecs.open(u"data/eval_wiki_gold.txt", "r", encoding="utf-8"):
+        wiktor.add(line)
+    print(len(wiktor))
+    for line in codecs.open(u"../data/train_wiki.txt", "r", encoding="utf-8"):
+        if line in wiktor:
+            print line
 
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------

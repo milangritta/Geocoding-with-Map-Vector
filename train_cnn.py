@@ -2,10 +2,11 @@
 import codecs
 import numpy as np
 import cPickle
+from keras import Input
 from keras.callbacks import ModelCheckpoint, EarlyStopping
-from keras.engine import Merge
+from keras.engine import Model
+from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from keras.models import Sequential
 from preprocessing import generate_arrays_from_file, GRID_SIZE
 from subprocess import check_output
 
@@ -43,47 +44,46 @@ weights = np.array([weights])
 print(u'Done preparing vectors...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
-model_left_pair = Sequential()
-model_left_pair.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_left_pair.add(Conv1D(500, 2, activation='relu', subsample_length=1))
-model_left_pair.add(GlobalMaxPooling1D())
-model_left_pair.add(Dense(100))
-model_left_pair.add(Dropout(0.5))
+left_pair = Input(shape=(input_length,))
+lp = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(left_pair)
+lp = Conv1D(500, 2, activation='relu', strides=1)(lp)
+lp = GlobalMaxPooling1D()(lp)
+lp = Dense(100)(lp)
+lp = Dropout(0.5)(lp)
 
-model_left_single = Sequential()
-model_left_single.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_left_single.add(Conv1D(500, 1, activation='relu', subsample_length=1))
-model_left_single.add(GlobalMaxPooling1D())
-model_left_single.add(Dense(100))
-model_left_single.add(Dropout(0.5))
+left_single = Input(shape=(input_length,))
+ls = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(left_single)
+ls = Conv1D(500, 1, activation='relu', strides=1)(ls)
+ls = GlobalMaxPooling1D()(ls)
+ls = Dense(100)(ls)
+ls = Dropout(0.5)(ls)
 
-model_right_pair = Sequential()
-model_right_pair.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_right_pair.add(Conv1D(500, 2, activation='relu', subsample_length=1))
-model_right_pair.add(GlobalMaxPooling1D())
-model_right_pair.add(Dense(100))
-model_right_pair.add(Dropout(0.5))
+right_pair = Input(shape=(input_length,))
+rp = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(right_pair)
+rp = Conv1D(500, 2, activation='relu', strides=1)(rp)
+rp = GlobalMaxPooling1D()(rp)
+rp = Dense(100)(rp)
+rp = Dropout(0.5)(rp)
 
-model_right_single = Sequential()
-model_right_single.add(Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights))
-model_right_single.add(Conv1D(500, 1, activation='relu', subsample_length=1))
-model_right_single.add(GlobalMaxPooling1D())
-model_right_single.add(Dense(100))
-model_right_single.add(Dropout(0.5))
+right_single = Input(shape=(input_length,))
+rs = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(right_single)
+rs = Conv1D(500, 1, activation='relu', strides=1)(rs)
+rs = GlobalMaxPooling1D()(rs)
+rs = Dense(100)(rs)
+rs = Dropout(0.5)(rs)
 
-model_entities = Sequential()
-model_entities.add(Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
-model_entities.add(Dropout(0.5))
+entities = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
+en = Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(entities)
+en = Dropout(0.5)(en)
 
-model_target = Sequential()
-model_target.add(Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE)))
-model_target.add(Dropout(0.5))
+target = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
+ta = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target)
+ta = Dropout(0.5)(ta)
 
-merged_model = Sequential()
-merged_model.add(Merge([model_left_pair, model_left_single, model_right_pair,
-                        model_right_single, model_entities, model_target], mode='concat', concat_axis=1))
-merged_model.add(Dense(output_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax'))
-merged_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+inp = concatenate([left_pair, left_single, right_pair, right_single, entities, target])
+inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)
+model = Model(inputs=[left_pair, left_single, right_pair, right_single, entities, target], outputs=[inp])
+model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
@@ -91,7 +91,6 @@ checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 # checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=5)
 file_name = u"data/eval_wiki.txt"
-merged_model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length),
-                           samples_per_epoch=int(check_output(["wc", file_name]).split()[0]),
-                           nb_epoch=100, callbacks=[checkpoint, early_stop])
-
+model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length),
+                    steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / 64,
+                    epochs=100, callbacks=[checkpoint, early_stop])

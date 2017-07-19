@@ -14,7 +14,7 @@ from preprocessing import generate_arrays_from_file
 if len(sys.argv) > 1:
     data = sys.argv[1]
 else:
-    data = u"wiki"
+    data = u"lgl_gold"
 
 input_length = 200
 print(u"Input length:", input_length)
@@ -53,12 +53,13 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
 
-    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
-    # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
-
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
+
+    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
+
     temp, distance = [], []
     for candidate in candidates:
         distance.append((great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
@@ -66,6 +67,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
 
+    # CHECK FOR CASES WHEN POPULATION DOESN'T WORK. ANYTHING?
     if sorted(distance)[0][0] > 161:
         print(u"OMW! No GeoNames entry!", name, u"Gold:", y, u"Predicted:", p)
         print(u"Population:", population, u"Confidence", confidence)
