@@ -78,23 +78,22 @@ rs = Dense(100)(rs)
 rs = Dropout(0.5)(rs)
 
 entities = Input(shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))
-ent = Conv2D(50, (3, 3), strides=(3, 3), activation="relu", data_format="channels_first",
+ent = Conv2D(1, (2, 2), strides=(2, 2), activation="relu", data_format="channels_first",
              input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))(entities)
-ent = MaxPooling2D(data_format="channels_first")(ent)
+# ent = MaxPooling2D(data_format="channels_first")(ent)
 ent = Flatten()(ent)
 ent = Dropout(0.5)(ent)
 
 target = Input(shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))
-tar = Conv2D(50, (3, 3), strides=(3, 3), activation="relu", data_format="channels_first",
+tar = Conv2D(1, (1, 1), strides=(1, 1), activation="relu", data_format="channels_first",
              input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))(target)
-tar = MaxPooling2D(data_format="channels_first")(tar)
+# tar = MaxPooling2D(data_format="channels_first")(tar)
 tar = Flatten()(tar)
 tar = Dropout(0.5)(tar)
 
 merged = concatenate([lp, ls, rp, rs, ent, tar])
-lat = Dense(units=180 / GRID_SIZE, activation='softmax')(merged)
-lon = Dense(units=360 / GRID_SIZE, activation='softmax')(merged)
-model = Model(inputs=[left_pair, left_single, right_pair, right_single, entities, target], outputs=[lat, lon])
+merged = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(merged)
+model = Model(inputs=[left_pair, left_single, right_pair, right_single, entities, target], outputs=[merged])
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 print(u'Finished building model...')
@@ -104,5 +103,5 @@ checkpoint = ModelCheckpoint(filepath="../data/weights_all_cnn", verbose=0)
 # early_stop = EarlyStopping(monitor='acc', patience=5)
 file_name = u"data/eval_wiki.txt"
 model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length, oneDim=False),
-                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / 64,
-                     epochs=100, callbacks=[checkpoint])
+                    steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / 64,
+                    epochs=100, callbacks=[checkpoint])

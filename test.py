@@ -14,7 +14,7 @@ from preprocessing import generate_arrays_from_file
 if len(sys.argv) > 1:
     data = sys.argv[1]
 else:
-    data = u"lgl_gold"
+    data = u"lgl"
 
 input_length = 200
 print(u"Input length:", input_length)
@@ -25,15 +25,15 @@ print(u"Vocabulary Size:", len(vocabulary))
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
-model = load_model(u"../data/weights")
+model = load_model(u"../data/weights_all_cnn")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 choice = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False),
-                   val_samples=int(check_output(["wc", file_name]).split()[0])), generate_strings_from_file(file_name)):
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=False),
+        steps=int(check_output(["wc", file_name]).split()[0]) / 64), generate_strings_from_file(file_name)):
 
     # ------------ DIAGNOSTICS ----------------
     # sort = p.argsort()[-10:]

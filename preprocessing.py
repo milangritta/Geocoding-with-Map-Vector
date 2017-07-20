@@ -81,7 +81,7 @@ def get_coordinates(con, loc_name, pop_only):
         return []
 
 
-def construct_1D_grid(a_list, use_pop, is_y, smoothing):
+def construct_1D_grid(a_list, use_pop, is_y, smoothing=None):
     """"""
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
@@ -379,21 +379,12 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            if oneDim:
-                Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
-            else:
-                index = coord_to_index((float(line[0]), float(line[1])))
-                labels = np.zeros(180 / GRID_SIZE, )
-                labels[index / (360 / GRID_SIZE)] = 1.
-                Y.append(labels)
-                labels = np.zeros(360 / GRID_SIZE, )
-                labels[index % (360 / GRID_SIZE)] = 1.
-                Y2.append(labels)
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True))
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
             if oneDim:
-                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
-                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
+                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True))
+                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False))
             else:
                 X_T.append([construct_2D_grid(eval(line[4]), use_pop=True)])
                 X_E.append([construct_2D_grid(eval(line[5]), use_pop=False)])
@@ -410,12 +401,8 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                         else:
                             x_r[i] = w2i[u"<unknown>"]
                 if train:
-                    if oneDim:
-                        yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
+                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
                                 np.asarray(X_T)], np.asarray(Y))
-                    else:
-                        yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
-                                np.asarray(X_T)], [np.asarray(Y), np.asarray(Y2)])
                 else:
                     yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
                 X_L, X_R, X_E, X_T, Y, Y2 = [], [], [], [], [], []
@@ -432,12 +419,8 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                     else:
                         x_r[i] = w2i[u"<unknown>"]
             if train:
-                if oneDim:
-                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
+                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
                             np.asarray(X_T)], np.asarray(Y))
-                else:
-                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
-                            np.asarray(X_T)], [np.asarray(Y), np.asarray(Y2)])
             else:
                 yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
 
