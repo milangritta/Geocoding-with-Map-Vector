@@ -80,7 +80,7 @@ target = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
 ta = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target)
 ta = Dropout(0.5)(ta)
 
-inp = concatenate([left_pair, left_single, right_pair, right_single, entities, target])
+inp = concatenate([lp, ls, rp, rs, en, ta])
 inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)
 model = Model(inputs=[left_pair, left_single, right_pair, right_single, entities, target], outputs=[inp])
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])

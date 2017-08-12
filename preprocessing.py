@@ -81,23 +81,17 @@ def get_coordinates(con, loc_name, pop_only):
         return []
 
 
-def construct_1D_grid(a_list, use_pop, is_y, smoothing=None):
+def construct_1D_grid(a_list, use_pop, smoothing=True):
     """"""
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
         if use_pop:
             g[index] += 1 + s[2]
-            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            # apply_smoothing(g, index, 1 + s[2], smoothing)
-            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
         else:
             g[index] += 1
-            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "Before")
-            # apply_smoothing(g, index, 1, smoothing)
-            # visualise_2D_grid(np.reshape(g, (180 / GRID_SIZE, 360 / GRID_SIZE)), "After")
-    if is_y:
-        return g / sum(g)  # FOR Y LABELS
+    if not smoothing:
+        return g
     else:
         return g / max(g) if max(g) > 0.0 else g  # FOR REST OF THE GRID
 
@@ -340,14 +334,16 @@ def generate_evaluation_data(corpus, file_name, context):
     o.close()
 
 
-def visualise_2D_grid(x, title):
+def visualise_2D_grid(x, title, log=False):
     """"""
-    x = x * 255
-    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'black', 'red'], 256)
-    img2 = pyplot.imshow(np.log(x + 1), interpolation='nearest', cmap=cmap2)
+    if log:
+        x = np.log10(x)
+    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'orange', 'red'])
+    img2 = pyplot.imshow(x, cmap=cmap2, interpolation='nearest')
     pyplot.colorbar(img2, cmap=cmap2)
     # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
     plt.title(title)
+    plt.savefig(title + ".png", dpi=200)
     plt.show()
 
 
@@ -379,12 +375,12 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True))
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
             if oneDim:
-                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True))
-                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False))
+                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
+                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
             else:
                 X_T.append([construct_2D_grid(eval(line[4]), use_pop=True)])
                 X_E.append([construct_2D_grid(eval(line[5]), use_pop=False)])
@@ -434,11 +430,11 @@ def generate_arrays_from_file_old(path, w2i, input_length, batch_size=64, train=
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False, is_y=True, smoothing=0.005))
+            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
             X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
             X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
-            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True, is_y=True, smoothing=0.005))
-            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False, is_y=False, smoothing=0.05))
+            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
+            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
             if counter % batch_size == 0:
                 for x_l, x_r in zip(X_L, X_R):
                     for i, w in enumerate(x_l):
@@ -517,7 +513,7 @@ def compute_pixel_similarity():
     cPickle.dump(correlations, open(u"data/correlations.pkl", "w"))
 
 
-def filter():
+def filter_wiktor():
     wiktor = set()
     for line in codecs.open(u"data/eval_wiki_gold.txt", "r", encoding="utf-8"):
         wiktor.add(line)
@@ -527,8 +523,20 @@ def filter():
             print line
 
 
-# ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
+def training_map():
+    coordinates = []
+    for f in [u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
+        training_file = codecs.open(f, "r", encoding="utf-8")
+        for line in training_file:
+            line = line.strip().split("\t")
+            coordinates.append((float(line[0]), float(line[1]), 0))
+    c = construct_1D_grid(coordinates, use_pop=False, smoothing=False)
+    c = np.reshape(c, (90, 180))
+    visualise_2D_grid(c, "Training Map", log=True)
 
+
+# ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
+# training_map()
 # l = list(construct_1D_grid([(-81.8, -109.98333, 1000), (-80, -104.98333, 80), (-82.5, -102, 50)], use_pop=True, is_y=False))
 # l = list(construct_1D_grid([(-61.8, -109.98333, 1000)], use_pop=True, is_y=True))
 # print(l)

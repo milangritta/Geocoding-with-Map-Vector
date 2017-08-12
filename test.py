@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import codecs
+
 import numpy as np
 import cPickle
 import sqlite3
@@ -29,25 +31,12 @@ model = load_model(u"../data/weights_all_cnn")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
+save_errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 choice = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=False),
         steps=int(check_output(["wc", file_name]).split()[0]) / 64), generate_strings_from_file(file_name)):
-
-    # ------------ DIAGNOSTICS ----------------
-    # sort = p.argsort()[-10:]
-    # print(coord_to_index(y), name)
-    # for s in sort:
-    #     print(s, int(s / (360 / GRID_SIZE)), s % (360 / GRID_SIZE), p[s])
-    # new_p = np.copy(p)
-    # new_p[coord_to_index(y)] += 1
-    # new_p = np.reshape(new_p, (180 / GRID_SIZE, 360 / GRID_SIZE))
-    # com = center_of_mass(np.reshape(p, (180 / GRID_SIZE, 360 / GRID_SIZE)))
-    # new_p[int(com[0]), int(com[1])] += 1
-    # visualise_2D_grid(new_p, name)
-    # print()
-    # --------- END OF DIAGNOSTICS -------------
 
     confidence = max(p)
     p = index_to_coord(np.argmax(p))
@@ -57,25 +46,26 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
 
-    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     temp, distance = [], []
     for candidate in candidates:
-        distance.append((great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
+        # distance.append((great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
 
-    # CHECK FOR CASES WHEN POPULATION DOESN'T WORK. ANYTHING?
-    if sorted(distance)[0][0] > 161:
-        print(u"OMW! No GeoNames entry!", name, u"Gold:", y, u"Predicted:", p)
-        print(u"Population:", population, u"Confidence", confidence)
-        print(u"Best GeoNames Candidate:", sorted(distance, key=lambda (a, b): a)[0], u"My Distance:", choice[-1])
-    print("-----------------------------------------------------------------------------------------------------------")
+    if best[0] > 161:
+        # print(u"Gold:", y, u"Predicted:", p)
+        save_errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
+              + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + context + u"\n")
+        # print(u"Population:", population, u"Confidence", confidence)
+        # print(u"Best GeoNames Candidate:", sorted(distance, key=lambda (a, b): a)[0], u"My Distance:", choice[-1])
+    # print("-----------------------------------------------------------------------------------------------------------")
 
-print_stats(choice)
-print(u"Processed file", file_name)
+# print_stats(choice)
+# print(u"Processed file", file_name)
 
 # ---------------- DIAGNOSTICS --------------------
 # pprint.pprint(model.get_config())
