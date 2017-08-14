@@ -338,7 +338,7 @@ def visualise_2D_grid(x, title, log=False):
     """"""
     if log:
         x = np.log10(x)
-    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'orange', 'red'])
+    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'orange', 'black'])
     img2 = pyplot.imshow(x, cmap=cmap2, interpolation='nearest')
     pyplot.colorbar(img2, cmap=cmap2)
     # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
@@ -619,4 +619,4 @@ def training_map():
 # correlations = [x + ran for x in correlations]
 # correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
 # correlations = np.rot90((np.rot90(correlations)))
-# visualise_2D_grid(correlations, "Geographical Pixel Embedding Quality")
+# visualise_2D_grid(correlations, "GeoPixelSpatialCorrelation")
