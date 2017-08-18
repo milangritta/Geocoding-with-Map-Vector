@@ -35,7 +35,7 @@ save_errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 choice = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=False),
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=True),
         steps=int(check_output(["wc", file_name]).split()[0]) / 64), generate_strings_from_file(file_name)):
 
     confidence = max(p)
@@ -64,8 +64,8 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         # print(u"Best GeoNames Candidate:", sorted(distance, key=lambda (a, b): a)[0], u"My Distance:", choice[-1])
     # print("-----------------------------------------------------------------------------------------------------------")
 
-# print_stats(choice)
-# print(u"Processed file", file_name)
+print_stats(choice)
+print(u"Processed file", file_name)
 
 # ---------------- DIAGNOSTICS --------------------
 # pprint.pprint(model.get_config())
