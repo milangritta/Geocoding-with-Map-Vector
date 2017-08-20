@@ -612,11 +612,11 @@ def training_map():
 #         out.write(line)
 #     counter += 1
 
-correlations = [x[0][1] for x in cPickle.load(open("data/correlations.pkl"))]
+# correlations = [x[0][1] for x in cPickle.load(open("data/correlations.pkl"))]
 # correlations = [x[0][1] for x in correlations]
 # minimum = min(correlations)
 # ran = max(correlations) - minimum
 # correlations = [x + ran for x in correlations]
-correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
-correlations = np.rot90((np.rot90(correlations)))
-visualise_2D_grid(correlations, "GeoPixelSpatialCorrelation")
+# correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
+# correlations = np.rot90((np.rot90(correlations)))
+# visualise_2D_grid(correlations, "GeoPixelSpatialCorrelation")
