@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import codecs
-
 import numpy as np
 import cPickle
 import sqlite3
@@ -27,7 +26,7 @@ print(u"Vocabulary Size:", len(vocabulary))
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
-model = load_model(u"../data/weights_all_cnn")
+model = load_model(u"../data/weights")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
@@ -46,12 +45,11 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
 
-    # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     temp, distance = [], []
     for candidate in candidates:
-        # distance.append((great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
@@ -61,7 +59,6 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         save_errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
               + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + context + u"\n")
         # print(u"Population:", population, u"Confidence", confidence)
-        # print(u"Best GeoNames Candidate:", sorted(distance, key=lambda (a, b): a)[0], u"My Distance:", choice[-1])
     # print("-----------------------------------------------------------------------------------------------------------")
 
 print_stats(choice)
