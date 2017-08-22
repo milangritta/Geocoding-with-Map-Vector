@@ -45,18 +45,19 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
 
-    population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     temp, distance = [], []
     for candidate in candidates:
+        distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
 
     # print(u"Gold:", y, u"Predicted:", p)
     save_errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
-          + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + context + u"\n")
+          + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + unicode(sorted(distance)[0]) + u"\t" + context + u"\n")
     # print(u"Population:", population, u"Confidence", confidence)
     # print("-----------------------------------------------------------------------------------------------------------")
 

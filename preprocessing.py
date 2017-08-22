@@ -63,13 +63,16 @@ def index_to_coord(index):
     return x, y
 
 
-def get_coordinates(con, loc_name, pop_only):
+def get_coordinates(con, loc_name, pop_only, limit=0):
     """"""
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
         result = eval(result[0])
+        result = sorted(result, key=lambda (a, b, c, d): c)
+        if limit > 0:
+            result = result[-limit:]
         if pop_only:
-            if max(result, key=lambda (a, b, c, d): c)[2] == 0:
+            if result[-1][2] == 0:
                 return result
             else:
                 return [r for r in result if r[2] > 0]
