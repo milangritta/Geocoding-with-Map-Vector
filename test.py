@@ -54,11 +54,10 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     best = sorted(temp, key=lambda (a, b): a)[0]
     choice.append(great_circle(best[1], y).kilometers)
 
-    if best[0] > 161:
-        # print(u"Gold:", y, u"Predicted:", p)
-        save_errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
-              + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + context + u"\n")
-        # print(u"Population:", population, u"Confidence", confidence)
+    # print(u"Gold:", y, u"Predicted:", p)
+    save_errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
+          + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + context + u"\n")
+    # print(u"Population:", population, u"Confidence", confidence)
     # print("-----------------------------------------------------------------------------------------------------------")
 
 print_stats(choice)

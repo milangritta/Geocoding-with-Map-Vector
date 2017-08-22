@@ -475,7 +475,8 @@ def generate_strings_from_file(path):
     while True:
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
-            yield ((float(line[0]), float(line[1])), line[6], line[7])
+            context = line[2][-50:] + u" " + line[6] + u" " + line[3][:50] + u"FULL CONTEXT:" + line[7]
+            yield ((float(line[0]), float(line[1])), line[6], context)
 
 
 def compute_embedding_distances(W, dim):
