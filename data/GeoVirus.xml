@@ -5999,7 +5999,7 @@
             <location>
                 <name>Central Java</name>
                 <start>172</start>
-                <end>174</end>
+                <end>184</end>
                 <lat>-7.5</lat>
                 <lon>110</lon>
                 <page>https://en.wikipedia.org/wiki/Central_Java</page>
@@ -6293,7 +6293,7 @@
             <location>
                 <name>Cambodia</name>
                 <start>936</start>
-                <end>942</end>
+                <end>944</end>
                 <lat>13</lat>
                 <lon>105</lon>
                 <page>https://en.wikipedia.org/wiki/Cambodia</page>

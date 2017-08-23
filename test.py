@@ -33,7 +33,7 @@ print(u'Crunching numbers, sit tight...')
 errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
-final_choice = []
+final_error = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=True),
         steps=int(check_output(["wc", file_name]).split()[0]) / 64), generate_strings_from_file(file_name)):
 
@@ -46,33 +46,32 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         continue
 
     # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
-    population = sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)
+    population = sorted(candidates, key=lambda (a, b, c, d): c, reverse=True)
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
-    temp, nearestEntry = [], []
+    best_candidate, y_to_geonames = [], []
     for candidate in candidates:
-        nearestEntry.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
-        temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
-    best = sorted(temp, key=lambda (a, b): a)[0]
-    final_choice.append(great_circle(best[1], y).kilometers)
+        y_to_geonames.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).km)
+        best_candidate.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).km, (float(candidate[0]), float(candidate[1]))))
+    best_candidate = sorted(best_candidate, key=lambda (a, b): a)[0]
+    final_error.append(great_circle(best_candidate[1], y).km)
 
     dist_p, dist_y, index_p, index_y = 50000, 50000, 0, 0
     for index, candidate in enumerate(population):
-        if great_circle(best[1], (candidate[0], candidate[1])).km < dist_p:
-            dist_p = great_circle(best[1], (candidate[0], candidate[1])).km
+        if great_circle(best_candidate[1], (candidate[0], candidate[1])).km < dist_p:
+            dist_p = great_circle(best_candidate[1], (candidate[0], candidate[1])).km
             index_p = index
         if great_circle(y, (candidate[0], candidate[1])).km < dist_y:
             dist_y = great_circle(y, (candidate[0], candidate[1])).km
             index_y = index
 
-    # print(u"Gold:", y, u"Predicted:", p)
-    errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
-                 + u"\t" + unicode(index_p) + u"\t" + unicode(index_y) + u"\t" + unicode(final_choice[-1]) + u"\t" +
-                 unicode(sorted(nearestEntry)[0]) + u"\t" + context + u"\n")
-    # print(u"Population:", population, u"Confidence", confidence)
+    errors.write(name + u"\t" + unicode(y) + u"\t" + unicode(p) + "\t" + unicode(best_candidate[1])
+                 + u"\t" + unicode(index_y) + u"\t" + unicode(index_p) + u"\t" + unicode(final_error[-1]) + u"\t" +
+                 unicode(best_candidate[0]) + u"\t" + unicode(len(population)) + u"\t" + unicode(sorted(y_to_geonames)[0])
+                 + u"\t" + context + u"\n")
     # print("-----------------------------------------------------------------------------------------------------------")
 
-print_stats(final_choice)
+print_stats(final_error)
 print(u"Processed file", file_name)
 
 # ---------------- DIAGNOSTICS --------------------

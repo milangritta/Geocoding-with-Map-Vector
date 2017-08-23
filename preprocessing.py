@@ -200,7 +200,7 @@ def generate_training_data(context):
                                 for index, item in enumerate(in_list):
                                     if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
                                         if item.ent_iob_ == "B" and item.text.lower() == u"the":
-                                            out_list.append(u"0.0")
+                                            out_list.append(u"LOC")
                                         else:
                                             location += item.text + u" "
                                             out_list.append(u"0.0")
@@ -295,7 +295,7 @@ def generate_evaluation_data(corpus, file_name, context):
                             for index, item in enumerate(in_list):
                                 if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
                                     if item.ent_iob_ == "B" and item.text.lower() == u"the":
-                                        out_list.append(u"0.0")
+                                        out_list.append(u"LOC")
                                     else:
                                         location += item.text + u" "
                                         out_list.append(u"0.0")
@@ -478,7 +478,7 @@ def generate_strings_from_file(path):
     while True:
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
-            context = line[2][-50:] + u" " + line[6] + u" " + line[3][:50] + u"FULL CONTEXT:" + line[7]
+            context = u" ".join(line[2]) + u" ENTITY " + line[6] + u" ENTITY " + u"".join(line[3]) + u"\t" + line[7]
             yield ((float(line[0]), float(line[1])), line[6], context)
 
 

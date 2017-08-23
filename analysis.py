@@ -5,7 +5,7 @@ from preprocessing import get_coordinates
 
 # --------------------------------------------ERROR CHECKING----------------------------------------------
 
-if False:  # add CDATA xml construct?
+if True:  # add CDATA xml construct?
     tree = ET.parse(u'data/GeoVirus.xml')
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -29,7 +29,7 @@ if False:  # add CDATA xml construct?
                 if gap < dist:
                     dist = gap
             if dist > 201:
-                print "AAARGRHG!!!!!", name, url
+                print "AAARGRHG!!!!!", name, url, dist
 
     # tree.write('data/GeoVirusUpdated.xml')
 
