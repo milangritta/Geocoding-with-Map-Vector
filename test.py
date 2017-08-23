@@ -30,14 +30,14 @@ model = load_model(u"../data/weights")
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')
-save_errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
+errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
-choice = []
+final_choice = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=True),
         steps=int(check_output(["wc", file_name]).split()[0]) / 64), generate_strings_from_file(file_name)):
 
-    confidence = max(p)
+    # confidence = max(p)
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
 
@@ -46,22 +46,33 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         continue
 
     # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    population = sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
-    temp, distance = [], []
+    temp, nearestEntry = [], []
     for candidate in candidates:
-        distance.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
+        nearestEntry.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).kilometers)
         temp.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).kilometers, (float(candidate[0]), float(candidate[1]))))
     best = sorted(temp, key=lambda (a, b): a)[0]
-    choice.append(great_circle(best[1], y).kilometers)
+    final_choice.append(great_circle(best[1], y).kilometers)
+
+    dist_p, dist_y, index_p, index_y = 50000, 50000, 0, 0
+    for index, candidate in enumerate(population):
+        if great_circle(best[1], (candidate[0], candidate[1])).km < dist_p:
+            dist_p = great_circle(best[1], (candidate[0], candidate[1])).km
+            index_p = index
+        if great_circle(y, (candidate[0], candidate[1])).km < dist_y:
+            dist_y = great_circle(y, (candidate[0], candidate[1])).km
+            index_y = index
 
     # print(u"Gold:", y, u"Predicted:", p)
-    save_errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
-          + u"\t" + unicode(confidence) + u"\t" + unicode(best[0]) + u"\t" + unicode(sorted(distance)[0]) + u"\t" + context + u"\n")
+    errors.write(name + u"\t" + unicode(y[0]) + "\t" + unicode(y[1]) + u"\t" + unicode(p[0]) + u"\t" + unicode(p[1]) \
+                 + u"\t" + unicode(index_p) + u"\t" + unicode(index_y) + u"\t" + unicode(final_choice[-1]) + u"\t" +
+                 unicode(sorted(nearestEntry)[0]) + u"\t" + context + u"\n")
     # print(u"Population:", population, u"Confidence", confidence)
     # print("-----------------------------------------------------------------------------------------------------------")
 
-print_stats(choice)
+print_stats(final_choice)
 print(u"Processed file", file_name)
 
 # ---------------- DIAGNOSTICS --------------------
