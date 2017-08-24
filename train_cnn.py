@@ -37,11 +37,16 @@ for line in codecs.open("../data/glove." + str(dimension) + "d.txt", encoding="u
 print(u'Loaded GloVe vectors...', len(vectors))
 
 weights = np.zeros((len(vocabulary), dimension))
+oov = 0
 for w in vocabulary:
     if w in vectors:
         weights[word_to_index[w]] = vectors[w]
+    else:
+        weights[word_to_index[w]] = np.random.normal(size=(dimension,), scale=0.3)
+        oov += 1
 weights = np.array([weights])
 print(u'Done preparing vectors...')
+print(u"OOV:", oov)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
 left_pair = Input(shape=(input_length,))

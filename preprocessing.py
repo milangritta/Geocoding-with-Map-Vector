@@ -220,7 +220,7 @@ def generate_training_data(context):
                                     else:
                                         out_list.append(item.lemma_)
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
-                                        if location.strip() != u" ".join(target):
+                                        if location.strip() != u" ".join(target):  # do not use the target itself
                                             coords = get_coordinates(c, location.strip(), pop_only=True)
                                             if len(coords) > 0:
                                                 locations.append(coords)
