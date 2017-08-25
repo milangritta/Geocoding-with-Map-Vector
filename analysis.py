@@ -31,6 +31,8 @@ if True:  # add CDATA xml construct?
             if dist > 201:
                 print "AAARGRHG!!!!!", name, url, dist
 
+    # COORDINATE LIMITS (180 x 360)!!!
+
     # tree.write('data/GeoVirusUpdated.xml')
 
 # ----------------------------------------------STATISTICS------------------------------------------------

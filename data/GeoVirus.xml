@@ -6682,175 +6682,433 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Child_virus_outbreak_reaches_Beijing</source>
-        <text>
-Over 40 children have died in an outbreak of hand, foot and mouth disease (HFMD) in China, and the country's capital of Beijing reported its first death due to the disease on Wednesday. According to Xinhua News Agency, Beijing Health Bureau spokeswoman Deng Xiaohong said that the 13-month-old boy died Sunday while en route to the hospital. Health authorities state that 24,934 children in mainland China are afflicted with the disease, and 42 children have died from it. The cause of the disease has been identified as Enterovirus 71 (EV-71). HFMD can also be caused by Coxsackievirus. Another child infected with the virus died Monday, but as he died in Hebei province his death was counted there. Xinhua News Agency also reported that a 21-month-old boy died Monday of the virus in Hubei province. After an order was given last week by the Ministry of Health of the People's Republic of China that all cases must be reported, the count of those infected has increased markedly. Eastern China saw a large number of cases in early March, but this information was not made public until late April. In March, Children under age six in eastern Anhui province began being admitted to hospitals with symptoms of the virus, and the outbreak spread quickly after that. The city of Fuyang in Anhui province was especially hard-hit by the outbreak. "The majority of patients who were in critical condition have recovered," said a Health Ministry official in a statement on Monday. As of Monday, 3,606 HFMD infections had been reported in Beijing. Deaths have occurred in the provinces of Anhui, Guangdong, Guangxi, Hainan, Hunan, Zhejiang, Beijing and Hubei. "What I know is the death rate has gone down drastically since early May. There are very, very few cases with complications — 99 percent of these are mild cases," said World Health Organization (WHO) China representative Hans Troedsson in a statement on Wednesday. Incidents of the disease are expected to peak in June and July. China is also dealing with a magnitude-7.9 earthquake which hit the country Monday and has killed almost 15,000. The outbreak is a concern to the government, as the country prepares for the 2008 Summer Olympics in Beijing this August. "We are confident the potential outbreak will not affect the Beijing Olympic Games," China's Health Ministry spokesman Mao Qunan stated. And at a joint press conference held by China's Ministry of Health and the WHO, he further noted that, "China is confident that it can control the spread of the disease with effective prevention methods."</text>
+        <text>Over 40 children have died in an outbreak of hand, foot and mouth disease (HFMD) in China, and the country's capital of Beijing reported its first death due to the disease on Wednesday. According to Xinhua News Agency, Beijing Health Bureau spokeswoman Deng Xiaohong said that the 13-month-old boy died Sunday while en route to the hospital. Health authorities state that 24,934 children in mainland China are afflicted with the disease, and 42 children have died from it. The cause of the disease has been identified as Enterovirus 71 (EV-71). HFMD can also be caused by Coxsackievirus. Another child infected with the virus died Monday, but as he died in Hebei province his death was counted there. Xinhua News Agency also reported that a 21-month-old boy died Monday of the virus in Hubei province. After an order was given last week by the Ministry of Health of the People's Republic of China that all cases must be reported, the count of those infected has increased markedly. Eastern China saw a large number of cases in early March, but this information was not made public until late April. In March, Children under age six in eastern Anhui province began being admitted to hospitals with symptoms of the virus, and the outbreak spread quickly after that. The city of Fuyang in Anhui province was especially hard-hit by the outbreak. "The majority of patients who were in critical condition have recovered," said a Health Ministry official in a statement on Monday. As of Monday, 3,606 HFMD infections had been reported in Beijing. Deaths have occurred in the provinces of Anhui, Guangdong, Guangxi, Hainan, Hunan, Zhejiang, Beijing and Hubei. "What I know is the death rate has gone down drastically since early May. There are very, very few cases with complications — 99 percent of these are mild cases," said World Health Organization (WHO) China representative Hans Troedsson in a statement on Wednesday. Incidents of the disease are expected to peak in June and July. China is also dealing with a magnitude-7.9 earthquake which hit the country Monday and has killed almost 15,000. The outbreak is a concern to the government, as the country prepares for the 2008 Summer Olympics in Beijing this August. "We are confident the potential outbreak will not affect the Beijing Olympic Games," China's Health Ministry spokesman Mao Qunan stated. And at a joint press conference held by China's Ministry of Health and the WHO, he further noted that, "China is confident that it can control the spread of the disease with effective prevention methods."</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>China</name>
+                <start>85</start>
+                <end>90</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Beijing</name>
+                <start>121</start>
+                <end>128</end>
+                <lat>39.91</lat>
+                <lon>116.38</lon>
+                <page>https://en.wikipedia.org/wiki/Beijing</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>China</name>
+                <start>401</start>
+                <end>406</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Hebei</name>
+                <start>658</start>
+                <end>663</end>
+                <lat>39.3</lat>
+                <lon>116.7</lon>
+                <page>https://en.wikipedia.org/wiki/Hebei</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Hubei</name>
+                <start>787</start>
+                <end>792</end>
+                <lat>31.2</lat>
+                <lon>112.3</lon>
+                <page>https://en.wikipedia.org/wiki/Hubei</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>People's Republic of China</name>
+                <start>871</start>
+                <end>897</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Anhui</name>
+                <start>1144</start>
+                <end>1149</end>
+                <lat>31.83</lat>
+                <lon>117</lon>
+                <page>https://en.wikipedia.org/wiki/Anhui</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Fuyang</name>
+                <start>1277</start>
+                <end>1283</end>
+                <lat>32.9</lat>
+                <lon>115.81</lon>
+                <page>https://en.wikipedia.org/wiki/Fuyang</page>
+            </location>
+            <location>
+                <name>Anhui</name>
+                <start>1287</start>
+                <end>1292</end>
+                <lat>31.83</lat>
+                <lon>117</lon>
+                <page>https://en.wikipedia.org/wiki/Anhui</page>
+            </location>
+            <location>
+                <name>Beijing</name>
+                <start>1532</start>
+                <end>1539</end>
+                <lat>39.91</lat>
+                <lon>116.38</lon>
+                <page>https://en.wikipedia.org/wiki/Beijing</page>
+            </location>
+            <location>
+                <name>Guangdong</name>
+                <start>1589</start>
+                <end>1598</end>
+                <lat>23.4</lat>
+                <lon>113.5</lon>
+                <page>https://en.wikipedia.org/wiki/Guangdong</page>
+            </location>
+            <location>
+                <name>Guangxi</name>
+                <start>1600</start>
+                <end>1607</end>
+                <lat>23.6</lat>
+                <lon>108.3</lon>
+                <page>https://en.wikipedia.org/wiki/Guangxi</page>
+            </location>
+            <location>
+                <name>Hainan</name>
+                <start>1609</start>
+                <end>1615</end>
+                <lat>19.2</lat>
+                <lon>109.7</lon>
+                <page>https://en.wikipedia.org/wiki/Hainan</page>
+            </location>
+            <location>
+                <name>Hunan</name>
+                <start>1617</start>
+                <end>1622</end>
+                <lat>27.4</lat>
+                <lon>111.8</lon>
+                <page>https://en.wikipedia.org/wiki/Hunan</page>
+            </location>
+            <location>
+                <name>Zhejiang</name>
+                <start>1624</start>
+                <end>1632</end>
+                <lat>29.2</lat>
+                <lon>120.5</lon>
+                <page>https://en.wikipedia.org/wiki/Zhejiang</page>
+            </location>
+            <location>
+                <name>Hubei</name>
+                <start>1646</start>
+                <end>1651</end>
+                <lat>31.2</lat>
+                <lon>112.3</lon>
+                <page>https://en.wikipedia.org/wiki/Hubei</page>
+            </location>
+            <location>
+                <name>Beijing</name>
+                <start>2196</start>
+                <end>2203</end>
+                <lat>39.91</lat>
+                <lon>116.38</lon>
+                <page>https://en.wikipedia.org/wiki/Beijing</page>
             </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Disease_scare_in_south_Sudan,_aid_groups_return</source>
-        <text>
-The governor of the south Sudanese Warab state, Anthony Bol Madut told the Reuters news agency that at least a thousand people in the state have died of Meningitis and another unidentified disease. He said that the unknown disease had symptoms similar to Yellow fever but the patients died quickly. The governor appealed for medical assistance to diagnose and help control the outbreak. The outbreak comes as hundreds of thousands of refugees return to southern Sudan after a peace deal ended conflict in the areas. The refugees are housed in crowded camps where the risk of infection is high. Hotspots in south Sudan and Darfur are experiencing a lull in the fighting that has allowed normal life to return to these areas. Meanwhile, the NGO SOS Children's Villages Sudan reports that despite the ceasefire among the warring factions in South Sudan and Darfur, people are still worried that conflict may erupt once again. SOS is also concerned about shortages in medicine and clean water in its facilities in these areas. SOS emergency relief activities have restarted in Abu Shok refugee camp in Al-Fashir, Darfur, with most of the psychologists and social workers returning to work in the psycho-social centres, an SOS release reports. Work with the patients and beneficiaries of the three centres it maintains has started once again, the release adds. The situation in SOS Children's Village Malakal is also stable, but cholera is still spreading among the residents of the area, especially children. SOS Children's Villages Sudan is providing emergency medical assistance in the form of medication for the children in the SOS Children's Village, as well as those being treated in the local children's hospital. According to the SOS release, most international organisations and NGOs have returned to work in both Darfur and Malakal, especially the World Food Programme and other UN agencies. Several NGOs, however, have not resumed activities in the conflict areas. Airplanes are flying into Darfur and Malakal, but flights to Darfur are not as regular as before the conflict and there are no scheduled flights to the area of Malakal. Telephone communications are still unstable, and co-workers from SOS Children's Villages Sudan in Khartoum are relying on satellite telephones to communicate with Darfur and Malakal. Mr. Ali Mahdi, director of SOS Children's Villages Sudan, said that despite the relative quiet in both Darfur and Malakal, people are still worried and tense regarding the situation. Co-workers at the SOS Emergency Relief Centres in Darfur and those in the SOS Children's Village Malakal are afraid of conflict breaking out again in the areas. Mr. Mahdi also said that the centres in Darfur and the SOS Children's Village in Malakal are both suffering from shortages in clean water and medication, some of which are being sent from Khartoum. During a visit to Darfur on 10 January, Mr. Ali Mahdi visited the town of Nyala, the capital of South Darfur, where there is a similar refugee problem as that in Al-Fashir. SOS Children's Villages Sudan is now considering starting an emergency relief programme similar to the one in Abu Shok refugee camp in Al-Fashir.</text>
+        <text>The governor of the south Sudanese Warab state, Anthony Bol Madut told the Reuters news agency that at least a thousand people in the state have died of Meningitis and another unidentified disease. He said that the unknown disease had symptoms similar to Yellow fever but the patients died quickly. The governor appealed for medical assistance to diagnose and help control the outbreak. The outbreak comes as hundreds of thousands of refugees return to southern Sudan after a peace deal ended conflict in the areas. The refugees are housed in crowded camps where the risk of infection is high. Hotspots in south Sudan and Darfur are experiencing a lull in the fighting that has allowed normal life to return to these areas. Meanwhile, the NGO SOS Children's Villages Sudan reports that despite the ceasefire among the warring factions in south Sudan and Darfur, people are still worried that conflict may erupt once again. SOS is also concerned about shortages in medicine and clean water in its facilities in these areas. SOS emergency relief activities have restarted in Abu Shok refugee camp in Al-Fashir, Darfur, with most of the psychologists and social workers returning to work in the psycho-social centres, an SOS release reports. Work with the patients and beneficiaries of the three centres it maintains has started once again, the release adds. The situation in SOS Children's Village Malakal is also stable, but cholera is still spreading among the residents of the area, especially children. SOS Children's Villages Sudan is providing emergency medical assistance in the form of medication for the children in the SOS Children's Village, as well as those being treated in the local children's hospital. According to the SOS release, most international organisations and NGOs have returned to work in both Darfur and Malakal, especially the World Food Programme and other UN agencies. Several NGOs, however, have not resumed activities in the conflict areas. Airplanes are flying into Darfur and Malakal, but flights to Darfur are not as regular as before the conflict and there are no scheduled flights to the area of Malakal. Telephone communications are still unstable, and co-workers from SOS Children's Villages Sudan in Khartoum are relying on satellite telephones to communicate with Darfur and Malakal. Mr. Ali Mahdi, director of SOS Children's Villages Sudan, said that despite the relative quiet in both Darfur and Malakal, people are still worried and tense regarding the situation. Co-workers at the SOS Emergency Relief Centres in Darfur and those in the SOS Children's Village Malakal are afraid of conflict breaking out again in the areas. Mr. Mahdi also said that the centres in Darfur and the SOS Children's Village in Malakal are both suffering from shortages in clean water and medication, some of which are being sent from Khartoum. During a visit to Darfur on 10 January, Mr. Ali Mahdi visited the town of Nyala, the capital of South Darfur, where there is a similar refugee problem as that in Al-Fashir. SOS Children's Villages Sudan is now considering starting an emergency relief programme similar to the one in Abu Shok refugee camp in Al-Fashir.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Warab</name>
+                <start>36</start>
+                <end>41</end>
+                <lat>8</lat>
+                <lon>28.85</lon>
+                <page>https://en.wikipedia.org/wiki/Warrap_(state)</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Sudan</name>
+                <start>463</start>
+                <end>468</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Sudan</name>
+                <start>613</start>
+                <end>618</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Darfur</name>
+                <start>623</start>
+                <end>629</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Sudan</name>
+                <start>845</start>
+                <end>850</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Darfur</name>
+                <start>855</start>
+                <end>861</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Abu Shok</name>
+                <start>1074</start>
+                <end>1082</end>
+                <lat>13.95</lat>
+                <lon>31.08</lon>
+                <page>N/A</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Al-Fashir</name>
+                <start>1099</start>
+                <end>1108</end>
+                <lat>13.63</lat>
+                <lon>25.35</lon>
+                <page>https://en.wikipedia.org/wiki/Al-Fashir</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Malakal</name>
+                <start>1830</start>
+                <end>1837</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Darfur</name>
+                <start>1998</start>
+                <end>2004</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Malakal</name>
+                <start>2009</start>
+                <end>2016</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Khartoum</name>
+                <start>2239</start>
+                <end>2247</end>
+                <lat>15.50</lat>
+                <lon>32.56</lon>
+                <page>https://en.wikipedia.org/wiki/Khartoum</page>
+            </location>
+            <location>
+                <name>Khartoum</name>
+                <start>2856</start>
+                <end>2864</end>
+                <lat>15.50</lat>
+                <lon>32.56</lon>
+                <page>https://en.wikipedia.org/wiki/Khartoum</page>
+            </location>
+            <location>
+                <name>Nyala</name>
+                <start>2940</start>
+                <end>2945</end>
+                <lat>12.05</lat>
+                <lon>24.88</lon>
+                <page>https://en.wikipedia.org/wiki/Nyala,_Sudan</page>
+            </location>
+            <location>
+                <name>Abu Shok</name>
+                <start>3149</start>
+                <end>3157</end>
+                <lat>13.95</lat>
+                <lon>31.08</lon>
+                <page>N/A</page>
+            </location>
+            <location>
+                <name>Al-Fashir</name>
+                <start>3174</start>
+                <end>3163</end>
+                <lat>13.63</lat>
+                <lon>25.35</lon>
+                <page>https://en.wikipedia.org/wiki/Al-Fashir</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/International_team_of_scientists_studies_malaria_drug_resistance_in_Southeast_Asia</source>
+        <text>Researchers from Asia, Africa, Europe, and the United States have mapped resistance of malaria-causing parasite Plasmodium falciparum to antimalarial drug artemisinin, mainly in Southeast Asia; correlated the resistance-causing mutation with slow parasite clearance; and found that prolonged therapy is highly effective against drug-resistant malaria. Their study was published in New England Journal of Medicine on Thursday. The mutation considered in this study was identified last year as the molecular marker of artemisinin-resistant malaria. The current study found the mutation, located in the propeller domain of a Kelch protein on human chromosome 13, predicted when parasite clearance half-life would exceed five hours with 91.8% sensitivity and 88.4% specificity — usually correct in predicting both when long half-life would occur, and when it wouldn't. OpenClinica web-based database was used for collection of data which was used to assess parasite clearance rate. The study found a six-day treatment course effective against artemisinin-resistant malaria. The standard regimen consists of three-day dihydroartemisinin–piperaquine treatment, and had a 25% rate of failure at day 42 in another recent study in Pailin, Cambodia. The prolonged regimen which includes three days of artesunate followed by three days of dihydroartemisinin–piperaquine, has shown 2% rate of failure at day 42 in the same area. Geometric mean of the half-life values were similar in two treatment groups of 60 patients each at each study site: one group received artesunate at a daily dose of 2 mg per patient's body-weight kilogram and the other 4 mg per kilogram. Afterwards, patients at several study sites were followed for 42 days — Pailin, Cambodia; Attapeu, Laos; Binh Phuoc, Vietnam; Shwe Kyin, Myanmar; and Pingilikani, Kenya — and for 28 days in Kinshasa, DR Congo. The treatment regimens were highly effective at all the study sites. Support for the study came from the UK Department for International Development, the Worldwide Antimalarial Resistance Network, the Intramural Research Program of the National Institute of Allergy and Infectious Diseases of the National Institutes of Health, and the Bill and Melinda Gates Foundation. Also, the UK-based Wellcome Trust funds one of the participating research organizations, the Mahidol–Oxford Tropical Medicine Research Programme.</text>
+        <locations>
+            <location>
+                <name>United States</name>
+                <start>48</start>
+                <end>61</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Pailin</name>
+                <start>1223</start>
+                <end>1229</end>
+                <lat>12.85</lat>
+                <lon>102.60</lon>
+                <page>https://en.wikipedia.org/wiki/Pailin_Province</page>
+            </location>
+            <location>
+                <name>Cambodia</name>
+                <start>1231</start>
+                <end>1239</end>
+                <lat>13</lat>
+                <lon>105</lon>
+                <page>https://en.wikipedia.org/wiki/Cambodia</page>
+            </location>
+            <location>
+                <name>Pailin</name>
+                <start>1728</start>
+                <end>1734</end>
+                <lat>12.85</lat>
+                <lon>102.60</lon>
+                <page>https://en.wikipedia.org/wiki/Pailin_Province</page>
+            </location>
+            <location>
+                <name>Cambodia</name>
+                <start>1736</start>
+                <end>1744</end>
+                <lat>13</lat>
+                <lon>105</lon>
+                <page>https://en.wikipedia.org/wiki/Cambodia</page>
+            </location>
+            <location>
+                <name>Attapeu</name>
+                <start>1746</start>
+                <end>1753</end>
+                <lat>14.8</lat>
+                <lon>106.83</lon>
+                <page>https://en.wikipedia.org/wiki/Attapeu</page>
+            </location>
+            <location>
+                <name>Laos</name>
+                <start>1755</start>
+                <end>1759</end>
+                <lat>18</lat>
+                <lon>105</lon>
+                <page>https://en.wikipedia.org/wiki/Laos</page>
+            </location>
+            <location>
+                <name>Binh Phuoc</name>
+                <start>1761</start>
+                <end>1771</end>
+                <lat>11.75</lat>
+                <lon>106.91</lon>
+                <page>https://en.wikipedia.org/wiki/B%C3%ACnh_Ph%C6%B0%E1%BB%9Bc_Province</page>
+            </location>
+            <location>
+                <name>Vietnam</name>
+                <start>1773</start>
+                <end>1780</end>
+                <lat>16.16</lat>
+                <lon>107.83</lon>
+                <page>https://en.wikipedia.org/wiki/Vietnam</page>
+            </location>
+            <location>
+                <name>Myanmar</name>
+                <start>1793</start>
+                <end>1800</end>
+                <lat>22</lat>
+                <lon>96</lon>
+                <page>https://en.wikipedia.org/wiki/Myanmar</page>
+            </location>
+            <location>
+                <name>Pingilikani</name>
+                <start>1806</start>
+                <end>1817</end>
+                <lat>-3.78</lat>
+                <lon>39.78</lon>
+                <page>N/A</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>1819</start>
+                <end>1824</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Kinshasa</name>
+                <start>1846</start>
+                <end>1854</end>
+                <lat>-4.32</lat>
+                <lon>15.32</lon>
+                <page>https://en.wikipedia.org/wiki/Kinshasa</page>
+            </location>
+            <location>
+                <name>DR Congo</name>
+                <start>1856</start>
+                <end>1864</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/African_leaders_start_drive_to_eradicate_malaria</source>
+        <text>The African Leaders Malaria Alliance (ALMA), consisting of leaders of 26 African countries, are beginning a drive to eradicate malaria from the continent by distributing medication, insecticides, and bed nets. US$100 million worth of funds will be given out to battle the disease in endemic nations; the budget was announced yesterday at the World Economic Forum in Dar es Salaam, Tanzania. Ray Chambers, a special envoy for malaria with the United Nations, commented on the push, saying: "We believe that if we cover everybody in Africa with bed nets, insecticides and medication by the end of this year, we will have zero deaths or near zero deaths from malaria in Africa by 2015." A statement from Chambers said the funds will be provided by the US President's Malaria Initiative. The statement continued: "The new US funding comes as ALMA finalises a bulk purchase of long lasting insecticidal nets. This bulk purchase of 50 million long lasting insecticidal nets by twelve African nations will reduce costs and streamline procurement and distribution, accelerating the rate at which nets will begin reaching risk populations [...] African leaders, working together with friends of ALMA, are forging the African-led response needed to solve one of Africa’s most severe health challenges." Tanzanian President Jakaya Kikwete, in comments to the World Economic Forum, said that the same strategy had lowered the incidence of malaria in Zanzibar from 40% to 1%. According to health experts, use of nets can lower the spread of malaria by 50%, and cut child deaths by a fifth. Malaria, a disease spread to humans through infected mosquitoes, costs Africa more than $40 billion annually in sick days and treatment, according to the Reuters news service.</text>
+        <locations>
+            <location>
+                <name>Dar es Salaam</name>
+                <start>367</start>
+                <end>380</end>
+                <lat>-6.8</lat>
+                <lon>39.28</lon>
+                <page>https://en.wikipedia.org/wiki/Dar_es_Salaam</page>
+            </location>
+            <location>
+                <name>Tanzania</name>
+                <start>382</start>
+                <end>390</end>
+                <lat>-6.30</lat>
+                <lon>34.85</lon>
+                <page>https://en.wikipedia.org/wiki/Tanzania</page>
+            </location>
+            <location>
+                <name>US</name>
+                <start>819</start>
+                <end>821</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Zanzibar</name>
+                <start>1439</start>
+                <end>1447</end>
+                <lat>-6.13</lat>
+                <lon>39.31</lon>
+                <page>https://en.wikipedia.org/wiki/Zanzibar</page>
             </location>
         </locations>
     </article>
@@ -6882,12 +7140,6 @@ The governor of the south Sudanese Warab state, Anthony Bol Madut told the Reute
                 <lon></lon>
                 <page></page>
             </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
             <location>
                 <name></name>
                 <start></start>
@@ -6912,12 +7164,14 @@ The governor of the south Sudanese Warab state, Anthony Bol Madut told the Reute
                 <lon></lon>
                 <page></page>
             </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
             <location>
                 <name></name>
                 <start></start>

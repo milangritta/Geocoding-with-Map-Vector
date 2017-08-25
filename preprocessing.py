@@ -84,7 +84,7 @@ def get_coordinates(con, loc_name, pop_only, limit=0):
         return []
 
 
-def construct_1D_grid(a_list, use_pop, smoothing=True):
+def construct_1D_grid(a_list, use_pop):
     """"""
     g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
     for s in a_list:
@@ -93,31 +93,7 @@ def construct_1D_grid(a_list, use_pop, smoothing=True):
             g[index] += 1 + s[2]
         else:
             g[index] += 1
-    if not smoothing:
-        return g
-    else:
-        return g / max(g) if max(g) > 0.0 else g  # FOR REST OF THE GRID
-
-
-def apply_smoothing(g, index, value, smoothing):
-    """"""
-    grid_width = 360 / GRID_SIZE
-    if index % grid_width > 0:  # LEFT
-        g[index - 1] += value * smoothing
-    if index % grid_width != grid_width - 1:  # RIGHT
-        g[index + 1] += value * smoothing
-    if index >= grid_width:  # UP
-        g[index - grid_width] += value * smoothing
-    if index < len(g) - grid_width:  # DOWN
-        g[index + grid_width] += value * smoothing
-    if index >= grid_width and index % grid_width > 0:  # NORTH WEST
-        g[index - 1 - grid_width] += value * smoothing
-    if index >= grid_width and index % grid_width != grid_width - 1:  # NORTH EAST
-        g[index + 1 - grid_width] += value * smoothing
-    if index < len(g) - grid_width and index % grid_width > 0:  # SOUTH WEST
-        g[index - 1 + grid_width] += value * smoothing
-    if index < len(g) - grid_width and index % grid_width != grid_width - 1:  # SOUTH EAST
-        g[index + 1 + grid_width] += value * smoothing
+    return g / max(g) if max(g) > 0.0 else g
 
 
 def construct_2D_grid(a_list, use_pop):
@@ -534,7 +510,7 @@ def training_map():
         for line in training_file:
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
-    c = construct_1D_grid(coordinates, use_pop=False, smoothing=False)
+    c = construct_1D_grid(coordinates, use_pop=False)
     c = np.reshape(c, (90, 180))
     visualise_2D_grid(c, "Training Map", log=True)
 
