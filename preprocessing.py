@@ -454,7 +454,8 @@ def generate_strings_from_file(path):
     while True:
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
-            context = u" ".join(line[2]) + u" ENTITY " + line[6] + u" ENTITY " + u"".join(line[3]) + u"\t" + line[7]
+            context = u" ".join(eval(line[2])) + u" ENTITY " + u" ".join(eval(line[6])) \
+                      + u" ENTITY " + u" ".join(eval(line[3])) + u"\t" + line[7]
             yield ((float(line[0]), float(line[1])), line[6], context)
 
 
