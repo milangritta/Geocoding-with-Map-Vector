@@ -11,7 +11,7 @@ from preprocessing import generate_arrays_from_file, GRID_SIZE
 from subprocess import check_output
 
 UNKNOWN, PADDING = u"<unknown>", u"0.0"
-dimension, input_length = 100, 200
+dimension, input_length = 100, 100
 print(u"Dimension:", dimension)
 print(u"Input length:", input_length)
 

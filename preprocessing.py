@@ -114,7 +114,7 @@ def merge_lists(grids):
     """"""
     out = []
     for g in grids:
-        out.extend(list(g))
+        out.extend(g)
     return out
 
 
@@ -163,7 +163,7 @@ def generate_training_data(context):
         limit = 0
         if line.startswith(u"NEW ARTICLE::"):
             if len(string.strip()) > 0 and len(target) != 0:
-                locations = []
+                locations_left, locations_right = [], []
                 doc = nlp(string)
                 for d in doc:
                     if d.text == target[0]:
@@ -172,14 +172,14 @@ def generate_training_data(context):
                             right = doc[d.i + len(target): d.i + len(target) + context]
                             l, r = [], []
                             location = u""
-                            for (out_list, in_list) in [(l, left), (r, right)]:
+                            for (out_list, in_list, is_left) in [(l, left, True), (r, right, False)]:
                                 for index, item in enumerate(in_list):
                                     if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
-                                        if item.ent_iob_ == "B" and item.text.lower() == u"the":
-                                            out_list.append(u"LOC")
+                                        if item.ent_iob_ == u"B" and item.text.lower() == u"the":
+                                            out_list.append(item.text.lower())
                                         else:
                                             location += item.text + u" "
-                                            out_list.append(u"0.0")
+                                            out_list.append(u"**LOC**" + item.text.lower())
                                     elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY"
                                                             u"QUANTITY", u"CARDINAL", u"ORDINAL"]:
                                         out_list.append(u"0.0")
@@ -196,24 +196,31 @@ def generate_training_data(context):
                                     else:
                                         out_list.append(item.lemma_)
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
-                                        if location.strip() != u" ".join(target):  # do not use the target itself
-                                            coords = get_coordinates(c, location.strip(), pop_only=True)
-                                            if len(coords) > 0:
-                                                locations.append(coords)
+                                        coords = get_coordinates(c, location.strip(), pop_only=True)
+                                        if len(coords) > 0:
+                                            ratio = index / float(context) if is_left else 1 - index / float(context)
+                                            for coord in coords:
+                                                coords.append((coord[0], coord[1], coord[2] * ratio, coord[3]))
+                                                coords.remove(coord)
+                                            if is_left:
+                                                locations_left.append(coords)
                                             else:
-                                                offset = 1 if index == len(in_list) - 1 else 0
-                                                for i in range(index - len(location.split()), index):
-                                                    out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[i + offset].is_punct else u"0.0"
+                                                locations_right.append(coords)
+                                        else:
+                                            offset = 1 if index == len(in_list) - 1 else 0
+                                            for i in range(index - len(location.split()), index):
+                                                out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[i + offset].is_punct else u"0.0"
                                         location = u""
                             target_grid = get_coordinates(c, u" ".join(target), pop_only=True)
                             if len(target_grid) == 0:
                                 skipped += 1
                                 break
-                            entities_grid = merge_lists(locations)
-                            locations = []
+                            entities_left = merge_lists(locations_left)
+                            entities_right = merge_lists(locations_right)
+                            locations_left, locations_right = [], []
                             o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                            o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + u" ".join(target) + u"\t" +
-                            u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
+                            o.write(str(target_grid) + u"\t" + str([t.lower() for t in target]))
+                            o.write(u"\t" + str(entities_left) + u"\t" + str(entities_right) + u"\n")
                             limit += 1
                             if limit > 24:
                                 break
@@ -400,55 +407,6 @@ def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True
                 yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
 
 
-def generate_arrays_from_file_old(path, w2i, input_length, batch_size=64, train=True):
-    """For backward compatibility in case I want to run/test older (smaller) models"""
-    while True:
-        training_file = codecs.open(path, "r", encoding="utf-8")
-        counter = 0
-        X_L, X_R, X_E, X_T, Y = [], [], [], [], []
-        for line in training_file:
-            counter += 1
-            line = line.strip().split("\t")
-            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
-            X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
-            X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
-            X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
-            X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
-            if counter % batch_size == 0:
-                for x_l, x_r in zip(X_L, X_R):
-                    for i, w in enumerate(x_l):
-                        if w in w2i:
-                            x_l[i] = w2i[w]
-                        else:
-                            x_l[i] = w2i[u"<unknown>"]
-                    for i, w in enumerate(x_r):
-                        if w in w2i:
-                            x_r[i] = w2i[w]
-                        else:
-                            x_r[i] = w2i[u"<unknown>"]
-                if train:
-                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
-                else:
-                    yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
-                X_L, X_R, X_E, X_T, Y = [], [], [], [], []
-        if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
-            for x_l, x_r in zip(X_L, X_R):
-                for i, w in enumerate(x_l):
-                    if w in w2i:
-                        x_l[i] = w2i[w]
-                    else:
-                        x_l[i] = w2i[u"<unknown>"]
-                for i, w in enumerate(x_r):
-                    if w in w2i:
-                        x_r[i] = w2i[w]
-                    else:
-                        x_r[i] = w2i[u"<unknown>"]
-            if train:
-                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)], np.asarray(Y))
-            else:
-                yield ([np.asarray(X_L), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
-
-
 def generate_strings_from_file(path):
     """Returns Y, NAME and CONTEXT"""
     while True:
@@ -524,7 +482,7 @@ def training_map():
 # l = np.reshape(l, (180 / GRID_SIZE, 360 / GRID_SIZE))
 # visualise_2D_grid(l, "exp")
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
-# generate_training_data(context=150)
+# generate_training_data(context=100)
 # generate_evaluation_data(corpus="wiki", file_name="_yahoo", context=200)
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
