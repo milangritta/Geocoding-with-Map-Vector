@@ -9,7 +9,15 @@ import sqlite3
 from matplotlib import pyplot, colors
 from scipy.spatial.distance import euclidean
 
+
+# -------- GLOBAL PARAMETERS -------- #
 GRID_SIZE = 2
+BATCH_SIZE = 128
+CONTEXT_LENGTH = 100
+UNKNOWN = u"<unknown>"
+PADDING = u"0.0"
+EMB_DIM = 100
+# -------- GLOBAL PARAMETERS -------- #
 
 
 def print_stats(accuracy):
@@ -146,7 +154,7 @@ def populate_geosql():
     conn.close()
 
 
-def generate_training_data(context):
+def generate_training_data():
     """Prepare Wikipedia training data."""
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -168,8 +176,8 @@ def generate_training_data(context):
                 for d in doc:
                     if d.text == target[0]:
                         if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                            left = doc[max(0, d.i - context):d.i]
-                            right = doc[d.i + len(target): d.i + len(target) + context]
+                            left = doc[max(0, d.i - CONTEXT_LENGTH):d.i]
+                            right = doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]
                             l, r = [], []
                             location = u""
                             for (out_list, in_list, is_left) in [(l, left, True), (r, right, False)]:
@@ -198,7 +206,8 @@ def generate_training_data(context):
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
                                         coords = get_coordinates(c, location.strip(), pop_only=True)
                                         if len(coords) > 0:
-                                            ratio = index / float(context) if is_left else 1 - index / float(context)
+                                            ratio = index / float(CONTEXT_LENGTH) if is_left \
+                                                                                 else 1 - index / float(CONTEXT_LENGTH)
                                             for coord in coords:
                                                 coords.append((coord[0], coord[1], coord[2] * ratio, coord[3]))
                                                 coords.remove(coord)
@@ -242,7 +251,7 @@ def generate_training_data(context):
     o.close()
 
 
-def generate_evaluation_data(corpus, file_name, context):
+def generate_evaluation_data(corpus, file_name):
     """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -270,8 +279,8 @@ def generate_evaluation_data(corpus, file_name, context):
                         if abs(d.idx - start) > 2 or abs(d.idx + ent_length - end) > 2:
                             continue
                         captured = True
-                        left = doc[max(0, d.i - context):d.i]
-                        right = doc[d.i + len(target): d.i + len(target) + context]
+                        left = doc[max(0, d.i - CONTEXT_LENGTH):d.i]
+                        right = doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]
                         l, r = [], []
                         location = u""
                         for (out_list, in_list) in [(l, left), (r, right)]:
@@ -352,59 +361,73 @@ def generate_vocabulary():
     print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, w2i, input_length, batch_size=64, train=True, oneDim=True):
+def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        X_L, X_R, X_E, X_T, Y, Y2 = [], [], [], [], [], []
+        left_words, right_words, left_entities, right_entities, labels = [], [], [], [], []
+        left_entities_coord, right_entities_coord, target_coord, target_string = [], [], [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            Y.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
-            X_L.append(pad_list(input_length, eval(line[2].lower()), from_left=True)[-input_length:])
-            X_R.append(pad_list(input_length, eval(line[3].lower()), from_left=False)[:input_length])
+            labels.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+
+            left = [w for w in eval(line[2]) if u"***LOC***" not in w]
+            right = [w for w in eval(line[3]) if u"***LOC***" not in w]
+            left_words.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
+            right_words.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
+
+            left = [w.replace(u"***LOC***", u"") for w in eval(line[2]) if u"***LOC***" in w]
+            right = [w.replace(u"***LOC***", u"") for w in eval(line[3]) if u"***LOC***" in w]
+            left_entities.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
+            right_entities.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
+
             if oneDim:
-                X_T.append(construct_1D_grid(eval(line[4]), use_pop=True))
-                X_E.append(construct_1D_grid(eval(line[5]), use_pop=False))
+                target_coord.append(construct_1D_grid(eval(line[4]), use_pop=True))
+                left_entities_coord.append(construct_1D_grid(eval(line[6]), use_pop=True))
+                right_entities_coord.append(construct_1D_grid(eval(line[7]), use_pop=True))
             else:
-                X_T.append([construct_2D_grid(eval(line[4]), use_pop=True)])
-                X_E.append([construct_2D_grid(eval(line[5]), use_pop=False)])
-            if counter % batch_size == 0:
-                for x_l, x_r in zip(X_L, X_R):
-                    for i, w in enumerate(x_l):
+                target_coord.append([construct_2D_grid(eval(line[4]), use_pop=True)])
+                left_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
+                right_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
+
+            target_string = eval(line[5])
+
+            if counter % BATCH_SIZE == 0:
+                for x in [left_words, right_words, left_entities, right_entities]:
+                    for i, w in enumerate(x):
                         if w in w2i:
-                            x_l[i] = w2i[w]
+                            x[i] = w2i[w]
                         else:
-                            x_l[i] = w2i[u"<unknown>"]
-                    for i, w in enumerate(x_r):
-                        if w in w2i:
-                            x_r[i] = w2i[w]
-                        else:
-                            x_r[i] = w2i[u"<unknown>"]
+                            x[i] = w2i[u"<unknown>"]
                 if train:
-                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
-                                np.asarray(X_T)], np.asarray(Y))
+                    yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
+                            np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                            np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
                 else:
-                    yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
-                X_L, X_R, X_E, X_T, Y, Y2 = [], [], [], [], [], []
-        if len(Y) > 0:  # This block is only ever entered at the end to yield the final few samples. (< batch_size)
-            for x_l, x_r in zip(X_L, X_R):
-                for i, w in enumerate(x_l):
+                    yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
+                            np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                            np.asarray(target_coord), np.asarray(target_string)])
+
+                left_words, right_words, left_entities, right_entities, labels = [], [], [], [], []
+                left_entities_coord, right_entities_coord, target_coord, target_string = [], [], [], []
+
+        if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
+            for x in [left_words, right_words, left_entities, right_entities]:
+                for i, w in enumerate(x):
                     if w in w2i:
-                        x_l[i] = w2i[w]
+                        x[i] = w2i[w]
                     else:
-                        x_l[i] = w2i[u"<unknown>"]
-                for i, w in enumerate(x_r):
-                    if w in w2i:
-                        x_r[i] = w2i[w]
-                    else:
-                        x_r[i] = w2i[u"<unknown>"]
+                        x[i] = w2i[u"<unknown>"]
             if train:
-                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E),
-                            np.asarray(X_T)], np.asarray(Y))
+                yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
+                        np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                        np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
             else:
-                yield ([np.asarray(X_L), np.asarray(X_L), np.asarray(X_R), np.asarray(X_R), np.asarray(X_E), np.asarray(X_T)])
+                yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
+                        np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                        np.asarray(target_coord), np.asarray(target_string)])
 
 
 def generate_strings_from_file(path):
@@ -482,8 +505,8 @@ def training_map():
 # l = np.reshape(l, (180 / GRID_SIZE, 360 / GRID_SIZE))
 # visualise_2D_grid(l, "exp")
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
-# generate_training_data(context=100)
-# generate_evaluation_data(corpus="wiki", file_name="_yahoo", context=200)
+generate_training_data()
+# generate_evaluation_data(corpus="wiki", file_name="_yahoo")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()

@@ -3,12 +3,11 @@ import codecs
 import numpy as np
 import cPickle
 import sqlite3
-# import pprint
 import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
@@ -17,8 +16,7 @@ if len(sys.argv) > 1:
 else:
     data = u"lgl"
 
-input_length = 200
-print(u"Input length:", input_length)
+print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data)
 vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
@@ -34,10 +32,9 @@ errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 final_error = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, input_length, train=False, oneDim=True),
-        steps=int(check_output(["wc", file_name]).split()[0]) / 64), generate_strings_from_file(file_name)):
-
-    # confidence = max(p)
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, CONTEXT_LENGTH,
+                                 train=False, oneDim=True), steps=int(check_output(["wc", file_name]).split()[0]) / 64),
+                                 generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name, pop_only=True)
 
@@ -75,7 +72,6 @@ print_stats(final_error)
 print(u"Processed file", file_name)
 
 # ---------------- DIAGNOSTICS --------------------
-# pprint.pprint(model.get_config())
 # plt.plot(range(len(choice)), np.log(1 + np.asarray(sorted(choice))))
 # plt.xlabel(u"Predictions")
 # plt.ylabel(u'Error Size')
