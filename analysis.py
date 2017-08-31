@@ -22,7 +22,7 @@ if True:  # add CDATA xml construct?
                 print chunk, name
             lat = location.find('lat').text
             lon = location.find('lon').text
-            coords = get_coordinates(c, name, pop_only=False)
+            coords = get_coordinates(c, name)
             dist = 10000.0
             for coord in coords:
                 gap = great_circle((float(lat), float(lon)), (coord[0], coord[1])).km

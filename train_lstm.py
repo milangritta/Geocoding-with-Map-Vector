@@ -13,22 +13,22 @@ from subprocess import check_output
 print(u"Dimension:", EMB_DIM)
 print(u"Input length:", CONTEXT_LENGTH)
 
-vocabulary = cPickle.load(open("data/vocabulary.pkl"))
+vocabulary = cPickle.load(open(u"data/vocabulary.pkl"))
 print(u"Vocabulary Size:", len(vocabulary))
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Preparing vectors...')
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 
 vectors = {UNKNOWN: np.ones(EMB_DIM), PADDING: np.ones(EMB_DIM)}
-for line in codecs.open("../data/glove.twitter." + str(EMB_DIM) + "d.txt", encoding="utf-8"):
+for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
     if line.strip() == "":
         continue
     t = line.split()
     vectors[t[0]] = [float(x) for x in t[1:]]
 print(u'Loaded Twitter vectors...', len(vectors))
 
-for line in codecs.open("../data/glove." + str(EMB_DIM) + "d.txt", encoding="utf-8"):
-    if line.strip() == "":
+for line in codecs.open(u"../data/glove." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
+    if line.strip() == u"":
         continue
     t = line.split()
     vectors[t[0]] = [float(x) for x in t[1:]]
@@ -42,6 +42,7 @@ for w in vocabulary:
     else:
         weights[word_to_index[w]] = np.random.normal(size=(EMB_DIM,), scale=0.3)
         oov += 1
+
 weights = np.array([weights])
 print(u'Done preparing vectors...')
 print(u"OOV (no vectors):", oov)

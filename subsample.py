@@ -30,7 +30,7 @@ for line in codecs.open(input_file, "r", encoding="utf-8"):
             split = line.split("\t")
             wiki_coordinates = (float(split[0]), float(split[1]))
             name = split[-2]
-            db_coordinates = get_coordinates(c, name, pop_only=False)  # CAREFUL WITH THIS ONE!!!!
+            db_coordinates = get_coordinates(c, name)
             distance = []
             for candidate in db_coordinates:
                 distance.append(great_circle(wiki_coordinates, (float(candidate[0]), float(candidate[1]))).kilometers)

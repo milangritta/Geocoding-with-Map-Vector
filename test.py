@@ -7,7 +7,8 @@ import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH, \
+    BATCH_SIZE
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
@@ -31,12 +32,12 @@ print(u'Crunching numbers, sit tight...')
 errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
-final_error = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, CONTEXT_LENGTH,
-                                 train=False, oneDim=True), steps=int(check_output(["wc", file_name]).split()[0]) / 64),
+final_errors = []
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False,
+                                 oneDim=True), steps=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE),
                                  generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
-    candidates = get_coordinates(conn.cursor(), name, pop_only=True)
+    candidates = get_coordinates(conn.cursor(), name)
 
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
@@ -51,7 +52,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         y_to_geonames.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).km)
         best_candidate.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).km, (float(candidate[0]), float(candidate[1]))))
     best_candidate = sorted(best_candidate, key=lambda (a, b): a)[0]
-    final_error.append(great_circle(best_candidate[1], y).km)
+    final_errors.append(great_circle(best_candidate[1], y).km)
 
     dist_p, dist_y, index_p, index_y = 50000, 50000, 0, 0
     for index, candidate in enumerate(population):
@@ -63,12 +64,12 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
             index_y = index
 
     errors.write(name + u"\t" + unicode(y) + u"\t" + unicode(p) + "\t" + unicode(best_candidate[1])
-                 + u"\t" + unicode(index_y) + u"\t" + unicode(index_p) + u"\t" + unicode(final_error[-1]) + u"\t" +
+                 + u"\t" + unicode(index_y) + u"\t" + unicode(index_p) + u"\t" + unicode(final_errors[-1]) + u"\t" +
                  unicode(best_candidate[0]) + u"\t" + unicode(len(population)) + u"\t" + unicode(sorted(y_to_geonames)[0])
                  + u"\t" + context + u"\n")
     # print("-----------------------------------------------------------------------------------------------------------")
 
-print_stats(final_error)
+print_stats(final_errors)
 print(u"Processed file", file_name)
 
 # ---------------- DIAGNOSTICS --------------------

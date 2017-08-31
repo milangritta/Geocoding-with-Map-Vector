@@ -6,16 +6,18 @@ import matplotlib.pyplot as plt
 import spacy
 import numpy as np
 import sqlite3
+
+from geopy.distance import great_circle
 from matplotlib import pyplot, colors
 from scipy.spatial.distance import euclidean
 
 
 # -------- GLOBAL PARAMETERS -------- #
 GRID_SIZE = 2
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 CONTEXT_LENGTH = 100
 UNKNOWN = u"<unknown>"
-PADDING = u"0.0"
+PADDING = u"0"
 EMB_DIM = 100
 # -------- GLOBAL PARAMETERS -------- #
 
@@ -61,33 +63,26 @@ def index_to_coord(index):
     x = int(index / (360 / GRID_SIZE))
     y = index % (360 / GRID_SIZE)
     if x > (90 / GRID_SIZE):
-        x = -(x - (90 / GRID_SIZE)) * GRID_SIZE  # - GRID_SIZE / 2.0
+        x = -(x - (90 / GRID_SIZE)) * GRID_SIZE
     else:
-        x = ((90 / GRID_SIZE) - x) * GRID_SIZE  # + GRID_SIZE / 2.0
+        x = ((90 / GRID_SIZE) - x) * GRID_SIZE
     if y < (180 / GRID_SIZE):
-        y = -((180 / GRID_SIZE) - y) * GRID_SIZE  # - GRID_SIZE / 2.0
+        y = -((180 / GRID_SIZE) - y) * GRID_SIZE
     else:
-        y = (y - (180 / GRID_SIZE)) * GRID_SIZE  # + GRID_SIZE / 2.0
+        y = (y - (180 / GRID_SIZE)) * GRID_SIZE
     return x, y
 
 
-def get_coordinates(con, loc_name, pop_only, limit=0):
+def get_coordinates(con, loc_name):
     """"""
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
         result = eval(result[0])
-        result = sorted(result, key=lambda (a, b, c, d): c)
-        if limit > 0:
-            result = result[-limit:]
-        if pop_only:
-            if result[-1][2] == 0:
-                return result
-            else:
-                return [r for r in result if r[2] > 0]
-                # return sorted(result, key=lambda x:x[2], reverse=True)[:10]
-                # return [r for r in result if r[3] in [u'A', u'P']]
-        else:
+        result = sorted(result, key=lambda (a, b, c): c, reverse=True)[:100]  # sanity limit of 100
+        if result[0][2] == 0:
             return result
+        else:
+            return [r for r in result if r[2] > 0]  # only nonzero population
     else:
         return []
 
@@ -126,10 +121,10 @@ def merge_lists(grids):
     return out
 
 
-def populate_geosql():
+def populate_sql():
     """Create and populate the sqlite database with GeoNames data"""
     geo_names = {}
-    f = codecs.open(u"../data/allCountries.txt", "r", encoding="utf-8")
+    f = codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8")
 
     for line in f:
         line = line.split("\t")
@@ -137,9 +132,14 @@ def populate_geosql():
             name = name.lower()
             if len(name) != 0:
                 if name in geo_names:
-                    geo_names[name].add((float(line[4]), float(line[5]), int(line[14]), line[6]))
+                    already_have_entry = False
+                    for item in geo_names[name]:
+                        if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 50:
+                            already_have_entry = True
+                    if not already_have_entry:
+                        geo_names[name].add((float(line[4]), float(line[5]), int(line[14])))
                 else:
-                    geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]), line[6])}
+                    geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]))}
 
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -158,9 +158,9 @@ def generate_training_data():
     """Prepare Wikipedia training data."""
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
-    nlp = spacy.load('en')
-    f = codecs.open(u"../data/geowiki.txt", "r", encoding="utf-8")
-    o = codecs.open(u"../data/train_wiki.txt", "w", encoding="utf-8")
+    nlp = spacy.load(u'en')
+    f = codecs.open(u"../data/geowiki.txt", u"r", encoding=u"utf-8")
+    o = codecs.open(u"../data/train_wiki.txt", u"w", encoding=u"utf-8")
     lat, lon = u"", u""
     target, string = u"", u""
     skipped = 0
@@ -188,28 +188,28 @@ def generate_training_data():
                                         else:
                                             location += item.text + u" "
                                             out_list.append(u"**LOC**" + item.text.lower())
-                                    elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY"
+                                    elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY",
                                                             u"QUANTITY", u"CARDINAL", u"ORDINAL"]:
-                                        out_list.append(u"0.0")
+                                        out_list.append(PADDING)
                                     elif item.is_punct:
-                                        out_list.append(u"0.0")
+                                        out_list.append(PADDING)
                                     elif item.is_digit or item.like_num:
-                                        out_list.append(u"0.0")
+                                        out_list.append(PADDING)
                                     elif item.like_email:
-                                        out_list.append(u"0.0")
+                                        out_list.append(PADDING)
                                     elif item.like_url:
-                                        out_list.append(u"0.0")
+                                        out_list.append(PADDING)
                                     elif item.is_stop:
-                                        out_list.append(u"0.0")
+                                        out_list.append(PADDING)
                                     else:
                                         out_list.append(item.lemma_)
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
-                                        coords = get_coordinates(c, location.strip(), pop_only=True)
+                                        coords = get_coordinates(c, location.strip())
                                         if len(coords) > 0:
                                             ratio = index / float(CONTEXT_LENGTH) if is_left \
                                                                                  else 1 - index / float(CONTEXT_LENGTH)
                                             for coord in coords:
-                                                coords.append((coord[0], coord[1], coord[2] * ratio, coord[3]))
+                                                coords.append((coord[0], coord[1], int(coord[2] * ratio), coord[3]))
                                                 coords.remove(coord)
                                             if is_left:
                                                 locations_left.append(coords)
@@ -218,9 +218,9 @@ def generate_training_data():
                                         else:
                                             offset = 1 if index == len(in_list) - 1 else 0
                                             for i in range(index - len(location.split()), index):
-                                                out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[i + offset].is_punct else u"0.0"
+                                                out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[i + offset].is_punct else PADDING
                                         location = u""
-                            target_grid = get_coordinates(c, u" ".join(target), pop_only=True)
+                            target_grid = get_coordinates(c, u" ".join(target))
                             if len(target_grid) == 0:
                                 skipped += 1
                                 break
@@ -228,10 +228,10 @@ def generate_training_data():
                             entities_right = merge_lists(locations_right)
                             locations_left, locations_right = [], []
                             o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                            o.write(str(target_grid) + u"\t" + str([t.lower() for t in target]))
+                            o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:10])) # MAX LENGTH = 10!
                             o.write(u"\t" + str(entities_left) + u"\t" + str(entities_right) + u"\n")
                             limit += 1
-                            if limit > 24:
+                            if limit > 29:
                                 break
             line = line.strip().split("\t")
             if u"(" in line[1]:
@@ -252,22 +252,24 @@ def generate_training_data():
 
 
 def generate_evaluation_data(corpus, file_name):
-    """Prepare WikToR and LGL data. Only the subsets i.e. (2202 WIKTOR, 787 LGL)"""
+    """Prepare WikToR and LGL data. Only the subsets i.e. (2,202 WikToR, 787 LGL)"""
+
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
-    nlp = spacy.load('en')
-    directory = u"../data/" + corpus + "/"
-    o = codecs.open(u"data/eval_" + corpus + file_name + ".txt", "w", encoding="utf-8")
-    line_no = 0 if corpus == "lgl" else -1
+    nlp = spacy.load(u'en')
+    directory = u"../data/" + corpus + u"/"
+    o = codecs.open(u"data/eval_" + corpus + file_name + u".txt", u"w", encoding=u"utf-8")
+    line_no = 0 if corpus == u"lgl" else -1
 
-    for line in codecs.open("data/" + corpus + file_name + ".txt", "r", encoding="utf-8"):
+    for line in codecs.open(u"data/" + corpus + file_name + u".txt", u"r", encoding=u"utf-8"):
         line_no += 1
         if len(line.strip()) == 0:
             continue
-        for toponym in line.split("||")[:-1]:
+        for toponym in line.split(u"||")[:-1]:
             captured = False
-            doc = nlp(codecs.open(directory + str(line_no), "r", encoding="utf-8").read())
-            toponym = toponym.split(",,")
+            doc = nlp(codecs.open(directory + str(line_no), u"r", encoding=u"utf-8").read())
+            locations_left, locations_right = [], []
+            toponym = toponym.split(u",,")
             target = toponym[1].split()
             ent_length = len(u" ".join(target))
             lat, lon = toponym[2], toponym[3]
@@ -275,7 +277,6 @@ def generate_evaluation_data(corpus, file_name):
             for d in doc:
                 if d.text == target[0]:
                     if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                        locations = []
                         if abs(d.idx - start) > 2 or abs(d.idx + ent_length - end) > 2:
                             continue
                         captured = True
@@ -283,47 +284,58 @@ def generate_evaluation_data(corpus, file_name):
                         right = doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]
                         l, r = [], []
                         location = u""
-                        for (out_list, in_list) in [(l, left), (r, right)]:
+                        for (out_list, in_list, is_left) in [(l, left, True), (r, right, False)]:
                             for index, item in enumerate(in_list):
                                 if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
-                                    if item.ent_iob_ == "B" and item.text.lower() == u"the":
-                                        out_list.append(u"LOC")
+                                    if item.ent_iob_ == u"B" and item.text.lower() == u"the":
+                                        out_list.append(item.text.lower())
                                     else:
                                         location += item.text + u" "
-                                        out_list.append(u"0.0")
-                                elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY"
+                                        out_list.append(u"**LOC**" + item.text.lower())
+                                elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY",
                                                         u"QUANTITY", u"CARDINAL", u"ORDINAL"]:
-                                    out_list.append(u"0.0")
+                                    out_list.append(PADDING)
                                 elif item.is_punct:
-                                    out_list.append(u"0.0")
+                                    out_list.append(PADDING)
                                 elif item.is_digit or item.like_num:
-                                    out_list.append(u"0.0")
+                                    out_list.append(PADDING)
                                 elif item.like_email:
-                                    out_list.append(u"0.0")
+                                    out_list.append(PADDING)
                                 elif item.like_url:
-                                    out_list.append(u"0.0")
+                                    out_list.append(PADDING)
                                 elif item.is_stop:
-                                    out_list.append(u"0.0")
+                                    out_list.append(PADDING)
                                 else:
                                     out_list.append(item.lemma_)
                                 if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
-                                    if location.strip() != u" ".join(target):
-                                        coords = get_coordinates(c, location.strip(), pop_only=True)
-                                        if len(coords) > 0:
-                                            locations.append(coords)
+                                    coords = get_coordinates(c, location.strip())
+                                    if len(coords) > 0:
+                                        ratio = index / float(CONTEXT_LENGTH) if is_left \
+                                            else 1 - index / float(CONTEXT_LENGTH)
+                                        for coord in coords:
+                                            coords.append((coord[0], coord[1], int(coord[2] * ratio), coord[3]))
+                                            coords.remove(coord)
+                                        if is_left:
+                                            locations_left.append(coords)
                                         else:
-                                            offset = 1 if index == len(in_list) - 1 else 0
-                                            for i in range(index - len(location.split()), index):
-                                                out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[i + offset].is_punct else u"0.0"
+                                            locations_right.append(coords)
+                                    else:
+                                        offset = 1 if index == len(in_list) - 1 else 0
+                                        for i in range(index - len(location.split()), index):
+                                            out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[
+                                                i + offset].is_punct else PADDING
                                     location = u""
-                        db_entry = toponym[0] if corpus == "lgl" else toponym[1]
-                        target_grid = get_coordinates(c, db_entry, pop_only=True)
+
+                        db_entry = toponym[0] if corpus == u"lgl" else toponym[1]
+                        target_grid = get_coordinates(c, db_entry)
                         if len(target_grid) == 0:
                             raise Exception(u"No entry in the database!", db_entry)
-                        entities_grid = merge_lists(locations)
+                        entities_left = merge_lists(locations_left)
+                        entities_right = merge_lists(locations_right)
+                        locations_left, locations_right = [], []
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                        o.write(str(target_grid) + u"\t" + str(entities_grid) + u"\t" + db_entry + u"\t" +
-                        u" ".join([s.text for s in left]).strip() + u" ".join([s.text for s in right]).strip() + u"\n")
+                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:10]))  # MAX LENGTH = 10!
+                        o.write(u"\t" + str(entities_left) + u"\t" + str(entities_right) + u"\n")
             if not captured:
                 print line_no, line, target, start, end
     o.close()
@@ -344,9 +356,9 @@ def visualise_2D_grid(x, title, log=False):
 
 def generate_vocabulary():
     """Prepare the vocabulary for NN training."""
-    vocabulary = {u"<unknown>", u"0.0"}
+    vocabulary = {UNKNOWN, PADDING}
     temp = []
-    for f in [u"../data/train_wiki.txt", u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
+    for f in [u"../data/train_wiki.txt"]:  # , u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
@@ -355,7 +367,7 @@ def generate_vocabulary():
 
     c = Counter(temp)
     for item in c:
-        if c[item] > 5:
+        if c[item] > 2:
             vocabulary.add(item)
     cPickle.dump(vocabulary, open(u"data/vocabulary.pkl", "w"))
     print(u"Vocabulary Size:", len(vocabulary))
@@ -392,7 +404,7 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                 left_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
                 right_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
 
-            target_string = eval(line[5])
+            target_string = pad_list(10, eval(line[5]), from_left=True)
 
             if counter % BATCH_SIZE == 0:
                 for x in [left_words, right_words, left_entities, right_entities]:
@@ -400,7 +412,7 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                         if w in w2i:
                             x[i] = w2i[w]
                         else:
-                            x[i] = w2i[u"<unknown>"]
+                            x[i] = w2i[UNKNOWN]
                 if train:
                     yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
                             np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
@@ -419,7 +431,7 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                     if w in w2i:
                         x[i] = w2i[w]
                     else:
-                        x[i] = w2i[u"<unknown>"]
+                        x[i] = w2i[UNKNOWN]
             if train:
                 yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
                         np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
@@ -435,9 +447,8 @@ def generate_strings_from_file(path):
     while True:
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
-            context = u" ".join(eval(line[2])) + u" ENTITY " + u" ".join(eval(line[6])) \
-                      + u" ENTITY " + u" ".join(eval(line[3])) + u"\t" + line[7]
-            yield ((float(line[0]), float(line[1])), line[6], context)
+            context = u" ".join(eval(line[2])) + u"*E*" + u" ".join(eval(line[5])) + u"*E*" + u" ".join(eval(line[3]))
+            yield ((float(line[0]), float(line[1])), line[5], context)
 
 
 def compute_embedding_distances(W, dim):
@@ -493,26 +504,22 @@ def training_map():
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
     c = construct_1D_grid(coordinates, use_pop=False)
-    c = np.reshape(c, (90, 180))
+    c = np.reshape(c, (180 / GRID_SIZE, 360 / GRID_SIZE))
     visualise_2D_grid(c, "Training Map", log=True)
 
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
-# l = list(construct_1D_grid([(-81.8, -109.98333, 1000), (-80, -104.98333, 80), (-82.5, -102, 50)], use_pop=True, is_y=False))
-# l = list(construct_1D_grid([(-61.8, -109.98333, 1000)], use_pop=True, is_y=True))
-# print(l)
-# l = np.reshape(l, (180 / GRID_SIZE, 360 / GRID_SIZE))
-# visualise_2D_grid(l, "exp")
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
-generate_training_data()
-# generate_evaluation_data(corpus="wiki", file_name="_yahoo")
+
+# generate_training_data()
+# generate_evaluation_data(corpus="wiki", file_name="_gold")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Bethlehem", pop_only=True))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"raslavice"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
@@ -520,14 +527,7 @@ generate_training_data()
 # c.execute("DELETE FROM GEO WHERE name = 'darfur'")
 # conn.commit()
 
-# from geopy.geocoders import geonames
-# g = geonames.GeoNames(username='milangritta')
-# g = g.geocode(u"Las Vegas", exactly_one=False)
-
-# conn = sqlite3.connect('../data/geonames.db')
-# print(len(eval(get_coordinates(conn.cursor(), u"Las Vegas"))))
-# print len(g)
-# populate_geosql()
+populate_sql()
 
 # for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
@@ -541,11 +541,6 @@ generate_training_data()
 #     x = construct_2D_grid(eval(line[5]), use_pop=False)
 #     print(get_non_zero_entries(x))
 #     visualise_2D_grid(x, line[6] + u" entities.")
-
-# from wikipedia import wikipedia
-# search = wikipedia.search(u"N.C.", results=30)
-# for s in search:
-#     print s
 
 # c = []
 # for line in codecs.open("/Users/milangritta/PycharmProjects/Research/data/lgl_edin.txt", "r", encoding="utf-8"):
