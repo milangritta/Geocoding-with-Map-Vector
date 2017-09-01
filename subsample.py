@@ -10,7 +10,7 @@ frequency = 3       # 1 means take EVERY sample, 2 means take every SECOND sampl
 output_file = u"../data/train_wiki_uniform.txt"
 input_file = u"../data/train_wiki.txt"
 
-filtering = False   # Do you want to filter samples with coordinate errors?
+filtering = True    # Do you want to filter samples with coordinate errors?
 filtered_count = 0  # Keeping track of how many get filtered out
 saved_count = 0     # Keeping track of how many samples were saved
 max_distance = 250  # The maximum size of the coordinate error (1 degree = 110km)
@@ -29,7 +29,7 @@ for line in codecs.open(input_file, "r", encoding="utf-8"):
         else:
             split = line.split("\t")
             wiki_coordinates = (float(split[0]), float(split[1]))
-            name = split[-2]
+            name = u" ".join(eval(split[5])).strip()
             db_coordinates = get_coordinates(c, name)
             distance = []
             for candidate in db_coordinates:

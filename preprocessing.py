@@ -82,7 +82,7 @@ def get_coordinates(con, loc_name):
         if result[0][2] == 0:
             return result
         else:
-            return [r for r in result if r[2] > 0]  # only nonzero population
+            return [r for r in result if r[2] > 0]  # only nonzero population for a sanity limit
     else:
         return []
 
@@ -209,7 +209,7 @@ def generate_training_data():
                                             ratio = index / float(CONTEXT_LENGTH) if is_left \
                                                                                  else 1 - index / float(CONTEXT_LENGTH)
                                             for coord in coords:
-                                                coords.append((coord[0], coord[1], int(coord[2] * ratio), coord[3]))
+                                                coords.append((coord[0], coord[1], int(coord[2] * ratio)))
                                                 coords.remove(coord)
                                             if is_left:
                                                 locations_left.append(coords)
@@ -313,7 +313,7 @@ def generate_evaluation_data(corpus, file_name):
                                         ratio = index / float(CONTEXT_LENGTH) if is_left \
                                             else 1 - index / float(CONTEXT_LENGTH)
                                         for coord in coords:
-                                            coords.append((coord[0], coord[1], int(coord[2] * ratio), coord[3]))
+                                            coords.append((coord[0], coord[1], int(coord[2] * ratio)))
                                             coords.remove(coord)
                                         if is_left:
                                             locations_left.append(coords)
@@ -513,7 +513,7 @@ def training_map():
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="wiki", file_name="_gold")
+# generate_evaluation_data(corpus="wiki", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
@@ -527,7 +527,7 @@ def training_map():
 # c.execute("DELETE FROM GEO WHERE name = 'darfur'")
 # conn.commit()
 
-populate_sql()
+# populate_sql()
 
 # for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
