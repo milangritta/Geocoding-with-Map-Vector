@@ -18,7 +18,7 @@ BATCH_SIZE = 64
 CONTEXT_LENGTH = 100
 UNKNOWN = u"<unknown>"
 PADDING = u"0"
-EMB_DIM = 100
+EMB_DIM = 50
 # -------- GLOBAL PARAMETERS -------- #
 
 
@@ -454,12 +454,14 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                 left_entities_coord, right_entities_coord, target_coord, target_string = [], [], [], []
 
         if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
-            for x in [left_words, right_words, left_entities, right_entities]:
-                for i, w in enumerate(x):
-                    if w in w2i:
-                        x[i] = w2i[w]
-                    else:
-                        x[i] = w2i[UNKNOWN]
+            for collection in [left_words, right_words, left_entities, right_entities, target_string]:
+                for x in collection:
+                    for i, w in enumerate(x):
+                        if w in w2i:
+                            x[i] = w2i[w]
+                        else:
+                            x[i] = w2i[UNKNOWN]
+
             if train:
                 yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
                         np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
@@ -526,7 +528,7 @@ def filter_wiktor():
 
 def training_map():
     coordinates = []
-    for f in [u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
+    for f in [u"../data/train_wiki_uniform.txt"]:
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
