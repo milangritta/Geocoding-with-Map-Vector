@@ -39,9 +39,9 @@ def pad_list(size, a_list, from_left):
     """"""
     while len(a_list) < size:
         if from_left:
-            a_list = [0.0] + a_list
+            a_list = [PADDING] + a_list
         else:
-            a_list += [0.0]
+            a_list += [PADDING]
     return a_list
 
 
@@ -355,22 +355,49 @@ def visualise_2D_grid(x, title, log=False):
 
 
 def generate_vocabulary():
-    """Prepare the vocabulary for NN training."""
-    vocabulary = {UNKNOWN, PADDING}
-    temp = []
+    """Prepare the vocabulary(ies) for training."""
+    vocab_words, vocab_locations = {UNKNOWN, PADDING}, {UNKNOWN, PADDING}
+    words, locations = [], []
     for f in [u"../data/train_wiki.txt"]:  # , u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
-            temp.extend(eval(line[2].lower()))
-            temp.extend(eval(line[3].lower()))
+            words.extend([w for w in eval(line[2]) if u"***LOC***" not in w])
+            words.extend([w for w in eval(line[3]) if u"***LOC***" not in w])
+            locations.extend([w for w in eval(line[2]) if u"***LOC***" in w])
+            locations.extend([w for w in eval(line[3]) if u"***LOC***" in w])
 
-    c = Counter(temp)
-    for item in c:
-        if c[item] > 2:
-            vocabulary.add(item)
-    cPickle.dump(vocabulary, open(u"data/vocabulary.pkl", "w"))
-    print(u"Vocabulary Size:", len(vocabulary))
+    words = Counter(words)
+    for word in words:
+        if words[word] > 2:
+            vocab_words.add(word)
+    cPickle.dump(vocab_words, open(u"data/vocab_words.pkl", "w"))
+    print(u"Vocabulary Words Size:", len(vocab_words))
+
+    locations = Counter(locations)
+    for location in locations:
+        if locations[location] > 2:
+            vocab_locations.add(location)
+    cPickle.dump(vocab_locations, open(u"data/vocab_locations.pkl", "w"))
+    print(u"Vocabulary Locations Size:", len(vocab_locations))
+
+    # -------- OLD WAY OF GENERATING VOCAB ------------ #
+    # """Prepare the vocabulary for NN training."""
+    # vocabulary = {UNKNOWN, PADDING}
+    # temp = []
+    # for f in [u"../data/train_wiki.txt"]:  # , u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
+    #     training_file = codecs.open(f, "r", encoding="utf-8")
+    #     for line in training_file:
+    #         line = line.strip().split("\t")
+    #         temp.extend(eval(line[2].replace(u"**LOC**", u"")))
+    #         temp.extend(eval(line[3].replace(u"**LOC**", u"")))
+    #
+    # c = Counter(temp)
+    # for item in c:
+    #     if c[item] > 2:
+    #         vocabulary.add(item)
+    # cPickle.dump(vocabulary, open(u"data/vocabulary.pkl", "w"))
+    # print(u"Vocabulary Size:", len(vocabulary))
 
 
 def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
@@ -404,15 +431,16 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                 left_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
                 right_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
 
-            target_string = pad_list(10, eval(line[5]), from_left=True)
+            target_string.append(pad_list(10, eval(line[5]), from_left=True))
 
             if counter % BATCH_SIZE == 0:
-                for x in [left_words, right_words, left_entities, right_entities]:
-                    for i, w in enumerate(x):
-                        if w in w2i:
-                            x[i] = w2i[w]
-                        else:
-                            x[i] = w2i[UNKNOWN]
+                for collection in [left_words, right_words, left_entities, right_entities, target_string]:
+                    for x in collection:
+                        for i, w in enumerate(x):
+                            if w in w2i:
+                                x[i] = w2i[w]
+                            else:
+                                x[i] = w2i[UNKNOWN]
                 if train:
                     yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
                             np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
@@ -519,7 +547,7 @@ def training_map():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"raslavice"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"nsw"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()

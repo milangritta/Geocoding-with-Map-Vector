@@ -10007,96 +10007,166 @@ Reuters reports that nine people have died from Ebola in the Republic of Congo t
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Horse_racing_in_NSW,_Queensland_cancelled_indefinitely</source>
+        <text>Thoroughbred horse racing has been cancelled indefinitely in the Australian states of New South Wales and Queensland due to an outbreak of Equine Influenza. An Australia-wide ban on the movement of horses, donkeys and mules which was due to expire on Wednesday has been extended until Friday. NSW and Queensland have extended their bans indefinitely. So far the virus only appears to have infected horses in NSW and Queensland, with 51 confirmed cases and another 400 suspected. So far all those infected appear to be horses used for recreational purposes and not thoroughbred race horses. Despite the bans on racing and horse movements, track work will recommence in NSW and Queensland today. It had been feared yesterday that four race horses at Randwick Racecourse in Sydney had been struck down by the virus, but the horses later tested negative to the virus. If an outbreak were to occur at Randwick it could affect up to 700 race horses stabled there. The outbreak comes at a bad time for the industry, as it prepares for the lucrative spring racing season in Sydney and Melbourne. The AUD$1 million Golden Rose event at Rosehill has been cancelled, although it is expected that Melbourne's spring racing carnival will resume on Saturday as no cases of the flu have been seen in Victoria. Racing Victoria has also said the Melbourne Cup will go ahead as planned despite the outbreak, even if no interstate or international horses can attend. Despite fines of up to $44,000 and 12 months imprisonment in NSW there have been reports that more than 100 horse owners have been caught moving their horses. The NSW Primary Industries Minister Ian Macdonald, said it was "absolutely vital that no-one moves a horse in this state". "We will be working with police to ensure horses are at a standstill," he said. The racing bans have cost gaming companies Tabcorp and Tattersall's millions, with Tabcorp losing $65 million in revenue on the weekend. Tabcorp expects to lose around $150 million in turnover this week. Tattersall's has also said it expects to lose around $2 million in revenue per week due to the outbreak. Investors reacted to the news, slashing 3 percent of the price of Tattersall's shares and over 4 percent of those of Tabcorp.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>New South Wales</name>
+                <start>87</start>
+                <end>102</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Queensland</name>
+                <start>107</start>
+                <end>117</end>
+                <lat>-23</lat>
+                <lon>143</lon>
+                <page>https://en.wikipedia.org/wiki/Queensland</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Australia</name>
+                <start>161</start>
+                <end>170</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Queensland</name>
+                <start>302</start>
+                <end>312</end>
+                <lat>-23</lat>
+                <lon>143</lon>
+                <page>https://en.wikipedia.org/wiki/Queensland</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Queensland</name>
+                <start>417</start>
+                <end>427</end>
+                <lat>-23</lat>
+                <lon>143</lon>
+                <page>https://en.wikipedia.org/wiki/Queensland</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Randwick</name>
+                <start>749</start>
+                <end>757</end>
+                <lat>-33.91</lat>
+                <lon>151.23</lon>
+                <page>https://en.wikipedia.org/wiki/Randwick,_New_South_Wales</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Sydney</name>
+                <start>772</start>
+                <end>778</end>
+                <lat>-33.86</lat>
+                <lon>151.20</lon>
+                <page>https://en.wikipedia.org/wiki/Sydney</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Randwick</name>
+                <start>897</start>
+                <end>905</end>
+                <lat>-33.91</lat>
+                <lon>151.23</lon>
+                <page>https://en.wikipedia.org/wiki/Randwick,_New_South_Wales</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Sydney</name>
+                <start>1067</start>
+                <end>1073</end>
+                <lat>-33.86</lat>
+                <lon>151.20</lon>
+                <page>https://en.wikipedia.org/wiki/Sydney</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Melbourne</name>
+                <start>1078</start>
+                <end>1087</end>
+                <lat>-37.81</lat>
+                <lon>144.96</lon>
+                <page>https://en.wikipedia.org/wiki/Melbourne</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Rosehill</name>
+                <start>1128</start>
+                <end>1136</end>
+                <lat>-33.82</lat>
+                <lon>151.03</lon>
+                <page>https://en.wikipedia.org/wiki/Rosehill,_New_South_Wales</page>
+            </location>
+            <location>
+                <name>Melbourne</name>
+                <start>1186</start>
+                <end>1195</end>
+                <lat>-37.81</lat>
+                <lon>144.96</lon>
+                <page>https://en.wikipedia.org/wiki/Melbourne</page>
+            </location>
+            <location>
+                <name>Victoria</name>
+                <start>1286</start>
+                <end>1294</end>
+                <lat>-37</lat>
+                <lon>144</lon>
+                <page>https://en.wikipedia.org/wiki/Victoria_(Australia)</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/Bluetongue_disease_appears_in_UK_for_the_first_time</source>
+        <text>The first ever case of Bluetongue disease has been reported in the UK. The case involves a cow at a farm near Ipswich, Suffolk. Bluetongue affects ruminants such as sheep and cows, but is not known to affect humans. It is sometimes fatal, depending on the animals affected, and presently has no treatment. The disease was prevalent in Africa for many years and had since migrated to European nations such as France and Germany, causing officials had feared a UK outbreak in the UK follows recent outbreaks of the disease on the European continent in nations such as France and Germany. Experts such as microbiology professor Hugh Pennington of Aberdeen University had suspected the disease would eventually spread to the UK.</text>
+        <locations>
+            <location>
+                <name>UK</name>
+                <start>68</start>
+                <end>70</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>Ipswich</name>
+                <start>111</start>
+                <end>118</end>
+                <lat>52.05</lat>
+                <lon>1.15</lon>
+                <page>https://en.wikipedia.org/wiki/Ipswich</page>
+            </location>
+            <location>
+                <name>Suffolk</name>
+                <start>120</start>
+                <end>127</end>
+                <lat>52.16</lat>
+                <lon>1</lon>
+                <page>https://en.wikipedia.org/wiki/Suffolk</page>
+            </location>
+            <location>
+                <name>France</name>
+                <start>409</start>
+                <end>415</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
+            </location>
+            <location>
+                <name>Germany</name>
+                <start>420</start>
+                <end>427</end>
+                <lat>51</lat>
+                <lon>9</lon>
+                <page>https://en.wikipedia.org/wiki/Germany</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>722</start>
+                <end>724</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
         </locations>
     </article>
@@ -10128,12 +10198,46 @@ Reuters reports that nine people have died from Ebola in the Republic of Congo t
                 <lon></lon>
                 <page></page>
             </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
             <location>
                 <name></name>
                 <start></start>
