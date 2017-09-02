@@ -44,7 +44,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         continue
 
     # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
-    population = sorted(candidates, key=lambda (a, b, c, d): c, reverse=True)
+    population = sorted(candidates, key=lambda (a, b, c): c, reverse=True)
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     best_candidate, y_to_geonames = [], []

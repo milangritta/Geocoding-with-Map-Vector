@@ -10171,96 +10171,150 @@ Reuters reports that nine people have died from Ebola in the Republic of Congo t
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Health_experts_suspect_bromide_poisoning_in_Angolan_disease_outbreak</source>
+        <text>Health authorities from the World Health Organization (WHO) and the government of Angola have revealed that bromide poisoning may be the source of a mystery illness first reported in early October. The outbreak of over 400 reported cases of a neurological disorder was centred in the Cacuaco district of Angola's capital city Luanda. A majority of the afflicted have been children under the age of 15. There have been no deaths attributed directly to the disorder. According to a statement in the state-run AngolaPress, symptoms have included "sleepiness, blear-eyedness, dizziness and difficulty to speak, walk and extreme tiredness." WHO described the drowsiness as being so severe that the patient would require "painful stimuli" to be awoken. Results from laboratory tests carried out in London and Munich indicated elevated levels of bromide present in the blood and kitchen salt samples examined. It is suspected that sodium chloride (table salt) may have been contaminated with sodium bromide, an agent used in pharmaceuticals and industry. However, authorities caution that more investigation is required to determine the source and cause of the illness. Consequently, further testing of blood, food and water has been initiated. On Wednesday, WHO dispatched additional technical and support personnel to Angola to assist local health officials.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Angola</name>
+                <start>83</start>
+                <end>89</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Cacuaco</name>
+                <start>285</start>
+                <end>292</end>
+                <lat>-8.77</lat>
+                <lon>13.37</lon>
+                <page>https://en.wikipedia.org/wiki/Cacuaco</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Angola</name>
+                <start>305</start>
+                <end>311</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Luanda</name>
+                <start>327</start>
+                <end>333</end>
+                <lat>-8.83</lat>
+                <lon>13.23</lon>
+                <page>https://en.wikipedia.org/wiki/Luanda</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>London</name>
+                <start>793</start>
+                <end>799</end>
+                <lat>51.50</lat>
+                <lon>-0.12</lon>
+                <page>https://en.wikipedia.org/wiki/London</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Munich</name>
+                <start>804</start>
+                <end>810</end>
+                <lat>48.13</lat>
+                <lon>11.56</lon>
+                <page>https://en.wikipedia.org/wiki/Munich</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Angola</name>
+                <start>1314</start>
+                <end>1320</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/Number_of_Zimbabwe_cholera_deaths_nears_500</source>
+        <text>A cholera outbreak in the African country of Zimbabwe has killed almost 500 people since August, according to the World Health Organization (WHO). The WHO said that the outbreak affected most areas of the country, and that some remote areas had seen fatality rates increase by as much as 30%. Zimbabwe's Ministry of Health reported 484 deaths from 11,735 cases since the outbreak began. Zimbabwe has had annual outbreaks of cholera for nearly a decade, but this one was the most far-reaching. A report by the WHO stated that the last large outbreak was in 1992, with 3,000 cases recorded. Cholera is frequently spread by contaminated, untreated water. The spread of the disease was expedited by the collapse of Zimbabwe's health and sanitation systems; state media reported that most of Harare has been left without water after the city ran out of chemicals for its treatment plant. A resident of Mabvuku, a suburb located east of Harare, told APTV that electricity is not available most of the time, so water is consumed without being boiled first. The medical charity Médecins Sans Frontières (Doctors Without Borders) said that there have been cases of cholera reported in areas of Botswana, Mozambique, and South Africa that border Zimbabwe, indicating the sub-regional threat of the outbreak. The South African ministry of health confirmed that they had 160 incidents of cholera reported, as well as three deaths. The European Commission said that it was providing €9 million (US$11.4 million) in funds to assist Zimbabwe with the crisis. "I'm shocked at the deteriorating humanitarian crisis in Zimbabwe and call upon the authorities there to respond quickly to this cholera outbreak by allowing full assistance from international humanitarians and regional partners," said the commissioner responsible for the European Union's humanitarian aid, Louis Michel. Other agencies providing aid to the country include the United Nations Children's Fund, the WHO, and Doctors Without Borders.</text>
+        <locations>
+            <location>
+                <name>Zimbabwe</name>
+                <start>46</start>
+                <end>54</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Zimbabwe</name>
+                <start>294</start>
+                <end>302</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Zimbabwe</name>
+                <start>388</start>
+                <end>396</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Harare</name>
+                <start>788</start>
+                <end>794</end>
+                <lat>-17.86</lat>
+                <lon>31.02</lon>
+                <page>https://en.wikipedia.org/wiki/Harare</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Mabvuku</name>
+                <start>898</start>
+                <end>905</end>
+                <lat>-17.82</lat>
+                <lon>31.19</lon>
+                <page>https://en.wikipedia.org/wiki/Mabvuku</page>
+            </location>
+            <location>
+                <name>Harare</name>
+                <start>932</start>
+                <end>938</end>
+                <lat>-17.86</lat>
+                <lon>31.02</lon>
+                <page>https://en.wikipedia.org/wiki/Harare</page>
+            </location>
+            <location>
+                <name>Botswana</name>
+                <start>1186</start>
+                <end>1194</end>
+                <lat>24.65</lat>
+                <lon>25.90</lon>
+                <page>https://en.wikipedia.org/wiki/Botswana</page>
+            </location>
+            <location>
+                <name>Mozambique</name>
+                <start>1196</start>
+                <end>1206</end>
+                <lat>-18.25</lat>
+                <lon>35</lon>
+                <page>https://en.wikipedia.org/wiki/Mozambique</page>
+            </location>
+            <location>
+                <name>South Africa</name>
+                <start>1212</start>
+                <end>1224</end>
+                <lat>-30</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/South_Africa</page>
+            </location>
+            <location>
+                <name>Zimbabwe</name>
+                <start>1519</start>
+                <end>1527</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
         </locations>
     </article>
@@ -10292,12 +10346,30 @@ Reuters reports that nine people have died from Ebola in the Republic of Congo t
                 <lon></lon>
                 <page></page>
             </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+            </location>
             <location>
                 <name></name>
                 <start></start>

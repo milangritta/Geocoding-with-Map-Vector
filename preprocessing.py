@@ -362,14 +362,14 @@ def generate_vocabulary():
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
-            words.extend([w for w in eval(line[2]) if u"***LOC***" not in w])
-            words.extend([w for w in eval(line[3]) if u"***LOC***" not in w])
-            locations.extend([w for w in eval(line[2]) if u"***LOC***" in w])
-            locations.extend([w for w in eval(line[3]) if u"***LOC***" in w])
+            words.extend([w for w in eval(line[2]) if u"**LOC**" not in w])
+            words.extend([w for w in eval(line[3]) if u"**LOC**" not in w])
+            locations.extend([w for w in eval(line[2]) if u"**LOC**" in w])
+            locations.extend([w for w in eval(line[3]) if u"**LOC**" in w])
 
     words = Counter(words)
     for word in words:
-        if words[word] > 2:
+        if words[word] > 4:
             vocab_words.add(word)
     cPickle.dump(vocab_words, open(u"data/vocab_words.pkl", "w"))
     print(u"Vocabulary Words Size:", len(vocab_words))
@@ -412,13 +412,13 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
             line = line.strip().split("\t")
             labels.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
 
-            left = [w for w in eval(line[2]) if u"***LOC***" not in w]
-            right = [w for w in eval(line[3]) if u"***LOC***" not in w]
+            left = [w for w in eval(line[2]) if u"**LOC**" not in w]
+            right = [w for w in eval(line[3]) if u"**LOC**" not in w]
             left_words.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
             right_words.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
 
-            left = [w.replace(u"***LOC***", u"") for w in eval(line[2]) if u"***LOC***" in w]
-            right = [w.replace(u"***LOC***", u"") for w in eval(line[3]) if u"***LOC***" in w]
+            left = [w.replace(u"**LOC**", u"") for w in eval(line[2]) if u"**LOC**" in w]
+            right = [w.replace(u"**LOC**", u"") for w in eval(line[3]) if u"**LOC**" in w]
             left_entities.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
             right_entities.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
 
@@ -478,7 +478,7 @@ def generate_strings_from_file(path):
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
             context = u" ".join(eval(line[2])) + u"*E*" + u" ".join(eval(line[5])) + u"*E*" + u" ".join(eval(line[3]))
-            yield ((float(line[0]), float(line[1])), line[5], context)
+            yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), context)
 
 
 def compute_embedding_distances(W, dim):
@@ -546,7 +546,7 @@ def training_map():
 # generate_evaluation_data(corpus="wiki", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
-# generate_vocabulary()
+generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
 # print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"nsw"))
