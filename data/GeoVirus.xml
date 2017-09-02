@@ -10319,170 +10319,338 @@ Reuters reports that nine people have died from Ebola in the Republic of Congo t
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Dutch_sheep_contaminated_by_bluetongue</source>
+        <text>In the southern part of the Dutch province of Limburg there has been an outbreak of bluetongue according to a statement of the Ministry of Agriculture. This disease is dangerous for sheep. Sheep who are infected by the disease would get a blue tongue, high fever and a swollen head. The disease may also cause death for them. For many other animals and for humans the disease isn't dangerous. It is the first time that this disease has been spotted in the Netherlands. Usually this disease can only be found in the countries of the Mediterranean. To combat the disease, the Dutch authorities have forbidden exports of animals such as sheep, goats and cows. In the surrounding 20 kilometers of the source of the outbreak it is forbidden to transport animals; the animals have to be stabled and insecticides are obliged. Furthermore, an area of protection of 150 kilometers has been arranged which these animals are not allowed to leave.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Limburg</name>
+                <start>47</start>
+                <end>54</end>
+                <lat>51.21</lat>
+                <lon>5.93</lon>
+                <page>https://en.wikipedia.org/wiki/Limburg_(Netherlands)</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Netherlands</name>
+                <start>457</start>
+                <end>468</end>
+                <lat>52.31</lat>
+                <lon>5.55</lon>
+                <page>https://en.wikipedia.org/wiki/Netherlands</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Mediterranean</name>
+                <start>533</start>
+                <end>546</end>
+                <lat>35</lat>
+                <lon>18</lon>
+                <page>https://en.wikipedia.org/wiki/Mediterranean_Sea</page>
             </location>
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Foot-and-mouth_confirmed_at_UK_farm</source>
+        <text>Cattle at a farm in Surrey, UK have tested positive for foot-and-mouth disease. After symptoms were reported late on 2 August, the farm was isolated. Following testing, officials from Defra (Department for Environment, Food and Rural Affairs) confirmed the outbreak on 3 August. A three kilometre exclusion zone and a ten kilometre surveillance zone have been put into place around the farm, near Wanborough. All livestock on the farm have been slaughtered and incinerated. Any movement of livestock in the UK has been banned and the EU has banned exports under emergency measures, expected to be confirmed on Monday. Farmers are urged to watch their animals carefully for symptoms, and report any to Defra officials. The government's emergency committee Cobra met to discuss the situation before the announcement, with Prime Minister Gordon Brown participating via telephone. Brown cut short his holiday in Dorset to return to London on Saturday, when another meeting of Cobra was held. Environment Secretary Hilary Benn also returned from holiday in Italy. The last outbreak of foot-and-mouth in the UK was in 2001. It resulted in the slaughtering of up to 7 million animals, and losses estimated at £8 billion. In France, the government has asked for all the animals imported during the last ten days to be tested. All meetings including animals have been forbidden on the French territory.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Surrey</name>
+                <start>21</start>
+                <end>27</end>
+                <lat>51.25</lat>
+                <lon>-0.41</lon>
+                <page>https://en.wikipedia.org/wiki/Surrey</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>UK</name>
+                <start>29</start>
+                <end>31</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Wanborough</name>
+                <start>398</start>
+                <end>408</end>
+                <lat>51.23</lat>
+                <lon>-0.66</lon>
+                <page>https://en.wikipedia.org/wiki/Wanborough,_Surrey</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>508</start>
+                <end>510</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>Dorset</name>
+                <start>909</start>
+                <end>915</end>
+                <lat>50.79</lat>
+                <lon>-2.41</lon>
+                <page>https://en.wikipedia.org/wiki/Dorset</page>
+            </location>
+            <location>
+                <name>London</name>
+                <start>929</start>
+                <end>935</end>
+                <lat>51.50</lat>
+                <lon>-0.12</lon>
+                <page>https://en.wikipedia.org/wiki/London</page>
+            </location>
+            <location>
+                <name>Italy</name>
+                <start>1053</start>
+                <end>1058</end>
+                <lat>43</lat>
+                <lon>12</lon>
+                <page>https://en.wikipedia.org/wiki/Italy</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>1103</start>
+                <end>1105</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>France</name>
+                <start>1218</start>
+                <end>1224</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
             </location>
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/U.S._superbug_expected_to_emerge_in_Canada</source>
+        <text>An infectious superbug spreading in the United States is to "emerge in force" in Canada, doctors fear. The bacteria have been reported popping up in day care centers and locker rooms across the U.S. Usually elderly or very ill hospital patients get the disease. More than 2 million U.S. residents are infected every year, the Centers for Disease Control estimates. An article in the Canadian Medical Association Journal (CMAJ) on Tuesday said that Methicillin-resistant Staphylococcus aureus (MRSA) are "spreading with alarming rapidity." The bacteria can cause boils, pimples, or in extreme cases, flesh-eating disease, and more. "The resistant bacteria is an old foe with new fangs: a pathogen combining virulence, resistance and an ability to disseminate at large," wrote Dr. John Conly, medical professor and an infectious disease specialist at the University of Calgary. British Columbia, Alberta, Saskatchewan, Manitoba, and Ontario are the provinces which already have had MRSA in hospitals. A 30-year-old Calgary, Alberta man died last year of lung abscesses associated with the infection, as well as a three-month old toddler in Toronto, Ontario. Toronto Blue Jays outfielder Alex Rios, last summer, suffered from an infection caused by Staphylococcus aureus in his leg. Pitcher Ty Taubenheim had a similar infection on his foot. Doctors are currently investigating some Calgary residents, who could be one of the first Canadian reports of MRSA outside of a hospital setting.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>United States</name>
+                <start>41</start>
+                <end>54</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Canada</name>
+                <start>82</start>
+                <end>88</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>U.S.</name>
+                <start>195</start>
+                <end>199</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>283</start>
+                <end>287</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>British Columbia</name>
+                <start>877</start>
+                <end>893</end>
+                <lat>54</lat>
+                <lon>-125</lon>
+                <page>https://en.wikipedia.org/wiki/British_Columbia</page>
+            </location>
+            <location>
+                <name>Alberta</name>
+                <start>895</start>
+                <end>902</end>
+                <lat>55</lat>
+                <lon>-115</lon>
+                <page>https://en.wikipedia.org/wiki/Alberta</page>
+            </location>
+            <location>
+                <name>Saskatchewan</name>
+                <start>904</start>
+                <end>916</end>
+                <lat>55</lat>
+                <lon>-106</lon>
+                <page>https://en.wikipedia.org/wiki/Saskatchewan</page>
+            </location>
+            <location>
+                <name>Manitoba</name>
+                <start>918</start>
+                <end>926</end>
+                <lat>55</lat>
+                <lon>-97</lon>
+                <page>https://en.wikipedia.org/wiki/Manitoba</page>
+            </location>
+            <location>
+                <name>Ontario</name>
+                <start>932</start>
+                <end>939</end>
+                <lat>50</lat>
+                <lon>-85</lon>
+                <page>https://en.wikipedia.org/wiki/Ontario</page>
+            </location>
+            <location>
+                <name>Calgary</name>
+                <start>1014</start>
+                <end>1021</end>
+                <lat>51.05</lat>
+                <lon>-114.06</lon>
+                <page>https://en.wikipedia.org/wiki/Calgary</page>
+            </location>
+            <location>
+                <name>Alberta</name>
+                <start>1023</start>
+                <end>1030</end>
+                <lat>55</lat>
+                <lon>-115</lon>
+                <page>https://en.wikipedia.org/wiki/Alberta</page>
+            </location>
+            <location>
+                <name>Toronto</name>
+                <start>1139</start>
+                <end>1146</end>
+                <lat>43.7</lat>
+                <lon>-79.4</lon>
+                <page>https://en.wikipedia.org/wiki/Toronto</page>
+            </location>
+            <location>
+                <name>Ontario</name>
+                <start>1148</start>
+                <end>1155</end>
+                <lat>50</lat>
+                <lon>-85</lon>
+                <page>https://en.wikipedia.org/wiki/Ontario</page>
+            </location>
+            <location>
+                <name>Calgary</name>
+                <start>1381</start>
+                <end>1388</end>
+                <lat>51.05</lat>
+                <lon>-114.06</lon>
+                <page>https://en.wikipedia.org/wiki/Calgary</page>
             </location>
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Tsunami_deaths_mount_to_more_than_120,000</source>
+        <text>Nearly a week after tsunami waves scoured the coasts of multiple countries in southern Asia, the confirmed death count is over 120,000. Indonesia reports it is no longer counting bodies, but merely struggling to deal with the aftermath and prevent a massive outbreak of typhoid. Near the epicenter of the earthquakes and tsunami, Indonesia's Aceh province alone may have as many as 80,000 death. Entire villages are gone, with no evidence left of their prior existence. Still, other countries are continuing to report the numbers of dead as best they can: Sri Lanka - approximately 28,500, India - more than 7,700. More than 300 were killed in Malaysia, Myanmar, Bangladesh, the Maldives, Somalia, Tanzania and Kenya. As many as 10,500 foreign nationals are missing in the region, most of them tourists. Sweden has 17 confirmed dead, but more than 2,500 are still missing.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Indonesia</name>
+                <start>137</start>
+                <end>136</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Indonesia</name>
+                <start>331</start>
+                <end>340</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Aceh</name>
+                <start>343</start>
+                <end>347</end>
+                <lat>5.55</lat>
+                <lon>95.31</lon>
+                <page>https://en.wikipedia.org/wiki/Aceh</page>
+            </location>
+            <location>
+                <name>Sri Lanka</name>
+                <start>557</start>
+                <end>566</end>
+                <lat>7</lat>
+                <lon>81</lon>
+                <page>https://en.wikipedia.org/wiki/Sri_Lanka</page>
+            </location>
+            <location>
+                <name>India</name>
+                <start>591</start>
+                <end>596</end>
+                <lat>21</lat>
+                <lon>78</lon>
+                <page>https://en.wikipedia.org/wiki/India</page>
+            </location>
+            <location>
+                <name>Malaysia</name>
+                <start>645</start>
+                <end>653</end>
+                <lat>2.5</lat>
+                <lon>112.5</lon>
+                <page>https://en.wikipedia.org/wiki/Malaysia</page>
+            </location>
+            <location>
+                <name>Myanmar</name>
+                <start>655</start>
+                <end>662</end>
+                <lat>22</lat>
+                <lon>96</lon>
+                <page>https://en.wikipedia.org/wiki/Myanmar</page>
+            </location>
+            <location>
+                <name>Bangladesh</name>
+                <start>664</start>
+                <end>674</end>
+                <lat>23.8</lat>
+                <lon>90.3</lon>
+                <page>https://en.wikipedia.org/wiki/Bangladesh</page>
+            </location>
+            <location>
+                <name>Maldives</name>
+                <start>680</start>
+                <end>688</end>
+                <lat>3.2</lat>
+                <lon>73.22</lon>
+                <page>https://en.wikipedia.org/wiki/Maldives</page>
+            </location>
+            <location>
+                <name>Somalia</name>
+                <start>690</start>
+                <end>697</end>
+                <lat>10</lat>
+                <lon>49</lon>
+                <page>https://en.wikipedia.org/wiki/Somalia</page>
+            </location>
+            <location>
+                <name>Tanzania</name>
+                <start>699</start>
+                <end>707</end>
+                <lat>-6.30</lat>
+                <lon>34.85</lon>
+                <page>https://en.wikipedia.org/wiki/Tanzania</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>712</start>
+                <end>717</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Sweden</name>
+                <start>805</start>
+                <end>811</end>
+                <lat>63</lat>
+                <lon>16</lon>
+                <page>https://en.wikipedia.org/wiki/Sweden</page>
             </location>
         </locations>
     </article>

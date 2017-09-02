@@ -29,12 +29,12 @@ for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", enc
     vectors[t[0]] = [float(x) for x in t[1:]]
 print(u'Loaded Twitter vectors...', len(vectors))
 
-for line in codecs.open(u"../data/glove." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
-    if line.strip() == u"":
-        continue
-    t = line.split()
-    vectors[t[0]] = [float(x) for x in t[1:]]
-print(u'Loaded GloVe vectors...', len(vectors))
+# for line in codecs.open(u"../data/glove." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
+#     if line.strip() == u"":
+#         continue
+#     t = line.split()
+#     vectors[t[0]] = [float(x) for x in t[1:]]
+# print(u'Loaded GloVe vectors...', len(vectors))
 
 weights = np.zeros((len(vocabulary), EMB_DIM))
 oov = 0
@@ -87,10 +87,10 @@ model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['ac
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
-checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-# checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+# checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=5)
-file_name = u"data/eval_wiki.txt"
+file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
                     epochs=100, callbacks=[checkpoint, early_stop])

@@ -19,8 +19,10 @@ else:
 
 print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data)
-vocabulary = cPickle.load(open(u"./data/vocabulary.pkl"))
-print(u"Vocabulary Size:", len(vocabulary))
+
+words = cPickle.load(open(u"data/vocab_words.pkl"))
+locations = cPickle.load(open(u"data/vocab_locations.pkl"))
+vocabulary = words.union(locations)
 #  --------------------------------------------------------------------------------------------------------------------
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 #  --------------------------------------------------------------------------------------------------------------------

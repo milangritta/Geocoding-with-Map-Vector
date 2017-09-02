@@ -369,7 +369,7 @@ def generate_vocabulary():
 
     words = Counter(words)
     for word in words:
-        if words[word] > 4:
+        if words[word] > 5:
             vocab_words.add(word)
     cPickle.dump(vocab_words, open(u"data/vocab_words.pkl", "w"))
     print(u"Vocabulary Words Size:", len(vocab_words))
