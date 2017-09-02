@@ -377,7 +377,7 @@ def generate_vocabulary():
     locations = Counter(locations)
     for location in locations:
         if locations[location] > 2:
-            vocab_locations.add(location)
+            vocab_locations.add(location.replace(u"**LOC**", u""))
     cPickle.dump(vocab_locations, open(u"data/vocab_locations.pkl", "w"))
     print(u"Vocabulary Locations Size:", len(vocab_locations))
 
@@ -546,7 +546,7 @@ def training_map():
 # generate_evaluation_data(corpus="wiki", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
-generate_vocabulary()
+# generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
 # print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"nsw"))
