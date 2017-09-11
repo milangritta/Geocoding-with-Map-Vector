@@ -11,7 +11,7 @@ if True:  # add CDATA xml construct?
     c = conn.cursor()
     root = tree.getroot()
     for article in root:
-        text = article.find('text').text
+        text = article.find('text').text  # check for duplicate article titles !!!!!
         for location in article.find('locations'):
             start = location.find('start').text
             end = location.find('end').text
