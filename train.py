@@ -6,7 +6,7 @@ from keras import Input
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
-from keras.layers import Embedding, Dense, LSTM
+from keras.layers import Embedding, Dense, LSTM, Dropout
 from preprocessing import generate_arrays_from_file, GRID_SIZE, BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING
 from subprocess import check_output
 
@@ -53,31 +53,39 @@ print(u'Building model...')
 left_words = Input(shape=(CONTEXT_LENGTH,))
 lw = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(left_words)
 lw = LSTM(250)(lw)
+lw = Dropout(0.5)(lw)
 
 right_words = Input(shape=(CONTEXT_LENGTH,))
 rw = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(right_words)
 rw = LSTM(250)(rw)
+rw = Dropout(0.5)(rw)
 
 entities_strings_left = Input(shape=(CONTEXT_LENGTH,))
 esl = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(entities_strings_left)
 esl = LSTM(250, go_backwards=True)(esl)
+esl = Dropout(0.5)(esl)
 
 entities_strings_right= Input(shape=(CONTEXT_LENGTH,))
 esr = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(entities_strings_right)
 esr = LSTM(250)(esr)
+esr = Dropout(0.5)(esr)
 
 entities_coord_left = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
 ecl = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(entities_coord_left)
+ecl = Dropout(0.5)(ecl)
 
 entities_coord_right = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
 ecr = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(entities_coord_right)
+ecr = Dropout(0.5)(ecr)
 
 target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-tc = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+tc = Dense(500, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+tc = Dropout(0.5)(tc)
 
 target_string = Input(shape=(10,))
 ts = Embedding(len(vocabulary), EMB_DIM, input_length=10, weights=weights)(target_string)
-ts = LSTM(250)(ts)
+ts = LSTM(500)(ts)
+ts = Dropout(0.5)(ts)
 
 inp = concatenate([lw, rw, esl, esr, ecl, ecr, tc, ts])
 inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)

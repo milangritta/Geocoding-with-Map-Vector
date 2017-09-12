@@ -11489,80 +11489,438 @@ A highly dynamic Bluetongue (or catarrhal fever) infection of sheep herds is und
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Bad_weather_makes_life_tougher_for_quake_survivors</source>
+        <text>While Aid starts to pour in to the worst hit areas of South Asia Earthquake that has killed more than 30,000 people, bad weather is hampering the relief efforts with snow falling on the peaks of the earthquake-devastated areas of Pakistan. The measure of human suffering can't just be measured in the death toll, which officially stands at 23,000, but also in the 4 million who have been made homeless, hungry, and cold with 1 million in acute need, facing certain death without outside assistance. In the Indian state of Jammu and Kashmir, authorities say at least 1,300 people are known to have died, but officials fear the number will rise. ABC Australia reports of a man in Pakistan-administered Kashmir, who has been cut from aid, saying "I find that we are alone now. We have nothing. We are finished." Choppers are the main lifeline of support; trucks are unable to deliver relief supplies due to looting and general mayhem on the ground. The more snow, the less able aid agencies are to make their way to those in the direst need. Jan Vandemoortele, U.N. Resident Coordinator for Pakistan, said key roads into the quake zone have been reopened, as 30 countries including Australia, France, Japan, Jordan, China, Russia, Iran, Syria and the US provide assistance in the form of money, doctors, tents, blankets, and disaster relief teams. United Nations officials are warning of a growing threat of measles, cholera, and diarrhea outbreaks among the millions of survivors. There have been no reports of epidemic outbreaks so far, but the area's health infrastructure has completely collapsed, Vandemoortele said.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Pakistan</name>
+                <start>231</start>
+                <end>239</end>
+                <lat>30</lat>
+                <lon>70</lon>
+                <page>https://en.wikipedia.org/wiki/Pakistan</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Jammu and Kashmir</name>
+                <start>523</start>
+                <end>540</end>
+                <lat>33.45</lat>
+                <lon>76.24</lon>
+                <page>https://en.wikipedia.org/wiki/Jammu_and_Kashmir</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Australia</name>
+                <start>649</start>
+                <end>658</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Pakistan</name>
+                <start>679</start>
+                <end>687</end>
+                <lat>30</lat>
+                <lon>70</lon>
+                <page>https://en.wikipedia.org/wiki/Pakistan</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Kashmir</name>
+                <start>701</start>
+                <end>708</end>
+                <lat>34.5</lat>
+                <lon>76</lon>
+                <page>https://en.wikipedia.org/wiki/Kashmir</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Pakistan</name>
+                <start>1089</start>
+                <end>1097</end>
+                <lat>30</lat>
+                <lon>70</lon>
+                <page>https://en.wikipedia.org/wiki/Pakistan</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Australia</name>
+                <start>1180</start>
+                <end>1189</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>France</name>
+                <start>1191</start>
+                <end>1197</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Japan</name>
+                <start>1199</start>
+                <end>1204</end>
+                <lat>35</lat>
+                <lon>136</lon>
+                <page>https://en.wikipedia.org/wiki/Japan</page>
+            </location>
+            <location>
+                <name>Jordan</name>
+                <start>1206</start>
+                <end>1212</end>
+                <lat>31.24</lat>
+                <lon>36.51</lon>
+                <page>https://en.wikipedia.org/wiki/Jordan</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>1214</start>
+                <end>1219</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>Russia</name>
+                <start>1221</start>
+                <end>1227</end>
+                <lat>60</lat>
+                <lon>90</lon>
+                <page>https://en.wikipedia.org/wiki/Russia</page>
+            </location>
+            <location>
+                <name>Iran</name>
+                <start>1229</start>
+                <end>1233</end>
+                <lat>32</lat>
+                <lon>53</lon>
+                <page>https://en.wikipedia.org/wiki/Iran</page>
+            </location>
+            <location>
+                <name>Syria</name>
+                <start>1235</start>
+                <end>1240</end>
+                <lat>35</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Syria</page>
+            </location>
+            <location>
+                <name>US</name>
+                <start>1249</start>
+                <end>1251</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/WHO_director:_Pandemic_alert_level_will_not_be_raised</source>
+        <text>The H1N1 swine flu has now spread to many parts of the globe. The World Health Organisation reports that there are 8,829 confirmed cases in forty countries, most of them in Mexico and the United States. 76 people have been confirmed dead from the influenza. Many countries, among them China, Japan, and the United Kingdom, have warned the WHO to be cautious about declaring a global pandemic. They say that such an announcement, if delivered prematurely, could cause mass panic and confusion. WHO director Margaret Chan said that the organisation had listened to the countries' concerns, and will not raise the pandemic alert level from five to six, on a scale of one to six. A transition to the sixth level means that the disease is circulating actively on at least two continents. "On 29 April, I raised the level of pandemic influenza alert from phase 4 to phase 5. We remain in phase 5 today. This virus may have given us a grace period, but we do not know how long this grace period will last. No one can say whether this is just the calm before the storm," Chan said at the WHO's annual meeting. However, she added that the disease could possibly pose a very serious threat to the world's population. "I strongly urge the international community to use this grace period wisely. I strongly urge you to look closely at anything and everything we can do, collectively, to protect developing countries from, once again, bearing the brunt of a global contagion." "A new influenza virus with great pandemic potential, the new influenza A (H1N1) strain, has emerged," Chan said. Chan said the WHO hadn't yet told antiviral manufacturers to start producing a specific vaccine for this specific strain of the virus. She urged countries to be careful and not squander their medical supplies, saying that "manufacturing capacity for antiviral drugs and influenza vaccines is finite and insufficient for a world with 6.8 billion inhabitants. "It is absolutely essential that countries do not squander these precious resources through poorly targeted measures," Chan said. Estimates by the WHO suggest that as many as two billion doses of vaccine could be produced per year if needed, although the first ones would not be available for four months to half a year. UK Secretary of Health Alan Johnson said the organisation needs to have more flexibility in its pandemic alert levels to take into consideration how severe the virus is. "We need more time – we need to give you more time. My proposal is that you should have more flexibility. A pandemic describes the geographic spread rather than its severity and it's very important that that is reflected in your ability to move to phase six," he said.</text>
+        <locations>
+            <location>
+                <name>Mexico</name>
+                <start>174</start>
+                <end>180</end>
+                <lat>23</lat>
+                <lon>-102</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>189</start>
+                <end>202</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>286</start>
+                <end>291</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>Japan</name>
+                <start>293</start>
+                <end>298</end>
+                <lat>35</lat>
+                <lon>136</lon>
+                <page>https://en.wikipedia.org/wiki/Japan</page>
+            </location>
+            <location>
+                <name>United Kingdom</name>
+                <start>308</start>
+                <end>322</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>2259</start>
+                <end>2261</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/US:_Melamine_from_contaminated_pet_food_enters_human_food_chain</source>
+        <text>At least 45 people are reported to have eaten pork which came from a hog farm in Ceres, California in the United States, where pigs from the farm were fed pet food which was recalled because it was contaminated with the chemical melamine. So far none of the individuals have experienced signs of illnesses, but it is not known what effect the chemical, when ingested, has on humans because no major study has taken place on melamine. On April 21, at least seven urine samples taken from pigs at hog farm, were tested and the results came back positive for the chemical melamine. At least three samples from the feed used to feed the pigs were tested and those results also came back positive for melamine. Yesterday, the United States Food and Drug Administration or FDA, said in a statement that "we have no evidence of harm to humans associated with the processed pork product" and that "no recall of meat products processed from these animals is being issued." Despite the consumption of pork by humans, the FDA states that the risk to human health is minimal. "The assessment that, if there were to be harm to human health, it would be very low, is based on a number of factors, including the dilution of the contaminating melamine and melamine-related compounds from the original rice protein concentrate as it moves through the food system. First it is a partial ingredient in the pet food; second, it is only part of the total feed given to the hogs; third, it is not known to accumulate in the hogs and the hogs excrete melamine in their urine; fourth, even if present in pork, pork is only a small part of the average American diet. Neither FDA nor USDA has uncovered any evidence of harm to the swine from the contaminated feed," added the statement. On March 19, the manufacturer of the food, Menu Foods, which is based in Mississauga, Ontario in Canada, recalled all of its dog and cat food which totaled over 60 million items. On April 28, Canadian officials announced that they will hold products, such as wheat and corn gluten, as well as soy and rice proteins that have been imported from China until they can be tested for melamine. It is not known how extensive the outbreak is.</text>
+        <locations>
+            <location>
+                <name>Ceres</name>
+                <start>82</start>
+                <end>87</end>
+                <lat>37.60</lat>
+                <lon>-120.95</lon>
+                <page>https://en.wikipedia.org/wiki/Ceres,_California</page>
+            </location>
+            <location>
+                <name>California</name>
+                <start>89</start>
+                <end>99</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>107</start>
+                <end>120</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Mississauga</name>
+                <start>1835</start>
+                <end>1846</end>
+                <lat>43.6</lat>
+                <lon>-79.65</lon>
+                <page>https://en.wikipedia.org/wiki/Mississauga</page>
+            </location>
+            <location>
+                <name>Ontario</name>
+                <start>1848</start>
+                <end>1855</end>
+                <lat>50</lat>
+                <lon>-85</lon>
+                <page>https://en.wikipedia.org/wiki/Ontario</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>1859</start>
+                <end>1865</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>2106</start>
+                <end>2111</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/Study_suggests_%27sleeping_sickness%27_parasite_mutated_to_evade_immune_system_defences</source>
+        <text>Research teams from the Universities of Georgia and Glasgow discovered the mechanism the Trypanosome parasite evolved for "sleeping sickness" disease to circumvent the human immune system. Their study follows a recent African outbreak of the disease this parasite causes. The discovery is expected to help develop a cure preventing future deaths. The 1998–2001 sleeping sickness epidemics in South Sudan, Angola, Democratic Republic of Congo, and Uganda caused tens of thousands of deaths. The parasites are spread by tsetse flies. It is considered one of the worst epidemics in the last five decades. As WHO reported, subsequent recent introduction of population screening in rural areas and distribution of more effective drugs had potentially reduced the number of death incidents. However, the main effect of these measures being a decrease in spreading of the parasite and not in decrease of the death rate, the researchers decided to tackle the puzzle. The scientists studied the molecules the human immune system activates in response to the attack. They were looking for the way the parasites inhibit it and lead to the death of the victim. Of the several known parasite species, the two that can infect humans were chosen to study, called Trypanosoma brucei gambiense and Trypanosoma brucei rhodensiense. Several others also exist, but they affect only animals. Researchers knew that the Trypanosoma attacks typically are repelled by an HDL, more specifically trypanosome lytic factor-1 (TLF-1). It is generated in the humans' immune system and is toxic to the parasites but not to humans. It was known that one of the parasites, T. b. rhodensiense, has evolved an inhibitor of the toxic chemical, called Serum Resistance Associated (SRA) protein. However the other one, T. b. gambiense, was responsible for over 95% of human deaths, and it had been previously unknown why. The study showed that a gene mutation has lead to a change in the parasite's surface protein receptor. It doesn't bind to TLF-1 as well as for other species, leading to a substantial decrease in TLF-1 uptake by the parasite. The receptor is more strict, causing a lower nutrient intake as well, but it suffices, and the parasite defends against the human immune system. As professor and head of the department of biochemistry and molecular biology at UGA (and one of the leaders of the research) Stephen Hajduk explained, "Humans have evolved TLF-1 as a highly specific toxin against African trypanosomes by tricking the parasite into taking up this HDL because it resembles a nutrient the parasite needs for survival. But T. b. gambiense has evolved a counter measure to these human 'Trojan horses' simply by barring the door and not allowing TLF-1 to enter the cell, effectively blocking human innate immunity and leading to infection and ultimately disease." Based on the results of the research, humans could possibly develop a defense mechanism to keep the parasites from evading the human defense system. Stephen Hajduk commented, "We believe this research represents a paradigm shift and causes us to think more broadly about how pathogens avoid host defense mechanisms. It turns out that African trypanosomes have evolved a diversity of ways to avoid human innate and acquired immune systems."</text>
+        <locations>
+            <location>
+                <name>South Sudan</name>
+                <start>393</start>
+                <end>404</end>
+                <lat>8</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/South_Sudan</page>
+            </location>
+            <location>
+                <name>Angola</name>
+                <start>406</start>
+                <end>412</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+            <location>
+                <name>Democratic Republic of Congo</name>
+                <start>414</start>
+                <end>442</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
+            </location>
+            <location>
+                <name>Uganda</name>
+                <start>448</start>
+                <end>454</end>
+                <lat>1</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Uganda</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/750,000_could_be_affected_by_flooding_in_Kenya,_UN_says</source>
+        <text>The United Nations has warned that up to 750,000 people could be hit by heavy flooding and mudslides in Kenya due to heavy rains. The United Nations High Commissioner for Refugees (UNHCR) appealed for US$2.8 million to help more than 300,000 refugees in two camps in Kenya threatened by flooding. The agency explained that the mainly Somali refugees in Kenya's overcrowded Dadaab camps urgently need to be protected from the worst effects of the torrential rains. Most of Kenya is suffering from the effects of the prolonged drought; however, along the Indian Ocean Coast and the northeastern region of the country, people are being pounded by torrential rainfall. UN refugee spokesman Andrej Mahecic said many of those affected by the flooding are Somali refugees living in Kenya's overcrowded Dadaab camps. "We fear that the looming El Nino phenomenon a change in the atmosphere and ocean of the tropical Pacific region that produces floods, droughts and other weather disturbances in many regions of the world-may now threaten the 338,000 mostly Somali refugees in the two camps, which in any case usually are flooded for three months every year," he said. Although the yearly floods are predictable, Mahecic commented that the UNHCR is limited in what it can do ahead of time to protect the refugees from their destructive impact. Mahecic says the UNHCR began digging trenches and placing sandbags around hospitals, bore holes and other strategic locations in both camps, when heavy rains started three weeks ago. Without these and other measures, he says many sections of the camps would have been inundated. "We are also preparing to locate to higher ground within the camps refugees who might be worst affected by the floods, particularly the chronically ill, disabled people, the elderly and children and teenagers on their own," he stated. When asked why camps were built on areas prone to flooding, he replied that the government allocated the areas. "There is very little choice on where you can put a camp," he added. Much of the money from the appeal will be used to pre-position essential items such as fuel, blankets, plastic sheets, and to respond to possible outbreaks of disease.</text>
+        <locations>
+            <location>
+                <name>Kenya</name>
+                <start>105</start>
+                <end>110</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>268</start>
+                <end>273</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>354</start>
+                <end>359</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Dadaab</name>
+                <start>374</start>
+                <end>380</end>
+                <lat>0.05</lat>
+                <lon>40.31</lon>
+                <page>https://en.wikipedia.org/wiki/Dadaab</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/Mothers,_teachers_air_more_concerns_about_leukemia_cases_at_California_elementary_school</source>
+        <text>On Thursday night, California State Senator Joe Dunn held the second town hall meeting regarding a recent outbreak of leukemia in schoolchildren, at Franklin Elementary in Santa Ana, California. Representatives from the City of Santa Ana, the Santa Ana Unified School District, and the South Coast Air Quality Management District (AQMD) were available to answer the community's questions. Senator Dunn started off the meeting by thanking the panelists and parents for showing their support by attending. "We are trying to address a very, very important issue. What's the issue? We have high rates of cancer, leukemia, and respiratory problems in our children. Why are our kids sick? This is a very difficult question," he said. "What's causing the sickness in our children, and how can we avoid it? We can all agree that no one wants to see another sick child in Santa Ana." The audience applauded. "Three weeks ago, we heard from two parents and a teacher, they told us about some deaths." The previous town hall meeting was held to address concerns of the community about a steel plating manufacturing plant that applied to the AQMD for a permit to expand its facilities to increase pollution emissions. Parents and teachers were concerned over the facts that the plant was located directly adjacent to Kennedy Elementary School, and that their children were experiencing high levels of lead, respiratory problems, excessive nose-bleeding, and leukemia. "How many businesses in Santa Ana are required to obtain permits for emissions of hazardous pollutants?" This question Dunn posed at the last meeting was answered by the AQMD and the Orange County Sanitation District, who provided maps of Santa Ana with green flags indicating where businesses with emissions permits were located. "I can tell you one thing, at the end of the meeting, we won't have all of the answers... but we'll certainly have another Town Hall meeting. Initial concerns were raised when five boys attending Franklin Elementary were diagnosed with the same type of leukemia in Spring 2002. Attempts to gain an investigation from the Center for Disease Control (CDC) into possible causes were not successful as the Center told parents that the cases "were in an acceptable range". Parents, teachers, public officials, and doctors remain unconvinced. In the past three years, 19 mothers living in an apartment building a block away from Franklin were also diagnosed with leukemia. Dunn then introduced a teacher at Franklin, Tammy Sanchez. Tammy said, "In December 2002, we received some very disturbing news. One of my students was diagnosed with leukemia. Then, more children at Franklin were diagnosed with leukemia. I later found out that three kids at a nearby apartment building were diagnosed with leukemia. Sanchez then explained about more cancer-related deaths near Franklin, including 19 mothers all living in he same apartment building who were diagnosed with leukemia, which took over three minutes. "To me, this is way too much," said Sanchez. Socorro Molina, whose son Diego, a student at Franklin, is undergoing treatment for his leukemia, had this to say: "My son has leukemia. I'm worried, because there are many kids. Children who played with my son died from leukemia. They should do some investigations of these companies." Senator Dunn responded, "Thank you, Socorro. I know it's difficult to share that privately, and you have shared this with us publicly on two occasions." Senator Dunn then said, "at the end of that [previous] meeting, we were requested by a parent for a map of all businesses releasing toxic materials. We asked the AQMD for a map that showed every single business that releases harmful materials into our air. This is that map. The heaviest concentration of these businesses are, guess where? Near Franklin. This map is striking. The OCSD gave us a map showing all businesses that release toxic materials into our sewers. The largest concentration of these businesses are, guess where? Near Franklin and Kennedy Elementary Schools." Senator Dunn promised that at the next town hall meeting, he will have a panel of scientists present to determine if the substances released by these business pose a health risk to residents of the area. "We are going to keep at this until we find out what is making our kids sick," he said. Santa Ana City Council member Jose Solorio said that "the city has been following the media's attention. I got to tell you, this is a very complex issue. The city has jurisdiction over land use; they can issue restrictions. We, as elected officials, need to know more." Solorio then introduced the city's planning director and other city officials. Solorio added, "the mayor of Santa Ana, Miguel Pulido, is a board-member for AQMD." Miguel Pulido has not attended any of the town hall meetings, and has not spoken about this issue at any time. Dunn then introduced the next panelist, Santa Ana Unified School District board member Rosemary Avila. She said, "the school board is looking into this. I've talked to some teachers on the phone I believe the federal disease organization has been contacted about this." The Center for Disease Control was notified by parents of the leukemia cases in Santa Ana, but stated that they were "within the acceptable range". Avila then introduced some school board officials, and said, "there has been some concern in the past, and we have looked into that. As a school district, we really have to act not out of fear, but with facts." Jill Whynot of the AQMD noted that "there are 515 facilities in Santa Ana that we issue permits to". Barry Wallerstein, Executive Officer of the AQMD said, "we appreciate the forum. There appears to be a need for closer air quality monitoring. So, I propose that we make Santa Ana a high priority and closely monitor air quality in your community." That statement was met with much applause from the audience. Senator Dunn responded, "we thank the AQMD for being here and answering our questions. We will be sure to let everybody know about any updates. When I looked at the map, I was struck. There are 515 permitted businesses in Santa Ana. We will bring some scientists in at the next town hall meeting to determine which businesses are releasing carcinogenic pollutants," he said. "When I look at the maps, there are two pockets of permitted facilities in Santa Ana. Do you [AQMD] look at the cumulative impact of facilities grouped together [when considering issuing a permit]?" Dunn posed. Dr. Wallerstein responded, "the short answer is 'partially'". Senator Dunn, responding to Dr. Wallerstein's comments, said "if we need to give AQMD more power in terms of cumulative impact of permitted facilities, then we will introduce legislation to give them that power." The Senator then asked City Councilman Solorio, "does the city in any way look at what type of business it is, or its cumulative impact [when approving a business]?" Solorio responded, "one of the main things the city does is make a General Plan, and unlike Irvine or Newport Beach, we are an older city." Solorio went on to talk about how in the future, the city could pass litigation limit permits, and said that "we all need to do our part". Referring to concerns about the steel plating plant next to a school, he said, "Markland came into an industrial area, so they have a legal right to set up shop". Dunn asked Solorio if the city is now looking at regulation to limit this, and Solorio responded, "We always have opportunities to look at our General Plan, and we need to have solid facts to make those decisions". Dunn asked Dr. Wallerstein, "what about this pocket of businesses in south Santa Ana, is that unusual?" Wallerstein responded, "Senator, I don't think that's an issue".</text>
+        <locations>
+            <location>
+                <name>California</name>
+                <start>20</start>
+                <end>30</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>173</start>
+                <end>182</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>California</name>
+                <start>184</start>
+                <end>194</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>229</start>
+                <end>238</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>864</start>
+                <end>873</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>1481</start>
+                <end>1490</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>1696</start>
+                <end>1705</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>4722</start>
+                <end>4731</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>5238</start>
+                <end>5247</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>5581</start>
+                <end>5590</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>6377</start>
+                <end>6386</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Newport Beach</name>
+                <start>7056</start>
+                <end>7069</end>
+                <lat>33.61</lat>
+                <lon>-117.89</lon>
+                <page>https://en.wikipedia.org/wiki/Newport_Beach,_California</page>
+            </location>
+            <location>
+                <name>Irvine</name>
+                <start>7046</start>
+                <end>7052</end>
+                <lat>33.66</lat>
+                <lon>-117.82</lon>
+                <page>https://en.wikipedia.org/wiki/Irvine,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>7686</start>
+                <end>7695</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
             </location>
         </locations>
     </article>
@@ -11594,12 +11952,6 @@ A highly dynamic Bluetongue (or catarrhal fever) infection of sheep herds is und
                 <lon></lon>
                 <page></page>
             </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
             <location>
                 <name></name>
                 <start></start>
@@ -11624,12 +11976,6 @@ A highly dynamic Bluetongue (or catarrhal fever) infection of sheep herds is und
                 <lon></lon>
                 <page></page>
             </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
             <location>
                 <name></name>
                 <start></start>
@@ -11646,80 +11992,6 @@ A highly dynamic Bluetongue (or catarrhal fever) infection of sheep herds is und
                 <lon></lon>
                 <page></page>
             </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
             <location>
                 <name></name>
                 <start></start>
