@@ -7,8 +7,7 @@ import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH, \
-    BATCH_SIZE
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH, BATCH_SIZE
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 

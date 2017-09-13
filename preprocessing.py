@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import spacy
 import numpy as np
 import sqlite3
-
 from geopy.distance import great_circle
 from matplotlib import pyplot, colors
 from scipy.spatial.distance import euclidean
@@ -206,11 +205,11 @@ def generate_training_data():
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
                                         coords = get_coordinates(c, location.strip())
                                         if len(coords) > 0:
-                                            ratio = index / float(CONTEXT_LENGTH) if is_left \
-                                                                                 else 1 - index / float(CONTEXT_LENGTH)
-                                            for coord in coords:
-                                                coords.append((coord[0], coord[1], int(coord[2] * ratio)))
-                                                coords.remove(coord)
+                                            # ratio = index / float(CONTEXT_LENGTH) if is_left \
+                                            #                                      else 1 - index / float(CONTEXT_LENGTH)
+                                            # for coord in coords:
+                                            #     coords.append((coord[0], coord[1], int(coord[2] * ratio)))
+                                            #     coords.remove(coord)
                                             if is_left:
                                                 locations_left.append(coords)
                                             else:
@@ -310,11 +309,11 @@ def generate_evaluation_data(corpus, file_name):
                                 if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
                                     coords = get_coordinates(c, location.strip())
                                     if len(coords) > 0:
-                                        ratio = index / float(CONTEXT_LENGTH) if is_left \
-                                            else 1 - index / float(CONTEXT_LENGTH)
-                                        for coord in coords:
-                                            coords.append((coord[0], coord[1], int(coord[2] * ratio)))
-                                            coords.remove(coord)
+                                        # ratio = index / float(CONTEXT_LENGTH) if is_left \
+                                        #     else 1 - index / float(CONTEXT_LENGTH)
+                                        # for coord in coords:
+                                        #     coords.append((coord[0], coord[1], int(coord[2] * ratio)))
+                                        #     coords.remove(coord)
                                         if is_left:
                                             locations_left.append(coords)
                                         else:
@@ -326,15 +325,15 @@ def generate_evaluation_data(corpus, file_name):
                                                 i + offset].is_punct else PADDING
                                     location = u""
 
-                        db_entry = toponym[0] if corpus == u"lgl" else toponym[1]
-                        target_grid = get_coordinates(c, db_entry)
+                        lookup = toponym[0] if corpus == u"lgl" else toponym[1]
+                        target_grid = get_coordinates(c, lookup)
                         if len(target_grid) == 0:
-                            raise Exception(u"No entry in the database!", db_entry)
+                            raise Exception(u"No entry in the database!", lookup)
                         entities_left = merge_lists(locations_left)
                         entities_right = merge_lists(locations_right)
                         locations_left, locations_right = [], []
                         o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:10]))  # MAX LENGTH = 10!
+                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in lookup.split()][:15]))
                         o.write(u"\t" + str(entities_left) + u"\t" + str(entities_right) + u"\n")
             if not captured:
                 print line_no, line, target, start, end
@@ -412,13 +411,13 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
             line = line.strip().split("\t")
             labels.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
 
-            left = [w for w in eval(line[2]) if u"**LOC**" not in w]
-            right = [w for w in eval(line[3]) if u"**LOC**" not in w]
+            left = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
+            right = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
             left_words.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
             right_words.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
 
-            left = [w.replace(u"**LOC**", u"") for w in eval(line[2]) if u"**LOC**" in w]
-            right = [w.replace(u"**LOC**", u"") for w in eval(line[3]) if u"**LOC**" in w]
+            left = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
+            right = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
             left_entities.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
             right_entities.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
 
@@ -431,7 +430,7 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                 left_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
                 right_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
 
-            target_string.append(pad_list(10, eval(line[5]), from_left=True))
+            target_string.append(pad_list(15, eval(line[5]), from_left=True))
 
             if counter % BATCH_SIZE == 0:
                 for collection in [left_words, right_words, left_entities, right_entities, target_string]:
@@ -543,7 +542,7 @@ def training_map():
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="wiki", file_name="")
+# generate_evaluation_data(corpus="lgl", file_name="_topo")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
