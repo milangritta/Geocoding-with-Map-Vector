@@ -10,15 +10,15 @@ from geopy.distance import great_circle
 from matplotlib import pyplot, colors
 from scipy.spatial.distance import euclidean
 
-
-# -------- GLOBAL PARAMETERS -------- #
+# -------- GLOBAL CONSTANTS -------- #
 GRID_SIZE = 2
 BATCH_SIZE = 64
 CONTEXT_LENGTH = 100
 UNKNOWN = u"<unknown>"
 PADDING = u"0"
 EMB_DIM = 50
-# -------- GLOBAL PARAMETERS -------- #
+TARGET_LENGTH = 15
+# -------- GLOBAL CONSTANTS -------- #
 
 
 def print_stats(accuracy):
@@ -46,7 +46,7 @@ def pad_list(size, a_list, from_left):
 
 def coord_to_index(coordinates):
     """"""
-    latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99   # The few edge cases must
+    latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99  # The few edge cases must
     longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99  # get handled differently!
     if longitude < 0:
         longitude = -longitude
@@ -133,8 +133,9 @@ def populate_sql():
                 if name in geo_names:
                     already_have_entry = False
                     for item in geo_names[name]:
-                        if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 50:
-                            already_have_entry = True
+                        if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 25:
+                            if item[2] >= int(line[14]):
+                                already_have_entry = True
                     if not already_have_entry:
                         geo_names[name].add((float(line[4]), float(line[5]), int(line[14])))
                 else:
@@ -158,28 +159,30 @@ def generate_training_data():
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load(u'en')
-    f = codecs.open(u"../data/geowiki.txt", u"r", encoding=u"utf-8")
+    input = codecs.open(u"../data/geowiki.txt", u"r", encoding=u"utf-8")
     o = codecs.open(u"../data/train_wiki.txt", u"w", encoding=u"utf-8")
     lat, lon = u"", u""
     target, string = u"", u""
     skipped = 0
 
-    for line in f:
+    for line in input:
         if len(line.strip()) == 0:
             continue
         limit = 0
         if line.startswith(u"NEW ARTICLE::"):
             if len(string.strip()) > 0 and len(target) != 0:
-                locations_left, locations_right = [], []
+                locations_near, locations_far = [], []
                 doc = nlp(string)
                 for d in doc:
                     if d.text == target[0]:
                         if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                            left = doc[max(0, d.i - CONTEXT_LENGTH):d.i]
-                            right = doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]
-                            l, r = [], []
+                            near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):d.i]] + \
+                                       [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]]
+                            far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH * 2):max(0, d.i - CONTEXT_LENGTH)]] + \
+                                      [x for x in doc[d.i + len(target) + CONTEXT_LENGTH: d.i + len(target) + CONTEXT_LENGTH * 2]]
+                            near_out, far_out = [], []
                             location = u""
-                            for (out_list, in_list, is_left) in [(l, left, True), (r, right, False)]:
+                            for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
                                 for index, item in enumerate(in_list):
                                     if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
                                         if item.ent_iob_ == u"B" and item.text.lower() == u"the":
@@ -205,30 +208,26 @@ def generate_training_data():
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
                                         coords = get_coordinates(c, location.strip())
                                         if len(coords) > 0:
-                                            # ratio = index / float(CONTEXT_LENGTH) if is_left \
-                                            #                                      else 1 - index / float(CONTEXT_LENGTH)
-                                            # for coord in coords:
-                                            #     coords.append((coord[0], coord[1], int(coord[2] * ratio)))
-                                            #     coords.remove(coord)
-                                            if is_left:
-                                                locations_left.append(coords)
+                                            if is_near:
+                                                locations_near.append(coords)
                                             else:
-                                                locations_right.append(coords)
+                                                locations_far.append(coords)
                                         else:
                                             offset = 1 if index == len(in_list) - 1 else 0
                                             for i in range(index - len(location.split()), index):
-                                                out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[i + offset].is_punct else PADDING
+                                                out_list[i + offset] = in_list[i + offset].lemma_ \
+                                                    if not in_list[i + offset].is_punct else PADDING
                                         location = u""
                             target_grid = get_coordinates(c, u" ".join(target))
                             if len(target_grid) == 0:
                                 skipped += 1
                                 break
-                            entities_left = merge_lists(locations_left)
-                            entities_right = merge_lists(locations_right)
-                            locations_left, locations_right = [], []
-                            o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                            o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:10])) # MAX LENGTH = 10!
-                            o.write(u"\t" + str(entities_left) + u"\t" + str(entities_right) + u"\n")
+                            entities_near = merge_lists(locations_near)
+                            entities_far = merge_lists(locations_far)
+                            locations_near, locations_far = [], []
+                            o.write(lat + u"\t" + lon + u"\t" + str(near_out) + u"\t" + str(far_out) + u"\t")
+                            o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:TARGET_LENGTH]))
+                            o.write(u"\t" + str(entities_near) + u"\t" + str(entities_far) + u"\n")
                             limit += 1
                             if limit > 29:
                                 break
@@ -267,7 +266,7 @@ def generate_evaluation_data(corpus, file_name):
         for toponym in line.split(u"||")[:-1]:
             captured = False
             doc = nlp(codecs.open(directory + str(line_no), u"r", encoding=u"utf-8").read())
-            locations_left, locations_right = [], []
+            locations_near, locations_far = [], []
             toponym = toponym.split(u",,")
             target = toponym[1].split()
             ent_length = len(u" ".join(target))
@@ -279,11 +278,14 @@ def generate_evaluation_data(corpus, file_name):
                         if abs(d.idx - start) > 2 or abs(d.idx + ent_length - end) > 2:
                             continue
                         captured = True
-                        left = doc[max(0, d.i - CONTEXT_LENGTH):d.i]
-                        right = doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]
-                        l, r = [], []
+                        near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):d.i]] + \
+                                   [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]]
+                        far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH * 2):max(0, d.i - CONTEXT_LENGTH)]] + \
+                                  [x for x in
+                                   doc[d.i + len(target) + CONTEXT_LENGTH: d.i + len(target) + CONTEXT_LENGTH * 2]]
+                        near_out, far_out = [], []
                         location = u""
-                        for (out_list, in_list, is_left) in [(l, left, True), (r, right, False)]:
+                        for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
                             for index, item in enumerate(in_list):
                                 if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
                                     if item.ent_iob_ == u"B" and item.text.lower() == u"the":
@@ -309,15 +311,10 @@ def generate_evaluation_data(corpus, file_name):
                                 if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
                                     coords = get_coordinates(c, location.strip())
                                     if len(coords) > 0:
-                                        # ratio = index / float(CONTEXT_LENGTH) if is_left \
-                                        #     else 1 - index / float(CONTEXT_LENGTH)
-                                        # for coord in coords:
-                                        #     coords.append((coord[0], coord[1], int(coord[2] * ratio)))
-                                        #     coords.remove(coord)
-                                        if is_left:
-                                            locations_left.append(coords)
+                                        if is_near:
+                                            locations_near.append(coords)
                                         else:
-                                            locations_right.append(coords)
+                                            locations_far.append(coords)
                                     else:
                                         offset = 1 if index == len(in_list) - 1 else 0
                                         for i in range(index - len(location.split()), index):
@@ -329,12 +326,12 @@ def generate_evaluation_data(corpus, file_name):
                         target_grid = get_coordinates(c, lookup)
                         if len(target_grid) == 0:
                             raise Exception(u"No entry in the database!", lookup)
-                        entities_left = merge_lists(locations_left)
-                        entities_right = merge_lists(locations_right)
-                        locations_left, locations_right = [], []
-                        o.write(lat + u"\t" + lon + u"\t" + str(l) + u"\t" + str(r) + u"\t")
-                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in lookup.split()][:15]))
-                        o.write(u"\t" + str(entities_left) + u"\t" + str(entities_right) + u"\n")
+                        entities_near = merge_lists(locations_near)
+                        entities_far = merge_lists(locations_far)
+                        locations_near, locations_far = [], []
+                        o.write(lat + u"\t" + lon + u"\t" + str(near_out) + u"\t" + str(far_out) + u"\t")
+                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:TARGET_LENGTH]))
+                        o.write(u"\t" + str(entities_near) + u"\t" + str(entities_far) + u"\n")
             if not captured:
                 print line_no, line, target, start, end
     o.close()
@@ -361,10 +358,10 @@ def generate_vocabulary():
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
-            words.extend([w for w in eval(line[2]) if u"**LOC**" not in w])
-            words.extend([w for w in eval(line[3]) if u"**LOC**" not in w])
-            locations.extend([w for w in eval(line[2]) if u"**LOC**" in w])
-            locations.extend([w for w in eval(line[3]) if u"**LOC**" in w])
+            words.extend([w for w in eval(line[2]) if u"**LOC**" not in w])  # NEAR
+            words.extend([w for w in eval(line[3]) if u"**LOC**" not in w])  # FAR
+            locations.extend([w for w in eval(line[2]) if u"**LOC**" in w])  # NEAR
+            locations.extend([w for w in eval(line[3]) if u"**LOC**" in w])  # FAR
 
     words = Counter(words)
     for word in words:
@@ -430,7 +427,7 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                 left_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
                 right_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
 
-            target_string.append(pad_list(15, eval(line[5]), from_left=True))
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
             if counter % BATCH_SIZE == 0:
                 for collection in [left_words, right_words, left_entities, right_entities, target_string]:
@@ -442,11 +439,13 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                                 x[i] = w2i[UNKNOWN]
                 if train:
                     yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
-                            np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                            np.asarray(right_entities), np.asarray(left_entities_coord),
+                            np.asarray(right_entities_coord),
                             np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
                 else:
                     yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
-                            np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                            np.asarray(right_entities), np.asarray(left_entities_coord),
+                            np.asarray(right_entities_coord),
                             np.asarray(target_coord), np.asarray(target_string)])
 
                 left_words, right_words, left_entities, right_entities, labels = [], [], [], [], []
@@ -548,7 +547,7 @@ def training_map():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"nsw"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u""))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
