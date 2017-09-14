@@ -95,6 +95,7 @@ def construct_1D_grid(a_list, use_pop):
             g[index] += 1 + s[2]
         else:
             g[index] += 1
+    # g = np.log(g)
     return g / max(g) if max(g) > 0.0 else g
 
 
@@ -215,8 +216,7 @@ def generate_training_data():
                                         else:
                                             offset = 1 if index == len(in_list) - 1 else 0
                                             for i in range(index - len(location.split()), index):
-                                                out_list[i + offset] = in_list[i + offset].lemma_ \
-                                                    if not in_list[i + offset].is_punct else PADDING
+                                                out_list[i + offset] = in_list[i + offset].lemma_ if in_list[i + offset].is_alpha else PADDING
                                         location = u""
                             target_grid = get_coordinates(c, u" ".join(target))
                             if len(target_grid) == 0:
@@ -275,7 +275,7 @@ def generate_evaluation_data(corpus, file_name):
             for d in doc:
                 if d.text == target[0]:
                     if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                        if abs(d.idx - start) > 2 or abs(d.idx + ent_length - end) > 2:
+                        if abs(d.idx - start) > 4 or abs(d.idx + ent_length - end) > 4:
                             continue
                         captured = True
                         near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):d.i]] + \
@@ -318,8 +318,7 @@ def generate_evaluation_data(corpus, file_name):
                                     else:
                                         offset = 1 if index == len(in_list) - 1 else 0
                                         for i in range(index - len(location.split()), index):
-                                            out_list[i + offset] = in_list[i + offset].lemma_ if not in_list[
-                                                i + offset].is_punct else PADDING
+                                            out_list[i + offset] = in_list[i + offset].lemma_ if in_list[i + offset].is_alpha else PADDING
                                     location = u""
 
                         lookup = toponym[0] if corpus == u"lgl" else toponym[1]
@@ -401,36 +400,36 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        left_words, right_words, left_entities, right_entities, labels = [], [], [], [], []
-        left_entities_coord, right_entities_coord, target_coord, target_string = [], [], [], []
+        near_words, far_words, near_entities, far_entities, labels = [], [], [], [], []
+        near_entities_coord, far_entities_coord, target_coord, target_string = [], [], [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
             labels.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
 
-            left = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
-            right = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
-            left_words.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
-            right_words.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
+            near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
+            far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
+            near_words.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
+            far_words.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
 
-            left = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
-            right = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
-            left_entities.append(pad_list(CONTEXT_LENGTH, left, from_left=True))
-            right_entities.append(pad_list(CONTEXT_LENGTH, right, from_left=False))
+            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
+            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
+            near_entities.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
+            far_entities.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
 
             if oneDim:
                 target_coord.append(construct_1D_grid(eval(line[4]), use_pop=True))
-                left_entities_coord.append(construct_1D_grid(eval(line[6]), use_pop=True))
-                right_entities_coord.append(construct_1D_grid(eval(line[7]), use_pop=True))
+                near_entities_coord.append(construct_1D_grid(eval(line[6]), use_pop=True))
+                far_entities_coord.append(construct_1D_grid(eval(line[7]), use_pop=True))
             else:
                 target_coord.append([construct_2D_grid(eval(line[4]), use_pop=True)])
-                left_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
-                right_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
+                near_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
+                far_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
             if counter % BATCH_SIZE == 0:
-                for collection in [left_words, right_words, left_entities, right_entities, target_string]:
+                for collection in [near_words, far_words, near_entities, far_entities, target_string]:
                     for x in collection:
                         for i, w in enumerate(x):
                             if w in w2i:
@@ -438,21 +437,21 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                             else:
                                 x[i] = w2i[UNKNOWN]
                 if train:
-                    yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
-                            np.asarray(right_entities), np.asarray(left_entities_coord),
-                            np.asarray(right_entities_coord),
+                    yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
+                            np.asarray(far_entities), np.asarray(near_entities_coord),
+                            np.asarray(far_entities_coord),
                             np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
                 else:
-                    yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
-                            np.asarray(right_entities), np.asarray(left_entities_coord),
-                            np.asarray(right_entities_coord),
+                    yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
+                            np.asarray(far_entities), np.asarray(near_entities_coord),
+                            np.asarray(far_entities_coord),
                             np.asarray(target_coord), np.asarray(target_string)])
 
-                left_words, right_words, left_entities, right_entities, labels = [], [], [], [], []
-                left_entities_coord, right_entities_coord, target_coord, target_string = [], [], [], []
+                near_words, far_words, near_entities, far_entities, labels = [], [], [], [], []
+                near_entities_coord, far_entities_coord, target_coord, target_string = [], [], [], []
 
         if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
-            for collection in [left_words, right_words, left_entities, right_entities, target_string]:
+            for collection in [near_words, far_words, near_entities, far_entities, target_string]:
                 for x in collection:
                     for i, w in enumerate(x):
                         if w in w2i:
@@ -461,12 +460,12 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                             x[i] = w2i[UNKNOWN]
 
             if train:
-                yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
-                        np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
+                        np.asarray(far_entities), np.asarray(near_entities_coord), np.asarray(far_entities_coord),
                         np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
             else:
-                yield ([np.asarray(left_words), np.asarray(right_words), np.asarray(left_entities),
-                        np.asarray(right_entities), np.asarray(left_entities_coord), np.asarray(right_entities_coord),
+                yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
+                        np.asarray(far_entities), np.asarray(near_entities_coord), np.asarray(far_entities_coord),
                         np.asarray(target_coord), np.asarray(target_string)])
 
 
@@ -541,13 +540,13 @@ def training_map():
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="lgl", file_name="_topo")
+# generate_evaluation_data(corpus="wiki", file_name="_yahoo")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u""))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"new york"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
