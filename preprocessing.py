@@ -354,18 +354,18 @@ def generate_vocabulary():
     """Prepare the vocabulary(ies) for training."""
     vocab_words, vocab_locations = {UNKNOWN, PADDING}, {UNKNOWN, PADDING}
     words, locations = [], []
-    for f in [u"../data/train_wiki.txt"]:  # , u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
+    for f in [u"../data/train_wiki.txt", u"data/eval_lgl_gold.txt"]:
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
-            words.extend([w for w in eval(line[2]) if u"**LOC**" not in w])  # NEAR
-            words.extend([w for w in eval(line[3]) if u"**LOC**" not in w])  # FAR
-            locations.extend([w for w in eval(line[2]) if u"**LOC**" in w])  # NEAR
-            locations.extend([w for w in eval(line[3]) if u"**LOC**" in w])  # FAR
+            words.extend([w for w in eval(line[2]) if u"**LOC**" not in w])  # NEAR WORDS
+            words.extend([w for w in eval(line[3]) if u"**LOC**" not in w])  # FAR WORDS
+            locations.extend([w for w in eval(line[2]) if u"**LOC**" in w])  # NEAR ENTITIES
+            locations.extend([w for w in eval(line[3]) if u"**LOC**" in w])  # FAR ENTITIES
 
     words = Counter(words)
     for word in words:
-        if words[word] > 6:
+        if words[word] > 7:
             vocab_words.add(word)
     cPickle.dump(vocab_words, open(u"data/vocab_words.pkl", "w"))
     print(u"Vocabulary Words Size:", len(vocab_words))
