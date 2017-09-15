@@ -6,7 +6,7 @@ from preprocessing import get_coordinates
 counter = 0         # keeps track of current line number
 start = 0           # where do you want to start sampling from?
 finish = 2000000    # where do you want to end sampling?
-frequency = 3       # 1 means take EVERY sample, 2 means take every SECOND sample, ...
+frequency = 2       # 1 means take EVERY sample, 2 means take every SECOND sample, ...
 output_file = u"../data/train_wiki_uniform.txt"
 input_file = u"../data/train_wiki.txt"
 
@@ -22,6 +22,8 @@ for line in codecs.open(input_file, "r", encoding="utf-8"):
     counter += 1
     if counter < start:
         continue
+    if counter > finish:
+        break
     if counter % frequency == 0:
         if not filtering:
             out.write(line)
@@ -41,8 +43,6 @@ for line in codecs.open(input_file, "r", encoding="utf-8"):
             else:
                 out.write(line)
                 saved_count += 1
-    if counter > finish:
-        break
 
 print(u"Saved", saved_count, u"samples.")
 if filtering:

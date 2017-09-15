@@ -88,14 +88,13 @@ fec = Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SI
 fec = Dropout(0.3)(fec)
 
 target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-tc = Dense(500, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+tc = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
 tc = Dropout(0.3)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(vocabulary), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
-ts = Conv1D(500, 2, activation='relu', strides=1)(ts)
+ts = Conv1D(1000, 2, activation='relu', strides=1)(ts)
 ts = GlobalMaxPooling1D()(ts)
-ts = Dense(500)(ts)
 ts = Dropout(0.3)(ts)
 
 inp = concatenate([nw, fw, nes, fes, nec, fec, tc, ts])
