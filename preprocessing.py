@@ -10,10 +10,11 @@ from geopy.distance import great_circle
 from matplotlib import pyplot, colors
 from scipy.spatial.distance import euclidean
 
+
 # -------- GLOBAL CONSTANTS -------- #
 GRID_SIZE = 2
 BATCH_SIZE = 64
-CONTEXT_LENGTH = 100
+CONTEXT_LENGTH = 200
 UNKNOWN = u"<unknown>"
 PADDING = u"0"
 EMB_DIM = 50
@@ -95,7 +96,7 @@ def construct_1D_grid(a_list, use_pop):
             g[index] += 1 + s[2]
         else:
             g[index] += 1
-    # g = np.log(g)
+    g = np.sqrt(g)
     return g / max(g) if max(g) > 0.0 else g
 
 
@@ -329,7 +330,7 @@ def generate_evaluation_data(corpus, file_name):
                         entities_far = merge_lists(locations_far)
                         locations_near, locations_far = [], []
                         o.write(lat + u"\t" + lon + u"\t" + str(near_out) + u"\t" + str(far_out) + u"\t")
-                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in target][:TARGET_LENGTH]))
+                        o.write(str(target_grid) + u"\t" + str([t.lower() for t in lookup.split()][:TARGET_LENGTH]))
                         o.write(u"\t" + str(entities_near) + u"\t" + str(entities_far) + u"\n")
             if not captured:
                 print line_no, line, target, start, end
@@ -364,7 +365,7 @@ def generate_vocabulary():
 
     words = Counter(words)
     for word in words:
-        if words[word] > 5:
+        if words[word] > 6:
             vocab_words.add(word)
     cPickle.dump(vocab_words, open(u"data/vocab_words.pkl", "w"))
     print(u"Vocabulary Words Size:", len(vocab_words))
@@ -444,8 +445,7 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
                 else:
                     yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
                             np.asarray(far_entities), np.asarray(near_entities_coord),
-                            np.asarray(far_entities_coord),
-                            np.asarray(target_coord), np.asarray(target_string)])
+                            np.asarray(far_entities_coord), np.asarray(target_coord), np.asarray(target_string)])
 
                 near_words, far_words, near_entities, far_entities, labels = [], [], [], [], []
                 near_entities_coord, far_entities_coord, target_coord, target_string = [], [], [], []
@@ -540,7 +540,7 @@ def training_map():
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="wiki", file_name="_yahoo")
+# generate_evaluation_data(corpus="lgl", file_name="_gold")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()

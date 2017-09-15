@@ -23,12 +23,12 @@ print(u'Preparing vectors...')
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 
 vectors = {UNKNOWN: np.ones(EMB_DIM), PADDING: np.ones(EMB_DIM)}
-for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
-    if line.strip() == "":
-        continue
-    t = line.split()
-    vectors[t[0]] = [float(x) for x in t[1:]]
-print(u'Loaded Twitter vectors...', len(vectors))
+# for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
+#     if line.strip() == "":
+#         continue
+#     t = line.split()
+#     vectors[t[0]] = [float(x) for x in t[1:]]
+# print(u'Loaded Twitter vectors...', len(vectors))
 
 # for line in codecs.open(u"../data/glove." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
 #     if line.strip() == u"":
@@ -51,29 +51,30 @@ print(u'Done preparing vectors...')
 print(u"OOV (no vectors):", oov)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
+embeddings = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
 near_words = Input(shape=(CONTEXT_LENGTH,))
-nw = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(near_words)
+nw = embeddings(near_words)
 nw = Conv1D(500, 2, activation='relu', strides=1)(nw)
 nw = GlobalMaxPooling1D()(nw)
 nw = Dense(200)(nw)
 nw = Dropout(0.3)(nw)
 
 far_words = Input(shape=(CONTEXT_LENGTH,))
-fw = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(far_words)
+fw = embeddings(far_words)
 fw = Conv1D(500, 2, activation='relu', strides=1)(fw)
 fw = GlobalMaxPooling1D()(fw)
 fw = Dense(200)(fw)
 fw = Dropout(0.3)(fw)
 
 near_entities_strings = Input(shape=(CONTEXT_LENGTH,))
-nes = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(near_entities_strings)
+nes = embeddings(near_entities_strings)
 nes = Conv1D(500, 2, activation='relu', strides=1)(nes)
 nes = GlobalMaxPooling1D()(nes)
 nes = Dense(200)(nes)
 nes = Dropout(0.3)(nes)
 
 far_entities_strings = Input(shape=(CONTEXT_LENGTH,))
-fes = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)(far_entities_strings)
+fes = embeddings(far_entities_strings)
 fes = Conv1D(500, 2, activation='relu', strides=1)(fes)
 fes = GlobalMaxPooling1D()(fes)
 fes = Dense(200)(fes)
@@ -88,12 +89,12 @@ fec = Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SI
 fec = Dropout(0.3)(fec)
 
 target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-tc = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+tc = Dense(500, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
 tc = Dropout(0.3)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(vocabulary), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
-ts = Conv1D(1000, 2, activation='relu', strides=1)(ts)
+ts = Conv1D(500, 2, activation='relu', strides=1)(ts)
 ts = GlobalMaxPooling1D()(ts)
 ts = Dropout(0.3)(ts)
 
@@ -108,7 +109,7 @@ print(u'Finished building model...')
 checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 # checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=5)
-file_name = u"data/eval_lgl.txt"
+file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
                     epochs=100, callbacks=[checkpoint, early_stop])
