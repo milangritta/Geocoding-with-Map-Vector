@@ -540,7 +540,7 @@ def training_map():
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="lgl", file_name="_gold")
+# generate_evaluation_data(corpus="lgl", file_name="_yahoo")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()

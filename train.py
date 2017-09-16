@@ -52,50 +52,53 @@ print(u"OOV (no vectors):", oov)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
 embeddings = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
+# shared embeddings between all language input layers
+
 near_words = Input(shape=(CONTEXT_LENGTH,))
 nw = embeddings(near_words)
-nw = Conv1D(500, 2, activation='relu', strides=1)(nw)
+nw = Conv1D(1000, 2, activation='relu', strides=1)(nw)
 nw = GlobalMaxPooling1D()(nw)
-nw = Dense(200)(nw)
+nw = Dense(250)(nw)
 nw = Dropout(0.3)(nw)
 
 far_words = Input(shape=(CONTEXT_LENGTH,))
 fw = embeddings(far_words)
-fw = Conv1D(500, 2, activation='relu', strides=1)(fw)
+fw = Conv1D(1000, 2, activation='relu', strides=1)(fw)
 fw = GlobalMaxPooling1D()(fw)
-fw = Dense(200)(fw)
+fw = Dense(250)(fw)
 fw = Dropout(0.3)(fw)
 
 near_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 nes = embeddings(near_entities_strings)
-nes = Conv1D(500, 2, activation='relu', strides=1)(nes)
+nes = Conv1D(1000, 2, activation='relu', strides=1)(nes)
 nes = GlobalMaxPooling1D()(nes)
-nes = Dense(200)(nes)
+nes = Dense(250)(nes)
 nes = Dropout(0.3)(nes)
 
 far_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 fes = embeddings(far_entities_strings)
-fes = Conv1D(500, 2, activation='relu', strides=1)(fes)
+fes = Conv1D(1000, 2, activation='relu', strides=1)(fes)
 fes = GlobalMaxPooling1D()(fes)
-fes = Dense(200)(fes)
+fes = Dense(250)(fes)
 fes = Dropout(0.3)(fes)
 
 near_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-nec = Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(near_entities_coord)
+nec = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(near_entities_coord)
 nec = Dropout(0.3)(nec)
 
 far_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-fec = Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(far_entities_coord)
+fec = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(far_entities_coord)
 fec = Dropout(0.3)(fec)
 
 target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-tc = Dense(500, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+tc = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
 tc = Dropout(0.3)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(vocabulary), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
-ts = Conv1D(500, 2, activation='relu', strides=1)(ts)
+ts = Conv1D(1000, 2, activation='relu', strides=1)(ts)
 ts = GlobalMaxPooling1D()(ts)
+ts = Dense(500)(ts)
 ts = Dropout(0.3)(ts)
 
 inp = concatenate([nw, fw, nes, fes, nec, fec, tc, ts])
@@ -106,8 +109,8 @@ model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['ac
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
-checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-# checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+# checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
