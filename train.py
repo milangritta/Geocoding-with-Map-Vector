@@ -30,13 +30,6 @@ for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", enc
     vectors[t[0]] = [float(x) for x in t[1:]]
 print(u'Loaded Twitter vectors...', len(vectors))
 
-# for line in codecs.open(u"../data/glove." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
-#     if line.strip() == u"":
-#         continue
-#     t = line.split()
-#     vectors[t[0]] = [float(x) for x in t[1:]]
-# print(u'Loaded GloVe vectors...', len(vectors))
-
 weights = np.zeros((len(vocabulary), EMB_DIM))
 oov = 0
 for w in vocabulary:
@@ -53,31 +46,35 @@ print(u"OOV (no vectors):", oov)
 print(u'Building model...')
 embeddings = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
 # shared embeddings between all language input layers
+convolutions_words = Conv1D(2000, 2, activation='relu', strides=1)
+# shared convolutional layer for words
+convolutions_entities = Conv1D(2000, 2, activation='relu', strides=1)
+# shared convolutional layer for locations
 
 near_words = Input(shape=(CONTEXT_LENGTH,))
 nw = embeddings(near_words)
-nw = Conv1D(1000, 2, activation='relu', strides=1)(nw)
+nw = convolutions_words(nw)
 nw = GlobalMaxPooling1D()(nw)
 nw = Dense(250)(nw)
 nw = Dropout(0.3)(nw)
 
 far_words = Input(shape=(CONTEXT_LENGTH,))
 fw = embeddings(far_words)
-fw = Conv1D(1000, 2, activation='relu', strides=1)(fw)
+fw = convolutions_words(fw)
 fw = GlobalMaxPooling1D()(fw)
 fw = Dense(250)(fw)
 fw = Dropout(0.3)(fw)
 
 near_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 nes = embeddings(near_entities_strings)
-nes = Conv1D(1000, 2, activation='relu', strides=1)(nes)
+nes = convolutions_entities(nes)
 nes = GlobalMaxPooling1D()(nes)
 nes = Dense(250)(nes)
 nes = Dropout(0.3)(nes)
 
 far_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 fes = embeddings(far_entities_strings)
-fes = Conv1D(1000, 2, activation='relu', strides=1)(fes)
+fes = convolutions_entities(fes)  # attention for coordinates?
 fes = GlobalMaxPooling1D()(fes)
 fes = Dense(250)(fes)
 fes = Dropout(0.3)(fes)
