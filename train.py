@@ -50,56 +50,60 @@ convolutions_words = Conv1D(2000, 2, activation='relu', strides=1)
 # shared convolutional layer for words
 convolutions_entities = Conv1D(2000, 2, activation='relu', strides=1)
 # shared convolutional layer for locations
+dense_entities = Dense(1000, activation='relu', input_dim=int(180 / GRID_SIZE) * int(360 / GRID_SIZE))
+# shared layer for the entities coordinates
 
 near_words = Input(shape=(CONTEXT_LENGTH,))
 nw = embeddings(near_words)
 nw = convolutions_words(nw)
 nw = GlobalMaxPooling1D()(nw)
-nw = Dense(250)(nw)
 nw = Dropout(0.3)(nw)
+nw = Dense(250)(nw)
 
 far_words = Input(shape=(CONTEXT_LENGTH,))
 fw = embeddings(far_words)
 fw = convolutions_words(fw)
 fw = GlobalMaxPooling1D()(fw)
-fw = Dense(250)(fw)
 fw = Dropout(0.3)(fw)
+fw = Dense(250)(fw)
 
 near_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 nes = embeddings(near_entities_strings)
 nes = convolutions_entities(nes)
 nes = GlobalMaxPooling1D()(nes)
-nes = Dense(250)(nes)
 nes = Dropout(0.3)(nes)
+nes = Dense(250)(nes)
 
 far_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 fes = embeddings(far_entities_strings)
 fes = convolutions_entities(fes)  # attention for coordinates?
 fes = GlobalMaxPooling1D()(fes)
-fes = Dense(250)(fes)
 fes = Dropout(0.3)(fes)
+fes = Dense(250)(fes)
 
-near_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-nec = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(near_entities_coord)
+near_entities_coord = Input(shape=(int(180 / GRID_SIZE) * int(360 / GRID_SIZE),))
+nec = dense_entities(near_entities_coord)
 nec = Dropout(0.3)(nec)
+ner = Dense(250)(nec)
 
-far_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-fec = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(far_entities_coord)
+far_entities_coord = Input(shape=(int(180 / GRID_SIZE) * int(360 / GRID_SIZE),))
+fec = dense_entities(far_entities_coord)
 fec = Dropout(0.3)(fec)
+fec = Dense(250)(fec)
 
-target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-tc = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+target_coord = Input(shape=(int(180 / GRID_SIZE) * int(360 / GRID_SIZE),))
+tc = Dense(1000, activation='relu', input_dim=int(180 / GRID_SIZE) * int(360 / GRID_SIZE))(target_coord)
 tc = Dropout(0.3)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(vocabulary), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
-ts = Conv1D(1000, 2, activation='relu', strides=1)(ts)
+ts = Conv1D(2000, 2, activation='relu', strides=1)(ts)
 ts = GlobalMaxPooling1D()(ts)
-ts = Dense(500)(ts)
 ts = Dropout(0.3)(ts)
+ts = Dense(1000)(ts)
 
 inp = concatenate([nw, fw, nes, fes, nec, fec, tc, ts])
-inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)
+inp = Dense(units=int(180 / GRID_SIZE) * int(360 / GRID_SIZE), activation='softmax')(inp)
 model = Model(inputs=[near_words, far_words, near_entities_strings, far_entities_strings,
                       near_entities_coord, far_entities_coord, target_coord, target_string], outputs=[inp])
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])

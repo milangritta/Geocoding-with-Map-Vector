@@ -53,23 +53,23 @@ def coord_to_index(coordinates):
         longitude = -longitude
     if latitude < 0:
         latitude = -latitude
-    x = (360 / GRID_SIZE) * (int(latitude) / GRID_SIZE)
-    y = int(longitude) / GRID_SIZE
-    return x + y if 0 <= x + y <= (360 / GRID_SIZE) * (180 / GRID_SIZE) else Exception(u"Shock horror!!")
+    x = int(360 / GRID_SIZE) * int(latitude / GRID_SIZE)
+    y = int(longitude / GRID_SIZE)
+    return x + y if 0 <= x + y <= int(360 / GRID_SIZE) * int(180 / GRID_SIZE) else Exception(u"Shock horror!!")
 
 
 def index_to_coord(index):
     """"""
     x = int(index / (360 / GRID_SIZE))
-    y = index % (360 / GRID_SIZE)
-    if x > (90 / GRID_SIZE):
-        x = -(x - (90 / GRID_SIZE)) * GRID_SIZE
+    y = index % int(360 / GRID_SIZE)
+    if x > int(90 / GRID_SIZE):
+        x = -int((x - (90 / GRID_SIZE)) * GRID_SIZE)
     else:
-        x = ((90 / GRID_SIZE) - x) * GRID_SIZE
-    if y < (180 / GRID_SIZE):
-        y = -((180 / GRID_SIZE) - y) * GRID_SIZE
+        x = int(((90 / GRID_SIZE) - x) * GRID_SIZE)
+    if y < int(180 / GRID_SIZE):
+        y = -int(((180 / GRID_SIZE) - y) * GRID_SIZE)
     else:
-        y = (y - (180 / GRID_SIZE)) * GRID_SIZE
+        y = int((y - (180 / GRID_SIZE)) * GRID_SIZE)
     return x, y
 
 
@@ -89,7 +89,7 @@ def get_coordinates(con, loc_name):
 
 def construct_1D_grid(a_list, use_pop):
     """"""
-    g = np.zeros((360 / GRID_SIZE) * (180 / GRID_SIZE))
+    g = np.zeros(int(360 / GRID_SIZE) * int(180 / GRID_SIZE))
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
         if use_pop:
@@ -98,20 +98,6 @@ def construct_1D_grid(a_list, use_pop):
             g[index] += 1
     g = np.sqrt(g)
     return g / max(g) if max(g) > 0.0 else g
-
-
-def construct_2D_grid(a_list, use_pop):
-    """"""
-    g = np.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
-    for s in a_list:
-        index = coord_to_index((s[0], s[1]))
-        x = int(int(index / (360 / GRID_SIZE)) / GRID_SIZE)
-        y = int(int(index % (360 / GRID_SIZE)) / GRID_SIZE)
-        if use_pop:
-            g[x][y] += 1 + s[2]
-        else:
-            g[x][y] += 1
-    return g / np.amax(g) if np.amax(g) > 0.0 else g
 
 
 def merge_lists(grids):
@@ -396,7 +382,7 @@ def generate_vocabulary():
     # print(u"Vocabulary Size:", len(vocabulary))
 
 
-def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
+def generate_arrays_from_file(path, w2i, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -418,14 +404,9 @@ def generate_arrays_from_file(path, w2i, train=True, oneDim=True):
             near_entities.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
             far_entities.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
 
-            if oneDim:
-                target_coord.append(construct_1D_grid(eval(line[4]), use_pop=True))
-                near_entities_coord.append(construct_1D_grid(eval(line[6]), use_pop=True))
-                far_entities_coord.append(construct_1D_grid(eval(line[7]), use_pop=True))
-            else:
-                target_coord.append([construct_2D_grid(eval(line[4]), use_pop=True)])
-                near_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
-                far_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
+            target_coord.append(construct_1D_grid(eval(line[4]), use_pop=True))
+            near_entities_coord.append(construct_1D_grid(eval(line[6]), use_pop=True))
+            far_entities_coord.append(construct_1D_grid(eval(line[7]), use_pop=True))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
