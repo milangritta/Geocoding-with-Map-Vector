@@ -34,18 +34,18 @@ errors = codecs.open(u"errors.tsv", u"w", encoding="utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 final_errors = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False,
-                                 oneDim=True), steps=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True),
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
+                                 steps=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True),
                                  generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name)
+    candidates = sorted(candidates, key=lambda (a, b, c): c, reverse=True)
 
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
         continue
 
-    # population = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
-    population = sorted(candidates, key=lambda (a, b, c): c, reverse=True)
+    # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     best_candidate, y_to_geonames = [], []
@@ -56,7 +56,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     final_errors.append(great_circle(best_candidate[1], y).km)
 
     dist_p, dist_y, index_p, index_y = 50000, 50000, 0, 0
-    for index, candidate in enumerate(population):
+    for index, candidate in enumerate(candidates):
         if great_circle(best_candidate[1], (candidate[0], candidate[1])).km < dist_p:
             dist_p = great_circle(best_candidate[1], (candidate[0], candidate[1])).km
             index_p = index
@@ -66,8 +66,8 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
 
     errors.write(name + u"\t" + unicode(y) + u"\t" + unicode(p) + "\t" + unicode(best_candidate[1])
                  + u"\t" + unicode(index_y) + u"\t" + unicode(index_p) + u"\t" + unicode(final_errors[-1]) + u"\t" +
-                 unicode(best_candidate[0]) + u"\t" + unicode(len(population)) + u"\t" + unicode(sorted(y_to_geonames)[0])
-                 + u"\t" + context + u"\n")
+                 unicode(best_candidate[0]) + u"\t" + unicode(len(candidates)) + u"\t" + unicode(sorted(y_to_geonames)[0])
+                 + u"\t" + context.replace(u"\n", u"") + u"\n")
     # print("-----------------------------------------------------------------------------------------------------------")
 
 print_stats(final_errors)

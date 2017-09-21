@@ -77,26 +77,27 @@ def get_coordinates(con, loc_name):
     """"""
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
-        result = eval(result[0])
-        result = sorted(result, key=lambda (a, b, c): c, reverse=True)[:100]  # sanity limit of 100
-        if result[0][2] == 0:
-            return result
-        else:
-            return [r for r in result if r[2] > 0]  # only nonzero population for a sanity limit
+        result = eval(result[0])  # Do not remove the sorting, the function below assumes sorted results!
+        return sorted(result, key=lambda (a, b, c): c, reverse=True)
+    #     result = sorted(result, key=lambda (a, b, c): c, reverse=True)[:100]  # sanity limit of 100
+    #     if result[0][2] == 0:
+    #         return result
+    #     else:
+    #         return [r for r in result if r[2] > 0]  # only nonzero population for a sanity limit
     else:
         return []
 
 
-def construct_1D_grid(a_list, use_pop):
+def construct_spatial_grid(a_list, use_pop):
     """"""
     g = np.zeros(int(360 / GRID_SIZE) * int(180 / GRID_SIZE))
+    max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
         if use_pop:
-            g[index] += 1 + s[2]
+            g[index] += float(s[2]) / max_pop
         else:
             g[index] += 1
-    g = np.sqrt(g)
     return g / max(g) if max(g) > 0.0 else g
 
 
@@ -194,8 +195,9 @@ def generate_training_data():
                                     else:
                                         out_list.append(item.lemma_)
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
-                                        coords = get_coordinates(c, location.strip())
-                                        if len(coords) > 0:
+                                        location = location.strip()
+                                        coords = get_coordinates(c, location)
+                                        if len(coords) > 0 and location != u" ".join(target):
                                             if is_near:
                                                 locations_near.append(coords)
                                             else:
@@ -203,7 +205,8 @@ def generate_training_data():
                                         else:
                                             offset = 1 if index == len(in_list) - 1 else 0
                                             for i in range(index - len(location.split()), index):
-                                                out_list[i + offset] = in_list[i + offset].lemma_ if in_list[i + offset].is_alpha else PADDING
+                                                out_list[i + offset] = in_list[i + offset].lemma_ \
+                                                if in_list[i + offset].is_alpha and location != u" ".join(target) else PADDING
                                         location = u""
                             target_grid = get_coordinates(c, u" ".join(target))
                             if len(target_grid) == 0:
@@ -296,8 +299,9 @@ def generate_evaluation_data(corpus, file_name):
                                 else:
                                     out_list.append(item.lemma_)
                                 if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
-                                    coords = get_coordinates(c, location.strip())
-                                    if len(coords) > 0:
+                                    location = location.strip()
+                                    coords = get_coordinates(c, location)
+                                    if len(coords) > 0 and location != u" ".join(target):
                                         if is_near:
                                             locations_near.append(coords)
                                         else:
@@ -305,7 +309,8 @@ def generate_evaluation_data(corpus, file_name):
                                     else:
                                         offset = 1 if index == len(in_list) - 1 else 0
                                         for i in range(index - len(location.split()), index):
-                                            out_list[i + offset] = in_list[i + offset].lemma_ if in_list[i + offset].is_alpha else PADDING
+                                            out_list[i + offset] = in_list[i + offset].lemma_ \
+                                                if in_list[i + offset].is_alpha and location != u" ".join(target) else PADDING
                                     location = u""
 
                         lookup = toponym[0] if corpus == u"lgl" else toponym[1]
@@ -392,7 +397,7 @@ def generate_arrays_from_file(path, w2i, train=True):
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_1D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
 
             near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
@@ -404,9 +409,9 @@ def generate_arrays_from_file(path, w2i, train=True):
             near_entities.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
             far_entities.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
 
-            target_coord.append(construct_1D_grid(eval(line[4]), use_pop=True))
-            near_entities_coord.append(construct_1D_grid(eval(line[6]), use_pop=True))
-            far_entities_coord.append(construct_1D_grid(eval(line[7]), use_pop=True))
+            target_coord.append(construct_spatial_grid(eval(line[4]), use_pop=True))
+            near_entities_coord.append(construct_spatial_grid(eval(line[6]), use_pop=True))
+            far_entities_coord.append(construct_spatial_grid(eval(line[7]), use_pop=True))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
@@ -461,7 +466,7 @@ def generate_strings_from_file(path):
 
 def compute_embedding_distances(W, dim):
     store = []
-    W = np.reshape(W, (180 / GRID_SIZE, 360 / GRID_SIZE, dim))
+    W = np.reshape(W, (int(180 / GRID_SIZE), int(360 / GRID_SIZE), dim))
     for row in W:
         store_col = []
         for column in row:
@@ -478,9 +483,9 @@ def compute_pixel_similarity():
     distances_p = compute_embedding_distances(cPickle.load(open("data/W.pkl")), 801)
 
     store = []
-    for r in range(180 / GRID_SIZE):
+    for r in range(int(180 / GRID_SIZE)):
         store_c = []
-        for c in range(360 / GRID_SIZE):
+        for c in range(int(360 / GRID_SIZE)):
             store_c.append((r, c))
         store.append(store_c)
 
@@ -511,8 +516,8 @@ def training_map():
         for line in training_file:
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
-    c = construct_1D_grid(coordinates, use_pop=False)
-    c = np.reshape(c, (180 / GRID_SIZE, 360 / GRID_SIZE))
+    c = construct_spatial_grid(coordinates, use_pop=False)
+    c = np.reshape(c, (int(180 / GRID_SIZE), int(360 / GRID_SIZE)))
     visualise_2D_grid(c, "Training Map", log=True)
 
 
@@ -527,7 +532,7 @@ def training_map():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"new york"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"bc"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()

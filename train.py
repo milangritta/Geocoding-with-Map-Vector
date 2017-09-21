@@ -7,8 +7,7 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from preprocessing import generate_arrays_from_file, GRID_SIZE, BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, \
-    TARGET_LENGTH
+from preprocessing import generate_arrays_from_file, GRID_SIZE, BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, TARGET_LENGTH
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)
@@ -46,9 +45,9 @@ print(u"OOV (no vectors):", oov)
 print(u'Building model...')
 embeddings = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
 # shared embeddings between all language input layers
-convolutions_words = Conv1D(2000, 2, activation='relu', strides=1)
+convolutions_words = Conv1D(1000, 2, activation='relu', strides=1)
 # shared convolutional layer for words
-convolutions_entities = Conv1D(2000, 2, activation='relu', strides=1)
+convolutions_entities = Conv1D(1000, 2, activation='relu', strides=1)
 # shared convolutional layer for locations
 dense_entities = Dense(1000, activation='relu', input_dim=int(180 / GRID_SIZE) * int(360 / GRID_SIZE))
 # shared layer for the entities coordinates
