@@ -14849,198 +14849,462 @@ A two-hour gun battle which began at 7 p.m. local time between the Mexican Army 
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Katrina_survivor_searchers_prepare_for_the_worst</source>
+        <text>Workers are scouring New Orleans for any remaining survivors of Hurricane Katrina, and are vigorously searching for dead bodies. 25,000 body bags have been prepared in advance, in the event that the death toll from Katrina is that high. Temporary warehouses are being set up around the city to deal with corpse storage. In the last twenty-four to thirty-six hours, however, officials have revised downward, at least three times, the estimated death toll; 35,000, 10,000, and now less than 10,000. After the first sweep of the city devoted to recovery of bodies, officials retrieved approximately 800 bodies. Floodwaters are receding, but leaving a great deal of mud and contaminated water in their wake, filled with high levels of bacteria and viruses. All survivors are urged to leave the city. Dr. Julie Gerberding, head of the US Centers for Disease Control and Prevention (CDC), said "If you haven't left the city yet, you must do so," and stated that anyone who comes in contact with the toxic water must immediately wash themselves with clean water. If necessary, force will be used to remove all remaining citizens from New Orleans. While Dr. Gerberding's statement about mandatory evacuation seems clear, other officials have not been as emphatic. When asked about mandatory evacuations, New Orleans Police Superintendent Eddie Compass, while reaffirming the official word, qualified his statement stating that every reasonable means would be used to logically convince a person that it is in his best interest to evacuate. The superintendent would not comment on whether force would be used if reason failed. Furthermore, utility workers are in the process of re-establishing power to the Central Business District of the city prompting residents in those areas to reconsider the evacuation option. Animal rights campaigners are protesting against evidence that law enforcement officers are killing animals as a form of control. According to HelpingAnimals.com, pets left behind by evacuees are being shot. Residents of Jefferson Parish, and the upper portions of Saint Bernard Parish will be allowed to return permanently to their homes starting on Monday. Conditions in those areas — re-establishment of power, clearing of roads, and abatement of water — have improved to the point of making permanent return possible. Parish President Arron Broussard and Councilor Jennifer Sneed stated that residents should be allowed to return as soon as possible so repairs and rebuilding may begin. Companies are working with the US Federal Emergency Management Agency to provide money and support to the victims of Katrina, in order to ease them into a new life. In addition, a contract for approximately thirty-three million dollars to repair the I-10 span crossing the eastern portion of Lake Pontchartrain has been awarded. Many of the bridge sections, especially on the eastern-facing span, were knocked off their pilings as hurricane Katrina passed close to the city. The contractor expects one span to be repaired and opened for traffic within forty-five days.</text>
+        <locations>
+            <location>
+                <name>New Orleans</name>
+                <start>22</start>
+                <end>33</end>
+                <lat>29.95</lat>
+                <lon>-90.06</lon>
+                <page>https://en.wikipedia.org/wiki/New_Orleans</page>
+            </location>
+            <location>
+                <name>US</name>
+                <start>831</start>
+                <end>833</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>New Orleans</name>
+                <start>1128</start>
+                <end>1139</end>
+                <lat>29.95</lat>
+                <lon>-90.06</lon>
+                <page>https://en.wikipedia.org/wiki/New_Orleans</page>
+            </location>
+            <location>
+                <name>Jefferson Parish</name>
+                <start>2030</start>
+                <end>2046</end>
+                <lat>29.73</lat>
+                <lon>-90.1</lon>
+                <page>https://en.wikipedia.org/wiki/Jefferson_Parish,_Louisiana</page>
+            </location>
+            <location>
+                <name>Central Business District</name>
+                <start>1699</start>
+                <end>1724</end>
+                <lat>29.94</lat>
+                <lon>-90.07</lon>
+                <page>https://en.wikipedia.org/wiki/New_Orleans_Central_Business_District</page>
+            </location>
+            <location>
+                <name>Saint Bernard Parish</name>
+                <start>2074</start>
+                <end>2094</end>
+                <lat>29.89</lat>
+                <lon>-89.35</lon>
+                <page>https://en.wikipedia.org/wiki/St._Bernard_Parish,_Louisiana</page>
+            </location>
+            <location>
+                <name>US</name>
+                <start>2531</start>
+                <end>2533</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Lake Pontchartrain</name>
+                <start>2792</start>
+                <end>2810</end>
+                <lat>30.18</lat>
+                <lon>-90.10</lon>
+                <page>https://en.wikipedia.org/wiki/Lake_Pontchartrain</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/Eight_Californians_seriously_ill_after_eating_live_shellfish</source>
+        <text>Eight Californians contracted a rare lung infection after eating live sawagani crabs at several southern California restaurants. The freshwater crabs, also known as river or regal crabs, were purchased in several restaurants, including Riptide Rockin' Sushi and Teppan Grill in Mission Viejo and Chomp Rockin' Sushi and Teppan Grill in Fullerton. The crabs were infected with a parasite called paragonimus, a flatworm similar to lung fluke. The parasite travels to the lungs six to ten weeks after ingestion. Symptoms include coughing, diarrhea, breathing problems, chest pain, abdominal pain, fever, and hives. The worm can spread to other organs, including the brain. According to Wikipedia, about 5,000 Americans die of foodborne illness every year.</text>
+        <locations>
+            <location>
+                <name>California</name>
+                <start>106</start>
+                <end>116</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
+                <name>Mission Viejo</name>
+                <start>279</start>
+                <end>292</end>
+                <lat>33.61</lat>
+                <lon>-117.65</lon>
+                <page>https://en.wikipedia.org/wiki/Mission_Viejo,_California</page>
+            </location>
+            <location>
+                <name>Fullerton</name>
+                <start>337</start>
+                <end>346</end>
+                <lat>33.88</lat>
+                <lon>-117.92</lon>
+                <page>https://en.wikipedia.org/wiki/Fullerton,_California</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/150,000_street_vendors_in_India_shown_how_to_avoid_causing_%27Delhi_belly%27</source>
+        <text>The All India Institute of Hygiene and Public Health has begun a campaign to instruct street vendors in India how to safely prepare food for their customers to avoid inflicting 'Delhi belly'–severe diarrhea–which afflicts about half of the visitors to the region. Over 150,000 "stall wallahs" in Calcutta will be shown how to properly prepare dishes such as jhalmuri (a rice, tomato, and onion dish) and ghughni (a chick pea curry dish). "Do not set up your stall in the middle of a rubbish dump, drain or sewage channel," the report recommends. "Wash your hands before cooking and do not let large swarms of flies settle on food displays." "One of the tips we’ve been given is to wear aprons," Banahari Saha, a stall operator on Camac Street, in Calcutta, told UPI. "We’ve also been told how important it is to make sure the water is clean and uncooked food is protected from flies," he said. The campaign is also sponsored by the World Health Organization. Tourists will be given maps pointing to street vendors who have been approved by the All India Institute. "My customers say they're happy with the changes I've introduced," Saha told UPI.</text>
+        <locations>
+            <location>
+                <name>India</name>
+                <start>105</start>
+                <end>110</end>
+                <lat>21</lat>
+                <lon>78</lon>
+                <page>https://en.wikipedia.org/wiki/India</page>
+            </location>
+            <location>
+                <name>Delhi</name>
+                <start>179</start>
+                <end>184</end>
+                <lat>28.61</lat>
+                <lon>77.23</lon>
+                <page>https://en.wikipedia.org/wiki/Delhi</page>
+            </location>
+            <location>
+                <name>Calcutta</name>
+                <start>297</start>
+                <end>305</end>
+                <lat>22.56</lat>
+                <lon>88.36</lon>
+                <page>https://en.wikipedia.org/wiki/Kolkata</page>
+            </location>
+            <location>
+                <name>Calcutta</name>
+                <start>748</start>
+                <end>756</end>
+                <lat>22.56</lat>
+                <lon>88.36</lon>
+                <page>https://en.wikipedia.org/wiki/Kolkata</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/Australia_appeals_for_no_execution_in_Indonesian_drug_case</source>
+        <text>A 27-year-old former beauty student from the Gold Coast of Australia faces the death penalty. She was allegedly caught at Bali airport importing marijuana from Australia in October. Appearing before an Indonesian judge after authorities found 4.1kg of high-grade cannabis in her unlocked boarding bag, she could be sentenced to death by firing squad, the maximum penalty for the crime. With that possibility looming for Ms. Corby, her father journeyed to her side, and an anonymous email petition was distributed around Australia and overseas, calling on the Australian government to ensure that, innocent or guilty, Ms. Corby is returned to Australia to escape execution. An Australian witness who volunteered information which he says will endanger his own life, has testified that Schapelle Corby was unwittingly caught up in a domestic Australian drug-running operation gone wrong. The man alleged that Australian airport workers had placed the contraband in her luggage after it had been checked-in, with the drugs to have been removed before the luggage left Australia. Ms. Corby, who says she is innocent of the charges, staggered and paused to vomit while being led through a throng of journalists watching her trial in Jakarta, Indonesia, earlier today. "I'm really sick," Ms. Corby told Densbar's head judge Linton Sirait, who told her to take better care of herself in jail so she would not get diarrhea. "Don't be stressed," Judge Sirait added as he adjourned the trial until April 14. Her sister said a doctor would visit her in prison to assess her condition. Her father, suffering with prostate cancer, said it was difficult to watch his daughter struggling so hard when things were nearing the "nitty-gritty now." He added: "The stress and the whole thing and the stomach cramps and the nerves. It's getting on top of her." Australian politicians, noting the public support thrown behind the Gold Coast citizen, are promising to take her case up on several issues with the Indonesian Attorney-General later today. However, Mr. Corby expressed doubts that politicians could work things out: "It depends on what they call justice here [in Indonesia]. It looks a bit fairyland to me." "Everything's reversed here. You're guilty until you're proven innocent," commented Mr. Corby in Indonesia. Indonesian President Susilo Bambang Yudhoyono is said to be monitoring the case to ensure the court hands down a just and fair verdict.</text>
+        <locations>
+            <location>
+                <name>Gold Coast</name>
+                <start>46</start>
+                <end>56</end>
+                <lat>-28.01</lat>
+                <lon>153.4</lon>
+                <page>https://en.wikipedia.org/wiki/Gold_Coast,_Queensland</page>
+            </location>
+            <location>
+                <name>Australia</name>
+                <start>60</start>
+                <end>69</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
+                <name>Bali</name>
+                <start>123</start>
+                <end>127</end>
+                <lat>-8.65</lat>
+                <lon>115.21</lon>
+                <page>https://en.wikipedia.org/wiki/Bali</page>
+            </location>
+            <location>
+                <name>Australia</name>
+                <start>161</start>
+                <end>170</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
+                <name>Australia</name>
+                <start>521</start>
+                <end>530</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
+                <name>Australia</name>
+                <start>643</start>
+                <end>652</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
+                <name>Australia</name>
+                <start>1066</start>
+                <end>1075</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
+                <name>Jakarta</name>
+                <start>1229</start>
+                <end>1236</end>
+                <lat>-6.2</lat>
+                <lon>106.81</lon>
+                <page>https://en.wikipedia.org/wiki/Jakarta</page>
+            </location>
+            <location>
+                <name>Indonesia</name>
+                <start>1238</start>
+                <end>1247</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
+            </location>
+            <location>
+                <name>Gold Coast</name>
+                <start>1909</start>
+                <end>1919</end>
+                <lat>-28.01</lat>
+                <lon>153.4</lon>
+                <page>https://en.wikipedia.org/wiki/Gold_Coast,_Queensland</page>
+            </location>
+            <location>
+                <name>Indonesia</name>
+                <start>2154</start>
+                <end>2163</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
+            </location>
+            <location>
+                <name>Indonesia</name>
+                <start>2296</start>
+                <end>2305</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
+            </location>
+        </locations>
+    </article>
+    <article>
+        <source>https://en.wikinews.org/wiki/UNHCR:_Thousands_of_Angolans_expelled_from_DRC_in_%22dire%22_need_of_aid</source>
         <text>
-Workers are scouring New Orleans for any remaining survivors of Hurricane Katrina, and are vigorously searching for dead bodies. 25,000 body bags have been prepared in advance, in the event that the death toll from Katrina is that high. Temporary warehouses are being set up around the city to deal with corpse storage. In the last twenty-four to thirty-six hours, however, officials have revised downward, at least three times, the estimated death toll; 35,000, 10,000, and now less than 10,000. After the first sweep of the city devoted to recovery of bodies, officials retrieved approximately 800 bodies. Floodwaters are receding, but leaving a great deal of mud and contaminated water in their wake, filled with high levels of bacteria and viruses. All survivors are urged to leave the city. Dr. Julie Gerberding, head of the US Centers for Disease Control and Prevention (CDC), said "If you haven't left the city yet, you must do so," and stated that anyone who comes in contact with the toxic water must immediately wash themselves with clean water. If necessary, force will be used to remove all remaining citizens from New Orleans. While Dr. Gerberding's statement about mandatory evacuation seems clear, other officials have not been as emphatic. When asked about mandatory evacuations, New Orleans Police Superintendent Eddie Compass, while reaffirming the official word, qualified his statement stating that every reasonable means would be used to logically convince a person that it is in his best interest to evacuate. The superintendent would not comment on whether force would be used if reason failed. Furthermore, utility workers are in the process of re-establishing power to the Central Business District of the city prompting residents in those areas to reconsider the evacuation option. Animal rights campaigners are protesting against evidence that law enforcement officers are killing animals as a form of control. According to HelpingAnimals.com , pets left behind by evacuees are being shot. Residents of Jefferson Parish, and the upper portions of Saint Bernard Parish will be allowed to return permanently to their homes starting on Monday. Conditions in those areas — re-establishment of power, clearing of roads, and abatement of water — have improved to the point of making permanent return possible. Parish President Arron Broussard and Councilor Jennifer Sneed stated that residents should be allowed to return as soon as possible so repairs and rebuilding may begin. Companies are working with the US Federal Emergency Management Agency to provide money and support to the victims of Katrina, in order to ease them into a new life. In addition, a contract for approximately thirty-three million dollars to repair the I-10 span crossing the eastern portion of Lake Pontchartrain has been awarded. Many of the bridge sections, especially on the eastern-facing span, were knocked off their pilings as hurricane Katrina passed close to the city. The contractor expects one span to be repaired and opened for traffic within forty-five days.</text>
+The United Nations High Commissioner for Refugees (UNHCR) agency has said that thousands of Angolans that were recently expelled from the Democratic Republic of Congo are in dire need of humanitarian assistance. The agency said that the Angolans are living in sites around the town of Mbanza Congo in northern Angola. A UNHCR assessment team visited Mbanza Congo in northern Angola over the weekend. It reported that close to 30,000 people are living in and around three overcrowded reception centres near the Congolese border. The UNHCR said that a "significant number" of Angolan refugees that had been "forcibly returned" to their country were among those in the reception centres. "You have the compounding factors of not having latrines and people drinking possibly contaminated water and with the rain coming, this is a recipe for disaster," said a UNHCR protection officer, Yolande Ditewig. She told the Agence France-Presse news agency that "there is a lack of everything you can imagine, especially food and many people say they've not eaten for days." UN refugee agency spokesman Andrej Mahecic said that initial assessments found that people at those centres are in critical need of shelter, food, medicine and sanitation facilities. The supply of clean water is insufficient, according to Mahecic, and some of the Angolans were drinking from nearby contaminated rivers. As a consequence, many of the expelled families are reporting cases of diarrhea and vomiting. "There are significant numbers of Angolan refugees among the forcibly returned. And, this is for us the most worrying aspect of this situation. Some of them say they had been rounded up and taken to the border despite the fact they carried documents certifying their refugee status. Others said they were forced back without having had a chance to take their identification documents or any of their belongings. Most of them were deported from the Bas Congo Province in southern DRC," Mahecic said. He added that these forced returns are in response to the expulsion of large numbers of Congolese from Angola since December 2008. He says an official agreement between the DRC and Angola may finally end these tit-for-tat expulsions. This, however, does not mean that the exodus will end in the near term. According to Mahetic, Angolan authorities expect further large scale returns of their nationals who no longer feel welcome in the DRC. At the request of the Angolan government, he said the UNHCR will provide assistance to those who have been expelled and are waiting to go home.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Democratic Republic of Congo</name>
+                <start>139</start>
+                <end>167</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Mbanza Congo</name>
+                <start>286</start>
+                <end>298</end>
+                <lat>-6.26</lat>
+                <lon>14.24</lon>
+                <page>https://en.wikipedia.org/wiki/M%27banza-Kongo</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Angola</name>
+                <start>311</start>
+                <end>317</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Mbanza Congo</name>
+                <start>351</start>
+                <end>363</end>
+                <lat>-6.26</lat>
+                <lon>14.24</lon>
+                <page>https://en.wikipedia.org/wiki/M%27banza-Kongo</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Angola</name>
+                <start>376</start>
+                <end>382</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+            <location>
+                <name>Bas Congo Province</name>
+                <start>1925</start>
+                <end>1943</end>
+                <lat>-5.81</lat>
+                <lon>13.48</lon>
+                <page>https://en.wikipedia.org/wiki/Kongo_Central</page>
+            </location>
+            <location>
+                <name>DRC</name>
+                <start>1956</start>
+                <end>1959</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
+            </location>
+            <location>
+                <name>Angola</name>
+                <start>2079</start>
+                <end>2085</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+            <location>
+                <name>DRC</name>
+                <start>2149</start>
+                <end>2152</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
+            </location>
+            <location>
+                <name>Angola</name>
+                <start>2157</start>
+                <end>2163</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+            <location>
+                <name>DRC</name>
+                <start>2412</start>
+                <end>2418</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
             </location>
         </locations>
     </article>
     <article>
-        <source></source>
-        <text></text>
+        <source>https://en.wikinews.org/wiki/Recall_of_Thomas_the_Tank_Engine_toys_due_to_lead-paint_fears</source>
+        <text>A recall issued last week for Thomas the Tank Engine toys made in China and containing lead-based paint, is the latest scare for consumers, and follows recent scandals involving Chinese-made pet food, pharmaceuticals, toothpaste and other toys, The New York Times has reported in a series of articles. Last week, RC2, a U.S. toy company based in Oak Brook, Illinois, issued a recall for its popular wooden "Thomas the Tank Engine and Friends" train sets. The recall involved 1.5 million "Thomas Wooden Railway" vehicles and train sets sold at toy stores and various retailers across the U.S. from January 2005 through June 2007. A subsequent recall has been issued in the United Kingdom, where Thomas the Tank Engine was originated in the 1940s as a character in a children's story by the Reverend W.V. Awdry. Around 70,000 toys are involved in the UK recall, according to The Guardian. "RC2 has determined that the surface paints on the recalled products contain lead. Lead is toxic if ingested by young children and can cause adverse health effects," the Consumer Product Safety Commission said in a press release dated June 13. "Consumers should take the recalled toys away from young children immediately and contact RC2 Corp. for a replacement toy," the commission said. Those "adverse health effects" could include brain and nerve damage, especially in young children, as well as blood and brain disorders. Severe lead poisoning causes vomiting, diarrhea, convulsions, anemia, loss of appetite, headaches and in particularly high doses, coma and death. In an article on Monday, The New York Times reported that recalls have been issued for 24 different toys in the U.S. in the past year, and every one of them was made in China. According to the Toy Industry Association, toys made in China account for around 70 percent to 80 percent of all the toys sold in the U.S., The Times said. "These are items that children are supposed to be playing with," Prescott Carlson was quoted as saying by The Times. Carlson is a co-founder of a child-safety website called Imperfect Parent, which tracks recalls of toys and other baby products. "It should be at a point where companies in the United States that are importing these items are held liable," Carlson said. RC2 would not comment to The Times, and a Consumer Product Safety Commission spokesman would not say how long ago the problem with the lead paint was discovered. For a follow-up article on Tuesday, The Times visited a factory in Dongguan, in China's Guangdong province, where the "Thomas and Friends" toys are made. The paper interviewed workers and took photos on the factory floor. "You're intruding," a factory manager identified only as Zhong was quoted as telling the reporters. "Tell me, why exactly are you here?" During the visit, a reporter, translator and a photographer were detained by factory officials, and released a day later after local police and government officials intervened. The factory also produces other toys for RC2, including toy John Deere trucks, NASCAR racing models and MandM's cars, The Times said. RC2 makes the toys under licenses from various companies. The "Thomas and Friends" toys are made under license from Hit Entertainment, which owns the "Thomas" brand.</text>
         <locations>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>China</name>
+                <start>67</start>
+                <end>72</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>U.S.</name>
+                <start>321</start>
+                <end>325</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Oak Brook</name>
+                <start>347</start>
+                <end>356</end>
+                <lat>41.84</lat>
+                <lon>-87.95</lon>
+                <page>https://en.wikipedia.org/wiki/Oak_Brook,_Illinois</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>Illinois</name>
+                <start>358</start>
+                <end>366</end>
+                <lat>40</lat>
+                <lon>-89</lon>
+                <page>https://en.wikipedia.org/wiki/Illinois</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>U.S.</name>
+                <start>588</start>
+                <end>562</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>United Kingdom</name>
+                <start>673</start>
+                <end>687</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>UK</name>
+                <start>850</start>
+                <end>852</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>U.S.</name>
+                <start>1672</start>
+                <end>1676</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-            </location>
-        </locations>
-    </article>
-    <article>
-        <source></source>
-        <text></text>
-        <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>China</name>
+                <start>1729</start>
+                <end>1734</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>China</name>
+                <start>1792</start>
+                <end>1797</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
+                <name>U.S.</name>
+                <start>1870</start>
+                <end>1874</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>2186</start>
+                <end>2199</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Dongguan</name>
+                <start>2492</start>
+                <end>2500</end>
+                <lat>23.03</lat>
+                <lon>113.71</lon>
+                <page>https://en.wikipedia.org/wiki/Dongguan</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>2505</start>
+                <end>2510</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>Guangdong</name>
+                <start>2513</start>
+                <end>2522</end>
+                <lat>23.4</lat>
+                <lon>113.5</lon>
+                <page>https://en.wikipedia.org/wiki/Guangdong</page>
             </location>
         </locations>
     </article>
