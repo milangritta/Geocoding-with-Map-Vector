@@ -91,6 +91,8 @@ def get_coordinates(con, loc_name):
 def construct_spatial_grid(a_list, use_pop):
     """"""
     g = np.zeros(int(360 / GRID_SIZE) * int(180 / GRID_SIZE))
+    if len(a_list) == 0:
+        return g
     max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
