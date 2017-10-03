@@ -16,8 +16,9 @@ if len(sys.argv) > 1:
 else:
     data = u"lgl"
 
+weights_file = u"../data/weights"
 print(u"Input length:", CONTEXT_LENGTH)
-print(u"Testing:", data)
+print(u"Testing:", data, u"with weights:", weights_file)
 
 words = cPickle.load(open(u"data/vocab_words.pkl"))
 locations = cPickle.load(open(u"data/vocab_locations.pkl"))
@@ -26,7 +27,7 @@ vocabulary = words.union(locations)
 word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
-model = load_model(u"../data/weights")
+model = load_model(weights_file)
 print(u'Finished loading model...')
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Crunching numbers, sit tight...')

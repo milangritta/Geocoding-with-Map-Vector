@@ -78,12 +78,12 @@ def get_coordinates(con, loc_name):
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
         result = eval(result[0])  # Do not remove the sorting, the function below assumes sorted results!
-        return sorted(result, key=lambda (a, b, c): c, reverse=True)
-    #     result = sorted(result, key=lambda (a, b, c): c, reverse=True)[:100]  # sanity limit of 100
-    #     if result[0][2] == 0:
-    #         return result
-    #     else:
-    #         return [r for r in result if r[2] > 0]  # only nonzero population for a sanity limit
+        # return sorted(result, key=lambda (a, b, c): c, reverse=True)
+        result = sorted(result, key=lambda (a, b, c): c, reverse=True)[:100]  # sanity limit of 100
+        if result[0][2] == 0:
+            return result
+        else:
+            return [r for r in result if r[2] > 0]  # only nonzero population for a sanity limit
     else:
         return []
 
@@ -91,13 +91,14 @@ def get_coordinates(con, loc_name):
 def construct_spatial_grid(a_list, use_pop):
     """"""
     g = np.zeros(int(360 / GRID_SIZE) * int(180 / GRID_SIZE))
-    if len(a_list) == 0:
-        return g
-    max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
+    # if len(a_list) == 0:
+    #     return g
+    # max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
         if use_pop:
-            g[index] += float(s[2]) / max_pop
+            # g[index] += float(s[2]) / max_pop
+            g[index] + 1 + s[2]
         else:
             g[index] += 1
     return g / max(g) if max(g) > 0.0 else g
@@ -534,7 +535,7 @@ def training_map():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"bc"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"kew"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
