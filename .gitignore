@@ -89,3 +89,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# my other temporary files
+data/eval_wiki_gold.txt
+errors.tsv
+gpu/
+output.txt

@@ -535,7 +535,7 @@ def training_map():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"kew"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"twickenham"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
