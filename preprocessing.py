@@ -168,10 +168,10 @@ def generate_training_data():
                 for d in doc:
                     if d.text == target[0]:
                         if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                            near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):d.i]] + \
-                                       [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]]
-                            far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH * 2):max(0, d.i - CONTEXT_LENGTH)]] + \
-                                      [x for x in doc[d.i + len(target) + CONTEXT_LENGTH: d.i + len(target) + CONTEXT_LENGTH * 2]]
+                            near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]] + \
+                                       [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]]
+                            far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]] + \
+                                      [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]]
                             near_out, far_out = [], []
                             location = u""
                             for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
@@ -271,11 +271,10 @@ def generate_evaluation_data(corpus, file_name):
                         if abs(d.idx - start) > 4 or abs(d.idx + ent_length - end) > 4:
                             continue
                         captured = True
-                        near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):d.i]] + \
-                                   [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH]]
-                        far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH * 2):max(0, d.i - CONTEXT_LENGTH)]] + \
-                                  [x for x in
-                                   doc[d.i + len(target) + CONTEXT_LENGTH: d.i + len(target) + CONTEXT_LENGTH * 2]]
+                        near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]] + \
+                                   [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]]
+                        far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]] + \
+                                  [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]]
                         near_out, far_out = [], []
                         location = u""
                         for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
