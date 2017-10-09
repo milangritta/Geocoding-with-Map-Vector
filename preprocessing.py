@@ -104,6 +104,20 @@ def construct_spatial_grid(a_list, use_pop):
     return g / max(g) if max(g) > 0.0 else g
 
 
+def construct_2D_grid(a_list, use_pop):
+    """"""
+    g = np.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
+    for s in a_list:
+        index = coord_to_index((s[0], s[1]))
+        x = int(int(index / (360 / GRID_SIZE)) / GRID_SIZE)
+        y = int(int(index % (360 / GRID_SIZE)) / GRID_SIZE)
+        if use_pop:
+            g[x][y] += 1 + s[2]
+        else:
+            g[x][y] += 1
+    return g / np.amax(g) if np.amax(g) > 0.0 else g
+
+
 def merge_lists(grids):
     """"""
     out = []
@@ -534,7 +548,7 @@ def training_map():
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"twickenham"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"red river"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()

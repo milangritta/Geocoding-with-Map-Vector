@@ -26,7 +26,7 @@
                 <lat>15</lat>
                 <lon>121.08</lon>
                 <page>https://en.wikipedia.org/wiki/Bulacan</page>
-                </location>
+            </location>
         </locations>
     </article>
     <article>
@@ -89,7 +89,39 @@
                 <lon>121</lon>
                 <page>https://en.wikipedia.org/wiki/Nueva_Ecija</page>
             </location>
-    </locations>
+            <location>
+                <name>Zaïre</name>
+                <start>957</start>
+                <end>962</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
+            </location>
+            <location>
+                <name>Bundibugyo</name>
+                <start>964</start>
+                <end>974</end>
+                <lat>0.71</lat>
+                <lon>30.06</lon>
+                <page>https://en.wikipedia.org/wiki/Bundibugyo</page>
+            </location>
+            <location>
+                <name>Côte d'Ivoire</name>
+                <start>976</start>
+                <end>989</end>
+                <lat>8</lat>
+                <lon>-5</lon>
+                <page>https://en.wikipedia.org/wiki/Ivory_Coast</page>
+            </location>
+            <location>
+                <name>Sudan</name>
+                <start>994</start>
+                <end>999</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
+            </location>
+        </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Philippines_is_culling_6500_hogs_after_Reston_ebolavirus_outbreak</source>
@@ -197,6 +229,31 @@
                 <lon>-97.78</lon>
                 <page>https://en.wikipedia.org/wiki/Fort_Hood</page>
             </location>
+            <location>
+                <name>Fort Hood</name>
+                <start>350</start>
+                <end>359</end>
+                <lat>31.13</lat>
+                <lon>-97.78</lon>
+                <page>https://en.wikipedia.org/wiki/Fort_Hood</page>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>441</start>
+                <end>447</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>US</name>
+                <start>469</start>
+                <end>471</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -207,6 +264,14 @@
                 <name>Washington</name>
                 <start>41</start>
                 <end>51</end>
+                <lat>38.90</lat>
+                <lon>-77.01</lon>
+                <page>https://en.wikipedia.org/wiki/Washington,_D.C.</page>
+            </location>
+            <location>
+                <name>D.C.</name>
+                <start>53</start>
+                <end>57</end>
                 <lat>38.90</lat>
                 <lon>-77.01</lon>
                 <page>https://en.wikipedia.org/wiki/Washington,_D.C.</page>
@@ -269,8 +334,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Bird_flu_outbreak_kills_birds_in_Krasnodar_region</source>
-        <text>Krasnodar, Russia officials said yesterday they have found roughly 4,000 dead wild birds in the region. Doctors identified the disease as bird flu subtype H5. Officials said the outbreak originated with coots in water reservoirs at the west of the region. The Krasnodar leading veterinary physician, George Gzhailidi, said the bird flu outbreak originated with coots in the Temryuk and Anapa. The region governor Alexander Nikolayevich Tkachyov said, "At risk is the health and safety of people, of everybody who lives in the region.
-        </text>
+        <text>Krasnodar, Russia officials said yesterday they have found roughly 4,000 dead wild birds in the region. Doctors identified the disease as bird flu subtype H5. Officials said the outbreak originated with coots in water reservoirs at the west of the region. The Krasnodar leading veterinary physician, George Gzhailidi, said the bird flu outbreak originated with coots in the Temryuk and Anapa. The region governor Alexander Nikolayevich Tkachyov said, "At risk is the health and safety of people, of everybody who lives in the region.</text>
         <locations>
             <location>
                 <name>Krasnodar</name>
@@ -316,7 +380,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Taiwan_culls_18000_chickens_due_to_H5N2_virus_outbreak</source>
-        <text>New outbreaks of H5N2 have been confirmed in Taiwan. Lujhu is a rural township in northwestern Taoyuan. It is located at kilometer 49 of the Highway no.1, close to the Taiwan Taoyuan International Airport (IATA: TPE). Kaohsiung is a county in southern Taiwan administered as a County of Taiwan. Mr Huang Kwo-ching, deputy director of the Bureau of Animal and Plant Health Inspection and Quarantine, however, said, "we took the most stringent measures in dealing with the episode as according to the rules of the World Organisation for Animal Health (OIE), there was no need to slaughter those chickens."</text>
+        <text>New outbreaks of H5N2 have been confirmed in Taiwan. Lujhu is a rural township in northwestern Taoyuan. It is located at kilometer 49 of the Highway no.1, close to the Taiwan Taoyuan International Airport (IATA: TPE). Kaohsiung is a county in southern Taiwan administered as a county of Taiwan. Mr Huang Kwo-ching, deputy director of the Bureau of Animal and Plant Health Inspection and Quarantine, however, said, "we took the most stringent measures in dealing with the episode as according to the rules of the World Organisation for Animal Health (OIE), there was no need to slaughter those chickens."</text>
         <locations>
             <location>
                 <name>Taiwan</name>
@@ -362,7 +426,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Wild_Canadian_Goose_tests_positive_for_H5N1_in_England</source>
-        <text>The H5N1 Avian Flu virus has been found in a dead wild Canadian Goose in Abbotsbury Swannery in Dorset, England. This is the eleventh case of the virus turning up in wild birds. The goose was discovered on February 25, 2008. "The finding of more cases in wild birds is not unexpected ... We are currently considering whether any additional restrictions are necessary in the area," said the United Kingdom's Health Ministry in a statement to the media. As a result of the finding, poultry movement has now been restricted by the Department for the Environment, Food and Rural Affairs (DEFRA) in the areas surrounding the Swannery. The removal of all birds, dead or alive from any property now requires a license. DEFRA says the restrictions will expire no earlier than 31 days.</text>
+        <text>The H5N1 Avian Flu virus has been found in a dead wild Canadian Goose in Abbotsbury Swannery in Dorset, England. This is the eleventh case of the virus turning up in wild birds. The goose was discovered on February 25, 2008. "The finding of more cases in wild birds is not unexpected ... We are currently considering whether any additional restrictions are necessary in the area," said the United Kingdom's Health Ministry in a statement to the media. As a result of the finding, poultry movement has now been restricted by the Department for the Environment, Food and Rural Affairs (DEFRA) in the areas surrounding the swannery. The removal of all birds, dead or alive from any property now requires a license. DEFRA says the restrictions will expire no earlier than 31 days.</text>
         <locations>
             <location>
                 <name>Dorset</name>
@@ -392,8 +456,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/%22Low_pathogenic%22_H5N1_Bird_Flu_virus_found_in_wild_ducks_in_Maryland_and_Pennsylvania</source>
-        <text>The United States Department of Agriculture has announced that a "low pathogenic" form of the H5N1 Avian Flu has been found in fecal samples taken from wild Mallard ducks located in Queen Anne's County in Maryland and in Crawford County located in Pennsylvania. Officials stress that the strain is of no risk to humans. Samples from the ducks in Pennsylvania were taken on August 28. "Testing has ruled out the possibility of this being the highly pathogenic H5N1 strain that has spread through birds in Asia, Europe and Africa. Test results thus far indicate this is low pathogenic avian influenza, which poses no risk to human health. The fecal samples were collected on August 2 from resident wild ducks in Queen Anne's County, Maryland, as part of a research project conducted by Ohio State University. The fecal samples came from mallards that showed no signs of sickness," said the USDA in a statement on its website. Ducks in Pennsylvania also had shown no signs of being sick.
-        </text>
+        <text>The United States Department of Agriculture has announced that a "low pathogenic" form of the H5N1 Avian Flu has been found in fecal samples taken from wild Mallard ducks located in Queen Anne's County in Maryland and in Crawford County located in Pennsylvania. Officials stress that the strain is of no risk to humans. Samples from the ducks in Pennsylvania were taken on August 28. "Testing has ruled out the possibility of this being the highly pathogenic H5N1 strain that has spread through birds in Asia, Europe and Africa. Test results thus far indicate this is low pathogenic avian influenza, which poses no risk to human health. The fecal samples were collected on August 2 from resident wild ducks in Queen Anne's County, Maryland, as part of a research project conducted by Ohio State University. The fecal samples came from mallards that showed no signs of sickness," said the USDA in a statement on its website. Ducks in Pennsylvania also had shown no signs of being sick.</text>
         <locations>
             <location>
                 <name>Queen Anne's County</name>
@@ -426,6 +489,33 @@
                 <lat>41</lat>
                 <lon>-77.5</lon>
                 <page>https://en.wikipedia.org/wiki/Pennsylvania</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>505</start>
+                <end>509</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>511</start>
+                <end>517</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>522</start>
+                <end>528</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
             </location>
             <location>
                 <name>Queen Anne's County</name>
@@ -474,6 +564,14 @@
                 <page>https://en.wikipedia.org/wiki/Prince_Edward_Island</page>
             </location>
             <location>
+                <name>O'Leary</name>
+                <start>210</start>
+                <end>217</end>
+                <lat>46.70</lat>
+                <lon>-64.23</lon>
+                <page>https://en.wikipedia.org/wiki/O%27Leary,_Prince_Edward_Island</page>
+            </location>
+            <location>
                 <name>Charlottetown</name>
                 <start>270</start>
                 <end>283</end>
@@ -489,12 +587,29 @@
                 <lon>-63</lon>
                 <page>https://en.wikipedia.org/wiki/Prince_Edward_Island</page>
             </location>
+            <location>
+                <name>West Prince</name>
+                <start>570</start>
+                <end>581</end>
+                <lat>46.36</lat>
+                <lon>-63.43</lon>
+                <page>https://en.wikipedia.org/wiki/West_Prince</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/%22Aggressive%22_Bird_Flu_found_in_Sweden</source>
         <text>An "aggressive" strain of Avian Flu has been detected in two tufted ducks in Oskarshamn, southeast Sweden. This makes Sweden the ninth country in the EU to confirm Avian Flu on their soil. Some 35–40 wild birds were found dead. The birds were brought to Uppsala, where an analysis confirmed the presence of an "aggressive" form of Avian Flu. Tests at a laboratory in the UK will later eventually confirm whether the birds died of the lethal H5N1. Sweden's Minister of Agriculture, Ann-Christin Nykvist, said at a press conference the discovery was "serious but not unexpected." Sweden has been on high alert since the virus was found on the German island Rügen in the Baltic Sea.</text>
         <locations>
+            <location>
+                <name>EU</name>
+                <start>151</start>
+                <end>153</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/European_Union</page>
+                <cont>1</cont>
+            </location>
             <location>
                 <name>Oskarshamn</name>
                 <start>78</start>
@@ -507,6 +622,14 @@
                 <name>Sweden</name>
                 <start>100</start>
                 <end>106</end>
+                <lat>63</lat>
+                <lon>16</lon>
+                <page>https://en.wikipedia.org/wiki/Sweden</page>
+            </location>
+            <location>
+                <name>Sweden</name>
+                <start>119</start>
+                <end>125</end>
                 <lat>63</lat>
                 <lon>16</lon>
                 <page>https://en.wikipedia.org/wiki/Sweden</page>
@@ -526,6 +649,22 @@
                 <lat>55</lat>
                 <lon>-3</lon>
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>Sweden</name>
+                <start>448</start>
+                <end>454</end>
+                <lat>63</lat>
+                <lon>16</lon>
+                <page>https://en.wikipedia.org/wiki/Sweden</page>
+            </location>
+            <location>
+                <name>Sweden</name>
+                <start>579</start>
+                <end>585</end>
+                <lat>63</lat>
+                <lon>16</lon>
+                <page>https://en.wikipedia.org/wiki/Sweden</page>
             </location>
             <location>
                 <name>Rügen</name>
@@ -558,12 +697,28 @@
                 <page>https://en.wikipedia.org/wiki/Egypt</page>
             </location>
             <location>
+                <name>Egypt</name>
+                <start>168</start>
+                <end>173</end>
+                <lat>26</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Egypt</page>
+            </location>
+            <location>
                 <name>Mediterranean</name>
                 <start>248</start>
                 <end>261</end>
                 <lat>35</lat>
                 <lon>18</lon>
                 <page>https://en.wikipedia.org/wiki/Mediterranean_Sea</page>
+            </location>
+            <location>
+                <name>Egypt</name>
+                <start>383</start>
+                <end>388</end>
+                <lat>26</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Egypt</page>
             </location>
             <location>
                 <name>Cairo</name>
@@ -604,6 +759,14 @@
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
+                <name>UK</name>
+                <start>60</start>
+                <end>62</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
                 <name>Suffolk</name>
                 <start>256</start>
                 <end>263</end>
@@ -631,8 +794,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Bird_Flu_kills_40th_Indonesian</source>
-        <text>The World Health Organisation confirmed the death of a five-year-old boy on June 16 was due to bird flu. This is the 40th confirmed Indonesian death due to bird flu. The boy died in Tulungagung, East Java province, after being admitted to hospital on June 8. There was a dead chicken 15 metres from his home. The death was confirmed by a WHO laboratory in Hong Kong. Deaths due to bird flu have steadily risen since its outbreak in Indonesia in 2003. This year they have recorded the highest death toll in the world.
-        </text>
+        <text>The World Health Organisation confirmed the death of a five-year-old boy on June 16 was due to bird flu. This is the 40th confirmed Indonesian death due to bird flu. The boy died in Tulungagung, East Java province, after being admitted to hospital on June 8. There was a dead chicken 15 metres from his home. The death was confirmed by a WHO laboratory in Hong Kong. Deaths due to bird flu have steadily risen since its outbreak in Indonesia in 2003. This year they have recorded the highest death toll in the world.</text>
         <locations>
             <location>
                 <name>Tulungagung</name>
@@ -792,8 +954,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/China_and_Europe_face_new_avian_flu_outbreaks</source>
-        <text>China has announced a new outbreak of avian flu today along with similar cases in Russia, Romania, and Macedonia. China's news agency reported that 2,600 birds have died of the H5N1 strain in northern China, declaring that the outbreak was found in a breeding facility in Hohhot, the capital of Inner Mongolia. The government maintains the epidemic is under control. Russia is waiting for confirmation that it was the H5N1 strain that killed several hundred ducks near Moscow; if the tests return positive it will be a major spread of the virus across the Ural Mountains, into European Russia. A small village in southern Macedonia also suspects the strain. Plans are already made to kill 10,000 birds to contain the outbreak. Romania confirmed that there has been another outbreak in the Danube Delta area. The strain was confirmed there last weekend, whereupon 4,500 birds were destroyed. H5N1 is the strain scientists fear could be transmitted from human to human, causing a flu pandemic. So far 50 people have died of it, all having worked closely with birds. It is not easy to pass the disease from bird to human.
-        </text>
+        <text>China has announced a new outbreak of avian flu today along with similar cases in Russia, Romania, and Macedonia. China's news agency reported that 2,600 birds have died of the H5N1 strain in northern China, declaring that the outbreak was found in a breeding facility in Hohhot, the capital of Inner Mongolia. The government maintains the epidemic is under control. Russia is waiting for confirmation that it was the H5N1 strain that killed several hundred ducks near Moscow; if the tests return positive it will be a major spread of the virus across the Ural Mountains, into european Russia. A small village in southern Macedonia also suspects the strain. Plans are already made to kill 10,000 birds to contain the outbreak. Romania confirmed that there has been another outbreak in the Danube Delta area. The strain was confirmed there last weekend, whereupon 4,500 birds were destroyed. H5N1 is the strain scientists fear could be transmitted from human to human, causing a flu pandemic. So far 50 people have died of it, all having worked closely with birds. It is not easy to pass the disease from bird to human.</text>
         <locations>
             <location>
                 <name>China</name>
@@ -829,6 +990,14 @@
             </location>
             <location>
                 <name>China</name>
+                <start>115</start>
+                <end>120</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>China</name>
                 <start>202</start>
                 <end>207</end>
                 <lat>35</lat>
@@ -852,12 +1021,52 @@
                 <page>https://en.wikipedia.org/wiki/Inner_Mongolia</page>
             </location>
             <location>
+                <name>Russia</name>
+                <start>368</start>
+                <end>374</end>
+                <lat>60</lat>
+                <lon>90</lon>
+                <page>https://en.wikipedia.org/wiki/Russia</page>
+            </location>
+            <location>
                 <name>Moscow</name>
                 <start>470</start>
                 <end>476</end>
                 <lat>55.75</lat>
                 <lon>37.61</lon>
                 <page>https://en.wikipedia.org/wiki/Moscow</page>
+            </location>
+            <location>
+                <name>Ural Mountains</name>
+                <start>557</start>
+                <end>571</end>
+                <lat>60</lat>
+                <lon>60</lon>
+                <page>https://en.wikipedia.org/wiki/Ural_Mountains</page>
+            </location>
+            <location>
+                <name>Russia</name>
+                <start>587</start>
+                <end>593</end>
+                <lat>60</lat>
+                <lon>90</lon>
+                <page>https://en.wikipedia.org/wiki/Russia</page>
+            </location>
+            <location>
+                <name>Macedonia</name>
+                <start>623</start>
+                <end>632</end>
+                <lat>41.6</lat>
+                <lon>21.7</lon>
+                <page>https://en.wikipedia.org/wiki/Republic_of_Macedonia</page>
+            </location>
+            <location>
+                <name>Romania</name>
+                <start>728</start>
+                <end>735</end>
+                <lat>46</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Romania</page>
             </location>
             <location>
                 <name>Danube Delta</name>
@@ -890,6 +1099,15 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>Pacific</name>
+                <start>302</start>
+                <end>309</end>
+                <lat>0</lat>
+                <lon>-160</lon>
+                <page>https://en.wikipedia.org/wiki/Pacific_Ocean</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Alaska</name>
                 <start>334</start>
                 <end>340</end>
@@ -897,12 +1115,84 @@
                 <lon>-150</lon>
                 <page>https://en.wikipedia.org/wiki/Alaska</page>
             </location>
+            <location>
+                <name>Americas</name>
+                <start>322</start>
+                <end>330</end>
+                <lat>19</lat>
+                <lon>-96</lon>
+                <page>https://en.wikipedia.org/wiki/Americas</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Pacific NorthWest</name>
+                <start>349</start>
+                <end>366</end>
+                <lat>45.99</lat>
+                <lon>-118.49</lon>
+                <page>https://en.wikipedia.org/wiki/Pacific_Northwest</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>379</start>
+                <end>383</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Atlantic</name>
+                <start>389</start>
+                <end>397</end>
+                <lat>0</lat>
+                <lon>-25</lon>
+                <page>https://en.wikipedia.org/wiki/Atlantic_Ocean</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>437</start>
+                <end>443</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>448</start>
+                <end>454</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>North America</name>
+                <start>553</start>
+                <end>566</end>
+                <lat>54.77</lat>
+                <lon>-105.64</lon>
+                <page>https://en.wikipedia.org/wiki/North_America</page>
+                <cont>1</cont>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Europe_restricts_poultry_as_bird_flu_spreads_to_eight_European_nations</source>
         <text>Authorities across Europe have issued restrictions on commercial poultry farms, following the outbreak of bird flu in eight previously unaffected nations. The virus has been found in migratory birds much earlier than had been expected. Tests have confirmed that wild swans in Greece, Bulgaria, Italy, Austria and Germany had died from the deadly H5N1 strain of the virus. Other suspected cases of the virus have been detected in Slovenia, Croatia and Denmark. European health officials had expected wild birds migrating from Africa to Europe in spring to carry the disease into Western Europe. It is thought that swans were migrating from Russia and Ukraine to the Black Sea driven by unusually cold weather. Globally, 91 people have died after contracting the virus from close contact with diseased birds, but the greatest concern for European authorities is that an outbreak will occur among domesticated fowl, destroying local poultry industries. The H5N1 strain of bird flu is highly contagious, and lethal to birds. A single outbreak can kill tens of thousands of birds, and all birds must be culled across a wide region to prevent the spread of the disease.</text>
         <locations>
+            <location>
+                <name>Europe</name>
+                <start>20</start>
+                <end>26</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
             <location>
                 <name>Greece</name>
                 <start>277</start>
@@ -967,6 +1257,57 @@
                 <lon>10</lon>
                 <page>https://en.wikipedia.org/wiki/Denmark</page>
             </location>
+            <location>
+                <name>Africa</name>
+                <start>526</start>
+                <end>532</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>536</start>
+                <end>542</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Western Europe</name>
+                <start>579</start>
+                <end>593</end>
+                <lat>50.21</lat>
+                <lon>7.42</lon>
+                <page>https://en.wikipedia.org/wiki/Western_Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Russia</name>
+                <start>640</start>
+                <end>646</end>
+                <lat>60</lat>
+                <lon>90</lon>
+                <page>https://en.wikipedia.org/wiki/Russia</page>
+            </location>
+            <location>
+                <name>Ukraine</name>
+                <start>651</start>
+                <end>658</end>
+                <lat>49</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Ukraine</page>
+            </location>
+            <location>
+                <name>Black Sea</name>
+                <start>666</start>
+                <end>675</end>
+                <lat>44</lat>
+                <lon>35</lon>
+                <page>https://en.wikipedia.org/wiki/Black_Sea</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -1025,8 +1366,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/First_bird_flu_case_reported_in_North_Korea</source>
-        <text>North Korea's official news agency, KCNA, reported an outbreak of bird flu in the capital of Pyongyang. KCNA reported three separate outbreaks at poultry farms in the capital, and said hundreds of thousands of chickens have been culled in an attempt to stop the spread of the disease. Radio Pyongyang said, "countermeasures are underway to prevent an epidemic and stem the spread to other poultry farms". Experts warned that a bird flu epidemic in North Korea would deprive the population of its main source of protein.
-        </text>
+        <text>North Korea's official news agency, KCNA, reported an outbreak of bird flu in the capital of Pyongyang. KCNA reported three separate outbreaks at poultry farms in the capital, and said hundreds of thousands of chickens have been culled in an attempt to stop the spread of the disease. Radio Pyongyang said, "countermeasures are underway to prevent an epidemic and stem the spread to other poultry farms". Experts warned that a bird flu epidemic in North Korea would deprive the population of its main source of protein.</text>
         <locations>
             <location>
                 <name>North Korea</name>
@@ -1145,6 +1485,14 @@
                 <page>https://en.wikipedia.org/wiki/Ranya</page>
             </location>
             <location>
+                <name>Iraq</name>
+                <start>587</start>
+                <end>591</end>
+                <lat>33</lat>
+                <lon>44</lon>
+                <page>https://en.wikipedia.org/wiki/Iraq</page>
+            </location>
+            <location>
                 <name>Turkey</name>
                 <start>636</start>
                 <end>642</end>
@@ -1229,6 +1577,14 @@
                 <page>https://en.wikipedia.org/wiki/England</page>
             </location>
             <location>
+                <name>Poland</name>
+                <start>436</start>
+                <end>442</end>
+                <lat>52</lat>
+                <lon>20</lon>
+                <page>https://en.wikipedia.org/wiki/Poland</page>
+            </location>
+            <location>
                 <name>Pulawy</name>
                 <start>481</start>
                 <end>487</end>
@@ -1273,6 +1629,15 @@
                 <lat>47</lat>
                 <lon>2</lon>
                 <page>https://en.wikipedia.org/wiki/France</page>
+            </location>
+            <location>
+                <name>European Union</name>
+                <start>202</start>
+                <end>216</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/European_Union</page>
+                <cont>1</cont>
             </location>
             <location>
                 <name>Austria</name>
@@ -1331,12 +1696,29 @@
                 <page>https://en.wikipedia.org/wiki/Denmark</page>
             </location>
             <location>
+                <name>Europe</name>
+                <start>504</start>
+                <end>510</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/European_Union</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Somme</name>
                 <start>787</start>
                 <end>792</end>
                 <lat>49.91</lat>
                 <lon>2.5</lon>
                 <page>https://en.wikipedia.org/wiki/Somme</page>
+            </location>
+            <location>
+                <name>France</name>
+                <start>816</start>
+                <end>822</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
             </location>
         </locations>
     </article>
@@ -1515,12 +1897,29 @@
                 <page>https://en.wikipedia.org/wiki/Thuringia</page>
             </location>
             <location>
+                <name>France</name>
+                <start>421</start>
+                <end>427</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
+            </location>
+            <location>
                 <name>Assenoncourt</name>
                 <start>468</start>
                 <end>480</end>
                 <lat>48.77</lat>
                 <lon>6.79</lon>
                 <page>https://en.wikipedia.org/wiki/Assenoncourt</page>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>774</start>
+                <end>780</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/European_Union</page>
+                <cont>1</cont>
             </location>
         </locations>
     </article>
@@ -1663,6 +2062,24 @@
                 <page>https://en.wikipedia.org/wiki/Iowa</page>
             </location>
             <location>
+                <name>North America</name>
+                <start>575</start>
+                <end>588</end>
+                <lat>54.77</lat>
+                <lon>-105.64</lon>
+                <page>https://en.wikipedia.org/wiki/North_America</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>676</start>
+                <end>680</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Michigan</name>
                 <start>922</start>
                 <end>930</end>
@@ -1767,6 +2184,33 @@
                 <lat>40</lat>
                 <lon>-89</lon>
                 <page>https://en.wikipedia.org/wiki/Illinois</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>500</start>
+                <end>504</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>506</start>
+                <end>512</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>517</start>
+                <end>523</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
             </location>
         </locations>
     </article>
@@ -1876,6 +2320,14 @@
                 <lon>174</lon>
                 <page>https://en.wikipedia.org/wiki/New_Zealand</page>
             </location>
+            <location>
+                <name>Mexico</name>
+                <start>1088</start>
+                <end>1094</end>
+                <lat>23</lat>
+                <lon>-102</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -1975,6 +2427,15 @@
                 <page>https://en.wikipedia.org/wiki/Kenya</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>91</start>
+                <end>97</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Kenya</name>
                 <start>145</start>
                 <end>150</end>
@@ -2061,6 +2522,14 @@
                 <lat>-0.5</lat>
                 <lon>34.66</lon>
                 <page>https://en.wikipedia.org/wiki/Nyanza_Province</page>
+            </location>
+            <location>
+                <name>US</name>
+                <start>1585</start>
+                <end>1587</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
         </locations>
     </article>
@@ -2235,6 +2704,24 @@
                 <page>https://en.wikipedia.org/wiki/Cairo</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>1397</start>
+                <end>1403</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>Middle East</name>
+                <start>1412</start>
+                <end>1423</end>
+                <lat>29</lat>
+                <lon>41</lon>
+                <page>https://en.wikipedia.org/wiki/Middle_East</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Saudi Arabia</name>
                 <start>1452</start>
                 <end>1464</end>
@@ -2333,6 +2820,14 @@
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Philippines</name>
+                <start>1381</start>
+                <end>1392</end>
+                <lat>13</lat>
+                <lon>122</lon>
+                <page>https://en.wikipedia.org/wiki/Philippines</page>
             </location>
         </locations>
     </article>
@@ -2519,6 +3014,15 @@
                 <page>https://en.wikipedia.org/wiki/Argentina</page>
             </location>
             <location>
+                <name>South America</name>
+                <start>716</start>
+                <end>729</end>
+                <lat>-14.60</lat>
+                <lon>-57.65</lon>
+                <page>https://en.wikipedia.org/wiki/South_America</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Argentina</name>
                 <start>893</start>
                 <end>902</end>
@@ -2557,6 +3061,15 @@
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
+                <name>East Africa</name>
+                <start>353</start>
+                <end>364</end>
+                <lat>-0.52</lat>
+                <lon>36.51</lon>
+                <page>https://en.wikipedia.org/wiki/East_Africa</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Nottingham</name>
                 <start>687</start>
                 <end>697</end>
@@ -2588,12 +3101,37 @@
                 <lon>38</lon>
                 <page>https://en.wikipedia.org/wiki/Kenya</page>
             </location>
+            <location>
+                <name>UK</name>
+                <start>1115</start>
+                <end>1117</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>1196</start>
+                <end>1201</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/WHO:_Polio_reemerging_in_Africa</source>
         <text>The World Health Organisation (WHO) said earlier today that polio has reemerged in several countries in Africa. WHO Africa regional director Luis Gomes Sambo made the announcement at the beginning of a Zimbabwe conference regarding child immunisation. "Several polio-free countries have suffered setback in polio eradication. The number of countries with polio outbreaks following wild poliovirus importations has increased from thirteen to nineteen in 2009," Sambo commented. He also added that "we need better management of the available resources for immunization, human resources, technologies and we need increased funding to improve the capacity of governments to purchase vaccines and we need also greater mobilization of people. We need to inform people that to bring their people to vaccination campaigns." The countries that have had increases in polio included Angola, Chad, and Democratic Republic of the Congo. The WHO attributed the rise mostly to lack of immunisations. The agency estimates that 75% of children on the continent receive vaccines, and has said it will try to raise the number to 85%.</text>
         <locations>
+            <location>
+                <name>Africa</name>
+                <start>105</start>
+                <end>111</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
             <location>
                 <name>Zimbabwe</name>
                 <start>203</start>
@@ -2656,6 +3194,15 @@
                 <lon>32</lon>
                 <page>https://en.wikipedia.org/wiki/Sudan</page>
             </location>
+            <location>
+                <name>Africa</name>
+                <start>411</start>
+                <end>417</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <cont>1</cont>
+            </location>
         </locations>
     </article>
     <article>
@@ -2709,6 +3256,23 @@
         <text>The Global Polio Eradication Initiative has announced its goal to eradicate Polio from Asia in 2005. The 16 year old private-public project aims to add Poliomyelitis to the list of childhood diseases which have been eliminated. The World Health Organization, Rotary International, the U.S. Centers for Disease Control and Prevention and UNICEF are leading the Initiative and coordinating a series of overlapping immunization campaigns in the region. In 2004 Afghanistan, India, and Pakistan cut their number of Polio cases by 45%. In 2005 the goal is to cut the number of cases by 100%. The three countries are the last in Asia to have endemic polio, and the disease is confined to a small number of regions within the country. Only 186 cases were reported in 2004, down from 336 the previous year.</text>
         <locations>
             <location>
+                <name>Asia</name>
+                <start>88</start>
+                <end>92</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>286</start>
+                <end>290</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Afghanistan</name>
                 <start>459</start>
                 <end>470</end>
@@ -2731,6 +3295,15 @@
                 <lat>30</lat>
                 <lon>70</lon>
                 <page>https://en.wikipedia.org/wiki/Pakistan</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>624</start>
+                <end>628</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <cont>1</cont>
             </location>
         </locations>
     </article>
@@ -2925,6 +3498,30 @@
                 <page>https://en.wikipedia.org/wiki/Libya</page>
             </location>
             <location>
+                <name>Libya</name>
+                <start>800</start>
+                <end>805</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
+                <name>Libya</name>
+                <start>912</start>
+                <end>917</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
+                <name>Libya</name>
+                <start>993</start>
+                <end>998</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
                 <name>Qatar</name>
                 <start>931</start>
                 <end>936</end>
@@ -2941,12 +3538,60 @@
                 <page>https://en.wikipedia.org/wiki/Benghazi</page>
             </location>
             <location>
+                <name>Libya</name>
+                <start>1276</start>
+                <end>1281</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
+                <name>Libya</name>
+                <start>1369</start>
+                <end>1374</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
+                <name>Libya</name>
+                <start>1395</start>
+                <end>1400</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
                 <name>France</name>
                 <start>1558</start>
                 <end>1564</end>
                 <lat>47</lat>
                 <lon>2</lon>
                 <page>https://en.wikipedia.org/wiki/France</page>
+            </location>
+            <location>
+                <name>France</name>
+                <start>1614</start>
+                <end>1620</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
+            </location>
+            <location>
+                <name>Libya</name>
+                <start>1635</start>
+                <end>1640</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
+            </location>
+            <location>
+                <name>Libya</name>
+                <start>1670</start>
+                <end>1675</end>
+                <lat>27</lat>
+                <lon>17</lon>
+                <page>https://en.wikipedia.org/wiki/Libya</page>
             </location>
             <location>
                 <name>Tripoli</name>
@@ -2957,12 +3602,29 @@
                 <page>https://en.wikipedia.org/wiki/Tripoli</page>
             </location>
             <location>
+                <name>Europe</name>
+                <start>1770</start>
+                <end>1776</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
                 <name>Paris</name>
                 <start>1875</start>
                 <end>1880</end>
                 <lat>48.85</lat>
                 <lon>2.35</lon>
                 <page>https://en.wikipedia.org/wiki/Paris</page>
+            </location>
+            <location>
+                <name>Bulgaria</name>
+                <start>2175</start>
+                <end>2183</end>
+                <lat>42.75</lat>
+                <lon>25.5</lon>
+                <page>https://en.wikipedia.org/wiki/Bulgaria</page>
             </location>
         </locations>
     </article>
@@ -3006,7 +3668,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Pamela_Anderson_visits_Greece,_promoting_the_MAC_AIDS_Fund</source>
-        <text>The famous Baywatch star, Pamela Anderson, arrived today in Athens, Greece, taking part in the pan-European promotion of the MAC cosmetic products as well as in the fight against the sprawl of HIV (AIDS). Anderson held a press conference at a central Athens Hotel, during which a 30,000-Euro check issued by the MAC AIDS Fund was handed to Kentro Zois, a Greek non-profit organization. Later today, fans of Pamela Anderson would have the opportunity to meet her in downtown Athens, in the crowded Ermou street, in an organized appearance of the famous actress in a specific store. Accompanying the Hollywood actress in Athens is Peter Lichtenthal, MAC global general manager. Established in Toronto, Canada, in 1984, MAC soon flourished through cool combinations of recycling strategies and show-biz glitz. The famous Canadian-American actress is committed to the fight against HIV/AIDS, including working with children and supporting associations such as People for the Ethical Treatment of Animals. MAC company's cosmetics are known for pushing the limits of the global beauty industry. The same happens when it comes to its efforts in fighting AIDS, for which the company is currently collaborating with Pamela Anderson, organizing a promotion-trip around Europe.</text>
+        <text>The famous Baywatch star, Pamela Anderson, arrived today in Athens, Greece, taking part in the pan-European promotion of the MAC cosmetic products as well as in the fight against the sprawl of HIV (AIDS). Anderson held a press conference at a central Athens hotel, during which a 30,000-Euro check issued by the MAC AIDS Fund was handed to Kentro Zois, a Greek non-profit organization. Later today, fans of Pamela Anderson would have the opportunity to meet her in downtown Athens, in the crowded Ermou street, in an organized appearance of the famous actress in a specific store. Accompanying the Hollywood actress in Athens is Peter Lichtenthal, MAC global general manager. Established in Toronto, Canada, in 1984, MAC soon flourished through cool combinations of recycling strategies and show-biz glitz. The famous Canadian-American actress is committed to the fight against HIV/AIDS, including working with children and supporting associations such as People for the Ethical Treatment of Animals. MAC company's cosmetics are known for pushing the limits of the global beauty industry. The same happens when it comes to its efforts in fighting AIDS, for which the company is currently collaborating with Pamela Anderson, organizing a promotion-trip around Europe.</text>
         <locations>
             <location>
                 <name>Athens</name>
@@ -3026,6 +3688,14 @@
             </location>
             <location>
                 <name>Athens</name>
+                <start>252</start>
+                <end>258</end>
+                <lat>37.98</lat>
+                <lon>23.72</lon>
+                <page>https://en.wikipedia.org/wiki/Athens</page>
+            </location>
+            <location>
+                <name>Athens</name>
                 <start>475</start>
                 <end>481</end>
                 <lat>37.98</lat>
@@ -3039,6 +3709,14 @@
                 <lat>34.1</lat>
                 <lon>-118.33</lon>
                 <page>https://en.wikipedia.org/wiki/Hollywood</page>
+            </location>
+            <location>
+                <name>Athens</name>
+                <start>620</start>
+                <end>626</end>
+                <lat>37.98</lat>
+                <lon>23.72</lon>
+                <page>https://en.wikipedia.org/wiki/Athens</page>
             </location>
             <location>
                 <name>Toronto</name>
@@ -3055,6 +3733,24 @@
                 <lat>60</lat>
                 <lon>-95</lon>
                 <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>1260</start>
+                <end>1266</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <cont>1</cont>
+            </location>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+                <cont>1</cont>
             </location>
         </locations>
     </article>
