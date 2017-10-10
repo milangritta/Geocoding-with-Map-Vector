@@ -34,9 +34,9 @@ if False:  # add CDATA xml construct?
             if dist > 200:
                 print "AAARGRHG!!!!!", name, url, dist, lat, lon
 
-    # COORDINATE LIMITS (180 x 360)!!!
+                # COORDINATE LIMITS (180 x 360)!!!
 
-    # tree.write('data/GeoVirusUpdated.xml')
+                # tree.write('data/GeoVirusUpdated.xml')
 
 # ----------------------------------------------STATISTICS------------------------------------------------
 
@@ -47,6 +47,7 @@ if False:  # add CDATA xml construct?
 #         print location.text
 
 # -----------------------------------------------ANALYSIS-------------------------------------------------
+
 
 
 # ----------------------------------------------GENERATION------------------------------------------------
@@ -65,11 +66,10 @@ if True:
             end = location.find("end")
             name = location.find("name")
             if location.find('altName') is not None:
-                name = location.find('altName').text
+                name = location.find('altName')
             lat = location.find("lat")
             lon = location.find("lon")
-            gold_tops.append(name.text + ",," + name.text + ",," + lat.text + ",," +
-                             lon.text + ",," + start.text + ",," + end.text)
+            gold_tops.append(name.text + ",," + name.text + ",," + lat.text + ",," + lon.text + ",," + start.text + ",," + end.text)
         for t in gold_tops:
             f.write(t + "||")
         f.write("\n")
