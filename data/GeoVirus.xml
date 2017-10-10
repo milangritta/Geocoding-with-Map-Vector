@@ -91,10 +91,11 @@
             </location>
             <location>
                 <name>Zaïre</name>
+                <altName>Congo</altName>
                 <start>957</start>
                 <end>962</end>
-                <lat>-2.88</lat>
-                <lon>23.65</lon>
+                <lat>-1.44</lat>
+                <lon>15.55</lon>
                 <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
             </location>
             <location>
@@ -215,6 +216,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>63</start>
                 <end>65</end>
                 <lat>40</lat>
@@ -244,10 +246,11 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>469</start>
                 <end>471</end>
                 <lat>40</lat>
@@ -497,7 +500,7 @@
                 <lat>29.84</lat>
                 <lon>89.29</lon>
                 <page>https://en.wikipedia.org/wiki/Asia</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Europe</name>
@@ -506,7 +509,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Africa</name>
@@ -515,7 +518,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Queen Anne's County</name>
@@ -589,6 +592,7 @@
             </location>
             <location>
                 <name>West Prince</name>
+                <altName>West Point</altName>
                 <start>570</start>
                 <end>581</end>
                 <lat>46.36</lat>
@@ -608,7 +612,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/European_Union</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Oskarshamn</name>
@@ -1092,6 +1096,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>78</start>
                 <end>80</end>
                 <lat>40</lat>
@@ -1105,7 +1110,7 @@
                 <lat>0</lat>
                 <lon>-160</lon>
                 <page>https://en.wikipedia.org/wiki/Pacific_Ocean</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Alaska</name>
@@ -1122,7 +1127,7 @@
                 <lat>19</lat>
                 <lon>-96</lon>
                 <page>https://en.wikipedia.org/wiki/Americas</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Pacific NorthWest</name>
@@ -1131,7 +1136,7 @@
                 <lat>45.99</lat>
                 <lon>-118.49</lon>
                 <page>https://en.wikipedia.org/wiki/Pacific_Northwest</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Asia</name>
@@ -1140,7 +1145,7 @@
                 <lat>29.84</lat>
                 <lon>89.29</lon>
                 <page>https://en.wikipedia.org/wiki/Asia</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Atlantic</name>
@@ -1149,7 +1154,7 @@
                 <lat>0</lat>
                 <lon>-25</lon>
                 <page>https://en.wikipedia.org/wiki/Atlantic_Ocean</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Europe</name>
@@ -1158,7 +1163,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Africa</name>
@@ -1167,7 +1172,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>North America</name>
@@ -1176,7 +1181,7 @@
                 <lat>54.77</lat>
                 <lon>-105.64</lon>
                 <page>https://en.wikipedia.org/wiki/North_America</page>
-                <cont>1</cont>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -1191,7 +1196,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Greece</name>
@@ -1264,7 +1269,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Europe</name>
@@ -1273,7 +1278,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Western Europe</name>
@@ -1282,7 +1287,7 @@
                 <lat>50.21</lat>
                 <lon>7.42</lon>
                 <page>https://en.wikipedia.org/wiki/Western_Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Russia</name>
@@ -1332,6 +1337,7 @@
             </location>
             <location>
                 <name>Menoufia</name>
+                <altName>Monufia</altName>
                 <start>404</start>
                 <end>412</end>
                 <lat>30.52</lat>
@@ -1637,7 +1643,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/European_Union</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Austria</name>
@@ -1702,7 +1708,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/European_Union</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Somme</name>
@@ -1919,7 +1925,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/European_Union</page>
-                <cont>1</cont>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -2031,6 +2037,7 @@
             </location>
             <location>
                 <name>Mouillee</name>
+                <altName>Pointe Mouillee State Game Area</altName>
                 <start>143</start>
                 <end>151</end>
                 <lat>42</lat>
@@ -2068,7 +2075,7 @@
                 <lat>54.77</lat>
                 <lon>-105.64</lon>
                 <page>https://en.wikipedia.org/wiki/North_America</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Asia</name>
@@ -2077,7 +2084,7 @@
                 <lat>29.84</lat>
                 <lon>89.29</lon>
                 <page>https://en.wikipedia.org/wiki/Asia</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Michigan</name>
@@ -2192,7 +2199,7 @@
                 <lat>29.84</lat>
                 <lon>89.29</lon>
                 <page>https://en.wikipedia.org/wiki/Asia</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Europe</name>
@@ -2201,7 +2208,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Africa</name>
@@ -2210,7 +2217,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -2433,7 +2440,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Kenya</name>
@@ -2509,6 +2516,7 @@
             </location>
             <location>
                 <name>Kogelo</name>
+                <altName>Nyang'oma Kogelo</altName>
                 <start>1503</start>
                 <end>1509</end>
                 <lat>-0.01</lat>
@@ -2525,8 +2533,9 @@
             </location>
             <location>
                 <name>US</name>
-                <start>1585</start>
-                <end>1587</end>
+                <altName>United States</altName>
+                <start>1583</start>
+                <end>1585</end>
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
@@ -2710,7 +2719,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Middle East</name>
@@ -2719,7 +2728,7 @@
                 <lat>29</lat>
                 <lon>41</lon>
                 <page>https://en.wikipedia.org/wiki/Middle_East</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Saudi Arabia</name>
@@ -2837,6 +2846,7 @@
         <locations>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>14</start>
                 <end>16</end>
                 <lat>40</lat>
@@ -3020,7 +3030,7 @@
                 <lat>-14.60</lat>
                 <lon>-57.65</lon>
                 <page>https://en.wikipedia.org/wiki/South_America</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Argentina</name>
@@ -3062,12 +3072,13 @@
             </location>
             <location>
                 <name>East Africa</name>
+                <altName>Africa</altName>
                 <start>353</start>
                 <end>364</end>
                 <lat>-0.52</lat>
                 <lon>36.51</lon>
                 <page>https://en.wikipedia.org/wiki/East_Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Nottingham</name>
@@ -3130,7 +3141,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Zimbabwe</name>
@@ -3201,7 +3212,7 @@
                 <lat>7.18</lat>
                 <lon>21.09</lon>
                 <page>https://en.wikipedia.org/wiki/Africa</page>
-                <cont>1</cont>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -3262,7 +3273,7 @@
                 <lat>29.84</lat>
                 <lon>89.29</lon>
                 <page>https://en.wikipedia.org/wiki/Asia</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>U.S.</name>
@@ -3303,7 +3314,7 @@
                 <lat>29.84</lat>
                 <lon>89.29</lon>
                 <page>https://en.wikipedia.org/wiki/Asia</page>
-                <cont>1</cont>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -3608,7 +3619,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
+                <continent/>
             </location>
             <location>
                 <name>Paris</name>
@@ -3741,16 +3752,7 @@
                 <lat>51</lat>
                 <lon>17.5</lon>
                 <page>https://en.wikipedia.org/wiki/Europe</page>
-                <cont>1</cont>
-            </location>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-                <cont>1</cont>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -3837,6 +3839,22 @@
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
+                <name>U.S.</name>
+                <start>1160</start>
+                <end>1164</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1309</start>
+                <end>1313</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Canada</name>
                 <start>1427</start>
                 <end>1433</end>
@@ -3859,6 +3877,14 @@
                 <lat>63</lat>
                 <lon>16</lon>
                 <page>https://en.wikipedia.org/wiki/Sweden</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>1539</start>
+                <end>1545</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
             </location>
         </locations>
     </article>
@@ -3931,6 +3957,30 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>Canada</name>
+                <start>1457</start>
+                <end>1463</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1574</start>
+                <end>1578</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>1623</start>
+                <end>1629</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
                 <name>Alberta</name>
                 <start>1782</start>
                 <end>1789</end>
@@ -3985,7 +4035,26 @@
                 <page>https://en.wikipedia.org/wiki/Arkansas</page>
             </location>
             <location>
+                <name>Britain</name>
+                <start>550</start>
+                <end>557</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>American South</name>
+                <altName>United States</altName>
+                <start>732</start>
+                <end>746</end>
+                <lat>34</lat>
+                <lon>-90</lon>
+                <page>https://en.wikipedia.org/wiki/Southern_United_States</page>
+                <continent/>
+            </location>
+            <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1044</start>
                 <end>1046</end>
                 <lat>40</lat>
@@ -4156,14 +4225,6 @@
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
-            <location>
-                <name>Cheongwadae</name>
-                <start>1094</start>
-                <end>1105</end>
-                <lat>37.58</lat>
-                <lon>126.97</lon>
-                <page>https://en.wikipedia.org/wiki/Blue_House</page>
-            </location>
         </locations>
     </article>
     <article>
@@ -4182,6 +4243,14 @@
                 <name>California</name>
                 <start>499</start>
                 <end>509</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
+                <name>California</name>
+                <start>713</start>
+                <end>723</end>
                 <lat>37</lat>
                 <lon>-120</lon>
                 <page>https://en.wikipedia.org/wiki/California</page>
@@ -4265,6 +4334,14 @@
                 <page>https://en.wikipedia.org/wiki/Alberta</page>
             </location>
             <location>
+                <name>Canada</name>
+                <start>630</start>
+                <end>636</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
                 <name>United States</name>
                 <start>764</start>
                 <end>777</end>
@@ -4279,6 +4356,22 @@
                 <lat>47.5</lat>
                 <lon>-120.5</lon>
                 <page>https://en.wikipedia.org/wiki/Washington_(state)</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>926</start>
+                <end>932</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>Alberta</name>
+                <start>971</start>
+                <end>978</end>
+                <lat>55</lat>
+                <lon>-115</lon>
+                <page>https://en.wikipedia.org/wiki/Alberta</page>
             </location>
             <location>
                 <name>Texas</name>
@@ -4410,6 +4503,7 @@
         <locations>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>44</start>
                 <end>46</end>
                 <lat>40</lat>
@@ -4623,6 +4717,14 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>Texas</name>
+                <start>1504</start>
+                <end>1509</end>
+                <lat>31</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/Texas</page>
+            </location>
+            <location>
                 <name>California</name>
                 <start>1658</start>
                 <end>1668</end>
@@ -4645,6 +4747,15 @@
         <text>The US Army's Dugway Proving Ground in Utah is looking for a subcontractor to produce the anthrax bacillus anthracis Sterne strain in 1,500 litre quantities. The Sterne strain is not thought to be harmful to humans, but the intended use of the anthrax remains unclear, worrying anti-biological weapons activists. Other recent Dugway contracts for equipment to produce unspecified biolgical agents in 3,000 litre batches are even more concerning to activists. The contracts were uncovered by The Sunshine Project, a group opposed to biological weapons development based in Germany. The work involved seems to cast doubts on the ability of the US to live up to its commitments to the Biological Weapons Convention. The post 9/11 anthrax attack upon the U.S. used weaponized U.S. Army anthrax, most likely produced at Fort Detrick. A Dugway spokesperson declined to specify what the biological agents would be used for.</text>
         <locations>
             <location>
+                <name>US</name>
+                <altName>United States</altName>
+                <start>5</start>
+                <end>7</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Dugway Proving Ground</name>
                 <start>15</start>
                 <end>36</end>
@@ -4661,6 +4772,14 @@
                 <page>https://en.wikipedia.org/wiki/Utah</page>
             </location>
             <location>
+                <name>Dugway</name>
+                <start>327</start>
+                <end>333</end>
+                <lat>40.18</lat>
+                <lon>-113.21</lon>
+                <page>https://en.wikipedia.org/wiki/Dugway_Proving_Ground</page>
+            </location>
+            <location>
                 <name>Germany</name>
                 <start>573</start>
                 <end>580</end>
@@ -4670,6 +4789,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>643</start>
                 <end>645</end>
                 <lat>40</lat>
@@ -4685,12 +4805,28 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>U.S.</name>
+                <start>773</start>
+                <end>777</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Fort Detrick</name>
                 <start>816</start>
                 <end>828</end>
                 <lat>39.43</lat>
                 <lon>-77.42</lon>
                 <page>https://en.wikipedia.org/wiki/Fort_Detrick</page>
+            </location>
+            <location>
+                <name>Dugway</name>
+                <start>832</start>
+                <end>838</end>
+                <lat>40.18</lat>
+                <lon>-113.21</lon>
+                <page>https://en.wikipedia.org/wiki/Dugway_Proving_Ground</page>
             </location>
         </locations>
     </article>
@@ -4915,14 +5051,6 @@
         <text>Mr Justice Saunders today imprisoned a man for eight years at the Old Bailey in London after an FBI sting in which he tried to buy ricin on the Dark Web. Mohammed Ali, 31, from Liverpool, was convicted at trial of attempting to possess a chemical weapon. He told the jury he was "curious" about the Dark Web, which is a largely hidden and difficult to police section of the Internet. Ali said he didn't realise he had done anything illegal. Ali was prosecuted under the Chemical Weapons Act 1996 after sending an undercover agent a message reading "Hi, would you be able to make me some ricin and send it to the UK?" He bought 500mg, which has the potential to kill about 1,400, but was sent a dummy package. Counter-terror police in the UK liaised with the FBI. The powder, which Ali paid for in BitCoin, was actually harmless. Hidden inside a toy car, the package was treated with markers and his face glowed under ultraviolet light, indicating he had handled it. The judge said today there was "real risk" involved. Ali told his trial he had discovered drugs and guns for sale. Computer analysis showed he had looked up ricin and other poisons; he said he went for ricin simply because it had appeared in Breaking Bad. He also searched for small animals after being advised to test it on a rodent; a to-do list on his computer included "paid ricin guy" and "get pet to murder".</text>
         <locations>
             <location>
-                <name>Old Bailey</name>
-                <start>67</start>
-                <end>77</end>
-                <lat>51.51</lat>
-                <lon>-0.10</lon>
-                <page>https://en.wikipedia.org/wiki/Old_Bailey</page>
-            </location>
-            <location>
                 <name>London</name>
                 <start>81</start>
                 <end>87</end>
@@ -4942,6 +5070,14 @@
                 <name>UK</name>
                 <start>613</start>
                 <end>615</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>739</start>
+                <end>741</end>
                 <lat>55</lat>
                 <lon>-3</lon>
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
@@ -4978,6 +5114,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>926</start>
                 <end>928</end>
                 <lat>40</lat>
@@ -5008,6 +5145,7 @@
             </location>
             <location>
                 <name>Central Plateau</name>
+                <altName>Haiti</altName>
                 <start>711</start>
                 <end>726</end>
                 <lat>19.16</lat>
@@ -5032,6 +5170,7 @@
             </location>
             <location>
                 <name>St. Nicolas</name>
+                <altName>Port-Au-Prince</altName>
                 <start>970</start>
                 <end>981</end>
                 <lat>19.8</lat>
@@ -5040,6 +5179,7 @@
             </location>
             <location>
                 <name>St. Marc</name>
+                <altName>Port-Au-Prince</altName>
                 <start>1030</start>
                 <end>1038</end>
                 <lat>19.11</lat>
@@ -5076,6 +5216,14 @@
                 <lon>18.5</lon>
                 <page>https://en.wikipedia.org/wiki/Angola</page>
             </location>
+            <location>
+                <name>Angola</name>
+                <start>758</start>
+                <end>764</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -5102,6 +5250,22 @@
                 <name>Mukuru kwa Njenga</name>
                 <start>215</start>
                 <end>232</end>
+                <lat>-1.30</lat>
+                <lon>36.88</lon>
+                <page>https://en.wikipedia.org/wiki/Mukuru_kwa_Njenga</page>
+            </location>
+            <location>
+                <name>Nairobi</name>
+                <start>245</start>
+                <end>252</end>
+                <lat>-1.28</lat>
+                <lon>36.81</lon>
+                <page>https://en.wikipedia.org/wiki/Nairobi</page>
+            </location>
+            <location>
+                <name>Mukuru</name>
+                <start>397</start>
+                <end>403</end>
                 <lat>-1.30</lat>
                 <lon>36.88</lon>
                 <page>https://en.wikipedia.org/wiki/Mukuru_kwa_Njenga</page>
@@ -5467,6 +5631,15 @@
         <text>An outbreak of cholera in West Africa has resulted in the deaths of more than 500 people, and United Nations (UN) health officials are concerned that inadequate health services in the region could result in many more deaths. The World Health Organization (WHO) said on Thursday that over 31,250 cases of cholera have been reported so far this year in nine West African countries. It has claimed 488 lives at this point. "If we look at this year's trends, the figures are still going up in many countries," said John Mulangu, a senior regional advisor for the WHO. "If cholera is not brought under control in certain regions, we will soon be talking of... 100,000 cases," he said. "And hospitals and health centres will be overwhelmed. Last year we were not on this scale. The problem is getting worse," Mulangu said. The following West African nations have all been hit by cholera epidemics: Burkina Faso, Cote d'Ivoire, Guinea, Guinea-Bissau, Liberia, Mauritania, Mali, Niger, and Senegal. The WHO issued a statement on Thursday that more countries were at risk. "Outbreaks are likely to spread to Central Africa - Nigeria, Cameroon and Chad - in the next weeks," it said.</text>
         <locations>
             <location>
+                <name>West Africa</name>
+                <start>27</start>
+                <end>38</end>
+                <lat>18.31</lat>
+                <lon>-4.83</lon>
+                <page>https://en.wikipedia.org/wiki/West_Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Burkina Faso</name>
                 <start>893</start>
                 <end>905</end>
@@ -5539,6 +5712,15 @@
                 <page>https://en.wikipedia.org/wiki/Senegal</page>
             </location>
             <location>
+                <name>Central Africa</name>
+                <start>1100</start>
+                <end>1114</end>
+                <lat>-2.02</lat>
+                <lon>24.69</lon>
+                <page>https://en.wikipedia.org/wiki/Central_Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Nigeria</name>
                 <start>1117</start>
                 <end>1124</end>
@@ -5594,8 +5776,24 @@
             </location>
             <location>
                 <name>South Sudan</name>
+                <start>612</start>
+                <end>623</end>
+                <lat>8</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/South_Sudan</page>
+            </location>
+            <location>
+                <name>South Sudan</name>
                 <start>389</start>
                 <end>400</end>
+                <lat>8</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/South_Sudan</page>
+            </location>
+            <location>
+                <name>South Sudan</name>
+                <start>885</start>
+                <end>896</end>
                 <lat>8</lat>
                 <lon>30</lon>
                 <page>https://en.wikipedia.org/wiki/South_Sudan</page>
@@ -5624,6 +5822,7 @@
             </location>
             <location>
                 <name>Bariyapur</name>
+                <altName>Bara District</altName>
                 <start>142</start>
                 <end>151</end>
                 <lat>26.98</lat>
@@ -5764,6 +5963,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1519</start>
                 <end>1521</end>
                 <lat>40</lat>
@@ -5944,6 +6144,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>743</start>
                 <end>745</end>
                 <lat>40</lat>
@@ -5952,6 +6153,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1159</start>
                 <end>1161</end>
                 <lat>40</lat>
@@ -5997,6 +6199,14 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>United States</name>
+                <start>901</start>
+                <end>914</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>New York</name>
                 <start>1082</start>
                 <end>1090</end>
@@ -6027,6 +6237,15 @@
                 <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
+                <name>Asia</name>
+                <start>209</start>
+                <end>213</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Hong Kong</name>
                 <start>621</start>
                 <end>630</end>
@@ -6041,6 +6260,23 @@
                 <lat>35</lat>
                 <lon>103</lon>
                 <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>820</start>
+                <end>825</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>955</start>
+                <end>959</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
             </location>
             <location>
                 <name>Russia</name>
@@ -6097,6 +6333,14 @@
                 <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
             </location>
             <location>
+                <name>NSW</name>
+                <start>335</start>
+                <end>338</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
                 <name>Eastern Creek</name>
                 <start>695</start>
                 <end>708</end>
@@ -6145,6 +6389,22 @@
                 <page>https://en.wikipedia.org/wiki/Australia</page>
             </location>
             <location>
+                <name>NSW</name>
+                <start>1403</start>
+                <end>1406</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
+                <name>Australia</name>
+                <start>1622</start>
+                <end>1631</end>
+                <lat>-25</lat>
+                <lon>133</lon>
+                <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
                 <name>New Zealand</name>
                 <start>1636</start>
                 <end>1647</end>
@@ -6164,7 +6424,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Horse_flu_spreads_in_Australia</source>
-        <text>The number of horses confirmed to be infected with Equine Influenza in Australia has risen to 47, all in the state of New South Wales. So far none of those confirmed infected have been thoroughbred race horses. The NSW government has confirmed infections at the federal government's quarantine facility at Eastern Creek and Centennial Park in Sydney; at Cattai and Wilberforce in North-Western Sydney; and in Moonbi, Parkes, Berry and Wyong in regional NSW. It is also feared that the outbreak may have spread to Warwick in Queensland where three horses from NSW showed flu-like symptoms during an equestrian event. Initial samples were tested in a laboratory in Brisbane revealing the three animals had been carrying the flu. Further testing will be conducted on samples from the horses in Victoria, although results are not expected until later this week. All 300 horses at the event have been quarantined. There are also three suspected cases of the virus infecting thoroughbreds at Randwich racecourse in Sydney, if the horses test positive to the flu they will be the first thoroughbreds to be infected with the virus. The Federal Agriculture Minister, Peter McGauran told ABC Radio this morning that while the source of the outbreak was not known, it is likely that the outbreak may have been caused by an equestrian event held in Maitland on the 18th and 19th of August. "Everyone's been assuming it was the Centennial Park horses that travelled and infected horses in different parts of regional NSW," he said. "It would appear at this stage that almost all, if not every horse affected has passed through a Maitland horse event on the weekend of the 18th and 19th, or come in contact with a Maitland horse."</text>
+        <text>The number of horses confirmed to be infected with Equine Influenza in Australia has risen to 47, all in the state of New South Wales. So far none of those confirmed infected have been thoroughbred race horses. The NSW government has confirmed infections at the federal government's quarantine facility at Eastern Creek and Centennial Park in Sydney; at Cattai and Wilberforce in North-Western Sydney; and in Moonbi, Parkes, Berry and Wyong in regional NSW. It is also feared that the outbreak may have spread to Warwick in Queensland where three horses from NSW showed flu-like symptoms during an equestrian event. Initial samples were tested in a laboratory in Brisbane revealing the three animals had been carrying the flu. Further testing will be conducted on samples from the horses in Victoria, although results are not expected until later this week. All 300 horses at the event have been quarantined. There are also three suspected cases of the virus infecting thoroughbreds at Randwick racecourse in Sydney, if the horses test positive to the flu they will be the first thoroughbreds to be infected with the virus. The Federal Agriculture Minister, Peter McGauran told ABC Radio this morning that while the source of the outbreak was not known, it is likely that the outbreak may have been caused by an equestrian event held in Maitland on the 18th and 19th of August. "Everyone's been assuming it was the Centennial Park horses that travelled and infected horses in different parts of regional NSW," he said. "It would appear at this stage that almost all, if not every horse affected has passed through a Maitland horse event on the weekend of the 18th and 19th, or come in contact with a Maitland horse."</text>
         <locations>
             <location>
                 <name>Australia</name>
@@ -6178,6 +6438,14 @@
                 <name>New South Wales</name>
                 <start>119</start>
                 <end>134</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
+                <name>NSW</name>
+                <start>216</start>
+                <end>219</end>
                 <lat>-32.16</lat>
                 <lon>147.01</lon>
                 <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
@@ -6287,6 +6555,14 @@
                 <page>https://en.wikipedia.org/wiki/Queensland</page>
             </location>
             <location>
+                <name>NSW</name>
+                <start>560</start>
+                <end>563</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
                 <name>Brisbane</name>
                 <start>664</start>
                 <end>672</end>
@@ -6303,12 +6579,20 @@
                 <page>https://en.wikipedia.org/wiki/Victoria_(Australia)</page>
             </location>
             <location>
-                <name>Randwich</name>
+                <name>Randwick</name>
                 <start>987</start>
                 <end>995</end>
                 <lat>-33.91</lat>
                 <lon>151.23</lon>
                 <page>https://en.wikipedia.org/wiki/Randwick,_New_South_Wales</page>
+            </location>
+            <location>
+                <name>Sydney</name>
+                <start>1010</start>
+                <end>1016</end>
+                <lat>-33.86</lat>
+                <lon>151.20</lon>
+                <page>https://en.wikipedia.org/wiki/Sydney</page>
             </location>
             <location>
                 <name>Maitland</name>
@@ -6325,6 +6609,14 @@
                 <lat>-33.90</lat>
                 <lon>151.23</lon>
                 <page>https://en.wikipedia.org/wiki/Centennial_Park,_New_South_Wales</page>
+            </location>
+            <location>
+                <name>NSW</name>
+                <start>1505</start>
+                <end>1508</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
             </location>
             <location>
                 <name>Maitland</name>
@@ -6429,12 +6721,36 @@
                 <page>https://en.wikipedia.org/wiki/Mexico_City</page>
             </location>
             <location>
+                <name>United States</name>
+                <start>800</start>
+                <end>813</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Spain</name>
                 <start>815</start>
                 <end>820</end>
                 <lat>40</lat>
                 <lon>-4</lon>
                 <page>https://en.wikipedia.org/wiki/Spain</page>
+            </location>
+            <location>
+                <name>Mexico</name>
+                <start>908</start>
+                <end>914</end>
+                <lat>23</lat>
+                <lon>-102</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>1974</start>
+                <end>1987</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
                 <name>California</name>
@@ -6477,12 +6793,36 @@
                 <page>https://en.wikipedia.org/wiki/New_York_(state)</page>
             </location>
             <location>
+                <name>United States</name>
+                <start>2310</start>
+                <end>2323</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>2355</start>
+                <end>2368</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>New Zealand</name>
                 <start>2670</start>
                 <end>2681</end>
                 <lat>-42</lat>
                 <lon>174</lon>
                 <page>https://en.wikipedia.org/wiki/New_Zealand</page>
+            </location>
+            <location>
+                <name>Mexico</name>
+                <start>2771</start>
+                <end>2777</end>
+                <lat>23</lat>
+                <lon>-102</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico</page>
             </location>
             <location>
                 <name>Israel</name>
@@ -6501,9 +6841,41 @@
                 <page>https://en.wikipedia.org/wiki/South_Korea</page>
             </location>
             <location>
+                <name>Mexico</name>
+                <start>3050</start>
+                <end>3056</end>
+                <lat>23</lat>
+                <lon>-102</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico</page>
+            </location>
+            <location>
+                <name>Spain</name>
+                <start>3064</start>
+                <end>3069</end>
+                <lat>40</lat>
+                <lon>-4</lon>
+                <page>https://en.wikipedia.org/wiki/Spain</page>
+            </location>
+            <location>
+                <name>Mexico</name>
+                <start>3172</start>
+                <end>3178</end>
+                <lat>23</lat>
+                <lon>-102</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico</page>
+            </location>
+            <location>
                 <name>Mexico City</name>
                 <start>3311</start>
                 <end>3322</end>
+                <lat>19.43</lat>
+                <lon>-99.13</lon>
+                <page>https://en.wikipedia.org/wiki/Mexico_City</page>
+            </location>
+            <location>
+                <name>Mexico City</name>
+                <start>3462</start>
+                <end>3473</end>
                 <lat>19.43</lat>
                 <lon>-99.13</lon>
                 <page>https://en.wikipedia.org/wiki/Mexico_City</page>
@@ -6561,6 +6933,23 @@
                 <page>https://en.wikipedia.org/wiki/Canada</page>
             </location>
             <location>
+                <name>Europe</name>
+                <start>234</start>
+                <end>240</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <continent/>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>687</start>
+                <end>691</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Norway</name>
                 <start>973</start>
                 <end>979</end>
@@ -6610,6 +6999,14 @@
                 <name>United States</name>
                 <start>225</start>
                 <end>238</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>288</start>
+                <end>301</end>
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
@@ -6669,6 +7066,14 @@
                 <lat>31</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/Texas</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1923</start>
+                <end>1927</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
                 <name>U.S.</name>
@@ -6733,12 +7138,44 @@
                 <page>https://en.wikipedia.org/wiki/Indonesia</page>
             </location>
             <location>
+                <name>Indonesia</name>
+                <start>1243</start>
+                <end>1252</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
+            </location>
+            <location>
                 <name>Vietnam</name>
                 <start>1392</start>
                 <end>1399</end>
                 <lat>16.16</lat>
                 <lon>107.83</lon>
                 <page>https://en.wikipedia.org/wiki/Vietnam</page>
+            </location>
+            <location>
+                <name>Indonesia</name>
+                <start>1469</start>
+                <end>1458</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
+            </location>
+            <location>
+                <name>Indonesia</name>
+                <start>1548</start>
+                <end>1557</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
+            </location>
+            <location>
+                <name>Indonesia</name>
+                <start>1757</start>
+                <end>1766</end>
+                <lat>-5</lat>
+                <lon>120</lon>
+                <page>https://en.wikipedia.org/wiki/Indonesia</page>
             </location>
         </locations>
     </article>
@@ -6766,6 +7203,14 @@
                 <name>China</name>
                 <start>683</start>
                 <end>688</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>1214</start>
+                <end>1219</end>
                 <lat>35</lat>
                 <lon>103</lon>
                 <page>https://en.wikipedia.org/wiki/China</page>
@@ -6801,12 +7246,48 @@
                 <page>https://en.wikipedia.org/wiki/Sudan</page>
             </location>
             <location>
+                <name>Europe</name>
+                <start>342</start>
+                <end>348</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>359</start>
+                <end>365</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Egypt</name>
                 <start>389</start>
                 <end>394</end>
                 <lat>26</lat>
                 <lon>30</lon>
                 <page>https://en.wikipedia.org/wiki/Egypt</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>405</start>
+                <end>409</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Middle East</name>
+                <start>419</start>
+                <end>430</end>
+                <lat>33.13</lat>
+                <lon>35.85</lon>
+                <page>https://en.wikipedia.org/wiki/Middle_East</page>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -6878,6 +7359,14 @@
                 <lon>-84.39</lon>
                 <page>https://en.wikipedia.org/wiki/Atlanta</page>
             </location>
+            <location>
+                <name>U.S.</name>
+                <start>704</start>
+                <end>708</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -6910,11 +7399,20 @@
             </location>
             <location>
                 <name>St. Peter's Square</name>
+                <altName>Piazza di San Pietro</altName>
                 <start>568</start>
                 <end>586</end>
                 <lat>41.90</lat>
                 <lon>12.45</lon>
                 <page>https://en.wikipedia.org/wiki/St._Peter%27s_Square</page>
+            </location>
+            <location>
+                <name>Vatican</name>
+                <start>592</start>
+                <end>599</end>
+                <lat>41.9</lat>
+                <lon>12.45</lon>
+                <page>https://en.wikipedia.org/wiki/Vatican_City</page>
             </location>
         </locations>
     </article>
@@ -6955,12 +7453,45 @@
                 <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
+                <name>Hong Kong</name>
+                <start>442</start>
+                <end>451</end>
+                <lat>22.3</lat>
+                <lon>114.2</lon>
+                <page>https://en.wikipedia.org/wiki/Hong_Kong</page>
+            </location>
+            <location>
                 <name>China</name>
                 <start>516</start>
                 <end>521</end>
                 <lat>35</lat>
                 <lon>103</lon>
                 <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>Hong Kong</name>
+                <start>533</start>
+                <end>542</end>
+                <lat>22.3</lat>
+                <lon>114.2</lon>
+                <page>https://en.wikipedia.org/wiki/Hong_Kong</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>827</start>
+                <end>831</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Hong Kong</name>
+                <start>845</start>
+                <end>854</end>
+                <lat>22.3</lat>
+                <lon>114.2</lon>
+                <page>https://en.wikipedia.org/wiki/Hong_Kong</page>
             </location>
             <location>
                 <name>Vietnam</name>
@@ -7002,6 +7533,22 @@
                 <lon>101.3</lon>
                 <page>https://en.wikipedia.org/wiki/Thailand</page>
             </location>
+            <location>
+                <name>Hong Kong</name>
+                <start>1112</start>
+                <end>1121</end>
+                <lat>22.3</lat>
+                <lon>114.2</lon>
+                <page>https://en.wikipedia.org/wiki/Hong_Kong</page>
+            </location>
+            <location>
+                <name>Hong Kong</name>
+                <start>1363</start>
+                <end>1372</end>
+                <lat>22.3</lat>
+                <lon>114.2</lon>
+                <page>https://en.wikipedia.org/wiki/Hong_Kong</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -7034,6 +7581,7 @@
             </location>
             <location>
                 <name>Dogu Beyazit</name>
+                <altName>Doğubayazıt</altName>
                 <start>435</start>
                 <end>447</end>
                 <lat>39.54</lat>
@@ -7064,12 +7612,30 @@
                 <lon>-3</lon>
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
+            <location>
+                <name>Europe</name>
+                <start>1157</start>
+                <end>1163</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <continent/>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/World_Bank_warns_of_high_bird_flu_cost</source>
         <text>The World Bank has issued a report warning that a bird flu pandemic could cost the Asian economy up to $283 billion and lead the region into recession. The report has identified the tourist, transport and retail sectors of the Asian economy as being particularly vulnerable to the effects of such an outbreak. World Bank economist Homi Kharas noted that, "One large shadow looms over the generally positive economic outlook we have sketched out... and that is avian flu." The report, published twice annually by the World Bank, admitted than Asia's recent growth was going to slow down slightly anyway in 2006 (due to higher oil prices and tighter monetary policy), but that a bird flu epidemic could make this partial slowdown much worse. The report comes just days ahead of an Asian political summit, where the foreign ministers of many of the countries already affected by the H5N1 virus are expected to agree to even closer co-operative measures to help stall the advance of the virus. The foreign ministers of Cambodia, Laos, Burma, Thailand and Vietnam have already agreed to closer co-operation to contain the virus and develop a vaccine.</text>
         <locations>
+            <location>
+                <name>Asia</name>
+                <start>543</start>
+                <end>547</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
             <location>
                 <name>Cambodia</name>
                 <start>1016</start>
@@ -7328,6 +7894,14 @@
                 <lon>20</lon>
                 <page>https://en.wikipedia.org/wiki/Poland</page>
             </location>
+            <location>
+                <name>Poland</name>
+                <start>442</start>
+                <end>448</end>
+                <lat>52</lat>
+                <lon>20</lon>
+                <page>https://en.wikipedia.org/wiki/Poland</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -7429,6 +8003,14 @@
                 <page>https://en.wikipedia.org/wiki/China</page>
             </location>
             <location>
+                <name>China</name>
+                <start>991</start>
+                <end>996</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
                 <name>Anhui</name>
                 <start>1144</start>
                 <end>1149</end>
@@ -7509,6 +8091,22 @@
                 <page>https://en.wikipedia.org/wiki/Hubei</page>
             </location>
             <location>
+                <name>China</name>
+                <start>1853</start>
+                <end>1858</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>1982</start>
+                <end>1987</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
                 <name>Beijing</name>
                 <start>2196</start>
                 <end>2203</end>
@@ -7516,12 +8114,45 @@
                 <lon>116.38</lon>
                 <page>https://en.wikipedia.org/wiki/Beijing</page>
             </location>
+            <location>
+                <name>China</name>
+                <start>2302</start>
+                <end>2307</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>2394</start>
+                <end>2399</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
+            <location>
+                <name>China</name>
+                <start>2458</start>
+                <end>2463</end>
+                <lat>35</lat>
+                <lon>103</lon>
+                <page>https://en.wikipedia.org/wiki/China</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Disease_scare_in_south_Sudan,_aid_groups_return</source>
         <text>The governor of the south Sudanese Warab state, Anthony Bol Madut told the Reuters news agency that at least a thousand people in the state have died of Meningitis and another unidentified disease. He said that the unknown disease had symptoms similar to Yellow fever but the patients died quickly. The governor appealed for medical assistance to diagnose and help control the outbreak. The outbreak comes as hundreds of thousands of refugees return to southern Sudan after a peace deal ended conflict in the areas. The refugees are housed in crowded camps where the risk of infection is high. Hotspots in south Sudan and Darfur are experiencing a lull in the fighting that has allowed normal life to return to these areas. Meanwhile, the NGO SOS Children's Villages Sudan reports that despite the ceasefire among the warring factions in south Sudan and Darfur, people are still worried that conflict may erupt once again. SOS is also concerned about shortages in medicine and clean water in its facilities in these areas. SOS emergency relief activities have restarted in Abu Shok refugee camp in Al-Fashir, Darfur, with most of the psychologists and social workers returning to work in the psycho-social centres, an SOS release reports. Work with the patients and beneficiaries of the three centres it maintains has started once again, the release adds. The situation in SOS Children's Village Malakal is also stable, but cholera is still spreading among the residents of the area, especially children. SOS Children's Villages Sudan is providing emergency medical assistance in the form of medication for the children in the SOS Children's Village, as well as those being treated in the local children's hospital. According to the SOS release, most international organisations and NGOs have returned to work in both Darfur and Malakal, especially the World Food Programme and other UN agencies. Several NGOs, however, have not resumed activities in the conflict areas. Airplanes are flying into Darfur and Malakal, but flights to Darfur are not as regular as before the conflict and there are no scheduled flights to the area of Malakal. Telephone communications are still unstable, and co-workers from SOS Children's Villages Sudan in Khartoum are relying on satellite telephones to communicate with Darfur and Malakal. Mr. Ali Mahdi, director of SOS Children's Villages Sudan, said that despite the relative quiet in both Darfur and Malakal, people are still worried and tense regarding the situation. Co-workers at the SOS Emergency Relief Centres in Darfur and those in the SOS Children's Village Malakal are afraid of conflict breaking out again in the areas. Mr. Mahdi also said that the centres in Darfur and the SOS Children's Village in Malakal are both suffering from shortages in clean water and medication, some of which are being sent from Khartoum. During a visit to Darfur on 10 January, Mr. Ali Mahdi visited the town of Nyala, the capital of South Darfur, where there is a similar refugee problem as that in Al-Fashir. SOS Children's Villages Sudan is now considering starting an emergency relief programme similar to the one in Abu Shok refugee camp in Al-Fashir.</text>
         <locations>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+                <continent/>
+            </location>
             <location>
                 <name>Warab</name>
                 <start>36</start>
@@ -7792,6 +8423,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>819</start>
                 <end>821</end>
                 <lat>40</lat>
@@ -8038,6 +8670,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>236</start>
                 <end>238</end>
                 <lat>40</lat>
@@ -8062,6 +8695,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>623</start>
                 <end>625</end>
                 <lat>40</lat>
@@ -8302,6 +8936,7 @@
             </location>
             <location>
                 <name>Bab el-Oued</name>
+                <altName>Bab el Oued</altName>
                 <start>662</start>
                 <end>673</end>
                 <lat>36.79</lat>
@@ -10216,6 +10851,7 @@
             </location>
             <location>
                 <name>Zaire</name>
+                <altName>Congo</altName>
                 <start>941</start>
                 <end>946</end>
                 <lat>-2.88</lat>
@@ -10468,8 +11104,8 @@
                 <name>Democratic Republic of Congo</name>
                 <start>4278</start>
                 <end>4306</end>
-                <lat>-1.44</lat>
-                <lon>15.55</lon>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
                 <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
             </location>
             <location>
@@ -10538,6 +11174,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>7048</start>
                 <end>7050</end>
                 <lat>40</lat>
@@ -11370,6 +12007,7 @@
             </location>
             <location>
                 <name>Zaire</name>
+                <altName>Congo</altName>
                 <start>714</start>
                 <end>719</end>
                 <lat>-2.88</lat>
@@ -11658,6 +12296,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1015</start>
                 <end>1017</end>
                 <lat>40</lat>
@@ -12300,6 +12939,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1249</start>
                 <end>1251</end>
                 <lat>40</lat>
@@ -14004,6 +14644,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>6526</start>
                 <end>6528</end>
                 <lat>40</lat>
@@ -14092,6 +14733,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>7104</start>
                 <end>7106</end>
                 <lat>40</lat>
@@ -14108,6 +14750,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>7249</start>
                 <end>7251</end>
                 <lat>40</lat>
@@ -14878,6 +15521,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>337</start>
                 <end>339</end>
                 <lat>40</lat>
@@ -14886,6 +15530,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>657</start>
                 <end>659</end>
                 <lat>40</lat>
@@ -15094,6 +15739,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>6424</start>
                 <end>6426</end>
                 <lat>40</lat>
@@ -15110,6 +15756,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>7021</start>
                 <end>7023</end>
                 <lat>40</lat>
@@ -15186,6 +15833,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1027</start>
                 <end>1029</end>
                 <lat>40</lat>
@@ -15450,8 +16098,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Tourists_evacuated_following_shootout_between_Mexican_army_and_drug_hitmen</source>
-        <text>
-A two-hour gun battle which began at 7 p.m. local time between the Mexican Army and drug hitmen ended in 18 fatalities at the Mexican holiday resort of Acapulco on Saturday. Two soldiers and 16 gunmen were killed in the battle. The army was dispatched to follow up on an anonymous tip and were met by drug hitmen lobbing hand grenades and firing AK-47 type rifles. "There were grenade and rocket explosions, and weapons like AK-47s. The fight lasted almost two hours," said an observer. Reinforcements who attempted to join the gunmen in the house were killed by army personnel. Gunmen attempting to flee from the gun battle were prevented doing so by a military Hummer. Following the battle, the army seized a huge arsenal of 36 large caliber rifles, 13 small-caliber shotguns, two grenade launchers, 13 hand grenades, 3,525 rounds of ammunition, 180 magazine charges and eight vehicles. Five people were placed under arrest. Between three and nine soldiers were injured along with three bystanders. 22 people were evacuated from the area following the battle including tourists, a family, the elderly, and a pregnant woman. Four Guerrero state police were found in the garage of the property who claim they had been kidnapped and held hostage. A colonel reported anonymously that their account was not confirmed. Local media reported that the gunmen were a part of the Beltran Leyva drug-trafficking gang who belong to the Sinaloa Cartel. Drug related violence has damaged tourism to the beach front resort city as well as economic investment in the area. The recent H1N1 flu virus outbreak in Mexico which caused 89 deaths, the wearing of masks, school closures and an airport quarantine cost billions of dollars in lost tourism dollars at the end of April. Tourism destinations are offering discounted hotel rates to entice visiting tourists. Hotel Los Flamingos once owned by John Wayne and Tarzan's (Johnny Weissmuller) former home were neighboring tourism sites in the neighborhood of Saturday's gun battle. Acapulco, population over 600,000 is a city of the state of Guerrero on the Pacific coast of Mexico, 300 miles (483 km) southwest from Mexico City. Guerrero provides a main route for drug smugglers between South America and the United States. Mexico's president, Felipe Calderon, along with American President, Barack Obama, have initiated a crack down on drug gangs. Rival drug gang violence in Mexico has resulted in 2,300 fatalities in the first five months of this year.</text>
+        <text>A two-hour gun battle which began at 7 p.m. local time between the Mexican Army and drug hitmen ended in 18 fatalities at the Mexican holiday resort of Acapulco on Saturday. Two soldiers and 16 gunmen were killed in the battle. The army was dispatched to follow up on an anonymous tip and were met by drug hitmen lobbing hand grenades and firing AK-47 type rifles. "There were grenade and rocket explosions, and weapons like AK-47s. The fight lasted almost two hours," said an observer. Reinforcements who attempted to join the gunmen in the house were killed by army personnel. Gunmen attempting to flee from the gun battle were prevented doing so by a military Hummer. Following the battle, the army seized a huge arsenal of 36 large caliber rifles, 13 small-caliber shotguns, two grenade launchers, 13 hand grenades, 3,525 rounds of ammunition, 180 magazine charges and eight vehicles. Five people were placed under arrest. Between three and nine soldiers were injured along with three bystanders. 22 people were evacuated from the area following the battle including tourists, a family, the elderly, and a pregnant woman. Four Guerrero state police were found in the garage of the property who claim they had been kidnapped and held hostage. A colonel reported anonymously that their account was not confirmed. Local media reported that the gunmen were a part of the Beltran Leyva drug-trafficking gang who belong to the Sinaloa Cartel. Drug related violence has damaged tourism to the beach front resort city as well as economic investment in the area. The recent H1N1 flu virus outbreak in Mexico which caused 89 deaths, the wearing of masks, school closures and an airport quarantine cost billions of dollars in lost tourism dollars at the end of April. Tourism destinations are offering discounted hotel rates to entice visiting tourists. Hotel Los Flamingos once owned by John Wayne and Tarzan's (Johnny Weissmuller) former home were neighboring tourism sites in the neighborhood of Saturday's gun battle. Acapulco, population over 600,000 is a city of the state of Guerrero on the Pacific coast of Mexico, 300 miles (483 km) southwest from Mexico City. Guerrero provides a main route for drug smugglers between South America and the United States. Mexico's president, Felipe Calderon, along with American President, Barack Obama, have initiated a crack down on drug gangs. Rival drug gang violence in Mexico has resulted in 2,300 fatalities in the first five months of this year.</text>
         <locations>
             <location>
                 <name>Acapulco</name>
@@ -15557,6 +16204,7 @@ A two-hour gun battle which began at 7 p.m. local time between the Mexican Army 
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>831</start>
                 <end>833</end>
                 <lat>40</lat>
@@ -15597,6 +16245,7 @@ A two-hour gun battle which began at 7 p.m. local time between the Mexican Army 
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>2531</start>
                 <end>2533</end>
                 <lat>40</lat>
@@ -15785,8 +16434,7 @@ A two-hour gun battle which began at 7 p.m. local time between the Mexican Army 
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/UNHCR:_Thousands_of_Angolans_expelled_from_DRC_in_%22dire%22_need_of_aid</source>
-        <text>
-The United Nations High Commissioner for Refugees (UNHCR) agency has said that thousands of Angolans that were recently expelled from the Democratic Republic of Congo are in dire need of humanitarian assistance. The agency said that the Angolans are living in sites around the town of Mbanza Congo in northern Angola. A UNHCR assessment team visited Mbanza Congo in northern Angola over the weekend. It reported that close to 30,000 people are living in and around three overcrowded reception centres near the Congolese border. The UNHCR said that a "significant number" of Angolan refugees that had been "forcibly returned" to their country were among those in the reception centres. "You have the compounding factors of not having latrines and people drinking possibly contaminated water and with the rain coming, this is a recipe for disaster," said a UNHCR protection officer, Yolande Ditewig. She told the Agence France-Presse news agency that "there is a lack of everything you can imagine, especially food and many people say they've not eaten for days." UN refugee agency spokesman Andrej Mahecic said that initial assessments found that people at those centres are in critical need of shelter, food, medicine and sanitation facilities. The supply of clean water is insufficient, according to Mahecic, and some of the Angolans were drinking from nearby contaminated rivers. As a consequence, many of the expelled families are reporting cases of diarrhea and vomiting. "There are significant numbers of Angolan refugees among the forcibly returned. And, this is for us the most worrying aspect of this situation. Some of them say they had been rounded up and taken to the border despite the fact they carried documents certifying their refugee status. Others said they were forced back without having had a chance to take their identification documents or any of their belongings. Most of them were deported from the Bas Congo Province in southern DRC," Mahecic said. He added that these forced returns are in response to the expulsion of large numbers of Congolese from Angola since December 2008. He says an official agreement between the DRC and Angola may finally end these tit-for-tat expulsions. This, however, does not mean that the exodus will end in the near term. According to Mahetic, Angolan authorities expect further large scale returns of their nationals who no longer feel welcome in the DRC. At the request of the Angolan government, he said the UNHCR will provide assistance to those who have been expelled and are waiting to go home.</text>
+        <text>The United Nations High Commissioner for Refugees (UNHCR) agency has said that thousands of Angolans that were recently expelled from the Democratic Republic of Congo are in dire need of humanitarian assistance. The agency said that the Angolans are living in sites around the town of Mbanza Congo in northern Angola. A UNHCR assessment team visited Mbanza Congo in northern Angola over the weekend. It reported that close to 30,000 people are living in and around three overcrowded reception centres near the Congolese border. The UNHCR said that a "significant number" of Angolan refugees that had been "forcibly returned" to their country were among those in the reception centres. "You have the compounding factors of not having latrines and people drinking possibly contaminated water and with the rain coming, this is a recipe for disaster," said a UNHCR protection officer, Yolande Ditewig. She told the Agence France-Presse news agency that "there is a lack of everything you can imagine, especially food and many people say they've not eaten for days." UN refugee agency spokesman Andrej Mahecic said that initial assessments found that people at those centres are in critical need of shelter, food, medicine and sanitation facilities. The supply of clean water is insufficient, according to Mahecic, and some of the Angolans were drinking from nearby contaminated rivers. As a consequence, many of the expelled families are reporting cases of diarrhea and vomiting. "There are significant numbers of Angolan refugees among the forcibly returned. And, this is for us the most worrying aspect of this situation. Some of them say they had been rounded up and taken to the border despite the fact they carried documents certifying their refugee status. Others said they were forced back without having had a chance to take their identification documents or any of their belongings. Most of them were deported from the Bas Congo Province in southern DRC," Mahecic said. He added that these forced returns are in response to the expulsion of large numbers of Congolese from Angola since December 2008. He says an official agreement between the DRC and Angola may finally end these tit-for-tat expulsions. This, however, does not mean that the exodus will end in the near term. According to Mahetic, Angolan authorities expect further large scale returns of their nationals who no longer feel welcome in the DRC. At the request of the Angolan government, he said the UNHCR will provide assistance to those who have been expelled and are waiting to go home.</text>
         <locations>
             <location>
                 <name>Democratic Republic of Congo</name>
@@ -15871,7 +16519,7 @@ The United Nations High Commissioner for Refugees (UNHCR) agency has said that t
             <location>
                 <name>DRC</name>
                 <start>2412</start>
-                <end>2418</end>
+                <end>2415</end>
                 <lat>-2.88</lat>
                 <lon>23.65</lon>
                 <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
@@ -15917,7 +16565,7 @@ The United Nations High Commissioner for Refugees (UNHCR) agency has said that t
             <location>
                 <name>U.S.</name>
                 <start>588</start>
-                <end>562</end>
+                <end>592</end>
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
@@ -16605,7 +17253,7 @@ The United Nations High Commissioner for Refugees (UNHCR) agency has said that t
             <location>
                 <name>Georgia</name>
                 <start>464</start>
-                <end>473</end>
+                <end>471</end>
                 <lat>42</lat>
                 <lon>43.5</lon>
                 <page>https://en.wikipedia.org/wiki/Georgia_(country)</page>

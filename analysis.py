@@ -1,3 +1,4 @@
+import codecs
 import sqlite3
 import xml.etree.ElementTree as ET
 from geopy.distance import great_circle
@@ -5,7 +6,7 @@ from preprocessing import get_coordinates
 
 # --------------------------------------------ERROR CHECKING----------------------------------------------
 
-if True:  # add CDATA xml construct?
+if False:  # add CDATA xml construct?
     tree = ET.parse(u'data/GeoVirus.xml')
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -20,6 +21,8 @@ if True:  # add CDATA xml construct?
             chunk = text[int(start) - 1: int(end) - 1]
             if chunk != name:
                 print chunk, name
+            if location.find('altName') is not None:
+                name = location.find('altName').text
             lat = location.find('lat').text
             lon = location.find('lon').text
             coords = get_coordinates(c, name)
@@ -28,8 +31,8 @@ if True:  # add CDATA xml construct?
                 gap = great_circle((float(lat), float(lon)), (coord[0], coord[1])).km
                 if gap < dist:
                     dist = gap
-            if dist > 201:
-                print "AAARGRHG!!!!!", name, url, dist
+            if dist > 200:
+                print "AAARGRHG!!!!!", name, url, dist, lat, lon
 
     # COORDINATE LIMITS (180 x 360)!!!
 
@@ -45,3 +48,34 @@ if True:  # add CDATA xml construct?
 
 # -----------------------------------------------ANALYSIS-------------------------------------------------
 
+
+# ----------------------------------------------GENERATION------------------------------------------------
+
+if True:
+    """"""
+    tree = ET.parse(u"data/GeoVirus.xml")
+    root = tree.getroot()
+    f = codecs.open(u"data/geovirus.txt", "w", "utf-8")
+    c = 0
+    for child in root:
+        text = child.find('text').text
+        gold_tops = []
+        for location in child.findall('./locations/location'):
+            start = location.find("start")
+            end = location.find("end")
+            name = location.find("name")
+            if location.find('altName') is not None:
+                name = location.find('altName').text
+            lat = location.find("lat")
+            lon = location.find("lon")
+            gold_tops.append(name.text + ",," + name.text + ",," + lat.text + ",," +
+                             lon.text + ",," + start.text + ",," + end.text)
+        for t in gold_tops:
+            f.write(t + "||")
+        f.write("\n")
+        f.close()
+        f = codecs.open(u"../data/geovirus/" + str(c), 'w', "utf-8")  # Files saved by numbers
+        f.write(text)
+        f.close()
+        c += 1
+    f.close()

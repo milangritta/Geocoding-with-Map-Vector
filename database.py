@@ -9,3 +9,12 @@ conn.commit()
 conn.close()
 exit()
 
+            # <location>
+            #     <name></name>
+            #     <start></start>
+            #     <end></end>
+            #     <lat></lat>
+            #     <lon></lon>
+            #     <page></page>
+            #     <cont>1</cont>
+            # </location>
