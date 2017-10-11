@@ -606,15 +606,6 @@
         <text>An "aggressive" strain of Avian Flu has been detected in two tufted ducks in Oskarshamn, southeast Sweden. This makes Sweden the ninth country in the EU to confirm Avian Flu on their soil. Some 35–40 wild birds were found dead. The birds were brought to Uppsala, where an analysis confirmed the presence of an "aggressive" form of Avian Flu. Tests at a laboratory in the UK will later eventually confirm whether the birds died of the lethal H5N1. Sweden's Minister of Agriculture, Ann-Christin Nykvist, said at a press conference the discovery was "serious but not unexpected." Sweden has been on high alert since the virus was found on the German island Rügen in the Baltic Sea.</text>
         <locations>
             <location>
-                <name>EU</name>
-                <start>151</start>
-                <end>153</end>
-                <lat>51</lat>
-                <lon>17.5</lon>
-                <page>https://en.wikipedia.org/wiki/European_Union</page>
-                <continent/>
-            </location>
-            <location>
                 <name>Oskarshamn</name>
                 <start>78</start>
                 <end>88</end>
@@ -637,6 +628,16 @@
                 <lat>63</lat>
                 <lon>16</lon>
                 <page>https://en.wikipedia.org/wiki/Sweden</page>
+            </location>
+            <location>
+                <name>EU</name>
+                <altName>European Union</altName>
+                <start>151</start>
+                <end>153</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/European_Union</page>
+                <continent/>
             </location>
             <location>
                 <name>Uppsala</name>
@@ -2516,7 +2517,6 @@
             </location>
             <location>
                 <name>Kogelo</name>
-                <altName>Nyang'oma Kogelo</altName>
                 <start>1503</start>
                 <end>1509</end>
                 <lat>-0.01</lat>
@@ -5170,7 +5170,7 @@
             </location>
             <location>
                 <name>St. Nicolas</name>
-                <altName>Port-Au-Prince</altName>
+                <altName>Saint-Nicolas</altName>
                 <start>970</start>
                 <end>981</end>
                 <lat>19.8</lat>
@@ -5179,7 +5179,7 @@
             </location>
             <location>
                 <name>St. Marc</name>
-                <altName>Port-Au-Prince</altName>
+                <altName>Saint-Marc</altName>
                 <start>1030</start>
                 <end>1038</end>
                 <lat>19.11</lat>
@@ -5248,6 +5248,7 @@
             </location>
             <location>
                 <name>Mukuru kwa Njenga</name>
+                <altName>Mukuru</altName>
                 <start>215</start>
                 <end>232</end>
                 <lat>-1.30</lat>
@@ -5388,6 +5389,7 @@
             </location>
             <location>
                 <name>North Eastern</name>
+                <altName>North Eastern Province</altName>
                 <start>465</start>
                 <end>478</end>
                 <lat>1</lat>
@@ -5632,6 +5634,7 @@
         <locations>
             <location>
                 <name>West Africa</name>
+                <altName>Western Africa</altName>
                 <start>27</start>
                 <end>38</end>
                 <lat>18.31</lat>
@@ -5810,7 +5813,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Ritual_sacrifice_in_Nepal_sees_320,000_animals_slaughtered_to_Hindu_goddess</source>
-        <text>In a tribute to Gadhimai, a Hindu goddess of power, a Nepal festival began today with the mass sacrifice of 20,000 buffalo in the village of Bariyapur. Shortly after, 300,000 birds, sheep and goats were similarly ritually slaughtered. It is estimated as many as 750,000 people travelled from India, which recently banned similar mass-sacrifices, to make up the majority of the festival's estimated one million attendees. Member of Parliament Shiv Chandra Kushwaha skipped Tuesday's legislative meeting, saying that the festival had more importance as a religious celebration. Although animal rights groups have condemned the ceremony as cruel, the Nepalese government has ignored requests to cancel the festival, held once every five years. Last year, the government banned a similar slaughter during the festival of Yanya Punhi, and was greeted with angry protests. The meat is taken to local villages, who host large feasts for those in attendance, as it is believed to ward off evil.</text>
+        <text>In a tribute to Gadhimai, a Hindu goddess of power, a Nepal festival began today with the mass sacrifice of 20,000 buffalo in the village of Bariyarpur. Shortly after, 300,000 birds, sheep and goats were similarly ritually slaughtered. It is estimated as many as 750,000 people travelled from India, which recently banned similar mass-sacrifices, to make up the majority of the festival's estimated one million attendees. Member of Parliament Shiv Chandra Kushwaha skipped Tuesday's legislative meeting, saying that the festival had more importance as a religious celebration. Although animal rights groups have condemned the ceremony as cruel, the Nepalese government has ignored requests to cancel the festival, held once every five years. Last year, the government banned a similar slaughter during the festival of Yanya Punhi, and was greeted with angry protests. The meat is taken to local villages, who host large feasts for those in attendance, as it is believed to ward off evil.</text>
         <locations>
             <location>
                 <name>Nepal</name>
@@ -5821,18 +5824,17 @@
                 <page>https://en.wikipedia.org/wiki/Nepal</page>
             </location>
             <location>
-                <name>Bariyapur</name>
-                <altName>Bara District</altName>
+                <name>Bariyarpur</name>
                 <start>142</start>
-                <end>151</end>
+                <end>152</end>
                 <lat>26.98</lat>
                 <lon>85.05</lon>
                 <page>https://en.wikipedia.org/wiki/Bariyarpur,_Bara</page>
             </location>
             <location>
                 <name>India</name>
-                <start>293</start>
-                <end>298</end>
+                <start>294</start>
+                <end>299</end>
                 <lat>21</lat>
                 <lon>78</lon>
                 <page>https://en.wikipedia.org/wiki/India</page>
@@ -6801,9 +6803,9 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
-                <name>United States</name>
+                <name>US</name>
                 <start>2355</start>
-                <end>2368</end>
+                <end>2357</end>
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
@@ -7156,7 +7158,7 @@
             <location>
                 <name>Indonesia</name>
                 <start>1469</start>
-                <end>1458</end>
+                <end>1478</end>
                 <lat>-5</lat>
                 <lon>120</lon>
                 <page>https://en.wikipedia.org/wiki/Indonesia</page>
@@ -8144,15 +8146,6 @@
         <source>https://en.wikinews.org/wiki/Disease_scare_in_south_Sudan,_aid_groups_return</source>
         <text>The governor of the south Sudanese Warab state, Anthony Bol Madut told the Reuters news agency that at least a thousand people in the state have died of Meningitis and another unidentified disease. He said that the unknown disease had symptoms similar to Yellow fever but the patients died quickly. The governor appealed for medical assistance to diagnose and help control the outbreak. The outbreak comes as hundreds of thousands of refugees return to southern Sudan after a peace deal ended conflict in the areas. The refugees are housed in crowded camps where the risk of infection is high. Hotspots in south Sudan and Darfur are experiencing a lull in the fighting that has allowed normal life to return to these areas. Meanwhile, the NGO SOS Children's Villages Sudan reports that despite the ceasefire among the warring factions in south Sudan and Darfur, people are still worried that conflict may erupt once again. SOS is also concerned about shortages in medicine and clean water in its facilities in these areas. SOS emergency relief activities have restarted in Abu Shok refugee camp in Al-Fashir, Darfur, with most of the psychologists and social workers returning to work in the psycho-social centres, an SOS release reports. Work with the patients and beneficiaries of the three centres it maintains has started once again, the release adds. The situation in SOS Children's Village Malakal is also stable, but cholera is still spreading among the residents of the area, especially children. SOS Children's Villages Sudan is providing emergency medical assistance in the form of medication for the children in the SOS Children's Village, as well as those being treated in the local children's hospital. According to the SOS release, most international organisations and NGOs have returned to work in both Darfur and Malakal, especially the World Food Programme and other UN agencies. Several NGOs, however, have not resumed activities in the conflict areas. Airplanes are flying into Darfur and Malakal, but flights to Darfur are not as regular as before the conflict and there are no scheduled flights to the area of Malakal. Telephone communications are still unstable, and co-workers from SOS Children's Villages Sudan in Khartoum are relying on satellite telephones to communicate with Darfur and Malakal. Mr. Ali Mahdi, director of SOS Children's Villages Sudan, said that despite the relative quiet in both Darfur and Malakal, people are still worried and tense regarding the situation. Co-workers at the SOS Emergency Relief Centres in Darfur and those in the SOS Children's Village Malakal are afraid of conflict breaking out again in the areas. Mr. Mahdi also said that the centres in Darfur and the SOS Children's Village in Malakal are both suffering from shortages in clean water and medication, some of which are being sent from Khartoum. During a visit to Darfur on 10 January, Mr. Ali Mahdi visited the town of Nyala, the capital of South Darfur, where there is a similar refugee problem as that in Al-Fashir. SOS Children's Villages Sudan is now considering starting an emergency relief programme similar to the one in Abu Shok refugee camp in Al-Fashir.</text>
         <locations>
-            <!--<location>-->
-                <!--<name></name>-->
-                <!--<start></start>-->
-                <!--<end></end>-->
-                <!--<lat></lat>-->
-                <!--<lon></lon>-->
-                <!--<page></page>-->
-                <!--<continent/>-->
-            <!--</location>-->
             <location>
                 <name>Warab</name>
                 <start>36</start>
@@ -8187,6 +8180,14 @@
             </location>
             <location>
                 <name>Sudan</name>
+                <start>768</start>
+                <end>773</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
+            </location>
+            <location>
+                <name>Sudan</name>
                 <start>845</start>
                 <end>850</end>
                 <lat>15</lat>
@@ -8218,6 +8219,38 @@
                 <page>https://en.wikipedia.org/wiki/Al-Fashir</page>
             </location>
             <location>
+                <name>Darfur</name>
+                <start>1110</start>
+                <end>1116</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
+                <name>Malakal</name>
+                <start>1397</start>
+                <end>1404</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
+            </location>
+            <location>
+                <name>Sudan</name>
+                <start>1530</start>
+                <end>1535</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
+            </location>
+            <location>
+                <name>Darfur</name>
+                <start>1819</start>
+                <end>1825</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
                 <name>Malakal</name>
                 <start>1830</start>
                 <end>1837</end>
@@ -8242,12 +8275,108 @@
                 <page>https://en.wikipedia.org/wiki/Malakal</page>
             </location>
             <location>
+                <name>Darfur</name>
+                <start>2033</start>
+                <end>2039</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
+                <name>Malakal</name>
+                <start>2132</start>
+                <end>2139</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
+            </location>
+            <location>
+                <name>Sudan</name>
+                <start>2230</start>
+                <end>2235</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
+            </location>
+            <location>
                 <name>Khartoum</name>
                 <start>2239</start>
                 <end>2247</end>
                 <lat>15.50</lat>
                 <lon>32.56</lon>
                 <page>https://en.wikipedia.org/wiki/Khartoum</page>
+            </location>
+            <location>
+                <name>Darfur</name>
+                <start>2304</start>
+                <end>2310</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
+                <name>Malakal</name>
+                <start>2315</start>
+                <end>2322</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
+            </location>
+            <location>
+                <name>Sudan</name>
+                <start>2375</start>
+                <end>2380</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
+            </location>
+            <location>
+                <name>Darfur</name>
+                <start>2427</start>
+                <end>2433</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
+                <name>Malakal</name>
+                <start>2438</start>
+                <end>2445</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
+            </location>
+            <location>
+                <name>Darfur</name>
+                <start>2557</start>
+                <end>2563</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
+                <name>Malakal</name>
+                <start>2604</start>
+                <end>2611</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
+            </location>
+            <location>
+                <name>Darfur</name>
+                <start>2708</start>
+                <end>2714</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
+                <name>Malakal</name>
+                <start>2749</start>
+                <end>2756</end>
+                <lat>9.55</lat>
+                <lon>31.65</lon>
+                <page>https://en.wikipedia.org/wiki/Malakal</page>
             </location>
             <location>
                 <name>Khartoum</name>
@@ -8258,12 +8387,44 @@
                 <page>https://en.wikipedia.org/wiki/Khartoum</page>
             </location>
             <location>
+                <name>Darfur</name>
+                <start>2884</start>
+                <end>2890</end>
+                <lat>13</lat>
+                <lon>25</lon>
+                <page>https://en.wikipedia.org/wiki/Darfur</page>
+            </location>
+            <location>
                 <name>Nyala</name>
                 <start>2940</start>
                 <end>2945</end>
                 <lat>12.05</lat>
                 <lon>24.88</lon>
                 <page>https://en.wikipedia.org/wiki/Nyala,_Sudan</page>
+            </location>
+            <location>
+                <name>South Darfur</name>
+                <start>2962</start>
+                <end>2974</end>
+                <lat>11.51</lat>
+                <lon>25.03</lon>
+                <page>https://en.wikipedia.org/wiki/South_Darfur</page>
+            </location>
+            <location>
+                <name>Al-Fashir</name>
+                <start>3028</start>
+                <end>3037</end>
+                <lat>13.63</lat>
+                <lon>25.35</lon>
+                <page>https://en.wikipedia.org/wiki/Al-Fashir</page>
+            </location>
+            <location>
+                <name>Sudan</name>
+                <start>3063</start>
+                <end>3068</end>
+                <lat>15</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Sudan</page>
             </location>
             <location>
                 <name>Abu Shok</name>
@@ -8287,6 +8448,15 @@
         <source>https://en.wikinews.org/wiki/International_team_of_scientists_studies_malaria_drug_resistance_in_Southeast_Asia</source>
         <text>Researchers from Asia, Africa, Europe, and the United States have mapped resistance of malaria-causing parasite Plasmodium falciparum to antimalarial drug artemisinin, mainly in Southeast Asia; correlated the resistance-causing mutation with slow parasite clearance; and found that prolonged therapy is highly effective against drug-resistant malaria. Their study was published in New England Journal of Medicine on Thursday. The mutation considered in this study was identified last year as the molecular marker of artemisinin-resistant malaria. The current study found the mutation, located in the propeller domain of a Kelch protein on human chromosome 13, predicted when parasite clearance half-life would exceed five hours with 91.8% sensitivity and 88.4% specificity — usually correct in predicting both when long half-life would occur, and when it wouldn't. OpenClinica web-based database was used for collection of data which was used to assess parasite clearance rate. The study found a six-day treatment course effective against artemisinin-resistant malaria. The standard regimen consists of three-day dihydroartemisinin–piperaquine treatment, and had a 25% rate of failure at day 42 in another recent study in Pailin, Cambodia. The prolonged regimen which includes three days of artesunate followed by three days of dihydroartemisinin–piperaquine, has shown 2% rate of failure at day 42 in the same area. Geometric mean of the half-life values were similar in two treatment groups of 60 patients each at each study site: one group received artesunate at a daily dose of 2 mg per patient's body-weight kilogram and the other 4 mg per kilogram. Afterwards, patients at several study sites were followed for 42 days — Pailin, Cambodia; Attapeu, Laos; Binh Phuoc, Vietnam; Shwe Kyin, Myanmar; and Pingilikani, Kenya — and for 28 days in Kinshasa, DR Congo. The treatment regimens were highly effective at all the study sites. Support for the study came from the UK Department for International Development, the Worldwide Antimalarial Resistance Network, the Intramural Research Program of the National Institute of Allergy and Infectious Diseases of the National Institutes of Health, and the Bill and Melinda Gates Foundation. Also, the UK-based Wellcome Trust funds one of the participating research organizations, the Mahidol–Oxford Tropical Medicine Research Programme.</text>
         <locations>
+            <!--<location>-->
+                <!--<name></name>-->
+                <!--<start></start>-->
+                <!--<end></end>-->
+                <!--<lat></lat>-->
+                <!--<lon></lon>-->
+                <!--<page></page>-->
+                <!--<continent/>-->
+            <!--</location>-->
             <location>
                 <name>United States</name>
                 <start>48</start>
@@ -10795,6 +10965,7 @@
         <locations>
             <location>
                 <name>Republic of Congo</name>
+                <altName>Congo</altName>
                 <start>62</start>
                 <end>79</end>
                 <lat>-1.44</lat>
@@ -10952,6 +11123,7 @@
             </location>
             <location>
                 <name>Kasai Occidental</name>
+                <altName>Kasai-Occidental</altName>
                 <start>349</start>
                 <end>365</end>
                 <lat>-5.9</lat>
@@ -11110,6 +11282,7 @@
             </location>
             <location>
                 <name>Western Kasai</name>
+                <altName>Kasai-Occidental</altName>
                 <start>4547</start>
                 <end>4560</end>
                 <lat>-5.9</lat>
@@ -12359,6 +12532,16 @@
                 <lon>-70.66</lon>
                 <page>https://en.wikipedia.org/wiki/Dominican_Republic</page>
             </location>
+            <location>
+                <name>West Africa</name>
+                <altName>Western Africa</altName>
+                <start>2298</start>
+                <end>2309</end>
+                <lat>18.31</lat>
+                <lon>-4.83</lon>
+                <page>https://en.wikipedia.org/wiki/West_Africa</page>
+                <continent/>
+            </location>
         </locations>
     </article>
     <article>
@@ -13318,6 +13501,7 @@
             </location>
             <location>
                 <name>Mauritious</name>
+                <altName>Mauritius</altName>
                 <start>607</start>
                 <end>617</end>
                 <lat>-20.2</lat>
@@ -14853,6 +15037,7 @@
             </location>
             <location>
                 <name>Swat Valley</name>
+                <altName>Swat</altName>
                 <start>1849</start>
                 <end>1860</end>
                 <lat>35.38</lat>
@@ -14963,6 +15148,7 @@
             </location>
             <location>
                 <name>Kasai Occidental</name>
+                <altName>Kasai-Occidental</altName>
                 <start>319</start>
                 <end>335</end>
                 <lat>-5.9</lat>
@@ -15019,6 +15205,7 @@
             </location>
             <location>
                 <name>West Kasai</name>
+                <altName>Kasai-Occidental</altName>
                 <start>2027</start>
                 <end>2037</end>
                 <lat>-5.9</lat>
@@ -15445,7 +15632,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Swine_flu,_in-depth:_worldwide_report</source>
-        <text>The H1N1 outbreak of swine flu, which began in Mexico this April, has now spread across the globe. There have been at least 3,330 deaths from the swine flu since the virus started spreading, out of almost 316,000 total reported cases. Nine countries — Australia, Brazil, France, Italy, New Zealand, Norway, Switzerland, the UK, and the US — have promised to send ten percent of their antiviral vaccine supply to other countries, should the latter be in need of it. The plan was agreed to "in recognition that diseases know no borders and that the health of the American people is inseparable from the health of people around the world," a statement by the US government read. In an in-depth report, Wikinews takes a look at how the disease has affected countries around the world. As of Wednesday, Brazil has registered 899 deaths from the swine flu, making it the hardest-hit country in terms of fatalities. The city of Sao Paulo reported 327 deaths, and Rio de Janerio 84. However, the country's health ministry also said that the rate of serious cases "fell for the fifth straight week." Brazil had surpassed the United States, which has 593 deaths, in number of total fatalities from the outbreak late in August. Argentina, Brazil's neighbour to the south, has 512 deaths from the H1N1 virus. 10,000 cases of swine flu were confirmed across China since the outbreak began. The number of infections seems to be increasing quickly. Communications director for the World Health Organisation Vivian Tan said that "in the last week or so, the increase has been quite quick," attributing the rise to a small decrease in temperatures as fall sets in, as well as students returning to school after summer breaks. China's official news agency Xinhua reported that 1,118 new cases of the influenza were reported in a two-day period earlier in the week, adding that a vast majority of the cases had been transmitted in China, not by persons entering the country from abroad. All 31 of China's provinces have reported instances of the flu. The disease initially seemed to be limited to large cities, but recently has started moving into more rural areas. No casualties from the swine flu have yet been confirmed in China. The office of France's president Nicolas Sarkozy said that the country would pledge up to one tenth or nine million of its 94 million antiviral vaccine doses to the World Health Organisation, to be distributed to countries with fewer vaccine supplies if needed. International solidarity "will be a determining factor in reducing the health, economic and social impact of the pandemic," according to a statement released by the government. On Wednesday, eleven people had been reported dead from the virus in India, taking the country's death toll up to 212 people. The number of people infected with the influenza is now estimated at 6,800. India's health ministry on Tuesday said that the Tamiflu drug would be on sale in the open market within seven days, allowing for a "restricted sale" of the drug. An unnamed official said that "it is expected that within the next five to seven days, both the drugs would be available in the retail market through identified chemists against proper medical prescriptions. "Taking into account the current spread of the influenza A(H1N1) in the country, the health ministry has decided that retail sale of Tamiflu and Zanamivir should be allowed in the country but in a regulated manner," he said. Previously, distribution of Tamiflu was prohibited by the government, and access to it was only available through public health institutions. At least 70 people in Kenya have the swine flu, according to local health official. In the latest outbreak, twenty high school students came down with the virus and had to be quarantined on Thursday. "A majority of the affected students who are in Forms One and Two were treated and advised to remain under bed rest to minimise further spread of the disease among the student community," said the director of Public Health, Dr. Shanaaz Shariff. However, he said that the students' illness was "not too serious to warrant hospitalisation." Security guards were placed around the school the students were isolated in, with orders only to allow medical personnel to enter the premises. Kenya's capital Nairobi has been the worst hit by the flu, having reported forty cases. Other cities affected by the flu are Kisumu and Rift Valley, who have reported eighteen and ten cases of the H1N1 virus, respectively. Mexico, the country in which the outbreak initially started, has 25,214 reported cases and 217 fatalities from the virus. Some recent cases have forced schools to close down. Jose Angel Cordova, the Mexican health secretary, said that the virus could infect as many as five million of Mexico's 107 million people, and, in a worst-case scenario, cause up to 2,000 deaths. His estimate is higher than his previous prediction of 1 million cases and 1,000 deaths, made last month. About five thousand new cases of swine flu were reported in the United Kingdom in recent weeks, reversing a declining trend in the number of new infections. Health officials have suggested this could lead up to a second outbreak of the virus. "We don't know whether this is the start of the next big wave that we were expecting this autumn but it is certainly something that's giving us concern. It will probably be a week or two before we see whether this increase is sustained." said Liam Donaldson, the Chief Medical Officer. Health authorities have said that at least 25 cases appear to have been resistant to the Tamiflu drug prescribed to treat the illness. Donaldson said that "the positive side of it is that so far these have not been strains that have then gone on and affected other patients, they have stayed with the patient in which they were isolated. What would worry us is if we got a resistant strain that then started infecting people like the rest of the cases of flu that have occurred." The UK is one of several countries that have pledged up to one tenth of their vaccine stock to to other countries if they are in need of more supplies. "Britain recognizes that H1N1 is a global pandemic which requires a global response," the International Development Secretary, Douglas Alexander, said. "Solidarity with other nations is vital, particularly the poorest who may be most vulnerable and have least capacity to respond." The US government recently bought 195 million doses of swine flu vaccine. Health Care Secretary Kathleen Sebelius said that free shots will be given out early in October. The vaccination is to be voluntary, but priority will be given to certain groups, such as toddlers and children, adults over the age of 65, and pregnant women, who are considered especially vulnerable to the virus. "We remain confident that the United States will have sufficient doses of the vaccine to ensure that every American who wants a vaccine is able to receive one," a White House statement said. As of September 16, the US had 593 deaths from the flu. 144 people in Vietnam were diagnosed with the swine flu on Wednesday, bringing the total number of infected people in the country to 5,648. This week, the number of affected people has increased by 1104 infections or 6.3%. Nguyen Tran Hien, the director of the Central Institute of Hygiene Epidemiology, predicted that the swine flu would peak at the end of 2009 and the beginning 2010. The Vietnamese Ministry of Health called for more research into a swine flu vaccine, and urged the the National Steering Board on Flu Prevention in Humans to give out more doses of the drug Tamiflu to areas hardest hit by the flu.</text>
+        <text>The H1N1 outbreak of swine flu, which began in Mexico this April, has now spread across the globe. There have been at least 3,330 deaths from the swine flu since the virus started spreading, out of almost 316,000 total reported cases. Nine countries — Australia, Brazil, France, Italy, New Zealand, Norway, Switzerland, the UK, and the US — have promised to send ten percent of their antiviral vaccine supply to other countries, should the latter be in need of it. The plan was agreed to "in recognition that diseases know no borders and that the health of the American people is inseparable from the health of people around the world," a statement by the US government read. In an in-depth report, Wikinews takes a look at how the disease has affected countries around the world. As of Wednesday, Brazil has registered 899 deaths from the swine flu, making it the hardest-hit country in terms of fatalities. The city of Sao Paulo reported 327 deaths, and Rio de Janeiro 84. However, the country's health ministry also said that the rate of serious cases "fell for the fifth straight week." Brazil had surpassed the United States, which has 593 deaths, in number of total fatalities from the outbreak late in August. Argentina, Brazil's neighbour to the south, has 512 deaths from the H1N1 virus. 10,000 cases of swine flu were confirmed across China since the outbreak began. The number of infections seems to be increasing quickly. Communications director for the World Health Organisation Vivian Tan said that "in the last week or so, the increase has been quite quick," attributing the rise to a small decrease in temperatures as fall sets in, as well as students returning to school after summer breaks. China's official news agency Xinhua reported that 1,118 new cases of the influenza were reported in a two-day period earlier in the week, adding that a vast majority of the cases had been transmitted in China, not by persons entering the country from abroad. All 31 of China's provinces have reported instances of the flu. The disease initially seemed to be limited to large cities, but recently has started moving into more rural areas. No casualties from the swine flu have yet been confirmed in China. The office of France's president Nicolas Sarkozy said that the country would pledge up to one tenth or nine million of its 94 million antiviral vaccine doses to the World Health Organisation, to be distributed to countries with fewer vaccine supplies if needed. International solidarity "will be a determining factor in reducing the health, economic and social impact of the pandemic," according to a statement released by the government. On Wednesday, eleven people had been reported dead from the virus in India, taking the country's death toll up to 212 people. The number of people infected with the influenza is now estimated at 6,800. India's health ministry on Tuesday said that the Tamiflu drug would be on sale in the open market within seven days, allowing for a "restricted sale" of the drug. An unnamed official said that "it is expected that within the next five to seven days, both the drugs would be available in the retail market through identified chemists against proper medical prescriptions. "Taking into account the current spread of the influenza A(H1N1) in the country, the health ministry has decided that retail sale of Tamiflu and Zanamivir should be allowed in the country but in a regulated manner," he said. Previously, distribution of Tamiflu was prohibited by the government, and access to it was only available through public health institutions. At least 70 people in Kenya have the swine flu, according to local health official. In the latest outbreak, twenty high school students came down with the virus and had to be quarantined on Thursday. "A majority of the affected students who are in Forms One and Two were treated and advised to remain under bed rest to minimise further spread of the disease among the student community," said the director of Public Health, Dr. Shanaaz Shariff. However, he said that the students' illness was "not too serious to warrant hospitalisation." Security guards were placed around the school the students were isolated in, with orders only to allow medical personnel to enter the premises. Kenya's capital Nairobi has been the worst hit by the flu, having reported forty cases. Other cities affected by the flu are Kisumu and Rift Valley, who have reported eighteen and ten cases of the H1N1 virus, respectively. Mexico, the country in which the outbreak initially started, has 25,214 reported cases and 217 fatalities from the virus. Some recent cases have forced schools to close down. Jose Angel Cordova, the Mexican health secretary, said that the virus could infect as many as five million of Mexico's 107 million people, and, in a worst-case scenario, cause up to 2,000 deaths. His estimate is higher than his previous prediction of 1 million cases and 1,000 deaths, made last month. About five thousand new cases of swine flu were reported in the United Kingdom in recent weeks, reversing a declining trend in the number of new infections. Health officials have suggested this could lead up to a second outbreak of the virus. "We don't know whether this is the start of the next big wave that we were expecting this autumn but it is certainly something that's giving us concern. It will probably be a week or two before we see whether this increase is sustained." said Liam Donaldson, the Chief Medical Officer. Health authorities have said that at least 25 cases appear to have been resistant to the Tamiflu drug prescribed to treat the illness. Donaldson said that "the positive side of it is that so far these have not been strains that have then gone on and affected other patients, they have stayed with the patient in which they were isolated. What would worry us is if we got a resistant strain that then started infecting people like the rest of the cases of flu that have occurred." The UK is one of several countries that have pledged up to one tenth of their vaccine stock to to other countries if they are in need of more supplies. "Britain recognizes that H1N1 is a global pandemic which requires a global response," the International Development Secretary, Douglas Alexander, said. "Solidarity with other nations is vital, particularly the poorest who may be most vulnerable and have least capacity to respond." The US government recently bought 195 million doses of swine flu vaccine. Health Care Secretary Kathleen Sebelius said that free shots will be given out early in October. The vaccination is to be voluntary, but priority will be given to certain groups, such as toddlers and children, adults over the age of 65, and pregnant women, who are considered especially vulnerable to the virus. "We remain confident that the United States will have sufficient doses of the vaccine to ensure that every American who wants a vaccine is able to receive one," a White House statement said. As of September 16, the US had 593 deaths from the flu. 144 people in Vietnam were diagnosed with the swine flu on Wednesday, bringing the total number of infected people in the country to 5,648. This week, the number of affected people has increased by 1104 infections or 6.3%. Nguyen Tran Hien, the director of the Central Institute of Hygiene Epidemiology, predicted that the swine flu would peak at the end of 2009 and the beginning 2010. The Vietnamese Ministry of Health called for more research into a swine flu vaccine, and urged the the National Steering Board on Flu Prevention in Humans to give out more doses of the drug Tamiflu to areas hardest hit by the flu.</text>
         <locations>
             <location>
                 <name>Mexico</name>
@@ -15554,7 +15741,7 @@
                 <page>https://en.wikipedia.org/wiki/S%C3%A3o_Paulo</page>
             </location>
             <location>
-                <name>Rio de Janerio</name>
+                <name>Rio de Janeiro</name>
                 <start>957</start>
                 <end>971</end>
                 <lat>-22.90</lat>
@@ -16478,6 +16665,7 @@
             </location>
             <location>
                 <name>Bas Congo Province</name>
+                <altName>Bas-Congo</altName>
                 <start>1925</start>
                 <end>1943</end>
                 <lat>-5.81</lat>
@@ -17198,6 +17386,7 @@
             </location>
             <location>
                 <name>Adhamiya</name>
+                <altName>Adhamiyah</altName>
                 <start>1248</start>
                 <end>1256</end>
                 <lat>33.36</lat>
@@ -17205,9 +17394,9 @@
                 <page>https://en.wikipedia.org/wiki/Adhamiyah</page>
             </location>
             <location>
-                <name>Adhamiya</name>
+                <name>Adhamiyah</name>
                 <start>1592</start>
-                <end>1600</end>
+                <end>1601</end>
                 <lat>33.36</lat>
                 <lon>44.36</lon>
                 <page>https://en.wikipedia.org/wiki/Adhamiyah</page>
@@ -17328,6 +17517,7 @@
             </location>
             <location>
                 <name>South West England</name>
+                <altName>Southern England</altName>
                 <start>149</start>
                 <end>167</end>
                 <lat>50.96</lat>

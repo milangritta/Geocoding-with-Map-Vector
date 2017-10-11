@@ -6,7 +6,7 @@ from preprocessing import get_coordinates
 
 # --------------------------------------------ERROR CHECKING----------------------------------------------
 
-if False:  # add CDATA xml construct?
+if True:  # add CDATA xml construct?
     tree = ET.parse(u'data/GeoVirus.xml')
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -40,14 +40,12 @@ if False:  # add CDATA xml construct?
 
 # ----------------------------------------------STATISTICS------------------------------------------------
 
+
 # tree = ET.parse('data/GeoVirus.xml')
 # root = tree.getroot()
 # for article in root:
 #     for location in article:
 #         print location.text
-
-# -----------------------------------------------ANALYSIS-------------------------------------------------
-
 
 
 # ----------------------------------------------GENERATION------------------------------------------------
@@ -66,16 +64,18 @@ if True:
             end = location.find("end")
             name = location.find("name")
             if location.find('altName') is not None:
-                name = location.find('altName')
+                alt_name = location.find('altName')
+            else:
+                alt_name = name
             lat = location.find("lat")
             lon = location.find("lon")
-            gold_tops.append(name.text + ",," + name.text + ",," + lat.text + ",," + lon.text + ",," + start.text + ",," + end.text)
+            gold_tops.append(alt_name.text + ",," + name.text + ",," + lat.text + ",," + lon.text + ",," + start.text + ",," + end.text)
         for t in gold_tops:
             f.write(t + "||")
         f.write("\n")
-        f.close()
-        f = codecs.open(u"../data/geovirus/" + str(c), 'w', "utf-8")  # Files saved by numbers
-        f.write(text)
-        f.close()
+        f_out = codecs.open(u"../data/geovirus/" + str(c), 'w', "utf-8")  # Files saved by numbers
+        f_out.write(text)
+        f_out.close()
         c += 1
     f.close()
+

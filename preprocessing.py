@@ -31,7 +31,6 @@ def print_stats(accuracy):
     k = np.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
     print u"Accuracy to 161 km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
     print u"AUC = ", np.trapz(accuracy) / (np.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
-    # print u"AUC NO_LOG = ", np.trapz(np.exp(accuracy)) / (20039 * (len(accuracy) - 1))  # Trapezoidal rule.
     print("==============================================================================================")
 
 
@@ -256,8 +255,7 @@ def generate_training_data():
 
 
 def generate_evaluation_data(corpus, file_name):
-    """Prepare WikToR and LGL data. Only the subsets i.e. (2,202 WikToR, 787 LGL)"""
-
+    """"""
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load(u'en')
@@ -274,7 +272,7 @@ def generate_evaluation_data(corpus, file_name):
             doc = nlp(codecs.open(directory + str(line_no), u"r", encoding=u"utf-8").read())
             locations_near, locations_far = [], []
             toponym = toponym.split(u",,")
-            target = toponym[1].split()
+            target = [t.text for t in nlp(toponym[1])]
             ent_length = len(u" ".join(target))
             lat, lon = toponym[2], toponym[3]
             start, end = int(toponym[4]), int(toponym[5])
@@ -328,7 +326,7 @@ def generate_evaluation_data(corpus, file_name):
                                                 if in_list[i + offset].is_alpha and location != u" ".join(target) else PADDING
                                     location = u""
 
-                        lookup = toponym[0] if corpus == u"lgl" else toponym[1]
+                        lookup = toponym[0] if corpus != u"wiki" else toponym[1]
                         target_grid = get_coordinates(c, lookup)
                         if len(target_grid) == 0:
                             raise Exception(u"No entry in the database!", lookup)
@@ -441,8 +439,7 @@ def generate_arrays_from_file(path, w2i, train=True):
                 if train:
                     yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
                             np.asarray(far_entities), np.asarray(near_entities_coord),
-                            np.asarray(far_entities_coord),
-                            np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
+                            np.asarray(far_entities_coord), np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
                 else:
                     yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
                             np.asarray(far_entities), np.asarray(near_entities_coord),
@@ -541,13 +538,13 @@ def training_map():
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="wiki", file_name="_geo")
+# generate_evaluation_data(corpus="geovirus", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Java"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"adhamiyah"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
