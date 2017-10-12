@@ -533,6 +533,42 @@ def training_map():
     visualise_2D_grid(c, "Training Map", log=True)
 
 
+def generate_arrays_from_file_2D(path, train=True):
+    """"""
+    while True:
+        training_file = codecs.open(path, "r", encoding="utf-8")
+        counter = 0
+        labels = []
+        near_entities_coord, far_entities_coord, target_coord = [], [], []
+        for line in training_file:
+            counter += 1
+            line = line.strip().split("\t")
+            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+
+            target_coord.append([construct_2D_grid(eval(line[4]), use_pop=True)])
+            near_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
+            far_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
+
+            if counter % BATCH_SIZE == 0:
+                if train:
+                    yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
+                            np.asarray(target_coord),], np.asarray(labels))
+                else:
+                    yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
+                            np.asarray(target_coord)])
+
+                labels = []
+                near_entities_coord, far_entities_coord, target_coord = [], [], []
+
+        if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
+            if train:
+                yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
+                        np.asarray(target_coord)], np.asarray(labels))
+            else:
+                yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
+                        np.asarray(target_coord)])
+
+
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))

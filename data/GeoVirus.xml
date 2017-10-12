@@ -8446,17 +8446,35 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/International_team_of_scientists_studies_malaria_drug_resistance_in_Southeast_Asia</source>
-        <text>Researchers from Asia, Africa, Europe, and the United States have mapped resistance of malaria-causing parasite Plasmodium falciparum to antimalarial drug artemisinin, mainly in Southeast Asia; correlated the resistance-causing mutation with slow parasite clearance; and found that prolonged therapy is highly effective against drug-resistant malaria. Their study was published in New England Journal of Medicine on Thursday. The mutation considered in this study was identified last year as the molecular marker of artemisinin-resistant malaria. The current study found the mutation, located in the propeller domain of a Kelch protein on human chromosome 13, predicted when parasite clearance half-life would exceed five hours with 91.8% sensitivity and 88.4% specificity — usually correct in predicting both when long half-life would occur, and when it wouldn't. OpenClinica web-based database was used for collection of data which was used to assess parasite clearance rate. The study found a six-day treatment course effective against artemisinin-resistant malaria. The standard regimen consists of three-day dihydroartemisinin–piperaquine treatment, and had a 25% rate of failure at day 42 in another recent study in Pailin, Cambodia. The prolonged regimen which includes three days of artesunate followed by three days of dihydroartemisinin–piperaquine, has shown 2% rate of failure at day 42 in the same area. Geometric mean of the half-life values were similar in two treatment groups of 60 patients each at each study site: one group received artesunate at a daily dose of 2 mg per patient's body-weight kilogram and the other 4 mg per kilogram. Afterwards, patients at several study sites were followed for 42 days — Pailin, Cambodia; Attapeu, Laos; Binh Phuoc, Vietnam; Shwe Kyin, Myanmar; and Pingilikani, Kenya — and for 28 days in Kinshasa, DR Congo. The treatment regimens were highly effective at all the study sites. Support for the study came from the UK Department for International Development, the Worldwide Antimalarial Resistance Network, the Intramural Research Program of the National Institute of Allergy and Infectious Diseases of the National Institutes of Health, and the Bill and Melinda Gates Foundation. Also, the UK-based Wellcome Trust funds one of the participating research organizations, the Mahidol–Oxford Tropical Medicine Research Programme.</text>
+        <text>Researchers from Asia, Africa, Europe, and the United States have mapped resistance of malaria-causing parasite Plasmodium falciparum to antimalarial drug artemisinin, mainly in southeast Asia; correlated the resistance-causing mutation with slow parasite clearance; and found that prolonged therapy is highly effective against drug-resistant malaria. Their study was published in New England Journal of Medicine on Thursday. The mutation considered in this study was identified last year as the molecular marker of artemisinin-resistant malaria. The current study found the mutation, located in the propeller domain of a Kelch protein on human chromosome 13, predicted when parasite clearance half-life would exceed five hours with 91.8% sensitivity and 88.4% specificity — usually correct in predicting both when long half-life would occur, and when it wouldn't. OpenClinica web-based database was used for collection of data which was used to assess parasite clearance rate. The study found a six-day treatment course effective against artemisinin-resistant malaria. The standard regimen consists of three-day dihydroartemisinin–piperaquine treatment, and had a 25% rate of failure at day 42 in another recent study in Pailin, Cambodia. The prolonged regimen which includes three days of artesunate followed by three days of dihydroartemisinin–piperaquine, has shown 2% rate of failure at day 42 in the same area. Geometric mean of the half-life values were similar in two treatment groups of 60 patients each at each study site: one group received artesunate at a daily dose of 2 mg per patient's body-weight kilogram and the other 4 mg per kilogram. Afterwards, patients at several study sites were followed for 42 days — Pailin, Cambodia; Attapeu, Laos; Binh Phuoc, Vietnam; Shwe Kyin, Myanmar; and Pingilikani, Kenya — and for 28 days in Kinshasa, DR Congo. The treatment regimens were highly effective at all the study sites. Support for the study came from the UK Department for International Development, the Worldwide Antimalarial Resistance Network, the Intramural Research Program of the National Institute of Allergy and Infectious Diseases of the National Institutes of Health, and the Bill and Melinda Gates Foundation. Also, the UK-based Wellcome Trust funds one of the participating research organizations, the Mahidol–Oxford Tropical Medicine Research Programme.</text>
         <locations>
-            <!--<location>-->
-                <!--<name></name>-->
-                <!--<start></start>-->
-                <!--<end></end>-->
-                <!--<lat></lat>-->
-                <!--<lon></lon>-->
-                <!--<page></page>-->
-                <!--<continent/>-->
-            <!--</location>-->
+            <location>
+                <name>Asia</name>
+                <start>18</start>
+                <end>22</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>24</start>
+                <end>30</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>32</start>
+                <end>38</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <continent/>
+            </location>
             <location>
                 <name>United States</name>
                 <start>48</start>
@@ -8464,6 +8482,15 @@
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>189</start>
+                <end>193</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
             </location>
             <location>
                 <name>Pailin</name>
@@ -8569,6 +8596,14 @@
                 <lon>23.65</lon>
                 <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
             </location>
+            <location>
+                <name>UK</name>
+                <start>2247</start>
+                <end>2249</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -8592,6 +8627,33 @@
                 <page>https://en.wikipedia.org/wiki/Tanzania</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>532</start>
+                <end>538</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>668</start>
+                <end>674</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
+                <name>US</name>
+                <altName>United States</altName>
+                <start>750</start>
+                <end>752</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>US</name>
                 <altName>United States</altName>
                 <start>819</start>
@@ -8601,6 +8663,15 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>1253</start>
+                <end>1259</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Zanzibar</name>
                 <start>1439</start>
                 <end>1447</end>
@@ -8608,12 +8679,30 @@
                 <lon>39.31</lon>
                 <page>https://en.wikipedia.org/wiki/Zanzibar</page>
             </location>
+            <location>
+                <name>Africa</name>
+                <start>1649</start>
+                <end>1655</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Asian_monsoon_rains_force_millions_to_flee</source>
-        <text>Torrential monsoon rains for the past 11 days have inundated parts of Southeast Asia, heavily flooding areas of India, Nepal, and Bangladesh and affecting over 20 million people. An estimated 1,400 have been killed across the region, as waterborne diseases have proliferated and become highly virulent in the humid and wet conditions. The United Nations Children's Fund, UNICEF, is currently providing relief to affected areas. In the Northern Indian states of Bihar and Uttar Pradesh, as many as 12.5 million people have been displaced or affected by flooding. Clashes with police in Bihar have left 20 villagers injured and one man dead, since many are staging protests after being forced from their homes. UNICEF estimates as many as 1,103 may have died in 138 districts throughout northern India. Hospitals are reaching dangerous volumes as disease is sickening thousands. Many are ill from dehydration, exposure and dysentery. Aid workers warn that malaria is a serious risk. The Indian Air Force began dropping aid packages containing medical supplies and food yesterday. Santosh Mishra, a villager in the Gondra district of Uttar Pradesh remarked, "I have not seen such flooding in the last 24 years." Bodies of two students of the IIM Indore swept in the flash floods in Indore were recovered.</text>
+        <text>Torrential monsoon rains for the past 11 days have inundated parts of southeast Asia, heavily flooding areas of India, Nepal, and Bangladesh and affecting over 20 million people. An estimated 1,400 have been killed across the region, as waterborne diseases have proliferated and become highly virulent in the humid and wet conditions. The United Nations Children's Fund, UNICEF, is currently providing relief to affected areas. In the Northern Indian states of Bihar and Uttar Pradesh, as many as 12.5 million people have been displaced or affected by flooding. Clashes with police in Bihar have left 20 villagers injured and one man dead, since many are staging protests after being forced from their homes. UNICEF estimates as many as 1,103 may have died in 138 districts throughout northern India. Hospitals are reaching dangerous volumes as disease is sickening thousands. Many are ill from dehydration, exposure and dysentery. Aid workers warn that malaria is a serious risk. The Indian Air Force began dropping aid packages containing medical supplies and food yesterday. Santosh Mishra, a villager in the Gondra district of Uttar Pradesh remarked, "I have not seen such flooding in the last 24 years." Bodies of two students of the IIM Indore swept in the flash floods in Indore were recovered.</text>
         <locations>
+            <location>
+                <name>Asia</name>
+                <start>81</start>
+                <end>85</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
             <location>
                 <name>India</name>
                 <start>113</start>
@@ -8808,6 +8897,14 @@
                 <lon>10</lon>
                 <page>https://en.wikipedia.org/wiki/Nigeria</page>
             </location>
+            <location>
+                <name>US</name>
+                <start>1081</start>
+                <end>1083</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -8856,6 +8953,15 @@
                 <page>https://en.wikipedia.org/wiki/Da_Nang_International_Airport</page>
             </location>
             <location>
+                <name>US</name>
+                <altName>United States</altName>
+                <start>449</start>
+                <end>451</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Da Nang</name>
                 <start>565</start>
                 <end>572</end>
@@ -8894,6 +9000,15 @@
         <source>https://en.wikinews.org/wiki/M%C3%A9decins_Sans_Fronti%C3%A8res_warns_of_emerging_crisis_in_eastern_Chad</source>
         <text>The non-governmental aid organisation Médecins Sans Frontières (MSF), or Doctors Without Borders, warned of a humanitarian crisis developing in the eastern region of Chad in central Africa, issued a press release Friday. Chad, which shares part of its eastern border with Sudan, has been the recipient of refugees fleeing conflict in the Darfur region of Sudan. In addition to the estimated 234,000 Sudanese refugees it manages, Chad now has an estimated 150,000 internally displaced persons, or IDPs, fleeing from attacks on villages in the eastern region where the government of Chad has been fighting an insurgency, which it claims was supported in the past by Sudan. The Chadian IDPs are set up in rudimentary camps, lacking basic necessities such as food, water and proper shelter. According to a May, 2007 report by MSF's research and epidemiological survey centre, 20 percent of children in camps near Goz Beida were suffering from acute malnutrition and "catastrophic" mortality rates. MSF complained of obstacles encountered in their effort to provide medical assistance to the needy. "In Goz Beida, the IDPs receive three to eight litres of water per person per day, whereas they should have 20 litres," said Franck Joncret, MSF Head of Mission in Chad. Approximately 100 children are receiving treatment for malnutrition, while MSF estimated the number of acutely malnourished children to be greater than 2,000. "This policy of rationed aid for IDPs is unacceptable," complained Joncret. In April, the United Nations Office for the Coordination of Humanitarian Affairs (OCHA) initiated a three month intervention for the Chadian camps, which MSF described as "inadequate". MSF also complained that they have not been given approval to open a paediatric hospital in Goz Beida to help deal with the malnutrition. In the near term, MSF anticipated an increase in malaria and epidemic diarrhoeal diseases along with an dramatic increase in malnutrition cases. To help avert a humanitarian crisis, MSF pleaded for increased hospital capacity, a safe water supply for the camps, and the cooperation necessary to deal with malnutrition. "It is imperative that the emergency in eastern Chad be fully recognised, that aid organisations provide massive, immediate aid to the IDPs and that the Chadian authorities facilitate humanitarian aid," said Isabelle Defourny, manager of MSF programmes in Chad. The government of Chad has said it would agree to a UN police presence, but not a military force, in its eastern regions.</text>
         <locations>
+            <location>
+                <name>Africa</name>
+                <start>183</start>
+                <end>189</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
             <location>
                 <name>Chad</name>
                 <start>167</start>
@@ -8943,6 +9058,14 @@
                 <page>https://en.wikipedia.org/wiki/Chad</page>
             </location>
             <location>
+                <name>Chad</name>
+                <start>582</start>
+                <end>586</end>
+                <lat>15</lat>
+                <lon>19</lon>
+                <page>https://en.wikipedia.org/wiki/Chad</page>
+            </location>
+            <location>
                 <name>Sudan</name>
                 <start>665</start>
                 <end>670</end>
@@ -8967,6 +9090,14 @@
                 <page>https://en.wikipedia.org/wiki/Goz_Be%C3%AFda</page>
             </location>
             <location>
+                <name>Chad</name>
+                <start>1259</start>
+                <end>1263</end>
+                <lat>15</lat>
+                <lon>19</lon>
+                <page>https://en.wikipedia.org/wiki/Chad</page>
+            </location>
+            <location>
                 <name>Goz Beida</name>
                 <start>1777</start>
                 <end>1786</end>
@@ -8974,12 +9105,45 @@
                 <lon> 21.41</lon>
                 <page>https://en.wikipedia.org/wiki/Goz_Be%C3%AFda</page>
             </location>
+            <location>
+                <name>Chad</name>
+                <start>2190</start>
+                <end>2194</end>
+                <lat>15</lat>
+                <lon>19</lon>
+                <page>https://en.wikipedia.org/wiki/Chad</page>
+            </location>
+            <location>
+                <name>Chad</name>
+                <start>2398</start>
+                <end>2402</end>
+                <lat>15</lat>
+                <lon>19</lon>
+                <page>https://en.wikipedia.org/wiki/Chad</page>
+            </location>
+            <location>
+                <name>Chad</name>
+                <start>2422</start>
+                <end>2426</end>
+                <lat>15</lat>
+                <lon>19</lon>
+                <page>https://en.wikipedia.org/wiki/Chad</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Kenyan_cattle_rustlers_kill_eleven</source>
         <text>Kenya's livestock minister, Mohammed Kuti, said today that cattle rustlers have killed eleven people near the central town of Isiolo. Kuti, who is also the member of parliament for Isiolo, said the rustlers raided in a village in the area early in the day. "The eleven people were killed when rustlers stormed a village in Kisima area early this morning," he commented. The state-owned Kenya Broadcasting Corporation puts the number of attackers at 300, and stated that they stole an unknown number of livestock. Cattle rustling is common in Kenya, and the extended drought has heightened competition for scarce sources of food. In mid-September, 30 people were killed in a shootout as rustlers from the Pokot tribe attacked the Samburu tribe and made off with hundreds of cattle.</text>
         <locations>
+            <location>
+                <name></name>
+                <start></start>
+                <end></end>
+                <lat></lat>
+                <lon></lon>
+                <page></page>
+                <continent/>
+            </location>
             <location>
                 <name>Kenya</name>
                 <start>1</start>

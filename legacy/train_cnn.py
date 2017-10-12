@@ -1,101 +1,50 @@
 # -*- coding: utf-8 -*-
-import codecs
-import numpy as np
-import cPickle
 from keras import Input
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
-from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from preprocessing import generate_arrays_from_file, GRID_SIZE
+from keras.layers import Dense, Dropout, Conv2D, MaxPooling2D, Flatten
+from preprocessing import generate_arrays_from_file_2D, GRID_SIZE, BATCH_SIZE
 from subprocess import check_output
 
-UNKNOWN, PADDING = u"<unknown>", u"0.0"
-dimension, input_length = 100, 200
-print(u"Dimension:", dimension)
-print(u"Input length:", input_length)
-
-vocabulary = cPickle.load(open("data/vocabulary.pkl"))
-print(u"Vocabulary Size:", len(vocabulary))
-#  --------------------------------------------------------------------------------------------------------------------
-print(u'Preparing vectors...')
-word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
-
-vectors = {UNKNOWN: np.ones(dimension), PADDING: np.ones(dimension)}
-for line in codecs.open("../data/glove.twitter." + str(dimension) + "d.txt", encoding="utf-8"):
-    if line.strip() == "":
-        continue
-    t = line.split()
-    vectors[t[0]] = [float(x) for x in t[1:]]
-print(u'Loaded Twitter vectors...', len(vectors))
-
-for line in codecs.open("../data/glove." + str(dimension) + "d.txt", encoding="utf-8"):
-    if line.strip() == "":
-        continue
-    t = line.split()
-    vectors[t[0]] = [float(x) for x in t[1:]]
-print(u'Loaded GloVe vectors...', len(vectors))
-
-weights = np.zeros((len(vocabulary), dimension))
-oov = 0
-for w in vocabulary:
-    if w in vectors:
-        weights[word_to_index[w]] = vectors[w]
-    else:
-        weights[word_to_index[w]] = np.random.normal(size=(dimension,), scale=0.3)
-        oov += 1
-weights = np.array([weights])
-print(u'Done preparing vectors...')
-print(u"OOV:", oov)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
-left_pair = Input(shape=(input_length,))
-lp = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(left_pair)
-lp = Conv1D(500, 2, activation='relu', strides=1)(lp)
-lp = GlobalMaxPooling1D()(lp)
-lp = Dense(100)(lp)
-lp = Dropout(0.5)(lp)
 
-left_single = Input(shape=(input_length,))
-ls = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(left_single)
-ls = Conv1D(500, 1, activation='relu', strides=1)(ls)
-ls = GlobalMaxPooling1D()(ls)
-ls = Dense(100)(ls)
-ls = Dropout(0.5)(ls)
+near_entities_coord = Input(shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))
+nec = Conv2D(10, (2, 2), activation="relu", input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE), data_format="channels_first")(near_entities_coord)
+nec = MaxPooling2D(data_format="channels_first")(nec)
+nec = Conv2D(10, (2, 2), activation="relu", input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE), data_format="channels_first")(nec)
+nec = MaxPooling2D(data_format="channels_first")(nec)
+nec = Flatten()(nec)
+nec = Dropout(0.3)(nec)
 
-right_pair = Input(shape=(input_length,))
-rp = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(right_pair)
-rp = Conv1D(500, 2, activation='relu', strides=1)(rp)
-rp = GlobalMaxPooling1D()(rp)
-rp = Dense(100)(rp)
-rp = Dropout(0.5)(rp)
+far_entities_coord = Input(shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))
+fec = Conv2D(10, (2, 2), activation="relu", input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE), data_format="channels_first")(far_entities_coord)
+fec = MaxPooling2D(data_format="channels_first")(fec)
+fec = Conv2D(10, (2, 2), activation="relu", input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE), data_format="channels_first")(fec)
+fec = MaxPooling2D(data_format="channels_first")(fec)
+fec = Flatten()(fec)
+fec = Dropout(0.3)(fec)
 
-right_single = Input(shape=(input_length,))
-rs = Embedding(len(vocabulary), dimension, input_length=input_length, weights=weights)(right_single)
-rs = Conv1D(500, 1, activation='relu', strides=1)(rs)
-rs = GlobalMaxPooling1D()(rs)
-rs = Dense(100)(rs)
-rs = Dropout(0.5)(rs)
+target_coord = Input(shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE))
+tc = Conv2D(10, (2, 2), activation="relu", input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE), data_format="channels_first")(target_coord)
+tc = MaxPooling2D(data_format="channels_first")(tc)
+tc = Conv2D(10, (2, 2), activation="relu", input_shape=(1, 180 / GRID_SIZE, 360 / GRID_SIZE), data_format="channels_first")(tc)
+tc = MaxPooling2D(data_format="channels_first")(tc)
+tc = Flatten()(tc)
+tc = Dropout(0.3)(tc)
 
-entities = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-en = Dense(200, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(entities)
-en = Dropout(0.5)(en)
-
-target = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-ta = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target)
-ta = Dropout(0.5)(ta)
-
-inp = concatenate([lp, ls, rp, rs, en, ta])
+inp = concatenate([nec, fec, tc])
 inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)
-model = Model(inputs=[left_pair, left_single, right_pair, right_single, entities, target], outputs=[inp])
+model = Model(inputs=[near_entities_coord, far_entities_coord, target_coord], outputs=[inp])
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
-checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-# checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+# checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
 early_stop = EarlyStopping(monitor='acc', patience=5)
-file_name = u"data/eval_wiki.txt"
-model.fit_generator(generate_arrays_from_file(file_name, word_to_index, input_length),
-                    steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / 64,
-                    epochs=100, callbacks=[checkpoint, early_stop])
+file_name = u"../data/train_wiki_uniform.txt"
+model.fit_generator(generate_arrays_from_file_2D(file_name),
+                    steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
+                    epochs=200, callbacks=[checkpoint, early_stop])
