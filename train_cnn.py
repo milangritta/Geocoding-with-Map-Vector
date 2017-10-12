@@ -35,6 +35,7 @@ tc = Flatten()(tc)
 tc = Dropout(0.3)(tc)
 
 inp = concatenate([nec, fec, tc])
+inp = Dense(2000, activation="relu")(inp)
 inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)
 model = Model(inputs=[near_entities_coord, far_entities_coord, target_coord], outputs=[inp])
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
