@@ -13,13 +13,13 @@ from subprocess import check_output
 print(u"Dimension:", EMB_DIM)
 print(u"Input length:", CONTEXT_LENGTH)
 
-words = cPickle.load(open(u"data/vocab_words.pkl"))
-locations = cPickle.load(open(u"data/vocab_locations.pkl"))
-vocabulary = words.union(locations)
-print(u"Vocabulary Size:", len(vocabulary))
+# words = cPickle.load(open(u"data/vocab_words.pkl"))
+# locations = cPickle.load(open(u"data/vocab_locations.pkl"))
+# vocabulary = words.union(locations)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Preparing vectors...')
-word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
+word_to_index = cPickle.load(open(u"data/w2i.pkl"))
+print(u"Vocabulary Size:", len(word_to_index))
 
 vectors = {UNKNOWN: np.ones(EMB_DIM), PADDING: np.ones(EMB_DIM)}
 for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
@@ -29,9 +29,9 @@ for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", enc
     vectors[t[0]] = [float(x) for x in t[1:]]
 print(u'Loaded Twitter vectors...', len(vectors))
 
-weights = np.zeros((len(vocabulary), EMB_DIM))
+weights = np.zeros((len(word_to_index), EMB_DIM))
 oov = 0
-for w in vocabulary:
+for w in word_to_index:
     if w in vectors:
         weights[word_to_index[w]] = vectors[w]
     else:
@@ -43,7 +43,7 @@ print(u'Done preparing vectors...')
 print(u"OOV (no vectors):", oov)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
-embeddings = Embedding(len(vocabulary), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
+embeddings = Embedding(len(word_to_index), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
 # shared embeddings between all language input layers
 
 near_words = Input(shape=(CONTEXT_LENGTH,))
@@ -87,7 +87,7 @@ tc = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SI
 tc = Dropout(0.5)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
-ts = Embedding(len(vocabulary), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
+ts = Embedding(len(word_to_index), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
 ts = Conv1D(1000, 2, activation='relu', strides=1)(ts)
 ts = GlobalMaxPooling1D()(ts)
 ts = Dense(500)(ts)

@@ -20,11 +20,12 @@ weights_file = u"../data/weights"
 print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data, u"with weights:", weights_file)
 
-words = cPickle.load(open(u"data/vocab_words.pkl"))
-locations = cPickle.load(open(u"data/vocab_locations.pkl"))
-vocabulary = words.union(locations)
+# words = cPickle.load(open(u"data/vocab_words.pkl"))
+# locations = cPickle.load(open(u"data/vocab_locations.pkl"))
+# vocabulary = words.union(locations)
 #  --------------------------------------------------------------------------------------------------------------------
-word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
+word_to_index = cPickle.load(open(u"data/w2i.pkl"))
+# cPickle.dump(word_to_index, open(u"data/w2i.pkl", "w"))
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
 model = load_model(weights_file)
@@ -44,9 +45,9 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
 
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
-        continue
+        raise Exception(u"Go back and check your geo-database, buddy!")
 
-    # candidates = [sorted(get_coordinates(conn.cursor(), name, True), key=lambda (a, b, c, d): c, reverse=True)[0]]
+    # candidates = [candidates[0]]  # Uncomment for population heuristic.
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     best_candidate, y_to_geonames = [], []
