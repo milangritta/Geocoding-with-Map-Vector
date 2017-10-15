@@ -77,7 +77,7 @@ def get_coordinates(con, loc_name):
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
         result = eval(result[0])  # Do not remove the sorting, the function below assumes sorted results!
-        result = sorted(result, key=lambda (a, b, c): c, reverse=True)[:100]  # sanity limit of 100
+        result = sorted(result, key=lambda (a, b, c, d): c, reverse=True)
         if result[0][2] == 0:
             return result
         else:

@@ -13,7 +13,7 @@ input_file = u"../data/train_wiki.txt"
 filtering = True    # Do you want to filter samples with coordinate errors?
 filtered_count = 0  # Keeping track of how many get filtered out
 saved_count = 0     # Keeping track of how many samples were saved
-max_distance = 250  # The maximum size of the coordinate error (1 degree = 110km)
+max_distance = 750  # The maximum size of the coordinate error (1 degree = 110km)
 conn = sqlite3.connect(u'../data/geonames.db')
 c = conn.cursor()   # Initialise database connection
 

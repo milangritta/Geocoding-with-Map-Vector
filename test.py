@@ -41,7 +41,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
                                  generate_strings_from_file(file_name)):
     p = index_to_coord(np.argmax(p))
     candidates = get_coordinates(conn.cursor(), name)
-    candidates = sorted(candidates, key=lambda (a, b, c): c, reverse=True)
+    candidates = sorted(candidates, key=lambda (a, b, c, d): c, reverse=True)
 
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
