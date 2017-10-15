@@ -13,9 +13,6 @@ from subprocess import check_output
 print(u"Dimension:", EMB_DIM)
 print(u"Input length:", CONTEXT_LENGTH)
 
-# words = cPickle.load(open(u"data/vocab_words.pkl"))
-# locations = cPickle.load(open(u"data/vocab_locations.pkl"))
-# vocabulary = words.union(locations)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Preparing vectors...')
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))

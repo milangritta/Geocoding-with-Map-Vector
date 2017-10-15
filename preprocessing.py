@@ -398,8 +398,8 @@ def generate_vocabulary():
     """Prepare the vocabulary(ies) for training."""
     vocab_words, vocab_locations = {UNKNOWN, PADDING}, {UNKNOWN, PADDING}
     words, locations = [], []
-    for f in [u"../data/train_wiki.txt", u"data/eval_lgl_gold.txt"]:
-        training_file = codecs.open(f, "r", encoding="utf-8")
+    for f in [u"../data/train_wiki.txt"]:
+        training_file = codecs.open(f, u"r", encoding=u"utf-8")
         for line in training_file:
             line = line.strip().split("\t")
             words.extend([w for w in eval(line[2]) if u"**LOC**" not in w])  # NEAR WORDS
@@ -411,33 +411,15 @@ def generate_vocabulary():
     for word in words:
         if words[word] > 7:
             vocab_words.add(word)
-    cPickle.dump(vocab_words, open(u"data/vocab_words.pkl", "w"))
-    print(u"Vocabulary Words Size:", len(vocab_words))
 
     locations = Counter(locations)
     for location in locations:
         if locations[location] > 2:
             vocab_locations.add(location.replace(u"**LOC**", u""))
-    cPickle.dump(vocab_locations, open(u"data/vocab_locations.pkl", "w"))
-    print(u"Vocabulary Locations Size:", len(vocab_locations))
 
-    # -------- OLD WAY OF GENERATING VOCAB ------------ #
-    # """Prepare the vocabulary for NN training."""
-    # vocabulary = {UNKNOWN, PADDING}
-    # temp = []
-    # for f in [u"../data/train_wiki.txt"]:  # , u"data/eval_wiki_gold.txt", u"data/eval_lgl_gold.txt"]:
-    #     training_file = codecs.open(f, "r", encoding="utf-8")
-    #     for line in training_file:
-    #         line = line.strip().split("\t")
-    #         temp.extend(eval(line[2].replace(u"**LOC**", u"")))
-    #         temp.extend(eval(line[3].replace(u"**LOC**", u"")))
-    #
-    # c = Counter(temp)
-    # for item in c:
-    #     if c[item] > 2:
-    #         vocabulary.add(item)
-    # cPickle.dump(vocabulary, open(u"data/vocabulary.pkl", "w"))
-    # print(u"Vocabulary Size:", len(vocabulary))
+    vocabulary = vocab_words.union(vocab_locations)
+    word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
+    cPickle.dump(word_to_index, open(u"data/w2i.pkl", "w"))
 
 
 def generate_arrays_from_file(path, w2i, train=True):
