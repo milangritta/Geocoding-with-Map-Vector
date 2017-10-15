@@ -20,7 +20,7 @@ if True:  # add CDATA xml construct?
             url = location.find('page').text
             chunk = text[int(start) - 1: int(end) - 1]
             if chunk != name:
-                print chunk, name
+                raise Exception(chunk + "," + name)
             if location.find('altName') is not None:
                 name = location.find('altName').text
             lat = location.find('lat').text

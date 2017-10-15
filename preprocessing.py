@@ -95,7 +95,7 @@ def construct_spatial_grid(a_list, use_pop):
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
         if use_pop:
-            g[index] += float(s[2]) / max_pop
+            g[index] += float(s[2] + 1) / max_pop + 1
             # g[index] + 1 + s[2]
         else:
             g[index] += 1
@@ -128,27 +128,67 @@ def populate_sql():
     """Create and populate the sqlite database with GeoNames data"""
     geo_names = {}
     f = codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8")
+    pop_map = {"PPLQ": 1, "PPLX": 10, "PPLA4": 100, "PPLA3": 1000, "PPLA2": 10000, "PPL": 10000, "PPLA": 100000,
+               "PPLC": 100000, "PCLI": 1000000, "PPLW": 1, "ADMD": 10, "ADM4": 100, "ADM3": 1000, "ADM2": 10000,
+               "ADM1": 100000, "ZN": 10, "ADM1H": 10, "PPLF": 10, "PPLL": 100, "PPLH": 0, "PPLR": 1000, "PPLG": 1,
+               "PPLS": 1000, "TERR": 10000, "ADM2H": 1, "ADM3H": 1, "PPLCH": 10000, "PRSH": 1000, "ADM5": 10, "": 1,
+               "PCLD": 100, "ADMDH": 1, "LTER": 0, "ADM4H": 1, "PCLH": 1, "PCLIX": 10000, "PCLS": 10000, "ZNB": 0,
+               "PCLF": 100000, "PCL": 100000, "STLMT": 1000}
 
     for line in f:
         line = line.split("\t")
-        for name in [line[1], line[2]] + line[3].split(","):
+        feat_code = line[7]
+        class_code = line[6]
+        if feat_code not in pop_map and class_code in ["A", "P"]:
+            print line
+        pop = int(line[14])
+        for name in [line[1], line[2]]:
             name = name.lower()
             if len(name) != 0:
                 if name in geo_names:
                     already_have_entry = False
                     for item in geo_names[name]:
-                        if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 25:
+                        if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 100:
                             if item[2] >= int(line[14]):
                                 already_have_entry = True
                     if not already_have_entry:
-                        geo_names[name].add((float(line[4]), float(line[5]), int(line[14])))
+                        if pop == 0 and class_code in ["A", "P"]:
+                            pop = pop_map.get(feat_code, 1)
+                        geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
                 else:
-                    geo_names[name] = {(float(line[4]), float(line[5]), int(line[14]))}
+                    if pop == 0 and class_code in ["A", "P"]:
+                        pop = pop_map.get(feat_code, 1)
+                    geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
+
+    alt_names = set()
+    for line in f:
+        line = line.split("\t")
+        feat_code = line[7]
+        class_code = line[6]
+        pop = int(line[14])
+        for name in line[3].split(","):
+            name = name.lower()
+            if len(name) != 0:
+                if name not in geo_names or name in alt_names:
+                    already_have_entry = False
+                    if name in geo_names:
+                        for item in geo_names[name]:
+                            if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 100:
+                                if item[2] >= int(line[14]):
+                                    already_have_entry = True
+                        if not already_have_entry:
+                            if pop == 0 and class_code in ["A", "P"]:
+                                pop = pop_map.get(feat_code, 1)
+                            geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
+                            alt_names.add(name)
+                    else:
+                        geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
+                        alt_names.add(name)
 
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     # c.execute("CREATE TABLE GEO (NAME VARCHAR(100) PRIMARY KEY NOT NULL, METADATA VARCHAR(5000) NOT NULL);")
-    c.execute(u"DELETE FROM GEO")
+    c.execute(u"DELETE FROM GEO")  # alternatively, delete the database file.
     conn.commit()
 
     for gn in geo_names:
@@ -580,7 +620,7 @@ def generate_arrays_from_file_2D(path, train=True):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"adhamiyah"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"darfur"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
