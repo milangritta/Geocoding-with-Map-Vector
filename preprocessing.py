@@ -90,10 +90,7 @@ def construct_spatial_grid(a_list):
     max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
-        if s[3] not in ["H", "R", "S", "T", "U", "V"]:
-            g[index] += float(s[2] + 1) / max_pop + 1
-        else:
-            g[index] += 1
+        g[index] += float(max(s[2], 1)) / max_pop
     return g / max(g) if max(g) > 0.0 else g
 
 
@@ -117,7 +114,8 @@ def populate_sql():
              "PPLC": 1000000, "PCLI": 1000000, "PPLW": 1, "ADMD": 10, "ADM4": 100, "ADM3": 1000, "ADM2": 10000,
              "ADM1": 100000, "ZN": 10, "ADM1H": 10, "PPLF": 10, "PPLL": 100, "PPLR": 1000, "PPLG": 1000, "STLMT": 10000,
              "PPLS": 1000, "TERR": 10000, "ADM2H": 10, "ADM3H": 10, "PPLCH": 10000, "PRSH": 1000, "PCL": 1000000,
-             "PCLD": 100, "ADMDH": 10, "ADM4H": 10, "PCLH": 10, "PCLIX": 10000, "PCLS": 10000, "PCLF": 100000, "ADM5": 10}
+             "PCLD": 100, "ADMDH": 10, "ADM4H": 10, "PCLH": 10, "PCLIX": 10000, "PCLS": 10000, "PCLF": 100000, "ADM5": 10,
+             "CONT": 10000000, "RGN": 1000000, "LCTY": 100, "AREA": 1000, "RES": 1000, "TRB": 100, "RGNE": 1000}
 
     for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
         line = line.split("\t")
@@ -134,11 +132,11 @@ def populate_sql():
                             if item[2] >= pop:
                                 already_have_entry = True
                     if not already_have_entry:
-                        if pop == 0 and class_code in ["A", "P"]:
+                        if pop == 0 and class_code in ["A", "P", "L"]:
                             pop = p_map.get(feat_code, 0)
                         geo_names[name].add((float(line[4]), float(line[5]), pop, class_code))
                 else:
-                    if pop == 0 and class_code in ["A", "P"]:
+                    if pop == 0 and class_code in ["A", "P", "L"]:
                         pop = p_map.get(feat_code, 0)
                     geo_names[name] = {(float(line[4]), float(line[5]), pop, class_code)}
 
@@ -575,7 +573,8 @@ def generate_arrays_from_file_2D(path, train=True):
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
-# print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
+
+# print(list(construct_spatial_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"london"))))
 
 # generate_training_data()
 # generate_evaluation_data(corpus="wiki", file_name="")
@@ -584,7 +583,7 @@ def generate_arrays_from_file_2D(path, train=True):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u""))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"raslavice"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
