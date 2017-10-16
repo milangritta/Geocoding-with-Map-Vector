@@ -96,7 +96,7 @@ def construct_spatial_grid(a_list):
 
 def construct_2D_grid(a_list):
     """"""
-    return np.reshape(construct_spatial_grid(a_list), (int(360 / GRID_SIZE), int(180 / GRID_SIZE)))
+    return np.reshape(construct_spatial_grid(a_list), (int(180 / GRID_SIZE), int(360 / GRID_SIZE)))
 
 
 def merge_lists(grids):
@@ -132,13 +132,11 @@ def populate_sql():
                             if item[2] >= pop:
                                 already_have_entry = True
                     if not already_have_entry:
-                        if pop == 0 and class_code in ["A", "P", "L"]:
-                            pop = p_map.get(feat_code, 0)
-                        geo_names[name].add((float(line[4]), float(line[5]), pop, class_code))
+                        pop = get_population(class_code, feat_code, p_map, pop)
+                        geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
                 else:
-                    if pop == 0 and class_code in ["A", "P", "L"]:
-                        pop = p_map.get(feat_code, 0)
-                    geo_names[name] = {(float(line[4]), float(line[5]), pop, class_code)}
+                    pop = get_population(class_code, feat_code, p_map, pop)
+                    geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
 
     alt_names = set()
     for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
@@ -157,12 +155,12 @@ def populate_sql():
                                 if item[2] >= pop:
                                     already_have_entry = True
                         if not already_have_entry:
-                            if pop == 0 and class_code in ["A", "P", "L"]:
-                                pop = p_map.get(feat_code, 0)
-                            geo_names[name].add((float(line[4]), float(line[5]), pop, class_code))
+                            pop = get_population(class_code, feat_code, p_map, pop)
+                            geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
                             alt_names.add(name)
                     else:
-                        geo_names[name] = {(float(line[4]), float(line[5]), pop, class_code)}
+                        pop = get_population(class_code, feat_code, p_map, pop)
+                        geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
                         alt_names.add(name)
 
     conn = sqlite3.connect(u'../data/geonames.db')
@@ -176,6 +174,13 @@ def populate_sql():
     print(u"Entries saved:", len(geo_names))
     conn.commit()
     conn.close()
+
+
+def get_population(class_code, feat_code, p_map, pop):
+    """"""
+    if pop == 0 and class_code in ["A", "P", "L"]:
+        pop = p_map.get(feat_code, 0)
+    return pop
 
 
 def generate_training_data():
@@ -365,7 +370,7 @@ def visualise_2D_grid(x, title, log=False):
     """"""
     if log:
         x = np.log10(x)
-    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'orange', 'black'])
+    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'grey', 'black'])
     img2 = pyplot.imshow(x, cmap=cmap2, interpolation='nearest')
     pyplot.colorbar(img2, cmap=cmap2)
     # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
@@ -389,13 +394,15 @@ def generate_vocabulary():
 
     words = Counter(words)
     for word in words:
-        if words[word] > 7:
+        if words[word] > 9:
             vocab_words.add(word)
+    print(u"Words saved:", len(vocab_words))
 
     locations = Counter(locations)
     for location in locations:
-        if locations[location] > 2:
+        if locations[location] > 1:
             vocab_locations.add(location.replace(u"**LOC**", u""))
+    print(u"Locations saved:", len(vocab_locations))
 
     vocabulary = vocab_words.union(vocab_locations)
     word_to_index = dict([(w, i) for i, w in enumerate(vocabulary)])
@@ -574,7 +581,7 @@ def generate_arrays_from_file_2D(path, train=True):
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
 
-# print(list(construct_spatial_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"london"))))
+# visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"darfur")), "test")
 
 # generate_training_data()
 # generate_evaluation_data(corpus="wiki", file_name="")

@@ -6,24 +6,23 @@ from keras import Input
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
-from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
+from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D, MaxPooling1D, Flatten
 from preprocessing import generate_arrays_from_file, GRID_SIZE, BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, TARGET_LENGTH
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)
 print(u"Input length:", CONTEXT_LENGTH)
-
 #  --------------------------------------------------------------------------------------------------------------------
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
 print(u"Vocabulary Size:", len(word_to_index))
 
 vectors = {UNKNOWN: np.ones(EMB_DIM), PADDING: np.ones(EMB_DIM)}
-for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
-    if line.strip() == "":
-        continue
-    t = line.split()
-    vectors[t[0]] = [float(x) for x in t[1:]]
-print(u'Loaded Twitter vectors...', len(vectors))
+# for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
+#     if line.strip() == "":
+#         continue
+#     t = line.split()
+#     vectors[t[0]] = [float(x) for x in t[1:]]
+# print(u'Twitter vectors...', len(vectors))
 
 weights = np.zeros((len(word_to_index), EMB_DIM))
 oov = 0
@@ -44,29 +43,33 @@ embeddings = Embedding(len(word_to_index), EMB_DIM, input_length=CONTEXT_LENGTH,
 
 near_words = Input(shape=(CONTEXT_LENGTH,))
 nw = embeddings(near_words)
-nw = Conv1D(1000, 2, activation='relu', strides=1)(nw)
-nw = GlobalMaxPooling1D()(nw)
+nw = Conv1D(1000, 3, activation='relu')(nw)
+nw = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(nw)
+nw = Flatten()(nw)
 nw = Dense(250)(nw)
 nw = Dropout(0.5)(nw)
 
 far_words = Input(shape=(CONTEXT_LENGTH,))
 fw = embeddings(far_words)
-fw = Conv1D(1000, 2, activation='relu', strides=1)(fw)
-fw = GlobalMaxPooling1D()(fw)
+fw = Conv1D(1000, 3, activation='relu')(fw)
+fw = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(fw)
+fw = Flatten()(fw)
 fw = Dense(250)(fw)
 fw = Dropout(0.5)(fw)
 
 near_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 nes = embeddings(near_entities_strings)
-nes = Conv1D(1000, 2, activation='relu', strides=1)(nes)
-nes = GlobalMaxPooling1D()(nes)
+nes = Conv1D(1000, 3, activation='relu')(nes)
+nes = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(nes)
+nes = Flatten()(nes)
 nes = Dense(250)(nes)
 nes = Dropout(0.5)(nes)
 
 far_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 fes = embeddings(far_entities_strings)
-fes = Conv1D(1000, 2, activation='relu', strides=1)(fes)
-fes = GlobalMaxPooling1D()(fes)
+fes = Conv1D(1000, 3, activation='relu')(fes)
+fes = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(fes)
+fes = Flatten()(fes)
 fes = Dense(250)(fes)
 fes = Dropout(0.5)(fes)
 
@@ -84,22 +87,21 @@ tc = Dropout(0.5)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(word_to_index), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
-ts = Conv1D(1000, 2, activation='relu', strides=1)(ts)
+ts = Conv1D(1000, 3, activation='relu')(ts)
 ts = GlobalMaxPooling1D()(ts)
-ts = Dense(500)(ts)
 ts = Dropout(0.5)(ts)
 
 inp = concatenate([nw, fw, nes, fes, nec, fec, tc, ts])
-inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation='softmax')(inp)
+inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation=u'softmax')(inp)
 model = Model(inputs=[near_words, far_words, near_entities_strings, far_entities_strings,
                       near_entities_coord, far_entities_coord, target_coord, target_string], outputs=[inp])
-model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+model.compile(loss=u'categorical_crossentropy', optimizer=u'rmsprop', metrics=[u'accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 # checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-checkpoint = ModelCheckpoint(filepath="../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
-early_stop = EarlyStopping(monitor='acc', patience=5)
+checkpoint = ModelCheckpoint(filepath=u"../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
+early_stop = EarlyStopping(monitor=u'acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
