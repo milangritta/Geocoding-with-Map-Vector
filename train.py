@@ -14,7 +14,6 @@ print(u"Dimension:", EMB_DIM)
 print(u"Input length:", CONTEXT_LENGTH)
 
 #  --------------------------------------------------------------------------------------------------------------------
-print(u'Preparing vectors...')
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
 print(u"Vocabulary Size:", len(word_to_index))
 

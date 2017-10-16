@@ -17,8 +17,8 @@ max_distance = 750  # The maximum size of the coordinate error (1 degree = 110km
 conn = sqlite3.connect(u'../data/geonames.db')
 c = conn.cursor()   # Initialise database connection
 
-out = codecs.open(output_file, "w", encoding="utf-8")
-for line in codecs.open(input_file, "r", encoding="utf-8"):
+out = codecs.open(output_file, u"w", encoding=u"utf-8")
+for line in codecs.open(input_file, u"r", encoding=u"utf-8"):
     counter += 1
     if counter < start:
         continue
@@ -29,7 +29,7 @@ for line in codecs.open(input_file, "r", encoding="utf-8"):
             out.write(line)
             saved_count += 1
         else:
-            split = line.split("\t")
+            split = line.split(u"\t")
             wiki_coordinates = (float(split[0]), float(split[1]))
             name = u" ".join(eval(split[5])).strip()
             db_coordinates = get_coordinates(c, name)

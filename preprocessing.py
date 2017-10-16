@@ -77,16 +77,12 @@ def get_coordinates(con, loc_name):
     result = con.execute(u"SELECT METADATA FROM GEO WHERE NAME = ?", (loc_name.lower(),)).fetchone()
     if result:
         result = eval(result[0])  # Do not remove the sorting, the function below assumes sorted results!
-        result = sorted(result, key=lambda (a, b, c, d): c, reverse=True)
-        if result[0][2] == 0:
-            return result
-        else:
-            return [r for r in result if r[2] > 0]  # only nonzero population
+        return sorted(result, key=lambda (a, b, c, d): c, reverse=True)
     else:
         return []
 
 
-def construct_spatial_grid(a_list, use_pop):
+def construct_spatial_grid(a_list):
     """"""
     g = np.zeros(int(360 / GRID_SIZE) * int(180 / GRID_SIZE))
     if len(a_list) == 0:
@@ -94,26 +90,16 @@ def construct_spatial_grid(a_list, use_pop):
     max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]))
-        if use_pop:
+        if s[3] not in ["H", "R", "S", "T", "U", "V"]:
             g[index] += float(s[2] + 1) / max_pop + 1
-            # g[index] + 1 + s[2]
         else:
             g[index] += 1
     return g / max(g) if max(g) > 0.0 else g
 
 
-def construct_2D_grid(a_list, use_pop):
+def construct_2D_grid(a_list):
     """"""
-    g = np.zeros(((180 / GRID_SIZE), (360 / GRID_SIZE)))
-    for s in a_list:
-        index = coord_to_index((s[0], s[1]))
-        x = int(int(index / (360 / GRID_SIZE)) / GRID_SIZE)
-        y = int(int(index % (360 / GRID_SIZE)) / GRID_SIZE)
-        if use_pop:
-            g[x][y] += 1 + s[2]
-        else:
-            g[x][y] += 1
-    return g / np.amax(g) if np.amax(g) > 0.0 else g
+    return np.reshape(construct_spatial_grid(a_list), (int(360 / GRID_SIZE), int(180 / GRID_SIZE)))
 
 
 def merge_lists(grids):
@@ -127,20 +113,16 @@ def merge_lists(grids):
 def populate_sql():
     """Create and populate the sqlite database with GeoNames data"""
     geo_names = {}
-    f = codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8")
-    pop_map = {"PPLQ": 1, "PPLX": 10, "PPLA4": 100, "PPLA3": 1000, "PPLA2": 10000, "PPL": 10000, "PPLA": 100000,
-               "PPLC": 100000, "PCLI": 1000000, "PPLW": 1, "ADMD": 10, "ADM4": 100, "ADM3": 1000, "ADM2": 10000,
-               "ADM1": 100000, "ZN": 10, "ADM1H": 10, "PPLF": 10, "PPLL": 100, "PPLH": 0, "PPLR": 1000, "PPLG": 1,
-               "PPLS": 1000, "TERR": 10000, "ADM2H": 1, "ADM3H": 1, "PPLCH": 10000, "PRSH": 1000, "ADM5": 10, "": 1,
-               "PCLD": 100, "ADMDH": 1, "LTER": 0, "ADM4H": 1, "PCLH": 1, "PCLIX": 10000, "PCLS": 10000, "ZNB": 0,
-               "PCLF": 100000, "PCL": 100000, "STLMT": 1000}
+    p_map = {"PPLQ": 10, "PPLX": 100, "PPLA4": 100, "PPLA3": 1000, "PPLA2": 10000, "PPL": 10000, "PPLA": 1000000,
+             "PPLC": 1000000, "PCLI": 1000000, "PPLW": 1, "ADMD": 10, "ADM4": 100, "ADM3": 1000, "ADM2": 10000,
+             "ADM1": 100000, "ZN": 10, "ADM1H": 10, "PPLF": 10, "PPLL": 100, "PPLR": 1000, "PPLG": 1000, "STLMT": 10000,
+             "PPLS": 1000, "TERR": 10000, "ADM2H": 10, "ADM3H": 10, "PPLCH": 10000, "PRSH": 1000, "PCL": 1000000,
+             "PCLD": 100, "ADMDH": 10, "ADM4H": 10, "PCLH": 10, "PCLIX": 10000, "PCLS": 10000, "PCLF": 100000, "ADM5": 10}
 
-    for line in f:
+    for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
         line = line.split("\t")
         feat_code = line[7]
         class_code = line[6]
-        if feat_code not in pop_map and class_code in ["A", "P"]:
-            print line
         pop = int(line[14])
         for name in [line[1], line[2]]:
             name = name.lower()
@@ -149,19 +131,19 @@ def populate_sql():
                     already_have_entry = False
                     for item in geo_names[name]:
                         if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 100:
-                            if item[2] >= int(line[14]):
+                            if item[2] >= pop:
                                 already_have_entry = True
                     if not already_have_entry:
                         if pop == 0 and class_code in ["A", "P"]:
-                            pop = pop_map.get(feat_code, 1)
-                        geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
+                            pop = p_map.get(feat_code, 0)
+                        geo_names[name].add((float(line[4]), float(line[5]), pop, class_code))
                 else:
                     if pop == 0 and class_code in ["A", "P"]:
-                        pop = pop_map.get(feat_code, 1)
-                    geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
+                        pop = p_map.get(feat_code, 0)
+                    geo_names[name] = {(float(line[4]), float(line[5]), pop, class_code)}
 
     alt_names = set()
-    for line in f:
+    for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
         line = line.split("\t")
         feat_code = line[7]
         class_code = line[6]
@@ -174,15 +156,15 @@ def populate_sql():
                     if name in geo_names:
                         for item in geo_names[name]:
                             if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 100:
-                                if item[2] >= int(line[14]):
+                                if item[2] >= pop:
                                     already_have_entry = True
                         if not already_have_entry:
-                            if pop == 0 and class_code in ["A", "P"]:
-                                pop = pop_map.get(feat_code, 1)
-                            geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
+                            if pop == 0 and class_code in ["A", "P", "L"]:
+                                pop = p_map.get(feat_code, 0)
+                            geo_names[name].add((float(line[4]), float(line[5]), pop, class_code))
                             alt_names.add(name)
                     else:
-                        geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
+                        geo_names[name] = {(float(line[4]), float(line[5]), pop, class_code)}
                         alt_names.add(name)
 
     conn = sqlite3.connect(u'../data/geonames.db')
@@ -432,7 +414,7 @@ def generate_arrays_from_file(path, w2i, train=True):
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)]))
 
             near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
@@ -444,9 +426,9 @@ def generate_arrays_from_file(path, w2i, train=True):
             near_entities.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
             far_entities.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
 
-            target_coord.append(construct_spatial_grid(eval(line[4]), use_pop=True))
-            near_entities_coord.append(construct_spatial_grid(eval(line[6]), use_pop=True))
-            far_entities_coord.append(construct_spatial_grid(eval(line[7]), use_pop=True))
+            target_coord.append(construct_spatial_grid(eval(line[4])))
+            near_entities_coord.append(construct_spatial_grid(eval(line[6])))
+            far_entities_coord.append(construct_spatial_grid(eval(line[7])))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
@@ -550,7 +532,7 @@ def training_map():
         for line in training_file:
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
-    c = construct_spatial_grid(coordinates, use_pop=False)
+    c = construct_spatial_grid(coordinates)
     c = np.reshape(c, (int(180 / GRID_SIZE), int(360 / GRID_SIZE)))
     visualise_2D_grid(c, "Training Map", log=True)
 
@@ -565,11 +547,11 @@ def generate_arrays_from_file_2D(path, train=True):
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], use_pop=False))
+            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)]))
 
-            target_coord.append([construct_2D_grid(eval(line[4]), use_pop=True)])
-            near_entities_coord.append([construct_2D_grid(eval(line[6]), use_pop=True)])
-            far_entities_coord.append([construct_2D_grid(eval(line[7]), use_pop=True)])
+            target_coord.append([construct_2D_grid(eval(line[4]))])
+            near_entities_coord.append([construct_2D_grid(eval(line[6]))])
+            far_entities_coord.append([construct_2D_grid(eval(line[7]))])
 
             if counter % BATCH_SIZE == 0:
                 if train:
@@ -596,13 +578,13 @@ def generate_arrays_from_file_2D(path, train=True):
 # print(list(construct_1D_grid([(90, -180, 0), (90, -170, 1000)], use_pop=True)))
 
 # generate_training_data()
-# generate_evaluation_data(corpus="geovirus", file_name="")
+# generate_evaluation_data(corpus="wiki", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"darfur"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u""))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
