@@ -580,11 +580,10 @@ def generate_arrays_from_file_2D(path, train=True):
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
-
-# visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"darfur")), "test")
-
+# visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"London")), "test")
+# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"london")
 # generate_training_data()
-# generate_evaluation_data(corpus="wiki", file_name="")
+# generate_evaluation_data(corpus="geovirus", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
@@ -613,14 +612,7 @@ def generate_arrays_from_file_2D(path, train=True):
 #     print(get_non_zero_entries(x))
 #     visualise_2D_grid(x, line[6] + u" entities.")
 
-# c = []
-# for line in codecs.open("/Users/milangritta/PycharmProjects/Research/data/lgl_edin.txt", "r", encoding="utf-8"):
-#     if len(line.strip()) == 0:
-#         continue
-#     for toponym in line.split("||")[:-1]:
-#         toponym = toponym.split(",,")
-#         c.append(str((toponym[2], toponym[3])))
-#
+
 # c = Counter(c)
 # counts = []
 # for key in c.most_common():

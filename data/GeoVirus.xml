@@ -9135,15 +9135,15 @@
         <source>https://en.wikinews.org/wiki/Kenyan_cattle_rustlers_kill_eleven</source>
         <text>Kenya's livestock minister, Mohammed Kuti, said today that cattle rustlers have killed eleven people near the central town of Isiolo. Kuti, who is also the member of parliament for Isiolo, said the rustlers raided in a village in the area early in the day. "The eleven people were killed when rustlers stormed a village in Kisima area early this morning," he commented. The state-owned Kenya Broadcasting Corporation puts the number of attackers at 300, and stated that they stole an unknown number of livestock. Cattle rustling is common in Kenya, and the extended drought has heightened competition for scarce sources of food. In mid-September, 30 people were killed in a shootout as rustlers from the Pokot tribe attacked the Samburu tribe and made off with hundreds of cattle.</text>
         <locations>
-            <location>
-                <name></name>
-                <start></start>
-                <end></end>
-                <lat></lat>
-                <lon></lon>
-                <page></page>
-                <continent/>
-            </location>
+            <!--<location>-->
+                <!--<name></name>-->
+                <!--<start></start>-->
+                <!--<end></end>-->
+                <!--<lat></lat>-->
+                <!--<lon></lon>-->
+                <!--<page></page>-->
+                <!--<continent/>-->
+            <!--</location>-->
             <location>
                 <name>Kenya</name>
                 <start>1</start>
@@ -13847,7 +13847,7 @@
                 <start>4</start>
                 <end>12</end>
                 <lat>-20</lat>
-                <lon>-30</lon>
+                <lon>30</lon>
                 <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
             <location>
@@ -13879,7 +13879,7 @@
                 <start>1242</start>
                 <end>1250</end>
                 <lat>-20</lat>
-                <lon>-30</lon>
+                <lon>30</lon>
                 <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
         </locations>
@@ -15304,6 +15304,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>225</start>
                 <end>228</end>
                 <lat>-2.88</lat>
@@ -15321,6 +15322,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>348</start>
                 <end>351</end>
                 <lat>-2.88</lat>
@@ -15329,6 +15331,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>454</start>
                 <end>457</end>
                 <lat>-2.88</lat>
@@ -15361,6 +15364,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>1906</start>
                 <end>1909</end>
                 <lat>-2.88</lat>
@@ -15418,6 +15422,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>3327</start>
                 <end>3330</end>
                 <lat>-2.88</lat>
@@ -15434,6 +15439,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>3417</start>
                 <end>3420</end>
                 <lat>-2.88</lat>
@@ -15442,6 +15448,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>3762</start>
                 <end>3765</end>
                 <lat>-2.88</lat>
@@ -16838,6 +16845,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>1956</start>
                 <end>1959</end>
                 <lat>-2.88</lat>
@@ -16854,6 +16862,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>2149</start>
                 <end>2152</end>
                 <lat>-2.88</lat>
@@ -16870,6 +16879,7 @@
             </location>
             <location>
                 <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>2412</start>
                 <end>2415</end>
                 <lat>-2.88</lat>
