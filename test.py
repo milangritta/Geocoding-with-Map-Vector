@@ -19,13 +19,7 @@ else:
 weights_file = u"../data/weights"
 print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data, u"with weights:", weights_file)
-
-# words = cPickle.load(open(u"data/vocab_words.pkl"))
-# locations = cPickle.load(open(u"data/vocab_locations.pkl"))
-# vocabulary = words.union(locations)
-#  --------------------------------------------------------------------------------------------------------------------
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
-# cPickle.dump(word_to_index, open(u"data/w2i.pkl", "w"))
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Loading model...')
 model = load_model(weights_file)

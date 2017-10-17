@@ -122,7 +122,7 @@ def populate_sql():
         feat_code = line[7]
         class_code = line[6]
         pop = int(line[14])
-        for name in [line[1], line[2]]:
+        for name in [line[1], line[2]] + line[3].split(","):
             name = name.lower()
             if len(name) != 0:
                 if name in geo_names:
@@ -137,31 +137,6 @@ def populate_sql():
                 else:
                     pop = get_population(class_code, feat_code, p_map, pop)
                     geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
-
-    alt_names = set()
-    for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
-        line = line.split("\t")
-        feat_code = line[7]
-        class_code = line[6]
-        pop = int(line[14])
-        for name in line[3].split(","):
-            name = name.lower()
-            if len(name) != 0:
-                if name not in geo_names or name in alt_names:
-                    already_have_entry = False
-                    if name in geo_names:
-                        for item in geo_names[name]:
-                            if great_circle((float(line[4]), float(line[5])), (item[0], item[1])).km < 100:
-                                if item[2] >= pop:
-                                    already_have_entry = True
-                        if not already_have_entry:
-                            pop = get_population(class_code, feat_code, p_map, pop)
-                            geo_names[name].add((float(line[4]), float(line[5]), pop, feat_code))
-                            alt_names.add(name)
-                    else:
-                        pop = get_population(class_code, feat_code, p_map, pop)
-                        geo_names[name] = {(float(line[4]), float(line[5]), pop, feat_code)}
-                        alt_names.add(name)
 
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -581,7 +556,7 @@ def generate_arrays_from_file_2D(path, train=True):
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
 # visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"London")), "test")
-# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"london")
+# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"islington bay")
 # generate_training_data()
 # generate_evaluation_data(corpus="geovirus", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
@@ -589,7 +564,7 @@ def generate_arrays_from_file_2D(path, train=True):
 # generate_vocabulary()
 # for word in generate_names_from_file("data/eval_lgl.txt"):
 #     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"raslavice"))
+# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"norway"))
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()

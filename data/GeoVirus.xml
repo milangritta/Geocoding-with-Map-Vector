@@ -6804,6 +6804,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>2355</start>
                 <end>2357</end>
                 <lat>40</lat>
@@ -8899,6 +8900,7 @@
             </location>
             <location>
                 <name>US</name>
+                <altName>United States</altName>
                 <start>1081</start>
                 <end>1083</end>
                 <lat>40</lat>
@@ -9135,15 +9137,6 @@
         <source>https://en.wikinews.org/wiki/Kenyan_cattle_rustlers_kill_eleven</source>
         <text>Kenya's livestock minister, Mohammed Kuti, said today that cattle rustlers have killed eleven people near the central town of Isiolo. Kuti, who is also the member of parliament for Isiolo, said the rustlers raided in a village in the area early in the day. "The eleven people were killed when rustlers stormed a village in Kisima area early this morning," he commented. The state-owned Kenya Broadcasting Corporation puts the number of attackers at 300, and stated that they stole an unknown number of livestock. Cattle rustling is common in Kenya, and the extended drought has heightened competition for scarce sources of food. In mid-September, 30 people were killed in a shootout as rustlers from the Pokot tribe attacked the Samburu tribe and made off with hundreds of cattle.</text>
         <locations>
-            <!--<location>-->
-                <!--<name></name>-->
-                <!--<start></start>-->
-                <!--<end></end>-->
-                <!--<lat></lat>-->
-                <!--<lon></lon>-->
-                <!--<page></page>-->
-                <!--<continent/>-->
-            <!--</location>-->
             <location>
                 <name>Kenya</name>
                 <start>1</start>
@@ -9316,6 +9309,14 @@
                 <page>https://en.wikipedia.org/wiki/California</page>
             </location>
             <location>
+                <name>California</name>
+                <start>277</start>
+                <end>287</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
                 <name>United States</name>
                 <start>81</start>
                 <end>94</end>
@@ -9385,6 +9386,14 @@
                 <lon>174.74</lon>
                 <page>https://en.wikipedia.org/wiki/Auckland</page>
             </location>
+            <location>
+                <name>Auckland</name>
+                <start>1680</start>
+                <end>1688</end>
+                <lat>-36.84</lat>
+                <lon>174.74</lon>
+                <page>https://en.wikipedia.org/wiki/Auckland</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -9419,7 +9428,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Indiana_Governor_signs_needle_exchange_program</source>
-        <text>Indiana Governor Mike Pence dropped his former opposition to needle exchange programs and on Tuesday signed legislation passed by lawmakers on April 29 — the last day of the state's legislative session — that would allow local health departments, municipalities, counties, or nonprofit organizations to implement needle exchange programs. The debate about the controversial programs came on the heels of an HIV outbreak in southern Indiana. Austin, in Scott County, Indiana, was the epicenter of the outbreak. The number of new HIV positive cases in Scott County in this outbreak rose past 140. Governor Pence declared the outbreak a public health emergency on March 26, and at the same time approved a 30-day needle exchange program. Pence since offered a 30-day extension as the number of HIV positive cases continued to rise. Needle exchange programs provide clean needles in exchange for dirty needles. The sharing of dirty needles has been linked to the outbreak. Experts like Chris Beyrer, president of the International AIDS Society, support needle exchange programs. Beyrer told the Indianapolis Star, however, that temporary measures, like the one Pence implemented on March 26, don't solve the long-term problem. The World Health Organization and the Centers for Disease Control and Prevention also recommend needle exchange programs. But experts say long-term needle exchange programs are needed. The HIV epidemic in Southern Indiana has been linked to a drug problem in Scott County. HIV and Hepatitis C are blood-borne viruses that spread by way of bodily fluids and bloodstream injections, especially when more than one person is using the same needle. Legislators on the committee responsible for Senate Bill 461 heard testimony last week before voting. Representative Thomas Washburne, Republican, Evansville, told Wikinews on April 27 that he was involved in conversations pertaining to needle exchange programs. "I am inclined to follow the recommendations of the Centers for Disease Control in implementing needle exchanges," Washburne said in an interview with Wikinews. "My vote against Senate Bill 461 was not due to the needle exchanges, but other issues involved in the bill." House members passed the bill 80–19, senators 38–11. After legislators passed the bill, Pence told WISH-TV: "From my perspective, the focus needs to be on health emergencies. I have throughout my career not supported needle exchanges as anti-drug policies. But with regard to addressing an epidemic, which is what we’ve seen in Scott County, which is unprecedented in any rural part of the country. I was prepared to support that through executive action." Louisville, Kentucky, about 35 miles south of Austin, was the first Kentucky municipal government to approve a needle exchange program. The Louisville Metro Council voted 22–0 to approve the program on April 23. That approval requires reconsulting the council before actually implementing such a program. About 195 cities in the United States have adopted similar programs. Dr. William Shaffner, a doctor and chair of the Department of Preventative Medicine at Vanderbilt University in Nashville, Tennessee, told Wikinews reporters March 25 at the University of Southern Indiana in Evansville, the day before Pence declared the public health emergency, such a program would make sense. He said the best course of action would be to "block and tackle." "Needle exchange programs ought to be used," Shaffner said. "They have been proven to work and do not cause an increase in drug use."</text>
+        <text>Indiana Governor Mike Pence dropped his former opposition to needle exchange programs and on Tuesday signed legislation passed by lawmakers on April 29 — the last day of the state's legislative session — that would allow local health departments, municipalities, counties, or nonprofit organizations to implement needle exchange programs. The debate about the controversial programs came on the heels of an HIV outbreak in southern Indiana. Austin, in Scott County, Indiana, was the epicenter of the outbreak. The number of new HIV positive cases in Scott County in this outbreak rose past 140. Governor Pence declared the outbreak a public health emergency on March 26, and at the same time approved a 30-day needle exchange program. Pence since offered a 30-day extension as the number of HIV positive cases continued to rise. Needle exchange programs provide clean needles in exchange for dirty needles. The sharing of dirty needles has been linked to the outbreak. Experts like Chris Beyrer, president of the International AIDS Society, support needle exchange programs. Beyrer told the Indianapolis Star, however, that temporary measures, like the one Pence implemented on March 26, don't solve the long-term problem. The World Health Organization and the Centers for Disease Control and Prevention also recommend needle exchange programs. But experts say long-term needle exchange programs are needed. The HIV epidemic in southern Indiana has been linked to a drug problem in Scott County. HIV and Hepatitis C are blood-borne viruses that spread by way of bodily fluids and bloodstream injections, especially when more than one person is using the same needle. Legislators on the committee responsible for Senate Bill 461 heard testimony last week before voting. Representative Thomas Washburne, Republican, Evansville, told Wikinews on April 27 that he was involved in conversations pertaining to needle exchange programs. "I am inclined to follow the recommendations of the Centers for Disease Control in implementing needle exchanges," Washburne said in an interview with Wikinews. "My vote against Senate Bill 461 was not due to the needle exchanges, but other issues involved in the bill." House members passed the bill 80–19, senators 38–11. After legislators passed the bill, Pence told WISH-TV: "From my perspective, the focus needs to be on health emergencies. I have throughout my career not supported needle exchanges as anti-drug policies. But with regard to addressing an epidemic, which is what we’ve seen in Scott County, which is unprecedented in any rural part of the country. I was prepared to support that through executive action." Louisville, Kentucky, about 35 miles south of Austin, was the first Kentucky municipal government to approve a needle exchange program. The Louisville Metro Council voted 22–0 to approve the program on April 23. That approval requires reconsulting the council before actually implementing such a program. About 195 cities in the United States have adopted similar programs. Dr. William Shaffner, a doctor and chair of the Department of Preventative Medicine at Vanderbilt University in Nashville, Tennessee, told Wikinews reporters March 25 at the University of Southern Indiana in Evansville, the day before Pence declared the public health emergency, such a program would make sense. He said the best course of action would be to "block and tackle." "Needle exchange programs ought to be used," Shaffner said. "They have been proven to work and do not cause an increase in drug use."</text>
         <locations>
             <location>
                 <name>Indiana</name>
@@ -9470,6 +9479,14 @@
                 <page>https://en.wikipedia.org/wiki/Scott_County,_Indiana</page>
             </location>
             <location>
+                <name>Indiana</name>
+                <start>1438</start>
+                <end>1445</end>
+                <lat>40</lat>
+                <lon>-86</lon>
+                <page>https://en.wikipedia.org/wiki/Indiana</page>
+            </location>
+            <location>
                 <name>Scott County</name>
                 <start>1483</start>
                 <end>1495</end>
@@ -9484,6 +9501,14 @@
                 <lat>37.97</lat>
                 <lon>-87.55</lon>
                 <page>https://en.wikipedia.org/wiki/Evansville,_Indiana</page>
+            </location>
+            <location>
+                <name>Scott County</name>
+                <start>2530</start>
+                <end>2542</end>
+                <lat>38.69</lat>
+                <lon>-85.74</lon>
+                <page>https://en.wikipedia.org/wiki/Scott_County,_Indiana</page>
             </location>
             <location>
                 <name>Louisville</name>
@@ -9611,6 +9636,14 @@
                 <lon>-74.00</lon>
                 <page>https://en.wikipedia.org/wiki/New_York_City</page>
             </location>
+            <location>
+                <name>Brooklyn</name>
+                <start>2068</start>
+                <end>2076</end>
+                <lat>40.69</lat>
+                <lon>-73.99</lon>
+                <page>https://en.wikipedia.org/wiki/Brooklyn</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -9642,6 +9675,14 @@
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
+                <name>Westminster</name>
+                <start>256</start>
+                <end>267</end>
+                <lat>51.49</lat>
+                <lon>-0.13</lon>
+                <page>https://en.wikipedia.org/wiki/Westminster</page>
+            </location>
+            <location>
                 <name>UK</name>
                 <start>1775</start>
                 <end>1777</end>
@@ -9655,6 +9696,14 @@
         <source>https://en.wikinews.org/wiki/US_food_regulators_recall_380_million_eggs_after_salmonella_outbreak</source>
         <text>The United States Food and Drug Administration (FDA) has recalled 380 million eggs and the number is expected to grow, after around 300 in Colorado, California, and Minnesota and 2,000 nationwide became infected with salmonella after eating eggs distributed by Wright County Eggs. The contaminated eggs were sold under the labels Lucerne, Albertson, Mountain Dairy, Ralph's, Boomsma's, Sunshine, Hillandale, Trafficanda, Farm Fresh, Shoreland, Lund, Dutch Farms, Kemps, Bayview, Mountain Dairy, NuLay and Sun Valley. Eggs have been sold in seventeen states. Wright County Egg's owner has been previously cited for breaking environmental laws. In response to the outbreak the FDA deployed an initial team of ten investigators to Wright County Egg in Iowa to inspect the farms and determine the source of the contamination. Although no official statement has been issued, it is believed animals including birds and rodents defecated where food for chickens is stored. The outbreak is believed to have started in early July, around the time new federal regulations to prevent salmonella contamination of eggs took effect. According to the FDA, the symptoms of salmonella infection includes fever, diarrhea, nausea, vomiting, and abdominal pain.</text>
         <locations>
+            <location>
+                <name>United States</name>
+                <start>5</start>
+                <end>18</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
             <location>
                 <name>Colorado</name>
                 <start>140</start>
@@ -9742,6 +9791,14 @@
                 <page>https://en.wikipedia.org/wiki/Illinois</page>
             </location>
             <location>
+                <name>U.S.</name>
+                <start>989</start>
+                <end>993</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Texas</name>
                 <start>1792</start>
                 <end>1797</end>
@@ -9825,6 +9882,14 @@
         <source>https://en.wikinews.org/wiki/FDA_warning_on_pistachios_after_salmonella_contamination</source>
         <text>The U.S. Food and Drug Administration (FDA) has issued a recall on Salmonella contaminated Pistachios for 31 states in the United States. "Our advice to consumers is that they avoid eating pistachio products, that they hold onto those products, that at this stage they don't throw them out, they simply hold on to them as we're learning more about them to determine if they're part of the recall," said Dr. David Acheson, associated FDA commissioner for food. However, it is expected that the recalled list may grow as the investigation continues. Kroger Co. is recalling shelled pistachios called Private Selection Shelled Pistachios in a 10-ounce container with UPC code 111073615 and the sell dates of December 13 or 14 on the packages. Setton Farms based in California, the pistachio supplier, is voluntarily recalling their pistachios. Products containing pistachios have not yet been recalled, but are under investigation. The salmonella contamination was discovered by Kraft foods during routine testing last Tuesday, before any illness were reported. They notified the FDA and the FDA notified Setton Farms. So far the source of contamination has not been revealed. The 31 states initially affected are: (in alphabetical order) : Alaska, Alabama, Arizona, Arkansas, California, Colorado, Georgia, Idaho, Illinois, Indiana, Kansas, Kentucky, Louisiana, Michigan, Missouri, Mississippi, Montana, Nebraska, Nevada, New Mexico, North Carolina, Ohio, Oregon, South Carolina, Tennessee, Texas, Utah, Virginia, Washington, West Virginia and Wyoming. Signs of salmonella include fever, diarrhea, nausea, vomiting and abdominal pain. Those most vulnerable are the young, the elderly or those with an already compromised health condition. This recall follows the long list of recalled peanut related products, peanut butter and candy bars which caused a salmonella outbreak at the end of January.</text>
         <locations>
+            <location>
+                <name>U.S.</name>
+                <start>5</start>
+                <end>9</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
             <location>
                 <name>United States</name>
                 <start>124</start>
@@ -10097,6 +10162,14 @@
         <locations>
             <location>
                 <name>United States</name>
+                <start>47</start>
+                <end>60</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>United States</name>
                 <start>196</start>
                 <end>209</end>
                 <lat>40</lat>
@@ -10142,6 +10215,14 @@
                 <lat>60</lat>
                 <lon>-95</lon>
                 <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>United States</name>
+                <start>750</start>
+                <end>763</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
                 <name>Arizona</name>
@@ -10328,9 +10409,33 @@
                 <page>https://en.wikipedia.org/wiki/Honduras</page>
             </location>
             <location>
+                <name>United States</name>
+                <start>1651</start>
+                <end>1664</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Honduras</name>
                 <start>1722</start>
                 <end>1730</end>
+                <lat>15</lat>
+                <lon>-86.5</lon>
+                <page>https://en.wikipedia.org/wiki/Honduras</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1788</start>
+                <end>1792</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Honduras</name>
+                <start>1910</start>
+                <end>1918</end>
                 <lat>15</lat>
                 <lon>-86.5</lon>
                 <page>https://en.wikipedia.org/wiki/Honduras</page>
@@ -10436,6 +10541,14 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>USA</name>
+                <start>1936</start>
+                <end>1939</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Roanoke</name>
                 <start>2394</start>
                 <end>2401</end>
@@ -10455,7 +10568,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Triathletes_from_Belgium_and_Luxembourg_compete_in_championship_race</source>
-        <text>In the hills of Weiswampach, Luxembourg yesterday, the 12th International Wämper Triathlon became the setting for the national championship Olympic distance (1,5 km swimming, 40 km cycling, 10 km running) triathlon for both Belgium and Luxembourg. The Belgian championship was scheduled to take place in Vilvoorde, Belgium, but because the concentration of Salmonella bacteria in the water was too high, the Belgians moved to Luxembourg. On Saturday, an event for children and for the handicapped took place, along with the 10 kilometre running event. On Sunday, the Juniors and the athletes for the Promotion race started the day, followed at 15:00 by the elite athletes. Even though dark clouds hung over Weiswampach most of the afternoon, there was only a short rain shower during the cycling course. In the men's race, Peter Croes (Belgium, Atriac team) and Dirk Bockel (Luxembourg, Celtic Diekirck team) started together for the final 10 kilometre run, but Bockel managed to outrun Croes by 23 seconds, prolonging his victory of last year. Last year's winner, Stijn Goris from Belgium (LTTL team), came in third, followed closely by Bas Diederen from the Netherlands. Lander Dircken (Atriac, Belgium) came in fifth. In the women's race, the top two athletes remained the same as last year; Elisabeth "Liz" May from Luxembourg managed to stay ahead of a pursuing group the entire race, and finished first ahead of Jessica Mayon. Mayon secured the title of Belgian 1/4 Triathlon champion, in addition to the previously won Sprint Triathlon and Long Distance championships. Evelyn Williamson from New Zealand finished third.</text>
+        <text>In the hills of Weiswampach, Luxembourg yesterday, the 12th International Wämper Triathlon became the setting for the national championship Olympic distance (1,5 km swimming, 40 km cycling, 10 km running) triathlon for both Belgium and Luxembourg. The Belgian championship was scheduled to take place in Vilvoorde, Belgium, but because the concentration of Salmonella bacteria in the water was too high, the Belgians moved to Luxembourg. On Saturday, an event for children and for the handicapped took place, along with the 10 kilometre running event. On Sunday, the Juniors and the athletes for the Promotion race started the day, followed at 15:00 by the elite athletes. Even though dark clouds hung over Weiswampach most of the afternoon, there was only a short rain shower during the cycling course. In the men's race, Peter Croes (Belgium, Atriac team) and Dirk Bockel (Luxembourg, Celtic Diekirck team) started together for the final 10 kilometre run, but Bockel managed to outrun Croes by 23 seconds, prolonging his victory of last year. Last year's winner, Stijn Goris from Belgium (LTTL team), came in third, followed closely by Bas Diederen from the Netherlands. Lander Dircken (Atariac, Belgium) came in fifth. In the women's race, the top two athletes remained the same as last year; Elisabeth "Liz" May from Luxembourg managed to stay ahead of a pursuing group the entire race, and finished first ahead of Jessica Mayon. Mayon secured the title of Belgian 1/4 Triathlon champion, in addition to the previously won Sprint Triathlon and Long Distance championships. Evelyn Williamson from New Zealand finished third.</text>
         <locations>
             <location>
                 <name>Weiswampach</name>
@@ -10530,6 +10643,22 @@
                 <page>https://en.wikipedia.org/wiki/Belgium</page>
             </location>
             <location>
+                <name>Luxembourg</name>
+                <start>876</start>
+                <end>886</end>
+                <lat>49.75</lat>
+                <lon>6.16</lon>
+                <page>https://en.wikipedia.org/wiki/Luxembourg</page>
+            </location>
+            <location>
+                <name>Belgium</name>
+                <start>1083</start>
+                <end>1090</end>
+                <lat>50.83</lat>
+                <lon>4</lon>
+                <page>https://en.wikipedia.org/wiki/Belgium</page>
+            </location>
+            <location>
                 <name>Netherlands</name>
                 <start>1161</start>
                 <end>1172</end>
@@ -10538,9 +10667,25 @@
                 <page>https://en.wikipedia.org/wiki/Netherlands</page>
             </location>
             <location>
+                <name>Belgium</name>
+                <start>1199</start>
+                <end>1206</end>
+                <lat>50.83</lat>
+                <lon>4</lon>
+                <page>https://en.wikipedia.org/wiki/Belgium</page>
+            </location>
+            <location>
+                <name>Luxembourg</name>
+                <start>1322</start>
+                <end>1332</end>
+                <lat>49.75</lat>
+                <lon>6.16</lon>
+                <page>https://en.wikipedia.org/wiki/Luxembourg</page>
+            </location>
+            <location>
                 <name>New Zealand</name>
-                <start>1600</start>
-                <end>1611</end>
+                <start>1601</start>
+                <end>1612</end>
                 <lat>-42</lat>
                 <lon>174</lon>
                 <page>https://en.wikipedia.org/wiki/New_Zealand</page>
@@ -10596,6 +10741,22 @@
                 <lat>-36.84</lat>
                 <lon>174.74</lon>
                 <page>https://en.wikipedia.org/wiki/Auckland</page>
+            </location>
+            <location>
+                <name>New Zealand</name>
+                <start>323</start>
+                <end>334</end>
+                <lat>-42</lat>
+                <lon>174</lon>
+                <page>https://en.wikipedia.org/wiki/New_Zealand</page>
+            </location>
+            <location>
+                <name>Islington Bay</name>
+                <start>495</start>
+                <end>508</end>
+                <lat>-39.98</lat>
+                <lon>176.5</lon>
+                <page>N/A</page>
             </location>
             <location>
                 <name>Rangitoto</name>
@@ -10756,6 +10917,14 @@
                 <page>https://en.wikipedia.org/wiki/Wisconsin</page>
             </location>
             <location>
+                <name>Wisconsin</name>
+                <start>1933</start>
+                <end>1942</end>
+                <lat>44.5</lat>
+                <lon>-89.5</lon>
+                <page>https://en.wikipedia.org/wiki/Wisconsin</page>
+            </location>
+            <location>
                 <name>California</name>
                 <start>2633</start>
                 <end>2643</end>
@@ -10825,6 +10994,14 @@
                 <lon>-121.12</lon>
                 <page>https://en.wikipedia.org/wiki/Salinas_Valley</page>
             </location>
+            <location>
+                <name>California</name>
+                <start>645</start>
+                <end>655</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -10881,6 +11058,14 @@
             </location>
             <location>
                 <name>Canada</name>
+                <start>453</start>
+                <end>459</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>Canada</name>
                 <start>513</start>
                 <end>519</end>
                 <lat>60</lat>
@@ -10899,6 +11084,46 @@
                 <name>U.S.</name>
                 <start>699</start>
                 <end>703</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>736</start>
+                <end>742</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>769</start>
+                <end>775</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>Canada</name>
+                <start>928</start>
+                <end>934</end>
+                <lat>60</lat>
+                <lon>-95</lon>
+                <page>https://en.wikipedia.org/wiki/Canada</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1008</start>
+                <end>1012</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1112</start>
+                <end>1116</end>
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
@@ -11271,6 +11496,14 @@
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
+            <location>
+                <name>Ontario</name>
+                <start>1439</start>
+                <end>1446</end>
+                <lat>50</lat>
+                <lon>-85</lon>
+                <page>https://en.wikipedia.org/wiki/Ontario</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -11286,6 +11519,15 @@
                 <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
             </location>
             <location>
+                <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
+                <start>165</start>
+                <end>168</end>
+                <lat>-1.44</lat>
+                <lon>15.55</lon>
+                <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
+            </location>
+            <location>
                 <name>Kasai Occidental</name>
                 <altName>Kasai-Occidental</altName>
                 <start>349</start>
@@ -11295,6 +11537,23 @@
                 <page>https://en.wikipedia.org/wiki/Kasai-Occidental</page>
             </location>
             <location>
+                <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
+                <start>382</start>
+                <end>385</end>
+                <lat>-1.44</lat>
+                <lon>15.55</lon>
+                <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
+            </location>
+            <location>
+                <name>Kampungu</name>
+                <start>1073</start>
+                <end>1081</end>
+                <lat>-5.21</lat>
+                <lon>21.42</lon>
+                <page>N/A</page>
+            </location>
+            <location>
                 <name>Kaluamba</name>
                 <start>1093</start>
                 <end>1101</end>
@@ -11302,11 +11561,28 @@
                 <lon>25.09</lon>
                 <page>N/A</page>
             </location>
+            <location>
+                <name>Mombo</name>
+                <start>1106</start>
+                <end>1111</end>
+                <lat>-5.16</lat>
+                <lon>21.35</lon>
+                <page>N/A</page>
+            </location>
+            <location>
+                <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
+                <start>1333</start>
+                <end>1336</end>
+                <lat>-1.44</lat>
+                <lon>15.55</lon>
+                <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/International_experts_probe_deadly_Ebola_Reston_virus_outbreak_in_Philippine_pigs</source>
-        <text>Global animal and health authorities' emergency mission to the Philippines is investigating whether the strain of deadly Ebola Reston virus, recently discovered in dead pigs, poses a threat to human health. Unlike more-deadly strains of Ebola virus, Philippine health officials say this particular strain, known as the Reston ebolavirus, has never caused human illness or death, and it's not immediately clear there is a public-health issue. A 22-member team of experts from three United Nations agencies arrived in Manila on Tuesday for a joint risk assessment on the virus contamination of local swine, to help the government contain the outbreak. The mission will coordinate with the Philippine counterparts - the Departments of Agriculture and Health. According to chief veterinary officer, Davinio P. Catbagan, six of 28 swine samples tested positive for Ebola-Reston by the U.S. Department of Agriculture laboratory. The infected pigs came from two commercial and two backyard farms in three provinces north of Manila. Both Ebola and related Marburg hemorrhagic fever, are considered to infect humans via primates. The Straits Times reported that as of December, about 6,000 pigs at Pandi, Bulacan and Talavera farms had tested positive for the Ebola-Reston virus. "Eating pork remained safe as long as it is handled and cooked properly (at a minimum of 70 degrees Celsius or 158 degrees Fahrenheit) and bought in outlets accredited by the government's National Meat Inspection Service," said a joint statement by the World Health Organisation (WHO), World Organisation for Animal Health (OIE) and Food and Agriculture Organisation (FAO). "Our teams are doing field and laboratory investigation to determine where the Ebola-Reston virus came from and how it was transmitted," Caroline-Anne Coulombe, WHO risk communications officer, explained. According to FAO team leader, Juan Lubroth, it was the first time that the Ebola-Reston virus strain had infected animals other than monkeys and the first recorded worldwide in swine. The U.N. mission is scheduled to perform 10 days scientific tests, on two hog farms in Manaoag, Pangasinan and Pandi, Bulacan, but it would take months to publish evaluation reports on the virus. As early as May, a high incidence of swine sickness and death in three provinces caused Philippine authorities in August to send samples from the dead pigs to the NY Plum Island Animal Disease Center. The results found the presence of several diseases, including Ebola Reston virus and PRRS. In late October laboratory tests confirmed that pigs in Nueva Ecija and Bulacan farms were infected with the Ebola-Reston virus and the highly virulent strain of Porcine Reproductive and Respiratory Syndrome Virus (PRRS). In early 2007 pigs on those farms died at a faster rate than usual amid the conducted lab tests. PRRSV, or Blue-Ear Pig Disease, is a viral and economically important pandemic disease which causes reproductive failure in breeding stock and respiratory tract illness in young pigs. Initially referred to as 'mystery swine disease' or 'mystery reproductive syndrome', it was first reported in 1987 in North America and Central Europe. The disease costs the United States swine industry around $600 million annually. In December, the Philippine health authorities conducted testing of about 10,000 swine in two northern Luzon quarantined farms. Reuters reported that "the Ebola-Reston virus in some pigs in two commercial farms and two backyard farms in the Philippines were discovered by accident in United States laboratory tests in September, when samples were sent to test another disease." Ebola virus is one of at least 18 known viruses capable of causing the viral hemorrhagic fever syndrome. It is the common term for a group of viruses belonging to genus Ebolavirus, family Filoviridae, and for the disease which they cause, Ebola hemorrhagic fever. The virus is named after the Ebola River where the first recognized outbreak of Ebola hemorrhagic fever occurred in 1976. The viruses are characterized by long filaments and have a similar shape to the Marburg virus, also in the family Filoviridae, and share similar disease symptoms. Since its discovery, Ebolavirus has been responsible for a number of deaths. In the central Democratic Republic of Congo (DRC), the highly contagious Ebola virus was first detected in September, according to Medecins Sans Frontieres. "As of Tuesday January 7, a total of 42 patients have been reported with suspected Ebola haemorrhagic fever in the province of Western Kasai. 13 of these 42 patients suspected of having Ebola have died," it said. The Reston ebolavirus is suspected of being either another subtype of the Ebola or a new filovirus of Asian origin. It was first discovered in crab-eating macaques originating in the Philippines, from Hazleton Laboratories (now Covance) in 1989. This discovery attracted significant media attention and led to the publication of The Hot Zone. There was then, an outbreak of viral hemorrhagic fever among monkeys imported from the Philippines to Reston, Virginia. The Ebola-Reston strain was discovered among Philippine monkeys in the U.S. again in 1990 and 1996, and in Italy in 1992. According to the World Health Organization, African strains kill 50 percent to 90 percent of those infected through lethal bleeding and organ failure. “Since the 1970s, scientists, veterinarians, microbiologists and physicians have been looking at thousands of species to see if they can find this elusive reservoir, and we have been pretty much empty-handed,” Juan Lubroth, head of infectious diseases in the animal health unit of the Food and Agriculture Organization in Rome, explained. Despite its status as a Level-4 organism, the Reston ebolavirus is non-pathogenic to humans and is only mildly fatal to monkeys; the perception of its lethality was skewed due to the monkey's coinfection with Simian hemorrhagic fever virus (SHFV). During the incident in which it was discovered, six animal handlers eventually became seroconverted, one of whom had cut himself while performing a necropsy on the liver of an infected monkey. When the handler failed to become ill, it was concluded that the virus had a very low pathogenicity to humans. In January 1997, The Philippines Department of Environment and Natural Resources had ordered the immediate slaughter of some 600 monkeys in Ferlite, a breeding farm in Laguna, to prevent an outbreak of the deadly Ebola Reston strain virus. The US Centers for Disease Control and Prevention had donated 8,000 test kits to diagnose the ebola reston strain. "I am more concerned in the international community because we have proven in our December sales that this ebola did not affect consumer confidence," Albert R. T. Lim, president of the National Federation of Hog Farmers, Inc., warned. The Philippines Department of Agriculture (DA) has directed the Bureau of Animal Industry (BAI) and the National Meat Inspection Commission (NMIC) to conduct swine tests in South Cotabato using the US test kits for the Ebola Reston virus, before approval of the "Meat in a Box" shipment to Singapore. The initial export of the meat for December was deferred pending outcome of the ERV tests. Meanwhile, in eight Barangays of Santa Maria, Davao del Sur, in Mindanao, at least 50 pigs died since December due to viral and bacterial infections. Dr. Nestor Barroga, provincial veterinarian, said that he could not however detect yet the type of the infecting virus. The village of Pong-pong had the largest number of casualties. Mercy Olalo, a hog raiser, said their pigs would suddenly become weak and eventually die. "The pigs developed red skins and they salivate excessively," she said.</text>
+        <text>Global animal and health authorities' emergency mission to the Philippines is investigating whether the strain of deadly Ebola Reston virus, recently discovered in dead pigs, poses a threat to human health. Unlike more-deadly strains of Ebola virus, Philippine health officials say this particular strain, known as the Reston ebolavirus, has never caused human illness or death, and it's not immediately clear there is a public-health issue. A 22-member team of experts from three United Nations agencies arrived in Manila on Tuesday for a joint risk assessment on the virus contamination of local swine, to help the government contain the outbreak. The mission will coordinate with the Philippine counterparts - the Departments of Agriculture and Health. According to chief veterinary officer, Davinio P. Catbagan, six of 28 swine samples tested positive for Ebola-Reston by the U.S. Department of Agriculture laboratory. The infected pigs came from two commercial and two backyard farms in three provinces north of Manila. Both Ebola and related Marburg hemorrhagic fever, are considered to infect humans via primates. The Straits Times reported that as of December, about 6,000 pigs at Pandi, Bulacan and Talavera farms had tested positive for the Ebola-Reston virus. "Eating pork remained safe as long as it is handled and cooked properly (at a minimum of 70 degrees Celsius or 158 degrees Fahrenheit) and bought in outlets accredited by the government's National Meat Inspection Service," said a joint statement by the World Health Organisation (WHO), World Organisation for Animal Health (OIE) and Food and Agriculture Organisation (FAO). "Our teams are doing field and laboratory investigation to determine where the Ebola-Reston virus came from and how it was transmitted," Caroline-Anne Coulombe, WHO risk communications officer, explained. According to FAO team leader, Juan Lubroth, it was the first time that the Ebola-Reston virus strain had infected animals other than monkeys and the first recorded worldwide in swine. The U.N. mission is scheduled to perform 10 days scientific tests, on two hog farms in Manaoag, Pangasinan and Pandi, Bulacan, but it would take months to publish evaluation reports on the virus. As early as May, a high incidence of swine sickness and death in three provinces caused Philippine authorities in August to send samples from the dead pigs to the NY Plum Island Animal Disease Center. The results found the presence of several diseases, including Ebola Reston virus and PRRS. In late October laboratory tests confirmed that pigs in Nueva Ecija and Bulacan farms were infected with the Ebola-Reston virus and the highly virulent strain of Porcine Reproductive and Respiratory Syndrome Virus (PRRS). In early 2007 pigs on those farms died at a faster rate than usual amid the conducted lab tests. PRRSV, or Blue-Ear Pig Disease, is a viral and economically important pandemic disease which causes reproductive failure in breeding stock and respiratory tract illness in young pigs. Initially referred to as 'mystery swine disease' or 'mystery reproductive syndrome', it was first reported in 1987 in North America and central Europe. The disease costs the United States swine industry around $600 million annually. In December, the Philippine health authorities conducted testing of about 10,000 swine in two northern Luzon quarantined farms. Reuters reported that "the Ebola-Reston virus in some pigs in two commercial farms and two backyard farms in the Philippines were discovered by accident in United States laboratory tests in September, when samples were sent to test another disease." Ebola virus is one of at least 18 known viruses capable of causing the viral hemorrhagic fever syndrome. It is the common term for a group of viruses belonging to genus Ebolavirus, family Filoviridae, and for the disease which they cause, Ebola hemorrhagic fever. The virus is named after the Ebola River where the first recognized outbreak of Ebola hemorrhagic fever occurred in 1976. The viruses are characterized by long filaments and have a similar shape to the Marburg virus, also in the family Filoviridae, and share similar disease symptoms. Since its discovery, Ebolavirus has been responsible for a number of deaths. In the central Democratic Republic of Congo (DRC), the highly contagious Ebola virus was first detected in September, according to Medecins Sans Frontieres. "As of Tuesday January 7, a total of 42 patients have been reported with suspected Ebola haemorrhagic fever in the province of Western Kasai. 13 of these 42 patients suspected of having Ebola have died," it said. The Reston ebolavirus is suspected of being either another subtype of the Ebola or a new filovirus of Asian origin. It was first discovered in crab-eating macaques originating in the Philippines, from Hazleton Laboratories (now Covance) in 1989. This discovery attracted significant media attention and led to the publication of The Hot Zone. There was then, an outbreak of viral hemorrhagic fever among monkeys imported from the Philippines to Reston, Virginia. The Ebola-Reston strain was discovered among Philippine monkeys in the U.S. again in 1990 and 1996, and in Italy in 1992. According to the World Health Organization, African strains kill 50 percent to 90 percent of those infected through lethal bleeding and organ failure. “Since the 1970s, scientists, veterinarians, microbiologists and physicians have been looking at thousands of species to see if they can find this elusive reservoir, and we have been pretty much empty-handed,” Juan Lubroth, head of infectious diseases in the animal health unit of the Food and Agriculture Organization in Rome, explained. Despite its status as a Level-4 organism, the Reston ebolavirus is non-pathogenic to humans and is only mildly fatal to monkeys; the perception of its lethality was skewed due to the monkey's coinfection with Simian hemorrhagic fever virus (SHFV). During the incident in which it was discovered, six animal handlers eventually became seroconverted, one of whom had cut himself while performing a necropsy on the liver of an infected monkey. When the handler failed to become ill, it was concluded that the virus had a very low pathogenicity to humans. In January 1997, The Philippines Department of Environment and Natural Resources had ordered the immediate slaughter of some 600 monkeys in Ferlite, a breeding farm in Laguna, to prevent an outbreak of the deadly Ebola Reston strain virus. The US Centers for Disease Control and Prevention had donated 8,000 test kits to diagnose the ebola reston strain. "I am more concerned in the international community because we have proven in our December sales that this ebola did not affect consumer confidence," Albert R. T. Lim, president of the National Federation of Hog Farmers, Inc., warned. The Philippines Department of Agriculture (DA) has directed the Bureau of Animal Industry (BAI) and the National Meat Inspection Commission (NMIC) to conduct swine tests in South Cotabato using the US test kits for the Ebola Reston virus, before approval of the "Meat in a Box" shipment to Singapore. The initial export of the meat for December was deferred pending outcome of the ERV tests. Meanwhile, in eight Barangays of Santa Maria, Davao del Sur, in Mindanao, at least 50 pigs died since December due to viral and bacterial infections. Dr. Nestor Barroga, provincial veterinarian, said that he could not however detect yet the type of the infecting virus. The village of Pongpong had the largest number of casualties. Mercy Olalo, a hog raiser, said their pigs would suddenly become weak and eventually die. "The pigs developed red skins and they salivate excessively," she said.</text>
         <locations>
             <location>
                 <name>Philippines</name>
@@ -11323,6 +11599,14 @@
                 <lat>14.58</lat>
                 <lon>121</lon>
                 <page>https://en.wikipedia.org/wiki/Manila</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>881</start>
+                <end>885</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
                 <name>Manila</name>
@@ -11389,6 +11673,23 @@
                 <page>https://en.wikipedia.org/wiki/Bulacan</page>
             </location>
             <location>
+                <name>NY</name>
+                <altName>New York</altName>
+                <start>2394</start>
+                <end>2396</end>
+                <lat>43</lat>
+                <lon>-75</lon>
+                <page>https://en.wikipedia.org/wiki/New_York_(state)</page>
+            </location>
+            <location>
+                <name>Plum Island</name>
+                <start>2397</start>
+                <end>2408</end>
+                <lat>41.18</lat>
+                <lon>-72.19</lon>
+                <page>https://en.wikipedia.org/wiki/Plum_Island_(New_York)</page>
+            </location>
+            <location>
                 <name>Nueva Ecija</name>
                 <start>2579</start>
                 <end>2590</end>
@@ -11403,6 +11704,24 @@
                 <lat>15</lat>
                 <lon>121.08</lon>
                 <page>https://en.wikipedia.org/wiki/Bulacan</page>
+            </location>
+            <location>
+                <name>North America</name>
+                <start>3144</start>
+                <end>3157</end>
+                <lat>54.77</lat>
+                <lon>-105.64</lon>
+                <page>https://en.wikipedia.org/wiki/North_America</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>3170</start>
+                <end>3176</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <continent/>
             </location>
             <location>
                 <name>United States</name>
@@ -11445,6 +11764,15 @@
                 <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
             </location>
             <location>
+                <name>DRC</name>
+                <altName>Democratic Republic of Congo</altName>
+                <start>4308</start>
+                <end>4311</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Republic_of_the_Congo</page>
+            </location>
+            <location>
                 <name>Western Kasai</name>
                 <altName>Kasai-Occidental</altName>
                 <start>4547</start>
@@ -11457,6 +11785,14 @@
                 <name>Philippines</name>
                 <start>4816</start>
                 <end>4827</end>
+                <lat>13</lat>
+                <lon>122</lon>
+                <page>https://en.wikipedia.org/wiki/Philippines</page>
+            </location>
+            <location>
+                <name>Philippines</name>
+                <start>5063</start>
+                <end>5074</end>
                 <lat>13</lat>
                 <lon>122</lon>
                 <page>https://en.wikipedia.org/wiki/Philippines</page>
@@ -11476,6 +11812,14 @@
                 <lat>37.5</lat>
                 <lon>-79</lon>
                 <page>https://en.wikipedia.org/wiki/Virginia</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>5167</start>
+                <end>5171</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
                 <name>Italy</name>
@@ -11500,6 +11844,23 @@
                 <lat>14.17</lat>
                 <lon>121.33</lon>
                 <page>https://en.wikipedia.org/wiki/Laguna_(province)</page>
+            </location>
+            <location>
+                <name>US</name>
+                <altName>United States</altName>
+                <start>6504</start>
+                <end>6506</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Philippines</name>
+                <start>6854</start>
+                <end>6865</end>
+                <lat>13</lat>
+                <lon>122</lon>
+                <page>https://en.wikipedia.org/wiki/Philippines</page>
             </location>
             <location>
                 <name>South Cotabato</name>
@@ -11550,6 +11911,15 @@
                 <lon>125</lon>
                 <page>https://en.wikipedia.org/wiki/Mindanao</page>
             </location>
+            <location>
+                <name>Pongpong</name>
+                <altName>Pung-Pang</altName>
+                <start>7527</start>
+                <end>7535</end>
+                <lat>6.49</lat>
+                <lon>125.46</lon>
+                <page>N/A</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -11587,6 +11957,23 @@
                 <lat>20.61</lat>
                 <lon>72.92</lon>
                 <page>https://en.wikipedia.org/wiki/Valsad</page>
+            </location>
+            <location>
+                <name>Maharashtra</name>
+                <start>1227</start>
+                <end>1238</end>
+                <lat>18.97</lat>
+                <lon>72.82</lon>
+                <page>https://en.wikipedia.org/wiki/Maharashtra</page>
+            </location>
+            <location>
+                <name>Greater Mumbai</name>
+                <altName>Mumbai</altName>
+                <start>1451</start>
+                <end>1465</end>
+                <lat>18.97</lat>
+                <lon>72.82</lon>
+                <page>https://en.wikipedia.org/wiki/Mumbai</page>
             </location>
             <location>
                 <name>Mahim Bay</name>
@@ -11703,6 +12090,14 @@
                 <page>https://en.wikipedia.org/wiki/Australia</page>
             </location>
             <location>
+                <name>NSW</name>
+                <start>294</start>
+                <end>297</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
                 <name>Queensland</name>
                 <start>302</start>
                 <end>312</end>
@@ -11711,9 +12106,33 @@
                 <page>https://en.wikipedia.org/wiki/Queensland</page>
             </location>
             <location>
+                <name>NSW</name>
+                <start>409</start>
+                <end>412</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
                 <name>Queensland</name>
                 <start>417</start>
                 <end>427</end>
+                <lat>-23</lat>
+                <lon>143</lon>
+                <page>https://en.wikipedia.org/wiki/Queensland</page>
+            </location>
+            <location>
+                <name>NSW</name>
+                <start>669</start>
+                <end>672</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
+                <name>Queensland</name>
+                <start>677</start>
+                <end>687</end>
                 <lat>-23</lat>
                 <lon>143</lon>
                 <page>https://en.wikipedia.org/wiki/Queensland</page>
@@ -11782,6 +12201,22 @@
                 <lon>144</lon>
                 <page>https://en.wikipedia.org/wiki/Victoria_(Australia)</page>
             </location>
+            <location>
+                <name>NSW</name>
+                <start>1510</start>
+                <end>1513</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
+                <name>NSW</name>
+                <start>1612</start>
+                <end>1615</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
         </locations>
     </article>
     <article>
@@ -11813,6 +12248,15 @@
                 <page>https://en.wikipedia.org/wiki/Suffolk</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>336</start>
+                <end>342</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>France</name>
                 <start>409</start>
                 <end>415</end>
@@ -11824,6 +12268,38 @@
                 <name>Germany</name>
                 <start>420</start>
                 <end>427</end>
+                <lat>51</lat>
+                <lon>9</lon>
+                <page>https://en.wikipedia.org/wiki/Germany</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>460</start>
+                <end>462</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>UK</name>
+                <start>479</start>
+                <end>481</end>
+                <lat>55</lat>
+                <lon>-3</lon>
+                <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
+            </location>
+            <location>
+                <name>France</name>
+                <start>567</start>
+                <end>573</end>
+                <lat>47</lat>
+                <lon>2</lon>
+                <page>https://en.wikipedia.org/wiki/France</page>
+            </location>
+            <location>
+                <name>Germany</name>
+                <start>578</start>
+                <end>585</end>
                 <lat>51</lat>
                 <lon>9</lon>
                 <page>https://en.wikipedia.org/wiki/Germany</page>
@@ -11929,6 +12405,14 @@
                 <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
             <location>
+                <name>Zimbabwe</name>
+                <start>712</start>
+                <end>720</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
+            </location>
+            <location>
                 <name>Harare</name>
                 <start>788</start>
                 <end>794</end>
@@ -11969,6 +12453,14 @@
                 <page>https://en.wikipedia.org/wiki/Mozambique</page>
             </location>
             <location>
+                <name>Zimbabwe</name>
+                <start>1237</start>
+                <end>1245</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
+            </location>
+            <location>
                 <name>South Africa</name>
                 <start>1212</start>
                 <end>1224</end>
@@ -11980,6 +12472,14 @@
                 <name>Zimbabwe</name>
                 <start>1519</start>
                 <end>1527</end>
+                <lat>-20</lat>
+                <lon>30</lon>
+                <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
+            </location>
+            <location>
+                <name>Zimbabwe</name>
+                <start>1602</start>
+                <end>1610</end>
                 <lat>-20</lat>
                 <lon>30</lon>
                 <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
@@ -12217,6 +12717,15 @@
         <text>Nearly a week after tsunami waves scoured the coasts of multiple countries in southern Asia, the confirmed death count is over 120,000. Indonesia reports it is no longer counting bodies, but merely struggling to deal with the aftermath and prevent a massive outbreak of typhoid. Near the epicenter of the earthquakes and tsunami, Indonesia's Aceh province alone may have as many as 80,000 death. Entire villages are gone, with no evidence left of their prior existence. Still, other countries are continuing to report the numbers of dead as best they can: Sri Lanka - approximately 28,500, India - more than 7,700. More than 300 were killed in Malaysia, Myanmar, Bangladesh, the Maldives, Somalia, Tanzania and Kenya. As many as 10,500 foreign nationals are missing in the region, most of them tourists. Sweden has 17 confirmed dead, but more than 2,500 are still missing.</text>
         <locations>
             <location>
+                <name>Asia</name>
+                <start>88</start>
+                <end>92</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Indonesia</name>
                 <start>137</start>
                 <end>146</end>
@@ -12400,6 +12909,22 @@
                 <page>https://en.wikipedia.org/wiki/Angola</page>
             </location>
             <location>
+                <name>Angola</name>
+                <start>2236</start>
+                <end>2242</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+            <location>
+                <name>Angola</name>
+                <start>2455</start>
+                <end>2461</end>
+                <lat>-12.5</lat>
+                <lon>18.5</lon>
+                <page>https://en.wikipedia.org/wiki/Angola</page>
+            </location>
+            <location>
                 <name>Luanda</name>
                 <start>2716</start>
                 <end>2722</end>
@@ -12468,6 +12993,15 @@
                 <page>https://en.wikipedia.org/wiki/Zimbabwe</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>188</start>
+                <end>194</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Zimbabwe</name>
                 <start>529</start>
                 <end>537</end>
@@ -12519,8 +13053,16 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Horse_flu_infects_Australian_thoroughbreds</source>
-        <text>It has been confirmed that eight thoroughbred race horses at Randwick Racecourse in Sydney have been infected with equine influenza. Randwick has been locked down, and is expected to remain so for up to two months. It is expected that the virulent flu will affect the majority of the 700 horses stabled at Randwick. NSW Minister for Primary Industries said the facility would be quarantined until 30 days after the last sign of the flu. The cases are the first infections of race horses, despite infecting dozens of recreational horses across NSW and Queensland. The flu is highly contagious but cannot be transmitted to humans. The national racing shutdown was costing the industry tens of millions of dollars every day. Chief Executive of Racing NSW, Peter V'Landys said while racing had been disrupted since a ban on horse movements last weekend today was a "grim, black day" for the racing industry in NSW. Racing is expected to resume in all Australian states except NSW and Queensland on the weekend. While Sydney's spring racing carnival has been canceled, Melbourne's is expected to kick off this weekend with the Caufield Cup. The cup will be ran with special precautions in place to attempt to keep the state free of the virus. Contact between the general public and those working with the horses will be banned and Sydney-based jockeys Darren Beadman and Hugh Bowman and a number of interstate trainers including Bart Cummings are not allowed to take part. Federal Minister for Agriculture, Peter McGauran said the spring carnival in Melbourne will remain "largely intact" despite losing some of the biggest names in Australian racing.</text>
+        <text>It has been confirmed that eight thoroughbred race horses at Randwick racecourse in Sydney have been infected with equine influenza. Randwick has been locked down, and is expected to remain so for up to two months. It is expected that the virulent flu will affect the majority of the 700 horses stabled at Randwick. NSW Minister for Primary Industries said the facility would be quarantined until 30 days after the last sign of the flu. The cases are the first infections of race horses, despite infecting dozens of recreational horses across NSW and Queensland. The flu is highly contagious but cannot be transmitted to humans. The national racing shutdown was costing the industry tens of millions of dollars every day. Chief Executive of Racing NSW, Peter V'Landys said while racing had been disrupted since a ban on horse movements last weekend today was a "grim, black day" for the racing industry in NSW. Racing is expected to resume in all Australian states except NSW and Queensland on the weekend. While Sydney's spring racing carnival has been canceled, Melbourne's is expected to kick off this weekend with the Caufield Cup. The cup will be ran with special precautions in place to attempt to keep the state free of the virus. Contact between the general public and those working with the horses will be banned and Sydney-based jockeys Darren Beadman and Hugh Bowman and a number of interstate trainers including Bart Cummings are not allowed to take part. Federal Minister for Agriculture, Peter McGauran said the spring carnival in Melbourne will remain "largely intact" despite losing some of the biggest names in Australian racing.</text>
         <locations>
+            <location>
+                <name>Randwick</name>
+                <start>62</start>
+                <end>70</end>
+                <lat>-33.91</lat>
+                <lon>151.23</lon>
+                <page>https://en.wikipedia.org/wiki/Randwick,_New_South_Wales</page>
+            </location>
             <location>
                 <name>Sydney</name>
                 <start>85</start>
@@ -12578,6 +13120,14 @@
                 <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
             </location>
             <location>
+                <name>NSW</name>
+                <start>973</start>
+                <end>976</end>
+                <lat>-32.16</lat>
+                <lon>147.01</lon>
+                <page>https://en.wikipedia.org/wiki/New_South_Wales</page>
+            </location>
+            <location>
                 <name>Queensland</name>
                 <start>981</start>
                 <end>991</end>
@@ -12624,6 +13174,15 @@
         <text>The World Health Organization (WHO) yesterday began simultaneous immunization campaigns, in 112 countries and territories across its Americas, Eastern Mediterranean, and European regions. The unprecedented vaccination drive will last for a week. This is the first time the World Health Organization has launched such an event across multiple regions at once. WHO officials say their goal is to expand immunization coverage and raise awareness of the importance of vaccines, and that such cross-border activities can prevent disease and save lives. WHO spokesman Daniel Epstein says that many countries are working to eliminate measles, adding that says countries in the European region are very concerned that they have stalled in their goal of eliminating measles and rubella this year. "In European countries, in many of them, immunization coverage is below the 95 percent recommended level. And, there have been ongoing measles outbreaks in some of these countries. Measles cases have also been imported to the US and Canada and the Americas from European countries," said Epstein. The agency says an important goal of the immunization campaigns is to reach those who have been excluded up to now. It notes that every year, in the countries of the Eastern Mediterranean, 25 percent of deaths among children under age five are attributed to vaccine preventable diseases. 2.1 million children in the Middle East hadn't received a shot against tetanus, whooping cough, or diphteria in 2009, according to the WHO. In the Americas, WHO says special regional events are being held in border areas of Nicaragua, between Suriname and French Guiana, and between Haiti and the Dominican Republic. It says many young children, pregnant women, elderly and indigenous peoples live in isolated areas where vaccine coverage is low. In all three regions, Epstein said the vaccination campaigns will be accompanied by health information campaigns. "The biggest obstacle to reaching our goals of vaccination are lack of awareness, lack of information and people being ignorant that they should be vaccinated, and thus not having enough vaccinators, money, trucks, bicycles, etc. to get to these remote regions," he said. WHO also began a large polio immunization campaign across sixteen countries in central and West Africa on Saturday. It says 78 million children under five will be vaccinated to stop a major outbreak of the disease.</text>
         <locations>
             <location>
+                <name>Americas</name>
+                <start>134</start>
+                <end>142</end>
+                <lat>26.01</lat>
+                <lon>-104.41</lon>
+                <page>https://en.wikipedia.org/wiki/Americas</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Eastern Mediterranean</name>
                 <start>144</start>
                 <end>165</end>
@@ -12649,12 +13208,39 @@
                 <page>https://en.wikipedia.org/wiki/Canada</page>
             </location>
             <location>
+                <name>Americas</name>
+                <start>1037</start>
+                <end>1045</end>
+                <lat>26.01</lat>
+                <lon>-104.41</lon>
+                <page>https://en.wikipedia.org/wiki/Americas</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Eastern Mediterranean</name>
                 <start>1252</start>
                 <end>1273</end>
                 <lat>34.88</lat>
                 <lon>22.36</lon>
                 <page>https://en.wikipedia.org/wiki/Eastern_Mediterranean</page>
+            </location>
+            <location>
+                <name>Middle East</name>
+                <start>1402</start>
+                <end>1413</end>
+                <lat>29</lat>
+                <lon>41</lon>
+                <page>https://en.wikipedia.org/wiki/Middle_East</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Americas</name>
+                <start>1521</start>
+                <end>1529</end>
+                <lat>26.01</lat>
+                <lon>-104.41</lon>
+                <page>https://en.wikipedia.org/wiki/Americas</page>
+                <continent/>
             </location>
             <location>
                 <name>Nicaragua</name>
@@ -12871,6 +13457,23 @@
         <text>Honey-bee decline has accelerated in North America beyond the steady attrition of the past 25 years according to scientists and farmers. A relatively new term - "Colony Collapse Disorder" is being used to describe this poorly understood phenomenon. Colony Collapse Disorder (or CCD) is a syndrome evidenced by massive die-off affecting an entire insect population. The cause of the syndrome is not yet well understood. CCD may be caused by mites or associated diseases or unknown pathogens. CCD is possibly linked to pesticide use though several studies have found no common environmental factors between unrelated outbreaks studied. According to Dennis van Engelsdorp, a bee specialist with the Pennsylvania State Department of Agriculture, "We are pretty sure, but not certain, that it is a contagious disease." Honey-bees are responsible for approximately one third of the United States crop pollination including such species as: peaches, soybeans, apples, pears, pumpkins, cucumbers, cherries, raspberries, blackberries and strawberries. From 1971 to 2006, approximately one half of the U.S. honey-bee colonies vanished. The rate of attrition reached new proportions in the year 2006, which were alarming to many farmers and honey-bee scientists. At least eleven different states as well as portions of Canada are known to have been affected by colony collapse disorder. The disorder has been identified in a geographically diverse group of states including Georgia, Oklahoma, Pennsylvania, Wisconsin and California. In some states the loss of honey-bee colonies is estimated as high as 75 percent of the population. The phenomenon is particularly important for crops such as almond growing in California, where honey-bees are the predominant pollinator and the crop value is $US 1.5 billion. Total U.S. crops that are wholly dependent on the honey-bee are known to exceed $US 15 billion. In a related development on January 17, 2007, the U.S. Environmental Protection Agency has drastically tightened use rules on some of the chief pesticides used on apples, blueberries, grapes, peaches, pears and other fruits pollenized by honey-bees. Citing general environmental protection and farmworker safety, the EPA recently announced the tightening of use or phaseout of the highly toxic pesticides phosmet and Azinphos methyl. Under these rule changes the use of these organophosphate pesticide would be allowed continued use for five years but have somewhat reduced dosage limits. Azinphos methyl is a dangerous neurotoxin derived from nerve agents used during World War II.</text>
         <locations>
             <location>
+                <name>North America</name>
+                <start>38</start>
+                <end>51</end>
+                <lat>54.77</lat>
+                <lon>-105.64</lon>
+                <page>https://en.wikipedia.org/wiki/North_America</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Pennsylvania</name>
+                <start>697</start>
+                <end>709</end>
+                <lat>41</lat>
+                <lon>-77.5</lon>
+                <page>https://en.wikipedia.org/wiki/Pennsylvania</page>
+            </location>
+            <location>
                 <name>United States</name>
                 <start>877</start>
                 <end>890</end>
@@ -12946,6 +13549,14 @@
                 <name>U.S.</name>
                 <start>1805</start>
                 <end>1809</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>U.S.</name>
+                <start>1945</start>
+                <end>1949</end>
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
@@ -13119,6 +13730,15 @@
                 <page>https://en.wikipedia.org/wiki/Germany</page>
             </location>
             <location>
+                <name>Northern Europe</name>
+                <start>711</start>
+                <end>726</end>
+                <lat>61.68</lat>
+                <lon>2.90</lon>
+                <page>https://en.wikipedia.org/wiki/Northern_Europe</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Belgium</name>
                 <start>926</start>
                 <end>933</end>
@@ -13159,6 +13779,15 @@
                 <page>https://en.wikipedia.org/wiki/United_Kingdom</page>
             </location>
             <location>
+                <name>Northern Europe</name>
+                <start>1077</start>
+                <end>1092</end>
+                <lat>61.68</lat>
+                <lon>2.90</lon>
+                <page>https://en.wikipedia.org/wiki/Northern_Europe</page>
+                <continent/>
+            </location>
+            <location>
                 <name>UK</name>
                 <start>1100</start>
                 <end>1102</end>
@@ -13172,6 +13801,16 @@
         <source>https://en.wikinews.org/wiki/Bad_weather_makes_life_tougher_for_quake_survivors</source>
         <text>While Aid starts to pour in to the worst hit areas of South Asia Earthquake that has killed more than 30,000 people, bad weather is hampering the relief efforts with snow falling on the peaks of the earthquake-devastated areas of Pakistan. The measure of human suffering can't just be measured in the death toll, which officially stands at 23,000, but also in the 4 million who have been made homeless, hungry, and cold with 1 million in acute need, facing certain death without outside assistance. In the Indian state of Jammu and Kashmir, authorities say at least 1,300 people are known to have died, but officials fear the number will rise. ABC Australia reports of a man in Pakistan-administered Kashmir, who has been cut from aid, saying "I find that we are alone now. We have nothing. We are finished." Choppers are the main lifeline of support; trucks are unable to deliver relief supplies due to looting and general mayhem on the ground. The more snow, the less able aid agencies are to make their way to those in the direst need. Jan Vandemoortele, U.N. Resident Coordinator for Pakistan, said key roads into the quake zone have been reopened, as 30 countries including Australia, France, Japan, Jordan, China, Russia, Iran, Syria and the US provide assistance in the form of money, doctors, tents, blankets, and disaster relief teams. United Nations officials are warning of a growing threat of measles, cholera, and diarrhea outbreaks among the millions of survivors. There have been no reports of epidemic outbreaks so far, but the area's health infrastructure has completely collapsed, Vandemoortele said.</text>
         <locations>
+            <location>
+                <name>South Asia</name>
+                <altName>Southern Asia</altName>
+                <start>55</start>
+                <end>65</end>
+                <lat>21.28</lat>
+                <lon>78.66</lon>
+                <page>https://en.wikipedia.org/wiki/South_Asia</page>
+                <continent/>
+            </location>
             <location>
                 <name>Pakistan</name>
                 <start>231</start>
@@ -13299,6 +13938,15 @@
         <source>https://en.wikinews.org/wiki/WHO_director:_Pandemic_alert_level_will_not_be_raised</source>
         <text>The H1N1 swine flu has now spread to many parts of the globe. The World Health Organisation reports that there are 8,829 confirmed cases in forty countries, most of them in Mexico and the United States. 76 people have been confirmed dead from the influenza. Many countries, among them China, Japan, and the United Kingdom, have warned the WHO to be cautious about declaring a global pandemic. They say that such an announcement, if delivered prematurely, could cause mass panic and confusion. WHO director Margaret Chan said that the organisation had listened to the countries' concerns, and will not raise the pandemic alert level from five to six, on a scale of one to six. A transition to the sixth level means that the disease is circulating actively on at least two continents. "On 29 April, I raised the level of pandemic influenza alert from phase 4 to phase 5. We remain in phase 5 today. This virus may have given us a grace period, but we do not know how long this grace period will last. No one can say whether this is just the calm before the storm," Chan said at the WHO's annual meeting. However, she added that the disease could possibly pose a very serious threat to the world's population. "I strongly urge the international community to use this grace period wisely. I strongly urge you to look closely at anything and everything we can do, collectively, to protect developing countries from, once again, bearing the brunt of a global contagion." "A new influenza virus with great pandemic potential, the new influenza A (H1N1) strain, has emerged," Chan said. Chan said the WHO hadn't yet told antiviral manufacturers to start producing a specific vaccine for this specific strain of the virus. She urged countries to be careful and not squander their medical supplies, saying that "manufacturing capacity for antiviral drugs and influenza vaccines is finite and insufficient for a world with 6.8 billion inhabitants. "It is absolutely essential that countries do not squander these precious resources through poorly targeted measures," Chan said. Estimates by the WHO suggest that as many as two billion doses of vaccine could be produced per year if needed, although the first ones would not be available for four months to half a year. UK Secretary of Health Alan Johnson said the organisation needs to have more flexibility in its pandemic alert levels to take into consideration how severe the virus is. "We need more time – we need to give you more time. My proposal is that you should have more flexibility. A pandemic describes the geographic spread rather than its severity and it's very important that that is reflected in your ability to move to phase six," he said.</text>
         <locations>
+            <!--<location>-->
+                <!--<name></name>-->
+                <!--<start></start>-->
+                <!--<end></end>-->
+                <!--<lat></lat>-->
+                <!--<lon></lon>-->
+                <!--<page></page>-->
+                <!--<continent/>-->
+            <!--</location>-->
             <location>
                 <name>Mexico</name>
                 <start>174</start>

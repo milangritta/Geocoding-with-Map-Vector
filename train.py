@@ -17,12 +17,12 @@ word_to_index = cPickle.load(open(u"data/w2i.pkl"))
 print(u"Vocabulary Size:", len(word_to_index))
 
 vectors = {UNKNOWN: np.ones(EMB_DIM), PADDING: np.ones(EMB_DIM)}
-# for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
-#     if line.strip() == "":
-#         continue
-#     t = line.split()
-#     vectors[t[0]] = [float(x) for x in t[1:]]
-# print(u'Twitter vectors...', len(vectors))
+for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
+    if line.strip() == "":
+        continue
+    t = line.split()
+    vectors[t[0]] = [float(x) for x in t[1:]]
+print(u'Twitter vectors...', len(vectors))
 
 weights = np.zeros((len(word_to_index), EMB_DIM))
 oov = 0

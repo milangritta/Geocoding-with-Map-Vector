@@ -20,7 +20,7 @@ if True:  # add CDATA xml construct?
             url = location.find('page').text
             chunk = text[int(start) - 1: int(end) - 1]
             if chunk != name:
-                raise Exception(chunk + "," + name)
+                raise Exception(chunk + ", " + name)
             if location.find('altName') is not None:
                 name = location.find('altName').text
             lat = location.find('lat').text
@@ -31,7 +31,7 @@ if True:  # add CDATA xml construct?
                 gap = great_circle((float(lat), float(lon)), (coord[0], coord[1])).km
                 if gap < dist:
                     dist = gap
-            if dist > 200:
+            if dist > 500:
                 print "AAARGRHG!!!!!", name, url, dist, lat, lon
 
                 # COORDINATE LIMITS (180 x 360)!!!
