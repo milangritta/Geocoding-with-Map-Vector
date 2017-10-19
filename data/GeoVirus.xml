@@ -13938,15 +13938,6 @@
         <source>https://en.wikinews.org/wiki/WHO_director:_Pandemic_alert_level_will_not_be_raised</source>
         <text>The H1N1 swine flu has now spread to many parts of the globe. The World Health Organisation reports that there are 8,829 confirmed cases in forty countries, most of them in Mexico and the United States. 76 people have been confirmed dead from the influenza. Many countries, among them China, Japan, and the United Kingdom, have warned the WHO to be cautious about declaring a global pandemic. They say that such an announcement, if delivered prematurely, could cause mass panic and confusion. WHO director Margaret Chan said that the organisation had listened to the countries' concerns, and will not raise the pandemic alert level from five to six, on a scale of one to six. A transition to the sixth level means that the disease is circulating actively on at least two continents. "On 29 April, I raised the level of pandemic influenza alert from phase 4 to phase 5. We remain in phase 5 today. This virus may have given us a grace period, but we do not know how long this grace period will last. No one can say whether this is just the calm before the storm," Chan said at the WHO's annual meeting. However, she added that the disease could possibly pose a very serious threat to the world's population. "I strongly urge the international community to use this grace period wisely. I strongly urge you to look closely at anything and everything we can do, collectively, to protect developing countries from, once again, bearing the brunt of a global contagion." "A new influenza virus with great pandemic potential, the new influenza A (H1N1) strain, has emerged," Chan said. Chan said the WHO hadn't yet told antiviral manufacturers to start producing a specific vaccine for this specific strain of the virus. She urged countries to be careful and not squander their medical supplies, saying that "manufacturing capacity for antiviral drugs and influenza vaccines is finite and insufficient for a world with 6.8 billion inhabitants. "It is absolutely essential that countries do not squander these precious resources through poorly targeted measures," Chan said. Estimates by the WHO suggest that as many as two billion doses of vaccine could be produced per year if needed, although the first ones would not be available for four months to half a year. UK Secretary of Health Alan Johnson said the organisation needs to have more flexibility in its pandemic alert levels to take into consideration how severe the virus is. "We need more time – we need to give you more time. My proposal is that you should have more flexibility. A pandemic describes the geographic spread rather than its severity and it's very important that that is reflected in your ability to move to phase six," he said.</text>
         <locations>
-            <!--<location>-->
-                <!--<name></name>-->
-                <!--<start></start>-->
-                <!--<end></end>-->
-                <!--<lat></lat>-->
-                <!--<lon></lon>-->
-                <!--<page></page>-->
-                <!--<continent/>-->
-            <!--</location>-->
             <location>
                 <name>Mexico</name>
                 <start>174</start>
@@ -14026,6 +14017,14 @@
                 <page>https://en.wikipedia.org/wiki/United_States</page>
             </location>
             <location>
+                <name>United States</name>
+                <start>722</start>
+                <end>735</end>
+                <lat>40</lat>
+                <lon>-100</lon>
+                <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
                 <name>Mississauga</name>
                 <start>1835</start>
                 <end>1846</end>
@@ -14061,8 +14060,24 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Study_suggests_%27sleeping_sickness%27_parasite_mutated_to_evade_immune_system_defences</source>
-        <text>Research teams from the Universities of Georgia and Glasgow discovered the mechanism the Trypanosome parasite evolved for "sleeping sickness" disease to circumvent the human immune system. Their study follows a recent African outbreak of the disease this parasite causes. The discovery is expected to help develop a cure preventing future deaths. The 1998–2001 sleeping sickness epidemics in South Sudan, Angola, Democratic Republic of Congo, and Uganda caused tens of thousands of deaths. The parasites are spread by tsetse flies. It is considered one of the worst epidemics in the last five decades. As WHO reported, subsequent recent introduction of population screening in rural areas and distribution of more effective drugs had potentially reduced the number of death incidents. However, the main effect of these measures being a decrease in spreading of the parasite and not in decrease of the death rate, the researchers decided to tackle the puzzle. The scientists studied the molecules the human immune system activates in response to the attack. They were looking for the way the parasites inhibit it and lead to the death of the victim. Of the several known parasite species, the two that can infect humans were chosen to study, called Trypanosoma brucei gambiense and Trypanosoma brucei rhodensiense. Several others also exist, but they affect only animals. Researchers knew that the Trypanosoma attacks typically are repelled by an HDL, more specifically trypanosome lytic factor-1 (TLF-1). It is generated in the humans' immune system and is toxic to the parasites but not to humans. It was known that one of the parasites, T. b. rhodensiense, has evolved an inhibitor of the toxic chemical, called Serum Resistance Associated (SRA) protein. However the other one, T. b. gambiense, was responsible for over 95% of human deaths, and it had been previously unknown why. The study showed that a gene mutation has lead to a change in the parasite's surface protein receptor. It doesn't bind to TLF-1 as well as for other species, leading to a substantial decrease in TLF-1 uptake by the parasite. The receptor is more strict, causing a lower nutrient intake as well, but it suffices, and the parasite defends against the human immune system. As professor and head of the department of biochemistry and molecular biology at UGA (and one of the leaders of the research) Stephen Hajduk explained, "Humans have evolved TLF-1 as a highly specific toxin against African trypanosomes by tricking the parasite into taking up this HDL because it resembles a nutrient the parasite needs for survival. But T. b. gambiense has evolved a counter measure to these human 'Trojan horses' simply by barring the door and not allowing TLF-1 to enter the cell, effectively blocking human innate immunity and leading to infection and ultimately disease." Based on the results of the research, humans could possibly develop a defense mechanism to keep the parasites from evading the human defense system. Stephen Hajduk commented, "We believe this research represents a paradigm shift and causes us to think more broadly about how pathogens avoid host defense mechanisms. It turns out that African trypanosomes have evolved a diversity of ways to avoid human innate and acquired immune systems."</text>
+        <text>Research teams from the universities of Georgia and Glasgow discovered the mechanism the Trypanosome parasite evolved for "sleeping sickness" disease to circumvent the human immune system. Their study follows a recent African outbreak of the disease this parasite causes. The discovery is expected to help develop a cure preventing future deaths. The 1998–2001 sleeping sickness epidemics in South Sudan, Angola, Democratic Republic of Congo, and Uganda caused tens of thousands of deaths. The parasites are spread by tsetse flies. It is considered one of the worst epidemics in the last five decades. As WHO reported, subsequent recent introduction of population screening in rural areas and distribution of more effective drugs had potentially reduced the number of death incidents. However, the main effect of these measures being a decrease in spreading of the parasite and not in decrease of the death rate, the researchers decided to tackle the puzzle. The scientists studied the molecules the human immune system activates in response to the attack. They were looking for the way the parasites inhibit it and lead to the death of the victim. Of the several known parasite species, the two that can infect humans were chosen to study, called Trypanosoma brucei gambiense and Trypanosoma brucei rhodensiense. Several others also exist, but they affect only animals. Researchers knew that the Trypanosoma attacks typically are repelled by an HDL, more specifically trypanosome lytic factor-1 (TLF-1). It is generated in the humans' immune system and is toxic to the parasites but not to humans. It was known that one of the parasites, T. b. rhodensiense, has evolved an inhibitor of the toxic chemical, called Serum Resistance Associated (SRA) protein. However the other one, T. b. gambiense, was responsible for over 95% of human deaths, and it had been previously unknown why. The study showed that a gene mutation has lead to a change in the parasite's surface protein receptor. It doesn't bind to TLF-1 as well as for other species, leading to a substantial decrease in TLF-1 uptake by the parasite. The receptor is more strict, causing a lower nutrient intake as well, but it suffices, and the parasite defends against the human immune system. As professor and head of the department of biochemistry and molecular biology at UGA (and one of the leaders of the research) Stephen Hajduk explained, "Humans have evolved TLF-1 as a highly specific toxin against African trypanosomes by tricking the parasite into taking up this HDL because it resembles a nutrient the parasite needs for survival. But T. b. gambiense has evolved a counter measure to these human 'Trojan horses' simply by barring the door and not allowing TLF-1 to enter the cell, effectively blocking human innate immunity and leading to infection and ultimately disease." Based on the results of the research, humans could possibly develop a defense mechanism to keep the parasites from evading the human defense system. Stephen Hajduk commented, "We believe this research represents a paradigm shift and causes us to think more broadly about how pathogens avoid host defense mechanisms. It turns out that African trypanosomes have evolved a diversity of ways to avoid human innate and acquired immune systems."</text>
         <locations>
+            <location>
+                <name>Georgia</name>
+                <start>41</start>
+                <end>48</end>
+                <lat>33</lat>
+                <lon>-83.5</lon>
+                <page>https://en.wikipedia.org/wiki/Georgia_(U.S._state)</page>
+            </location>
+            <location>
+                <name>Glasgow</name>
+                <start>53</start>
+                <end>60</end>
+                <lat>55.85</lat>
+                <lon>-4.25</lon>
+                <page>https://en.wikipedia.org/wiki/Glasgow</page>
+            </location>
             <location>
                 <name>South Sudan</name>
                 <start>393</start>
@@ -14099,7 +14114,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/750,000_could_be_affected_by_flooding_in_Kenya,_UN_says</source>
-        <text>The United Nations has warned that up to 750,000 people could be hit by heavy flooding and mudslides in Kenya due to heavy rains. The United Nations High Commissioner for Refugees (UNHCR) appealed for US$2.8 million to help more than 300,000 refugees in two camps in Kenya threatened by flooding. The agency explained that the mainly Somali refugees in Kenya's overcrowded Dadaab camps urgently need to be protected from the worst effects of the torrential rains. Most of Kenya is suffering from the effects of the prolonged drought; however, along the Indian Ocean Coast and the northeastern region of the country, people are being pounded by torrential rainfall. UN refugee spokesman Andrej Mahecic said many of those affected by the flooding are Somali refugees living in Kenya's overcrowded Dadaab camps. "We fear that the looming El Nino phenomenon a change in the atmosphere and ocean of the tropical Pacific region that produces floods, droughts and other weather disturbances in many regions of the world-may now threaten the 338,000 mostly Somali refugees in the two camps, which in any case usually are flooded for three months every year," he said. Although the yearly floods are predictable, Mahecic commented that the UNHCR is limited in what it can do ahead of time to protect the refugees from their destructive impact. Mahecic says the UNHCR began digging trenches and placing sandbags around hospitals, bore holes and other strategic locations in both camps, when heavy rains started three weeks ago. Without these and other measures, he says many sections of the camps would have been inundated. "We are also preparing to locate to higher ground within the camps refugees who might be worst affected by the floods, particularly the chronically ill, disabled people, the elderly and children and teenagers on their own," he stated. When asked why camps were built on areas prone to flooding, he replied that the government allocated the areas. "There is very little choice on where you can put a camp," he added. Much of the money from the appeal will be used to pre-position essential items such as fuel, blankets, plastic sheets, and to respond to possible outbreaks of disease.</text>
+        <text>The United Nations has warned that up to 750,000 people could be hit by heavy flooding and mudslides in Kenya due to heavy rains. The United Nations High Commissioner for Refugees (UNHCR) appealed for US$2.8 million to help more than 300,000 refugees in two camps in Kenya threatened by flooding. The agency explained that the mainly Somali refugees in Kenya's overcrowded Dadaab camps urgently need to be protected from the worst effects of the torrential rains. Most of Kenya is suffering from the effects of the prolonged drought; however, along the Indian Ocean coast and the northeastern region of the country, people are being pounded by torrential rainfall. UN refugee spokesman Andrej Mahecic said many of those affected by the flooding are Somali refugees living in Kenya's overcrowded Dadaab camps. "We fear that the looming El Nino phenomenon a change in the atmosphere and ocean of the tropical Pacific region that produces floods, droughts and other weather disturbances in many regions of the world-may now threaten the 338,000 mostly Somali refugees in the two camps, which in any case usually are flooded for three months every year," he said. Although the yearly floods are predictable, Mahecic commented that the UNHCR is limited in what it can do ahead of time to protect the refugees from their destructive impact. Mahecic says the UNHCR began digging trenches and placing sandbags around hospitals, bore holes and other strategic locations in both camps, when heavy rains started three weeks ago. Without these and other measures, he says many sections of the camps would have been inundated. "We are also preparing to locate to higher ground within the camps refugees who might be worst affected by the floods, particularly the chronically ill, disabled people, the elderly and children and teenagers on their own," he stated. When asked why camps were built on areas prone to flooding, he replied that the government allocated the areas. "There is very little choice on where you can put a camp," he added. Much of the money from the appeal will be used to pre-position essential items such as fuel, blankets, plastic sheets, and to respond to possible outbreaks of disease.</text>
         <locations>
             <location>
                 <name>Kenya</name>
@@ -14132,6 +14147,47 @@
                 <lat>0.05</lat>
                 <lon>40.31</lon>
                 <page>https://en.wikipedia.org/wiki/Dadaab</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>473</start>
+                <end>478</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Indian Ocean</name>
+                <start>554</start>
+                <end>566</end>
+                <lat>-20</lat>
+                <lon>80</lon>
+                <page>https://en.wikipedia.org/wiki/Indian_Ocean</page>
+            </location>
+            <location>
+                <name>Kenya</name>
+                <start>776</start>
+                <end>781</end>
+                <lat>1</lat>
+                <lon>38</lon>
+                <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Dadaab</name>
+                <start>796</start>
+                <end>802</end>
+                <lat>0.05</lat>
+                <lon>40.31</lon>
+                <page>https://en.wikipedia.org/wiki/Dadaab</page>
+            </location>
+            <location>
+                <name>Pacific</name>
+                <start>908</start>
+                <end>915</end>
+                <lat>0</lat>
+                <lon>-160</lon>
+                <page>https://en.wikipedia.org/wiki/Pacific_Ocean</page>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -14173,6 +14229,14 @@
             </location>
             <location>
                 <name>Santa Ana</name>
+                <start>244</start>
+                <end>253</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
                 <start>864</start>
                 <end>873</end>
                 <lat>33.74</lat>
@@ -14188,6 +14252,14 @@
                 <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
             </location>
             <location>
+                <name>Orange County</name>
+                <start>1640</start>
+                <end>1653</end>
+                <lat>33.67</lat>
+                <lon>-117.78</lon>
+                <page>https://en.wikipedia.org/wiki/Orange_County,_California</page>
+            </location>
+            <location>
                 <name>Santa Ana</name>
                 <start>1696</start>
                 <end>1705</end>
@@ -14197,8 +14269,24 @@
             </location>
             <location>
                 <name>Santa Ana</name>
+                <start>4344</start>
+                <end>4353</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
                 <start>4722</start>
                 <end>4731</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>4928</start>
+                <end>4937</end>
                 <lat>33.74</lat>
                 <lon>-117.88</lon>
                 <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
@@ -14215,6 +14303,22 @@
                 <name>Santa Ana</name>
                 <start>5581</start>
                 <end>5590</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>5788</start>
+                <end>5797</end>
+                <lat>33.74</lat>
+                <lon>-117.88</lon>
+                <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
+            </location>
+            <location>
+                <name>Santa Ana</name>
+                <start>6149</start>
+                <end>6158</end>
                 <lat>33.74</lat>
                 <lon>-117.88</lon>
                 <page>https://en.wikipedia.org/wiki/Santa_Ana,_California</page>
@@ -14257,6 +14361,24 @@
         <source>https://en.wikinews.org/wiki/Papua_New_Guinea_at_risk_of_AIDS_epidemic</source>
         <text>Dr. Peter Piot, head of U.N. AIDS agency, told The Associated Press on the sidelines of a regional AIDS conference Sunday about the potential for an explosion in HIV and AIDS cases in the country of Papua New Guinea. He said the country is "the one that I would see that could have an African-type of epidemic" and that the danger of HIV and AIDS there "is really getting out of hand." He also said other Asia-Pacific nations like Malaysia, Vietnam and Myanmar are also worrisome as the number of infections there continue to rise.</text>
         <locations>
+            <location>
+                <name>Asia</name>
+                <start>406</start>
+                <end>410</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Pacific</name>
+                <start>411</start>
+                <end>418</end>
+                <lat>0</lat>
+                <lon>-160</lon>
+                <page>https://en.wikipedia.org/wiki/Pacific_Ocean</page>
+                <continent/>
+            </location>
             <location>
                 <name>Papua New Guinea</name>
                 <start>200</start>
@@ -14304,6 +14426,15 @@
                 <page>https://en.wikipedia.org/wiki/R%C3%A9union</page>
             </location>
             <location>
+                <name>Indian Ocean</name>
+                <start>576</start>
+                <end>588</end>
+                <lat>-20</lat>
+                <lon>80</lon>
+                <page>https://en.wikipedia.org/wiki/Indian_Ocean</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Seychelles</name>
                 <start>592</start>
                 <end>602</end>
@@ -14328,12 +14459,29 @@
                 <lon>45.13</lon>
                 <page>https://en.wikipedia.org/wiki/Mayotte</page>
             </location>
+            <location>
+                <name>Rhône-Alpes</name>
+                <start>914</start>
+                <end>925</end>
+                <lat>45.5</lat>
+                <lon>5.33</lon>
+                <page>https://en.wikipedia.org/wiki/Rh%C3%B4ne-Alpes</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Study_estimates_first_human_HIV_infection_100_years_ago</source>
         <text>An eight year study, published in scientific journal Nature, claims the HIV-1 virus that leads to AIDS could have infected humans around 1908 in Africa. Scientists found traces of the HIV-1 genome collected in 1960 from a woman who lived in Léopoldville, presently called Kinshasa, the capital of the Democratic Republic of the Congo. An earlier study had also isolated the virus from a 1959 blood sample of a male from Léopoldville. Study of both the samples and estimate of the rate at which the virus mutates over time has led the researchers to conclude that the human strain could have been around for 100 years. The study, co-sponsored by the National Institute of Allergy and Infectious Diseases (NIAID), part of the U.S. National Institutes of Health, was carried out by Michael Worobey of the University of Arizona in Tucson, Arizona and colleagues from the United States, France, Belgium, Australia, Democratic Republic of the Congo and Denmark. Earlier estimates of this nature had indicated the first infection in humans occurred between 1915 and 1941. The present study pushes the date of the infection back to sometime between 1884 and 1924, with a more focused estimate at 1908. Earlier studies have suggested that HIV-1 virus was spread from chimpanzees to humans in Cameroon. "Now, for the first time, we have been able to compare two relatively ancient HIV strains. That helped us to calibrate how quickly the virus evolved and make some really robust inferences about when it crossed into humans, how the epidemic grew from that time, and what factors allowed the virus to enter and become a successful human pathogen," Dr. Worobey said. "HIV is one of these pathogens that you could almost think of as living on the edge of extinction," Worobey continued. He believes that had HIV not been carried to a city, it may not have survived the jump to humans. "It means there are things we could do to actually make it so that it doesn't have a chance of spreading," Worobey said. The first human infection could have happened around the time when the colonial cities were established in Africa. Rapid urbanization in colonial Africa around the beginning of the twentieth century may be responsible for the spread of the AIDS pandemic. It is estimated that several thousand people were infected by the 1960s. Today, HIV infection is reported in 33 million people and has killed 25 million. Researchers opine that an understanding of the origin and pathways for human infection of the virus could help in developing a vaccine to fight it.</text>
         <locations>
+            <location>
+                <name>Africa</name>
+                <start>146</start>
+                <end>152</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
             <location>
                 <name>Léopoldville</name>
                 <start>242</start>
@@ -14446,6 +14594,24 @@
                 <lon>12</lon>
                 <page>https://en.wikipedia.org/wiki/Cameroon</page>
             </location>
+            <location>
+                <name>Africa</name>
+                <start>2103</start>
+                <end>2109</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>2142</start>
+                <end>2148</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
         </locations>
     </article>
     <article>
@@ -14472,6 +14638,14 @@
                 <name>California</name>
                 <start>678</start>
                 <end>688</end>
+                <lat>37</lat>
+                <lon>-120</lon>
+                <page>https://en.wikipedia.org/wiki/California</page>
+            </location>
+            <location>
+                <name>California</name>
+                <start>766</start>
+                <end>776</end>
                 <lat>37</lat>
                 <lon>-120</lon>
                 <page>https://en.wikipedia.org/wiki/California</page>
@@ -14534,7 +14708,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/World_AIDS_Day_events_held_around_the_globe</source>
-        <text>The 20th annual World AIDS Day was December 1, 2007. The theme selected by the World AIDS Campaign is "Stop AIDS: Keep the Promise" as it will be through 2010. The day was marked by thousands of events around the world. "It is now time for bold leadership at all levels in order to turn the tide of HIV," said Felicita Hikuam, Global Programmes Manager, World AIDS Campaign. An estimated 33.2 million people around the world—one in every 200—are living with HIV, and approximately 6,800 people are infected with HIV and 5,700 people die of AIDS-related illnesses every day. "The trend is encouraging but still for every person receiving treatment four others are newly infected," said Nelson Mandela, speaking at a concert in Johannesburg, South Africa. "If we are to stop the Aids epidemic from expanding, we need to break the cycle of new HIV infections. All of us working together with government, communities and civil society can make the difference that is needed," he continued. As many as 50,000 people attended the concert in Johannesburg, South Africa, which was telecast around the world. It was organized by Nelson Mandela's 46664 AIDS campaign and featured performances by artists such as Peter Gabriel, Ludacris, Razorlight, the Goo Goo Dolls and Annie Lennox. At a fundraiser in the town of Midrand, in the province Gauteng, near Johannesburg on Friday, singer Annie Lennox had strong words for the South African government's AIDS policies. "AIDS, as Madiba [Mandela] has said, is a human rights issue and should be treated as such in order to avoid this genocide that is affecting millions and millions of people around the world," said Lennox in a speech. Lennox has previously been critical of the South African government's position on suggesting some AIDS medications were toxic. "It is unacceptable that treatment has not been made available to those who need it most," said Lennox. The rock band Queen, which lost its lead singer Freddie Mercury to AIDS, released a new song entitled, Say It's Not True, to coincide with World Aids Day. It has been made available as a free download from the band's website. "By making the song available for free, we hope to help Nelson Mandela with his campaign to get across the message that no-one is safe from infection," said Queen drummer Roger Taylor. "We have to be aware, we have to protect ourselves and those we love." In China, people distributed AIDS prevention brochures in the streets and promoted safe sex in cities like Beijing and Shanghai. In Changsha, official warning signs were put on hotel bedstands. The government announced on Friday an allocation of CNY860 million for AIDS prevention and control. According to official reports, there are estimated to be 700,000 people living with HIV/AIDS in China. Also in China, the Miss World 2007 was in Sanya on World AIDS Day. The pageant presented a special tribute to the fight against AIDS, with a televised speech from former South African President Nelson Mandela, along with traditional dancers from South Africa who joined the contestants in a special song. Friday, United States President George W. Bush urged the United States Congress to double the 2003 Emergency Plan for AIDS Relief to US$30 billion over the next five years. "Above all, we rededicate ourselves to a great purpose: We will turn the tide against HIV/AIDS—once and for all," he said. "I'm pleased to announce that Laura and I will travel to sub-Sahara Africa early next year," Bush said. Sub-Saharan Africa suffered nearly three-quarters of AIDS-related deaths during 2006 and is home to two-thirds of those living with HIV/AIDS.</text>
+        <text>The 20th annual World AIDS Day was December 1, 2007. The theme selected by the World AIDS Campaign is "Stop AIDS: Keep the Promise" as it will be through 2010. The day was marked by thousands of events around the world. "It is now time for bold leadership at all levels in order to turn the tide of HIV," said Felicita Hikuam, Global Programmes Manager, World AIDS Campaign. An estimated 33.2 million people around the world—one in every 200—are living with HIV, and approximately 6,800 people are infected with HIV and 5,700 people die of AIDS-related illnesses every day. "The trend is encouraging but still for every person receiving treatment four others are newly infected," said Nelson Mandela, speaking at a concert in Johannesburg, South Africa. "If we are to stop the Aids epidemic from expanding, we need to break the cycle of new HIV infections. All of us working together with government, communities and civil society can make the difference that is needed," he continued. As many as 50,000 people attended the concert in Johannesburg, South Africa, which was telecast around the world. It was organized by Nelson Mandela's 46664 AIDS campaign and featured performances by artists such as Peter Gabriel, Ludacris, Razorlight, the Goo Goo Dolls and Annie Lennox. At a fundraiser in the town of Midrand, in the province Gauteng, near Johannesburg on Friday, singer Annie Lennox had strong words for the South African government's AIDS policies. "AIDS, as Madiba [Mandela] has said, is a human rights issue and should be treated as such in order to avoid this genocide that is affecting millions and millions of people around the world," said Lennox in a speech. Lennox has previously been critical of the South African government's position on suggesting some AIDS medications were toxic. "It is unacceptable that treatment has not been made available to those who need it most," said Lennox. The rock band Queen, which lost its lead singer Freddie Mercury to AIDS, released a new song entitled, Say It's Not True, to coincide with World Aids Day. It has been made available as a free download from the band's website. "By making the song available for free, we hope to help Nelson Mandela with his campaign to get across the message that no-one is safe from infection," said Queen drummer Roger Taylor. "We have to be aware, we have to protect ourselves and those we love." In China, people distributed AIDS prevention brochures in the streets and promoted safe sex in cities like Beijing and Shanghai. In Changsha, official warning signs were put on hotel bedstands. The government announced on Friday an allocation of CNY860 million for AIDS prevention and control. According to official reports, there are estimated to be 700,000 people living with HIV/AIDS in China. Also in China, the Miss World 2007 was in Sanya on World AIDS Day. The pageant presented a special tribute to the fight against AIDS, with a televised speech from former South African President Nelson Mandela, along with traditional dancers from South Africa who joined the contestants in a special song. Friday, United States President George W. Bush urged the United States Congress to double the 2003 Emergency Plan for AIDS Relief to US$30 billion over the next five years. "Above all, we rededicate ourselves to a great purpose: We will turn the tide against HIV/AIDS—once and for all," he said. "I'm pleased to announce that Laura and I will travel to sub-Saharan Africa early next year," Bush said. Sub-Saharan Africa suffered nearly three-quarters of AIDS-related deaths during 2006 and is home to two-thirds of those living with HIV/AIDS.</text>
         <locations>
             <location>
                 <name>Johannesburg</name>
@@ -14663,6 +14837,24 @@
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>3454</start>
+                <end>3460</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>3502</start>
+                <end>3508</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -14959,6 +15151,15 @@
                 <page>https://en.wikipedia.org/wiki/Moscow</page>
             </location>
             <location>
+                <name>Americas</name>
+                <start>5485</start>
+                <end>5493</end>
+                <lat>19</lat>
+                <lon>-96</lon>
+                <page>https://en.wikipedia.org/wiki/Americas</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Japan</name>
                 <start>5506</start>
                 <end>5511</end>
@@ -15005,6 +15206,14 @@
                 <lat>39</lat>
                 <lon>35</lon>
                 <page>https://en.wikipedia.org/wiki/Turkey</page>
+            </location>
+            <location>
+                <name>İstanbul</name>
+                <start>5976</start>
+                <end>5984</end>
+                <lat>41.01</lat>
+                <lon>28.95</lon>
+                <page>https://en.wikipedia.org/wiki/Istanbul</page>
             </location>
             <location>
                 <name>New York</name>
@@ -15165,6 +15374,15 @@
         <text>South America, the current hot-spot for describing new frog species, may be in danger of seeing population declines due to an epidemic. A recent scientific paper has found the mysterious fungal disease, chytridiomycosis, has begun to establish into eastward Panama, heading across the Panama Canal boundary towards Colombian amphibian populations. The publication predicts that at the current rate, the fungus will spread into Tortí (Panamá Province) before 2012. The chytrid fungus is believed to be the leading cause of population mortality of amphibians. Species like the common rocket frog (Colostethus panamensis) are succumbing to the effects of the pathogen at an alarming rate. For the last 30 years, the infection has decimated amphibian communities, mostly because of increased temperatures resulting from climate change. The culprit skin fungus, Batrachochytrium dendrobatidis, is still not fully understood. It can be transmitted by touch, including contact with other amphibians and even rocks and water. Not only has it decimated frogs, salamanders and caecilians in the Americas, but has affected tropical Australia and Asia as well. Scientists think that the fungus may have come from an African clawed frog (Xenopus sp.), because of its worldwide popularity in the pet trade. Captive breeding programs, like Amphibian Ark are preparing for the worst. There are still many species in the jungles of Central and South America that have not been properly documented, and could be fated to be studied after extinction.</text>
         <locations>
             <location>
+                <name>South America</name>
+                <start>1</start>
+                <end>14</end>
+                <lat>-14.60</lat>
+                <lon>-57.65</lon>
+                <page>https://en.wikipedia.org/wiki/South_America</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Panama</name>
                 <start>259</start>
                 <end>265</end>
@@ -15197,12 +15415,49 @@
                 <page>https://en.wikipedia.org/wiki/Panama</page>
             </location>
             <location>
+                <name>Americas</name>
+                <start>1086</start>
+                <end>1094</end>
+                <lat>19</lat>
+                <lon>-96</lon>
+                <page>https://en.wikipedia.org/wiki/Americas</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Australia</name>
                 <start>1122</start>
                 <end>1131</end>
                 <lat>-25</lat>
                 <lon>133</lon>
                 <page>https://en.wikipedia.org/wiki/Australia</page>
+            </location>
+            <location>
+                <name>Asia</name>
+                <start>1136</start>
+                <end>1140</end>
+                <lat>29.84</lat>
+                <lon>89.29</lon>
+                <page>https://en.wikipedia.org/wiki/Asia</page>
+                <continent/>
+            </location>
+            <location>
+                <name>Central</name>
+                <altName>Central America</altName>
+                <start>1416</start>
+                <end>1423</end>
+                <lat>25.32</lat>
+                <lon>-99.66</lon>
+                <page>https://en.wikipedia.org/wiki/Central_America</page>
+                <continent/>
+            </location>
+            <location>
+                <name>South America</name>
+                <start>1428</start>
+                <end>1441</end>
+                <lat>-14.60</lat>
+                <lon>-57.65</lon>
+                <page>https://en.wikipedia.org/wiki/South_America</page>
+                <continent/>
             </location>
         </locations>
     </article>
@@ -15276,6 +15531,14 @@
                 <name>Glasgow</name>
                 <start>274</start>
                 <end>281</end>
+                <lat>55.85</lat>
+                <lon>-4.25</lon>
+                <page>https://en.wikipedia.org/wiki/Glasgow</page>
+            </location>
+            <location>
+                <name>Glasgow</name>
+                <start>390</start>
+                <end>397</end>
                 <lat>55.85</lat>
                 <lon>-4.25</lon>
                 <page>https://en.wikipedia.org/wiki/Glasgow</page>
@@ -15615,6 +15878,15 @@
                 <page>https://en.wikipedia.org/wiki/New_Zealand</page>
             </location>
             <location>
+                <name>North America</name>
+                <start>5533</start>
+                <end>5546</end>
+                <lat>54.77</lat>
+                <lon>-105.64</lon>
+                <page>https://en.wikipedia.org/wiki/North_America</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Auckland</name>
                 <start>5670</start>
                 <end>5678</end>
@@ -15774,14 +16046,6 @@
                 <lat>30</lat>
                 <lon>70</lon>
                 <page>https://en.wikipedia.org/wiki/Pakistan</page>
-            </location>
-            <location>
-                <name>Indus River</name>
-                <start>276</start>
-                <end>287</end>
-                <lat>23.99</lat>
-                <lon>67.43</lon>
-                <page>https://en.wikipedia.org/wiki/Indus_River</page>
             </location>
             <location>
                 <name>Khyber Pakhtunkhwa</name>
@@ -16013,6 +16277,15 @@
             <location>
                 <name>DRC</name>
                 <altName>Democratic Republic of the Congo</altName>
+                <start>931</start>
+                <end>934</end>
+                <lat>-2.88</lat>
+                <lon>23.65</lon>
+                <page>https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo</page>
+            </location>
+            <location>
+                <name>DRC</name>
+                <altName>Democratic Republic of the Congo</altName>
                 <start>1906</start>
                 <end>1909</end>
                 <lat>-2.88</lat>
@@ -16124,6 +16397,15 @@
                 <lat>1</lat>
                 <lon>38</lon>
                 <page>https://en.wikipedia.org/wiki/Kenya</page>
+            </location>
+            <location>
+                <name>Europe</name>
+                <start>530</start>
+                <end>536</end>
+                <lat>51</lat>
+                <lon>17.5</lon>
+                <page>https://en.wikipedia.org/wiki/Europe</page>
+                <continent/>
             </location>
             <location>
                 <name>Kenya</name>
@@ -16384,6 +16666,15 @@
                 <page>https://en.wikipedia.org/wiki/Indonesia</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>209</start>
+                <end>215</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>China</name>
                 <start>493</start>
                 <end>498</end>
@@ -16400,6 +16691,15 @@
                 <page>https://en.wikipedia.org/wiki/Indonesia</page>
             </location>
             <location>
+                <name>Africa</name>
+                <start>517</start>
+                <end>523</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
+            </location>
+            <location>
                 <name>Rome</name>
                 <start>720</start>
                 <end>724</end>
@@ -16414,6 +16714,15 @@
                 <lat>43</lat>
                 <lon>12</lon>
                 <page>https://en.wikipedia.org/wiki/Italy</page>
+            </location>
+            <location>
+                <name>Africa</name>
+                <start>1118</start>
+                <end>1124</end>
+                <lat>7.18</lat>
+                <lon>21.09</lon>
+                <page>https://en.wikipedia.org/wiki/Africa</page>
+                <continent/>
             </location>
             <location>
                 <name>Indonesia</name>
@@ -16809,6 +17118,14 @@
             </location>
             <location>
                 <name>Uganda</name>
+                <start>542</start>
+                <end>548</end>
+                <lat>1</lat>
+                <lon>32</lon>
+                <page>https://en.wikipedia.org/wiki/Uganda</page>
+            </location>
+            <location>
+                <name>Uganda</name>
                 <start>591</start>
                 <end>597</end>
                 <lat>1</lat>
@@ -16845,6 +17162,14 @@
                 <lat>40</lat>
                 <lon>-100</lon>
                 <page>https://en.wikipedia.org/wiki/United_States</page>
+            </location>
+            <location>
+                <name>Pittsburgh</name>
+                <start>1650</start>
+                <end>1660</end>
+                <lat>40.44</lat>
+                <lon>-79.99</lon>
+                <page>https://en.wikipedia.org/wiki/Pittsburgh</page>
             </location>
             <location>
                 <name>Los Angeles</name>
@@ -17104,7 +17429,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Tourists_evacuated_following_shootout_between_Mexican_army_and_drug_hitmen</source>
-        <text>A two-hour gun battle which began at 7 p.m. local time between the Mexican Army and drug hitmen ended in 18 fatalities at the Mexican holiday resort of Acapulco on Saturday. Two soldiers and 16 gunmen were killed in the battle. The army was dispatched to follow up on an anonymous tip and were met by drug hitmen lobbing hand grenades and firing AK-47 type rifles. "There were grenade and rocket explosions, and weapons like AK-47s. The fight lasted almost two hours," said an observer. Reinforcements who attempted to join the gunmen in the house were killed by army personnel. Gunmen attempting to flee from the gun battle were prevented doing so by a military Hummer. Following the battle, the army seized a huge arsenal of 36 large caliber rifles, 13 small-caliber shotguns, two grenade launchers, 13 hand grenades, 3,525 rounds of ammunition, 180 magazine charges and eight vehicles. Five people were placed under arrest. Between three and nine soldiers were injured along with three bystanders. 22 people were evacuated from the area following the battle including tourists, a family, the elderly, and a pregnant woman. Four Guerrero state police were found in the garage of the property who claim they had been kidnapped and held hostage. A colonel reported anonymously that their account was not confirmed. Local media reported that the gunmen were a part of the Beltran Leyva drug-trafficking gang who belong to the Sinaloa Cartel. Drug related violence has damaged tourism to the beach front resort city as well as economic investment in the area. The recent H1N1 flu virus outbreak in Mexico which caused 89 deaths, the wearing of masks, school closures and an airport quarantine cost billions of dollars in lost tourism dollars at the end of April. Tourism destinations are offering discounted hotel rates to entice visiting tourists. Hotel Los Flamingos once owned by John Wayne and Tarzan's (Johnny Weissmuller) former home were neighboring tourism sites in the neighborhood of Saturday's gun battle. Acapulco, population over 600,000 is a city of the state of Guerrero on the Pacific coast of Mexico, 300 miles (483 km) southwest from Mexico City. Guerrero provides a main route for drug smugglers between South America and the United States. Mexico's president, Felipe Calderon, along with American President, Barack Obama, have initiated a crack down on drug gangs. Rival drug gang violence in Mexico has resulted in 2,300 fatalities in the first five months of this year.</text>
+        <text>A two-hour gun battle which began at 7 p.m. local time between the Mexican Army and drug hitmen ended in 18 fatalities at the Mexican holiday resort of Acapulco on Saturday. Two soldiers and 16 gunmen were killed in the battle. The army was dispatched to follow up on an anonymous tip and were met by drug hitmen lobbing hand grenades and firing AK-47 type rifles. "There were grenade and rocket explosions, and weapons like AK-47s. The fight lasted almost two hours," said an observer. Reinforcements who attempted to join the gunmen in the house were killed by army personnel. Gunmen attempting to flee from the gun battle were prevented doing so by a military Hummer. Following the battle, the army seized a huge arsenal of 36 large caliber rifles, 13 small-caliber shotguns, two grenade launchers, 13 hand grenades, 3,525 rounds of ammunition, 180 magazine charges and eight vehicles. Five people were placed under arrest. Between three and nine soldiers were injured along with three bystanders. 22 people were evacuated from the area following the battle including tourists, a family, the elderly, and a pregnant woman. Four Guerrero state police were found in the garage of the property who claim they had been kidnapped and held hostage. A colonel reported anonymously that their account was not confirmed. Local media reported that the gunmen were a part of the Beltran Leyva drug-trafficking gang who belong to the Sinaloa Cartel. Drug related violence has damaged tourism to the beach front resort city as well as economic investment in the area. The recent H1N1 flu virus outbreak in Mexico which caused 89 deaths, the wearing of masks, school closures and an airport quarantine cost billions of dollars in lost tourism dollars at the end of April. Tourism destinations are offering discounted hotel rates to entice visiting tourists. Hotel Los Flamingos once owned by John Wayne and Tarzan's (Johnny Weissmuller) former home were neighboring tourism sites in the neighborhood of Saturday's gun battle. Acapulco, population over 600,000 is a city of the state of Guerrero on the pacific coast of Mexico, 300 miles (483 km) southwest from Mexico City. Guerrero provides a main route for drug smugglers between South America and the United States. Mexico's president, Felipe Calderon, along with American President, Barack Obama, have initiated a crack down on drug gangs. Rival drug gang violence in Mexico has resulted in 2,300 fatalities in the first five months of this year.</text>
         <locations>
             <location>
                 <name>Acapulco</name>
@@ -17171,6 +17496,15 @@
                 <page>https://en.wikipedia.org/wiki/Guerrero</page>
             </location>
             <location>
+                <name>South America</name>
+                <start>2222</start>
+                <end>2235</end>
+                <lat>-14.60</lat>
+                <lon>-57.65</lon>
+                <page>https://en.wikipedia.org/wiki/South_America</page>
+                <continent/>
+            </location>
+            <location>
                 <name>United States</name>
                 <start>2244</start>
                 <end>2257</end>
@@ -17232,14 +17566,6 @@
                 <lat>29.73</lat>
                 <lon>-90.1</lon>
                 <page>https://en.wikipedia.org/wiki/Jefferson_Parish,_Louisiana</page>
-            </location>
-            <location>
-                <name>Central Business District</name>
-                <start>1699</start>
-                <end>1724</end>
-                <lat>29.94</lat>
-                <lon>-90.07</lon>
-                <page>https://en.wikipedia.org/wiki/New_Orleans_Central_Business_District</page>
             </location>
             <location>
                 <name>Saint Bernard Parish</name>
@@ -17844,12 +18170,28 @@
                 <lon>124.52</lon>
                 <page>https://en.wikipedia.org/wiki/Mabini,_Bohol</page>
             </location>
+            <location>
+                <name>Ubay</name>
+                <start>631</start>
+                <end>635</end>
+                <lat>10.05</lat>
+                <lon>124.47</lon>
+                <page>https://en.wikipedia.org/wiki/Ubay,_Bohol</page>
+            </location>
         </locations>
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Man_attempts_to_foil_breathalyzer_by_eating_feces</source>
         <text>A man accused of driving under the influence of alcohol stuffed his mouth full of feces in a failed attempt to foil the police breathalyzer. The man was arrested Sunday by South Simcoe Police after his pickup truck was pulled over on Ontario Provincial Highway 11 in Stroud, Ontario, Canada. On the way to the police station for testing, the 59-year-old vomited, urinated, and defecated in the police cruiser. Sgt. James Buchanan said that upon arriving at the station, the prisoner grabbed a handful of his own waste "and placed it in his mouth, attempting to trick the breathalyzer machine". Nevertheless, the man registered two readings of more than twice the legal blood alcohol limit of 80 milligrams of alcohol in 100 millilitres of blood in his system. He was charged with impaired driving and driving over the limit and was released on a promise to appear in a Bradford, Ontario court on May 12.</text>
         <locations>
+            <location>
+                <name>Ontario</name>
+                <start>235</start>
+                <end>242</end>
+                <lat>50</lat>
+                <lon>-85</lon>
+                <page>https://en.wikipedia.org/wiki/Ontario</page>
+            </location>
             <location>
                 <name>Stroud</name>
                 <start>268</start>
@@ -17894,7 +18236,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Meteorite_blamed_for_mysterious_illness_in_Peru</source>
-        <text>On Saturday local villagers claimed a meteorite slammed into a field outside of Carancas, near Lake Titicaca in the Puno region of Peru on the border of Bolivia. It emitted a sweet but noxious odor. It has now been blamed for a mass illness affecting roughly 200 villagers with "nausea, vomiting, digestive problems and general sickness," according to a local health department official, Jorge López. "Boiling water started coming out of the crater and particles of rock and cinders were found nearby. Residents are very concerned," said López. Police officers who went to investigate the meteorite are among those who have fallen ill and been taken to Desaguadero Hospital. The impact of the meteorite left a crater 18 feet deep and 30 yards across in the Andean territory that is home to less than 1,000 people. Originally, the villagers thought a plane had crashed. Under consideration is the declaration of a state of emergency. Peruvian Nuclear Energy Institute engineer Renan Ramirez said scientists who went to investigate the crater found no indication of radiation, although, the fumes from the crater were so pungent that one scientist said his throat and nose were irritated despite his use of a mask. Villagers are said to be avoiding the local water out of fear of contamination. Sulfur, arsenic and other elements common in meteorites can react with ground water to produce fumes. Ursula Marvin, a meteor expert at the Smithsonian Astrophysical Observatory in Massachusetts, said a meteorite "wouldn't get much gas out of the earth" and that a more likely explanation for the health problems was the dust cloud caused when the rock hit the Earth. Other explanations abound. Don Yeomans, head of the Near Earth Object Program at NASA's Jet Propulsion Laboratory, said "Statistically, it's far more likely to have come from below than from above," noting that meteorites do not give off smells and it is likely the result of hydrothermal activity, such as a local gas explosion. Dr Caroline Smith, a meteorite expert with the Natural History Museum in London, thought more likely the villagers saw a common fireball and in the process of investigating it, did not find a 'crater' but "a lake of sedimentary deposit, which may be full of smelly, methane rich organic matter." And one science blogger, David Syzdek, theorized that in fact the crater is a mud volcano "that is producing toxic gasses [sic] such as methane, water, and perhaps other hydrocarbons. Many hydrocarbons can cause illness."</text>
+        <text>On Saturday local villagers claimed a meteorite slammed into a field outside of Carancas, near Lake Titicaca in the Puno region of Peru on the border of Bolivia. It emitted a sweet but noxious odor. It has now been blamed for a mass illness affecting roughly 200 villagers with "nausea, vomiting, digestive problems and general sickness," according to a local health department official, Jorge López. "Boiling water started coming out of the crater and particles of rock and cinders were found nearby. Residents are very concerned," said López. Police officers who went to investigate the meteorite are among those who have fallen ill and been taken to Desaguadero hospital. The impact of the meteorite left a crater 18 feet deep and 30 yards across in the Andean territory that is home to less than 1,000 people. Originally, the villagers thought a plane had crashed. Under consideration is the declaration of a state of emergency. Peruvian Nuclear Energy Institute engineer Renan Ramirez said scientists who went to investigate the crater found no indication of radiation, although, the fumes from the crater were so pungent that one scientist said his throat and nose were irritated despite his use of a mask. Villagers are said to be avoiding the local water out of fear of contamination. Sulfur, arsenic and other elements common in meteorites can react with ground water to produce fumes. Ursula Marvin, a meteor expert at the Smithsonian Astrophysical Observatory in Massachusetts, said a meteorite "wouldn't get much gas out of the earth" and that a more likely explanation for the health problems was the dust cloud caused when the rock hit the Earth. Other explanations abound. Don Yeomans, head of the Near Earth Object Program at NASA's Jet Propulsion Laboratory, said "Statistically, it's far more likely to have come from below than from above," noting that meteorites do not give off smells and it is likely the result of hydrothermal activity, such as a local gas explosion. Dr Caroline Smith, a meteorite expert with the Natural History Museum in London, thought more likely the villagers saw a common fireball and in the process of investigating it, did not find a 'crater' but "a lake of sedimentary deposit, which may be full of smelly, methane rich organic matter." And one science blogger, David Syzdek, theorized that in fact the crater is a mud volcano "that is producing toxic gasses [sic] such as methane, water, and perhaps other hydrocarbons. Many hydrocarbons can cause illness."</text>
         <locations>
             <location>
                 <name>Lake Titicaca</name>
@@ -17927,6 +18269,14 @@
                 <lat>-16.71</lat>
                 <lon>-64.66</lon>
                 <page>https://en.wikipedia.org/wiki/Bolivia</page>
+            </location>
+            <location>
+                <name>Desaguadero</name>
+                <start>654</start>
+                <end>665</end>
+                <lat>-16.56</lat>
+                <lon>-69.03</lon>
+                <page>https://en.wikipedia.org/wiki/Desaguadero,_Bolivia-Peru</page>
             </location>
             <location>
                 <name>Massachusetts</name>
@@ -18327,7 +18677,7 @@
     </article>
     <article>
         <source>https://en.wikinews.org/wiki/Three_die_in_Cornwall,_UK_caravan_park_of_suspected_carbon_monoxide_poisoning</source>
-        <text>Carbon monoxide poisoning is thought to have been the cause of the deaths of three people and one Jack Russell dog in a caravan park in Cornwall in South West England. Cornwall Fire and Rescue Service (CFRS) were alerted to the incident in Tremarle Home Park in the town of Camborne at 12:56 UTC on Saturday. Inspector David Eldridge said Devon and Cornwall Police were alerted to the caravan park incident after "a helper had been unable to get a reply from an elderly couple who lived in the caravan". He said that upon their arrival, "We were able to see that there was a figure sat in a chair but they were unresponsive to knocks at the door." CFRS workers called to the area "forced entry into the property and found that the three occupants were all dead", Inspector Eldridge said. A hazardous material advisor was also present at the scene in Roskear. The Health and Safety Executive is now investigating the incident but the deaths are not considered as being of a suspicious nature. The three fatalities have been identified as Audrey Cook, aged 86, her husband Alfred, aged 90, and Maureen, their 46-year-old daughter. David Biggs, a member of Camborne Town Council, said the incident came as "a shock" to him; Tremarle Home Park is "a well established facility and is very well run", according to him. Biggs described the loss of three lives as an "appalling tragedy". The incident came five days after Cornwall Council announced its Family Placement Service would launch a joint venture with Cornwall Fire and Rescue Service to place carbon monoxide detectors in the houses of foster carers. The programme, entitled 'Be Gas Safe', has seen 200 carbon monoxide detectors and 2000 leaflets to raise awareness about carbon monoxide being given to CFRS. Mark Blatchford, Group Manager of CFRS, said: "We have seen a big increase in the number of carbon monoxide incidents in Cornwall over recent years". He described carbon monoxide detectors as being "as important as a smoke alarm as it provides a valuable early warning". Carbon monoxide is a poisonous, colourless, tasteless and odourless gas which is created when such carbon-based fuels as oil, gas, coal and wood are not completely incinerated. The human body's capacity to hold oxygen in the blood can be reduced by inhalation of the gas, which in turn may cause death. The Gas Safe Register has said dizziness, headaches, queasiness, lack of ability to breathe, fainting and losing consciousness are all symptoms of a person experiencing carbon monoxide poisoning.</text>
+        <text>Carbon monoxide poisoning is thought to have been the cause of the deaths of three people and one Jack Russell dog in a caravan park in Cornwall in South West England. Cornwall Fire and Rescue Service (CFRS) were alerted to the incident in Tremarle Home Park in the town of Camborne at 12:56 UTC on Saturday. Inspector David Eldridge said Devon and Cornwall police were alerted to the caravan park incident after "a helper had been unable to get a reply from an elderly couple who lived in the caravan". He said that upon their arrival, "We were able to see that there was a figure sat in a chair but they were unresponsive to knocks at the door." CFRS workers called to the area "forced entry into the property and found that the three occupants were all dead", Inspector Eldridge said. A hazardous material advisor was also present at the scene in Roskear. The Health and Safety Executive is now investigating the incident but the deaths are not considered as being of a suspicious nature. The three fatalities have been identified as Audrey Cook, aged 86, her husband Alfred, aged 90, and Maureen, their 46-year-old daughter. David Biggs, a member of Camborne Town Council, said the incident came as "a shock" to him; Tremarle Home Park is "a well established facility and is very well run", according to him. Biggs described the loss of three lives as an "appalling tragedy". The incident came five days after Cornwall Council announced its Family Placement Service would launch a joint venture with Cornwall Fire and Rescue Service to place carbon monoxide detectors in the houses of foster carers. The programme, entitled 'Be Gas Safe', has seen 200 carbon monoxide detectors and 2000 leaflets to raise awareness about carbon monoxide being given to CFRS. Mark Blatchford, Group Manager of CFRS, said: "We have seen a big increase in the number of carbon monoxide incidents in Cornwall over recent years". He described carbon monoxide detectors as being "as important as a smoke alarm as it provides a valuable early warning". Carbon monoxide is a poisonous, colourless, tasteless and odourless gas which is created when such carbon-based fuels as oil, gas, coal and wood are not completely incinerated. The human body's capacity to hold oxygen in the blood can be reduced by inhalation of the gas, which in turn may cause death. The Gas Safe Register has said dizziness, headaches, queasiness, lack of ability to breathe, fainting and losing consciousness are all symptoms of a person experiencing carbon monoxide poisoning.</text>
         <locations>
             <location>
                 <name>Cornwall</name>
@@ -18353,6 +18703,22 @@
                 <lat>50.21</lat>
                 <lon>-5.3</lon>
                 <page>https://en.wikipedia.org/wiki/Camborne</page>
+            </location>
+            <location>
+                <name>Devon</name>
+                <start>340</start>
+                <end>345</end>
+                <lat>50.7</lat>
+                <lon>-3.8</lon>
+                <page>https://en.wikipedia.org/wiki/Devon</page>
+            </location>
+            <location>
+                <name>Cornwall</name>
+                <start>350</start>
+                <end>358</end>
+                <lat>50.3</lat>
+                <lon>-4.9</lon>
+                <page>https://en.wikipedia.org/wiki/Cornwall</page>
             </location>
             <location>
                 <name>Roskear</name>
@@ -18452,6 +18818,14 @@
                 <name>Denver</name>
                 <start>1499</start>
                 <end>1505</end>
+                <lat>39.76</lat>
+                <lon>-104.88</lon>
+                <page>https://en.wikipedia.org/wiki/Denver</page>
+            </location>
+            <location>
+                <name>Denver</name>
+                <start>1892</start>
+                <end>1898</end>
                 <lat>39.76</lat>
                 <lon>-104.88</lon>
                 <page>https://en.wikipedia.org/wiki/Denver</page>

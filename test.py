@@ -39,18 +39,20 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
 
     if len(candidates) == 0:
         print(u"Don't have an entry for", name, u"in GeoNames")
-        raise Exception(u"Go back and check your geo-database, buddy!")
+        raise Exception(u"Go back and check your geo-database, buddy :-)")
 
     # candidates = [candidates[0]]  # Uncomment for population heuristic.
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     best_candidate, y_to_geonames = [], []
+    # max_pop = candidates[0][2]
     for candidate in candidates:
         y_to_geonames.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).km)
         best_candidate.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).km, (float(candidate[0]), float(candidate[1]))))
     best_candidate = sorted(best_candidate, key=lambda (a, b): a)[0]
     final_errors.append(great_circle(best_candidate[1], y).km)
 
+    # ---------------- DIAGNOSTICS --------------------
     dist_p, dist_y, index_p, index_y = 50000, 50000, 0, 0
     for index, candidate in enumerate(candidates):
         if great_circle(best_candidate[1], (candidate[0], candidate[1])).km < dist_p:
@@ -59,6 +61,7 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         if great_circle(y, (candidate[0], candidate[1])).km < dist_y:
             dist_y = great_circle(y, (candidate[0], candidate[1])).km
             index_y = index
+    # ------------- END OF DIAGNOSTICS -----------------
 
     errors.write(name + u"\t" + unicode(y) + u"\t" + unicode(p) + "\t" + unicode(best_candidate[1])
                  + u"\t" + unicode(index_y) + u"\t" + unicode(index_p) + u"\t" + unicode(final_errors[-1]) + u"\t" +

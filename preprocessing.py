@@ -110,12 +110,12 @@ def merge_lists(grids):
 def populate_sql():
     """Create and populate the sqlite database with GeoNames data"""
     geo_names = {}
-    p_map = {"PPLQ": 10, "PPLX": 100, "PPLA4": 100, "PPLA3": 1000, "PPLA2": 10000, "PPL": 10000, "PPLA": 1000000,
-             "PPLC": 1000000, "PCLI": 1000000, "PPLW": 1, "ADMD": 10, "ADM4": 100, "ADM3": 1000, "ADM2": 10000,
-             "ADM1": 100000, "ZN": 10, "ADM1H": 10, "PPLF": 10, "PPLL": 100, "PPLR": 1000, "PPLG": 1000, "STLMT": 10000,
-             "PPLS": 1000, "TERR": 10000, "ADM2H": 10, "ADM3H": 10, "PPLCH": 10000, "PRSH": 1000, "PCL": 1000000,
-             "PCLD": 100, "ADMDH": 10, "ADM4H": 10, "PCLH": 10, "PCLIX": 10000, "PCLS": 10000, "PCLF": 100000, "ADM5": 10,
-             "CONT": 10000000, "RGN": 1000000, "LCTY": 100, "AREA": 1000, "RES": 1000, "TRB": 100, "RGNE": 1000}
+    p_map = {"PPLQ": 10, "PPLX": 10, "PPLA4": 10, "PPLA3": 100, "PPLA2": 100, "PPL": 100, "PPLA": 1000,
+             "PPLC": 100000, "PCLI": 1000000, "PPLW": 1, "ADMD": 10, "ADM4": 100, "ADM3": 100, "ADM2": 1000,
+             "ADM1": 1000, "ZN": 10, "ADM1H": 10, "PPLF": 10, "PPLL": 100, "PPLR": 1000, "PPLG": 1000, "STLMT": 100,
+             "PPLS": 100, "TERR": 100, "ADM2H": 10, "ADM3H": 10, "PPLCH": 100, "PRSH": 100, "PCL": 1000000,
+             "PCLD": 100, "ADMDH": 10, "ADM4H": 10, "PCLH": 10, "PCLIX": 1000, "PCLS": 10000, "PCLF": 10000, "ADM5": 10,
+             "CONT": 1000000, "RGN": 1000000, "LCTY": 100, "AREA": 100, "RES": 100, "TRB": 100, "RGNE": 100}
 
     for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
         line = line.split("\t")
@@ -555,8 +555,8 @@ def generate_arrays_from_file_2D(path, train=True):
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
-# visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"London")), "test")
-# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"islington bay")
+# visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"washington")), "image")
+# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Grosvenor Square")
 # generate_training_data()
 # generate_evaluation_data(corpus="geovirus", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
