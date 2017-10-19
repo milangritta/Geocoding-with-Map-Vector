@@ -500,7 +500,7 @@ def filter_wiktor():
     for line in codecs.open(u"data/eval_wiki_gold.txt", "r", encoding="utf-8"):
         wiktor.add(line)
     print(len(wiktor))
-    for line in codecs.open(u"../data/train_wiki.txt", "r", encoding="utf-8"):
+    for line in codecs.open(u"../data/train_wiki_uniform.txt", "r", encoding="utf-8"):
         if line in wiktor:
             print line
 
@@ -556,9 +556,9 @@ def generate_arrays_from_file_2D(path, train=True):
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
 # visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"washington")), "image")
-# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Grosvenor Square")
+# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Cambridge")
 # generate_training_data()
-# generate_evaluation_data(corpus="geovirus", file_name="")
+# generate_evaluation_data(corpus="lgl", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)
 # print(index, index_to_coord(index))
 # generate_vocabulary()
