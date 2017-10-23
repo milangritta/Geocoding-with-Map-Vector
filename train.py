@@ -70,11 +70,11 @@ fes = Dense(250)(fes)
 fes = Dropout(0.5)(fes)
 
 near_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-nec = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(near_entities_coord)
+nec = Dense(150, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(near_entities_coord)
 nec = Dropout(0.5)(nec)
 
 far_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-fec = Dense(250, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(far_entities_coord)
+fec = Dense(100, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(far_entities_coord)
 fec = Dropout(0.5)(fec)
 
 target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))

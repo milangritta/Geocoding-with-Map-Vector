@@ -551,7 +551,7 @@ def generate_arrays_from_file_2D(path, train=True):
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
 # training_map()
 # visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"washington")), "image")
-# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"egypt")
+# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"china")
 # generate_training_data()
 # generate_evaluation_data(corpus="lgl", file_name="")
 # index = coord_to_index((-6.43, -172.32), True)

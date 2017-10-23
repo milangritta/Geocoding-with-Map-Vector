@@ -1,6 +1,8 @@
 import codecs
 import sqlite3
 import xml.etree.ElementTree as ET
+from collections import Counter
+
 from geopy.distance import great_circle
 from preprocessing import get_coordinates
 
@@ -11,8 +13,13 @@ if True:  # add CDATA xml construct?
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     root = tree.getroot()
+    duplicates = set()
     for article in root:
         text = article.find('text').text  # check for duplicate article titles !!!!!
+        if text in duplicates:
+            raise Exception('Duplicate titles/sources!')
+        else:
+            duplicates.add(text)
         for location in article.find('locations'):
             start = location.find('start').text
             end = location.find('end').text
@@ -56,10 +63,13 @@ if True:
     root = tree.getroot()
     f = codecs.open(u"data/geovirus.txt", "w", "utf-8")
     c = 0
+    counter = []
     for child in root:
         text = child.find('text').text
         gold_tops = []
         for location in child.findall('./locations/location'):
+            # if location.find('continent') is not None:
+            #     continue
             start = location.find("start")
             end = location.find("end")
             name = location.find("name")
@@ -67,6 +77,7 @@ if True:
                 alt_name = location.find('altName')
             else:
                 alt_name = name
+            counter.append(name.text)
             lat = location.find("lat")
             lon = location.find("lon")
             gold_tops.append(alt_name.text + ",," + name.text + ",," + lat.text + ",," + lon.text + ",," + start.text + ",," + end.text)
@@ -78,4 +89,6 @@ if True:
         f_out.close()
         c += 1
     f.close()
+    counter = Counter(counter)
+    print counter.most_common()
 
