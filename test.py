@@ -45,10 +45,12 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
     # THE ABOVE IS THE POPULATION ONLY BASELINE IMPLEMENTATION
 
     best_candidate, y_to_geonames = [], []
-    # max_pop = candidates[0][2]
+    max_pop = candidates[0][2]
     for candidate in candidates:
         y_to_geonames.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).km)
-        best_candidate.append((great_circle(p, (float(candidate[0]), float(candidate[1]))).km, (float(candidate[0]), float(candidate[1]))))
+        err = great_circle(p, (float(candidate[0]), float(candidate[1]))).km
+        # best_candidate.append((err, (float(candidate[0]), float(candidate[1]))))
+        best_candidate.append((err - (err * max(1, candidate[2]) / max(1, max_pop)) * 0.9, (float(candidate[0]), float(candidate[1]))))
     best_candidate = sorted(best_candidate, key=lambda (a, b): a)[0]
     final_errors.append(great_circle(best_candidate[1], y).km)
 

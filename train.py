@@ -6,7 +6,7 @@ from keras import Input
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
-from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D, MaxPooling1D, Flatten
+from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
 from preprocessing import generate_arrays_from_file, GRID_SIZE, BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, TARGET_LENGTH
 from subprocess import check_output
 
@@ -43,33 +43,29 @@ embeddings = Embedding(len(word_to_index), EMB_DIM, input_length=CONTEXT_LENGTH,
 
 near_words = Input(shape=(CONTEXT_LENGTH,))
 nw = embeddings(near_words)
-nw = Conv1D(1000, 3, activation='relu')(nw)
-nw = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(nw)
-nw = Flatten()(nw)
+nw = Conv1D(1000, 2, activation='relu', strides=1)(nw)
+nw = GlobalMaxPooling1D()(nw)
 nw = Dense(250)(nw)
 nw = Dropout(0.5)(nw)
 
 far_words = Input(shape=(CONTEXT_LENGTH,))
 fw = embeddings(far_words)
-fw = Conv1D(1000, 3, activation='relu')(fw)
-fw = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(fw)
-fw = Flatten()(fw)
+fw = Conv1D(1000, 2, activation='relu', strides=1)(fw)
+fw = GlobalMaxPooling1D()(fw)
 fw = Dense(250)(fw)
 fw = Dropout(0.5)(fw)
 
 near_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 nes = embeddings(near_entities_strings)
-nes = Conv1D(1000, 3, activation='relu')(nes)
-nes = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(nes)
-nes = Flatten()(nes)
+nes = Conv1D(1000, 2, activation='relu', strides=1)(nes)
+nes = GlobalMaxPooling1D()(nes)
 nes = Dense(250)(nes)
 nes = Dropout(0.5)(nes)
 
 far_entities_strings = Input(shape=(CONTEXT_LENGTH,))
 fes = embeddings(far_entities_strings)
-fes = Conv1D(1000, 3, activation='relu')(fes)
-fes = MaxPooling1D(pool_size=CONTEXT_LENGTH / 2 - 1, strides=CONTEXT_LENGTH / 2 - 1)(fes)
-fes = Flatten()(fes)
+fes = Conv1D(1000, 2, activation='relu', strides=1)(fes)
+fes = GlobalMaxPooling1D()(fes)
 fes = Dense(250)(fes)
 fes = Dropout(0.5)(fes)
 
