@@ -12,7 +12,6 @@ from scipy.spatial.distance import euclidean
 
 
 # -------- GLOBAL CONSTANTS -------- #
-GRID_SIZE = 2
 BATCH_SIZE = 64
 CONTEXT_LENGTH = 200
 UNKNOWN = u"<unknown>"
@@ -44,31 +43,31 @@ def pad_list(size, a_list, from_left):
     return a_list
 
 
-def coord_to_index(coordinates):
+def coord_to_index(coordinates, polygon_size):
     """"""
-    latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99  # The few edge cases must
+    latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99  # The two edge cases must
     longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99  # get handled differently!
     if longitude < 0:
         longitude = -longitude
     if latitude < 0:
         latitude = -latitude
-    x = int(360 / GRID_SIZE) * int(latitude / GRID_SIZE)
-    y = int(longitude / GRID_SIZE)
-    return x + y if 0 <= x + y <= int(360 / GRID_SIZE) * int(180 / GRID_SIZE) else Exception(u"Shock horror!!")
+    x = int(360 / polygon_size) * int(latitude / polygon_size)
+    y = int(longitude / polygon_size)
+    return x + y if 0 <= x + y <= int(360 / polygon_size) * int(180 / polygon_size) else Exception(u"Shock horror!!")
 
 
-def index_to_coord(index):
+def index_to_coord(index, polygon_size):
     """"""
-    x = int(index / (360 / GRID_SIZE))
-    y = index % int(360 / GRID_SIZE)
-    if x > int(90 / GRID_SIZE):
-        x = -int((x - (90 / GRID_SIZE)) * GRID_SIZE)
+    x = int(index / (360 / polygon_size))
+    y = index % int(360 / polygon_size)
+    if x > int(90 / polygon_size):
+        x = -int((x - (90 / polygon_size)) * polygon_size)
     else:
-        x = int(((90 / GRID_SIZE) - x) * GRID_SIZE)
-    if y < int(180 / GRID_SIZE):
-        y = -int(((180 / GRID_SIZE) - y) * GRID_SIZE)
+        x = int(((90 / polygon_size) - x) * polygon_size)
+    if y < int(180 / polygon_size):
+        y = -int(((180 / polygon_size) - y) * polygon_size)
     else:
-        y = int((y - (180 / GRID_SIZE)) * GRID_SIZE)
+        y = int((y - (180 / polygon_size)) * polygon_size)
     return x, y
 
 
@@ -82,21 +81,25 @@ def get_coordinates(con, loc_name):
         return []
 
 
-def construct_spatial_grid(a_list):
+def construct_spatial_grid(a_list, polygon_size):
     """"""
-    g = np.zeros(int(360 / GRID_SIZE) * int(180 / GRID_SIZE))
+    g = np.zeros(int(360 / polygon_size) * int(180 / polygon_size))
     if len(a_list) == 0:
         return g
     max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
-        index = coord_to_index((s[0], s[1]))
+        index = coord_to_index((s[0], s[1]), polygon_size)
         g[index] += float(max(s[2], 1)) / max_pop
     return g / max(g) if max(g) > 0.0 else g
 
 
-def construct_2D_grid(a_list):
+def construct_loc2vec(target, near, far, polygon_size):
     """"""
-    return np.reshape(construct_spatial_grid(a_list), (int(180 / GRID_SIZE), int(360 / GRID_SIZE)))
+    target = construct_spatial_grid(target, polygon_size)
+    near = construct_spatial_grid(near, polygon_size)
+    far = construct_spatial_grid(far, polygon_size)
+    l2v = near + far + target
+    return l2v / max(l2v)
 
 
 def merge_lists(grids):
@@ -389,7 +392,7 @@ def generate_arrays_from_file(path, w2i, train=True):
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)]))
+            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], 2))
 
             near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
@@ -401,9 +404,10 @@ def generate_arrays_from_file(path, w2i, train=True):
             near_entities.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
             far_entities.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
 
-            target_coord.append(construct_spatial_grid(eval(line[4])))
-            near_entities_coord.append(construct_spatial_grid(eval(line[6])))
-            far_entities_coord.append(construct_spatial_grid(eval(line[7])))
+            polygon_size = 2
+            target_coord.append(construct_spatial_grid(eval(line[4]), polygon_size))
+            near_entities_coord.append(construct_spatial_grid(eval(line[6]), polygon_size))
+            far_entities_coord.append(construct_spatial_grid(eval(line[7]), polygon_size))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
@@ -455,9 +459,9 @@ def generate_strings_from_file(path):
             yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), context)
 
 
-def compute_embedding_distances(W, dim):
+def compute_embedding_distances(W, dim, polygon_size):
     store = []
-    W = np.reshape(W, (int(180 / GRID_SIZE), int(360 / GRID_SIZE), dim))
+    W = np.reshape(W, (int(180 / polygon_size), int(360 / polygon_size), dim))
     for row in W:
         store_col = []
         for column in row:
@@ -470,17 +474,17 @@ def compute_embedding_distances(W, dim):
     return store
 
 
-def compute_pixel_similarity():
-    distances_p = compute_embedding_distances(cPickle.load(open("data/W.pkl")), 801)
+def compute_pixel_similarity(polygon_size):
+    distances_p = compute_embedding_distances(cPickle.load(open("data/W.pkl")), 801, polygon_size)
 
     store = []
-    for r in range(int(180 / GRID_SIZE)):
+    for r in range(int(180 / polygon_size)):
         store_c = []
-        for c in range(int(360 / GRID_SIZE)):
+        for c in range(int(360 / polygon_size)):
             store_c.append((r, c))
         store.append(store_c)
 
-    distances_g = compute_embedding_distances(np.array(store), 2)
+    distances_g = compute_embedding_distances(np.array(store), 2, polygon_size)
 
     correlations = []
     for p, g in zip(distances_p, distances_g):
@@ -500,52 +504,46 @@ def filter_wiktor():
             print line
 
 
-def training_map():
+def training_map(polygon_size):
     coordinates = []
     for f in [u"../data/train_wiki_uniform.txt"]:
         training_file = codecs.open(f, "r", encoding="utf-8")
         for line in training_file:
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
-    c = construct_spatial_grid(coordinates)
-    c = np.reshape(c, (int(180 / GRID_SIZE), int(360 / GRID_SIZE)))
+    c = construct_spatial_grid(coordinates, polygon_size)
+    c = np.reshape(c, (int(180 / polygon_size), int(360 / polygon_size)))
     visualise_2D_grid(c, "Training Map", log=True)
 
 
-def generate_arrays_from_file_2D(path, train=True):
+def generate_arrays_from_file_loc(path, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        labels = []
-        near_entities_coord, far_entities_coord, target_coord = [], [], []
+        polygon_size = 2
+        labels, target_coord = [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)]))
-
-            target_coord.append([construct_2D_grid(eval(line[4]))])
-            near_entities_coord.append([construct_2D_grid(eval(line[6]))])
-            far_entities_coord.append([construct_2D_grid(eval(line[7]))])
+            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], 2))
+            target_coord.append(construct_loc2vec(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size))
+            print list(target_coord[-1])
 
             if counter % BATCH_SIZE == 0:
                 if train:
-                    yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
-                            np.asarray(target_coord),], np.asarray(labels))
+                    yield ([np.asarray(target_coord)], np.asarray(labels))
                 else:
-                    yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
-                            np.asarray(target_coord)])
+                    yield ([np.asarray(target_coord)])
 
                 labels = []
-                near_entities_coord, far_entities_coord, target_coord = [], [], []
+                target_coord = []
 
         if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
             if train:
-                yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
-                        np.asarray(target_coord)], np.asarray(labels))
+                yield ([np.asarray(target_coord)], np.asarray(labels))
             else:
-                yield ([np.asarray(near_entities_coord), np.asarray(far_entities_coord),
-                        np.asarray(target_coord)])
+                yield ([np.asarray(target_coord)])
 
 
 # ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------

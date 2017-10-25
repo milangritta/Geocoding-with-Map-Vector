@@ -7,7 +7,8 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from preprocessing import generate_arrays_from_file, GRID_SIZE, BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, TARGET_LENGTH
+from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, \
+    TARGET_LENGTH, generate_arrays_from_file_loc
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)
@@ -69,16 +70,17 @@ fes = GlobalMaxPooling1D()(fes)
 fes = Dense(250)(fes)
 fes = Dropout(0.5)(fes)
 
-near_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-nec = Dense(150, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(near_entities_coord)
+input_polygon_size = 2
+near_entities_coord = Input(shape=((180 / input_polygon_size) * (360 / input_polygon_size),))
+nec = Dense(250, activation='relu', input_dim=(180 / input_polygon_size) * (360 / input_polygon_size))(near_entities_coord)
 nec = Dropout(0.5)(nec)
 
-far_entities_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-fec = Dense(100, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(far_entities_coord)
+far_entities_coord = Input(shape=((180 / input_polygon_size) * (360 / input_polygon_size),))
+fec = Dense(250, activation='relu', input_dim=(180 / input_polygon_size) * (360 / input_polygon_size))(far_entities_coord)
 fec = Dropout(0.5)(fec)
 
-target_coord = Input(shape=((180 / GRID_SIZE) * (360 / GRID_SIZE),))
-tc = Dense(1000, activation='relu', input_dim=(180 / GRID_SIZE) * (360 / GRID_SIZE))(target_coord)
+target_coord = Input(shape=((180 / input_polygon_size) * (360 / input_polygon_size),))
+tc = Dense(1000, activation='relu', input_dim=(180 / input_polygon_size) * (360 / input_polygon_size))(target_coord)
 tc = Dropout(0.5)(tc)
 
 target_string = Input(shape=(TARGET_LENGTH,))
@@ -87,8 +89,9 @@ ts = Conv1D(1000, 3, activation='relu')(ts)
 ts = GlobalMaxPooling1D()(ts)
 ts = Dropout(0.5)(ts)
 
+output_polygon_size = 2
 inp = concatenate([nw, fw, nes, fes, nec, fec, tc, ts])
-inp = Dense(units=(180 / GRID_SIZE) * (360 / GRID_SIZE), activation=u'softmax')(inp)
+inp = Dense(units=(180 / output_polygon_size) * (360 / output_polygon_size), activation=u'softmax')(inp)
 model = Model(inputs=[near_words, far_words, near_entities_strings, far_entities_strings,
                       near_entities_coord, far_entities_coord, target_coord, target_string], outputs=[inp])
 model.compile(loss=u'categorical_crossentropy', optimizer=u'rmsprop', metrics=[u'accuracy'])
@@ -99,6 +102,6 @@ print(u'Finished building model...')
 checkpoint = ModelCheckpoint(filepath=u"../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor=u'acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
-model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
+model.fit_generator(generate_arrays_from_file_loc(file_name),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
                     epochs=200, callbacks=[checkpoint, early_stop])

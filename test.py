@@ -14,9 +14,9 @@ from preprocessing import generate_arrays_from_file
 if len(sys.argv) > 1:
     data = sys.argv[1]
 else:
-    data = u"lgl"
+    data = u"lgl_gold"
 
-weights_file = u"../data/weights"
+weights_file = u"../data/weights_new"
 print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data, u"with weights:", weights_file)
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
@@ -33,7 +33,7 @@ final_errors = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
                                  steps=int(check_output([u"wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True),
                                  generate_strings_from_file(file_name)):
-    p = index_to_coord(np.argmax(p))
+    p = index_to_coord(np.argmax(p), 2)
     candidates = get_coordinates(conn.cursor(), name)
     candidates = sorted(candidates, key=lambda (a, b, c, d): c, reverse=True)
 
