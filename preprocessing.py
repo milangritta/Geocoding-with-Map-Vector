@@ -23,6 +23,8 @@ FILTER_1x1 = cPickle.load(open(u"data/1x1_filter.pkl"))    # We need these filte
 FILTER_2x2 = cPickle.load(open(u"data/2x2_filter.pkl"))    # and the reverse ones
 REVERSE_1x1 = cPickle.load(open(u"data/1x1_reverse.pkl"))  # to handle the used and
 REVERSE_2x2 = cPickle.load(open(u"data/2x2_reverse.pkl"))  # unused loc2vec polygons.
+OUTLIERS_1x1 = cPickle.load(open(u"data/1x1_outliers.pkl"))    # Outliers are redundant polygons that
+OUTLIERS_2x2 = cPickle.load(open(u"data/2x2_outliers.pkl"))    # have been removed but must also be handled.
 # -------- GLOBAL CONSTANTS AND VARIABLES -------- #
 
 
@@ -86,23 +88,39 @@ def get_coordinates(con, loc_name):
         return []
 
 
-def construct_loc2vec(a_list, polygon_size, filter_type):
+def construct_loc2vec(a_list, polygon_size, filter_type, outliers):
     """"""
-    loc2vec = g = np.zeros(len(filter_type),)
+    loc2vec = np.zeros(len(filter_type),)
     if len(a_list) == 0:
         return loc2vec
     max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]), polygon_size)
-        loc2vec[filter_type[index]] += float(max(s[2], 1)) / max_pop
+        if index in filter_type:
+            index = filter_type[index]
+        else:
+            index = filter_type[outliers[index]]
+        loc2vec[index] += float(max(s[2], 1)) / max_pop
     return loc2vec / loc2vec.max() if loc2vec.max() > 0.0 else loc2vec
 
 
-def assemble_features(target, near, far, polygon_size, filter_type):
+def construct_loc2vec_full_scale(a_list, polygon_size):
     """"""
-    target = construct_loc2vec(target, polygon_size, filter_type)
-    near = construct_loc2vec(near, polygon_size, filter_type)
-    far = construct_loc2vec(far, polygon_size, filter_type)
+    loc2vec = np.zeros(int(360 / polygon_size) * int(180 / polygon_size))
+    if len(a_list) == 0:
+        return loc2vec
+    max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
+    for s in a_list:
+        index = coord_to_index((s[0], s[1]), polygon_size)
+        loc2vec[index] += float(max(s[2], 1)) / max_pop
+    return loc2vec / loc2vec.max() if loc2vec.max() > 0.0 else loc2vec
+
+
+def assemble_features(target, near, far, polygon_size, filter_type, outliers):
+    """"""
+    target = construct_loc2vec(target, polygon_size, filter_type, outliers)
+    near = construct_loc2vec(near, polygon_size, filter_type, outliers)
+    far = construct_loc2vec(far, polygon_size, filter_type, outliers)
     l2v = np.add(np.add(near, far), target)
     return l2v / l2v.max()
 
@@ -417,19 +435,17 @@ def generate_arrays_from_file(path, w2i, train=True):
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2))
+            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
-            near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
-            far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
-            context_words.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
+            # near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
+            # far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
+            # context_words.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
 
-            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
-            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
-            entities_strings.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
+            # near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
+            # far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
+            # entities_strings.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
 
-            polygon_size = 2
-
-            loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size, FILTER_1x1))
+            loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
@@ -477,7 +493,7 @@ def generate_arrays_from_file_lstm(path, w2i, train=True):
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2))
+            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
             near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
@@ -554,7 +570,7 @@ def compute_embedding_distances(W, dim, polygon_size):
 
 
 def compute_pixel_similarity(polygon_size):
-    distances_p = compute_embedding_distances(cPickle.load(open("data/W.pkl")), 801, polygon_size)
+    distances_p = compute_embedding_distances(cPickle.load(open(u"data/W.pkl")), 801, polygon_size)
 
     store = []
     for r in range(int(180 / polygon_size)):
@@ -590,7 +606,7 @@ def training_map(polygon_size):
         for line in training_file:
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
-    c = construct_loc2vec(coordinates, polygon_size, FILTER_1x1)
+    c = construct_loc2vec_full_scale(coordinates, polygon_size)
     c = np.reshape(c, (int(180 / polygon_size), int(360 / polygon_size)))
     visualise_2D_grid(c, u"Training Map", log=True)
 
@@ -600,16 +616,15 @@ def generate_arrays_from_file_loc(path, train=True, looping=True):
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        polygon_size = 1
         labels, target_coord = [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2))
+            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0, u'')], 2, FILTER_2x2, OUTLIERS_2x2))
             # X = apply_smoothing(construct_loc2vec(\
             # eval(line[4]), eval(line[6]), eval(line[7]), polygon_size), polygon_size, sigma=0.4)
             # target_coord.append(X / X.max())
-            target_coord.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size, FILTER_1x1))
+            target_coord.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
             if counter % BATCH_SIZE == 0:
                 if train:
@@ -642,17 +657,10 @@ def shrink_loc2vec(polygon_size):
 # --------------------------------------------- INVOKE METHODS HERE ---------------------------------------------------
 
 # training_map()
-
-# visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"washington")), "image")
-
 # print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"china")
-
 # generate_training_data()
-
 # generate_evaluation_data(corpus="lgl", file_name="")
-
 # generate_vocabulary()
-
 # shrink_loc2vec(2)
 
 # conn = sqlite3.connect('../data/geonames.db')
@@ -665,7 +673,7 @@ def shrink_loc2vec(polygon_size):
 
 # for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
-#     x = construct_loc2vec(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size=2)
+#     x = construct_loc2vec_full_scale(eval(line[4]) + eval(line[6]) + eval(line[7]), polygon_size=2)
 #     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
 #     visualise_2D_grid(x, " ".join(eval(line[5])))
 #     x = apply_smoothing(x, polygon_size=2, sigma=0.4)
@@ -690,7 +698,7 @@ def shrink_loc2vec(polygon_size):
 #         out.write(line)
 #     counter += 1
 
-# l2v = list(cPickle.load(open(u"data/geonames_1x1.pkl")))
+# l2v = list(cPickle.load(open(u"data/geonames_2x2.pkl")))
 # zeros = dict([(i, v) for i, v in enumerate(l2v) if v > 0])  # isolate the non zero values
 # zeros = dict([(i, v) for i, v in enumerate(zeros)])         # replace counts with indices
 # zeros = dict([(v, i) for (i, v) in zeros.iteritems()])      # reverse keys and values
@@ -698,7 +706,7 @@ def shrink_loc2vec(polygon_size):
 
 # filtered = [i for i, v in enumerate(l2v) if v > 0]
 # the_rest = [i for i, v in enumerate(l2v) if v == 0]
-# poly_size = 1
+# poly_size = 2
 # dict_rest = dict()
 #
 # for poly_rest in the_rest:
@@ -711,7 +719,7 @@ def shrink_loc2vec(polygon_size):
 #             best_dist = dist
 #     dict_rest[poly_rest] = best_index
 #
-# cPickle.dump(dict_rest, open(u"data/1x1_rest.pkl", "w"))
+# cPickle.dump(dict_rest, open(u"data/2x2_outliers.pkl", "w"))
 
 # l2v = np.reshape(l2v, newshape=((180 / 1), (360 / 1)))
 # visualise_2D_grid(l2v, "Geonames Database", True)

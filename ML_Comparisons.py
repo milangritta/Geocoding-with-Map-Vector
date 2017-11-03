@@ -11,7 +11,7 @@ from sklearn.externals import joblib
 X, Y = [], []
 # clf = MultinomialNB()
 clf = RandomForestClassifier()
-for (x, y) in generate_arrays_from_file_loc(u"data/eval_lgl_gold.txt", looping=False):
+for (x, y) in generate_arrays_from_file_loc(u"../data/train_wiki_small.txt", looping=False):
     X.extend(x[0])
     Y.extend(np.argmax(y, axis=1))
 
@@ -24,7 +24,7 @@ joblib.dump(clf, u'../data/bayes.pkl')
 X = []
 final_errors = []
 clf = joblib.load(u'../data/bayes.pkl')
-test_file = u"data/eval_lgl.txt"
+test_file = u"data/eval_lgl_gold.txt"
 
 for (x, y) in generate_arrays_from_file_loc(test_file, looping=False):
     X.extend(x[0])
@@ -49,8 +49,8 @@ for x, (y, name, context) in zip(clf.predict(X), generate_strings_from_file(test
     for candidate in candidates:
         y_to_geonames.append(great_circle(y, (float(candidate[0]), float(candidate[1]))).km)
         err = great_circle(p, (float(candidate[0]), float(candidate[1]))).km
-        # best_candidate.append((err, (float(candidate[0]), float(candidate[1]))))
-        best_candidate.append((err - (err * max(1, candidate[2]) / max(1, max_pop)) * 0.9, (float(candidate[0]), float(candidate[1]))))
+        best_candidate.append((err, (float(candidate[0]), float(candidate[1]))))
+        # best_candidate.append((err - (err * max(1, candidate[2]) / max(1, max_pop)) * 0.9, (float(candidate[0]), float(candidate[1]))))
     best_candidate = sorted(best_candidate, key=lambda (a, b): a)[0]
     final_errors.append(great_circle(best_candidate[1], y).km)
 
