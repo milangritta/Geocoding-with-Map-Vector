@@ -6,9 +6,9 @@ from keras import Input
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
-from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
+from keras.layers import Embedding, Dense, Dropout, LSTM
 from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, \
-    TARGET_LENGTH, generate_arrays_from_file_loc
+    TARGET_LENGTH, generate_arrays_from_file_lstm
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)
@@ -42,51 +42,41 @@ print(u'Building model...')
 embeddings = Embedding(len(word_to_index), EMB_DIM, input_length=CONTEXT_LENGTH, weights=weights)
 # shared embeddings between all language input layers
 
-context_words_pair = Input(shape=(CONTEXT_LENGTH,))
-cwp = embeddings(context_words_pair)
-cwp = Conv1D(1000, 2, activation='relu', strides=1)(cwp)
-cwp = GlobalMaxPooling1D()(cwp)
-cwp = Dense(250)(cwp)
-cwp = Dropout(0.5)(cwp)
+context_words_forward = Input(shape=(CONTEXT_LENGTH,))
+cwf = embeddings(context_words_forward)
+cwf = LSTM(300)(cwf)
+cwf = Dense(300)(cwf)
+cwf = Dropout(0.5)(cwf)
 
-context_words_single = Input(shape=(CONTEXT_LENGTH,))
-cws = embeddings(context_words_single)
-cws = Conv1D(1000, 1, activation='relu', strides=1)(cws)
-cws = GlobalMaxPooling1D()(cws)
-cws = Dense(250)(cws)
-cws = Dropout(0.5)(cws)
+context_words_backward = Input(shape=(CONTEXT_LENGTH,))
+cwb = embeddings(context_words_backward)
+cwb = LSTM(300, go_backwards=True)(cwb)
+cwb = Dense(300)(cwb)
+cwb = Dropout(0.5)(cwb)
 
-entities_strings_pair = Input(shape=(CONTEXT_LENGTH,))
-esp = embeddings(entities_strings_pair)
-esp = Conv1D(1000, 2, activation='relu', strides=1)(esp)
-esp = GlobalMaxPooling1D()(esp)
-esp = Dense(250)(esp)
-esp = Dropout(0.5)(esp)
+entities_strings_forward = Input(shape=(CONTEXT_LENGTH,))
+esf = embeddings(entities_strings_forward)
+esf = LSTM(300)(esf)
+esf = Dense(300)(esf)
+esf = Dropout(0.5)(esf)
 
-entities_strings_single = Input(shape=(CONTEXT_LENGTH,))
-ess = embeddings(entities_strings_single)
-ess = Conv1D(1000, 1, activation='relu', strides=1)(ess)
-ess = GlobalMaxPooling1D()(ess)
-ess = Dense(250)(ess)
-ess = Dropout(0.5)(ess)
-
-input_polygon_size = 2
-loc2vec = Input(shape=((180 / input_polygon_size) * (360 / input_polygon_size),))
-tc = Dense(5000, activation='relu', input_dim=(180 / input_polygon_size) * (360 / input_polygon_size))
-tc = Dense(1000, activation='relu')(tc)
-tc = Dropout(0.5)(tc)
+entities_strings_backward = Input(shape=(CONTEXT_LENGTH,))
+esb = embeddings(entities_strings_backward)
+esb = LSTM(300)(esb)
+esb = Dense(300)(esb)
+esb = Dropout(0.5)(esb)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(word_to_index), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
-ts = Conv1D(1000, 3, activation='relu')(ts)
-ts = GlobalMaxPooling1D()(ts)
+ts = LSTM(50)(ts)
+ts = Dense(50)(ts)
 ts = Dropout(0.5)(ts)
 
 output_polygon_size = 2
-inp = concatenate([cwp, cws, esp, ess, tc, ts])
+inp = concatenate([cwf, cwb, esf, esb, ts])
 inp = Dense(units=(180 / output_polygon_size) * (360 / output_polygon_size), activation=u'softmax')(inp)
-model = Model(inputs=[context_words_pair, context_words_single, entities_strings_pair, entities_strings_single,
-                      loc2vec, target_string], outputs=[inp])
+model = Model(inputs=[context_words_forward, context_words_backward, entities_strings_forward,
+                      entities_strings_backward, target_string], outputs=[inp])
 model.compile(loss=u'categorical_crossentropy', optimizer=u'rmsprop', metrics=[u'accuracy'])
 
 print(u'Finished building model...')
@@ -95,6 +85,6 @@ print(u'Finished building model...')
 checkpoint = ModelCheckpoint(filepath=u"../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor=u'acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
-model.fit_generator(generate_arrays_from_file_loc(file_name),
+model.fit_generator(generate_arrays_from_file_lstm(file_name, word_to_index),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
                     epochs=200, callbacks=[checkpoint, early_stop])

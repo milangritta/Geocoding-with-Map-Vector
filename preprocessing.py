@@ -2,6 +2,7 @@
 import codecs
 import cPickle
 from collections import Counter
+from scipy import ndimage
 import matplotlib.pyplot as plt
 import spacy
 import numpy as np
@@ -11,14 +12,18 @@ from matplotlib import pyplot, colors
 from scipy.spatial.distance import euclidean
 
 
-# -------- GLOBAL CONSTANTS -------- #
+# -------- GLOBAL CONSTANTS AND VARIABLES -------- #
 BATCH_SIZE = 64
 CONTEXT_LENGTH = 200
 UNKNOWN = u"<unknown>"
 PADDING = u"0"
 EMB_DIM = 50
 TARGET_LENGTH = 15
-# -------- GLOBAL CONSTANTS -------- #
+FILTER_1x1 = cPickle.load(open(u"data/1x1_filter.pkl"))    # We need these filters
+FILTER_2x2 = cPickle.load(open(u"data/2x2_filter.pkl"))    # and the reverse ones
+REVERSE_1x1 = cPickle.load(open(u"data/1x1_reverse.pkl"))  # to handle the used and
+REVERSE_2x2 = cPickle.load(open(u"data/2x2_reverse.pkl"))  # unused loc2vec polygons.
+# -------- GLOBAL CONSTANTS AND VARIABLES -------- #
 
 
 def print_stats(accuracy):
@@ -81,25 +86,25 @@ def get_coordinates(con, loc_name):
         return []
 
 
-def construct_spatial_grid(a_list, polygon_size):
+def construct_loc2vec(a_list, polygon_size, filter_type):
     """"""
-    g = np.zeros(int(360 / polygon_size) * int(180 / polygon_size))
+    loc2vec = g = np.zeros(len(filter_type),)
     if len(a_list) == 0:
-        return g
+        return loc2vec
     max_pop = a_list[0][2] if a_list[0][2] > 0 else 1
     for s in a_list:
         index = coord_to_index((s[0], s[1]), polygon_size)
-        g[index] += float(max(s[2], 1)) / max_pop
-    return g / max(g) if max(g) > 0.0 else g
+        loc2vec[filter_type[index]] += float(max(s[2], 1)) / max_pop
+    return loc2vec / loc2vec.max() if loc2vec.max() > 0.0 else loc2vec
 
 
-def construct_loc2vec(target, near, far, polygon_size):
+def assemble_features(target, near, far, polygon_size, filter_type):
     """"""
-    target = construct_spatial_grid(target, polygon_size)
-    near = construct_spatial_grid(near, polygon_size)
-    far = construct_spatial_grid(far, polygon_size)
-    l2v = near + far + target
-    return l2v / max(l2v)
+    target = construct_loc2vec(target, polygon_size, filter_type)
+    near = construct_loc2vec(near, polygon_size, filter_type)
+    far = construct_loc2vec(far, polygon_size, filter_type)
+    l2v = np.add(np.add(near, far), target)
+    return l2v / l2v.max()
 
 
 def merge_lists(grids):
@@ -156,18 +161,27 @@ def get_population(class_code, feat_code, p_map, pop):
     return pop
 
 
+# def remove_redundant_polygons(loc2vec, polygon_size):
+#     """"""
+#     filter_type = FILTER_1x1 if polygon_size == 1 else FILTER_2x2
+#     g = np.zeros(len(filter_type),)
+#     for index in filter_type:
+#         g[index] = loc2vec[filter_type[index]]
+#     return g
+
+
 def generate_training_data():
     """Prepare Wikipedia training data."""
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load(u'en')
-    input = codecs.open(u"../data/geowiki.txt", u"r", encoding=u"utf-8")
+    inp = codecs.open(u"../data/geowiki.txt", u"r", encoding=u"utf-8")
     o = codecs.open(u"../data/train_wiki.txt", u"w", encoding=u"utf-8")
     lat, lon = u"", u""
     target, string = u"", u""
     skipped = 0
 
-    for line in input:
+    for line in inp:
         if len(line.strip()) == 0:
             continue
         limit = 0
@@ -343,13 +357,24 @@ def visualise_2D_grid(x, title, log=False):
     """"""
     if log:
         x = np.log10(x)
-    cmap2 = colors.LinearSegmentedColormap.from_list('my_colormap', ['white', 'grey', 'black'])
-    img2 = pyplot.imshow(x, cmap=cmap2, interpolation='nearest')
-    pyplot.colorbar(img2, cmap=cmap2)
-    # plt.imshow(np.log(x + 1), cmap='gray', interpolation='nearest', vmin=0, vmax=np.log(255))
+    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['yellow', 'orange', 'red', 'black'])
+    cmap.set_bad(color='lightblue')
+    img = pyplot.imshow(x, cmap=cmap, interpolation='nearest')
+    pyplot.colorbar(img, cmap=cmap)
     plt.title(title)
-    plt.savefig(title + ".png", dpi=200)
+    # plt.savefig(u"images/" + title + u".png", dpi=200)
     plt.show()
+
+
+def apply_smoothing(loc2vec, polygon_size, sigma):
+    """"""
+    loc2vec = np.reshape(loc2vec, newshape=((180 / polygon_size), (360 / polygon_size)))
+    # for row in loc2vec:
+    #     print list(row)
+    loc2vec = ndimage.filters.gaussian_filter(loc2vec, sigma)
+    # for row in loc2vec:
+    #     print list(row)
+    return loc2vec.ravel()
 
 
 def generate_vocabulary():
@@ -387,32 +412,29 @@ def generate_arrays_from_file(path, w2i, train=True):
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        near_words, far_words, near_entities, far_entities, labels = [], [], [], [], []
-        near_entities_coord, far_entities_coord, target_coord, target_string = [], [], [], []
+        context_words, entities_strings, labels = [], [], []
+        loc2vec, target_string = [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], 2))
+            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2))
 
             near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
-            near_words.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
-            far_words.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
+            context_words.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
 
             near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
             far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
-            near_entities.append(pad_list(CONTEXT_LENGTH, near, from_left=True))
-            far_entities.append(pad_list(CONTEXT_LENGTH, far, from_left=False))
+            entities_strings.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
 
             polygon_size = 2
-            target_coord.append(construct_spatial_grid(eval(line[4]), polygon_size))
-            near_entities_coord.append(construct_spatial_grid(eval(line[6]), polygon_size))
-            far_entities_coord.append(construct_spatial_grid(eval(line[7]), polygon_size))
+
+            loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size, FILTER_1x1))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
             if counter % BATCH_SIZE == 0:
-                for collection in [near_words, far_words, near_entities, far_entities, target_string]:
+                for collection in [context_words, entities_strings, target_string]:
                     for x in collection:
                         for i, w in enumerate(x):
                             if w in w2i:
@@ -420,34 +442,91 @@ def generate_arrays_from_file(path, w2i, train=True):
                             else:
                                 x[i] = w2i[UNKNOWN]
                 if train:
-                    yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
-                            np.asarray(far_entities), np.asarray(near_entities_coord),
-                            np.asarray(far_entities_coord), np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
+                    yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                            np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)], np.asarray(labels))
                 else:
-                    yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
-                            np.asarray(far_entities), np.asarray(near_entities_coord),
-                            np.asarray(far_entities_coord), np.asarray(target_coord), np.asarray(target_string)])
+                    yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                            np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
 
-                near_words, far_words, near_entities, far_entities, labels = [], [], [], [], []
-                near_entities_coord, far_entities_coord, target_coord, target_string = [], [], [], []
+                context_words, entities_strings, labels = [], [], []
+                loc2vec, target_string = [], []
 
         if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
-            for collection in [near_words, far_words, near_entities, far_entities, target_string]:
+            for collection in [context_words, entities_strings, target_string]:
                 for x in collection:
                     for i, w in enumerate(x):
                         if w in w2i:
                             x[i] = w2i[w]
                         else:
                             x[i] = w2i[UNKNOWN]
-
             if train:
-                yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
-                        np.asarray(far_entities), np.asarray(near_entities_coord), np.asarray(far_entities_coord),
-                        np.asarray(target_coord), np.asarray(target_string)], np.asarray(labels))
+                yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                        np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)], np.asarray(labels))
             else:
-                yield ([np.asarray(near_words), np.asarray(far_words), np.asarray(near_entities),
-                        np.asarray(far_entities), np.asarray(near_entities_coord), np.asarray(far_entities_coord),
-                        np.asarray(target_coord), np.asarray(target_string)])
+                yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                        np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
+
+
+def generate_arrays_from_file_lstm(path, w2i, train=True):
+    """"""
+    while True:
+        training_file = codecs.open(path, "r", encoding="utf-8")
+        counter = 0
+        context_words_left, context_words_right, entities_strings_left, entities_strings_right = [], [], [], []
+        target_string, labels = [], []
+        for line in training_file:
+            counter += 1
+            line = line.strip().split("\t")
+            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2))
+
+            near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
+            far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
+            context_words_left.append(pad_list(CONTEXT_LENGTH, far[:CONTEXT_LENGTH / 2]
+                                               + near[:CONTEXT_LENGTH / 2], from_left=True))
+            context_words_right.append(pad_list(CONTEXT_LENGTH, near[CONTEXT_LENGTH / 2:]
+                                               + far[CONTEXT_LENGTH / 2:], from_left=False))
+
+            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
+            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
+            entities_strings_left.append(pad_list(CONTEXT_LENGTH, far[:CONTEXT_LENGTH / 2]
+                                               + near[:CONTEXT_LENGTH / 2], from_left=True))
+            entities_strings_right.append(pad_list(CONTEXT_LENGTH, near[CONTEXT_LENGTH / 2:]
+                                               + far[CONTEXT_LENGTH / 2:], from_left=False))
+
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
+
+            if counter % BATCH_SIZE == 0:
+                for collection in [context_words_left, context_words_right, entities_strings_left, entities_strings_right, target_string]:
+                    for x in collection:
+                        for i, w in enumerate(x):
+                            if w in w2i:
+                                x[i] = w2i[w]
+                            else:
+                                x[i] = w2i[UNKNOWN]
+                if train:
+                    yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
+                            np.asarray(entities_strings_right), np.asarray(target_string)], np.asarray(labels))
+                else:
+                    yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
+                            np.asarray(entities_strings_right), np.asarray(target_string)])
+
+                context_words_left, context_words_right, entities_strings_left, entities_strings_right = [], [], [], []
+                target_string, labels = [], []
+
+        if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
+            for collection in [context_words_left, context_words_right, entities_strings_left, entities_strings_right, target_string]:
+                for x in collection:
+                    for i, w in enumerate(x):
+                        if w in w2i:
+                            x[i] = w2i[w]
+                        else:
+                            x[i] = w2i[UNKNOWN]
+            if train:
+                yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
+                        np.asarray(entities_strings_right), np.asarray(target_string)], np.asarray(labels))
+            else:
+                yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
+                        np.asarray(entities_strings_right), np.asarray(target_string)])
 
 
 def generate_strings_from_file(path):
@@ -511,24 +590,26 @@ def training_map(polygon_size):
         for line in training_file:
             line = line.strip().split("\t")
             coordinates.append((float(line[0]), float(line[1]), 0))
-    c = construct_spatial_grid(coordinates, polygon_size)
+    c = construct_loc2vec(coordinates, polygon_size, FILTER_1x1)
     c = np.reshape(c, (int(180 / polygon_size), int(360 / polygon_size)))
-    visualise_2D_grid(c, "Training Map", log=True)
+    visualise_2D_grid(c, u"Training Map", log=True)
 
 
-def generate_arrays_from_file_loc(path, train=True):
+def generate_arrays_from_file_loc(path, train=True, looping=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        polygon_size = 2
+        polygon_size = 1
         labels, target_coord = [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
-            labels.append(construct_spatial_grid([(float(line[0]), float(line[1]), 0)], 2))
-            target_coord.append(construct_loc2vec(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size))
-            print list(target_coord[-1])
+            labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2))
+            # X = apply_smoothing(construct_loc2vec(\
+            # eval(line[4]), eval(line[6]), eval(line[7]), polygon_size), polygon_size, sigma=0.4)
+            # target_coord.append(X / X.max())
+            target_coord.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size, FILTER_1x1))
 
             if counter % BATCH_SIZE == 0:
                 if train:
@@ -544,20 +625,35 @@ def generate_arrays_from_file_loc(path, train=True):
                 yield ([np.asarray(target_coord)], np.asarray(labels))
             else:
                 yield ([np.asarray(target_coord)])
+        if not looping:
+            break
 
 
-# ----------------------------------------------INVOKE METHODS HERE----------------------------------------------------
+def shrink_loc2vec(polygon_size):
+    """Remove polygons that cover the oceans."""
+    loc2vec = np.zeros((180 / polygon_size) * (360 / polygon_size),)
+    for line in codecs.open(u"../data/allCountries.txt", u"r", encoding=u"utf-8"):
+        line = line.split("\t")
+        lat, lon = float(line[4]), float(line[5])
+        index = coord_to_index((lat, lon), polygon_size=polygon_size)
+        loc2vec[index] += 1.0
+    cPickle.dump(loc2vec, open(u"loc2vec.pkl", "w"))
+
+# --------------------------------------------- INVOKE METHODS HERE ---------------------------------------------------
+
 # training_map()
+
 # visualise_2D_grid(construct_2D_grid(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"washington")), "image")
+
 # print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"china")
+
 # generate_training_data()
+
 # generate_evaluation_data(corpus="lgl", file_name="")
-# index = coord_to_index((-6.43, -172.32), True)
-# print(index, index_to_coord(index))
+
 # generate_vocabulary()
-# for word in generate_names_from_file("data/eval_lgl.txt"):
-#     print word.strip()
-# print(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"norway"))
+
+# shrink_loc2vec(2)
 
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
@@ -569,24 +665,18 @@ def generate_arrays_from_file_loc(path, train=True):
 
 # for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
-#     print line[0], line[1]
-#     x = construct_2D_grid(eval(line[4]), use_pop=True)
-#     print(get_non_zero_entries(x))
-#     visualise_2D_grid(x, line[6] + u" target.")
-#     x = construct_2D_grid([(float(line[0]), float(line[1]), 0)], use_pop=False)
-#     print(get_non_zero_entries(x))
-#     visualise_2D_grid(x, line[6] + u" label.")
-#     x = construct_2D_grid(eval(line[5]), use_pop=False)
-#     print(get_non_zero_entries(x))
-#     visualise_2D_grid(x, line[6] + u" entities.")
-
+#     x = construct_loc2vec(eval(line[4]), eval(line[6]), eval(line[7]), polygon_size=2)
+#     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
+#     visualise_2D_grid(x, " ".join(eval(line[5])))
+#     x = apply_smoothing(x, polygon_size=2, sigma=0.4)
+#     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
+#     visualise_2D_grid(x, " ".join(eval(line[5])))
 
 # c = Counter(c)
 # counts = []
 # for key in c.most_common():
 #     counts.append(key[1])
 # print(len(c)/4462.0)
-#
 # y_pos = np.arange(len(counts))
 # plt.bar(y_pos, counts, align='center', alpha=0.5)
 # plt.ylabel('Counts')
@@ -600,6 +690,39 @@ def generate_arrays_from_file_loc(path, train=True):
 #         out.write(line)
 #     counter += 1
 
+# l2v = list(cPickle.load(open(u"data/geonames_1x1.pkl")))
+# zeros = dict([(i, v) for i, v in enumerate(l2v) if v > 0])  # isolate the non zero values
+# zeros = dict([(i, v) for i, v in enumerate(zeros)])         # replace counts with indices
+# zeros = dict([(v, i) for (i, v) in zeros.iteritems()])      # reverse keys and values
+# cPickle.dump(zeros, open(u"data/1x1_filter.pkl", "w"))
+
+# filtered = [i for i, v in enumerate(l2v) if v > 0]
+# the_rest = [i for i, v in enumerate(l2v) if v == 0]
+# poly_size = 1
+# dict_rest = dict()
+#
+# for poly_rest in the_rest:
+#     best_index = 100000
+#     best_dist = 100000
+#     for poly_filtered in filtered:
+#         dist = great_circle(index_to_coord(poly_rest, poly_size), index_to_coord(poly_filtered, poly_size)).km
+#         if dist < best_dist:
+#             best_index = poly_filtered
+#             best_dist = dist
+#     dict_rest[poly_rest] = best_index
+#
+# cPickle.dump(dict_rest, open(u"data/1x1_rest.pkl", "w"))
+
+# l2v = np.reshape(l2v, newshape=((180 / 1), (360 / 1)))
+# visualise_2D_grid(l2v, "Geonames Database", True)
+
+# plt.plot(range(len(l2v)), np.asarray(sorted(l2v)))
+# plt.xlabel(u"Predictions")
+# plt.ylabel(u'Error Size')
+# plt.title(u"Some Chart")
+# plt.savefig(u'test.png', transparent=True)
+# plt.show()
+
 # correlations = [x[0][1] for x in cPickle.load(open("data/correlations.pkl"))]
 # correlations = [x[0][1] for x in correlations]
 # minimum = min(correlations)
@@ -608,3 +731,16 @@ def generate_arrays_from_file_loc(path, train=True):
 # correlations = np.reshape(np.array(correlations), ((180 / GRID_SIZE), (360 / GRID_SIZE)))
 # correlations = np.rot90((np.rot90(correlations)))
 # visualise_2D_grid(correlations, "GeoPixelSpatialCorrelation")
+
+# print index_to_coord(8177, 2)
+
+# import cProfile, pstats, StringIO
+# pr = cProfile.Profile()
+# pr.enable()
+# CODE HERE
+# pr.disable()
+# s = StringIO.StringIO()
+# sortby = 'cumulative'
+# ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+# ps.print_stats()
+# print s.getvalue()

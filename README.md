@@ -1,6 +1,6 @@
-# Spatial Linguistics
-## Upcoming Publication
-Work in progress, do not clone. 
+# Some code ...
 
-Be patient :-) Additional data required to run.
+Work in progress ... 
+
+Additional data required to run...
 

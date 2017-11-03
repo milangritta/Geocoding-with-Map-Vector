@@ -7,7 +7,8 @@ import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH, BATCH_SIZE
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH
+from preprocessing import BATCH_SIZE, REVERSE_2x2
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
 
@@ -33,7 +34,7 @@ final_errors = []
 for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
                                  steps=int(check_output([u"wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True),
                                  generate_strings_from_file(file_name)):
-    p = index_to_coord(np.argmax(p), 2)
+    p = index_to_coord(REVERSE_2x2[np.argmax(p)], 2)
     candidates = get_coordinates(conn.cursor(), name)
     candidates = sorted(candidates, key=lambda (a, b, c, d): c, reverse=True)
 
