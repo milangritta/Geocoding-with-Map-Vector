@@ -7,8 +7,8 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING, \
-    TARGET_LENGTH, generate_arrays_from_file_loc
+from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING
+from preprocessing import TARGET_LENGTH, generate_arrays_from_file_loc, FILTER_2x2, FILTER_1x1
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)
@@ -70,11 +70,11 @@ ess = GlobalMaxPooling1D()(ess)
 ess = Dense(250)(ess)
 ess = Dropout(0.5)(ess)
 
-input_polygon_size = 2
-loc2vec = Input(shape=((180 / input_polygon_size) * (360 / input_polygon_size),))
-tc = Dense(5000, activation='relu', input_dim=(180 / input_polygon_size) * (360 / input_polygon_size))
-tc = Dense(1000, activation='relu')(tc)
-tc = Dropout(0.5)(tc)
+input_polygon_size = 1
+loc2vec = Input(shape=(len(FILTER_1x1),))
+l2v = Dense(5000, activation='relu', input_dim=len(FILTER_1x1))(loc2vec)
+l2v = Dense(1000, activation='relu')(l2v)
+l2v = Dropout(0.5)(l2v)
 
 target_string = Input(shape=(TARGET_LENGTH,))
 ts = Embedding(len(word_to_index), EMB_DIM, input_length=TARGET_LENGTH, weights=weights)(target_string)
@@ -83,8 +83,8 @@ ts = GlobalMaxPooling1D()(ts)
 ts = Dropout(0.5)(ts)
 
 output_polygon_size = 2
-inp = concatenate([cwp, cws, esp, ess, tc, ts])
-inp = Dense(units=(180 / output_polygon_size) * (360 / output_polygon_size), activation=u'softmax')(inp)
+inp = concatenate([cwp, cws, esp, ess, l2v, ts])
+inp = Dense(units=len(FILTER_2x2), activation=u'softmax')(inp)
 model = Model(inputs=[context_words_pair, context_words_single, entities_strings_pair, entities_strings_single,
                       loc2vec, target_string], outputs=[inp])
 model.compile(loss=u'categorical_crossentropy', optimizer=u'rmsprop', metrics=[u'accuracy'])
@@ -97,4 +97,4 @@ early_stop = EarlyStopping(monitor=u'acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file_loc(file_name),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
-                    epochs=200, callbacks=[checkpoint, early_stop])
+                    epochs=150, callbacks=[checkpoint, early_stop])

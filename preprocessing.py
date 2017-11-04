@@ -179,15 +179,6 @@ def get_population(class_code, feat_code, p_map, pop):
     return pop
 
 
-# def remove_redundant_polygons(loc2vec, polygon_size):
-#     """"""
-#     filter_type = FILTER_1x1 if polygon_size == 1 else FILTER_2x2
-#     g = np.zeros(len(filter_type),)
-#     for index in filter_type:
-#         g[index] = loc2vec[filter_type[index]]
-#     return g
-
-
 def generate_training_data():
     """Prepare Wikipedia training data."""
     conn = sqlite3.connect(u'../data/geonames.db')
