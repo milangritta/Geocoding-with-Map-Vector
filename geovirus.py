@@ -57,7 +57,7 @@ if True:  # add CDATA xml construct?
 
 # ----------------------------------------------GENERATION------------------------------------------------
 
-if True:
+if False:
     """"""
     tree = ET.parse(u"data/GeoVirus.xml")
     root = tree.getroot()
@@ -91,4 +91,6 @@ if True:
     f.close()
     counter = Counter(counter)
     print counter.most_common()
+
+# --------------------------------------SUBSAMPLING FOR INTER-ANNOTATOR AGREEMENT--------------------------------------
 

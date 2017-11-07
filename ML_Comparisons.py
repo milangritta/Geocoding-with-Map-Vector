@@ -3,7 +3,7 @@ import sys
 from geopy.distance import great_circle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
-from preprocessing import generate_arrays_from_file_loc, index_to_coord, get_coordinates, generate_strings_from_file
+from preprocessing import generate_arrays_from_file_loc2vec, index_to_coord, get_coordinates, generate_strings_from_file
 from preprocessing import REVERSE_2x2
 from preprocessing import print_stats
 import numpy as np
@@ -18,7 +18,7 @@ X, Y = [], []
 clf = MultinomialNB()
 classes = range(len(REVERSE_2x2))
 # clf = RandomForestClassifier()
-for (x, y) in generate_arrays_from_file_loc(u"../data/train_wiki_small.txt", looping=False):
+for (x, y) in generate_arrays_from_file_loc2vec(u"../data/train_wiki_uniform.txt", looping=False):
     X.extend(x[0])
     Y.extend(np.argmax(y, axis=1))
     if len(X) > 25000:
@@ -37,7 +37,7 @@ final_errors = []
 clf = joblib.load(u'../data/bayes.pkl')
 test_file = u"data/eval_" + data + u".txt"
 
-for (x, y) in generate_arrays_from_file_loc(test_file, looping=False):
+for (x, y) in generate_arrays_from_file_loc2vec(test_file, looping=False):
     X.extend(x[0])
 
 print(u"Testing with:", len(X), u"examples.")

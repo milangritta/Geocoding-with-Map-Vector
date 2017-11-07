@@ -366,7 +366,7 @@ def visualise_2D_grid(x, title, log=False):
     """"""
     if log:
         x = np.log10(x)
-    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['yellow', 'orange', 'red', 'black'])
+    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['green', 'yellow', 'orange', 'red', 'black'])
     cmap.set_bad(color='lightblue')
     img = pyplot.imshow(x, cmap=cmap, interpolation='nearest')
     pyplot.colorbar(img, cmap=cmap)
@@ -428,13 +428,15 @@ def generate_arrays_from_file(path, w2i, train=True):
             line = line.strip().split("\t")
             labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
-            # near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
-            # far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
-            # context_words.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
+            near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
+            far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
+            context_words.append(pad_list(CONTEXT_LENGTH * 2, far[:CONTEXT_LENGTH / 2] + near +
+                                 pad_list(CONTEXT_LENGTH / 2, far[CONTEXT_LENGTH / 2:], from_left=False), from_left=True))
 
-            # near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
-            # far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
-            # entities_strings.append(pad_list(CONTEXT_LENGTH, None, from_left=True))
+            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
+            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
+            entities_strings.append(pad_list(CONTEXT_LENGTH * 2, far[:CONTEXT_LENGTH / 2] + near +
+                                    pad_list(CONTEXT_LENGTH / 2, far[CONTEXT_LENGTH / 2:], from_left=False), from_left=True))
 
             loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
@@ -602,7 +604,7 @@ def training_map(polygon_size):
     visualise_2D_grid(c, u"Training Map", log=True)
 
 
-def generate_arrays_from_file_loc(path, train=True, looping=True):
+def generate_arrays_from_file_loc2vec(path, train=True, looping=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
@@ -615,7 +617,7 @@ def generate_arrays_from_file_loc(path, train=True, looping=True):
             # X = apply_smoothing(construct_loc2vec(\
             # eval(line[4]), eval(line[6]), eval(line[7]), polygon_size), polygon_size, sigma=0.4)
             # target_coord.append(X / X.max())
-            target_coord.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
+            target_coord.append(construct_loc2vec(eval(line[4]) + eval(line[6]) + eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
             if counter % BATCH_SIZE == 0:
                 if train:
@@ -662,14 +664,16 @@ def shrink_loc2vec(polygon_size):
 
 # populate_sql()
 
-# for line in codecs.open("data/eval_wiki.txt", "r", encoding="utf-8"):
+
+# for line in codecs.open("data/eval_lgl_gold.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
 #     x = construct_loc2vec_full_scale(eval(line[4]) + eval(line[6]) + eval(line[7]), polygon_size=2)
 #     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
-#     visualise_2D_grid(x, " ".join(eval(line[5])))
-#     x = apply_smoothing(x, polygon_size=2, sigma=0.4)
+#     # x = np.log10(1 + x)
+#     visualise_2D_grid(x, " ".join(eval(line[5])), True)
+#     x = apply_smoothing(x, polygon_size=2, sigma=0.8)
 #     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
-#     visualise_2D_grid(x, " ".join(eval(line[5])))
+#     visualise_2D_grid(x, " ".join(eval(line[5]) + [line[0], line[1]]), True)
 
 # c = Counter(c)
 # counts = []
@@ -689,7 +693,7 @@ def shrink_loc2vec(polygon_size):
 #         out.write(line)
 #     counter += 1
 
-# l2v = list(cPickle.load(open(u"data/geonames_2x2.pkl")))
+# l2v = list(cPickle.load(open(u"data/geonames_1x1.pkl")))
 # zeros = dict([(i, v) for i, v in enumerate(l2v) if v > 0])  # isolate the non zero values
 # zeros = dict([(i, v) for i, v in enumerate(zeros)])         # replace counts with indices
 # zeros = dict([(v, i) for (i, v) in zeros.iteritems()])      # reverse keys and values
