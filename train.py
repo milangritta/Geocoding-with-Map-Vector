@@ -7,7 +7,7 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, PADDING
+from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN
 from preprocessing import TARGET_LENGTH, generate_arrays_from_file, FILTER_2x2, FILTER_1x1
 from subprocess import check_output
 
@@ -17,7 +17,7 @@ print(u"Input length:", CONTEXT_LENGTH)
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
 print(u"Vocabulary Size:", len(word_to_index))
 
-vectors = {UNKNOWN: np.ones(EMB_DIM), PADDING: np.ones(EMB_DIM)}
+vectors = {UNKNOWN: np.ones(EMB_DIM), u'0': np.ones(EMB_DIM)}
 for line in codecs.open(u"../data/glove.twitter." + str(EMB_DIM) + u"d.txt", encoding=u"utf-8"):
     if line.strip() == "":
         continue

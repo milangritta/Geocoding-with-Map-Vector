@@ -1,7 +1,7 @@
 import sqlite3
 import sys
 from geopy.distance import great_circle
-from sklearn.ensemble import RandomForestClassifier
+# from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
 from preprocessing import generate_arrays_from_file_loc2vec, index_to_coord, get_coordinates, generate_strings_from_file
 from preprocessing import REVERSE_2x2

@@ -439,7 +439,7 @@ def generate_arrays_from_file(path, w2i, train=True):
 
             loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
-            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), u'0', True))
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), True, u'0'))
 
             if counter % BATCH_SIZE == 0:
                 for collection in [context_words, entities_strings, target_string]:
@@ -487,11 +487,12 @@ def generate_arrays_from_file_lstm(path, w2i, train=True):
             line = line.strip().split("\t")
             labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
-            near, far = eval(line[2]), eval(line[3])
+            near = [w.replace(u"**LOC**", u"") for w in eval(line[2])]
+            far = [w.replace(u"**LOC**", u"") for w in eval(line[3])]
             left.append(far[:CONTEXT_LENGTH / 2] + near[:CONTEXT_LENGTH / 2])
             right.append(near[CONTEXT_LENGTH / 2:] + far[CONTEXT_LENGTH / 2:])
 
-            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), u'0', True))
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), True, u'0'))
 
             if counter % BATCH_SIZE == 0:
                 for collection in [left, right, target_string]:
@@ -634,7 +635,7 @@ def shrink_loc2vec(polygon_size):
 # training_map()
 # print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"china")
 # generate_training_data()
-generate_evaluation_data(corpus="lgl", file_name="")
+# generate_evaluation_data(corpus="lgl", file_name="")
 # generate_vocabulary()
 # shrink_loc2vec(2)
 

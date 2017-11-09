@@ -9,15 +9,15 @@ from keras.models import load_model
 from subprocess import check_output
 from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH
 from preprocessing import BATCH_SIZE, REVERSE_2x2
-from preprocessing import generate_arrays_from_file
+from preprocessing import generate_arrays_from_file_lstm
 # import matplotlib.pyplot as plt
 
 if len(sys.argv) > 1:
     data = sys.argv[1]
 else:
-    data = u"lgl_gold"
+    data = u"lgl"
 
-weights_file = u"../data/weights_new"
+weights_file = u"../data/weights"
 print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data, u"with weights:", weights_file)
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
@@ -31,7 +31,7 @@ errors = codecs.open(u"errors.tsv", u"w", encoding=u"utf-8")
 conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 final_errors = []
-for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file(file_name, word_to_index, train=False),
+for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_file_lstm(file_name, word_to_index, train=False),
                                  steps=int(check_output([u"wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True),
                                  generate_strings_from_file(file_name)):
     p = index_to_coord(REVERSE_2x2[np.argmax(p)], 2)
