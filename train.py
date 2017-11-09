@@ -95,4 +95,4 @@ early_stop = EarlyStopping(monitor=u'acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file(file_name, word_to_index),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
-                    epochs=150, callbacks=[checkpoint, early_stop])
+                    epochs=250, callbacks=[checkpoint, early_stop])

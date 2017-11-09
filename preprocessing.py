@@ -201,10 +201,10 @@ def generate_training_data():
                 for d in doc:
                     if d.text == target[0]:
                         if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                            near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]] + \
-                                       [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]]
-                            far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]] + \
-                                      [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]]
+                            near_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]], from_left=True) \
+                                       + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]], from_left=False)
+                            far_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]], from_left=True) \
+                                      + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]], from_left=False)
                             near_out, far_out = [], []
                             location = u""
                             for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
@@ -303,10 +303,10 @@ def generate_evaluation_data(corpus, file_name):
                         if abs(d.idx - start) > 4 or abs(d.idx + ent_length - end) > 4:
                             continue
                         captured = True
-                        near_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]] + \
-                                   [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]]
-                        far_inp = [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]] + \
-                                  [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]]
+                        near_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]], from_left=True) \
+                                 + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]], from_left=False)
+                        far_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]], from_left=True) \
+                                + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]], from_left=False)
                         near_out, far_out = [], []
                         location = u""
                         for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
@@ -430,13 +430,11 @@ def generate_arrays_from_file(path, w2i, train=True):
 
             near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
-            context_words.append(pad_list(CONTEXT_LENGTH * 2, far[:CONTEXT_LENGTH / 2] + near +
-                                 pad_list(CONTEXT_LENGTH / 2, far[CONTEXT_LENGTH / 2:], from_left=False), from_left=True))
+            context_words.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
 
             near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
             far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
-            entities_strings.append(pad_list(CONTEXT_LENGTH * 2, far[:CONTEXT_LENGTH / 2] + near +
-                                    pad_list(CONTEXT_LENGTH / 2, far[CONTEXT_LENGTH / 2:], from_left=False), from_left=True))
+            entities_strings.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
 
             loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
@@ -481,31 +479,21 @@ def generate_arrays_from_file_lstm(path, w2i, train=True):
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        context_words_left, context_words_right, entities_strings_left, entities_strings_right = [], [], [], []
+        left, right = [], []
         target_string, labels = [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
             labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
-            near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
-            far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
-            context_words_left.append(pad_list(CONTEXT_LENGTH, far[:CONTEXT_LENGTH / 2]
-                                               + near[:CONTEXT_LENGTH / 2], from_left=True))
-            context_words_right.append(pad_list(CONTEXT_LENGTH, near[CONTEXT_LENGTH / 2:]
-                                               + far[CONTEXT_LENGTH / 2:], from_left=False))
-
-            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
-            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
-            entities_strings_left.append(pad_list(CONTEXT_LENGTH, far[:CONTEXT_LENGTH / 2]
-                                               + near[:CONTEXT_LENGTH / 2], from_left=True))
-            entities_strings_right.append(pad_list(CONTEXT_LENGTH, near[CONTEXT_LENGTH / 2:]
-                                               + far[CONTEXT_LENGTH / 2:], from_left=False))
+            near, far = eval(line[2]), eval(line[3])
+            left.append(far[:CONTEXT_LENGTH / 2] + near[:CONTEXT_LENGTH / 2])
+            right.append(near[CONTEXT_LENGTH / 2:] + far[CONTEXT_LENGTH / 2:])
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
 
             if counter % BATCH_SIZE == 0:
-                for collection in [context_words_left, context_words_right, entities_strings_left, entities_strings_right, target_string]:
+                for collection in [left, right, target_string]:
                     for x in collection:
                         for i, w in enumerate(x):
                             if w in w2i:
@@ -513,17 +501,15 @@ def generate_arrays_from_file_lstm(path, w2i, train=True):
                             else:
                                 x[i] = w2i[UNKNOWN]
                 if train:
-                    yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
-                            np.asarray(entities_strings_right), np.asarray(target_string)], np.asarray(labels))
+                    yield ([np.asarray(left), np.asarray(right), np.asarray(target_string)], np.asarray(labels))
                 else:
-                    yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
-                            np.asarray(entities_strings_right), np.asarray(target_string)])
+                    yield ([np.asarray(left), np.asarray(right), np.asarray(target_string)])
 
-                context_words_left, context_words_right, entities_strings_left, entities_strings_right = [], [], [], []
+                left, right = [], []
                 target_string, labels = [], []
 
         if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
-            for collection in [context_words_left, context_words_right, entities_strings_left, entities_strings_right, target_string]:
+            for collection in [left, right, target_string]:
                 for x in collection:
                     for i, w in enumerate(x):
                         if w in w2i:
@@ -531,11 +517,9 @@ def generate_arrays_from_file_lstm(path, w2i, train=True):
                         else:
                             x[i] = w2i[UNKNOWN]
             if train:
-                yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
-                        np.asarray(entities_strings_right), np.asarray(target_string)], np.asarray(labels))
+                yield ([np.asarray(left), np.asarray(right), np.asarray(target_string)], np.asarray(labels))
             else:
-                yield ([np.asarray(context_words_left), np.asarray(context_words_right), np.asarray(entities_strings_left),
-                        np.asarray(entities_strings_right), np.asarray(target_string)])
+                yield ([np.asarray(left), np.asarray(right), np.asarray(target_string)])
 
 
 def generate_strings_from_file(path):
@@ -614,9 +598,6 @@ def generate_arrays_from_file_loc2vec(path, train=True, looping=True):
             counter += 1
             line = line.strip().split("\t")
             labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0, u'')], 2, FILTER_2x2, OUTLIERS_2x2))
-            # X = apply_smoothing(construct_loc2vec(\
-            # eval(line[4]), eval(line[6]), eval(line[7]), polygon_size), polygon_size, sigma=0.4)
-            # target_coord.append(X / X.max())
             target_coord.append(construct_loc2vec(eval(line[4]) + eval(line[6]) + eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
             if counter % BATCH_SIZE == 0:
