@@ -16,7 +16,6 @@ from scipy.spatial.distance import euclidean
 BATCH_SIZE = 64
 CONTEXT_LENGTH = 200
 UNKNOWN = u"<unknown>"
-PADDING = u"0"
 EMB_DIM = 50
 TARGET_LENGTH = 15
 FILTER_1x1 = cPickle.load(open(u"data/1x1_filter.pkl"))    # We need these filters
@@ -40,13 +39,13 @@ def print_stats(accuracy):
     print("==============================================================================================")
 
 
-def pad_list(size, a_list, from_left):
+def pad_list(size, a_list, from_left, padding):
     """"""
     while len(a_list) < size:
         if from_left:
-            a_list = [PADDING] + a_list
+            a_list = [padding] + a_list
         else:
-            a_list += [PADDING]
+            a_list += [padding]
     return a_list
 
 
@@ -184,6 +183,7 @@ def generate_training_data():
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load(u'en')
+    padding = nlp(u"0")[0]
     inp = codecs.open(u"../data/geowiki.txt", u"r", encoding=u"utf-8")
     o = codecs.open(u"../data/train_wiki.txt", u"w", encoding=u"utf-8")
     lat, lon = u"", u""
@@ -201,10 +201,10 @@ def generate_training_data():
                 for d in doc:
                     if d.text == target[0]:
                         if u" ".join(target) == u" ".join([t.text for t in doc[d.i:d.i + len(target)]]):
-                            near_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]], from_left=True) \
-                                       + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]], from_left=False)
-                            far_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]], from_left=True) \
-                                      + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]], from_left=False)
+                            near_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]], True, padding) \
+                                       + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]], False, padding)
+                            far_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]], True, padding) \
+                                      + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]], False, padding)
                             near_out, far_out = [], []
                             location = u""
                             for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
@@ -217,17 +217,17 @@ def generate_training_data():
                                             out_list.append(u"**LOC**" + item.text.lower())
                                     elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY",
                                                             u"QUANTITY", u"CARDINAL", u"ORDINAL"]:
-                                        out_list.append(PADDING)
+                                        out_list.append(u'0')
                                     elif item.is_punct:
-                                        out_list.append(PADDING)
+                                        out_list.append(u'0')
                                     elif item.is_digit or item.like_num:
-                                        out_list.append(PADDING)
+                                        out_list.append(u'0')
                                     elif item.like_email:
-                                        out_list.append(PADDING)
+                                        out_list.append(u'0')
                                     elif item.like_url:
-                                        out_list.append(PADDING)
+                                        out_list.append(u'0')
                                     elif item.is_stop:
-                                        out_list.append(PADDING)
+                                        out_list.append(u'0')
                                     else:
                                         out_list.append(item.lemma_)
                                     if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
@@ -242,7 +242,7 @@ def generate_training_data():
                                             offset = 1 if index == len(in_list) - 1 else 0
                                             for i in range(index - len(location.split()), index):
                                                 out_list[i + offset] = in_list[i + offset].lemma_ \
-                                                if in_list[i + offset].is_alpha and location != u" ".join(target) else PADDING
+                                                if in_list[i + offset].is_alpha and location != u" ".join(target) else u'0'
                                         location = u""
                             target_grid = get_coordinates(c, u" ".join(target))
                             if len(target_grid) == 0:
@@ -280,6 +280,7 @@ def generate_evaluation_data(corpus, file_name):
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     nlp = spacy.load(u'en')
+    padding = nlp(u"0")[0]
     directory = u"../data/" + corpus + u"/"
     o = codecs.open(u"data/eval_" + corpus + file_name + u".txt", u"w", encoding=u"utf-8")
     line_no = 0 if corpus == u"lgl" else -1
@@ -303,10 +304,10 @@ def generate_evaluation_data(corpus, file_name):
                         if abs(d.idx - start) > 4 or abs(d.idx + ent_length - end) > 4:
                             continue
                         captured = True
-                        near_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]], from_left=True) \
-                                 + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]], from_left=False)
-                        far_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]], from_left=True) \
-                                + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]], from_left=False)
+                        near_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH / 2):d.i]], True, padding) \
+                                 + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target): d.i + len(target) + CONTEXT_LENGTH / 2]], False, padding)
+                        far_inp = pad_list(CONTEXT_LENGTH / 2, [x for x in doc[max(0, d.i - CONTEXT_LENGTH):max(0, d.i - CONTEXT_LENGTH / 2)]], True, padding) \
+                                + pad_list(CONTEXT_LENGTH / 2, [x for x in doc[d.i + len(target) + CONTEXT_LENGTH / 2: d.i + len(target) + CONTEXT_LENGTH]], False, padding)
                         near_out, far_out = [], []
                         location = u""
                         for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
@@ -319,17 +320,17 @@ def generate_evaluation_data(corpus, file_name):
                                         out_list.append(u"**LOC**" + item.text.lower())
                                 elif item.ent_type_ in [u"PERSON", u"DATE", u"TIME", u"PERCENT", u"MONEY",
                                                         u"QUANTITY", u"CARDINAL", u"ORDINAL"]:
-                                    out_list.append(PADDING)
+                                    out_list.append(u'0')
                                 elif item.is_punct:
-                                    out_list.append(PADDING)
+                                    out_list.append(u'0')
                                 elif item.is_digit or item.like_num:
-                                    out_list.append(PADDING)
+                                    out_list.append(u'0')
                                 elif item.like_email:
-                                    out_list.append(PADDING)
+                                    out_list.append(u'0')
                                 elif item.like_url:
-                                    out_list.append(PADDING)
+                                    out_list.append(u'0')
                                 elif item.is_stop:
-                                    out_list.append(PADDING)
+                                    out_list.append(u'0')
                                 else:
                                     out_list.append(item.lemma_)
                                 if location.strip() != u"" and (item.ent_type == 0 or index == len(in_list) - 1):
@@ -344,7 +345,7 @@ def generate_evaluation_data(corpus, file_name):
                                         offset = 1 if index == len(in_list) - 1 else 0
                                         for i in range(index - len(location.split()), index):
                                             out_list[i + offset] = in_list[i + offset].lemma_ \
-                                                if in_list[i + offset].is_alpha and location != u" ".join(target) else PADDING
+                                                if in_list[i + offset].is_alpha and location != u" ".join(target) else u'0'
                                     location = u""
 
                         lookup = toponym[0] if corpus != u"wiki" else toponym[1]
@@ -388,7 +389,7 @@ def apply_smoothing(loc2vec, polygon_size, sigma):
 
 def generate_vocabulary():
     """Prepare the vocabulary(ies) for training."""
-    vocab_words, vocab_locations = {UNKNOWN, PADDING}, {UNKNOWN, PADDING}
+    vocab_words, vocab_locations = {UNKNOWN, u'0'}, {UNKNOWN, u'0'}
     words, locations = [], []
     for f in [u"../data/train_wiki.txt"]:
         training_file = codecs.open(f, u"r", encoding=u"utf-8")
@@ -428,17 +429,17 @@ def generate_arrays_from_file(path, w2i, train=True):
             line = line.strip().split("\t")
             labels.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
-            near = [w if u"**LOC**" not in w else PADDING for w in eval(line[2])]
-            far = [w if u"**LOC**" not in w else PADDING for w in eval(line[3])]
+            near = [w if u"**LOC**" not in w else u'0' for w in eval(line[2])]
+            far = [w if u"**LOC**" not in w else u'0' for w in eval(line[3])]
             context_words.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
 
-            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[2])]
-            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else PADDING for w in eval(line[3])]
+            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else u'0' for w in eval(line[2])]
+            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else u'0' for w in eval(line[3])]
             entities_strings.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
 
             loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
-            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), u'0', True))
 
             if counter % BATCH_SIZE == 0:
                 for collection in [context_words, entities_strings, target_string]:
@@ -490,7 +491,7 @@ def generate_arrays_from_file_lstm(path, w2i, train=True):
             left.append(far[:CONTEXT_LENGTH / 2] + near[:CONTEXT_LENGTH / 2])
             right.append(near[CONTEXT_LENGTH / 2:] + far[CONTEXT_LENGTH / 2:])
 
-            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), from_left=True))
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), u'0', True))
 
             if counter % BATCH_SIZE == 0:
                 for collection in [left, right, target_string]:
@@ -633,7 +634,7 @@ def shrink_loc2vec(polygon_size):
 # training_map()
 # print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"china")
 # generate_training_data()
-# generate_evaluation_data(corpus="lgl", file_name="")
+generate_evaluation_data(corpus="lgl", file_name="")
 # generate_vocabulary()
 # shrink_loc2vec(2)
 
@@ -728,3 +729,4 @@ def shrink_loc2vec(polygon_size):
 # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
 # ps.print_stats()
 # print s.getvalue()
+
