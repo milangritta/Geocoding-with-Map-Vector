@@ -24,7 +24,9 @@ if True:  # add CDATA xml construct?
             start = location.find('start').text
             end = location.find('end').text
             name = location.find('name').text
-            url = location.find('page').text
+            url = location.find('page')
+            if url is None:
+                raise Exception("URL missing!")
             chunk = text[int(start) - 1: int(end) - 1]
             if chunk != name:
                 raise Exception(chunk + ", " + name)

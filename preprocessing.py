@@ -630,6 +630,21 @@ def shrink_loc2vec(polygon_size):
         loc2vec[index] += 1.0
     cPickle.dump(loc2vec, open(u"loc2vec.pkl", "w"))
 
+
+def oracle(path):
+    """"""
+    final_errors = []
+    conn = sqlite3.connect(u'../data/geonames.db')
+    for line in codecs.open(path, "r", encoding="utf-8"):
+        line = line.strip().split("\t")
+        coordinates = (float(line[0]), float(line[1]))
+        best_candidate = []
+        for candidate in get_coordinates(conn.cursor(), u" ".join(eval(line[5])).strip()):
+            best_candidate.append(great_circle(coordinates, (float(candidate[0]), float(candidate[1]))).km)
+        final_errors.append(sorted(best_candidate)[0])
+    print_stats(final_errors)
+
+
 # --------------------------------------------- INVOKE METHODS HERE ---------------------------------------------------
 
 # training_map()
@@ -638,7 +653,7 @@ def shrink_loc2vec(polygon_size):
 # generate_evaluation_data(corpus="lgl", file_name="")
 # generate_vocabulary()
 # shrink_loc2vec(2)
-
+# oracle(u"data/eval_geovirus.txt")
 # conn = sqlite3.connect('../data/geonames.db')
 # c = conn.cursor()
 # c.execute("INSERT INTO GEO VALUES (?, ?)", (u"darfur", u"[(13.5, 23.5, 0), (13.0, 25.0, 10000), (44.05135, -94.83804, 106)]"))
