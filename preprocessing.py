@@ -454,6 +454,66 @@ def generate_arrays_from_file(path, w2i, train=True):
                         np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
 
 
+def generate_arrays_from_file_binary(path, w2i, db, train=True):
+    """"""
+    while True:
+        training_file = codecs.open(path, "r", encoding="utf-8")
+        counter = 0
+        context_words, entities_strings, labels = [], [], []
+        loc2vec, target_string = [], []
+        for line in training_file:
+            counter += 1
+            line = line.strip().split("\t")
+            candidates = get_coordinates(db, u" ".join(eval(line[5])).strip())
+            pop = great_circle((candidates[0][0], candidates[0][1]), (float(line[0]), float(line[1]))).km < 1
+            labels.append(1 if pop else 0)
+
+            near = [w if u"**LOC**" not in w else u'0' for w in eval(line[2])]
+            far = [w if u"**LOC**" not in w else u'0' for w in eval(line[3])]
+            context_words.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
+
+            near = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else u'0' for w in eval(line[2])]
+            far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else u'0' for w in eval(line[3])]
+            entities_strings.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
+
+            loc2vec.append(construct_loc2vec(eval(line[4]) + eval(line[6]) + eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
+
+            target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), True, u'0'))
+
+            if counter % BATCH_SIZE == 0:
+                for collection in [context_words, entities_strings, target_string]:
+                    for x in collection:
+                        for i, w in enumerate(x):
+                            if w in w2i:
+                                x[i] = w2i[w]
+                            else:
+                                x[i] = w2i[UNKNOWN]
+                if train:
+                    yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                            np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)], np.asarray(labels))
+                else:
+                    yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                            np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
+
+                context_words, entities_strings, labels = [], [], []
+                loc2vec, target_string = [], []
+
+        if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
+            for collection in [context_words, entities_strings, target_string]:
+                for x in collection:
+                    for i, w in enumerate(x):
+                        if w in w2i:
+                            x[i] = w2i[w]
+                        else:
+                            x[i] = w2i[UNKNOWN]
+            if train:
+                yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                        np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)], np.asarray(labels))
+            else:
+                yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
+                        np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
+
+
 def generate_arrays_from_file_lstm(path, w2i, train=True):
     """"""
     while True:
@@ -509,8 +569,7 @@ def generate_strings_from_file(path):
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
             context = u" ".join(eval(line[2])) + u"*E*" + u" ".join(eval(line[5])) + u"*E*" + u" ".join(eval(line[3]))
-            # yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), context)
-            yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), None)
+            yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), context)
 
 
 def filter_wiktor():

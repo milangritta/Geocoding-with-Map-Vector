@@ -70,8 +70,6 @@ if False:
         text = child.find('text').text
         gold_tops = []
         for location in child.findall('./locations/location'):
-            # if location.find('continent') is not None:
-            #     continue
             start = location.find("start")
             end = location.find("end")
             name = location.find("name")
