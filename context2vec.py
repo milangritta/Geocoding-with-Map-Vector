@@ -7,8 +7,7 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, LSTM
-from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, TARGET_LENGTH, generate_arrays_from_file_lstm, \
-    FILTER_2x2
+from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, TARGET_LENGTH, generate_arrays_from_file_lstm, FILTER_2x2
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)

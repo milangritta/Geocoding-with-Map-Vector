@@ -7,7 +7,7 @@ import sys
 from geopy.distance import great_circle
 from keras.models import load_model
 from subprocess import check_output
-from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file, CONTEXT_LENGTH
+from preprocessing import get_coordinates, print_stats, index_to_coord, generate_strings_from_file
 from preprocessing import BATCH_SIZE, REVERSE_2x2
 from preprocessing import generate_arrays_from_file
 # import matplotlib.pyplot as plt
@@ -18,7 +18,6 @@ else:
     data = u"lgl"
 
 weights_file = u"../data/weights"
-print(u"Input length:", CONTEXT_LENGTH)
 print(u"Testing:", data, u"with weights:", weights_file)
 word_to_index = cPickle.load(open(u"data/w2i.pkl"))
 #  --------------------------------------------------------------------------------------------------------------------
@@ -66,13 +65,12 @@ for p, (y, name, context) in zip(model.predict_generator(generate_arrays_from_fi
         if great_circle(y, (candidate[0], candidate[1])).km < dist_y:
             dist_y = great_circle(y, (candidate[0], candidate[1])).km
             index_y = index
-    # ------------- END OF DIAGNOSTICS -----------------
 
     errors.write(name + u"\t" + unicode(y) + u"\t" + unicode(p) + "\t" + unicode(best_candidate[1])
                  + u"\t" + unicode(index_y) + u"\t" + unicode(index_p) + u"\t" + unicode(final_errors[-1]) + u"\t" +
                  unicode(best_candidate[0]) + u"\t" + unicode(len(candidates)) + u"\t" + unicode(sorted(y_to_geonames)[0])
                  + u"\t" + context.replace(u"\n", u"") + u"\n")
-    # print("-----------------------------------------------------------------------------------------------------------")
+    # ------------- END OF DIAGNOSTICS -----------------
 
 print_stats(final_errors)
 print(u"Processed file", file_name)

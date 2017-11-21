@@ -1,21 +1,21 @@
 import codecs
+import random
 import sqlite3
 import xml.etree.ElementTree as ET
 from collections import Counter
-
 from geopy.distance import great_circle
 from preprocessing import get_coordinates
 
 # --------------------------------------------ERROR CHECKING----------------------------------------------
 
-if True:  # add CDATA xml construct?
+if False:
     tree = ET.parse(u'data/GeoVirus.xml')
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
     root = tree.getroot()
     duplicates = set()
     for article in root:
-        text = article.find('text').text  # check for duplicate article titles !!!!!
+        text = article.find('text').text
         if text in duplicates:
             raise Exception('Duplicate titles/sources!')
         else:
@@ -95,4 +95,28 @@ if False:
     print counter.most_common()
 
 # --------------------------------------SUBSAMPLING FOR INTER-ANNOTATOR AGREEMENT--------------------------------------
+
+if True:  # add CDATA?
+    iaa_check = codecs.open(u"data/iaa_check.txt", "w", "utf-8")
+    iaa_test = codecs.open(u"data/iaa_test.txt", "w", "utf-8")
+    tree = ET.parse(u'data/GeoVirus.xml')
+    root = tree.getroot()
+
+    for article in root:
+        if random.randint(1, 10) > 9:
+            text = article.find("text").text
+            iaa_test.write("-------------NEW ARTICLE-----------------\n")
+            iaa_test.write(text + "\n")
+            print_count = 0
+            for loc in article.findall("./locations/location"):
+                print_count += 1
+                start = int(loc.find("start").text)
+                iaa_check.write(loc.find("page").text + "\n")
+                iaa_check.write(loc.find("start").text + "\n")
+                iaa_check.write(loc.find("name").text + "\n")
+                if print_count <= 3:
+                    iaa_test.write("-----------\n")
+                    iaa_test.write("LOCATION NAME -> Asia\n")
+                    iaa_test.write("LINK -> https://en.wikipedia.org/wiki/Asia\n")
+                    iaa_test.write("START CHARACTER -> 100\n")
 

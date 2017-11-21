@@ -2,14 +2,13 @@
 import codecs
 import cPickle
 from collections import Counter
-from scipy import ndimage
 import matplotlib.pyplot as plt
 import spacy
 import numpy as np
 import sqlite3
 from geopy.distance import great_circle
 from matplotlib import pyplot, colors
-from scipy.spatial.distance import euclidean
+# from scipy.spatial.distance import euclidean
 
 
 # -------- GLOBAL CONSTANTS AND VARIABLES -------- #
@@ -30,9 +29,9 @@ OUTLIERS_2x2 = cPickle.load(open(u"data/2x2_outliers.pkl"))    # have been remov
 def print_stats(accuracy):
     """"""
     print("==============================================================================================")
-    accuracy = np.log(np.array(accuracy) + 1)
     print(u"Median error:", np.median(sorted(accuracy)))
     print(u"Mean error:", np.mean(accuracy))
+    accuracy = np.log(np.array(accuracy) + 1)
     k = np.log(161)  # This is the k in accuracy@k metric (see my Survey Paper for details)
     print u"Accuracy to 161 km: ", sum([1.0 for dist in accuracy if dist < k]) / len(accuracy)
     print u"AUC = ", np.trapz(accuracy) / (np.log(20039) * (len(accuracy) - 1))  # Trapezoidal rule.
@@ -113,15 +112,6 @@ def construct_loc2vec_full_scale(a_list, polygon_size):
         index = coord_to_index((s[0], s[1]), polygon_size)
         loc2vec[index] += float(max(s[2], 1)) / max_pop
     return loc2vec / loc2vec.max() if loc2vec.max() > 0.0 else loc2vec
-
-
-def assemble_features(target, near, far, polygon_size, filter_type, outliers):
-    """"""
-    target = construct_loc2vec(target, polygon_size, filter_type, outliers)
-    near = construct_loc2vec(near, polygon_size, filter_type, outliers)
-    far = construct_loc2vec(far, polygon_size, filter_type, outliers)
-    l2v = np.add(np.add(near, far), target)
-    return l2v / l2v.max()
 
 
 def merge_lists(grids):
@@ -367,24 +357,13 @@ def visualise_2D_grid(x, title, log=False):
     """"""
     if log:
         x = np.log10(x)
-    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['green', 'yellow', 'orange', 'red', 'black'])
-    cmap.set_bad(color='lightblue')
+    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['lightgrey', 'black'])
+    # cmap.set_bad(color='lightblue')
     img = pyplot.imshow(x, cmap=cmap, interpolation='nearest')
     pyplot.colorbar(img, cmap=cmap)
     plt.title(title)
     # plt.savefig(u"images/" + title + u".png", dpi=200)
     plt.show()
-
-
-def apply_smoothing(loc2vec, polygon_size, sigma):
-    """"""
-    loc2vec = np.reshape(loc2vec, newshape=((180 / polygon_size), (360 / polygon_size)))
-    # for row in loc2vec:
-    #     print list(row)
-    loc2vec = ndimage.filters.gaussian_filter(loc2vec, sigma)
-    # for row in loc2vec:
-    #     print list(row)
-    return loc2vec.ravel()
 
 
 def generate_vocabulary():
@@ -437,7 +416,7 @@ def generate_arrays_from_file(path, w2i, train=True):
             far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else u'0' for w in eval(line[3])]
             entities_strings.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
 
-            loc2vec.append(assemble_features(eval(line[4]), eval(line[6]), eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
+            loc2vec.append(construct_loc2vec(eval(line[4]) + eval(line[6]) + eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), True, u'0'))
 
@@ -530,42 +509,8 @@ def generate_strings_from_file(path):
         for line in codecs.open(path, "r", encoding="utf-8"):
             line = line.strip().split("\t")
             context = u" ".join(eval(line[2])) + u"*E*" + u" ".join(eval(line[5])) + u"*E*" + u" ".join(eval(line[3]))
-            yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), context)
-
-
-def compute_embedding_distances(W, dim, polygon_size):
-    store = []
-    W = np.reshape(W, (int(180 / polygon_size), int(360 / polygon_size), dim))
-    for row in W:
-        store_col = []
-        for column in row:
-            col_vector = []
-            for r in W:
-                for c in r:
-                    col_vector.append(euclidean(column, c))
-            store_col.append(col_vector)
-        store.append(store_col)
-    return store
-
-
-def compute_pixel_similarity(polygon_size):
-    distances_p = compute_embedding_distances(cPickle.load(open(u"data/W.pkl")), 801, polygon_size)
-
-    store = []
-    for r in range(int(180 / polygon_size)):
-        store_c = []
-        for c in range(int(360 / polygon_size)):
-            store_c.append((r, c))
-        store.append(store_c)
-
-    distances_g = compute_embedding_distances(np.array(store), 2, polygon_size)
-
-    correlations = []
-    for p, g in zip(distances_p, distances_g):
-        for cp, cg in zip(p, g):
-            correlations.append(np.corrcoef(cp, cg))
-
-    cPickle.dump(correlations, open(u"data/correlations.pkl", "w"))
+            # yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), context)
+            yield ((float(line[0]), float(line[1])), u" ".join(eval(line[5])).strip(), None)
 
 
 def filter_wiktor():
@@ -648,7 +593,7 @@ def oracle(path):
 # --------------------------------------------- INVOKE METHODS HERE ---------------------------------------------------
 
 # training_map()
-# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"china")
+# print get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"dublin")
 # generate_training_data()
 # generate_evaluation_data(corpus="lgl", file_name="")
 # generate_vocabulary()
@@ -663,15 +608,16 @@ def oracle(path):
 # populate_sql()
 
 
-# for line in codecs.open("data/eval_lgl_gold.txt", "r", encoding="utf-8"):
+# for line in codecs.open("data/eval_geovirus.txt", "r", encoding="utf-8"):
 #     line = line.strip().split("\t")
-#     x = construct_loc2vec_full_scale(eval(line[4]) + eval(line[6]) + eval(line[7]), polygon_size=2)
-#     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
-#     # x = np.log10(1 + x)
-#     visualise_2D_grid(x, " ".join(eval(line[5])), True)
-#     x = apply_smoothing(x, polygon_size=2, sigma=0.8)
-#     x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
-#     visualise_2D_grid(x, " ".join(eval(line[5]) + [line[0], line[1]]), True)
+#     print line[2] + line[3]
+#     x = construct_loc2vec_full_scale(eval(line[4]) + eval(line[6]) + eval(line[7]), polygon_size=3)
+#     x = np.reshape(x, newshape=((180 / 3), (360 / 3)))
+    # x = np.log10(1 + x)
+    # visualise_2D_grid(x, " ".join(eval(line[5]) + [line[0], line[1]]).upper(), True)
+    # x = apply_smoothing(x, polygon_size=1, sigma=0.8)
+    # x = np.reshape(x, newshape=((180 / 2), (360 / 2)))
+    # visualise_2D_grid(x, " ".join(eval(line[5]) + [line[0], line[1]]), True)
 
 # c = Counter(c)
 # counts = []
