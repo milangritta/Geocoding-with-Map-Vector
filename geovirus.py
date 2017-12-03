@@ -3,6 +3,7 @@ import random
 import sqlite3
 import xml.etree.ElementTree as ET
 from collections import Counter
+import sklearn, numpy
 from geopy.distance import great_circle
 from preprocessing import get_coordinates
 
@@ -17,7 +18,7 @@ if False:
     for article in root:
         text = article.find('text').text
         if text in duplicates:
-            raise Exception('Duplicate titles/sources!')
+            raise Exception(u'Duplicate titles/sources!')
         else:
             duplicates.add(text)
         for location in article.find('locations'):
@@ -25,8 +26,9 @@ if False:
             end = location.find('end').text
             name = location.find('name').text
             url = location.find('page')
-            if url is None:
-                raise Exception("URL missing!")
+            if url.text != u"N/A":
+                if url is None or not url.text.startswith(u"https://en.wikipedia.org/wiki/"):
+                    raise Exception(u"URL corrupted!")
             chunk = text[int(start) - 1: int(end) - 1]
             if chunk != name:
                 raise Exception(chunk + ", " + name)
@@ -40,21 +42,35 @@ if False:
                 gap = great_circle((float(lat), float(lon)), (coord[0], coord[1])).km
                 if gap < dist:
                     dist = gap
-            if dist > 500:
-                print "AAARGRHG!!!!!", name, url, dist, lat, lon
-
-                # COORDINATE LIMITS (180 x 360)!!!
-
-                # tree.write('data/GeoVirusUpdated.xml')
+            if dist > 1000:
+                print u"DISTANCE!!", name, url, dist, lat, lon
 
 # ----------------------------------------------STATISTICS------------------------------------------------
 
-
-# tree = ET.parse('data/GeoVirus.xml')
-# root = tree.getroot()
-# for article in root:
-#     for location in article:
-#         print location.text
+if False:
+    tree = ET.parse('data/GeoVirus.xml')
+    root = tree.getroot()
+    counter, continents, words, articles = [], 0, [], 0
+    for article in root:
+        articles += 1
+        text = article.find("text").text
+        words.extend(text.split())
+        for location in article.findall("locations/location"):
+            name = location.find("name")
+            cont = location.find("continent")
+            if cont is not None:
+                continents += 1
+            counter.append(name.text)
+    print "Total Locations:", len(counter)
+    counter = Counter(counter)
+    print "Unique Locations:", len(counter)
+    print "Most Common:", counter.most_common()
+    print "Continents", continents
+    counter = [j for (i, j) in counter.most_common()]
+    print "Mean:", numpy.mean(counter)
+    print "Median:", numpy.median(counter)
+    print "Articles:", articles
+    print "Total words:", len(words)
 
 
 # ----------------------------------------------GENERATION------------------------------------------------
@@ -94,7 +110,7 @@ if False:
 
 # --------------------------------------SUBSAMPLING FOR INTER-ANNOTATOR AGREEMENT--------------------------------------
 
-if True:  # add CDATA?
+if False:
     iaa_check = codecs.open(u"data/iaa_check.txt", "w", "utf-8")
     iaa_test = codecs.open(u"data/iaa_test.txt", "w", "utf-8")
     tree = ET.parse(u'data/GeoVirus.xml')
@@ -118,3 +134,49 @@ if True:  # add CDATA?
                     iaa_test.write("LINK -> https://en.wikipedia.org/wiki/Asia\n")
                     iaa_test.write("START CHARACTER -> 100\n")
 
+
+# ------------------------------------------MERGING INTER-ANNOTATOR AGREEMENT----------------------------------------
+
+if False:
+    iaa_answers = codecs.open(u"data/iaa_answers.txt", "w", "utf-8")
+    for i in range(1, 22):
+        annotations = []
+        for line in codecs.open(u"/Users/milangritta/Downloads/annotations/" + str(i) + u".ann.tsv", "r", "utf-8"):
+            line = line.split("\t")
+            annotations.append((line[0], int(line[1].split()[0]), line[2].strip()))
+        annotations = sorted(annotations, key=lambda (x, y, z): y)
+        for ann in annotations:
+            iaa_answers.write(ann[0] + u"\n")
+            iaa_answers.write(unicode(ann[1]) + u"\n")
+            iaa_answers.write(ann[2] + u"\n")
+
+# -----------------------------------------COMPUTING INTER-ANNOTATOR AGREEMENT---------------------------------------
+
+if True:
+    iaa_answers = []
+    for index, line in enumerate(codecs.open(u"data/iaa_answers.txt", "r", "utf-8"), start=1):
+        if index % 3 == 0:
+            iaa_answers.append((url, start, line.strip()))
+        elif index % 3 == 1:
+            url = line.strip()
+        else:
+            start = int(line) + 1
+
+    iaa_check = []
+    for index, line in enumerate(codecs.open(u"data/iaa_check.txt", "r", "utf-8"), start=1):
+        if index % 3 == 0:
+            iaa_check.append((url, start, line.strip()))
+        elif index % 3 == 1:
+            url = line.strip()
+        else:
+            start = int(line)
+
+    intersection = Counter(iaa_check) & Counter(iaa_answers)
+    print len(intersection)
+    check = Counter(iaa_check) - intersection
+    answers = Counter(iaa_answers) - intersection
+    iaa_check = list(check.elements())
+    iaa_answers = list(answers.elements())
+    print iaa_check
+    print iaa_answers
+    # sklearn.metrics.cohen_kappa_score()

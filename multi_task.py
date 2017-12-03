@@ -8,8 +8,8 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.engine import Model
 from keras.layers.merge import concatenate
 from keras.layers import Embedding, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN
-from preprocessing import TARGET_LENGTH, generate_arrays_from_file_binary, FILTER_1x1
+from preprocessing import BATCH_SIZE, EMB_DIM, CONTEXT_LENGTH, UNKNOWN, FILTER_2x2
+from preprocessing import TARGET_LENGTH, generate_arrays_from_file_multi, FILTER_1x1
 from subprocess import check_output
 
 print(u"Dimension:", EMB_DIM)
@@ -82,11 +82,13 @@ ts = Conv1D(1000, 3, activation='relu')(ts)
 ts = GlobalMaxPooling1D()(ts)
 ts = Dropout(0.5)(ts)
 
-inp = concatenate([cwp, cws, esp, ess, l2v, ts])
-inp = Dense(units=1, activation=u'sigmoid')(inp)
+concat = concatenate([cwp, cws, esp, ess, l2v, ts])
+binary = Dense(units=1, activation=u'sigmoid', name=u'binary')(concat)
+categorical = Dense(units=len(FILTER_2x2), activation=u'softmax', name=u'categorical')(concat)
 model = Model(inputs=[context_words_pair, context_words_single, entities_strings_pair, entities_strings_single,
-                      loc2vec, target_string], outputs=[inp])
-model.compile(loss=u'binary_crossentropy', optimizer=u'rmsprop', metrics=[u'accuracy'])
+                      loc2vec, target_string], outputs=[binary, categorical])
+model.compile(loss={u'binary': u'binary_crossentropy', u'categorical': u'categorical_crossentropy'},
+              optimizer=u'rmsprop', metrics=[u'accuracy'])
 
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
@@ -94,6 +96,7 @@ print(u'Finished building model...')
 checkpoint = ModelCheckpoint(filepath=u"../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
 early_stop = EarlyStopping(monitor=u'acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
-model.fit_generator(generate_arrays_from_file_binary(file_name, word_to_index, sqlite3.connect(u'../data/geonames.db', check_same_thread=False).cursor()),
+model.fit_generator(generate_arrays_from_file_multi(file_name, word_to_index,
+                    sqlite3.connect(u'../data/geonames.db', check_same_thread=False).cursor()),
                     steps_per_epoch=int(check_output(["wc", file_name]).split()[0]) / BATCH_SIZE,
                     epochs=250, callbacks=[checkpoint, early_stop])

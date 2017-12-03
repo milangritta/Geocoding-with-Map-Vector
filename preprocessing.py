@@ -357,7 +357,7 @@ def visualise_2D_grid(x, title, log=False):
     """"""
     if log:
         x = np.log10(x)
-    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['lightgrey', 'black'])
+    cmap = colors.LinearSegmentedColormap.from_list('my_colormap', ['lightgrey', 'darkgrey', 'dimgrey', 'black'])
     # cmap.set_bad(color='lightblue')
     img = pyplot.imshow(x, cmap=cmap, interpolation='nearest')
     pyplot.colorbar(img, cmap=cmap)
@@ -454,19 +454,20 @@ def generate_arrays_from_file(path, w2i, train=True):
                         np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
 
 
-def generate_arrays_from_file_binary(path, w2i, db, train=True):
+def generate_arrays_from_file_multi(path, w2i, db, train=True):
     """"""
     while True:
         training_file = codecs.open(path, "r", encoding="utf-8")
         counter = 0
-        context_words, entities_strings, labels = [], [], []
-        loc2vec, target_string = [], []
+        context_words, entities_strings, binary = [], [], []
+        loc2vec, target_string, categorical = [], [], []
         for line in training_file:
             counter += 1
             line = line.strip().split("\t")
             candidates = get_coordinates(db, u" ".join(eval(line[5])).strip())
             pop = great_circle((candidates[0][0], candidates[0][1]), (float(line[0]), float(line[1]))).km < 1
-            labels.append(1 if pop else 0)
+            binary.append(1 if pop else 0)
+            categorical.append(construct_loc2vec([(float(line[0]), float(line[1]), 0)], 2, FILTER_2x2, OUTLIERS_2x2))
 
             near = [w if u"**LOC**" not in w else u'0' for w in eval(line[2])]
             far = [w if u"**LOC**" not in w else u'0' for w in eval(line[3])]
@@ -476,7 +477,8 @@ def generate_arrays_from_file_binary(path, w2i, db, train=True):
             far = [w.replace(u"**LOC**", u"") if u"**LOC**" in w else u'0' for w in eval(line[3])]
             entities_strings.append(far[:CONTEXT_LENGTH / 2] + near + far[CONTEXT_LENGTH / 2:])
 
-            loc2vec.append(construct_loc2vec(eval(line[4]) + eval(line[6]) + eval(line[7]), 1, FILTER_1x1, OUTLIERS_1x1))
+            coords = sorted(eval(line[4]) + eval(line[6]) + eval(line[7]), key=lambda (a, b, c, d): c, reverse=True)
+            loc2vec.append(construct_loc2vec(coords, 1, FILTER_1x1, OUTLIERS_1x1))
 
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), True, u'0'))
 
@@ -490,15 +492,16 @@ def generate_arrays_from_file_binary(path, w2i, db, train=True):
                                 x[i] = w2i[UNKNOWN]
                 if train:
                     yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
-                            np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)], np.asarray(labels))
+                            np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)],
+                            [np.asarray(binary), np.asarray(categorical)])
                 else:
                     yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
                             np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
 
-                context_words, entities_strings, labels = [], [], []
-                loc2vec, target_string = [], []
+                context_words, entities_strings, binary = [], [], []
+                loc2vec, target_string, categorical = [], [], []
 
-        if len(labels) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
+        if len(binary) > 0:  # This block is only ever entered at the end to yield the final few samples. (< BATCH_SIZE)
             for collection in [context_words, entities_strings, target_string]:
                 for x in collection:
                     for i, w in enumerate(x):
@@ -508,7 +511,8 @@ def generate_arrays_from_file_binary(path, w2i, db, train=True):
                             x[i] = w2i[UNKNOWN]
             if train:
                 yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
-                        np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)], np.asarray(labels))
+                        np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)],
+                       [np.asarray(binary), np.asarray(categorical)])
             else:
                 yield ([np.asarray(context_words), np.asarray(context_words), np.asarray(entities_strings),
                         np.asarray(entities_strings), np.asarray(loc2vec), np.asarray(target_string)])
@@ -751,3 +755,12 @@ def oracle(path):
 # ps.print_stats()
 # print s.getvalue()
 
+# print len(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Melbourne"))
+# coord = get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Melbourne")
+# coord.extend(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Victoria"))
+# coord.extend(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Newcastle"))
+# coord.extend(get_coordinates(sqlite3.connect('../data/geonames.db').cursor(), u"Perth"))
+# coord = sorted(coord, key=lambda (a, b, c, d): c, reverse=True)
+# x = construct_loc2vec_full_scale(coord, polygon_size=3)
+# x = np.reshape(x, newshape=((180 / 3), (360 / 3)))
+# visualise_2D_grid(x, "Melbourne", True)
