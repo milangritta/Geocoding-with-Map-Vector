@@ -93,8 +93,8 @@ model.compile(loss={u'binary': u'binary_crossentropy', u'categorical': u'categor
 print(u'Finished building model...')
 #  --------------------------------------------------------------------------------------------------------------------
 # checkpoint = ModelCheckpoint(filepath="../data/weights", verbose=0)
-checkpoint = ModelCheckpoint(filepath=u"../data/weights.{epoch:02d}-{acc:.2f}.hdf5", verbose=0)
-early_stop = EarlyStopping(monitor=u'acc', patience=5)
+checkpoint = ModelCheckpoint(filepath=u"../data/weights.{epoch:02d}-{binary_acc:.2f}-{categorical_acc:.2f}.hdf5", verbose=0)
+early_stop = EarlyStopping(monitor=u'categorical_acc', patience=5)
 file_name = u"../data/train_wiki_uniform.txt"
 model.fit_generator(generate_arrays_from_file_multi(file_name, word_to_index,
                     sqlite3.connect(u'../data/geonames.db', check_same_thread=False).cursor()),
