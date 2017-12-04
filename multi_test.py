@@ -31,9 +31,9 @@ conn = sqlite3.connect(u'../data/geonames.db')
 file_name = u"data/eval_" + data + u".txt"
 final_errors = []
 predictions = model.predict_generator(generate_arrays_from_file_multi(file_name, word_to_index, sqlite3.connect(u'../data/geonames.db', check_same_thread=False).cursor(), train=False),
-                                 steps=int(check_output([u"wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True)
-for b, c, (y, name, context) in zip(predictions[0], predictions[1], generate_strings_from_file(file_name)):
-    p = index_to_coord(REVERSE_2x2[np.argmax(c)], 2)
+                                      steps=int(check_output([u"wc", file_name]).split()[0]) / BATCH_SIZE, verbose=True)
+for binary, categorical, (y, name, context) in zip(predictions[0], predictions[1], generate_strings_from_file(file_name)):
+    p = index_to_coord(REVERSE_2x2[np.argmax(categorical)], 2)
     candidates = get_coordinates(conn.cursor(), name)
     candidates = sorted(candidates, key=lambda (a, b, c, d): c, reverse=True)
 

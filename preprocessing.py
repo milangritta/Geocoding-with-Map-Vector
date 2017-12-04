@@ -764,3 +764,10 @@ def oracle(path):
 # x = construct_loc2vec_full_scale(coord, polygon_size=3)
 # x = np.reshape(x, newshape=((180 / 3), (360 / 3)))
 # visualise_2D_grid(x, "Melbourne", True)
+
+# import sqlite3, os
+#
+# con = sqlite3.connect('existing_db.db')
+# with open('dump.sql', 'w') as f:
+#     for line in con.iterdump():
+#         f.write('%s\n' % line)
