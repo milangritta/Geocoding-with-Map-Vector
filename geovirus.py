@@ -3,13 +3,17 @@ import random
 import sqlite3
 import xml.etree.ElementTree as ET
 from collections import Counter
-import sklearn, numpy
+import numpy
 from geopy.distance import great_circle
 from preprocessing import get_coordinates
 
-# --------------------------------------------ERROR CHECKING----------------------------------------------
+# -------------------------------------------- ERROR CHECKING ----------------------------------------------
 
 if False:
+    """
+    Check for XML formatting, duplicate articles, URLs, coordinate distances to Geonames database, 
+    correct indexing of location names i.e. start and end character positions.
+    """
     tree = ET.parse(u'data/GeoVirus.xml')
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
@@ -45,9 +49,12 @@ if False:
             if dist > 1000:
                 print u"DISTANCE!!", name, url, dist, lat, lon
 
-# ----------------------------------------------STATISTICS------------------------------------------------
+# -------------------------------------------------- NUMBERS -------------------------------------------------------
 
 if False:
+    """
+    Generate essential stats describing the nature of the dataset. Reported in the publication.
+    """
     tree = ET.parse('data/GeoVirus.xml')
     root = tree.getroot()
     counter, continents, words, articles = [], 0, [], 0
@@ -73,13 +80,18 @@ if False:
     print "Total words:", len(words)
 
 
-# ----------------------------------------------GENERATION------------------------------------------------
+# ---------------------------------------------- GENERATION ------------------------------------------------
 
 if False:
-    """"""
+    """
+    Before running the function, please create a directory called "geovirus" outside of the loc2vec directory.
+    This function is used to convert the XML file into (1.) a directory of files where each file contains the
+    text of each article i.e. 229 files will be created. (2.) a file "geovirus_gold.txt" containing the gold answers
+    for each article. These two outputs will be used to generate evaluation files in preprocessing.py
+    """
     tree = ET.parse(u"data/GeoVirus.xml")
     root = tree.getroot()
-    f = codecs.open(u"data/geovirus.txt", "w", "utf-8")
+    f = codecs.open(u"data/geovirus_gold.txt", "w", "utf-8")
     c = 0
     counter = []
     for child in root:
@@ -111,6 +123,9 @@ if False:
 # --------------------------------------SUBSAMPLING FOR INTER-ANNOTATOR AGREEMENT--------------------------------------
 
 if False:
+    """
+    Generate a 10% random sample for the Inter Annotator Agreement figures.
+    """
     iaa_check = codecs.open(u"data/iaa_check.txt", "w", "utf-8")
     iaa_test = codecs.open(u"data/iaa_test.txt", "w", "utf-8")
     tree = ET.parse(u'data/GeoVirus.xml')
@@ -134,25 +149,12 @@ if False:
                     iaa_test.write("LINK -> https://en.wikipedia.org/wiki/Asia\n")
                     iaa_test.write("START CHARACTER -> 100\n")
 
-
-# ------------------------------------------MERGING INTER-ANNOTATOR AGREEMENT----------------------------------------
-
-if False:
-    iaa_answers = codecs.open(u"data/iaa_answers.txt", "w", "utf-8")
-    for i in range(1, 22):
-        annotations = []
-        for line in codecs.open(u"/Users/milangritta/Downloads/annotations/" + str(i) + u".ann.tsv", "r", "utf-8"):
-            line = line.split("\t")
-            annotations.append((line[0], int(line[1].split()[0]), line[2].strip()))
-        annotations = sorted(annotations, key=lambda (x, y, z): y)
-        for ann in annotations:
-            iaa_answers.write(ann[0] + u"\n")
-            iaa_answers.write(unicode(ann[1]) + u"\n")
-            iaa_answers.write(ann[2] + u"\n")
-
 # -----------------------------------------COMPUTING INTER-ANNOTATOR AGREEMENT---------------------------------------
 
-if True:
+if False:
+    """
+    Compute IAA, print out overlaps and disagreements, then calculate IAA figures manually.
+    """
     iaa_answers = []
     for index, line in enumerate(codecs.open(u"data/iaa_answers.txt", "r", "utf-8"), start=1):
         if index % 3 == 0:
@@ -179,4 +181,5 @@ if True:
     iaa_answers = list(answers.elements())
     print iaa_check
     print iaa_answers
-    # sklearn.metrics.cohen_kappa_score()
+
+# ----------------------------------------- END -------------------------------------------
