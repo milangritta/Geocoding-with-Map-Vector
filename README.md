@@ -1,4 +1,4 @@
-## Loc2vec: Embedding locations in geodesic space.
+## Coming soon...
 
 #### Code, Data and Resources accompanying our publication.
 

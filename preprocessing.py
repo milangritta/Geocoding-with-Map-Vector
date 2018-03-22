@@ -255,7 +255,7 @@ def generate_training_data():
                             location = u""
                             for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
                                 for index, item in enumerate(in_list):
-                                    if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
+                                    if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC", u"LOCATION"]:
                                         if item.ent_iob_ == u"B" and item.text.lower() == u"the":
                                             out_list.append(item.text.lower())
                                         else:
@@ -362,7 +362,7 @@ def generate_evaluation_data(corpus, file_name):
                         location = u""
                         for (out_list, in_list, is_near) in [(near_out, near_inp, True), (far_out, far_inp, False)]:
                             for index, item in enumerate(in_list):
-                                if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
+                                if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC", u"LOCATION"]:
                                     if item.ent_iob_ == u"B" and item.text.lower() == u"the":
                                         out_list.append(item.text.lower())
                                     else:
