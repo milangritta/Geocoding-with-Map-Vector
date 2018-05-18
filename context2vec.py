@@ -11,9 +11,9 @@ from preprocessing import BATCH_SIZE, EMBEDDING_DIMENSION, CONTEXT_LENGTH, UNKNO
 from preprocessing import generate_arrays_from_file_lstm, ENCODING_MAP_2x2, ENCODING_MAP_1x1
 from subprocess import check_output
 
-print(u"Dimension:", EMBEDDING_DIMENSION)
-print(u"Input length:", CONTEXT_LENGTH)
-word_to_index = cPickle.load(open(u"data/w2i.pkl"))
+print(u"Embedding Dimension:", EMBEDDING_DIMENSION)
+print(u"Input length (each side):", CONTEXT_LENGTH)
+word_to_index = cPickle.load(open(u"data/words2index.pkl"))
 print(u"Vocabulary Size:", len(word_to_index))
 
 vectors = {UNKNOWN: np.ones(EMBEDDING_DIMENSION), u'0': np.ones(EMBEDDING_DIMENSION)}
@@ -24,21 +24,21 @@ for line in codecs.open(u"../data/glove.twitter." + str(EMBEDDING_DIMENSION) + u
     vectors[t[0]] = [float(x) for x in t[1:]]
 print(u'Vectors...', len(vectors))
 
-weights = np.zeros((len(word_to_index), EMBEDDING_DIMENSION))
+emb_weights = np.zeros((len(word_to_index), EMBEDDING_DIMENSION))
 oov = 0
 for w in word_to_index:
     if w in vectors:
-        weights[word_to_index[w]] = vectors[w]
+        emb_weights[word_to_index[w]] = vectors[w]
     else:
-        weights[word_to_index[w]] = np.random.normal(size=(EMBEDDING_DIMENSION,), scale=0.3)
+        emb_weights[word_to_index[w]] = np.random.normal(size=(EMBEDDING_DIMENSION,), scale=0.3)
         oov += 1
 
-weights = np.array([weights])
+emb_weights = np.array([emb_weights])
 print(u'Done preparing vectors...')
 print(u"OOV (no vectors):", oov)
 #  --------------------------------------------------------------------------------------------------------------------
 print(u'Building model...')
-embeddings = Embedding(len(word_to_index), EMBEDDING_DIMENSION, input_length=CONTEXT_LENGTH, weights=weights)
+embeddings = Embedding(len(word_to_index), EMBEDDING_DIMENSION, input_length=CONTEXT_LENGTH, weights=emb_weights)
 # shared embeddings between all language input layers
 
 forward = Input(shape=(CONTEXT_LENGTH,))
@@ -53,23 +53,24 @@ cwb = LSTM(300, go_backwards=True)(cwb)
 cwb = Dense(300)(cwb)
 cwb = Dropout(0.5)(cwb)
 
-# Uncomment block for LOC2VEC + CONTEXT2VEC model, also uncomment 2 lines further down, thanks!
-# loc2vec = Input(shape=(len(ENCODING_MAP_1x1),))
-# l2v = Dense(5000, activation='relu', input_dim=len(ENCODING_MAP_1x1))(loc2vec)
+# Uncomment this block for MAPVEC + CONTEXT2VEC model, also uncomment 2 lines further down, thanks!
+# You also need to uncomment a few lines in preprocessing.py, generate_arrays_from_file_lstm() function
+# mapvec = Input(shape=(len(ENCODING_MAP_1x1),))
+# l2v = Dense(5000, activation='relu', input_dim=len(ENCODING_MAP_1x1))(mapvec)
 # l2v = Dense(1000, activation='relu')(l2v)
 # l2v = Dropout(0.5)(l2v)
 
 target_string = Input(shape=(TARGET_LENGTH,))
-ts = Embedding(len(word_to_index), EMBEDDING_DIMENSION, input_length=TARGET_LENGTH, weights=weights)(target_string)
+ts = Embedding(len(word_to_index), EMBEDDING_DIMENSION, input_length=TARGET_LENGTH, weights=emb_weights)(target_string)
 ts = LSTM(50)(ts)
 ts = Dense(50)(ts)
 ts = Dropout(0.5)(ts)
 
 inp = concatenate([cwf, cwb, ts])
-# inp = concatenate([cwf, cwb, loc2vec, ts])
+# inp = concatenate([cwf, cwb, mapvec, ts])  # Uncomment for MAPVEC + CONTEXT2VEC
 inp = Dense(units=len(ENCODING_MAP_2x2), activation=u'softmax')(inp)
 model = Model(inputs=[forward, backward, target_string], outputs=[inp])
-# model = Model(inputs=[forward, backward, loc2vec, target_string], outputs=[inp])
+# model = Model(inputs=[forward, backward, mapvec, target_string], outputs=[inp])  # Uncomment for MAPVEC + CONTEXT2VEC
 model.compile(loss=u'categorical_crossentropy', optimizer=u'rmsprop', metrics=[u'accuracy'])
 
 print(u'Finished building model...')

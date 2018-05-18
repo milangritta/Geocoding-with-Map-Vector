@@ -3,26 +3,36 @@ import sqlite3
 import cPickle
 import numpy as np
 import spacy
+from preprocessing import visualise_2D_grid
 
 #######################################################################################
 #                                                                                     #
-# If you're only interested in using the loc2vec generation, I extracted the relevant #
+# If you're only interested the Map Vector generation, I extracted the relevant       #
 # code into this python script for quick and dirty use. You still need at least the   #
-# encoding map file (see ENCODING_MAP below). You also need a database 'geonames.db'  #
+# encoding map files (see ENCODING_MAP below). You also need a database 'geonames.db' #
 #                                                                                     #
 #######################################################################################
-ENCODING_MAP = cPickle.load(open(u"data/1x1_encode_map.pkl"))
-OUTLIERS_MAP = cPickle.load(open(u"data/1x1_outliers_map.pkl"))
-nlp = spacy.load(u'en')
-conn = sqlite3.connect(u'../data/geonames.db').cursor()
+
+ENCODING_MAP = cPickle.load(open(u"data/1x1_encode_map.pkl"))  # the resolution of the map
+OUTLIERS_MAP = cPickle.load(open(u"data/1x1_outliers_map.pkl"))  # dimensions must match the above
+nlp = spacy.load(u'en_core_web_lg')  # or spacy.load(u'en') depending on your Spacy Download (simple, full)
+conn = sqlite3.connect(u'../data/geonames.db').cursor()  # this DB can be downloaded using the GitHub link
 
 
-def text2loc2vec(text, mapping, outliers, polygon_size):
+def text2mapvec(text, mapping, outliers, polygon_size):
+    """
+    Parse text, extract entities, create and return the MAP VECTOR.
+    :param text: the paragraph to turn into a Map Vector
+    :param mapping: the map resolution file, determines the size of MAP VECTOR
+    :param outliers: must be the same size/resolution as MAPPING
+    :param polygon_size: the tile size must also match i.e. all three either 1x1 or 2x2, etc.
+    :return: the map vector for this paragraph of text
+    """
     doc = nlp(text)
     location = u""
     entities = []
     for index, item in enumerate(doc):
-        if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC"]:
+        if item.ent_type_ in [u"GPE", u"FACILITY", u"LOC", u"FAC", u"LOCATION"]:
             if not (item.ent_iob_ == u"B" and item.text.lower() == u"the"):
                 location += item.text + u" "
 
@@ -34,10 +44,10 @@ def text2loc2vec(text, mapping, outliers, polygon_size):
             location = u""
 
     entities = sorted(entities, key=lambda (a, b, c, d): c, reverse=True)
-    loc2vec = np.zeros(len(mapping), )
+    mapvec = np.zeros(len(mapping), )
 
     if len(entities) == 0:
-        return loc2vec  # No locations? Return an empty vector.
+        return mapvec  # No locations? Return an empty vector.
     max_pop = entities[0][2] if entities[0][2] > 0 else 1
     for s in entities:
         index = coord_to_index((s[0], s[1]), polygon_size)
@@ -45,16 +55,16 @@ def text2loc2vec(text, mapping, outliers, polygon_size):
             index = mapping[index]
         else:
             index = mapping[outliers[index]]
-        loc2vec[index] += float(max(s[2], 1)) / max_pop
-    return loc2vec / loc2vec.max() if loc2vec.max() > 0.0 else loc2vec
+        mapvec[index] += float(max(s[2], 1)) / max_pop
+    return mapvec / mapvec.max() if mapvec.max() > 0.0 else mapvec
 
 
 def coord_to_index(coordinates, polygon_size):
     """
-    Convert coordinates into an array index. Use that to modify loc2vec polygon value.
+    Convert coordinates into an array index. Use that to modify mapvec polygon value.
     :param coordinates: (latitude, longitude) to compute
     :param polygon_size: integer size of the polygon? i.e. the resolution of the world
-    :return: index pointing into loc2vec array
+    :return: index pointing into mapvec array
     """
     latitude = float(coordinates[0]) - 90 if float(coordinates[0]) != -90 else -179.99  # The two edge cases must
     longitude = float(coordinates[1]) + 180 if float(coordinates[1]) != 180 else 359.99  # get handled differently!
@@ -82,6 +92,7 @@ def get_coordinates(con, loc_name):
         return []
 
 
-t = u"I was born in Ethiopia, then moved to the United States. I like to travel to London and Victoria as well."
-l2v = text2loc2vec(text=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1)
-print(l2v)
+# t = u"I was born in Ethiopia, then moved to the United States. I like to travel to London and Victoria as well."
+t = u"The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt."
+map_vector = text2mapvec(text=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1)
+print(map_vector)

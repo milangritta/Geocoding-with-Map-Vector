@@ -47,7 +47,7 @@ if False:
                 if gap < dist:
                     dist = gap
             if dist > 1000:
-                print u"DISTANCE!!", name, url, dist, lat, lon
+                print u"Distance is large, please check if this is normal.", name, url, dist, lat, lon
 
 # -------------------------------------------------- NUMBERS -------------------------------------------------------
 

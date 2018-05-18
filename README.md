@@ -1,20 +1,23 @@
-## Coming soon...
+# Which Melbourne? Augmenting Geocoding with Maps
 
-#### Code, Data and Resources accompanying our publication.
+### Code, Data and Resources accompanying the ACL 2018 publication.
 
-Additional data required, please download the following: *data.zip* 
+Additional data required, please download the following: *data.zip* from this <LINK>
 
-* Unzip *data.zip* directory outside loc2vec directory to store large files
-* 
+* Unzip *data.zip* outside the project root directory to store the large files
+* Unzip all zipped files in the data directory, this will take up a few GBs of space
+*
+
+## Repository Contents
+*
 
 :email: mg711-at-cam-dot-ac-dot-uk :envelope:
 
-https://www.webpagefx.com/tools/emoji-cheat-sheet/ 
+Publication link here (LINK)
 
-Please, download our publication here (LINK)
-
-Separate file called text2loc2vec.py available
+Separate file called text2mapvec.py available
 
 #### Generating new test files:
 * Link to the LGL and WIKTOR generation scripts in the other GitHub repository
 * Mention the format for processing as well as the geovirus script for generation
+*
