@@ -491,7 +491,7 @@ def generate_arrays_from_file(path, words_to_index, train=True):
 
             # map_vector.append(construct_map_vector(sorted(eval(line[4]) + eval(line[6]) + eval(line[7]),
             #                key=lambda (a, b, c, d): c, reverse=True), 1, ENCODING_MAP_1x1, OUTLIERS_MAP_1x1))
-            # paper version above versus experimental setup below, map_vector is fully modular, remember? Try both!
+            # paper version above versus small experimental setup below, map_vector is fully modular, remember? Try both!
             map_vector.append(construct_map_vector(eval(line[4]) + eval(line[6]) + eval(line[7]), 1, ENCODING_MAP_1x1, OUTLIERS_MAP_1x1))
             target_string.append(pad_list(TARGET_LENGTH, eval(line[5]), True, u'0'))
 

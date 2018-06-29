@@ -3,7 +3,6 @@ import sqlite3
 import cPickle
 import numpy as np
 import spacy
-from preprocessing import visualise_2D_grid
 
 #######################################################################################
 #                                                                                     #
@@ -13,22 +12,16 @@ from preprocessing import visualise_2D_grid
 #                                                                                     #
 #######################################################################################
 
-ENCODING_MAP = cPickle.load(open(u"data/1x1_encode_map.pkl"))  # the resolution of the map
-OUTLIERS_MAP = cPickle.load(open(u"data/1x1_outliers_map.pkl"))  # dimensions must match the above
-nlp = spacy.load(u'en_core_web_lg')  # or spacy.load(u'en') depending on your Spacy Download (simple, full)
-conn = sqlite3.connect(u'../data/geonames.db').cursor()  # this DB can be downloaded using the GitHub link
 
-
-def text2mapvec(text, mapping, outliers, polygon_size):
+def text2mapvec(doc, mapping, outliers, polygon_size, db):
     """
     Parse text, extract entities, create and return the MAP VECTOR.
-    :param text: the paragraph to turn into a Map Vector
+    :param doc: the paragraph to turn into a Map Vector
     :param mapping: the map resolution file, determines the size of MAP VECTOR
     :param outliers: must be the same size/resolution as MAPPING
     :param polygon_size: the tile size must also match i.e. all three either 1x1 or 2x2, etc.
     :return: the map vector for this paragraph of text
     """
-    doc = nlp(text)
     location = u""
     entities = []
     for index, item in enumerate(doc):
@@ -38,7 +31,7 @@ def text2mapvec(text, mapping, outliers, polygon_size):
 
         if location.strip() != u"" and (item.ent_type == 0 or index == len(doc) - 1):
             location = location.strip()
-            coords = get_coordinates(conn, location)
+            coords = get_coordinates(db, location)
             if len(coords) > 0:
                 entities.extend(coords)
             location = u""
@@ -92,7 +85,12 @@ def get_coordinates(con, loc_name):
         return []
 
 
+# ENCODING_MAP = cPickle.load(open(u"data/1x1_encode_map.pkl"))  # the resolution of the map
+# OUTLIERS_MAP = cPickle.load(open(u"data/1x1_outliers_map.pkl"))  # dimensions must match the above
+# nlp = spacy.load(u'en_core_web_lg')  # or spacy.load(u'en') depending on your Spacy Download (simple or full)
+# conn = sqlite3.connect(u'../data/geonames.db').cursor()  # this DB can be downloaded using the GitHub link
+
 # t = u"I was born in Ethiopia, then moved to the United States. I like to travel to London and Victoria as well."
-t = u"The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt."
-map_vector = text2mapvec(text=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1)
-print(map_vector)
+# t = nlp(u"The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt.")
+# map_vector = text2mapvec(doc=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1, db=conn)
+# print(map_vector)
