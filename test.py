@@ -45,7 +45,7 @@ for prediction, (y, name, context) in zip(model.predict_generator(generate_array
 
     best_candidate = []
     max_pop = candidates[0][2]
-    bias = 0.9  # the Bias parameter in the paper
+    bias = 0.905  # the Bias parameter in the paper
     for candidate in candidates:
         err = great_circle(prediction, (float(candidate[0]), float(candidate[1]))).km
         best_candidate.append((err - (err * max(1, candidate[2]) / max(1, max_pop)) * bias, (float(candidate[0]), float(candidate[1]))))

@@ -13,9 +13,11 @@ import spacy
 #######################################################################################
 
 
-def text2mapvec(doc, mapping, outliers, polygon_size, db):
+def text2mapvec(doc, mapping, outliers, polygon_size, db, exclude):
     """
     Parse text, extract entities, create and return the MAP VECTOR.
+    :param exclude: Exclude the TARGET entity from the MAP VECTOR to avoid self-bias
+    :param db: database cursor to use for retrieval
     :param doc: the paragraph to turn into a Map Vector
     :param mapping: the map resolution file, determines the size of MAP VECTOR
     :param outliers: must be the same size/resolution as MAPPING
@@ -31,6 +33,10 @@ def text2mapvec(doc, mapping, outliers, polygon_size, db):
 
         if location.strip() != u"" and (item.ent_type == 0 or index == len(doc) - 1):
             location = location.strip()
+            if exclude is not None:
+                if location == exclude:
+                    location = u""
+                    continue
             coords = get_coordinates(db, location)
             if len(coords) > 0:
                 entities.extend(coords)
@@ -92,5 +98,5 @@ def get_coordinates(con, loc_name):
 
 # t = u"I was born in Ethiopia, then moved to the United States. I like to travel to London and Victoria as well."
 # t = nlp(u"The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt.")
-# map_vector = text2mapvec(doc=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1, db=conn)
+# map_vector = text2mapvec(doc=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1, db=conn, exclude=u"Cairo")
 # print(map_vector)
