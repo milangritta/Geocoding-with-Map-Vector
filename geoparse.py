@@ -7,11 +7,11 @@ import spacy
 import numpy as np
 from geopy.distance import great_circle
 from keras.models import load_model
-from preprocessing import index_to_coord, ENCODING_MAP_1x1, OUTLIERS_MAP_1x1, get_coordinates, REVERSE_MAP_2x2, \
-    CONTEXT_LENGTH, pad_list, TARGET_LENGTH, UNKNOWN
+from preprocessing import index_to_coord, ENCODING_MAP_1x1, OUTLIERS_MAP_1x1, get_coordinates
+from preprocessing import CONTEXT_LENGTH, pad_list, TARGET_LENGTH, UNKNOWN, REVERSE_MAP_2x2
 from text2mapVec import text2mapvec
 
-model = load_model("../data/weights")
+model = load_model("../data/weights")  # weights to be downloaded from Cambridge Uni repo, see GitHub.
 nlp = spacy.load(u'en_core_web_lg')  # or spacy.load(u'en') depending on your Spacy Download (simple or full)
 conn = sqlite3.connect(u'../data/geonames.db').cursor()  # this DB can be downloaded using the GitHub link
 padding = nlp(u"0")[0]  # Do I need to explain? :-)
@@ -23,7 +23,12 @@ for word in nlp.Defaults.stop_words:  # This is only necessary if you use the fu
 
 
 def geoparse(text):
-    doc = nlp(text)
+    """
+    This function allows one to geoparse text i.e. extract toponyms (place names) and disambiguate to coordinates.
+    :param text: to be parsed
+    :return: currently only prints results to the screen, feel free to modify to your task
+    """
+    doc = nlp(text)  # NER with Spacy NER
     for entity in doc.ents:
         if entity.label_ in [u"GPE", u"FACILITY", u"LOC", u"FAC", u"LOCATION"]:
             name = entity.text if not entity.text.startswith('the') else entity.text[4:].strip()
@@ -65,7 +70,8 @@ def geoparse(text):
 
             max_pop = candidates[0][2]
             best_candidate = []
-            bias = 0.905  # You can tweak the parameter depending on the domain you're working with (0.9 default)
+            bias = 0.905  # Tweak the parameter depending on the domain you're working with.
+            # Less than 0.9 suitable for ambiguous text, more than 0.9 suitable for less ambiguous locations, see paper
             for candidate in candidates:
                 err = great_circle(prediction, (float(candidate[0]), float(candidate[1]))).km
                 best_candidate.append((err - (err * max(1, candidate[2]) / max(1, max_pop)) * bias, (float(candidate[0]), float(candidate[1]))))
@@ -76,6 +82,7 @@ def geoparse(text):
             print u"Coordinates:", best_candidate[1]
 
 
+# Example usage of the geoparse function below reading from a directory and parsing all files.
 directory = u"/Users/milangritta/PycharmProjects/data/lgl/"
 files = [f for f in listdir(directory) if isfile(directory + f)]
 for f in files:

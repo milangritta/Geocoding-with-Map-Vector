@@ -91,12 +91,20 @@ def get_coordinates(con, loc_name):
         return []
 
 
-# ENCODING_MAP = cPickle.load(open(u"data/1x1_encode_map.pkl"))  # the resolution of the map
-# OUTLIERS_MAP = cPickle.load(open(u"data/1x1_outliers_map.pkl"))  # dimensions must match the above
-# nlp = spacy.load(u'en_core_web_lg')  # or spacy.load(u'en') depending on your Spacy Download (simple or full)
-# conn = sqlite3.connect(u'../data/geonames.db').cursor()  # this DB can be downloaded using the GitHub link
+def buildMapVec(text):
+    """
+    An example wrapper function for text2mapVec(), reads in necessary collections and then runs text2mapVec().
+    Feel free to modify to your preference and task objective.
+    :param text: to create the Map Vector from encoded as unicode.
+    :return: currently only prints the vector, add 'return map_vector' or whatever you prefer.
+    """
+    ENCODING_MAP = cPickle.load(open(u"data/1x1_encode_map.pkl"))  # the resolution of the map
+    OUTLIERS_MAP = cPickle.load(open(u"data/1x1_outliers_map.pkl"))  # dimensions must match the above
+    nlp = spacy.load(u'en_core_web_lg')  # or spacy.load(u'en') depending on your Spacy Download (simple or full)
+    conn = sqlite3.connect(u'../data/geonames.db').cursor()  # this DB can be downloaded using the GitHub link
+    map_vector = text2mapvec(doc=nlp(text), mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1, db=conn, exclude=u"Cairo")
+    print(map_vector)
 
-# t = u"I was born in Ethiopia, then moved to the United States. I like to travel to London and Victoria as well."
-# t = nlp(u"The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt.")
-# map_vector = text2mapvec(doc=t, mapping=ENCODING_MAP, outliers=OUTLIERS_MAP, polygon_size=1, db=conn, exclude=u"Cairo")
-# print(map_vector)
+
+# text = u"The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt."
+# buildMapVec(text)

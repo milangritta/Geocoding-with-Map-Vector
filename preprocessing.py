@@ -327,7 +327,7 @@ def generate_evaluation_data(corpus, file_name):
     """
     conn = sqlite3.connect(u'../data/geonames.db')
     c = conn.cursor()
-    nlp = spacy.load(u'en')
+    nlp = spacy.load(u'en')  # or spacy.load(u'en_core_web_lg'), it depends on your choice of model
     padding = nlp(u"0")[0]
     directory = u"../data/" + corpus + u"/"
     o = codecs.open(u"data/eval_" + corpus + file_name + u".txt", u"w", encoding=u"utf-8")
