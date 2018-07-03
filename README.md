@@ -21,7 +21,7 @@ future evaluation in geoparsing.
 
 ##### Resources
 
-This repository contains the accompanying data and source code for CamCoder (toponym resolver) described in the paper. Additional data is required as the files are too large for GitHub, please download files from this *<**LINK**>* (coming soon).
+This repository contains the accompanying data and source code for CamCoder (toponym resolver) described in the paper. Additional data is required as the files are too large for GitHub, please download files from **https://www.repository.cam.ac.uk/handle/1810/277772**.
 
 #### Dependencies
 * Keras 2.2.0 https://keras.io/#installation
@@ -32,7 +32,7 @@ This repository contains the accompanying data and source code for CamCoder (top
 * Next time I'll use Docker, too late now, sorry about that.
 
 ### Instructions
-* Download the `weights.zip` and `geonames.db.zip` files as a **minimum** (optional files available from the Cambridge University <*DOWNLOAD LINK*> repo).
+* Download the `weights.zip` and `geonames.db.zip` files as a **minimum** (optional files available from *https://www.repository.cam.ac.uk/handle/1810/277772*).
 * Read the `README.txt` in the repository to learn about the contents.
 * Create a **data** folder *outside the root directory* to store the large files. N.B. There is already a data folder **inside** the root directory! This holds the small files.
 * Unzip the files into that directory, this will take up a few GBs of space.
@@ -41,13 +41,13 @@ This repository contains the accompanying data and source code for CamCoder (top
 
 Use a GPU, if you can, a CPU epoch takes such a looooooong time, it's only worth it for small jobs. Contact me on :envelope: *mg711 at cam dot ac dot uk* :envelope: if you need any help with reproduction or some other aspect of this work at any time. After graduation, find me on Twitter/milangritta or raise an issue/ticket.
 
-#### Tools
+### Tools
 I included a couple of 'tools' for applied scientists and tinkerers in case you want to parse your own text and/or want to compare system performance with your research.
-##### text2mapVec.py
+#### text2mapVec.py
 This is a simple function `buildMapVec(text)` that turns text into a **Map Vector** i.e. extracts locations/toponyms with **Spacy NER** and creates the 'bag of locations' or the Map Vector as an additional feature vector to be used in a downstream task.
 
 *NOTE: The speed of execution won't be a record breaker, this is research code, I'm really busy trying to finish the PhD, sorry, I don't have time to rewrite it from scratch using proper software engineering principles. I hope you understand. Feel free to fork and edit.*
-##### geoparse.py
+#### geoparse.py
 Unline most (maybe all) geoparsers, CamCoder can perform *geotagging* (NER) and *geocoding* separately. Use (1.) for the full pipeline and (2.) for toponym resolution only.
 1. To geocode with NER: Use `geoparse(text)`, instructions in the code.
 2. To geocode with Oracle: This will be slightly more laborious as you will need the `generate_evaluation_data(corpus, file_name)` function in `preprocessing.py`. First, save your evaluation dataset in the format of `data/lgl.txt` (name,,name,,lat,,lon,,start,end) then you don't have to modify any code. I think it's the best option. Once you have generated machine-readable data with that function, you're ready to `test.py` the performance.
