@@ -2,7 +2,7 @@
 
 ### Resources accompanying the ACL 2018 long paper, presented in Melbourne, Australia.
 
-*The accepted pdf manuscript is also included in this directory (as is the .PPTX from the Melbourne presentation). Video recording of the Melbourne presentation coming soon.*
+*The accepted pdf manuscript is also included in this directory (as is the .PPTX from the Melbourne presentation). The video recording of the Melbourne presentation can be found here (https://vimeo.com/285803462).*
 
 ##### Abstract
 The purpose of text geolocation is to associate geographic information contained
